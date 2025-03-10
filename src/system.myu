@@ -1,0 +1,119 @@
+fn update(y)
+
+f(y == "true")
+{
+  t()
+  {
+    hs("https://api.www.byusi.cn/juos/version.txt",bab)
+    f(bab != sss.v)
+    {
+      hs("https://api.www.byusi.cn/juos/update.txt",jj)
+      hs("https://api.www.byusi.cn/juos/url.txt",url)
+      hs("https://api.www.byusi.cn/juos/title.txt",title)
+      ufnsui()
+      {
+        utw(null,title,jj,"更新","不了",true,v)
+        {
+          hw(url)
+        }
+        else
+        {
+          endutw()
+        }
+      }
+    }
+    else f(bab == sss.v)
+    {
+      ufnsui()
+      {
+        fn tw.tw("已经是最新版本了")
+      }
+    }
+    else
+    {
+      ufnsui()
+      {
+        utw(null,"提醒","检查更新失败，请检查网络","确定",true,v)
+        {
+          endutw()
+        }
+      }
+    }
+  }
+}
+
+end fn
+
+fn install(jspk)
+
+f(jspk != null)
+{
+  fuz(jspk,"MainIndex.json","$temp",fuzjspk)
+  f(fuzjspk == true)
+  {
+    fr("$temp/MainIndex.json",nr)
+    json(nr,json)
+    json(json,"get","name",name)
+    json(json,"get","package",package)
+    //存储jspk文件
+    ss("$data/app/jspk/"+package+"/base.jspk",base)
+    fc(jspk,base,yz)
+    //
+    ss("$JuOS/data/app/"+package,dataapp)
+    fuzs(jspk,dataapp,dapp)
+    f(dapp == true)
+    {
+      ss("$JuOS/hemo/桌面/"+name+".alink",lj)
+      fc("$temp/MainIndex.json",lj,iu)
+    }
+    else
+    {
+      fn tw.tw("解压安装程序失败")
+    }
+  }
+  else
+  {
+    fn tw.tw("主文件解压失败")
+  }
+}
+else
+{
+  fn tw.tw("无 .jspk 文件路径")
+}
+
+end fn
+
+fn gg()
+
+t()
+{
+  hs("https://api.www.byusi.cn/juos/at/api.php?gg=list",url)
+  syso(url)
+  json(url,data)
+  json(data,"get","code",code)
+  f(code == "200")
+  {
+    json(data,"list","data",list)
+    json(list,"size",size)
+    w(size &gt; 0)
+    {
+      s-(1, size)
+      json(list,"data",size,item)
+      json(item,"get","id",id)
+      json(item,"get","title",title)
+      json(item,"get","content",content)
+      json(item,"get","create_time",create_time)
+      syso(id)
+      syso(title)
+      syso(content)
+      syso(create_time)
+    }
+  }
+  else
+  {
+    ss("错误："+code,tsc)
+    fn tw.tw2(tsc,1)
+  }
+}
+
+end fn

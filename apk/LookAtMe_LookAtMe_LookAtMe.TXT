@@ -1,0 +1,1 @@
+想要改这个软件的内容，抱歉不可以，但是你可以去看看安装包中的这个目录“/assets/res/JuOS_Third-party_Configuration/”中的这个文件“config.json”，我写了注释，你应该看得懂

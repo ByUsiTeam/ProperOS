@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>错误</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .error-box {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 80%;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #d9534f;
+            margin-bottom: 10px;
+        }
+        a {
+            color: #78a1d8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #78a1d8, #6288b7);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 10px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+        .button:hover {
+            background: linear-gradient(to right, #6288b7, #78a1d8);
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="error-box">
+        <h1>启动错误</h1>
+        <p>很遗憾，您尝试启动的JuOS应用遇到了一些问题，暂时无法正常运行。</p>
+        <p>这可能是由于以下原因造成的：</p>
+        <ul>
+            <li>应用文件不完整或已损坏</li>
+            <li>系统资源不足，例如内存或存储空间</li>
+            <li>应用与当前JuOS版本不兼容</li>
+            <li>系统浏览器内核问题或应用不兼容</li>
+        </ul>
+        <p>我们建议您尝试以下操作：</p>
+        <ol>
+            <li>重启您的JuOS环境，确保系统资源充足</li>
+            <li>重新安装该JuOS应用，确保下载的是与您的系统兼容的版本</li>
+            <li>检查您的设备是否有足够的存储空间</li>
+            <li>访问我们的<a href="https://www.hucl.link/help">官方帮助文档</a>，获取更多关于应用启动问题的解决建议</li>
+        </ol>
+        <div class="buttons">
+            <!--<button class="button" onclick="location.reload();">刷新并重新启动应用</button>-->
+            <a class="button" href="https://www.hucl.link/help">查看帮助文档</a>
+        </div>
+    </div>
+</body>
+</html>

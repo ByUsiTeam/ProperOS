@@ -1,0 +1,12 @@
+fn qp()
+java(window,activity,"android.app.Activity.getWindow")
+java(d,window,"android.view.Window.getDecorView")
+java(null,d,"android.view.View.setSystemUiVisibility","int",4102)
+end fn
+//
+fn qp2()
+uycl("#daebeae3",true)
+java(window,activity,"android.app.Activity.getWindow")
+java(d,window,"android.view.Window.getDecorView")
+java(null,d,"android.view.View.setSystemUiVisibility","int",4102)
+end fn

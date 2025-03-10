@@ -1,0 +1,173 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="WebView">
+<ppt>width=-1
+height=-1
+url=http://null.null.com</ppt>
+<event><eventItme type="onprogresschanged">f(st_nS != "100")
+{
+  us(4,"visibility","visible")
+  us(5,"progress",st_nS)
+}
+else f(st_nS == "100")
+{
+  us(5,"progress","0")
+  us(4,"visibility","gone")
+  us(2,"refreshing","false")
+}</eventItme><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)
+/.
+sj(st_url,"juos_sh://",null,iu)
+syso(iu)
+f(iu != null)
+{
+  uigo("JuOS.terminal.iyu")
+  sss url =iu
+}
+else f(iu == null)
+{
+  us(st_vId,"url",st_url)
+}</eventItme><eventItme type="onreceivederror">us(6,"visibility","visible")
+f(st_url ?* "http")
+{
+  ss("在加载该链接时发生了错误",ii)
+}
+else
+{
+  ss("在加载该链接时发生了错误："+st_url,ii)
+}
+us(9,"text",ii)
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/ByUsi/404.json",data)
+fn Lottie.setImageLottie(7,data,64dp,true)</eventItme><eventItme type="press">s wv = st_vW
+java(htr,wv,"android.webkit.WebView.getHitTestResult")
+java(type,htr,"android.webkit.WebView$HitTestResult.getType")
+javags(imagetype,null,"android.webkit.WebView$HitTestResult","IMAGE_TYPE")
+javags(imageurl,null,"android.webkit.WebView$HitTestResult","SRC_IMAGE_ANCHOR_TYPE")
+f(type==imagetype||type==imageurl)
+{
+  java(url,htr,"android.webkit.WebView$HitTestResult.getExtra")
+  fdir("$ByU_Si",path)
+  fl(path,dir)
+  sgszl(dir,size)
+  ss(path+"/"+size+".jpg",path)
+  t()
+  {
+    hd(url,path,c)
+    ufnsui()
+    {
+      utw(null,"","dialog.iyu",false,v)
+      {
+      }
+      gvs(v,1,vw)
+      us(vw,"src",path)
+      syso(path)
+    }
+  }
+}</eventItme></event>
+</View>
+<View id="4" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom|center</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="ProgressBar">
+<ppt>width=-1
+height=-2
+background=#ff59d8ff
+max=100</ppt>
+<event></event>
+</View>
+<View id="6" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+visibility=gone
+background=#ffdbf7ff</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="ImageView">
+<ppt>width=-2
+height=-2
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="9" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本9</ppt>
+<event></event>
+</View>
+<View id="10" did="6" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=horizontal
+gravity=center
+layout_marginTop=6dp</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="CardView">
+<ppt>width=80dp
+height=50dp
+app_CardBackgroundColor=#ff4e65ff
+app_CardcornerRadius=15dp</ppt>
+<event></event>
+</View>
+<View id="8" did="11" type="Button">
+<ppt>width=-1
+height=-1
+text=关闭该应用
+background=through
+textColor=#ffffffff
+typeface=@JuOS/src/ttf/acbt80.ttf</ppt>
+<event><eventItme type="clicki">end()</eventItme></event>
+</View>
+<View id="12" did="10" type="CardView">
+<ppt>width=80dp
+height=50dp
+app_CardBackgroundColor=#ff4e65ff
+app_CardcornerRadius=15dp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="13" did="12" type="Button">
+<ppt>width=-1
+height=-1
+text=刷新
+background=through
+textColor=#ffffffff
+typeface=@JuOS/src/ttf/acbt80.ttf</ppt>
+<event><eventItme type="clicki">
+us(6,"visibility","gone")
+ug(3,"url",url)
+us(3,"url",url)</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">
+uycl("#ff59d8ff",true)
+f(sss.url != null)
+{
+  us(3,"url",sss.url)
+}
+else
+{
+  fn tw.tw2("抱歉，启动配置出现问题，无法正常启动",2)
+}
+//开启JavaScript交互
+hsas(3,true)</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+  ug(3,"cangoback",yz_url_dt)
+  //
+  f(yz_url_dt == "true")
+  {
+    us(3,"gobackorforward",-1)
+  }
+  else f(yz_url_dt == "false")
+  {
+    end()
+  }
+}</eventItme><eventItme type="loadingComplete">fn api.hide_btn(3)</eventItme></UIEventset>

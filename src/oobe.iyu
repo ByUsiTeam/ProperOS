@@ -1,0 +1,14 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="WebView">
+<ppt>width=-1
+height=-1
+url=@JuOS/html/hello/index.html</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">//fn qp.qp()
+//fn lib.wp(1)
+uycl("#a77cb7ff",true,0)</eventItme></UIEventset>

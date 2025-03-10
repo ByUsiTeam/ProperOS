@@ -1,0 +1,150 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+//background=@JuOS/src/img/bz/20210704170635_218ac.jpg
+background=#daebeae3</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="WebView">
+<ppt>width=-1
+height=-1
+background=through
+//visibility=gone
+url=%JuOS/img/20210704170635_218ac.jpg</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+//background=black
+gravity=top|center
+background=through</ppt>
+<event></event>
+</View>
+<View id="11" did="3" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="ImageButton">
+<ppt>width=45dp
+height=45dp
+src=17301544
+background=through
+layout_marginLeft=5dp</ppt>
+<event><eventItme type="clicki">fn lib.utw("home-cd.iyu")</eventItme></event>
+</View>
+<View id="13" did="11" type="TextView">
+<ppt>width=-2
+height=-2
+text=JuOS菜单
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=4dp</ppt>
+<event></event>
+</View>
+<View id="14" did="11" type="TextView">
+<ppt>width=-1
+height=-1
+text=时间
+typeface=@JuOS/src/ttf/acbt80.ttf
+gravity=right|center
+layout_marginRight=12dp</ppt>
+<event><eventItme type="clicki">sss url ="@JuOS/html/Time/index.html"
+uigo("system_start.iyu")</eventItme></event>
+</View>
+<View id="4" did="3" type="SwipeRefreshLayout">
+<ppt>width=-1
+height=-1
+background=through
+ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
+<event><eventItme type="onrefresh">fn lib.utw("home-cd.iyu")</eventItme></event>
+</View>
+<View id="5" did="4" type="GridView">
+<ppt>width=-1
+height=-1
+gravity=top|center
+columnWidth=64dp
+background=through
+paddingTop=5dp</ppt>
+<event></event>
+</View>
+<View id="6" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+background=#ffff0000
+visibility=visible</ppt>
+<event><eventItme type="clicki">us(4,"refreshing","true")
+fn list_lib.hemo()
+us(4,"refreshing","false")</eventItme></event>
+</View>
+<View id="10" did="6" type="ImageView">
+<ppt>width=155dp
+height=155dp
+src=@fail.xml</ppt>
+<event></event>
+</View>
+<View id="9" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=看到我了，那么刷新一下吧\n可以点我刷新
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=34sp
+gravity=center</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loadingComplete">//-_-_-_-_-_-_-_-_-_-_-
+fn list_lib.hemo()
+//-_-_-_-_-_-_-_-_-_-_-
+s id =2
+fn api.hide_btn(id)
+//-_-_-_-_-_-_-_-_-_-_-
+fr("$JuOS/Config/wallpaper/wp.gif.config",list)
+sj(list,"[system]","[/system]",list_2)
+f(list_2 ? ".gif")
+{
+  us(2,"visibility","visible")
+  us(1,"background","through")
+  us(2,"url","$JuOS/Config/wallpaper/wp.gif")
+}
+else
+{
+  us(2,"visibility","gone")
+}
+fr("$System/Config/Update.sys",Update)
+f(Update == "true")
+{
+  fn system.update("true")
+}
+//
+fw("$System/Config/Update.sys","false")
+
+t()
+{
+  w(true)
+  {
+    f(sss.timejsq != "true")
+    {
+      time(3,sj)
+      ufnsui()
+      {
+        ss("时间："+sj,iu)
+        us(14,"text",iu)
+      }
+      stop(500)
+    }
+  }
+}</eventItme><eventItme type="downkey">f(st_kC==4)
+{
+  syso("输定")
+}</eventItme><eventItme type="loading">uycl("#e84f78ff",true)
+//
+s id =1
+fn lib.wp(id)
+//fn byusi.ztl()</eventItme></UIEventset>

@@ -1,0 +1,174 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event><eventItme type="clicki">fn lib.endutw()
+us(4,"refreshing","false")</eventItme></event>
+</View>
+<View id="3" did="2" type="CardView">
+<ppt>width=-1
+height=360dp
+app_CardcornerRadius=5dp
+layout_marginLeft=7dp
+layout_marginRight=7dp</ppt>
+<event></event>
+</View>
+<View id="8" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="4" did="8" type="LinearLayout">
+<ppt>width=-1
+height=45dp
+orientation=horizontal
+background=#ddc4c4c4
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="ImageButton">
+<ppt>width=35dp
+height=35dp
+src=17301533
+layout_marginLeft=8dp
+background=through</ppt>
+<event><eventItme type="clicki">fn lib.endutw()
+us(4,"refreshing","false")</eventItme></event>
+</View>
+<View id="6" did="4" type="TextView">
+<ppt>width=-2
+height=-2
+text=功能菜单
+typeface=@JuOS/src/ttf/acbt80.ttf
+textColor=#ffffffff
+textSize=25sp</ppt>
+<event></event>
+</View>
+<View id="7" did="8" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="9" did="7" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="15" did="9" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top</ppt>
+<event></event>
+</View>
+<View id="10" did="15" type="RelativeLayout">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@tip.xml</ppt>
+<event></event>
+</View>
+<View id="13" did="11" type="TextView">
+<ppt>width=-2
+height=-2
+text=刷新桌面
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=24sp</ppt>
+<event></event>
+</View>
+<View id="14" did="10" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn list_lib.hemo()
+us(4,"refreshing","false")
+fn lib.endutw()</eventItme></event>
+</View>
+<View id="21" did="15" type="RelativeLayout">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="22" did="21" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="23" did="22" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@tip.xml</ppt>
+<event></event>
+</View>
+<View id="24" did="22" type="TextView">
+<ppt>width=-2
+height=-2
+text=打开设置
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=24sp</ppt>
+<event></event>
+</View>
+<View id="25" did="21" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">uigo("设置.iyu")</eventItme></event>
+</View>
+<View id="16" did="15" type="RelativeLayout">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="17" did="16" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="18" did="17" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@tip.xml</ppt>
+<event></event>
+</View>
+<View id="19" did="17" type="TextView">
+<ppt>width=-2
+height=-2
+text=关闭 JuOS
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=24sp</ppt>
+<event></event>
+</View>
+<View id="20" did="16" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ends()
+end()</eventItme></event>
+</View>
+<UIEventset></UIEventset>

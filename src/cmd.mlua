@@ -1,0 +1,6 @@
+function shell(cmd)
+local sh = io.popen(cmd)
+local rs = sh:read("*all")
+sh:close()
+return rs
+end

@@ -1,0 +1,248 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="LinearLayout">
+<ppt>width=344dp
+height=560dp
+orientation=vertical
+gravity=top|center
+background=#a343fcff</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="RoundImageView">
+<ppt>width=86dp
+height=86dp
+src=@JuOS/logo/juos_logo.png
+layout_marginTop=15dp</ppt>
+<event></event>
+</View>
+<View id="7" did="5" type="TextView">
+<ppt>width=-1
+height=-2
+text=(html)&lt;h1&gt;JuOS 安全密码验证&lt;/h1&gt;
+textColor=#ff000000
+typeface=@fonts/bb2325.ttf
+gravity=center
+layout_marginTop=12dp
+</ppt>
+<event></event>
+</View>
+<View id="8" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center
+layout_marginTop=15dp</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=vertical
+gravity=center
+layout_marginLeft=15dp
+layout_marginRight=15dp</ppt>
+<event></event>
+</View>
+<View id="15" did="9" type="TextInputLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="11" did="15" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+singleLine=true
+gravity=left|center
+hint=默认账号
+imeOptions=actionnext
+inputType=textcapwords</ppt>
+<event></event>
+</View>
+<View id="10" did="8" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=vertical
+gravity=center
+layout_marginLeft=15dp
+layout_marginRight=15dp
+layout_marginTop=14dp</ppt>
+<event></event>
+</View>
+<View id="16" did="10" type="TextInputLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="12" did="16" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+textColor=#ff000000
+gravity=left|center
+singleLine=true
+hint=密码
+inputType=textpassword
+imeOptions=actiondone</ppt>
+<event></event>
+</View>
+<View id="13" did="8" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="14" did="13" type="Button">
+<ppt>width=-1
+height=55dp
+text=确定登录
+typeface=@JuOS/src/ttf/acbt80.ttf
+gravity=center
+layout_marginLeft=8dp
+layout_marginRight=8dp
+</ppt>
+<event><eventItme type="clicki">ug(11,"text",zh)
+ug(12,"text",mm)
+//获取设备上的账号和密码和获取设备上是否有已经保存的账号和密码
+fe("$System/user/zm.byst.jsys",pd)
+fr("$System/user/zm.byst.jsys",mr)
+//基础判断
+f(sss.sz_for_pd == "1")
+{
+  f(pd == "true")
+  {
+    slower(zh,zh)
+    sj(mr,"[mm]","[/mm]",mm_j)
+    sj(mr,"[zh]","[/zh]",zh_j)
+    //
+    f(mm_j == mm && zh_j == zh)
+    {
+      fn tw.tw("登录成功✔️")
+      fr("@version.txt",st)
+      fr("$JuOS/v/v.cfg",v)
+      //
+      f(st == v)
+      {
+        fr("$System/Config/init_fb.sys",si_fb)
+        f(si_fb == "true")
+        {
+          fw("$System/Config/init_fb.sys","false")
+          uigo("si_fb.iyu")
+          lan(0)
+          end()
+        }
+        else f(si_fb == "false")
+        {
+          uigo(sss.iyu)
+          lan(5)
+          end()
+        }
+        else
+        {
+          uigo(sss.iyu)
+          lan(5)
+          end()
+        }
+      }
+      else
+      {
+        uigo("设置oobe.iyu")
+        lan(0)
+        end()
+      }
+    }
+    else
+    {
+      us(11,"text","")
+      us(12,"text","")
+      fn tw.tw("登录失败")
+    }
+  }
+  else f(pd == "false")
+  {
+    fn tw.tw("❌你没有设置账号和密码呢❌")
+  }
+}
+else f(sss.sz_for_pd == "0")
+{
+  utw(null,"","确定删除密码吗？","确定","不删除了",true,v)
+  {
+    fd("$System/user/zm.byst.jsys",yz_d)
+    f(yz_d)
+    {
+      fn tw.tw("删除成功")
+    }
+    else
+    {
+      fn tw.tw("删除失败")
+    }
+  }
+  else
+  {
+    endutw()
+  }
+}
+else f(sss.sz_for_pd == "2")
+{
+  slower(zh,zh)
+  f(zh != null && mm != null && zh != "" && mm != "")
+  {
+    slg(mm,mm_cd)
+    f(mm_cd &gt; "7")
+    {
+      ss("[zh]"+zh+"[/zh]\n[mm]"+mm+"[/mm]",user_nr)
+      fw("$System/user/zm.byst.jsys",user_nr)
+      //
+      fn tw.tw("账号和密码设置成功")
+      end()
+    }
+    else
+    {
+      fn tw.tw("密码长度不可以少于8位")
+    }
+  }
+  else
+  {
+    fn tw.tw("账号和密码都不可以是空的哦")
+  }
+}
+else
+{
+  fn tw.tw("传递的参数错误")
+}</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">//状态栏配置
+uycl("#ff59d8ff",true,0)
+//壁纸设置
+fn lib.wp(1)
+//配置颜色
+s a =5
+s b =15
+s c ="#daebeae3|#daebeae3"
+s d ="#ff000000"
+s e ="topbottom"
+ngde(a,b,c,d,e,f_1)
+ngde(a,b,c,d,e,f_2)
+ngde(a,b,c,d,e,f_3)
+//加载颜色到控制键
+us(5,"background",f_1)
+us(9,"background",f_2)
+us(10,"background",f_2)
+us(14,"background",f_3)</eventItme><eventItme type="loadingComplete">f(sss.sz_for_pd == "0")
+{
+  us(9,"visibility","gone")
+  us(10,"visibility","gone")
+}</eventItme></UIEventset>

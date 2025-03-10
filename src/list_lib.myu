@@ -1,0 +1,63 @@
+fn hemo()
+t()
+{
+  s a = "$JuOS/hemo/桌面"
+  fl(a,false,wj_list)
+  for(sc;wj_list)
+  {
+    //syso(sc)
+    f(sc *? ".app")
+    {
+      ss("$JuOS/hemo/桌面/"+sc,ml)
+      fr(ml,app_link_sc)
+      sj(app_link_sc,"AppTb=","=AppTb",img)
+      f(img ?* "$sys/")
+      {
+        sr(img,"$sys/","@",img)
+        sj(sc,null,".app",sc)
+      }
+      else f(img ?* "%@")
+      {
+        sr(img,"%@","$",img)
+        sj(sc,null,".app",sc)
+      }
+      else
+      {
+        sj(app_link_sc,"AppLj=","=AppLj",appml)
+        sr(appml,"%g","$App/",aml)
+        //
+        ss(aml+img,img)
+        //
+        sj(sc,null,".app",sc)
+      }
+    }
+    else f(sc *? ".mp4")
+    {
+      s img ="@JuOS/src/img/zy/mp4.png"
+    }
+    else f(sc *? ".m4a" || sc *? ".mp3" || sc *? ".flac")
+    {
+      s img ="@JuOS/src/Manager/6e.png"
+    }
+    else f(sc *? ".pdf")
+    {
+      s img ="@JuOS/src/Manager/wE.png"
+    }
+    else f(sc *? ".jush")
+    {
+      s img ="@ic_play_pause_regular.png"
+    }
+    else
+    {
+      s img ="@JuOS/src/img/zy/tip.png"
+    }
+    //ula(list_cz,6=img,4=sc)
+    ula(list_cz,10=img,14=sc)
+  }
+  ufnsui()
+  {
+    us(6,"visibility","gone")
+    uls(5,list_cz,"list.iyu")
+  }
+}
+end fn

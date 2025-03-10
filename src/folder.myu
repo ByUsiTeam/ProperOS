@@ -1,0 +1,35 @@
+fn copy(path,newpath)
+javanew(fla,"java.io.File","String",path)
+javanew(fle,"java.io.File","String",newpath)
+javax(d,fle,"java.io.File","mkdir")
+fi(newpath,dif)
+fl(path,az)
+
+f(dif)
+{
+for(fz;az)
+{
+javanew(df,"java.io.File","java.io.File",fle,"String",fz)
+javanew(of,"java.io.File","java.io.File",fla,"String",fz)
+javax(tf,df,"java.io.File","getPath")
+javax(tof,of,"java.io.File","getPath")
+fi(tof,fii)
+fe(tof,egi)
+f(egi)
+{
+f(fii)
+{
+fn folder.copy(tof,tf)
+}
+else
+{
+fc(tof,tf,ifc)
+}
+}
+}
+}
+
+end fn
+fn motion(path,newpath)
+//
+end fn

@@ -1,0 +1,9 @@
+<View id="1" did="0" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567</ppt>
+<event><eventItme type="clicki">
+ug(st_vId,"src",yy)
+syso(yy)</eventItme></event>
+</View>
+<UIEventset></UIEventset>

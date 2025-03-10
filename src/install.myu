@@ -1,0 +1,42 @@
+fn install(ml,tsc)
+t()
+{
+  fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
+  //
+  f(z_yz == "true")
+  {
+    fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
+    //
+    sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
+    sj(txt_yz_t,"AppM=","=AppM",AppM_2)
+    sr(txt_yz,"%g","$App/",txt_ml)
+    //应用link创建
+    ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
+    fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
+    //
+    fuzs(ml,txt_ml,yz_stty)
+    //
+    f(yz_stty == "true")
+    {
+      ufnsui()
+      {
+        fn tw.tw(tsc)
+      }
+    }
+    else
+    {
+      ufnsui()
+      {
+        fn tw.tw("资源文件解压失败")
+      }
+    }
+  }
+  else
+  {
+    ufnsui()
+    {
+      fn tw.tw("主要索引文件解压失败")
+    }
+  }
+}
+end fn

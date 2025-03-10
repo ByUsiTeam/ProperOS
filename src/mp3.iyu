@@ -1,0 +1,306 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+background=#99000000</ppt>
+<event><eventItme type="clicki">us(mp3.1,"visibility","gone")
+sss mp3_jm=null
+ss endms=true
+bfms(sss.mp3,"sp")
+bfms(sss.mp3,"re")
+</eventItme></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+background=#ffffff
+layout_marginLeft=20dp
+layout_marginRight=20dp</ppt>
+<event><eventItme type="clicki">//</eventItme></event>
+</View>
+<View id="3" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=JuOS - 音乐播放
+textColor=#000000
+textSize=18dp
+textStyle=bold
+layout_marginLeft=20dp
+layout_marginTop=20dp</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="LinearLayout">
+<ppt>width=-1
+height=50dp
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="TextView">
+<ppt>width=-2
+height=-2
+text=a.mp3
+textColor=#000000
+textSize=15dp</ppt>
+<event></event>
+</View>
+<View id="6" did="2" type="RelativeLayout">
+<ppt>width=-1
+height=25dp
+layout_marginLeft=20dp
+layout_marginRight=20dp</ppt>
+<event><eventItme type="touchmonitor">f(st_eA==0)
+{
+  us(mp3.8,"width","15dp")
+  us(mp3.8,"height","15dp")
+  ss tdjd=true
+}
+else f(st_eA!=2&&st_eA!=0)
+{
+  us(mp3.8,"width","10dp")
+  us(mp3.8,"height","10dp")
+  bfms(sss.mp3,"ip",ip)
+  f(ip==false)
+  {
+    bfms(sss.mp3,"st")
+    ss stp=null
+    us(mp3.17,"text","暂停")
+  }
+  us(mp3.8,"layout_marginleft",ss.ejdd)
+  us(mp3.20,"width",ss.ejdd)
+  bfms(sss.mp3,"seekto",ss.ecnn)
+  ss tdjd=null
+}
+f(ss.tdjd==true)
+{
+  gvs(mp3.7,7id)
+  java(asw,7id,"android.view.View.getWidth")
+  gvs(mp3.6,6id)
+  java(asw2,6id,"android.view.View.getWidth")
+  s exx=st_eX
+  f(exx&lt;=0)
+  {
+    s exx=0
+  }
+  f(exx&gt;=asw2)
+  {
+    s exx=asw2
+  }
+  bfms(sss.mp3,"dn",dn)
+  s(exx/asw2*1000,tjd)
+  s(asw/1000*tjd,jdd)
+  s(dn/1000*tjd,cnn)
+  fn mk.totime(cnn)
+  ss ecnn=cnn
+  ss ejdd=jdd
+  us(mp3.11,"text",sss.mk_totime)
+  us(mp3.8,"layout_marginleft",jdd)
+  us(mp3.20,"width",jdd)
+}</eventItme><eventItme type="clicki">//</eventItme></event>
+</View>
+<View id="7" did="6" type="LinearLayout">
+<ppt>width=-1
+height=2dp
+orientation=vertical
+background=#cccccc
+ut_centerInParent=true
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="20" did="7" type="TextView">
+<ppt>width=0
+height=-1
+text=
+background=#4499ff</ppt>
+<event></event>
+</View>
+<View id="8" did="6" type="TextView">
+<ppt>width=10dp
+height=10dp
+text=
+background=#4499ff
+ut_centerVertical=true</ppt>
+<event></event>
+</View>
+<View id="10" did="2" type="LinearLayout">
+<ppt>width=-1
+height=40dp
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="TextView">
+<ppt>width=-2
+height=-2
+text=0:00
+textColor=#000000
+textSize=15dp</ppt>
+<event></event>
+</View>
+<View id="12" did="10" type="TextView">
+<ppt>width=-2
+height=-2
+text=/
+textColor=#000000
+textSize=15dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="13" did="10" type="TextView">
+<ppt>width=-2
+height=-2
+text=10:00
+textColor=#000000
+textSize=15dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="14" did="2" type="LinearLayout">
+<ppt>width=-1
+height=35dp
+orientation=horizontal
+gravity=center_vertical
+layout_marginBottom=10dp</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="LinearLayout">
+<ppt>width=0
+height=-1
+orientation=vertical
+layout_weight=1</ppt>
+<event></event>
+</View>
+<View id="16" did="14" type="LinearLayout">
+<ppt>width=60dp
+height=-1
+orientation=vertical
+background=selectableitem
+clickable=true
+gravity=center</ppt>
+<event><eventItme type="clicki">bfms(sss.mp3,"ip",ip)
+f(ip==false)
+{
+us(mp3.17,"text","暂停")
+bfms(sss.mp3,"st")
+ss stp=null
+}
+else
+{
+us(mp3.17,"text","继续")
+bfms(sss.mp3,"pe")
+ss stp=true
+}</eventItme></event>
+</View>
+<View id="17" did="16" type="TextView">
+<ppt>width=-2
+height=-2
+text=暂停
+textColor=#4499ff
+textSize=14dp</ppt>
+<event></event>
+</View>
+<View id="18" did="14" type="LinearLayout">
+<ppt>width=60dp
+height=-1
+orientation=vertical
+background=selectableitem
+clickable=true
+gravity=center
+layout_marginRight=15dp</ppt>
+<event><eventItme type="clicki">us(mp3.1,"visibility","gone")
+sss mp3_jm=null
+ss endms=true
+bfms(sss.mp3,"sp")
+bfms(sss.mp3,"re")
+</eventItme></event>
+</View>
+<View id="19" did="18" type="TextView">
+<ppt>width=-2
+height=-2
+text=取消
+textColor=#4499ff
+textSize=14dp</ppt>
+<event></event>
+</View>
+<View id="21" did="2" type="TextView">
+<ppt>width=0
+height=0
+text=</ppt>
+<event><eventItme type="ontextchanged">bfm(sss.filepath,sss.mp3)
+bfms(sss.mp3,"dn",dn)
+bfms(sss.mp3,"sl",true)
+se(sss.filepath,"([\w\W]*/)([\w\W]*$)",0,d)
+se(d,"sral","$2",name)
+us(mp3.5,"text",name)
+fn mk.totime(dn)
+s sdn=sss.mk_totime
+us(mp3.13,"text",sdn)
+us(mp3.22,"text","")
+</eventItme></event>
+</View>
+<View id="22" did="2" type="TextView">
+<ppt>width=0
+height=0
+text=</ppt>
+<event><eventItme type="ontextchanged">t()
+{
+w(true)
+{
+stop(100)
+bfms(sss.mp3,"ip",ip)
+/.
+f(ip==false&&ss.stp!=true)
+{
+//ss endms=true
+bfms(sss.mp3,"st")
+ss stp=true
+us(17,"text","继续")
+}
+./
+f(ss.tdjd!=true&&ss.endms!=true)
+{
+bfms(sss.mp3,"cn",cn)
+bfms(sss.mp3,"dn",dn)
+f(dn==cn)
+{
+}
+fn mk.totime(cn)
+s scn=sss.mk_totime
+gvs(mp3.7,mp3_7)
+javax(aw1,mp3_7,"android.view.View","getWidth")
+s(cn/dn*1000,jdd)
+s(jdd/1000*aw1,jd)
+ufnsui()
+{
+us(mp3.11,"text",scn)
+us(mp3.20,"width",jd)
+us(mp3.8,"layout_marginleft",jd)
+}
+}
+else f(ss.endms==true)
+{
+endcode
+}
+}
+}
+
+</eventItme></event>
+</View>
+<View id="23" did="2" type="TextView">
+<ppt>width=0
+height=0
+text=</ppt>
+<event><eventItme type="ontextchanged">ngde(360,"#4499ff",bg)
+ngde(360,"#22000000",bg2)
+us(mp3.8,"background",bg)
+us(mp3.23,"background",bg2)
+us(mp3.21,"text","")
+//us(mp3.22,"text","")
+
+
+</eventItme></event>
+</View>
+<UIEventset></UIEventset>

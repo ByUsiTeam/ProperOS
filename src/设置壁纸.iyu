@@ -1,0 +1,140 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+background=#ff4e66ff</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="Toolbar">
+<ppt>width=-1
+height=44dp
+background=through</ppt>
+<event></event>
+</View>
+<View id="5" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="4" did="5" type="SwipeRefreshLayout">
+<ppt>width=-1
+height=-1
+background=through
+ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
+<event><eventItme type="onrefresh">//fn qp.qp2()
+//
+t()
+{
+  s a = "/sdcard/JuOS/img"
+  fl(a,false,wj_list)
+  for(sc;wj_list)
+  {
+    f(sc ? ".gif")
+    {
+      ss("/sdcard/JuOS/img/"+sc,img)
+      syso(img)
+      ula(list_2,11=img,9=sc)
+      ufnsui()
+      {
+        us(6,"visibility","gone")
+        uls(3,list_2,"list_4.iyu")
+      }
+    }
+    else
+    {
+      ss("/sdcard/JuOS/img/"+sc,img)
+      ula(list_cz,8=img,9=sc)
+      ufnsui()
+      {
+        us(6,"visibility","gone")
+        uls(3,list_cz,"list_3.iyu")
+      }
+    }
+    //syso(sc)
+  }
+}
+//-_-_-_-_-_-_-_-_-_-
+us(4,"refreshing","false")</eventItme></event>
+</View>
+<View id="3" did="4" type="RecyclerView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+background=#ffff0000</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="ImageView">
+<ppt>width=80dp
+height=80dp
+src=@fail.xml</ppt>
+<event></event>
+</View>
+<View id="8" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=无法扫描到壁纸图片
+typeface=@JuOS/src/ttf/acbt80.ttf
+textColor=#ffffffff
+textSize=24sp
+gravity=center</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn qp.qp2()
+//
+t()
+{
+  s a = "/sdcard/JuOS/img"
+  fl(a,false,wj_list)
+  for(sc;wj_list)
+  {
+    ss("/sdcard/JuOS/img/"+sc,img)
+    ula(list_cz,8=img,9=sc)
+    ufnsui()
+    {
+      us(6,"visibility","gone")
+      uls(3,list_cz,"list_3.iyu")
+    }
+    //syso(sc)
+  }
+}</eventItme><eventItme type="downkey">f(st_kC==4)
+{
+  uigo("JuOS_Hemo.iyu")
+  lan(10)
+  end()
+}</eventItme><eventItme type="loadingComplete">uycl("#daebeae3",true)
+utb(2)
+
+//上面是设置颜色的
+/.utb("set","leftck",4)
+{
+  end()
+}</eventItme><eventItme type="menu">case 退出:
+uigo("JuOS_Hemo.iyu")
+lan(10)
+end()
+break
+//
+case 删除已经设置⚙️的:
+fd("$JuOS/Config/wallpaper/wp.png",yz_dl_wp)
+fd("$JuOS/Config/wallpaper/wp.gif",yz_dl_wp_2)
+f(yz_dl_wp == "true")
+{
+  fn tw.tw("删除好了")
+  fd("$JuOS/Config/wallpaper/wp.gif.config",yvv)
+}
+else f(yz_dl_wp_2 == "true")
+{
+  fn tw.tw("删除好了")
+  fd("$JuOS/Config/wallpaper/wp.gif.config",yvv)
+}
+else
+{
+  fn tw.tw("没有删除成功，请验证您是否有设置壁纸")
+}
+break</eventItme></UIEventset>

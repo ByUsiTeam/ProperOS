@@ -1,0 +1,26 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+padding=60</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="TextView">
+<ppt>width=-2
+height=-2
+text=橡皮擦大小: 20
+textColor=#ff020202
+textSize=16</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="SeekBar">
+<ppt>width=-1
+height=-2
+max=50
+progress=15
+layout_marginTop=60</ppt>
+<event><eventItme type="onprogresschanged2">ss Dx = st_nS
+ss("橡皮擦大小: "+st_nS,a)
+us(ss.Xd,"text",a)</eventItme></event>
+</View>
+<UIEventset></UIEventset>

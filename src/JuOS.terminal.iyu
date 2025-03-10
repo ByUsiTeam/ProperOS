@@ -1,0 +1,25 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center
+background=black</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="RecyclerView">
+<ppt>width=-1
+height=-2</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">sss 输出框架 =null
+sss 输出框架id =null
+fn lib.wp(1)</eventItme><eventItme type="loadingComplete">s id =3
+fn juos.初始化(id)
+//fn juos.输出("JuOS终端基于 若旅开源 的输出框架二改")
+//JuOS执行
+fn juos.脚本(sss.url)</eventItme></UIEventset>

@@ -1,0 +1,69 @@
+<View id="1" did="0" type="CardView">
+<ppt>width=-1
+height=220dp
+app_CardcornerRadius=15dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+layout_marginTop=5dp</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="7" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=left</ppt>
+<event></event>
+</View>
+<View id="3" did="7" type="LinearLayout">
+<ppt>width=-1
+height=44dp
+orientation=horizontal
+gravity=left|center
+BackgroundColor=#ff1294ff</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="RoundImageView">
+<ppt>width=42dp
+height=42dp
+src=17301567
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="TextView">
+<ppt>width=-1
+height=-1
+text=文本5
+gravity=left|center
+textSize=24sp
+textColor=#ff000000</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=left|center
+BackgroundColor=#ff00fff7</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="TextView">
+<ppt>width=-1
+height=-1
+text=文本9
+textColor=#ff000000
+gravity=left
+layout_marginLeft=5dp
+layout_marginRight=5dp
+layout_marginTop=8dp
+BackgroundColor=#ff00ddff
+textColorLink=#ffff00f7
+autoLink=web
+linksClickable=true</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>
