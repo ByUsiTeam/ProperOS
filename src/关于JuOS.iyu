@@ -32,7 +32,7 @@ background=through</ppt>
 <View id="9" did="7" type="TextView">
 <ppt>width=-1
 height=-1
-text=关于JuOS
+text=关于ProperOS
 typeface=@JuOS/src/ttf/acbt80.ttf
 gravity=left|center
 textSize=25sp
@@ -55,7 +55,8 @@ orientation=vertical</ppt>
 height=-2
 app_CardcornerRadius=5dp
 layout_marginLeft=8dp
-layout_marginRight=8dp</ppt>
+layout_marginRight=8dp
+layout_marginTop=8dp</ppt>
 <event></event>
 </View>
 <View id="27" did="26" type="RelativeLayout">
@@ -64,7 +65,7 @@ height=-1</ppt>
 <event><eventItme type="clicki">
 utw(null,"开源协议相关","开源协议为 Apache-2.0 协议","查看协议","关闭",true,v)
 {
-  hws("https://gitee.com/byusi/openjuos/blob/master/LICENSE")
+  hws("https://gitee.com/byusi/properos/blob/master/LICENSE")
 }
 else
 {
@@ -103,7 +104,7 @@ layout_marginLeft=8dp
 layout_marginRight=8dp
 layout_marginTop=8dp</ppt>
 <event><eventItme type="clicki">fn Lottie.loaddex()
-fr("@JuOS/Lottie/1.json",data)
+fr("@JuOS/Lottie/ByUsi/loading2.json",data)
 fn Lottie.setImageLottie(47,data,-2,true)</eventItme></event>
 </View>
 <View id="45" did="44" type="RelativeLayout">
@@ -182,7 +183,7 @@ layout_marginLeft=5dp</ppt>
 <View id="18" did="16" type="TextView">
 <ppt>width=-2
 height=-2
-text=JuOS软件版本：
+text=ProperOS软件版本：
 textColor=#ff000000
 typeface=@JuOS/src/ttf/acbt80.ttf
 layout_marginLeft=8dp
@@ -280,7 +281,7 @@ layout_marginLeft=5dp</ppt>
 <View id="36" did="34" type="TextView">
 <ppt>width=-2
 height=-2
-text=JuOS下载网站：http://www.pro2.m1.byusi.cn/JuOS%E7%89%88%E6%9C%AC%E5%BA%93/JuOS%E7%89%88%E6%9C%AC%E5%BA%93
+text=JuOS下载网站：null
 textColor=#ff000000
 typeface=@JuOS/src/ttf/acbt80.ttf
 layout_marginLeft=8dp
@@ -294,9 +295,9 @@ textColorLink=#9e0011ff</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">utw(null,"","是否访问：http://www.pro2.m1.byusi.cn/JuOS%E7%89%88%E6%9C%AC%E5%BA%93/JuOS%E7%89%88%E6%9C%AC%E5%BA%93","是","否",false,v)
+<event><eventItme type="clicki">utw(null,"","是否访问：null","是","否",false,v)
 {
-  hws("http://www.pro2.m1.byusi.cn/JuOS%E7%89%88%E6%9C%AC%E5%BA%93/JuOS%E7%89%88%E6%9C%AC%E5%BA%93")
+  hws("null")
 }
 else
 {
@@ -416,7 +417,7 @@ ss("手机厂商："+cs+"\n设备型号："+xh,xxi)
 us(12,"text",xxi)
 //软件版本消息获取
 fr("@version.txt",v)
-ss("JuOS软件版本："+v,v1)
+ss("ProperOS软件版本："+v,v1)
 us(18,"text",v1)
 //滚动布局回弹效果实现
 loadjar("armeabi-v7a/classes.dex",class)
@@ -434,5 +435,5 @@ fr("$JuOS/ICON/ic_accessibility.svg",svg)
 fn lib.svg(svg,41)
 //Lottie动画配置
 fn Lottie.loaddex()
-fr("@JuOS/Lottie/1.json",data)
+fr("@JuOS/Lottie/ByUsi/loading2.json",data)
 fn Lottie.setImageLottie(47,data,-2,true)</eventItme></UIEventset>

@@ -89,11 +89,11 @@ gravity=center</ppt>
 //
 t()
 {
-  s a = "/sdcard/JuOS/img"
+  s a = "/sdcard/ProperOS/img"
   fl(a,false,wj_list)
   for(sc;wj_list)
   {
-    ss("/sdcard/JuOS/img/"+sc,img)
+    ss("/sdcard/ProperOS/img/"+sc,img)
     ula(list_cz,8=img,9=sc)
     ufnsui()
     {
@@ -105,16 +105,9 @@ t()
 }</eventItme><eventItme type="downkey">f(st_kC==4)
 {
   uigo("JuOS_Hemo.iyu")
-  lan(10)
   end()
 }</eventItme><eventItme type="loadingComplete">uycl("#daebeae3",true)
-utb(2)
-
-//上面是设置颜色的
-/.utb("set","leftck",4)
-{
-  end()
-}</eventItme><eventItme type="menu">case 退出:
+utb(2)</eventItme><eventItme type="menu">case 退出:
 uigo("JuOS_Hemo.iyu")
 lan(10)
 end()

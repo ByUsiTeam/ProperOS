@@ -23,7 +23,9 @@ android.permission.VIBRATE
 android.permission.CAMERA
 android.permission.WRITE_EXTERNAL_STORAGE
 android.permission.INTERNET
-android.permission.READ_PHONE_STATE</Permissions>
+android.permission.READ_PHONE_STATE
+android.permission.READ_EXTERNAL_STORAGE
+android.permission.WRITE_EXTERNAL_STORAGE</Permissions>
 <createTime>2024-04-20 10:56:55</createTime>
 <upTime>2024-04-20 10:56:55</upTime>
 <manifest></manifest><application></application>

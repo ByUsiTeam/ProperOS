@@ -2,14 +2,14 @@
   //定义你的公司
   "company": "ByUsi",
   //定义开发项目组
-  "group": "JuOS开发组",
+  "group": "ProPer开发组",
   //定义对接服务器连接，链接最后面不需要“/”
   //"server": "http://api.juos.byusi.cn",
   "server": "http://api.juos.byusi.cn",
   //定义启动的中间显示的logo，支持URL网络链接，但是需要直链
-  "logo": "@JuOS/logo/juos_logo.png",
+  "logo": "@JuOS/logo/properos.png",
   //定义这个OS的名称
-  "system": "JuOS 3.1 LTS",
+  "system": "ProperOS 1.1.0 LTS",
   //定义官网地址
   "website": "https://www.hucl.link"
 }

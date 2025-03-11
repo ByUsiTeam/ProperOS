@@ -555,15 +555,15 @@ s d ="#ff000000"
 s e ="lefttop"
 ngde(a,b,c,d,e,f)
 ngde(a,b,cw,d,e,f_2)
-ngde(a,b,c,d,e,f_3)
+ngde(a,b,c,d,e,f3)
 //加载主题到控制键
-us(27,"background",f)
+us(27,"background",f3)
 us(35,"background",f)
-us(60,"background",f)
+us(60,"background",f3)
 us(66,"background",f)
-us(74,"background",f)
+us(74,"background",f3)
 us(84,"background",f)
-us(90,"background",f)
+us(90,"background",f3)
 //
 loadjar("armeabi-v7a/classes.dex",class)
 cls(class,"com.Mus.ReboundScrollView",mB)

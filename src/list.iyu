@@ -172,9 +172,9 @@ fn lib.utw("home-utw.iyu")</eventItme></event>
 <View id="7" did="0" type="CardView">
 <ppt>width=64dp
 height=64dp
-app_CardcornerRadius=12dp
-app_CardBackgroundColor=#a3ffffff
-layout_marginTop=5dp</ppt>
+app_CardBackgroundColor=#9fffffff
+layout_marginTop=5dp
+app_CardcornerRadius=20dp</ppt>
 <event></event>
 </View>
 <View id="8" did="7" type="RelativeLayout">
@@ -356,8 +356,7 @@ else
 sss uid_mc =uid_mc
 fn lib.utw("home-utw.iyu")</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">/.
-dhas(dh, st_vW, "scaleX", 0.5, 1)
+<UIEventset><eventItme type="loading">dhas(dh, st_vW, "scaleX", 0.5, 1)
 dh(dh, "duration", 500)
 dh(dh, "start")
 

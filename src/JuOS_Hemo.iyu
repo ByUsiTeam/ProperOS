@@ -40,7 +40,7 @@ layout_marginLeft=5dp</ppt>
 <View id="13" did="11" type="TextView">
 <ppt>width=-2
 height=-2
-text=JuOS菜单
+text=ProperOS菜单
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=15sp
 layout_marginLeft=4dp</ppt>

@@ -14,13 +14,13 @@ background=#25252B</ppt>
 <View id="2" did="1" type="RoundImageView">
 <ppt>width=85dp
 height=85dp
-src=@JuOS/logo/juos_logo.png</ppt>
+src=@JuOS/logo/properos.png</ppt>
 <event></event>
 </View>
 <View id="3" did="1" type="TextView">
 <ppt>width=-2
 height=-2
-text=JuOS
+text=ProperOS
 textColor=#ffffffff
 gravity=center
 textSize=16sp
@@ -46,8 +46,6 @@ layout_marginTop=25dp</ppt>
 <UIEventset><eventItme type="loading">//初始化全屏
 fn byusi.ztl()
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
-//加载动画
-//fn lib.启动_l()
 //下载器
 fn lib.下载器()
 //
@@ -63,17 +61,10 @@ else
   fw("$System/Config/Qddh.sys","false")
 }
 //
-//加载版本验证文件的内容
+//加载版本验证文件的内容
 fr("@version.txt",st)
 fr("$JuOS/v/v.cfg",v)
 //验证引导
-fe("$System/Config/init_fb.sys",si_yz)
-f(si_yz == "true")
-{
-  //引入引导设置
-  fr("$System/Config/init_fb.sys",si_fb)
-}
-//拉屎吧,不好改一点
 t()
 {
   stop(4000)
@@ -106,14 +97,6 @@ t()
           end()
         }
       }
-      else f(yz_mm_s == "true")
-      {
-        sss iyu ="JuOS_Hemo.iyu"
-        sss sz_for_pd ="1"
-        uigo("关于密码.iyu")
-        lan(0)
-        end()
-      }
     }
   }
 }</eventItme><eventItme type="downkey">//锁定返回
@@ -123,8 +106,6 @@ f(st_kC==4)
 }</eventItme><eventItme type="loadingComplete">//zip工具
 loadjar("zip",dex)
 cls(dex,"hy.io.压缩扩展$iApp",sss.zip4j)
-//测试数据库
-fn lib.data()
 //设置版本号
 fr("@version.txt",v)
 sss v =v

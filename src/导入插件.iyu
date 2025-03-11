@@ -47,7 +47,7 @@ call(rs,"mlua","cmd.shell",shell)
 //这个不用我写注释吧,这么简单的内容
 t()
 {
-  s a = "/sdcard/JuOS"
+  s a = "/sdcard/ProperOS"
   fl(a,false,wj_list)
   for(sc;wj_list)
   {
@@ -60,7 +60,7 @@ t()
     else f(sc *? ".jupk")
     {
       time(4,time)
-      ss("/sdcard/JuOS/"+sc,ns)
+      ss("/sdcard/ProperOS/"+sc,ns)
       s TAM ="$JuOS/.temp/App/InstallAppLog.f"
       fuz(ns,"InstallAppLog.f","$JuOS/.temp/App",ayz)
       fr(TAM,tamnr)
@@ -80,11 +80,11 @@ t()
     }
     else f(sc *? ".png")
     {
-      ss("/sdcard/JuOS/"+sc,img)
+      ss("/sdcard/ProperOS/"+sc,img)
     }
     else f(sc *? "pg")
     {
-      ss("/sdcard/JuOS/"+sc,img)
+      ss("/sdcard/ProperOS/"+sc,img)
     }
     else f(sc *? ".zip" || sc *? ".7z" || ".rar")
     {

@@ -140,7 +140,7 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">hws("https://gitee.com/byusi/openjuos")
+<event><eventItme type="clicki">hws("https://gitee.com/byusi/properos")
 fn tw.tw("使用本项目请保留开源协议")</eventItme></event>
 </View>
 <View id="46" did="10" type="RelativeLayout">
@@ -201,7 +201,7 @@ layout_marginLeft=5dp</ppt>
 <View id="44" did="42" type="TextView">
 <ppt>width=-2
 height=-2
-text=关于JuOS
+text=关于ProperOS
 textColor=#ffffffff
 typeface=serif
 textSize=15sp

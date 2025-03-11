@@ -61,7 +61,7 @@ src=@fail.xml</ppt>
 <View id="10" did="8" type="TextView">
 <ppt>width=-2
 height=-2
-text=看到我了，那么检查一下\n\n/sdcard/JuOS/qddh\n\n目录里是否存在启动动画的压缩包 .zip 文件\n当前页面不支持不支持刷新
+text=看到我了，那么检查一下\n\n/sdcard/ProperOS/qddh\n\n目录里是否存在启动动画的压缩包 .zip 文件\n当前页面不支持不支持刷新
 textColor=#ffffffff
 typeface=@src/ttf/acbt80.ttf
 textSize=34sp
@@ -70,7 +70,7 @@ gravity=center</ppt>
 </View>
 <UIEventset><eventItme type="loading">fn lib.wp2(1,5)</eventItme><eventItme type="loadingComplete">t()
 {
-  s a = "/sdcard/JuOS/qddh"
+  s a = "/sdcard/ProperOS/qddh"
   fl(a,false,wj_list)
   for(sc;wj_list)
   {

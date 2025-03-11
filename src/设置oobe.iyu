@@ -14,22 +14,27 @@ gravity=center</ppt>
 <View id="3" did="2" type="RoundImageView">
 <ppt>width=85dp
 height=85dp
-src=@JuOS/logo/juos_logo.png</ppt>
+src=@JuOS/logo/properos.png</ppt>
 <event></event>
 </View>
 <View id="5" did="2" type="CardView">
 <ppt>width=-2
 height=-2
-layout_marginTop=5dp</ppt>
+layout_marginTop=5dp
+app_CardcornerRadius=15dp</ppt>
 <event></event>
 </View>
 <View id="4" did="5" type="TextView">
-<ppt>width=-2
-height=45dp
-text=正在部署最新内容...\nJuOS欢迎您的使用
+<ppt>width=-1
+height=-1
+text=ProperOS欢迎您的使用
 textSize=25sp
 typeface=@JuOS/src/ttf/acbt80.ttf
-gravity=center</ppt>
+gravity=center
+layout_marginLeft=5dp
+layout_marginRight=5dp
+layout_marginTop=5dp
+layout_marginBottom=5dp</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">//配置全屏
@@ -50,19 +55,19 @@ t()
       {
         ufnsui()
         {
-          us(4,"text","正在配置更新.")
+          us(4,"text","ProperOS正在配置更新.")
           syso("1")
         }
         stop(500)
         ufnsui()
         {
-          us(4,"text","正在配置更新..")
+          us(4,"text","ProperOS正在配置更新..")
           syso("2")
         }
         stop(500)
         ufnsui()
         {
-          us(4,"text","正在配置更新...")
+          us(4,"text","ProperOS正在配置更新...")
           syso("3")
         }
         stop(500)
@@ -86,30 +91,11 @@ t()
   fw("$JuOS/hemo/桌面/设置.app","System=True=System\nUi=设置.iyu=Ui\nAppTb=%@JuOS/ICON/ic_app_icon_settings.png=AppTb\nEnd=false=End")
   fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
   fw("$JuOS/hemo/桌面/JuOS音乐.app","System=True=System\nUi=juos_music.iyu=Ui\nAppTb=$sys/JuOS/logo/MusicPlayerIcon.png=AppTb\nEnd=false=End")
-  fw("$JuOS/hemo/桌面/520World.app","System=True=System\nUi=system_start.iyu=Ui\nAppTb=$sys/JuOS/logo/juos_logo.png=AppTb\nEnd=false=End\Url=https://520world.byusi.cn=Url")
   //fw("$JuOS/hemo/桌面/计算器.app","System=True=System\nUi=system_start.iyu=Ui\nAppTb=$sys/JuOS/html/jsj/jsj.png=AppTb\nEnd=false=End\nUrl=@JuOS/html/jsj/index.html=Url")
-  fw("$JuOS/hemo/桌面/JuOS旧应用开发.app","System=True=System\nUi=system_start.iyu=Ui\nAppTb=$sys/JuOS/logo/juos_logo.png=AppTb\nEnd=false=End\Url=http://520world.byusi.cn/e/20.html=Url")
-  fw("$JuOS/hemo/桌面/JuOS应用开发.app","System=True=System\nUi=system_start.iyu=Ui\nAppTb=$sys/JuOS/logo/juos_logo.png=AppTb\nEnd=false=End\nUrl=http://520world.byusi.cn/e/21.html=Url")
   //
   fc("@JuOS/App/HASH获取工具.jush","$JuOS/hemo/HASH获取工具.jush",yz)
   fn lib.install("@JuOS/App/LitCalculator.jupk")
   //删除之前的系统应用索引
-  fd("$JuOS/hemo/桌面/设置壁纸",yz)
-  fd("$JuOS/hemo/桌面/设置",yz)
-  fd("$JuOS/hemo/桌面/导入插件",yz)
-  fd("$JuOS/hemo/桌面/画板",yz)
-  fd("$JuOS/hemo/桌面/终端",yz)
-  fd("$JuOS/hemo/桌面/BingAI",yz)
-  fd("$JuOS/hemo/桌面/公告.app",yz)
-  fd("$JuOS/hemo/桌面/官网.app",yz)
-  fd("$JuOS/hemo/桌面/相机.app",yz)
-  fd("$JuOS/hemo/桌面/Sot通讯.app",yz)
-  fd("$JuOS/hemo/桌面/飓云永不停歇站.app",yz)
-  fd("$JuOS/hemo/桌面/指纹测试.app",yz)
-  fd("$JuOS/hemo/桌面/终端.app",yz)
-  fd("$JuOS/hemo/桌面/画板.app",yz)
-  fd("$JuOS/hemo/桌面/BingAI.app",yz)
-  fd("$JuOS/hemo/桌面/官方网站.app",yz)
   //零时
   fd("$JuOS/hemo/桌面/飓云盘.app",yz)
   fd("$JuOS/hemo/桌面/通知信息流.app",yz)
