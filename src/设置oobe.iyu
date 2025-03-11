@@ -117,6 +117,7 @@ t()
   fc("@JuOS/html/MusicPlayer/index.html","$System/yybfq/index.html",yz_yybfq)
   //配置文本预览器
   fc("@JuOS/html/TextPreviewer/TextPreviewer.html","$System/wbylq/index.html",yz_wbylq)
+  fuzs("@JuOS/src/yybfq/jc.zip","$System/yybfq",yc)
   //自动检查更新配置
   fe("$System/Config/Update.sys",u)
   f(u == "false")

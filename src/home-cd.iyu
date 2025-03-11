@@ -158,7 +158,7 @@ src=@tip.xml</ppt>
 <View id="19" did="17" type="TextView">
 <ppt>width=-2
 height=-2
-text=关闭 JuOS
+text=关闭 ProperOS
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=24sp</ppt>
 <event></event>

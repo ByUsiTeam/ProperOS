@@ -22,20 +22,47 @@ gravity=top|center
 background=through</ppt>
 <event></event>
 </View>
+<View id="18" did="3" type="Toolbar">
+<ppt>width=-1
+height=55dp
+visibility=visible</ppt>
+<event></event>
+</View>
 <View id="11" did="3" type="LinearLayout">
 <ppt>width=-1
 height=55dp
 orientation=horizontal
-gravity=left|center</ppt>
+gravity=left|center
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="12" did="11" type="ImageButton">
 <ppt>width=45dp
 height=45dp
-src=17301544
+src=17301611
 background=through
-layout_marginLeft=5dp</ppt>
+layout_marginLeft=5dp
+visibility=gone</ppt>
 <event><eventItme type="clicki">fn lib.utw("home-cd.iyu")</eventItme></event>
+</View>
+<View id="16" did="11" type="FloatingActionButton">
+<ppt>width=45dp
+height=45dp
+src=17301611
+background=through
+layout_marginLeft=5dp
+BackgroundColor=#9fffffff
+adjustViewBounds=true</ppt>
+<event><eventItme type="clicki">fn lib.utw("home-cd.iyu")</eventItme><eventItme type="press">
+ug(18,"visibility",pz)
+f(pz == "gone")
+{
+  us(18,"visibility","visible")
+}
+else
+{
+  us(18,"visibility","gone")
+}</eventItme></event>
 </View>
 <View id="13" did="11" type="TextView">
 <ppt>width=-2
@@ -147,4 +174,19 @@ t()
 //
 s id =1
 fn lib.wp(id)
-//fn byusi.ztl()</eventItme></UIEventset>
+//fn byusi.ztl()
+utb(18)</eventItme><eventItme type="menu">
+case 设置:
+uigo("设置.iyu")
+break
+
+case 菜单:
+fn lib.utw("home-cd.iyu")
+break
+
+case 时间:
+utw(null,"","time.iyu","确定",false,v)
+{
+  endutw()
+}
+break</eventItme></UIEventset>

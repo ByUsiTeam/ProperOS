@@ -2,10 +2,9 @@ fn hemo()
 t()
 {
   s a = "$JuOS/hemo/桌面"
-  fl(a,false,wj_list)
-  for(sc;wj_list)
+  fl(a,false,home_list)
+  for(sc;home_list)
   {
-    //syso(sc)
     f(sc *? ".app")
     {
       ss("$JuOS/hemo/桌面/"+sc,ml)

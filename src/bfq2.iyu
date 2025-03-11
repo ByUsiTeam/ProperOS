@@ -22,7 +22,7 @@ elevation=8dp
 <View id="17" did="16" type="TextView">
 <ppt>width=-2
 height=-2
-text=视频播放器
+text=ProperOS视频播放器
 typeface=normal
 textSize=16sp</ppt>
 <event></event>

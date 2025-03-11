@@ -1,6 +1,6 @@
 <View id="1" did="0" type="RelativeLayout">
 <ppt>width=-1
-height=80dp
+height=55dp
 background=through</ppt>
 <event></event>
 </View>

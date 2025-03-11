@@ -203,10 +203,9 @@ gravity=bottom|center</ppt>
 <event></event>
 </View>
 <View id="14" did="12" type="TextView">
-<ppt>width=-1
-height=-1
+<ppt>width=-2
+height=-2
 text=文本14
-//textColor=#ff4e66ff
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=8sp
 gravity=center
@@ -214,7 +213,8 @@ singleLine=true
 ellipsize=end
 layout_marginLeft=4dp
 layout_marginRight=4dp
-gravity=bottom|center</ppt>
+gravity=bottom|center
+layout_gravity=bottom|center</ppt>
 <event></event>
 </View>
 <View id="15" did="8" type="Button">

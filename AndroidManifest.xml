@@ -2,8 +2,8 @@
 <title>ProperOS</title>
 <icon>icon.png</icon>
 <packageName>miao.byusi.properos</packageName>
-<versionName>1.1.0</versionName>
-<versionint>1100</versionint>
+<versionName>1.1.2</versionName>
+<versionint>1120</versionint>
 <sdk>26</sdk>
 <yuv>3</yuv>
 
@@ -25,7 +25,8 @@ android.permission.WRITE_EXTERNAL_STORAGE
 android.permission.INTERNET
 android.permission.READ_PHONE_STATE
 android.permission.READ_EXTERNAL_STORAGE
-android.permission.WRITE_EXTERNAL_STORAGE</Permissions>
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.INTERNET</Permissions>
 <createTime>2024-04-20 10:56:55</createTime>
 <upTime>2024-04-20 10:56:55</upTime>
 <manifest></manifest><application></application>
