@@ -9,6 +9,32 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
+<View id="6" did="2" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="ImageButton">
+<ppt>width=44dp
+height=44dp
+src=17301533
+background=through
+layout_marginLeft=8dp</ppt>
+<event><eventItme type="clicki">uigo("JuOS_Hemo.iyu")
+end()</eventItme></event>
+</View>
+<View id="8" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本8
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=16sp
+layout_marginLeft=10dp</ppt>
+<event></event>
+</View>
 <View id="4" did="2" type="SwipeRefreshLayout">
 <ppt>width=-1
 height=-1
@@ -22,20 +48,34 @@ height=-1</ppt>
 </View>
 <UIEventset><eventItme type="loading">fn lib.wp(1)
 //
-uycl("#e84f78ff",true)</eventItme><eventItme type="loadingComplete">ss(sss.server+"/software",ser)
+uycl("#e84f78ff",true)</eventItme><eventItme type="loadingComplete">s url ="https://gitee.com/byusi/properos-app/raw/master/index.json"
 t()
 {
-  hs(ser,url)
-  fr("@JuOS/json/list.json",json)
-  sr(json,"{data}",url,i1)
-  json(i1,j1)
+  hs(url,url)
+  syso(url)
+  json(url,j1)
+  syso(j1)
   f(j1 != null)
   {
+    json(j1,"get","title",title)
     ufnsui()
     {
-      utw(null,"应用市场应用列表数据",j1,"确定",true,v)
+      us(8,"text",title)
+    }
+    json(j1,"list","list",list)
+    json(list,"size",size)
+    w(size &gt; 0)
+    {
+      s-(1,size)
+      json(list,"data",size,item)
+      json(item,"get","title",title)
+      json(item,"get","url",url)
+      syso(url)
+      syso(title)
+      ula(yylist,4=title,5=url)
+      ufnsui()
       {
-        endutw()
+        uls(5,yylist,"yysc-list.iyu",-2,-2)
       }
     }
   }
@@ -43,7 +83,7 @@ t()
   {
     ufnsui()
     {
-      fn tw.tw("无法连接服务器，数据获取有问题")
+      fn tw.tw("无法连接到 Gitee，数据获取有问题")
     }
   }
 }</eventItme></UIEventset>

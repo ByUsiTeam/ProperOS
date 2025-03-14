@@ -1,0 +1,56 @@
+<View id="7" did="0" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+app_CardcornerRadius=6dp</ppt>
+<event></event>
+</View>
+<View id="1" did="7" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp
+adjustViewBounds=true</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="TextView">
+<ppt>width=-1
+height=-1
+text=文本4
+typeface=@JuOS/src/ttf/acbt80.ttf
+gravity=left|center
+textSize=15sp
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="5" did="1" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本5
+textSize=1sp</ppt>
+<event></event>
+</View>
+<View id="6" did="1" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ulag(st_vW,5,uid_mc)
+syso(uid_mc)
+tws(v,uid_mc,0)</eventItme></event>
+</View>
+<UIEventset></UIEventset>

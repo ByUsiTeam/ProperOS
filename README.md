@@ -2,7 +2,7 @@
 
 - 基于现在OpenJuOS**v3.5**开发
   [![ByUsi/OpenJuOS](https://gitee.com/byusi/openjuos/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/byusi/openjuos)
-- **ProperOS**版本：**v1.1.2**
+- **ProperOS**版本：**v1.1.3**
 
 ## 基础简介
 1. 基于手机应用 `iApp` 开发的模拟操作系统应用。
@@ -18,8 +18,8 @@
 2. 压缩所有文件
    ```bash
    cd properos
-   zip -r 随便写.iApp .
+   zip -r ProperOS.iApp .
    ```
-3. 将 `随便写.iApp` 导入到手机，并且确保你手机上已经安装了 `iApp` 应用，使用 `MT管理器` 打开 `随便写.iApp` 在弹出的界面中选择 **类型** --> **全部** --> **iApp** 就可以正常的导入此项目。
+3. 将 `ProperOS.iApp` 导入到手机，并且确保你手机上已经安装了 `iApp` 应用，使用 `MT管理器` 打开 `ProperOS.iApp` 在弹出的界面中选择 **类型** --> **全部** --> **iApp** 就可以正常的导入此项目。
 
 4. 这样就可以修改此项目或更改此项目的部分内容并且分发，注意，在分发的过程中请注明原项目地址，原项目地址需要指定为该仓库：[https://gitee.com/byusi/properos](https://gitee.com/byusi/properos)
