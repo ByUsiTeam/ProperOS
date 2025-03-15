@@ -51,6 +51,15 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">ulag(st_vW,5,uid_mc)
 syso(uid_mc)
-tws(v,uid_mc,0)</eventItme></event>
+//tws(v,uid_mc,0)
+f(uid_mc != "null")
+{
+  sss yysc-url =uid_mc
+  uigo("yysc-xq.iyu")
+}
+else
+{
+  fn tw.tw2("请检查应用是否正常",2)
+}</eventItme></event>
 </View>
 <UIEventset></UIEventset>

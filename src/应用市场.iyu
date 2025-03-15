@@ -69,10 +69,18 @@ t()
       s-(1,size)
       json(list,"data",size,item)
       json(item,"get","title",title)
+      json(item,"get","icon",icon)
       json(item,"get","url",url)
       syso(url)
       syso(title)
-      ula(yylist,4=title,5=url)
+      f(icon != "null")
+      {
+        ula(yylist,3=icon,4=title,5=url)
+      }
+      else
+      {
+        ula(yylist,3="@fail.xml",4=title,5=url)
+      }
       ufnsui()
       {
         uls(5,yylist,"yysc-list.iyu",-2,-2)

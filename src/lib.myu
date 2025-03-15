@@ -43,7 +43,7 @@ fn 下载器()
 //下载产生的临时文件目录
 s a = "/sdcard/下载/ProperOS/.temp"
 //下载至保存的目录
-s b = "/sdcard/ProperOS/下载"
+s b = "/sdcard/ProperOS/"
 //允许同时下载任务数量
 s c = 2
 //每个任务开启线程数量
