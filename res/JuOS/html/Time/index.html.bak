@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>线性时钟</title>
+    <style>
+        .clock-container {
+            position: relative;
+            width: 90%;
+            max-width: 300px;
+            height: 200px;
+            margin: 50px auto;
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .time-block {
+            position: relative;
+            height: 40px;
+            margin: 15px 0;
+        }
+
+        .time-bar {
+            position: absolute;
+            left: 60px;
+            height: 100%;
+            background: #ddd;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+
+        /* 秒数条取消过渡动画 */
+        #second-bar {
+            transition: none;
+        }
+
+        .time-number {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            min-width: 30px; /* 防止数字跳动 */
+        }
+
+        #hour-bar { background: #ff6b6b; }
+        #minute-bar { background: #4ecdc4; }
+        #second-bar { background: #45b7d1; }
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <div class="time-block">
+            <div class="time-number" id="hour"></div>
+            <div class="time-bar" id="hour-bar"></div>
+        </div>
+        <div class="time-block">
+            <div class="time-number" id="minute"></div>
+            <div class="time-bar" id="minute-bar"></div>
+        </div>
+        <div class="time-block">
+            <div class="time-number" id="second"></div>
+            <div class="time-bar" id="second-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        // 浏览器兼容性处理
+        function padNumber(num) {
+            return num.toString().padStart 
+                ? num.toString().padStart(2, '0') 
+                : (num < 10 ? '0' + num : num);
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const container = document.querySelector('.clock-container');
+            
+            // 动态计算可用宽度（容器宽度 - 左侧数字区域 - 左右边距）
+            const maxWidth = container.offsetWidth - 80; 
+
+            // 获取时间
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            // 更新数字显示
+            document.getElementById('hour').textContent = padNumber(hours);
+            document.getElementById('minute').textContent = padNumber(minutes);
+            document.getElementById('second').textContent = padNumber(seconds);
+            
+            // 更新进度条
+            const hourBar = document.getElementById('hour-bar');
+            const minuteBar = document.getElementById('minute-bar');
+            const secondBar = document.getElementById('second-bar');
+            
+            hourBar.style.width = (hours / 24 * maxWidth) + 'px';
+            minuteBar.style.width = (minutes / 60 * maxWidth) + 'px';
+            secondBar.style.width = (seconds / 60 * maxWidth) + 'px';
+        }
+
+        // 初始化立即执行
+        updateClock();
+        // 每秒更新（注意: 实际误差可能累积，生产环境建议用requestAnimationFrame）
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>

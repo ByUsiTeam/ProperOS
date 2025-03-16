@@ -13,7 +13,8 @@ orientation=vertical</ppt>
 <ppt>width=-1
 height=55dp
 orientation=horizontal
-gravity=left|center</ppt>
+gravity=left|center
+background=#ff5849ff</ppt>
 <event></event>
 </View>
 <View id="7" did="6" type="ImageButton">
@@ -29,7 +30,7 @@ end()</eventItme></event>
 <ppt>width=-2
 height=-2
 text=文本8
-textColor=#ff000000
+textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=16sp
 layout_marginLeft=10dp</ppt>
@@ -39,16 +40,7 @@ layout_marginLeft=10dp</ppt>
 <ppt>width=-1
 height=-1
 ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
-<event></event>
-</View>
-<View id="5" did="4" type="RecyclerView">
-<ppt>width=-1
-height=-1</ppt>
-<event></event>
-</View>
-<UIEventset><eventItme type="loading">fn lib.wp(1)
-//
-uycl("#e84f78ff",true)</eventItme><eventItme type="loadingComplete">s url ="https://gitee.com/byusi/properos-app/raw/master/index.json"
+<event><eventItme type="onrefresh">s url ="https://gitee.com/byusi/properos-app/raw/master/index.json"
 t()
 {
   hs(url,url)
@@ -68,14 +60,14 @@ t()
     {
       s-(1,size)
       json(list,"data",size,item)
-      json(item,"get","title",title)
+      json(item,"get","title",title2)
       json(item,"get","icon",icon)
       json(item,"get","url",url)
       syso(url)
       syso(title)
       f(icon != "null")
       {
-        ula(yylist,3=icon,4=title,5=url)
+        ula(yylist,3=icon,4=title2,5=url)
       }
       else
       {
@@ -83,6 +75,64 @@ t()
       }
       ufnsui()
       {
+        us(4,"refreshing","false")
+        uls(5,yylist,"yysc-list.iyu",-2,-2)
+      }
+    }
+  }
+  else
+  {
+    ufnsui()
+    {
+      fn tw.tw("无法连接到 Gitee，数据获取有问题")
+    }
+  }
+}</eventItme></event>
+</View>
+<View id="5" did="4" type="RecyclerView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn lib.wp(1)
+//
+uycl("#e84f78ff",true)</eventItme><eventItme type="loadingComplete">s url ="https://gitee.com/byusi/properos-app/raw/master/index.json"
+us(4,"refreshing","true")
+t()
+{
+  hs(url,url)
+  syso(url)
+  json(url,j1)
+  syso(j1)
+  f(j1 != null)
+  {
+    json(j1,"get","title",title)
+    ufnsui()
+    {
+      us(8,"text",title)
+    }
+    json(j1,"list","list",list)
+    json(list,"size",size)
+    w(size &gt; 0)
+    {
+      s-(1,size)
+      json(list,"data",size,item)
+      json(item,"get","title",title2)
+      json(item,"get","icon",icon)
+      json(item,"get","url",url)
+      syso(url)
+      syso(title)
+      f(icon != "null")
+      {
+        ula(yylist,3=icon,4=title2,5=url)
+      }
+      else
+      {
+        ula(yylist,3="@fail.xml",4=title,5=url)
+      }
+      ufnsui()
+      {
+        us(4,"refreshing","false")
         uls(5,yylist,"yysc-list.iyu",-2,-2)
       }
     }

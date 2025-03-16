@@ -1,96 +1,207 @@
- 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>线性时钟</title>
+    <title>智能动画时钟</title>
     <style>
+        /* 基础容器样式 */
         .clock-container {
-            position: relative;
-            width: 300px;
-            height: 200px;
+            width: 90%;
+            max-width: 400px;
             margin: 50px auto;
-            background: #f0f0f0;
-            border-radius: 10px;
-            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 25px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        /* 时间块布局 */
         .time-block {
-            position: relative;
-            height: 40px;
-            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            height: 55px;
+            margin: 12px 0;
+            gap: 15px;
         }
 
-        .time-bar {
-            position: absolute;
-            left: 60px;
-            height: 100%;
-            background: #ddd;
-            border-radius: 5px;
-            transition: width 0.5s ease;
-        }
-
+        /* 数字显示样式 */
         .time-number {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-family: Arial, sans-serif;
-            font-weight: bold;
+            flex: 0 0 50px;
+            text-align: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #2c3e50;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
-        #hour-bar { background: #ff6b6b; }
-        #minute-bar { background: #4ecdc4; }
-        #second-bar { background: #45b7d1; }
+        /* 进度条容器 */
+        .time-bar-container {
+            flex: 1;
+            height: 34px;
+            background: #ecf0f1;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 进度条基础样式 */
+        .time-bar {
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* 分层动画策略 */
+        #hour-bar {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); /* 缓慢平滑动画 */
+        }
+
+        #minute-bar {
+            background: linear-gradient(135deg, #4ecdc4 0%, #88dacf 100%);
+            transition: width 0.8s ease-in-out; /* 中等速度 */
+        }
+
+        #second-bar {
+            background: linear-gradient(135deg, #45b7d1 0%, #6dc9e0 100%);
+            transition: none; /* 实时更新 */
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 480px) {
+            .clock-container {
+                padding: 20px;
+                margin: 30px auto;
+            }
+            
+            .time-block {
+                height: 45px;
+                margin: 10px 0;
+                gap: 12px;
+            }
+            
+            .time-number {
+                flex: 0 0 45px;
+                font-size: 1.1rem;
+            }
+            
+            .time-bar-container {
+                height: 28px;
+            }
+        }
+
+        /* 超小屏幕优化 */
+        @media (max-width: 360px) {
+            .clock-container {
+                border-radius: 8px;
+            }
+            
+            .time-number {
+                flex: 0 0 40px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="clock-container">
         <div class="time-block">
-            <div class="time-number" id="hour">12</div>
-            <div class="time-bar" id="hour-bar"></div>
+            <div class="time-number" id="hour">00</div>
+            <div class="time-bar-container">
+                <div class="time-bar" id="hour-bar"></div>
+            </div>
         </div>
         <div class="time-block">
             <div class="time-number" id="minute">00</div>
-            <div class="time-bar" id="minute-bar"></div>
+            <div class="time-bar-container">
+                <div class="time-bar" id="minute-bar"></div>
+            </div>
         </div>
         <div class="time-block">
             <div class="time-number" id="second">00</div>
-            <div class="time-bar" id="second-bar"></div>
+            <div class="time-bar-container">
+                <div class="time-bar" id="second-bar"></div>
+            </div>
         </div>
     </div>
 
     <script>
-        function updateClock() {
+        // 兼容性处理函数
+        const padNumber = num => num.toString().padStart(2, '0');
+
+        // 动画控制变量
+        let lastUpdate = 0;
+        let rafId = null;
+        let isFirstRun = true;
+
+        // 主更新函数
+        function updateClock(forceUpdate = false) {
             const now = new Date();
-            
-            // 获取时间
             const hours = now.getHours();
             const minutes = now.getMinutes();
             const seconds = now.getSeconds();
-            
-            // 更新数字显示
-            document.getElementById('hour').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minute').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('second').textContent = seconds.toString().padStart(2, '0');
-            
-            // 计算进度条长度（相对布局）
-            const hourBar = document.getElementById('hour-bar');
-            const minuteBar = document.getElementById('minute-bar');
-            const secondBar = document.getElementById('second-bar');
-            
-            // 计算比例（小时用24小时制，分钟和秒用60进制）
-            hourBar.style.width = (hours / 24 * 200) + 'px';
-            minuteBar.style.width = (minutes / 60 * 200) + 'px';
-            secondBar.style.width = (seconds / 60 * 200) + 'px';
+            const currentTime = performance.now();
+
+            // 智能更新策略
+            const shouldUpdate = forceUpdate || 
+                seconds === 0 ||  // 整分钟强制更新
+                currentTime - lastUpdate >= 990; // 误差补偿
+
+            if (shouldUpdate) {
+                // 更新数字显示
+                document.getElementById('hour').textContent = padNumber(hours);
+                document.getElementById('minute').textContent = padNumber(minutes);
+                document.getElementById('second').textContent = padNumber(seconds);
+
+                // 同步进度条
+                document.getElementById('hour-bar').style.width = `${(hours / 24) * 100}%`;
+                document.getElementById('minute-bar').style.width = `${(minutes / 60) * 100}%`;
+                document.getElementById('second-bar').style.width = `${(seconds / 60) * 100}%`;
+
+                // 首次运行后取消标志
+                if (isFirstRun) {
+                    isFirstRun = false;
+                    // 首次渲染后二次更新确保布局稳定
+                    setTimeout(() => updateClock(true), 100);
+                }
+
+                lastUpdate = currentTime;
+            }
+
+            // 保持动画循环
+            rafId = requestAnimationFrame(() => updateClock());
         }
 
-        // 初始更新
-        updateClock();
-        // 每秒更新一次
-        setInterval(updateClock, 1000);
+        // 初始化
+        updateClock(true);
+
+        // 窗口尺寸变化处理
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            // 取消待处理动画和计时器
+            cancelAnimationFrame(rafId);
+            clearTimeout(resizeTimer);
+            
+            // 防抖处理
+            resizeTimer = setTimeout(() => {
+                updateClock(true);
+            }, 200);
+        });
+
+        // 页面可见性处理
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                updateClock(true);
+            }
+        });
+
+        // 页面加载完成后二次确认
+        window.addEventListener('load', () => {
+            setTimeout(() => updateClock(true), 300);
+        });
     </script>
 </body>
 </html>
- 

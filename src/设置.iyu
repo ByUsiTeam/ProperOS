@@ -462,7 +462,7 @@ background=through</ppt>
 </View>
 <View id="96" did="20" type="CardView">
 <ppt>width=-1
-height=360dp
+height=264dp
 app_CardcornerRadius=8dp
 layout_marginTop=5dp
 layout_marginLeft=5dp
