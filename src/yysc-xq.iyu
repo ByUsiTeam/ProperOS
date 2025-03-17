@@ -211,8 +211,9 @@ text=文本18
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=12sp
 layout_marginLeft=10dp
-autoLink=true
-textIsSelectable=true</ppt>
+textIsSelectable=true
+textColorLink=#ff5849ff
+autoLink=web</ppt>
 <event></event>
 </View>
 <View id="22" did="17" type="CardView">
