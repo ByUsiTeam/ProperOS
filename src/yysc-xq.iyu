@@ -80,7 +80,7 @@ gravity=center</ppt>
 <View id="9" did="8" type="TextView">
 <ppt>width=-2
 height=-2
-text=文本9
+text=应用名
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=18sp</ppt>
 <event></event>
@@ -88,7 +88,7 @@ textSize=18sp</ppt>
 <View id="10" did="8" type="TextView">
 <ppt>width=-2
 height=-2
-text=文本10
+text=开发者
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=10sp
 layout_marginTop=6dp</ppt>
@@ -123,15 +123,23 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
-<View id="13" did="17" type="NestedScrollView">
+<View id="59" did="17" type="CardView">
 <ppt>width=-1
-height=120dp</ppt>
+height=145dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="13" did="59" type="NestedScrollView">
+<ppt>width=-1
+height=-1</ppt>
 <event></event>
 </View>
 <View id="18" did="13" type="TextView">
 <ppt>width=-2
 height=-2
-text=文本18
+text=简介详情
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=12sp
 layout_marginLeft=10dp
@@ -230,7 +238,8 @@ adjustViewBounds=true</ppt>
 <View id="42" did="33" type="CardView">
 <ppt>width=124dp
 height=250dp
-layout_marginLeft=5dp</ppt>
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
 <event></event>
 </View>
 <View id="43" did="42" type="ImageView">
@@ -249,7 +258,7 @@ gravity=bottom</ppt>
 </View>
 <View id="47" did="46" type="CardView">
 <ppt>width=-1
-height=164dp
+height=142dp
 layout_marginBottom=5dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
@@ -266,6 +275,23 @@ height=-1</ppt>
 height=-1
 orientation=vertical
 gravity=center</ppt>
+<event></event>
+</View>
+<View id="60" did="49" type="CardView">
+<ppt>width=-1
+height=24dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=8dp
+layout_marginBottom=8dp</ppt>
+<event></event>
+</View>
+<View id="61" did="60" type="ProgressBar">
+<ppt>width=-1
+height=-1
+max=100
+progress=0
+BackgroundColor=#ff5849ff</ppt>
 <event></event>
 </View>
 <View id="51" did="49" type="CardView">
@@ -291,8 +317,32 @@ s data = "ByUsi-ProperOS-App-D"
 hdda(durl,name,data,v)
 fn tw.tw("下载完成的话请返回一下进行应用安装")
 us(51,"visibility","gone")
-us(56,"visibility","visible")
-hdduigo()</eventItme></event>
+//hdduigo()
+t()
+{
+  w(jsq != "1")
+  {
+    hddg(v,"downloadpercentage",xzjd)
+    f(xzjd &lt; "100")
+    {
+      ufnsui()
+      {
+        us(60,"visibility","visible")
+        us(61,"progress",xzjd)
+      }
+    }
+    else
+    {
+      ufnsui()
+      {
+        us(60,"visibility","visible")
+        us(61,"progress",xzjd)
+        us(56,"visibility","visible")
+      }
+      s jsq ="1"
+    }
+  }
+}</eventItme></event>
 </View>
 <View id="56" did="49" type="CardView">
 <ppt>width=120dp
@@ -365,7 +415,8 @@ else
 <View id="58" did="1" type="SwipeRefreshLayout">
 <ppt>width=-1
 height=-1
-ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
+ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343
+visibility=gone</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">us(58,"refreshing","true")

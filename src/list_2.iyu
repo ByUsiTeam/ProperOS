@@ -37,7 +37,7 @@ syso(uid_mc)
 //
 f(uid_mc *? ".jupk")
 {
-  ss("/sdcard/JuOS/"+uid_mc,ml)
+  ss("/sdcard/ProperOS/"+uid_mc,ml)
   syso(ml)
   t()
   {
@@ -70,27 +70,9 @@ f(uid_mc *? ".jupk")
     }
   }
 }
-/.
-else f(uid_mc *? ".mipk")
-{
-  ss("/sdcard/JuOS/"+uid_mc,mipk_src)
-  t()
-  {
-    fuz(uid_mc,"InstallAppLog.mipk.json","$temp/.AppLog",mipk_src_1)
-    fr("$.temp/.AppLog/InstallAppLog.mipk.json",src_nr)
-    //
-    json(txt,jo)
-    syso(jo)
-    json(jo,"list","InstallXX",list)
-    json(list,"size",size)
-    json(list,"data",size,item)
-    json(item,"get","SrcLogo",src_logo)
-  }
-}
-./
 else
 {
-  ss("/sdcard/JuOS/"+uid_mc,ml)
+  ss("/sdcard/ProperOS/"+uid_mc,ml)
   ss("$JuOS/hemo/桌面/"+uid_mc,ml_2)
   fc(ml,ml_2,yz)
   f(yz == "true")
