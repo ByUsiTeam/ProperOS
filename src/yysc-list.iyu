@@ -28,13 +28,30 @@ adjustViewBounds=true</ppt>
 <event></event>
 </View>
 <View id="4" did="2" type="TextView">
-<ppt>width=-1
-height=-1
+<ppt>width=-2
+height=-2
 text=文本4
 typeface=@JuOS/src/ttf/acbt80.ttf
 gravity=left|center
 textSize=15sp
 layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="8" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="TextView">
+<ppt>width=-1
+height=-1
+text=文本9
+typeface=@JuOS/src/ttf/acbt80.ttf
+gravity=right|center
+textSize=12sp
+layout_marginRight=8dp</ppt>
 <event></event>
 </View>
 <View id="5" did="1" type="TextView">

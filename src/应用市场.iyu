@@ -120,11 +120,12 @@ t()
       json(item,"get","title",title2)
       json(item,"get","icon",icon)
       json(item,"get","url",url)
+      json(item,"get","partition",partition)
       syso(url)
       syso(title)
       f(icon != "null")
       {
-        ula(yylist,3=icon,4=title2,5=url)
+        ula(yylist,3=icon,4=title2,5=url,9=partition)
       }
       else
       {
@@ -141,7 +142,7 @@ t()
   {
     ufnsui()
     {
-      fn tw.tw("无法连接到 Gitee，数据获取有问题")
+      fn tw.tw("无法连接到 应用源，数据获取有问题")
     }
   }
 }</eventItme><eventItme type="restart">fn lib.下载器()</eventItme><eventItme type="resume">fn lib.下载器()</eventItme></UIEventset>
