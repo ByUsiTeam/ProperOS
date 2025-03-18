@@ -283,15 +283,15 @@ height=24dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
 app_CardcornerRadius=8dp
-layout_marginBottom=8dp</ppt>
+layout_marginBottom=8dp
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="61" did="60" type="ProgressBar">
 <ppt>width=-1
 height=-1
 max=100
-progress=0
-BackgroundColor=#ff5849ff</ppt>
+progress=0</ppt>
 <event></event>
 </View>
 <View id="51" did="49" type="CardView">
@@ -310,13 +310,14 @@ typeface=@JuOS/src/ttf/acbt80.ttf
 background=through</ppt>
 <event><eventItme type="clicki">s durl =sss.durl
 syso(durl)
-fn lib.下载器()
-fd("/sdcard/ProperOS/.temp.jupk",fd)
+fn lib.下载器2()
+fd("$ProperOS/.temp.jupk",fd)
 s name = ".temp.jupk"
 s data = "ByUsi-ProperOS-App-D"
 hdda(durl,name,data,v)
 fn tw.tw("下载完成的话请返回一下进行应用安装")
 us(51,"visibility","gone")
+us(60,"visibility","visible")
 //hdduigo()
 t()
 {
@@ -359,7 +360,7 @@ text=安装应用
 textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf
 background=through</ppt>
-<event><eventItme type="clicki">s uid_mc ="/sdcard/ProperOS/.temp.jupk"
+<event><eventItme type="clicki">s uid_mc ="$ProperOS/.temp.jupk"
 
 f(uid_mc *? ".jupk")
 {

@@ -144,4 +144,4 @@ t()
       fn tw.tw("无法连接到 Gitee，数据获取有问题")
     }
   }
-}</eventItme></UIEventset>
+}</eventItme><eventItme type="restart">fn lib.下载器()</eventItme><eventItme type="resume">fn lib.下载器()</eventItme></UIEventset>

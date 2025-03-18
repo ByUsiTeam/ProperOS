@@ -57,6 +57,28 @@ s g = true
 hdd(a,b,c,d,e,f,g)
 syso("下载管理器_true")
 end fn
+
+fn 下载器2()
+
+//下载产生的临时文件目录
+s a = "$ProperOS/.temp"
+//下载至保存的目录
+s b = "$ProperOS/"
+//允许同时下载任务数量
+s c = 2
+//每个任务开启线程数量
+s d = 8
+//连接失败重试次数
+s e = 2
+//连接超时时间，25秒的意思
+s f = 25000
+//是否显示下载进度通知
+s g = true
+hdd(a,b,c,d,e,f,g)
+syso("下载管理器_true")
+
+end fn
+
 //
 //壁纸配置，新版本的，现在的JuOS壁纸配置都是调用它的
 fn wp(id)
