@@ -4,39 +4,47 @@ f(y == "true")
 {
   t()
   {
-    hs("https://api.www.byusi.cn/juos/version.txt",bab)
-    f(bab != sss.v)
+    fr("@version.txt",bd_v)
+    //s bd_v ="1"
+    hs("https://gitee.com/api/v5/repos/byusi/properos/releases/latest?access_token=39cd4a6991d724ecf78c403e23f76f36",url)
+    json(url,data)
+    json(data,"get","tag_name",v)
+    f(bd_v != v)
     {
-      hs("https://api.www.byusi.cn/juos/update.txt",jj)
-      hs("https://api.www.byusi.cn/juos/url.txt",url)
-      hs("https://api.www.byusi.cn/juos/title.txt",title)
-      ufnsui()
+      json(data,"get","body",jianj)
+      json(data,"list","assets",list)
+      json(list,"size",size)
+      w(size &gt; 0)
       {
-        utw(null,title,jj,"更新","不了",true,v)
+        s-(1,size)
+        json(list,"data",size,item)
+        json(item,"get","browser_download_url",durl)
+        json(item,"get","name",apk_name)
+        slower(apk_name,n)
+        f(n *? ".apk")
         {
-          hw(url)
+          ufnsui()
+          {
+            utw(null,"更新提示",jianj,"下载更新","取消更新",false,v)
+            {
+              fw("$ProperOS/update/base.apk","1")
+              fd("$ProperOS/update/base.apk",y)
+              fdir("$ProperOS/update/base.apk",lj)
+              fn lib.xzq("下载更新",durl,lj,jianj)
+            }
+            else
+            {
+              endutw()
+            }
+          }
         }
-        else
-        {
-          endutw()
-        }
-      }
-    }
-    else f(bab == sss.v)
-    {
-      ufnsui()
-      {
-        fn tw.tw("已经是最新版本了")
       }
     }
     else
     {
       ufnsui()
       {
-        utw(null,"提醒","检查更新失败，请检查网络","确定",true,v)
-        {
-          endutw()
-        }
+        fn tw.tw2("无可更新版本",1)
       }
     }
   }

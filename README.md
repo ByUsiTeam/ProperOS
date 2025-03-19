@@ -2,7 +2,7 @@
 
 - 基于现在OpenJuOS**v3.5**开发
   [![ByUsi/OpenJuOS](https://gitee.com/byusi/openjuos/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/byusi/openjuos)
-- **ProperOS**版本：**v1.1.5.2**
+- **ProperOS**版本：**v1.1.5.3**
 
 ## 基础简介
 1. 基于手机应用 `iApp` 开发的模拟操作系统应用。

@@ -210,7 +210,7 @@ end fn
 //暂时没有用
 fn data()
 
-sqlite(sss.data,"$System/Config/sql.db")
+syso("db_null")
 
 end fn
 //
@@ -388,10 +388,13 @@ cls(dex,"org.Darlene.cn.Downloader$DownloadListener",DownloadListener)
 javanew(newDownloadListener,DownloadListener)
 
 javacb(newDownloadListener,DownloadListener){
-  f(st_mD?"onDownloadComplete"){
+  f(st_mD?"onDownloadComplete")
+  {
     syso("下载成功")
     fo(lj)
-  }f(st_mD?"onDownloadFailed"){
+  }
+  f(st_mD?"onDownloadFailed")
+  {
     sgsz(st_aS,0,e)
     
     ufnsui(){
