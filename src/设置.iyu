@@ -460,33 +460,6 @@ text=
 background=through</ppt>
 <event></event>
 </View>
-<View id="96" did="20" type="CardView">
-<ppt>width=-1
-height=264dp
-app_CardcornerRadius=8dp
-layout_marginTop=5dp
-layout_marginLeft=5dp
-layout_marginRight=5dp</ppt>
-<event></event>
-</View>
-<View id="97" did="96" type="RelativeLayout">
-<ppt>width=-1
-height=-1</ppt>
-<event></event>
-</View>
-<View id="98" did="97" type="WebView">
-<ppt>width=-1
-height=-1
-url=@JuOS/html/Time/index.html</ppt>
-<event><eventItme type="onreceivederror">us(st_vId,"url","@JuOS/html/AdvertisingDelivery/index.html")</eventItme></event>
-</View>
-<View id="99" did="97" type="Button">
-<ppt>width=-1
-height=-1
-text=
-background=through</ppt>
-<event></event>
-</View>
 <UIEventset><eventItme type="loading">//状态栏配置
 uycl("#daebeae3",true)
 //初始化菜单

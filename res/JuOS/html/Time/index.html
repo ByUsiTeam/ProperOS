@@ -3,204 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>智能动画时钟</title>
+    <title>动画时间</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
     <style>
-        /* 基础容器样式 */
-        .clock-container {
-            width: 90%;
-            max-width: 400px;
-            margin: 50px auto;
-            background: #f5f5f5;
-            border-radius: 12px;
-            padding: 25px;
-            box-sizing: border-box;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        /* 时间块布局 */
-        .time-block {
+        body {
+            font-family: 'Arial', sans-serif;
             display: flex;
+            justify-content: center;
             align-items: center;
-            height: 55px;
-            margin: 12px 0;
-            gap: 15px;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
         }
-
-        /* 数字显示样式 */
-        .time-number {
-            flex: 0 0 50px;
-            text-align: center;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: #2c3e50;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        /* 进度条容器 */
-        .time-bar-container {
-            flex: 1;
-            height: 34px;
-            background: #ecf0f1;
-            border-radius: 8px;
-            overflow: hidden;
+        
+        .dashboard-container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
             position: relative;
         }
-
-        /* 进度条基础样式 */
-        .time-bar {
-            height: 100%;
+        
+        .progress-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .progress-card {
+            width: 350px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .progress-circle-container {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 1rem;
+        }
+        
+        .progress-circle {
             position: absolute;
-            left: 0;
+            border-radius: 50%;
+            background: conic-gradient(#e91e63 var(--progress, 0%), #f0f0f0 0%);
+            transition: background 0.3s ease-in-out;
+        }
+        
+        .progress-circle.large {
+            width: 260px;
+            height: 260px;
             top: 0;
+            left: 0;
         }
-
-        /* 分层动画策略 */
-        #hour-bar {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
-            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); /* 缓慢平滑动画 */
+        
+        .progress-circle.small {
+            width: 140px;
+            height: 140px;
+            top: 60px;
+            left: 60px;
         }
-
-        #minute-bar {
-            background: linear-gradient(135deg, #4ecdc4 0%, #88dacf 100%);
-            transition: width 0.8s ease-in-out; /* 中等速度 */
+        
+        .progress-circle::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: white;
+            border-radius: 50%;
         }
-
-        #second-bar {
-            background: linear-gradient(135deg, #45b7d1 0%, #6dc9e0 100%);
-            transition: none; /* 实时更新 */
+        
+        .clock-display {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #495057;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
-
-        /* 移动端优化 */
-        @media (max-width: 480px) {
-            .clock-container {
-                padding: 20px;
-                margin: 30px auto;
+        
+        .clock-display span {
+            display: inline-block;
+            animation: pulse 3s infinite ease-in-out;
+        }
+        
+        .clock-display span:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .clock-display span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .clock-display span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                filter: brightness(1);
             }
-            
-            .time-block {
-                height: 45px;
-                margin: 10px 0;
-                gap: 12px;
+            50% {
+                transform: scale(1.05);
+                filter: brightness(1.1);
             }
-            
-            .time-number {
-                flex: 0 0 45px;
-                font-size: 1.1rem;
-            }
-            
-            .time-bar-container {
-                height: 28px;
+            100% {
+                transform: scale(1);
+                filter: brightness(1);
             }
         }
-
-        /* 超小屏幕优化 */
-        @media (max-width: 360px) {
-            .clock-container {
-                border-radius: 8px;
-            }
-            
-            .time-number {
-                flex: 0 0 40px;
-            }
+        
+        .progress-label {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .progress-info {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        
+        .progress-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .dark-mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="clock-container">
-        <div class="time-block">
-            <div class="time-number" id="hour">00</div>
-            <div class="time-bar-container">
-                <div class="time-bar" id="hour-bar"></div>
+    <div class="dashboard-container">
+        <div class="progress-section">
+            <div class="progress-card">
+                <div class="progress-label">时间进度</div>
+                <div class="progress-circle-container">
+                    <div class="progress-circle large" style="--progress: 0%"></div>
+                    <div class="progress-circle small" style="--progress: 0%"></div>
+                    <div class="clock-display" id="clock">
+                        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+                    </div>
+                </div>
+                <div class="progress-info">外环: 小时进度 | 内环: 分钟进度</div>
             </div>
         </div>
-        <div class="time-block">
-            <div class="time-number" id="minute">00</div>
-            <div class="time-bar-container">
-                <div class="time-bar" id="minute-bar"></div>
-            </div>
-        </div>
-        <div class="time-block">
-            <div class="time-number" id="second">00</div>
-            <div class="time-bar-container">
-                <div class="time-bar" id="second-bar"></div>
+        
+        <div class="progress-controls">
+            <button class="btn btn-primary" id="toggle-animation">关闭动画</button>
+            <div class="dark-mode-toggle">
+                <span>深色模式:</span>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-switch">
+                    <span class="slider round"></span>
+                </label>
             </div>
         </div>
     </div>
 
+    <script src="bootstrap.bundle.min.js"></script>
     <script>
-        // 兼容性处理函数
-        const padNumber = num => num.toString().padStart(2, '0');
+        document.addEventListener('DOMContentLoaded', function() {
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            const largeProgress = document.querySelector('.progress-circle.large');
+            const smallProgress = document.querySelector('.progress-circle.small');
+            const toggleAnimationBtn = document.getElementById('toggle-animation');
+            const darkModeSwitch = document.getElementById('dark-mode-switch');
+            
+            let animationEnabled = true;
+            let darkModeEnabled = false;
 
-        // 动画控制变量
-        let lastUpdate = 0;
-        let rafId = null;
-        let isFirstRun = true;
+            function updateClock() {
+                const now = new Date();
+                const hours = now.getHours();
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
 
-        // 主更新函数
-        function updateClock(forceUpdate = false) {
-            const now = new Date();
-            const hours = now.getHours();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
-            const currentTime = performance.now();
+                const formatNumber = (num) => num.toString().padStart(2, '0');
+                
+                hoursElement.textContent = formatNumber(hours);
+                minutesElement.textContent = formatNumber(minutes);
+                secondsElement.textContent = formatNumber(seconds);
 
-            // 智能更新策略
-            const shouldUpdate = forceUpdate || 
-                seconds === 0 ||  // 整分钟强制更新
-                currentTime - lastUpdate >= 990; // 误差补偿
-
-            if (shouldUpdate) {
-                // 更新数字显示
-                document.getElementById('hour').textContent = padNumber(hours);
-                document.getElementById('minute').textContent = padNumber(minutes);
-                document.getElementById('second').textContent = padNumber(seconds);
-
-                // 同步进度条
-                document.getElementById('hour-bar').style.width = `${(hours / 24) * 100}%`;
-                document.getElementById('minute-bar').style.width = `${(minutes / 60) * 100}%`;
-                document.getElementById('second-bar').style.width = `${(seconds / 60) * 100}%`;
-
-                // 首次运行后取消标志
-                if (isFirstRun) {
-                    isFirstRun = false;
-                    // 首次渲染后二次更新确保布局稳定
-                    setTimeout(() => updateClock(true), 100);
+                if (!animationEnabled) {
+                    document.querySelectorAll('.clock-display span').forEach(span => {
+                        span.style.animation = 'none';
+                    });
+                } else {
+                    document.querySelectorAll('.clock-display span').forEach(span => {
+                        span.style.animation = 'pulse 3s infinite ease-in-out';
+                    });
                 }
 
-                lastUpdate = currentTime;
+                if (darkModeEnabled) {
+                    document.body.style.backgroundColor = '#343a40';
+                    document.querySelector('.dashboard-container').style.backgroundColor = '#495057';
+                    document.querySelector('.progress-card').style.backgroundColor = '#343a40';
+                    document.querySelector('.clock-display').style.color = '#ced4da';
+                    document.querySelector('.clock-display').style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+                    document.querySelector('.progress-label').style.color = '#adb5bd';
+                    document.querySelector('.progress-info').style.color = '#adb5bd';
+                } else {
+                    document.body.style.backgroundColor = '#f8f9fa';
+                    document.querySelector('.dashboard-container').style.backgroundColor = 'white';
+                    document.querySelector('.progress-card').style.backgroundColor = '#f8f9fa';
+                    document.querySelector('.clock-display').style.color = '#495057';
+                    document.querySelector('.clock-display').style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+                    document.querySelector('.progress-label').style.color = '#6c757d';
+                    document.querySelector('.progress-info').style.color = '#6c757d';
+                }
+
+                updateProgressBars(now);
             }
 
-            // 保持动画循环
-            rafId = requestAnimationFrame(() => updateClock());
-        }
+            function updateProgressBars(now) {
+                const hourProgressPercent = (now.getMinutes() * 60 + now.getSeconds()) / 3600 * 100;
+                largeProgress.style.setProperty('--progress', `${hourProgressPercent}%`);
 
-        // 初始化
-        updateClock(true);
+                const minuteProgressPercent = now.getSeconds() / 60 * 100;
+                smallProgress.style.setProperty('--progress', `${minuteProgressPercent}%`);
 
-        // 窗口尺寸变化处理
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            // 取消待处理动画和计时器
-            cancelAnimationFrame(rafId);
-            clearTimeout(resizeTimer);
-            
-            // 防抖处理
-            resizeTimer = setTimeout(() => {
-                updateClock(true);
-            }, 200);
-        });
-
-        // 页面可见性处理
-        document.addEventListener('visibilitychange', () => {
-            if (!document.hidden) {
-                updateClock(true);
+                document.querySelector('.progress-info').textContent = 
+                    `外环: 小时进度 (${Math.round(hourProgressPercent)}%) | 内环: 分钟进度 (${Math.round(minuteProgressPercent)}%)`;
             }
-        });
 
-        // 页面加载完成后二次确认
-        window.addEventListener('load', () => {
-            setTimeout(() => updateClock(true), 300);
+            toggleAnimationBtn.addEventListener('click', function() {
+                animationEnabled = !animationEnabled;
+                if (animationEnabled) {
+                    toggleAnimationBtn.textContent = '关闭动画';
+                    document.querySelectorAll('.clock-display span').forEach(span => {
+                        span.style.animation = 'pulse 3s infinite ease-in-out';
+                    });
+                } else {
+                    toggleAnimationBtn.textContent = '开启动画';
+                    document.querySelectorAll('.clock-display span').forEach(span => {
+                        span.style.animation = 'none';
+                    });
+                }
+            });
+
+            darkModeSwitch.addEventListener('change', function() {
+                darkModeEnabled = this.checked;
+                updateClock();
+            });
+
+            updateClock();
+
+            setInterval(updateClock, 1000);
         });
     </script>
 </body>
