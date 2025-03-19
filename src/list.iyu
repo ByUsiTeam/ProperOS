@@ -356,7 +356,8 @@ else
 sss uid_mc =uid_mc
 fn lib.utw("home-utw.iyu")</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">dhas(dh, st_vW, "scaleX", 0.5, 1)
+<UIEventset><eventItme type="loading">/.
+dhas(dh, st_vW, "scaleX", 0.5, 1)
 dh(dh, "duration", 500)
 dh(dh, "start")
 

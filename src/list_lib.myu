@@ -48,7 +48,7 @@ t()
     }
     else
     {
-      s img ="@JuOS/src/img/zy/tip.png"
+      s img ="@fail.xml"
     }
     //ula(list_cz,6=img,4=sc)
     ula(list_cz,10=img,14=sc)

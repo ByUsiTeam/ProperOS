@@ -258,7 +258,7 @@ gravity=bottom</ppt>
 </View>
 <View id="47" did="46" type="CardView">
 <ppt>width=-1
-height=142dp
+height=100dp
 layout_marginBottom=5dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
@@ -275,6 +275,15 @@ height=-1</ppt>
 height=-1
 orientation=vertical
 gravity=center</ppt>
+<event></event>
+</View>
+<View id="62" did="49" type="TextView">
+<ppt>width=-2
+height=-2
+text=下载进度
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=10sp
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="60" did="49" type="CardView">
@@ -315,9 +324,9 @@ fd("$ProperOS/.temp.jupk",fd)
 s name = ".temp.jupk"
 s data = "ByUsi-ProperOS-App-D"
 hdda(durl,name,data,v)
-fn tw.tw("下载完成的话请返回一下进行应用安装")
 us(51,"visibility","gone")
 us(60,"visibility","visible")
+us(62,"visibility","visible")
 //hdduigo()
 t()
 {
@@ -328,8 +337,8 @@ t()
     {
       ufnsui()
       {
-        us(60,"visibility","visible")
         us(61,"progress",xzjd)
+        us(62,"text",xzjd+"%")
       }
     }
     else
@@ -338,7 +347,9 @@ t()
       {
         us(60,"visibility","visible")
         us(61,"progress",xzjd)
+        us(60,"visibility","gone")
         us(56,"visibility","visible")
+        us(62,"visibility","gone")
       }
       s jsq ="1"
     }
@@ -386,6 +397,7 @@ f(uid_mc *? ".jupk")
       ufnsui()
       {
         fn tw.tw("安装成功啦")
+        us(56,"visibility","gone")
         fd("/sdcard/ProperOS/.temp.jupk",djupk)
       }
     }

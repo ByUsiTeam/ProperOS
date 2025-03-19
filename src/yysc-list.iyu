@@ -79,4 +79,14 @@ else
   fn tw.tw2("请检查应用是否正常",2)
 }</eventItme></event>
 </View>
-<UIEventset></UIEventset>
+<UIEventset><eventItme type="loading">dhas(dh, st_vW, "scaleX", 0.5, 1)
+dh(dh, "duration", 500)
+dh(dh, "start")
+dhas(dh1, st_vW, "scaleY", 0.5, 1)
+dh(dh1, "duration", 500)
+dh(dh1, "start")
+dhas(dh2, st_vW, "alpha", 0,1)
+dh(dh2, "duration", 1000)
+dh(dh2, "start")
+
+//原理很简单,就是对每个列表项控件进行动画</eventItme></UIEventset>
