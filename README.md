@@ -15,6 +15,11 @@
    ```bash
    git clone https://gitee.com/byusi/properos.git
    ```
+  > Github 的
+  > ```bash
+  https://github.com/ByUsiTeam/ProperOS.git
+  > ```
+
 2. 压缩所有文件
    ```bash
    cd properos
