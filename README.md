@@ -17,7 +17,7 @@
    ```
   > Github 的
   > ```bash
-  https://github.com/ByUsiTeam/ProperOS.git
+  git clone https://github.com/ByUsiTeam/ProperOS.git
   > ```
 
 2. 压缩所有文件
