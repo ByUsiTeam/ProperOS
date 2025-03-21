@@ -439,7 +439,8 @@ height=200dp
 app_CardcornerRadius=8dp
 layout_marginTop=5dp
 layout_marginLeft=5dp
-layout_marginRight=5dp</ppt>
+layout_marginRight=5dp
+app_CardBackgroundColor=#616b3eff</ppt>
 <event></event>
 </View>
 <View id="72" did="74" type="RelativeLayout">
@@ -483,21 +484,6 @@ else
 {
   us(43,"checked","true")
 }
-fr("$System/Config/Update.sys",Update)
-f(Update == "true")
-{
-  us(82,"checked","true")
-}
-else f(Update == "false")
-{
-  us(82,"checked","false")
-}
-else
-{
-  fn tw.tw("自动检测更新配置出现问题，正在自动修复")
-  fw("$System/Config/Update.sys","true")
-  us(82,"checked","true")
-}
 //
 //
 //SVG图片
@@ -515,9 +501,7 @@ fn lib.svg(svg,68)
 fr("$JuOS/ICON/ic_parentcontrol.svg",svg)
 fn lib.svg(svg,92)
 //
-fn api.hide_btn(73)</eventItme><eventItme type="loadingComplete">//fn byusi.ztl()
-//壁纸配置
-s id =14
+fn api.hide_btn(73)</eventItme><eventItme type="loadingComplete">s id =14
 fn lib.wp(id)
 //主题配置
 s a =2
@@ -534,7 +518,6 @@ us(27,"background",f3)
 us(35,"background",f)
 us(60,"background",f3)
 us(66,"background",f)
-us(74,"background",f3)
 us(84,"background",f)
 us(90,"background",f)
 //

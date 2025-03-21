@@ -127,7 +127,10 @@ gravity=center</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loadingComplete">//-_-_-_-_-_-_-_-_-_-_-
-fn list_lib.hemo()
+t()
+{
+  fn list_lib.hemo()
+}
 //-_-_-_-_-_-_-_-_-_-_-
 s id =2
 fn api.hide_btn(id)
@@ -150,33 +153,15 @@ f(Update == "true")
   fn system.update("true")
 }
 //
-fw("$System/Config/Update.sys","false")
-
-t()
+fw("$System/Config/Update.sys","false")</eventItme><eventItme type="downkey">f(st_kC==4)
 {
-  w(true)
-  {
-    f(sss.timejsq != "true")
-    {
-      time(3,sj)
-      ufnsui()
-      {
-        ss("时间："+sj,iu)
-        us(14,"text",iu)
-      }
-      stop(500)
-    }
-  }
-}</eventItme><eventItme type="downkey">f(st_kC==4)
-{
-  syso("输定")
+  syso("确定")
 }</eventItme><eventItme type="loading">uycl("#e84f78ff",true)
 //
 s id =1
 fn lib.wp(id)
 //fn byusi.ztl()
-utb(18)</eventItme><eventItme type="menu">
-case 设置:
+utb(18)</eventItme><eventItme type="menu">case 设置:
 uigo("设置.iyu")
 break
 
@@ -189,4 +174,8 @@ utw(null,"","time.iyu","确定",false,v)
 {
   endutw()
 }
+break
+
+case 关闭ProperOS:
+fn lib.utw("end-ppos.iyu")
 break</eventItme></UIEventset>

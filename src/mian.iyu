@@ -31,7 +31,7 @@ text=使用iApp开发\nByUsi技术支持
 textColor=#ff000000
 typeface=serif
 textSize=10sp
-layout_marginBottom=15dp
+layout_marginBottom=8dp
 gravity=center</ppt>
 <event></event>
 </View>
@@ -77,5 +77,4 @@ fuzs("@JuOS/sdk/player.bysi.sdk","$",a)</eventItme><eventItme type="loadingCompl
     lan(0)
     end()
   }
-}
-//fn system.gg()</eventItme></UIEventset>
+}</eventItme></UIEventset>
