@@ -137,8 +137,11 @@ t()
 }
 //启动动画配置
 dha(dh,false,true)
-dh(dh,"duration",3000)
+dh(dh,"duration",1500)
 us(2,"dh",dh)
 dha(dh,false,true)
-dh(dh,"duration",3000)
-us(3,"dh",dh)</eventItme></UIEventset>
+dh(dh,"duration",1500)
+us(3,"dh",dh)
+dha(dh,false,true)
+dh(dh,"duration",1500)
+us(6,"dh",dh)</eventItme></UIEventset>

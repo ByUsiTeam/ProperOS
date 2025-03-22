@@ -23,15 +23,13 @@ gravity=center</ppt>
 <ppt>width=-1
 height=44dp
 orientation=horizontal
-gravity=left|center
-BackgroundColor=#ff5222ff</ppt>
+gravity=left|center</ppt>
 <event></event>
 </View>
 <View id="5" did="3" type="TextView">
 <ppt>width=-2
 height=-2
 text=确定关闭 ProperOS 吗？
-textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf
 layout_marginLeft=8dp</ppt>
 <event></event>

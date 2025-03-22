@@ -77,15 +77,3 @@ ufnsui()
   
 }
 end fn
-
-fn icon(icon)
-
-fn juos.输出("抱歉，还在开发这个功能")
-
-end fn
-
-fn name(name)
-
-fn juos.输出("抱歉，还在开发这个功能")
-
-end fn

@@ -5,7 +5,6 @@ f(y == "true")
   t()
   {
     fr("@version.txt",bd_v)
-    //s bd_v ="1"
     hs("https://gitee.com/api/v5/repos/byusi/properos/releases/latest?access_token=e41479a1b72747f25afd246fbe8adb09",url)
     f(url != null)
     {
@@ -107,41 +106,6 @@ f(jspk != null)
 else
 {
   fn tw.tw("无 .jspk 文件路径")
-}
-
-end fn
-
-fn gg()
-
-t()
-{
-  hs("https://api.www.byusi.cn/juos/at/api.php?gg=list",url)
-  syso(url)
-  json(url,data)
-  json(data,"get","code",code)
-  f(code == "200")
-  {
-    json(data,"list","data",list)
-    json(list,"size",size)
-    w(size &gt; 0)
-    {
-      s-(1, size)
-      json(list,"data",size,item)
-      json(item,"get","id",id)
-      json(item,"get","title",title)
-      json(item,"get","content",content)
-      json(item,"get","create_time",create_time)
-      syso(id)
-      syso(title)
-      syso(content)
-      syso(create_time)
-    }
-  }
-  else
-  {
-    ss("错误："+code,tsc)
-    fn tw.tw2(tsc,1)
-  }
 }
 
 end fn

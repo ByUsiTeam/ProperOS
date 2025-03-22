@@ -18,10 +18,12 @@ src=@JuOS/logo/properos.png</ppt>
 <event></event>
 </View>
 <View id="5" did="2" type="CardView">
-<ppt>width=-2
+<ppt>width=-1
 height=-2
 layout_marginTop=5dp
-app_CardcornerRadius=15dp</ppt>
+app_CardcornerRadius=15dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
 <event></event>
 </View>
 <View id="4" did="5" type="TextView">

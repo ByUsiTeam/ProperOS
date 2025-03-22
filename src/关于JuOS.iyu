@@ -62,8 +62,7 @@ layout_marginTop=8dp</ppt>
 <View id="27" did="26" type="RelativeLayout">
 <ppt>width=-1
 height=-1</ppt>
-<event><eventItme type="clicki">
-utw(null,"开源协议相关","开源协议为 Apache-2.0 协议","查看协议","关闭",true,v)
+<event><eventItme type="clicki">utw(null,"开源协议相关","开源协议为 MIT 协议","查看协议","关闭",true,v)
 {
   hws("https://gitee.com/byusi/properos/blob/master/LICENSE")
 }
@@ -127,7 +126,7 @@ src=@JuOS/logo/JuOS-OpenJuOS.png</ppt>
 </View>
 <View id="13" did="3" type="CardView">
 <ppt>width=-1
-height=-2
+height=55dp
 app_CardcornerRadius=5dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
@@ -142,14 +141,24 @@ height=-1</ppt>
 <View id="11" did="10" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=vertical</ppt>
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="54" did="11" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301659
+layout_marginLeft=5dp</ppt>
 <event></event>
 </View>
 <View id="12" did="11" type="TextView">
 <ppt>width=-2
 height=-2
 text=设备消息：null
-typeface=@JuOS/src/ttf/acbt80.ttf</ppt>
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp</ppt>
 <event></event>
 </View>
 <View id="14" did="3" type="CardView">
@@ -281,7 +290,7 @@ layout_marginLeft=5dp</ppt>
 <View id="36" did="34" type="TextView">
 <ppt>width=-2
 height=-2
-text=JuOS下载网站：null
+text=ProperOS下载：https://gitee.com/byusi/properos/releases
 textColor=#ff000000
 typeface=@JuOS/src/ttf/acbt80.ttf
 layout_marginLeft=8dp
@@ -295,9 +304,9 @@ textColorLink=#9e0011ff</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">utw(null,"","是否访问：null","是","否",false,v)
+<event><eventItme type="clicki">utw(null,"","是否访问：https://gitee.com/byusi/properos/releases","是","否",false,v)
 {
-  hws("null")
+  hws("https://gitee.com/byusi/properos/releases")
 }
 else
 {
@@ -357,7 +366,8 @@ height=55dp
 layout_marginLeft=8dp
 layout_marginTop=8dp
 layout_marginRight=8dp
-app_CardcornerRadius=5dp</ppt>
+app_CardcornerRadius=5dp
+layout_marginBottom=8dp</ppt>
 <event></event>
 </View>
 <View id="39" did="38" type="RelativeLayout">
