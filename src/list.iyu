@@ -169,12 +169,23 @@ else
 sss uid_mc =uid_mc
 fn lib.utw("home-utw.iyu")</eventItme></event>
 </View>
-<View id="7" did="0" type="CardView">
+<View id="18" did="0" type="RelativeLayout">
+<ppt>width=80dp
+height=80dp</ppt>
+<event></event>
+</View>
+<View id="17" did="18" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="7" did="17" type="CardView">
 <ppt>width=64dp
 height=64dp
-app_CardBackgroundColor=#9fffffff
-layout_marginTop=5dp
-app_CardcornerRadius=20dp</ppt>
+app_CardcornerRadius=18dp
+app_CardElevation=8dp</ppt>
 <event></event>
 </View>
 <View id="8" did="7" type="RelativeLayout">
@@ -193,28 +204,6 @@ gravity=center</ppt>
 <ppt>width=-1
 height=-1
 src=17301567</ppt>
-<event></event>
-</View>
-<View id="12" did="8" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=vertical
-gravity=bottom|center</ppt>
-<event></event>
-</View>
-<View id="14" did="12" type="TextView">
-<ppt>width=-2
-height=-2
-text=文本14
-typeface=@JuOS/src/ttf/acbt80.ttf
-textSize=8sp
-gravity=center
-singleLine=true
-ellipsize=end
-layout_marginLeft=4dp
-layout_marginRight=4dp
-gravity=bottom|center
-layout_gravity=bottom|center</ppt>
 <event></event>
 </View>
 <View id="15" did="8" type="Button">
@@ -355,6 +344,28 @@ else
 }</eventItme><eventItme type="press">ulag(st_vW,14,uid_mc)
 sss uid_mc =uid_mc
 fn lib.utw("home-utw.iyu")</eventItme></event>
+</View>
+<View id="12" did="18" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom|center</ppt>
+<event></event>
+</View>
+<View id="14" did="12" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本14
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=8sp
+gravity=center
+singleLine=true
+ellipsize=end
+layout_marginLeft=4dp
+layout_marginRight=4dp
+gravity=bottom|center
+layout_gravity=bottom|center</ppt>
+<event></event>
 </View>
 <UIEventset><eventItme type="loading">/.
 dhas(dh, st_vW, "scaleX", 0.5, 1)
