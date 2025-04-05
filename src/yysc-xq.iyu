@@ -96,7 +96,7 @@ layout_marginTop=6dp</ppt>
 </View>
 <View id="11" did="3" type="CardView">
 <ppt>width=-1
-height=440dp
+height=-1
 layout_marginTop=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
@@ -256,18 +256,12 @@ orientation=vertical
 gravity=bottom</ppt>
 <event></event>
 </View>
-<View id="47" did="46" type="CardView">
+<View id="48" did="46" type="RelativeLayout">
 <ppt>width=-1
 height=100dp
 layout_marginBottom=5dp
 layout_marginLeft=8dp
-layout_marginRight=8dp
-app_CardcornerRadius=15dp</ppt>
-<event></event>
-</View>
-<View id="48" did="47" type="RelativeLayout">
-<ppt>width=-1
-height=-1</ppt>
+layout_marginRight=8dp</ppt>
 <event></event>
 </View>
 <View id="49" did="48" type="LinearLayout">
@@ -432,26 +426,28 @@ ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343
 visibility=gone</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">us(58,"refreshing","true")
+<UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">
+
 t()
 {
-  hs(sss.yysc-url,url)
-  syso(url)
-  f(url != null)
+  ss("$data/yysc/"+sss.ytv+".json",ggh)
+  fr(ggh,ur2l)
+  syso(ur2l)
+  f(ur2l != null)
   {
-    json(url,json)
-    json(json,"get","title",title)
-    json(json,"get","icon",icon)
-    json(json,"get","developer",developer)
-    json(json,"get","introduce",introduce)
-    json(json,"get","picture",picture)
+    json(ur2l,j2)
+    json(j2,"get","title",title)
+    json(j2,"get","icon",icon)
+    json(j2,"get","developer",developer)
+    json(j2,"get","introduce",introduce)
+    json(j2,"get","picture",picture)
     f(picture == "true")
     {
-      json(json,"get","img0",img0)
-      json(json,"get","img1",img1)
-      json(json,"get","img2",img2)
-      json(json,"get","img3",img3)
-      json(json,"get","img4",img4)
+      json(j2,"get","img0",img0)
+      json(j2,"get","img1",img1)
+      json(j2,"get","img2",img2)
+      json(j2,"get","img3",img3)
+      json(j2,"get","img4",img4)
       ufnsui()
       {
         us(35,"src",img0)
@@ -474,8 +470,6 @@ t()
     {
       ufnsui()
       {
-        us(58,"refreshing","false")
-        us(58,"visibility","gone")
         fn tw.tw2("出现解析问题了，抱歉哈",1)
       }
     }
@@ -484,8 +478,6 @@ t()
     sss durl =durl
     ufnsui()
     {
-      us(58,"refreshing","false")
-      us(58,"visibility","gone")
       us(9,"text",title)
       ss("分享者："+developer,developer)
       us(10,"text",developer)
@@ -498,10 +490,13 @@ t()
   {
     ufnsui()
     {
-      us(58,"refreshing","false")
-      us(58,"visibility","gone")
-      utw(null,"","请检查网络，因为无法获取 Gitee 中的应用源","确定并关闭",true,v)
+      utw(null,"","请检查网络，因为无法获取 Gitee 中的应用源","确定并关闭","我就是要查看",true,v)
       {
+        end()
+      }
+      else
+      {
+        uigo("yysc-xq.iyu")
         end()
       }
     }

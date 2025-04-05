@@ -119,7 +119,7 @@ src=@fail.xml</ppt>
 <View id="9" did="6" type="TextView">
 <ppt>width=-2
 height=-2
-text=看到我了，那么刷新一下吧\n可以点我刷新
+text=如果长期我已加载出首界面列表，请点击该界面进行首界面列表刷新
 textColor=#ffffffff
 typeface=@src/ttf/acbt80.ttf
 textSize=34sp
@@ -127,6 +127,9 @@ gravity=center</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loadingComplete">//-_-_-_-_-_-_-_-_-_-_-
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/ByUsi/loading.json",data)
+fn Lottie.setImageLottie(10,data,-2,true)
 t()
 {
   fn list_lib.hemo()

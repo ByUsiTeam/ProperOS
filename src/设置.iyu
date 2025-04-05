@@ -216,6 +216,92 @@ else
   }
 }</eventItme></event>
 </View>
+<View id="96" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="97" did="96" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="98" did="97" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="99" did="97" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="100" did="99" type="TextView">
+<ppt>width=-2
+height=-2
+text=Gitee账号
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="101" did="96" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fr("$data/oauth/gitee/user.json",i)
+f(i == null)
+{
+  t()
+  {
+    hs("https://api.oauth.byusi.cn/rid.php",data)
+    json(data,json)
+    json(json,"get","rid",d_u)
+    ss("https://api.oauth.byusi.cn/oauth.php?u="+d_u,gitee_oauth_url)
+    hs(gitee_oauth_url,gitee_oauth_url_data)
+    json(gitee_oauth_url_data,json)
+    json(json,"get","url",j)
+    sss url =j
+    ufnsui()
+    {
+      fn tw.tw("登录完成后返回")
+      utw(null,"","确定完成","确定登录完成",false,v)
+      {
+        t()
+        {
+          ss("https://api.oauth.byusi.cn/api.php?u="+d_u)
+          hs(d_u,data)
+          json(data,d_sj)
+          ufnsui()
+          {
+            utw(null,"",d_sj,"确定",true,v)
+            {
+              endutw()
+            }
+          }
+        }
+      }
+      uigo("system_start.iyu")
+    }
+  }
+}
+else
+{
+  
+}</eventItme></event>
+</View>
 <View id="35" did="20" type="RelativeLayout">
 <ppt>width=-1
 height=55dp
@@ -521,6 +607,7 @@ us(60,"background",f3)
 us(66,"background",f2)
 us(84,"background",f)
 us(90,"background",f)
+us(96,"background",f3)
 //
 loadjar("armeabi-v7a/classes.dex",class)
 cls(class,"com.Mus.ReboundScrollView",mB)
