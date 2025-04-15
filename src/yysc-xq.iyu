@@ -125,10 +125,11 @@ orientation=vertical</ppt>
 </View>
 <View id="59" did="17" type="CardView">
 <ppt>width=-1
-height=145dp
+height=245dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
-app_CardcornerRadius=5dp</ppt>
+app_CardcornerRadius=5dp
+layout_marginBottom=8dp</ppt>
 <event></event>
 </View>
 <View id="13" did="59" type="NestedScrollView">
@@ -150,11 +151,12 @@ autoLink=web</ppt>
 </View>
 <View id="22" did="17" type="CardView">
 <ppt>width=-1
-height=260dp
+height=288dp
 layout_marginTop=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
-app_CardcornerRadius=15dp</ppt>
+app_CardcornerRadius=15dp
+layout_marginBottom=8dp</ppt>
 <event></event>
 </View>
 <View id="28" did="22" type="LinearLayout">
@@ -299,7 +301,7 @@ progress=0</ppt>
 </View>
 <View id="51" did="49" type="CardView">
 <ppt>width=120dp
-height=64dp
+height=54dp
 app_CardcornerRadius=20dp
 app_CardBackgroundColor=#ff5849ff</ppt>
 <event></event>
@@ -313,11 +315,17 @@ typeface=@JuOS/src/ttf/acbt80.ttf
 background=through</ppt>
 <event><eventItme type="clicki">s durl =sss.durl
 syso(durl)
+sss durl =durl
+uigo("yysc-xy-2.iyu")
+/.
 fn lib.下载器2()
 fd("$ProperOS/.temp.jupk",fd)
 s name = ".temp.jupk"
 s data = "ByUsi-ProperOS-App-D"
-hdda(durl,name,data,v)
+t()
+{
+  hdda(durl,name,data,v)
+}
 us(51,"visibility","gone")
 us(60,"visibility","visible")
 us(62,"visibility","visible")
@@ -426,7 +434,14 @@ ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343
 visibility=gone</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">
+<UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">loadjar("armeabi-v7a/classes.dex",class)
+cls(class,"com.Mus.ReboundScrollView",mB)
+gvs(2,a)
+gvs(2,b)
+javanew(mBs,mB,"Context",activity)
+urvw(2)
+nvw(mBs,44)
+nvw(b,mBs)
 
 t()
 {
@@ -479,6 +494,7 @@ t()
     ufnsui()
     {
       us(9,"text",title)
+      sss title =title
       ss("分享者："+developer,developer)
       us(10,"text",developer)
       us(6,"src",icon)

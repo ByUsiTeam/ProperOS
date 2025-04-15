@@ -2,61 +2,66 @@ fn hemo()
 t()
 {
   s a = "$JuOS/hemo/桌面"
-  fl(a,false,home_list)
-  for(sc;home_list)
+  fl(a, false, home_list)
+  aslist(list_cz)
+  for(sc; home_list)
   {
+    s img = "@fail.xml"
+    s name = sc
     f(sc *? ".app")
     {
-      ss("$JuOS/hemo/桌面/"+sc,ml)
-      fr(ml,app_link_sc)
-      sj(app_link_sc,"AppTb=","=AppTb",img)
+      ss("$JuOS/hemo/桌面/"+sc, ml)
+      fr(ml, app_link_sc)
+      sj(app_link_sc, "AppTb=", "=AppTb", img)
       f(img ?* "$sys/")
       {
-        sr(img,"$sys/","@",img)
-        sj(sc,null,".app",sc)
+        sr(img, "$sys/", "@", img)
       }
       else f(img ?* "%@")
       {
-        sr(img,"%@","$",img)
-        sj(sc,null,".app",sc)
+        sr(img, "%@", "$", img)
       }
       else
       {
-        sj(app_link_sc,"AppLj=","=AppLj",appml)
-        sr(appml,"%g","$App/",aml)
-        //
-        ss(aml+img,img)
-        //
-        sj(sc,null,".app",sc)
+        sj(app_link_sc, "AppLj=", "=AppLj", appml)
+        sr(appml, "%g", "$App/", aml)
+        ss(aml + img, img)
       }
-    }
-    else f(sc *? ".mp4")
-    {
-      s img ="@JuOS/src/img/zy/mp4.png"
-    }
-    else f(sc *? ".m4a" || sc *? ".mp3" || sc *? ".flac")
-    {
-      s img ="@JuOS/src/Manager/6e.png"
-    }
-    else f(sc *? ".pdf")
-    {
-      s img ="@JuOS/src/Manager/wE.png"
-    }
-    else f(sc *? ".jush")
-    {
-      s img ="@ic_play_pause_regular.png"
+      sj(sc, null, ".app", name)
     }
     else
     {
-      s img ="@fail.xml"
+      f(sc *? ".mp4")
+      {
+        s img = "@JuOS/src/img/zy/mp4.png"
+      }
+      else f(sc *? ".m4a")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".mp3")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".flac")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".pdf")
+      {
+        s img = "@JuOS/src/Manager/wE.png"
+      }
+      else f(sc *? ".jush")
+      {
+        s img = "@ic_play_pause_regular.png"
+      }
     }
-    //ula(list_cz,6=img,4=sc)
-    ula(list_cz,10=img,14=sc)
+    ula(list_cz, 10=img, 14=name)
   }
   ufnsui()
   {
-    us(6,"visibility","gone")
-    uls(5,list_cz,"list.iyu")
+    us(6, "visibility", "gone")
+    uls(5, list_cz, "list.iyu", -1, -2)
   }
 }
 end fn

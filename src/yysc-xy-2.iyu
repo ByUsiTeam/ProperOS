@@ -1,0 +1,175 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+app_CardcornerRadius=15dp
+app_CardElevation=8dp
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="CardView">
+<ppt>width=40dp
+height=40dp
+app_CardcornerRadius=6dp
+layout_marginLeft=8dp</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301533
+background=through</ppt>
+<event><eventItme type="clicki">lan(8)
+end()</eventItme></event>
+</View>
+<View id="12" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=应用下载详情
+layout_marginLeft=8dp
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp</ppt>
+<event></event>
+</View>
+<View id="9" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+layout_marginTop=8dp</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardcornerRadius=12dp</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="14" did="11" type="CardView">
+<ppt>width=-1
+height=78dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=8dp
+app_CardElevation=8dp</ppt>
+<event></event>
+</View>
+<View id="19" did="14" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+</ppt>
+<event></event>
+</View>
+<View id="16" did="19" type="CardView">
+<ppt>width=88dp
+height=34dp
+app_CardcornerRadius=8dp
+app_CardElevation=8dp
+layout_marginBottom=6dp</ppt>
+<event></event>
+</View>
+<View id="17" did="16" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="18" did="17" type="TextView">
+<ppt>width=-2
+height=-2
+text=进度
+typeface=@src/ttf/acbt80.ttf
+textSize=14sp
+textColor=#ff000000</ppt>
+<event></event>
+</View>
+<View id="13" did="19" type="CardView">
+<ppt>width=-1
+height=25dp
+app_CardcornerRadius=8dp
+app_CardElevation=8dp
+layout_marginLeft=10dp
+layout_marginRight=10dp</ppt>
+<event></event>
+</View>
+<View id="15" did="13" type="ProgressBar">
+<ppt>width=-1
+height=-1
+max=100
+progress=0</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+fn lib.wp(1)
+ss("正在下载应用："+sss.title+" 中....",title)
+us(12,"text",title)
+//
+fn lib.下载器2()
+fd("$ProperOS/.temp.jupk",fd)
+s name = ".temp.jupk"
+s data = "ByUsi-ProperOS-App-D"
+t()
+{
+  hdda(sss.durl,name,data,v)
+}
+//
+//hdduigo()
+t()
+{
+  w(jsq != "1")
+  {
+    hddg(v,"downloadpercentage",xzjd)
+    f(xzjd &lt; "100")
+    {
+      ufnsui()
+      {
+        us(15,"progress",xzjd)
+        us(17,"text",xzjd+"%")
+      }
+    }
+    else
+    {
+      ufnsui()
+      {
+        
+      }
+      s jsq ="1"
+    }
+  }
+}</eventItme></UIEventset>
