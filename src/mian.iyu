@@ -52,7 +52,7 @@ gravity=center</ppt>
 
 fuzs("@JuOS/sdk/player.bysi.sdk","%.data/html_video",a)
 fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
-fe("boot/init.json",yz)
+fe("$boot/init.json",yz)
 f(yz == false)
 {
   fc("@boot/init.json","$boot/init.json",yz)
