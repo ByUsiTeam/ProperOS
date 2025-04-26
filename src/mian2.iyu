@@ -14,7 +14,8 @@ background=#25252B</ppt>
 <View id="2" did="1" type="RoundImageView">
 <ppt>width=85dp
 height=85dp
-src=@JuOS/logo/properos.png</ppt>
+src=@JuOS/logo/properos.png
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="3" did="1" type="TextView">
@@ -25,7 +26,8 @@ textColor=#ffffffff
 gravity=center
 textSize=16sp
 layout_marginTop=15dp
-typeface=@fonts/z_c.TTF</ppt>
+typeface=@fonts/z_c.TTF
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="5" did="1" type="ProgressBar">
@@ -40,7 +42,8 @@ visibility=gone</ppt>
 <ppt>width=90dp
 height=90dp
 url=@system/css/Loading/index.html
-layout_marginTop=25dp</ppt>
+layout_marginTop=25dp
+visibility=gone</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">//初始化全屏
@@ -64,7 +67,9 @@ else
 //加载版本验证文件的内容
 fr("@version.txt",st)
 fr("$JuOS/v/v.cfg",v)
+fn init.boot()
 //验证引导
+/.
 t()
 {
   stop(4000)
@@ -136,6 +141,7 @@ t()
   }
 }
 //启动动画配置
+/.
 dha(dh,false,true)
 dh(dh,"duration",1500)
 us(2,"dh",dh)
@@ -144,4 +150,17 @@ dh(dh,"duration",1500)
 us(3,"dh",dh)
 dha(dh,false,true)
 dh(dh,"duration",1500)
-us(6,"dh",dh)</eventItme></UIEventset>
+us(6,"dh",dh)
+./
+
+//init
+swh("w",w)
+swh("hh",h)
+syso("w"+w)
+syso("h"+h)
+dht(dh,w,0,h,0)
+dh(dh,"duration",500)
+dha(dh2,false,true)
+dh(dh2,"duration",1000)
+dhset(dhlist,false,dh,dh2)
+us(boot_loading.9,"dh",dhlist)</eventItme></UIEventset>

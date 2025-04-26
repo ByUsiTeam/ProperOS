@@ -65,7 +65,7 @@ gravity=bottom|center</ppt>
 <ppt>width=-2
 height=-2
 text=文本5
-textSize=12sp</ppt>
+textSize=1sp</ppt>
 <event></event>
 </View>
 <View id="6" did="1" type="Button">

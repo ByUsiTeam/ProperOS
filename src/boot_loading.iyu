@@ -1,0 +1,67 @@
+<View id="9" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="1" did="9" type="CardView">
+<ppt>width=-1
+height=124dp
+layout_marginLeft=15dp
+layout_marginRight=15dp
+app_CardcornerRadius=8dp</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="RoundImageView">
+<ppt>width=85dp
+height=85dp
+src=@JuOS/logo/ByU_Si.png
+layout_marginLeft=6dp</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="TextView">
+<ppt>width=-2
+height=-2
+text=正在引导{name}中...
+typeface=@src/ttf/acbt80.ttf
+textColor=#ff000000
+textSize=25sp
+gravity=center
+layout_marginLeft=6dp
+layout_marginRight=6dp</ppt>
+<event></event>
+</View>
+<View id="7" did="5" type="ProgressBar">
+<ppt>width=-2
+height=-2
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="8" did="5" type="GifView">
+<ppt>width=66dp
+height=35dp
+src=@100.gif
+scaleType=centercrop</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

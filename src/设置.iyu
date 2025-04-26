@@ -457,7 +457,7 @@ gravity=left|center</ppt>
 <View id="70" did="69" type="TextView">
 <ppt>width=-2
 height=-2
-text=自定义启动动画
+text=修改 boot/init.json 引导文件
 textColor=#ff000000
 typeface=@src/ttf/acbt80.ttf
 textSize=15sp
@@ -469,8 +469,7 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">//uigo("启动动画.iyu")
-fn tw.tw2("不可用",1)</eventItme></event>
+<event><eventItme type="clicki">uigo("text_boot_init.iyu")</eventItme></event>
 </View>
 <View id="84" did="20" type="RelativeLayout">
 <ppt>width=-1
@@ -604,8 +603,8 @@ ngde(a,b,c,d,e,f3)
 us(27,"background",f3)
 us(35,"background",f)
 us(60,"background",f3)
-us(66,"background",f2)
-us(84,"background",f)
+us(66,"background",f)
+us(84,"background",f3)
 us(90,"background",f)
 us(96,"background",f3)
 //
