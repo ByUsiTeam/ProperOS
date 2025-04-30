@@ -33,7 +33,7 @@ text=ProperOS设置</ppt>
 <View id="7" did="2" type="WebView">
 <ppt>width=-1
 height=-1</ppt>
-<event></event>
+<event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()</eventItme><eventItme type="loadingComplete">f(sss.index != null && sss.boot != null)
 {
@@ -44,4 +44,16 @@ else
 {
   fn tw.tw2("引导路径配置错误",1)
   end()
+}</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+  ug(7,"cangoback",yz_url_dt)
+  //
+  f(yz_url_dt == "true")
+  {
+    us(7,"gobackorforward",-1)
+  }
+  else f(yz_url_dt == "false")
+  {
+    end()
+  }
 }</eventItme></UIEventset>
