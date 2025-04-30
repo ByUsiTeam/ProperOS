@@ -40,3 +40,46 @@ t()
   }
 }
 end fn
+
+fn a(url)
+
+f(url ?* "http")
+{
+  fn tw.tw("已经开始下载了，下载完成后会自动安装")
+  t()
+  {
+    //保存至目录
+    s dir = "%ProperOS/app/install/jupk/"
+    //保存的文件名（仅输入文件名,请勿不包含目录）
+    s name = "temp.jupk"
+    //下载任务的标题
+    s title = "正在下载应用中..."
+    //下载任务的图标
+    s icon = "@ts2.png"
+    //是否显示下载进度通知
+    s notsohw = true
+    s data = "abcde123"
+    //变量v为赋值变量，为下载对象
+    hdda(url,dir,name,title,icon,notsohw,data,v)
+    s jsq="0"
+    w(jsq &lt; "1")
+    {
+      hddg(v,"downloadpercentage",b)
+      f(b == "100")
+      {
+        s jsq ="1"
+        fn install.install("$ProperOS/app/install/jupk/temp.jupk","安装应用成功！")
+      }
+      else
+      {
+        syso(b)
+      }
+    }
+  }
+}
+else
+{
+  fn tw.tw2("传入参数错误",1)
+}
+
+end fn

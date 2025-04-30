@@ -316,8 +316,7 @@ background=through</ppt>
 <event><eventItme type="clicki">s durl =sss.durl
 syso(durl)
 sss durl =durl
-uigo("yysc-xy-2.iyu")
-/.
+//uigo("yysc-xy-2.iyu")
 fn lib.下载器2()
 fd("$ProperOS/.temp.jupk",fd)
 s name = ".temp.jupk"

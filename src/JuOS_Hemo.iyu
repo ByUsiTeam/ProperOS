@@ -97,7 +97,15 @@ gravity=top|center
 columnWidth=80dp
 background=through
 paddingTop=5dp</ppt>
-<event></event>
+<event><eventItme type="onscroll">/.
+gvs(5,aa)
+java(iu,aa,"android.view.View.canScrollVertically","int",1)
+f(iu==false)
+{
+tw("到底了")
+}
+./
+syso(st_bT)</eventItme></event>
 </View>
 <View id="6" did="1" type="LinearLayout">
 <ppt>width=-1

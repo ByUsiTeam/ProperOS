@@ -1,0 +1,47 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="ImageButton">
+<ppt>width=35dp
+height=35dp
+src=17301533
+background=through
+layout_marginLeft=5dp</ppt>
+<event><eventItme type="clicki">end()</eventItme></event>
+</View>
+<View id="6" did="3" type="Button">
+<ppt>width=-2
+height=-2
+text=ProperOS设置</ppt>
+<event><eventItme type="clicki">uigo("设置.iyu")</eventItme></event>
+</View>
+<View id="7" did="2" type="WebView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()</eventItme><eventItme type="loadingComplete">f(sss.index != null && sss.boot != null)
+{
+  ss(sss.boot+"/"+sss.index,url)
+  us(7,"url",url)
+}
+else
+{
+  fn tw.tw2("引导路径配置错误",1)
+  end()
+}</eventItme></UIEventset>

@@ -9,7 +9,6 @@ f(init_fe == true)
   json(data,json)
   json(json,"get","name",name)
   json(json,"get","type",type)
-  json(json,"get","iyu",iyu)
   json(json,"get","icon",icon)
   //
   addv(7,"boot_loading.iyu")
@@ -24,9 +23,31 @@ f(init_fe == true)
       stop(3500)
       ufnsui()
       {
-        uigo(iyu)
-        lan(0)
-        end()
+        f(type == "iapp")
+        {
+          json(json,"get","iyu",iyu)
+          uigo(iyu)
+          lan(0)
+          end()
+        }
+        else f(type == "html")
+        {
+          json(json,"get","boot",boot)
+          json(json,"get","index",index)
+          sss boot =boot
+          sss index =index
+          uigo("bot_init.iyu")
+          end()
+        }
+        else
+        {
+          fn tw.tw2("错误配置，无法引导",1)
+          us(boot_loading.9,"visibility","gone")
+          utw(null,"错误提醒","错误配置导致无法正常引导ROM","退出",true,v)
+          {
+            end()
+          }
+        }
       }
     }
   }
