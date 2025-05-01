@@ -104,6 +104,7 @@ t()
   fd("$JuOS/hemo/桌面/计算器.app",yz)
   fd("$JuOS/hemo/桌面/FoxCM.app",yz)
   fd("$JuOS/hemo/HASH获取工具.jush",yz)
+  fd("$JuOS/hemo/桌面/宿主机应用.app",yz)
   //
   fe("$System/Config/app_start_qdq.sys",yz_app_start_qdq)
   f(yz_app_start_qdq == "false")

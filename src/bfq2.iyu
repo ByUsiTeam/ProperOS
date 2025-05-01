@@ -253,10 +253,11 @@ fw("$System/VideoPlayer2/index.htm",html)
 us(1,"url","$System/VideoPlayer2/index.htm")
 
 
-gvs(1,wv)
+/.gvs(1,wv)
 java(ws,wv,"android.webkit.WebView.getSettings")
 java(null,ws,"android.webkit.WebSettings.setBuiltInZoomControls","boolean",true)
 java(null,ws,"android.webkit.WebSettings.setDisplayZoomControls","boolean",false)
+./
 
 
 s color = "#ffffff"

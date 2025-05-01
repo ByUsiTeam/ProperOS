@@ -221,7 +221,8 @@ else
 height=55dp
 layout_marginTop=5dp
 layout_marginLeft=5dp
-layout_marginRight=5dp</ppt>
+layout_marginRight=5dp
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="97" did="96" type="LinearLayout">
@@ -373,6 +374,81 @@ else f(xz == "false")
   us(43,"checked","true")
   fw("$System/Config/app_start_qdq.sys","true")
   fn tw.tw("已启动新启动器")
+}</eventItme></event>
+</View>
+<View id="102" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="103" did="102" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="104" did="103" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/elder_care_guide_logo.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="105" did="103" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="106" did="105" type="TextView">
+<ppt>width=-2
+height=-2
+text=启动新桌面
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="107" did="105" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="108" did="107" type="RadioButton">
+<ppt>width=-2
+height=-2
+text=
+layout_marginRight=5dp
+checked=false</ppt>
+<event></event>
+</View>
+<View id="109" did="102" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ug(108,"checked",xz)
+f(xz == "true")
+{
+  us(108,"checked","false")
+  fw("$System/Config/home.sys","false")
+  fn tw.tw("已关闭新桌面")
+  fc("@boot/init.json","$boot/init.json",config)
+}
+else f(xz == "false")
+{
+  us(108,"checked","true")
+  fw("$System/Config/home.sys","true")
+  fn tw.tw("已启动新桌面")
+  fc("@boot/init2.json","$boot/init.json",config)
 }</eventItme></event>
 </View>
 <View id="60" did="20" type="RelativeLayout">
@@ -571,6 +647,20 @@ else
 {
   us(43,"checked","true")
 }
+fr("$System/Config/home.sys",home)
+f(home == "true")
+{
+  us(108,"checked",home)
+}
+else f(home == "false")
+{
+  us(108,"checked",home)
+}
+else
+{
+  fw("$System/Config/home.sys","false")
+  us(108,"checked","false")
+}
 //引导配置
 fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
@@ -614,6 +704,7 @@ us(66,"background",f)
 us(84,"background",f3)
 us(90,"background",f)
 us(96,"background",f3)
+us(102,"background",f)
 //
 loadjar("armeabi-v7a/classes.dex",class)
 cls(class,"com.Mus.ReboundScrollView",mB)

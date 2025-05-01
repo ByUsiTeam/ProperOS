@@ -23,8 +23,22 @@ background=#daebeae3</ppt>
 height=35dp
 src=17301533
 background=through</ppt>
-<event><eventItme type="clicki">uigo("JuOS_Hemo.iyu")
-end()</eventItme></event>
+<event><eventItme type="clicki">fr("$System/Config/home.sys",home)
+f(home == "false")
+{
+  uigo("JuOS_Hemo.iyu")
+  end()
+}
+else f(home == "true")
+{
+  uigo("home.iyu")
+  end()
+}
+else
+{
+  uigo("JuOS_Hemo.iyu")
+  end()
+}</eventItme></event>
 </View>
 <View id="3" did="1" type="TextView">
 <ppt>width=-2
@@ -114,6 +128,20 @@ t()
 s id =5
 fn lib.wp(id)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
-  uigo("JuOS_Hemo.iyu")
-  end()
+  fr("$System/Config/home.sys",home)
+  f(home == "false")
+  {
+    uigo("JuOS_Hemo.iyu")
+    end()
+  }
+  else f(home == "true")
+  {
+    uigo("home.iyu")
+    end()
+  }
+  else
+  {
+    uigo("JuOS_Hemo.iyu")
+    end()
+  }
 }</eventItme></UIEventset>

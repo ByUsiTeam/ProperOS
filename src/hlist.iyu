@@ -1,46 +1,50 @@
-<View id="18" did="0" type="RelativeLayout">
-<ppt>width=80dp
-height=80dp</ppt>
-<event></event>
-</View>
-<View id="17" did="18" type="LinearLayout">
+<View id="1" did="0" type="CardView">
 <ppt>width=-1
-height=-1
-orientation=vertical
-gravity=center</ppt>
+height=55dp
+app_CardcornerRadius=8dp
+app_CardElevation=8dp
+layout_marginLeft=5dp
+layout_marginTop=5dp
+layout_marginRight=5dp
+layout_marginBottom=2dp</ppt>
 <event></event>
 </View>
-<View id="7" did="17" type="CardView">
-<ppt>width=64dp
-height=64dp
-app_CardcornerRadius=18dp
-app_CardElevation=8dp</ppt>
-<event></event>
-</View>
-<View id="8" did="7" type="RelativeLayout">
+<View id="2" did="1" type="RelativeLayout">
 <ppt>width=-1
 height=-1</ppt>
 <event></event>
 </View>
-<View id="9" did="8" type="LinearLayout">
+<View id="3" did="2" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=vertical
-gravity=center</ppt>
+orientation=horizontal
+gravity=left|center</ppt>
 <event></event>
 </View>
-<View id="10" did="9" type="ImageView">
+<View id="4" did="3" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="TextView">
 <ppt>width=-1
 height=-1
-src=17301567</ppt>
+text=应用名
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=18sp
+gravity=left|center
+layout_marginLeft=5dp</ppt>
 <event></event>
 </View>
-<View id="15" did="8" type="Button">
+<View id="6" did="2" type="Button">
 <ppt>width=-1
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">ulag(st_vW,14,uid_mc)
+<event><eventItme type="clicki">ulag(st_vW,5,uid_mc)
 syso(uid_mc)
 //
 fr("$System/Config/app_start_qdq.sys",app_start_qdq)
@@ -170,31 +174,9 @@ else
       }
     }
   }
-}</eventItme><eventItme type="press">ulag(st_vW,14,uid_mc)
+}</eventItme><eventItme type="press">ulag(st_vW,5,uid_mc)
 sss uid_mc =uid_mc
 fn lib.utw("home-utw.iyu")</eventItme></event>
-</View>
-<View id="12" did="18" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=vertical
-gravity=bottom|center</ppt>
-<event></event>
-</View>
-<View id="14" did="12" type="TextView">
-<ppt>width=-2
-height=-2
-text=文本14
-typeface=@JuOS/src/ttf/acbt80.ttf
-textSize=8sp
-gravity=center
-singleLine=true
-ellipsize=end
-layout_marginLeft=4dp
-layout_marginRight=4dp
-gravity=bottom|center
-layout_gravity=bottom|center</ppt>
-<event></event>
 </View>
 <UIEventset><eventItme type="loading">dhas(dh, st_vW, "scaleX", 0.5, 1)
 dh(dh, "duration", 500)

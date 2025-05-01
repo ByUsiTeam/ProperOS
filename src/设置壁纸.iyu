@@ -104,13 +104,40 @@ t()
   }
 }</eventItme><eventItme type="downkey">f(st_kC==4)
 {
-  uigo("JuOS_Hemo.iyu")
-  end()
+  fr("$System/Config/home.sys",home)
+  f(home == "false")
+  {
+    uigo("JuOS_Hemo.iyu")
+    end()
+  }
+  else f(home == "true")
+  {
+    uigo("home.iyu")
+    end()
+  }
+  else
+  {
+    uigo("JuOS_Hemo.iyu")
+    end()
+  }
 }</eventItme><eventItme type="loadingComplete">uycl("#daebeae3",true)
 utb(2)</eventItme><eventItme type="menu">case 退出:
-uigo("JuOS_Hemo.iyu")
-lan(10)
-end()
+fr("$System/Config/home.sys",home)
+f(home == "false")
+{
+  uigo("JuOS_Hemo.iyu")
+  end()
+}
+else f(home == "true")
+{
+  uigo("home.iyu")
+  end()
+}
+else
+{
+  uigo("JuOS_Hemo.iyu")
+  end()
+}
 break
 //
 case 删除已经设置⚙️的:

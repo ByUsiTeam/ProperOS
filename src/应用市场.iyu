@@ -23,8 +23,7 @@ height=44dp
 src=17301533
 background=through
 layout_marginLeft=8dp</ppt>
-<event><eventItme type="clicki">uigo("JuOS_Hemo.iyu")
-end()</eventItme></event>
+<event><eventItme type="clicki">end()</eventItme></event>
 </View>
 <View id="8" did="6" type="TextView">
 <ppt>width=-2
