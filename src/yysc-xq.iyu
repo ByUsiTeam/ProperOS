@@ -315,8 +315,22 @@ typeface=@JuOS/src/ttf/acbt80.ttf
 background=through</ppt>
 <event><eventItme type="clicki">s durl =sss.durl
 syso(durl)
-sss durl =durl
+ss("$data/yysc/"+sss.ytv+".json",ggh)
+fr(ggh,json)
+json(json,data)
+json(data,"get","url",url)
+ss("抱歉，由于不知明原因导致无法正常下载应用，所以请手动下载应用\n这是应用下载链接："+url+"\n下载完成请将安装包放到 /sdcard/ProperOS 目录中",tsc)
+utw(null,"抱歉",tsc,"复制下载链接","确定",true,v)
+{
+  sxb(sss.durl)
+  endutw()
+}
+else
+{
+  endutw()
+}
 //uigo("yysc-xy-2.iyu")
+/.
 fn lib.下载器2()
 fd("$ProperOS/.temp.jupk",fd)
 s name = ".temp.jupk"

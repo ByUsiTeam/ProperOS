@@ -45,7 +45,7 @@ fn lib.wp(1)
 //
 t()
 {
-  f(ss.yztz == "true")
+  f(sss.yztz == "true")
   {
     endcode
   }
@@ -53,7 +53,7 @@ t()
   {
     w(true)
     {
-      f(ss.yztz != "true")
+      f(sss.yztz != "true")
       {
         ufnsui()
         {
@@ -74,7 +74,7 @@ t()
         }
         stop(500)
       }
-      else
+      elsef(sss.yztz == "true")
       {
         endcode
       }
@@ -93,7 +93,6 @@ t()
   fw("$JuOS/hemo/桌面/设置.app","System=True=System\nUi=设置.iyu=Ui\nAppTb=%@JuOS/ICON/ic_app_icon_settings.png=AppTb\nEnd=false=End")
   fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
   fw("$JuOS/hemo/桌面/JuOS音乐.app","System=True=System\nUi=juos_music.iyu=Ui\nAppTb=$sys/JuOS/logo/MusicPlayerIcon.png=AppTb\nEnd=false=End")
-  fw("$JuOS/hemo/桌面/宿主机应用.app","System=True=System\nUi=android.iyu=Ui\nAppTb=$sys/amu.png=AppTb\nEnd=false=End")
   //fw("$JuOS/hemo/桌面/计算器.app","System=True=System\nUi=system_start.iyu=Ui\nAppTb=$sys/JuOS/html/jsj/jsj.png=AppTb\nEnd=false=End\nUrl=@JuOS/html/jsj/index.html=Url")
   //
   fc("@JuOS/App/HASH获取工具.jush","$JuOS/hemo/桌面/HASH获取工具.jush",yz)
@@ -138,8 +137,8 @@ t()
   //
   ufnsui()
   {
-    ss yztz ="true"
-    uigo("JuOS_Hemo.iyu")
+    sss yztz ="true"
+    uigo("mian.iyu")
     lan(0)
     end()
   }

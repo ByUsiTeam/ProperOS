@@ -204,14 +204,22 @@ textSize=16sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">f(ss.djcs &gt; "11")
+<event><eventItme type="clicki">fr("$System/Config/gduoshez.sys",yz)
+f(yz != "true")
 {
-  fn tw.tw("你想干什么？看看有没有开发者模式？我可以说没有")
-  s(ss.djcs - "5",ss.djcs)
+  f(ss.djcs &gt; "11")
+  {
+    fn tw.tw("已开启更多设置设置项")
+    fw("$System/Config/gduoshez.sys","true")
+  }
+  else
+  {
+    s(ss.djcs + "1",ss.djcs)
+  }
 }
 else
 {
-  s(ss.djcs + "1",ss.djcs)
+  fn tw.tw2("你已经开启该选项了，不要在开启了",1)
 }</eventItme></event>
 </View>
 <View id="20" did="3" type="CardView">

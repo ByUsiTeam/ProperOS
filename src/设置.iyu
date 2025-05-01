@@ -429,7 +429,8 @@ background=through</ppt>
 height=55dp
 layout_marginTop=5dp
 layout_marginLeft=5dp
-layout_marginRight=5dp</ppt>
+layout_marginRight=5dp
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="67" did="66" type="LinearLayout">
@@ -570,6 +571,12 @@ else
 {
   us(43,"checked","true")
 }
+//引导配置
+fr("$System/Config/gduoshez.sys",init)
+f(init == "true")
+{
+  us(66,"visibility","visible")
+}
 //
 //
 //SVG图片
@@ -615,4 +622,8 @@ gvs(16,b)
 javanew(mBs,mB,"Context",activity)
 urvw(16)
 nvw(mBs,15)
-nvw(b,mBs)</eventItme></UIEventset>
+nvw(b,mBs)</eventItme><eventItme type="restart">fr("$System/Config/gduoshez.sys",init)
+f(init == "true")
+{
+  us(66,"visibility","visible")
+}</eventItme></UIEventset>

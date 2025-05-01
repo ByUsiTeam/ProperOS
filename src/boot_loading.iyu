@@ -29,7 +29,8 @@ gravity=left|center</ppt>
 <ppt>width=85dp
 height=85dp
 src=@JuOS/logo/ByU_Si.png
-layout_marginLeft=6dp</ppt>
+layout_marginLeft=6dp
+scaleType=centerinside</ppt>
 <event></event>
 </View>
 <View id="5" did="3" type="LinearLayout">

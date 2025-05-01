@@ -16,18 +16,40 @@ orientation=horizontal
 gravity=left|center</ppt>
 <event></event>
 </View>
-<View id="4" did="3" type="ImageButton">
+<View id="8" did="3" type="CardView">
+<ppt>width=-35dp
+height=35dp
+layout_marginLeft=5dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="4" did="8" type="ImageButton">
 <ppt>width=35dp
 height=35dp
 src=17301533
-background=through
-layout_marginLeft=5dp</ppt>
+background=through</ppt>
 <event><eventItme type="clicki">end()</eventItme></event>
 </View>
-<View id="6" did="3" type="Button">
-<ppt>width=-2
-height=-2
-text=ProperOS设置</ppt>
+<View id="10" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="9" did="10" type="CardView">
+<ppt>width=240dp
+height=45dp
+app_CardcornerRadius=5dp
+layout_marginLeft=6dp
+layout_marginRight=6dp</ppt>
+<event></event>
+</View>
+<View id="6" did="9" type="Button">
+<ppt>width=-1
+height=-1
+text=ProperOS设置
+background=through</ppt>
 <event><eventItme type="clicki">uigo("设置.iyu")</eventItme></event>
 </View>
 <View id="7" did="2" type="WebView">
@@ -35,7 +57,9 @@ text=ProperOS设置</ppt>
 height=-1</ppt>
 <event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">fn byusi.ztl()</eventItme><eventItme type="loadingComplete">f(sss.index != null && sss.boot != null)
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+fn api.hide_btn(7)
+hsas(7,true)</eventItme><eventItme type="loadingComplete">f(sss.index != null && sss.boot != null)
 {
   ss(sss.boot+"/"+sss.index,url)
   us(7,"url",url)
@@ -54,6 +78,13 @@ else
   }
   else f(yz_url_dt == "false")
   {
-    end()
+    utw(null,"","要退出吗？","确定","不退出",true,v)
+    {
+      end()
+    }
+    else
+    {
+      endutw()
+    }
   }
 }</eventItme></UIEventset>

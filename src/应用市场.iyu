@@ -29,7 +29,7 @@ end()</eventItme></event>
 <View id="8" did="6" type="TextView">
 <ppt>width=-2
 height=-2
-text=文本8
+text=ProperOS应用市场
 textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=16sp
