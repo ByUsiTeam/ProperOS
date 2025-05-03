@@ -207,13 +207,6 @@ f(类对象!=null)
 
 end fn
 //
-//暂时没有用
-fn data()
-
-syso("db_null")
-
-end fn
-//
 //新编辑器
 fn gl(id,a)
 
@@ -258,21 +251,6 @@ fw(f,"null")
 fd(f,yz)
 
 end fn
-//
-//弹窗工具
-/.
-icon 变量用来指定弹窗图标
-title 变量用来指定弹窗标题
-src 变量用来指定弹窗的内容
-an1 变量用来指定按钮1的提示词
-an2 变量用来指定按钮2的提示词
-tf 变量是固定的,只可以定成 true 或者 false
-./
-//回传参数介绍
-/.
-1. 全局变量 utw_1 是按钮1被点击后的全局变量,当全局变量 utw_1 的变量值 变成 true 了,那么它被点击了
-2. 全局变量 utw_2 是按钮1被点击后的全局变量,当全局变量 utw_2 的变量值 变成 true 了,那么它被点击了
-./
 //
 //tw弹窗工具,希望开发者尽量统一使用这个
 fn tw(text)
@@ -390,16 +368,17 @@ javanew(newDownloadListener,DownloadListener)
 javacb(newDownloadListener,DownloadListener){
   f(st_mD?"onDownloadComplete")
   {
-    syso("下载成功")
-    fo(lj)
+    t()
+    {
+      syso("下载成功")
+      fn lib.fo(lj)
+    }
   }
   f(st_mD?"onDownloadFailed")
   {
     sgsz(st_aS,0,e)
-    
     ufnsui(){
       fn tw.tw("失败："+e)
-      sxb("失败："+e)
     }
   }
 }
@@ -488,5 +467,12 @@ else
     fn tw.tw("导入失败")
   }
 }
+
+end fn
+
+//文件打开（调用iApp的方法）
+fn fo(data)
+
+fo(data)
 
 end fn

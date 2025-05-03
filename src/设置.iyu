@@ -684,7 +684,10 @@ fn lib.svg(svg,68)
 fr("$JuOS/ICON/ic_parentcontrol.svg",svg)
 fn lib.svg(svg,92)
 //
-fn api.hide_btn(73)</eventItme><eventItme type="loadingComplete">s id =14
+fn api.hide_btn(73)
+//检查更新界面载入
+addv(14,"update.iyu")
+us(update.1,"visibility","gone")</eventItme><eventItme type="loadingComplete">s id =14
 fn lib.wp(id)
 //主题配置
 s a =2

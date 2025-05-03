@@ -4,7 +4,8 @@ f(y == "true")
 {
   t()
   {
-    fr("@version.txt",bd_v)
+    //fr("@version.txt",bd_v)
+    s bd_v ="1"
     hs("https://gitee.com/api/v5/repos/byusi/properos/releases/latest?access_token=e41479a1b72747f25afd246fbe8adb09",url)
     f(url != null)
     {
@@ -26,7 +27,25 @@ f(y == "true")
           {
             ufnsui()
             {
-              utw(null,"更新提示",jianj,"下载更新","取消更新",false,v)
+              us(update.1,"visibility","visible")
+              swh("w",w)
+              swh("hh",h)
+              syso("w"+w)
+              syso("h"+h)
+              dht(dh,w,0,h,0)
+              dh(dh,"duration",500)
+              dha(dh2,false,true)
+              dh(dh2,"duration",1000)
+              dhset(dhlist,false,dh,dh2)
+              us(update.1,"dh",dhlist)
+              us(update.15,"text",jianj)
+              sss durl =durl
+              fw("$ProperOS/update/base.apk","1")
+              fd("$ProperOS/update/base.apk",y)
+              fdir("$ProperOS/update/base.apk",lj)
+              sss lj =lj
+              sss jianj =jianj
+             /. utw(null,"更新提示",jianj,"下载更新","取消更新",false,v)
               {
                 fw("$ProperOS/update/base.apk","1")
                 fd("$ProperOS/update/base.apk",y)
@@ -37,6 +56,7 @@ f(y == "true")
               {
                 endutw()
               }
+              ./
             }
           }
         }

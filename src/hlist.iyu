@@ -41,8 +41,8 @@ ellipsize=end
 minLines=1
 maxLines=2
 shadowColor=#ff071023
-shadowRadius=2
-shadowDx=2
+shadowRadius=1
+shadowDx=1
 shadowDy=3</ppt>
 <event></event>
 </View>

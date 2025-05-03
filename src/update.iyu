@@ -1,0 +1,162 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="CardView">
+<ppt>width=-1
+height=450dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=12dp</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="7" did="5" type="LinearLayout">
+<ppt>width=-1
+height=66dp
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="RoundImageView">
+<ppt>width=55dp
+height=55dp
+src=@JuOS/logo/properos.png
+layout_marginLeft=11dp</ppt>
+<event></event>
+</View>
+<View id="9" did="7" type="TextView">
+<ppt>width=-2
+height=-2
+text=ProperOS更新
+typeface=@JuOS/src/ttf/acbt80.ttf
+textColor=#ff000000
+textSize=18sp
+layout_marginLeft=7dp</ppt>
+<event></event>
+</View>
+<View id="10" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="CardView">
+<ppt>width=56dp
+height=56dp
+app_CardcornerRadius=8dp
+layout_marginRight=10dp</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301533
+background=through</ppt>
+<event><eventItme type="clicki">swh("w",w)
+swh("hh",h)
+syso("w"+w)
+syso("h"+h)
+dht(dh,0,w,0,h)
+dh(dh,"duration",500)
+dha(dh2,true,false)
+dh(dh2,"duration",2000)
+dhset(dhlist,false,dh,dh2)
+us(update.1,"dh",dhlist)
+us(update.1,"visibility","gone")</eventItme></event>
+</View>
+<View id="16" did="5" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="13" did="16" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="14" did="13" type="TextView">
+<ppt>width=-1
+height=-2
+text=更新标题
+gravity=center
+typeface=@JuOS/src/ttf/acbt80.ttf
+textColor=#ff000000
+textSize=25sp</ppt>
+<event></event>
+</View>
+<View id="22" did="13" type="ScrollView">
+<ppt>width=-2
+height=-2</ppt>
+<event></event>
+</View>
+<View id="23" did="22" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top</ppt>
+<event></event>
+</View>
+<View id="15" did="23" type="TextView">
+<ppt>width=-2
+height=-2
+text=更新内容
+textColor=#ff000000
+layout_marginTop=5dp
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=15sp</ppt>
+<event></event>
+</View>
+<View id="17" did="16" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=bottom|center</ppt>
+<event></event>
+</View>
+<View id="18" did="17" type="CardView">
+<ppt>width=120dp
+height=55dp
+app_CardcornerRadius=10dp
+layout_marginBottom=6dp
+app_CardElevation=8dp</ppt>
+<event></event>
+</View>
+<View id="19" did="18" type="Button">
+<ppt>width=-1
+height=-1
+text=下载更新
+typeface=@JuOS/src/ttf/acbt80.ttf
+background=#ff4537ff
+textColor=#ffffffff</ppt>
+<event><eventItme type="clicki">
+fn lib.xzq("下载更新",sss.durl,sss.lj,sss.jianj)
+swh("w",w)
+swh("hh",h)
+syso("w"+w)
+syso("h"+h)
+dht(dh,0,w,0,h)
+dh(dh,"duration",500)
+dha(dh2,true,false)
+dh(dh2,"duration",2000)
+dhset(dhlist,false,dh,dh2)
+us(update.1,"dh",dhlist)
+us(update.1,"visibility","gone")</eventItme></event>
+</View>
+<UIEventset></UIEventset>
