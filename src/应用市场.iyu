@@ -35,6 +35,30 @@ textSize=16sp
 layout_marginLeft=10dp</ppt>
 <event></event>
 </View>
+<View id="9" did="6" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="CardView">
+<ppt>width=100dp
+height=45dp
+app_CardcornerRadius=10dp
+layout_marginRight=8dp</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="Button">
+<ppt>width=-1
+height=-1
+text=了解ProperOS应用开发
+typeface=@JuOS/src/ttf/acbt80.ttf
+background=#ff2f47ff
+textSize=12sp
+textColor=#ffffffff</ppt>
+<event><eventItme type="clicki">hws("https://gitee.com/byusi/docs/blob/master/OpenJuOS/Application%20market/OpenJuOS%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.md")</eventItme></event>
+</View>
 <View id="4" did="2" type="SwipeRefreshLayout">
 <ppt>width=-1
 height=-1

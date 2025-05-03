@@ -96,8 +96,7 @@ layout_marginLeft=12dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">
-s uid_mc =sss.uid_mc
+<event><eventItme type="clicki">s uid_mc =sss.uid_mc
 syso(uid_mc)
 ss("$JuOS/hemo/桌面/"+uid_mc+".app",app_m)
 ss("$JuOS/hemo/桌面/"+uid_mc,app_mm)
@@ -138,10 +137,28 @@ else
     fd(app_mm,yz)
     f(yz == "true")
     {
-      uigo("JuOS_Hemo.iyu")
-      lan(0)
-      fn tw.tw("删除成功")
-      end()
+      fr("$System/Config/home.sys",home)
+      f(home == "false")
+      {
+        uigo("JuOS_Hemo.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+      else f(home == "true")
+      {
+        uigo("home.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+      else
+      {
+        uigo("JuOS_Hemo.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
     }
   }
   else

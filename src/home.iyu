@@ -108,6 +108,7 @@ height=-1</ppt>
 <UIEventset><eventItme type="loading">fn lib.wp(2)
 utb(3)</eventItme><eventItme type="loadingComplete">uycl("#ff5f6aff",true)
 //
+us(6,"Refreshing","true")
 t()
 {
   s a = "$JuOS/hemo/桌面"
@@ -173,6 +174,7 @@ t()
   ufnsui()
   {
     uls(4, list_cz, "hlist.iyu", -1, -2)
+    us(6,"Refreshing","false")
   }
 }</eventItme><eventItme type="menu">case 设置:
 uigo("设置.iyu")

@@ -36,7 +36,14 @@ textColor=#ff000000
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=18sp
 gravity=left|center
-layout_marginLeft=5dp</ppt>
+layout_marginLeft=5dp
+ellipsize=end
+minLines=1
+maxLines=2
+shadowColor=#ff071023
+shadowRadius=2
+shadowDx=2
+shadowDy=3</ppt>
 <event></event>
 </View>
 <View id="6" did="2" type="Button">
