@@ -118,10 +118,28 @@ f(yym != null)
     f(rs ? "true" && yz_uninstall == "true")
     {
       syso(yz_uninstall)
-      fn tw.tw("删除成功")
-      uigo("JuOS_Hemo.iyu")
-      lan(0)
-      end()
+      fr("$System/Config/home.sys",home)
+      f(home == "false")
+      {
+        uigo("JuOS_Hemo.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+      else f(home == "true")
+      {
+        uigo("home.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+      else
+      {
+        uigo("JuOS_Hemo.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
     }
   }
   else

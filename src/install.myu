@@ -43,7 +43,8 @@ end fn
 
 fn a(url)
 
-f(url ?* "http")
+syso(url)
+f(url != null)
 {
   fn tw.tw("已经开始下载了，下载完成后会自动安装")
   t()
@@ -62,18 +63,31 @@ f(url ?* "http")
     //变量v为赋值变量，为下载对象
     hdda(url,dir,name,title,icon,notsohw,data,v)
     s jsq="0"
+    ufnsui()
+    {
+      us(app.1,"visibility","visible")
+    }
     w(jsq &lt; "1")
     {
       hddg(v,"downloadpercentage",b)
+      ufnsui()
+      {
+        us(app.6,"progress",b)
+      }
       f(b == "100")
       {
         s jsq ="1"
-        fn install.install("$ProperOS/app/install/jupk/temp.jupk","安装应用成功！")
+        syso(b)
+        ufnsui()
+        {
+          us(app.7,"visibility","visible")
+        }
       }
       else
       {
         syso(b)
       }
+      stop(500)
     }
   }
 }

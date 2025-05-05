@@ -170,4 +170,7 @@ hsas(3,true)</eventItme><eventItme type="downkey">f(st_kC == 4)
   {
     end()
   }
-}</eventItme><eventItme type="loadingComplete">fn api.hide_btn(3)</eventItme></UIEventset>
+}</eventItme><eventItme type="loadingComplete">fn api.hide_btn(3)
+addv(1,"app.iyu")
+us(app.7,"visibility","gone")
+us(app.1,"visibility","gone")</eventItme></UIEventset>
