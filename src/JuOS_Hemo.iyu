@@ -181,9 +181,9 @@ fn lib.utw("home-cd.iyu")
 break
 
 case 时间:
-utw(null,"","time.iyu","确定",false,v)
+utw(null,"","time.iyu",false,v)
 {
-  endutw()
+  
 }
 break
 

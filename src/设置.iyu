@@ -500,6 +500,54 @@ background=through</ppt>
 //fn tw.tw("长按有特殊效果！")
 </eventItme></event>
 </View>
+<View id="110" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="111" did="110" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="112" did="111" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="113" did="111" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="114" did="113" type="TextView">
+<ppt>width=-2
+height=-2
+text=公告
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="115" did="110" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn system.gg("get")
+fn system.gg("zs")</eventItme></event>
+</View>
 <View id="66" did="20" type="RelativeLayout">
 <ppt>width=-1
 height=55dp
@@ -683,6 +731,10 @@ fr("$JuOS/ICON/ic_settings_storage.svg",svg)
 fn lib.svg(svg,68)
 fr("$JuOS/ICON/ic_parentcontrol.svg",svg)
 fn lib.svg(svg,92)
+fr("$JuOS/ICON/ic_settings_multi_device_collaboration_svg.svg",svg)
+fn lib.svg(svg,112)
+fr("$JuOS/ICON/ic_settings_more_connections.svg",svg)
+fn lib.svg(svg,86)
 //
 fn api.hide_btn(73)
 //检查更新界面载入
@@ -708,6 +760,7 @@ us(84,"background",f3)
 us(90,"background",f)
 us(96,"background",f3)
 us(102,"background",f)
+us(110,"background",f3)
 //
 loadjar("armeabi-v7a/classes.dex",class)
 cls(class,"com.Mus.ReboundScrollView",mB)

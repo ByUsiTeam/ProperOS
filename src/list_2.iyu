@@ -42,6 +42,7 @@ f(uid_mc *? ".jupk")
   t()
   {
     fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
+    fuz(ml,"SIGN/KeySign.k","$ProperOS/Install/Sign",keyyz)
     //
     fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
     //
@@ -65,7 +66,16 @@ f(uid_mc *? ".jupk")
     {
       ufnsui()
       {
-        fn tw.tw("资源文件解压失败")
+       // fn tw.tw2("主要索引文件解压失败或者没有签名jupk文件",1)
+        utw(null,"","主要索引文件解压失败或者没有签名jupk文件\n请去官方工具进行jupk签名：https://jupk-sign.byusi.cn/","打开官方工具","确定",true,v)
+        {
+          sss url ="https://jupk-sign.byusi.cn/"
+          uigo("system_start.iyu")
+        }
+        else
+        {
+          endutw()
+        }
       }
     }
   }

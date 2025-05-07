@@ -91,6 +91,7 @@ text=关闭安装窗口
 background=#ff4537ff
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">us(app.1,"visibility","gone")</eventItme></event>
+<event><eventItme type="clicki">us(app.1,"visibility","gone")
+us(app.7,"visibility","gone")</eventItme></event>
 </View>
 <UIEventset></UIEventset>
