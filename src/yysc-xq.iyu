@@ -28,7 +28,7 @@ layout_marginLeft=6dp</ppt>
 <View id="21" did="19" type="TextView">
 <ppt>width=-2
 height=-2
-text=应用详情
+text=抱歉无法正常使用了[S19]
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=16sp
 layout_marginLeft=8dp
@@ -530,4 +530,5 @@ t()
       }
     }
   }
-}</eventItme></UIEventset>
+}
+fn SystemOperation.stickers_loading(21)</eventItme></UIEventset>

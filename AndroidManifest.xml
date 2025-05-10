@@ -2,8 +2,8 @@
 <title>ProperOS</title>
 <icon>icon.png</icon>
 <packageName>miao.byusi.properos</packageName>
-<versionName>1.1.7.0</versionName>
-<versionint>1170</versionint>
+<versionName>1.1.7.2</versionName>
+<versionint>1172</versionint>
 <sdk>26</sdk>
 <yuv>3</yuv>
 
