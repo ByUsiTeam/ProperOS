@@ -13,17 +13,22 @@
 ## 部署指南
 
 ### 获取源码
-```bash
-# Gitee 仓库
-git clone https://gitee.com/byusi/properos.git
+- Gitee
+  ```bash
+  # Gitee 仓库
+  git clone https://gitee.com/byusi/properos.git
+  ```
 
-# GitHub 镜像
-git clone https://github.com/ByUsiTeam/ProperOS.git
-```
+- GitHub
+  ```bash
+  # GitHub 镜像
+  git clone https://github.com/ByUsiTeam/ProperOS.git
+  ```
 
 ### 项目打包
 ```bash
 cd properos
+git switch debug
 zip -r ProperOS.iApp .
 ```
 
