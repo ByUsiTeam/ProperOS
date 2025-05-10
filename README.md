@@ -1,8 +1,8 @@
-# ProperOS
+# ProperOS的debug分枝
 
 - 基于 OpenJuOS **v3.5** 开发  
   [![ByUsi/OpenJuOS](https://gitee.com/byusi/openjuos/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/byusi/openjuos)
-- **当前版本**: ProperOS **vdebug1.1.7.3**
+- **当前版本**: ProperOS debug **vdebug1.1.7.3**
 
 ## 基础特性
 1. 基于移动端应用 `iApp` 开发的模拟操作系统环境
@@ -27,8 +27,11 @@
 
 ### 项目打包
 ```bash
+# 进入目录
 cd properos
+# 签出debug分枝
 git switch debug
+# 打包
 zip -r ProperOS.iApp .
 ```
 
