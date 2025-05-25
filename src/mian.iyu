@@ -1,0 +1,68 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=white</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="ImageView">
+<ppt>width=-2
+height=-2
+src=@JuOS/logo/BySi_logo.png</ppt>
+<event></event>
+</View>
+<View id="4" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom|center</ppt>
+<event></event>
+</View>
+<View id="7" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="6" did="7" type="TextView">
+<ppt>width=-1
+height=-1
+text=Powered by OpenJuOS
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=18sp
+layout_marginBottom=15dp
+gravity=center</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">t()
+{
+  ufnsui()
+  {
+    fn byusi.ztl()
+  }
+}
+
+fuzs("@JuOS/sdk/player.bysi.sdk","%.data/html_video",a)
+fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
+fe("$boot/init.json",yz)
+f(yz == false)
+{
+  fc("@boot/init.json","$boot/init.json",yz)
+}</eventItme><eventItme type="loadingComplete">t()
+{
+  stop(2000)
+  ufnsui()
+  {
+    uigo("mian2.iyu")
+    lan(0)
+    end()
+  }
+}</eventItme></UIEventset>

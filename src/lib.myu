@@ -1,0 +1,478 @@
+fn starta()
+
+fr("$ByUsi/JuOS/StartA/config.jc",config)
+sj(config,"S=","=S",s)
+f(s == "true")
+{
+  sj(config,"P=","=P",p)
+  sj(config,"D=","=D",d)
+  ss(p+d,wj)
+  fuz(wj,"index.json","$ByUsi/temp/starta",jy)
+  f(jy == "true")
+  {
+    fr("$ByUsi/temp/starta/index.json",dhjson)
+    //数据解析
+    json(dhjson,jxwc)
+    json(jxwc,"get","Total-number-of-pictures",tnop)
+    json(jxwc,"get","prefix",prefix)
+    json(jxwc,"get","suffix",suffix)
+    json(jxwc,"get","Splicing-method",sm)
+    //数据使用
+    
+  }
+  else
+  {
+    fn tw.tw("解压出现问题了，抱歉了")
+  }
+}
+else f(s == "false")
+{
+  endcode
+}
+else
+{
+  fn tw.tw("配置出现异常，正在自动恢复默认配置")
+  fr("@JuOS/src/StartA/config.jc",def)
+  fw("$ByUsi/JuOS/StartA/config.jc",def)
+}
+
+end fn
+
+//配置下载器的，不建议开发这调用
+fn 下载器()
+//下载产生的临时文件目录
+s a = "/sdcard/下载/ProperOS/.temp"
+//下载至保存的目录
+s b = "/sdcard/ProperOS/"
+//允许同时下载任务数量
+s c = 2
+//每个任务开启线程数量
+s d = 8
+//连接失败重试次数
+s e = 2
+//连接超时时间，25秒的意思
+s f = 25000
+//是否显示下载进度通知
+s g = true
+hdd(a,b,c,d,e,f,g)
+syso("下载管理器_true")
+end fn
+
+fn 下载器2()
+
+//下载产生的临时文件目录
+s a = "$ProperOS/.temp"
+//下载至保存的目录
+s b = "$ProperOS/"
+//允许同时下载任务数量
+s c = 2
+//每个任务开启线程数量
+s d = 8
+//连接失败重试次数
+s e = 2
+//连接超时时间，25秒的意思
+s f = 25000
+//是否显示下载进度通知
+s g = true
+hdd(a,b,c,d,e,f,g)
+syso("下载管理器_true")
+
+end fn
+
+//
+//壁纸配置，新版本的，现在的JuOS壁纸配置都是调用它的
+fn wp(id)
+s wp ="$JuOS/Config/wallpaper/wp.png"
+t()
+{
+  fe("$JuOS/Config/wallpaper/wp.png",wp_cz_yz)
+  f(wp_cz_yz == "true")
+  {
+    ufnsui()
+    {
+      us(id,"background",wp)
+      us(id,"src",wp)
+    }
+  }
+  else f(wp_cz_yz == "false")
+  {
+    ufnsui()
+    {
+      us(id,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+    }
+  }
+  else
+  {
+    ufnsui()
+    {
+      fn tw.tw("出现问题了(つД`)")
+    }
+  }
+}
+end fn
+
+fn wp2(id,id2)
+s wp ="$JuOS/Config/wallpaper/wp.png"
+t()
+{
+  fe("$JuOS/Config/wallpaper/wp.png",wp_cz_yz)
+  f(wp_cz_yz == true)
+  {
+    ufnsui()
+    {
+      us(id,"background",wp)
+      us(id2,"src",wp)
+    }
+  }
+  else f(wp_cz_yz == false)
+  {
+    ufnsui()
+    {
+      us(id,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+      us(id2,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+    }
+  }
+  else
+  {
+    ufnsui()
+    {
+      fn tw.tw("出现问题了(つД`)")
+    }
+  }
+}
+end fn
+
+//哈希校验的获取哈希数的，需要传入一个文件的绝对路径，获取完成后它会给数值设置为全局变量 hash
+fn hash(file)
+
+//== Head ==
+loadjar("hash.jsdk", dex)
+cls(dex,"file.getFileHash", api)
+javax(hash,null,api,"calculateHash","String",file)
+//== End ==
+
+syso(hash)
+sss hash =hash
+
+end fn
+
+fn list(id)
+
+gvs(id,列表对象)
+
+call(null,"mjava","Mus.set",列表对象)
+
+end fn
+//
+//弹出模块，开发者暂时应该用不到
+fn utw(iyu)
+
+loadjar("qx",dex)
+cls(dex,"abc.弹窗",类)
+nvw(-1,null,"线性布局","width=-1\nheight=-1\norientation=vertical\nbackgroundcolor=0",ss.弹窗布局)
+addv(ss.弹窗布局,iyu)
+gvs(ss.弹窗布局,弹窗.2,bg)
+
+//通过此方法操作弹窗内容布局的控件,看需求.
+javax(ss.弹窗,null,类,"弹窗","Context",activity,"android.view.View",ss.弹窗布局)
+java(null,ss.弹窗,"android.app.Dialog.setCancelable","boolean",true)
+//点击外面是否关闭弹窗 true 关闭, false 不关闭
+java(null,ss.弹窗,"android.app.Dialog.setCanceledOnTouchOutside","boolean",false)
+//加这个防止多次弹出弹窗引起不必要bug
+fn 动画.显示弹窗1(ss.弹窗布局)
+
+end fn
+//
+//和上面的那个是一对的，移除弹窗的
+fn endutw()
+
+fn 动画.关闭弹窗1(ss.弹窗布局,ss.弹窗)
+
+end fn
+//
+//浏览器全屏支持的浏览器配置模块，需要传递两个参数
+//一个是 浏览器的布局id，一个是相对布局的布局id
+fn webqp(id1,id2)
+
+loadjar("JuFengCloud/lib/SDK.dex",loadweb)
+cls(loadweb,"com.浏览器.bofangqi",类)
+gvs(id1,浏览器)
+gvs(id2,相对布局)
+//实例化对象
+javanew(类对象,类,"android.app.Activity",activity,"android.webkit.WebView",浏览器,"android.widget.RelativeLayout",相对布局)
+f(类对象!=null)
+{
+  javax(chromeClient,类对象,类,"getWebChromeClient")
+} javax(null,浏览器,"android.webkit.WebView","setWebChromeClient","android.webkit.WebChromeClient",chromeClient)
+
+end fn
+//
+//新编辑器
+fn gl(id,a)
+
+loadjar("armeabi/Classes.dex",edit)
+//这个一定要好好看
+//1.首先打包测试一下你自己的iapp应用
+//2.然后找到"资源文件设置"点击lib,再点击armeabi
+//3.右上角导入,点进入iapp专区,根据下面路径
+//路径是…ProjectApp/com.iapp.高性能/apk/lib/armeabi/Classes.dex
+//将这个dex导入到你的"armeabi"文件夹里面中即可,
+//实在不懂可以加群,或者是用mt比较一下,复制文件到上面那个路径
+cls(edit,"com.chwltd.view.EditText.LuaEditor",sss.edit)
+javanew(et,sss.edit,"Context",activity)
+java(color,null,"android.graphics.Color.parseColor","String","#ff0000")
+//设置高亮字的颜色,上面"#ffff0011"这个就是颜色,想高亮啥颜色自己改
+javax(null,et,sss.edit,"setBasewordColor","int",color)
+java(color,null,"android.graphics.Color.parseColor","String","#FF016597")
+//这个是提示框字体的颜色,改法和上面一样,有需求就使用,使用时记得把上下2个注释给去掉
+javax(null,et,sss.edit,"setPanelTextColor","int",color)
+javax(null,et,sss.edit,"setWordWrap","boolean",true)
+//这个是设置是否自动换行
+//s a = "sj;sl;ug;dh;us;gg.alert(' ')"
+//这个是你要高亮哪些字母或文字以";"分割,
+//可以去看一下效果就懂了
+s b = ";"
+sl(a, b, c)
+javax(null,et,sss.edit,"addNames","String[]",c)
+//javax(null,et,sss.edit,"setText","CharSequence","我是显示内容")
+//javax(null,et,sss.edit,"setDark","boolean",false)
+//这个很重要了,设置变量框显示的内容
+gvs(id,a)
+nvw(et,a)
+sss e=et
+
+end fn
+//
+//文件创建器
+fn mkdir(fl)
+
+ss(fl+"index.temp",f)
+fw(f,"null")
+fd(f,yz)
+
+end fn
+//
+//tw弹窗工具,希望开发者尽量统一使用这个
+fn tw(text)
+
+fn tw.tw(text)
+
+end fn
+//
+//用于启动一个新的页面
+fn webui(url)
+
+sss url =url
+uigo("system_start.iyu")
+lan(5)
+
+end fn
+//
+//启动系统界面
+//变量 ui 用来指定系统页面
+fn sysui(ui)
+
+uigo(ui)
+lan(0)
+
+end fn
+//
+//svg处理器
+/.
+变量解释
+icon 这个变量是用来传递svg图片的代码的
+id 处理好了的图片的
+./
+fn svg(icon,id)
+
+loadjar("ByUsi/svg.i",包)
+cls(包,"com.example.application3.svg",类)
+javanew(n,类)
+javax(n,n,类,"s","String",icon,"Activity",activity)
+us(id,"src",n)
+sss id =n
+
+end fn
+//
+//
+fn list_l(id1,id2)
+
+loadjar("armeabi-v7a/classes.dex",class)
+cls(class,"com.Mus.ReboundScrollView",mB)
+gvs(id1,a)
+gvs(id1,b)
+javanew(mBs,mB,"Context",activity)
+urvw(id1)
+nvw(mBs,id2)
+nvw(b,mBs)
+
+end fn
+//
+fn apk(path)
+
+javags(er,activity,"android.app.Activity","RESULT_OK")
+f(st_lC==er)
+{
+  f(st_sC==2)
+  {
+    java(uri,st_iT,"android.content.Intent.getData")
+    call(path, "mjava", "uri.getRealPath", activity, uri)
+    ufnsui()
+    {
+      //s path="/storage/emulated/0/小趣/app/云手机.apk"
+      fs(path,b)
+      s2(b/1024/1024, b)
+      sn(b/1024/1024, b2)
+      ss(b+"MB",wjdax)
+      //us(5,"text",wjdax)
+      call(result,"mlua","apk.getApkInfo",path)
+      sgsz(result,0,包名)
+      //us(6,"text",包名)
+      sgsz(result,1,版本)
+      //us(4,"text",版本)
+      javax(pm,activity,"android.content.ContextWrapper","getPackageManager")
+      javax(icon,pm,"android.content.pm.PackageManager","getApplicationInfo","String",包名,"int",0)
+      javax(图标,icon,"android.content.pm.PackageItemInfo","loadIcon","android.content.pm.PackageManager",pm)
+      //us(7,"src",图标)
+      sgsz(result,2,应用名)
+      //us(3,"text",应用名)
+      ss(版本+","+包名,包名版本)
+      ss("应用解析\n包名："+包名+"\n版本："+版本+"\n大小："+wjdax,iio)
+      utw(图标,应用名,iio,"确定",true,v)
+      {
+        endutw()
+      }
+    }
+  }
+}
+
+end fn
+//
+fn juos_api_1(i)
+
+sss url =i
+uigo("JuOS.terminal.iyu")
+
+end fn
+
+fn xzq(title,url,lj,src)
+
+loadjar("Darlene.dex.j",dex)
+
+cls(dex,"org.Darlene.cn.Downloader",Darlene)
+
+cls(dex,"org.Darlene.cn.Downloader$DownloadListener",DownloadListener)
+
+javanew(newDownloadListener,DownloadListener)
+
+javacb(newDownloadListener,DownloadListener){
+  f(st_mD?"onDownloadComplete")
+  {
+    t()
+    {
+      syso("下载成功")
+      fn lib.fo(lj)
+    }
+  }
+  f(st_mD?"onDownloadFailed")
+  {
+    sgsz(st_aS,0,e)
+    ufnsui(){
+      fn tw.tw("失败："+e)
+    }
+  }
+}
+
+//设置下载图标
+sss 下载链接=url
+
+sss 设置路径=lj
+
+sss 进度速度="900"
+
+sss 下载标题=title
+
+sss 下载内容=src
+
+fdir("@JuOS/src/img/zy/success.png",icon)
+
+javax(null,null,Darlene,"setIcon","String",icon)
+
+javax(null,null,Darlene,"Download","Context",activity,"String",sss.下载链接,"String",sss.设置路径,DownloadListener,newDownloadListener)
+
+javax(null,null,Darlene,"setTitle","String",sss.下载标题)
+
+javax(null,null,Darlene,"setContent","String",sss.下载内容)
+
+javax(null,null,Darlene,"setUSpeed","int",sss.进度速度)
+
+
+end fn
+
+fn md5(Text)
+
+call(MD5,"mjava","md5.encryption",Text)
+sss md5 =MD5
+
+end fn
+
+fn install(uid_mc)
+//
+f(uid_mc *? ".jupk")
+{
+  s ml =uid_mc
+  syso(ml)
+  t()
+  {
+    fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
+    //
+    fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
+    //
+    sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
+    sj(txt_yz_t,"AppM=","=AppM",AppM_2)
+    sr(txt_yz,"%g","$App/",txt_ml)
+    //应用link创建
+    ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
+    fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
+    //
+    fuzs(ml,txt_ml,yz_stty)
+    //
+    f(yz_stty == "true")
+    {
+      ufnsui()
+      {
+        //fn tw.tw("安装成功啦")
+      }
+    }
+    else
+    {
+      ufnsui()
+      {
+        fn tw.tw("资源文件解压失败")
+      }
+    }
+  }
+}
+else
+{
+  ss("/sdcard/JuOS/"+uid_mc,ml)
+  ss("$JuOS/hemo/桌面/"+uid_mc,ml_2)
+  fc(ml,ml_2,yz)
+  f(yz == "true")
+  {
+    fn tw.tw("导入成功")
+  }
+  else
+  {
+    fn tw.tw("导入失败")
+  }
+}
+
+end fn
+
+//文件打开（调用iApp的方法）
+fn fo(data)
+
+fo(data)
+
+end fn

@@ -1,0 +1,109 @@
+fn install(ml,tsc)
+t()
+{
+  fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
+  fuz(ml,"SIGN/KeySign.k","$ProperOS/Install/Sign",keyyz)
+  //
+  f(z_yz == "true" && keyyz == "true")
+  {
+    fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
+    //
+    sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
+    sj(txt_yz_t,"AppM=","=AppM",AppM_2)
+    sr(txt_yz,"%g","$App/",txt_ml)
+    //应用link创建
+    ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
+    fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
+    //
+    fuzs(ml,txt_ml,yz_stty)
+    //
+    f(yz_stty == "true")
+    {
+      ufnsui()
+      {
+        fn tw.tw(tsc)
+      }
+    }
+    else
+    {
+      ufnsui()
+      {
+        fn tw.tw("资源文件解压失败")
+      }
+    }
+  }
+  else
+  {
+    ufnsui()
+    {
+      //fn tw.tw2("主要索引文件解压失败或者没有签名jupk文件",1)
+      utw(null,"","主要索引文件解压失败或者没有签名jupk文件\n请去官方工具进行jupk签名：https://jupk-sign.byusi.cn/","打开官方工具","确定",true,v)
+      {
+        sss url ="https://jupk-sign.byusi.cn/"
+        uigo("system_start.iyu")
+      }
+      else
+      {
+        endutw()
+      }
+    }
+  }
+}
+end fn
+
+fn a(url)
+
+syso(url)
+f(url != null)
+{
+  fn tw.tw("已经开始下载了，下载完成后会自动安装")
+  t()
+  {
+    //保存至目录
+    s dir = "%ProperOS/app/install/jupk/"
+    //保存的文件名（仅输入文件名,请勿不包含目录）
+    s name = "temp.jupk"
+    //下载任务的标题
+    s title = "正在下载应用中..."
+    //下载任务的图标
+    s icon = "@ts2.png"
+    //是否显示下载进度通知
+    s notsohw = true
+    s data = "abcde123"
+    //变量v为赋值变量，为下载对象
+    hdda(url,dir,name,title,icon,notsohw,data,v)
+    s jsq="0"
+    ufnsui()
+    {
+      us(app.1,"visibility","visible")
+    }
+    w(jsq &lt; "1")
+    {
+      hddg(v,"downloadpercentage",b)
+      ufnsui()
+      {
+        us(app.6,"progress",b)
+      }
+      f(b == "100")
+      {
+        s jsq ="1"
+        syso(b)
+        ufnsui()
+        {
+          us(app.7,"visibility","visible")
+        }
+      }
+      else
+      {
+        syso(b)
+      }
+      stop(500)
+    }
+  }
+}
+else
+{
+  fn tw.tw2("传入参数错误",1)
+}
+
+end fn

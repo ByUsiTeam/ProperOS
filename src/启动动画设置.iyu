@@ -1,0 +1,94 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="4" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="ImageView">
+<ppt>width=-1
+height=-1
+src=</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="6" did="2" type="LinearLayout">
+<ppt>width=-1
+height=38dp
+orientation=horizontal
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="Button">
+<ppt>width=-2
+height=-2
+text=去除启动动画
+typeface=@fonts/z_c.TTF</ppt>
+<event><eventItme type="clicki">fw("$System/Config/Qddh.sys","false")
+fn tw.tw("关闭成功")</eventItme></event>
+</View>
+<View id="3" did="2" type="RecyclerView">
+<ppt>width=-1
+height=-1
+</ppt>
+<event></event>
+</View>
+<View id="8" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+background=#ffff0000</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="RoundImageView">
+<ppt>width=155dp
+height=155dp
+src=@fail.xml</ppt>
+<event></event>
+</View>
+<View id="10" did="8" type="TextView">
+<ppt>width=-2
+height=-2
+text=看到我了，那么检查一下\n\n/sdcard/ProperOS/qddh\n\n目录里是否存在启动动画的压缩包 .zip 文件\n当前页面不支持不支持刷新
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=34sp
+gravity=center</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn lib.wp2(1,5)</eventItme><eventItme type="loadingComplete">t()
+{
+  s a = "/sdcard/ProperOS/qddh"
+  fl(a,false,wj_list)
+  for(sc;wj_list)
+  {
+    syso(sc)
+    //
+    ufnsui()
+    {
+      us(8,"visibility","gone")
+    }
+    f(sc *? ".zip")
+    {
+      s img ="@JuOS/src/img/zy/admin.png"
+    }
+    //
+    ula(list_cz,3=img,4=sc)
+  }
+  ufnsui()
+  {
+    uls(3,list_cz,"qddhl.iyu")
+  }
+}</eventItme></UIEventset>

@@ -1,0 +1,200 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="8" did="2" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=5dp
+layout_marginTop=5dp
+layout_marginRight=5dp
+layout_marginBottom=5dp
+app_CardcornerRadius=6dp
+app_CardElevation=6dp</ppt>
+<event></event>
+</View>
+<View id="3" did="8" type="Toolbar">
+<ppt>width=-1
+height=55dp
+app_title=ProperOS
+background=#ffdde6ff</ppt>
+<event></event>
+</View>
+<View id="6" did="2" type="SwipeRefreshLayout">
+<ppt>width=-1
+height=-1
+ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
+<event><eventItme type="onrefresh">utw(null,"","确定刷新吗？","确定","不了",true,v)
+{
+  t()
+  {
+    s a = "$JuOS/hemo/桌面"
+    fl(a, false, home_list)
+    aslist(list_cz)
+    for(sc; home_list)
+    {
+      s img = "@fail.xml"
+      s name = sc
+      f(sc *? ".app")
+      {
+        ss("$JuOS/hemo/桌面/"+sc, ml)
+        fr(ml, app_link_sc)
+        sj(app_link_sc, "AppTb=", "=AppTb", img)
+        f(img ?* "$sys/")
+        {
+          sr(img, "$sys/", "@", img)
+        }
+        else f(img ?* "%@")
+        {
+          sr(img, "%@", "$", img)
+        }
+        else
+        {
+          sj(app_link_sc, "AppLj=", "=AppLj", appml)
+          sr(appml, "%g", "$App/", aml)
+          ss(aml + img, img)
+        }
+        sj(sc, null, ".app", name)
+      }
+      else
+      {
+        f(sc *? ".mp4")
+        {
+          ss("$JuOS/hemo/桌面/"+sc,a)
+          fdir(a,a)
+          call(a,"mjava","awzx2.get",a,"1")
+          s img =a
+        }
+       else f(sc *? ".m4a")
+        {
+          s img = "@JuOS/src/Manager/6e.png"
+        }
+        else f(sc *? ".mp3")
+        {
+          s img = "@JuOS/src/Manager/6e.png"
+        }
+        else f(sc *? ".flac")
+        {
+          s img = "@JuOS/src/Manager/6e.png"
+        }
+        else f(sc *? ".pdf")
+        {
+          s img = "@JuOS/src/Manager/wE.png"
+        }
+        else f(sc *? ".jush")
+        {
+          s img = "@ic_play_pause_regular.png"
+        }
+      }
+      ula(list_cz, 4=img, 5=name)
+    }
+    ufnsui()
+    {
+      uls(4, list_cz, "hlist.iyu", -1, -2)
+      us(st_vId,"Refreshing","false")
+    }
+  }
+}
+else
+{
+  us(st_vId,"Refreshing","false")
+}</eventItme></event>
+</View>
+<View id="4" did="6" type="RecyclerView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn lib.wp(2)
+utb(3)</eventItme><eventItme type="loadingComplete">uycl("#ff5f6aff",true)
+//
+us(6,"Refreshing","true")
+t()
+{
+  s a = "$JuOS/hemo/桌面"
+  fl(a, false, home_list)
+  aslist(list_cz)
+  for(sc; home_list)
+  {
+    s img = "@fail.xml"
+    s name = sc
+    f(sc *? ".app")
+    {
+      ss("$JuOS/hemo/桌面/"+sc, ml)
+      fr(ml, app_link_sc)
+      sj(app_link_sc, "AppTb=", "=AppTb", img)
+      f(img ?* "$sys/")
+      {
+        sr(img, "$sys/", "@", img)
+      }
+      else f(img ?* "%@")
+      {
+        sr(img, "%@", "$", img)
+      }
+      else
+      {
+        sj(app_link_sc, "AppLj=", "=AppLj", appml)
+        sr(appml, "%g", "$App/", aml)
+        ss(aml + img, img)
+      }
+      sj(sc, null, ".app", name)
+    }
+    else
+    {
+      f(sc *? ".mp4")
+      {
+        ss("$JuOS/hemo/桌面/"+sc,a)
+        fdir(a,a)
+        call(a,"mjava","awzx2.get",a,"1")
+        s img =a
+      }
+      else f(sc *? ".m4a")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".mp3")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".flac")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".pdf")
+      {
+        s img = "@JuOS/src/Manager/wE.png"
+      }
+      else f(sc *? ".jush")
+      {
+        s img = "@ic_play_pause_regular.png"
+      }
+    }
+    ula(list_cz, 4=img, 5=name)
+  }
+  ufnsui()
+  {
+    uls(4, list_cz, "hlist.iyu", -1, -2)
+    us(6,"Refreshing","false")
+  }
+}</eventItme><eventItme type="menu">case 设置:
+uigo("设置.iyu")
+break
+
+case 时间:
+utw(null,"","time.iyu",false,v)
+{
+}
+break
+
+case 关闭ProperOS:
+fn lib.utw("end-ppos.iyu")
+break</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+}</eventItme></UIEventset>

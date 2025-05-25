@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <link rel="shortcut icon" href="./icon/player.png"> -->
+    <title>播放器 - {Title}</title>
+    <link rel="stylesheet" type="text/css" href="./mui-player.min.css">
+</head>
+<body>
+    <div id="my-player"></div>
+    <script type="text/javascript" src="./mui-player.min.js"></script>
+    <script>
+        const player = new MuiPlayer({
+            container: '#my-player',
+            src: '{VideoSourceFile}',
+            title: '{Title}',
+            poster: null,
+            autoplay: true,
+            loop: false,
+            volume: 0.5
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>文本预览器</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Consolas', monospace;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 15px;
+        }
+
+        .line-numbers {
+            padding: 10px 15px;
+            background-color: #f8f8f8;
+            border-right: 1px solid #ddd;
+            color: #666;
+            text-align: right;
+            user-select: none;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 10px 15px;
+            overflow: auto;
+            max-height: 70vh;
+            white-space: pre-wrap;
+            tab-size: 4;
+            line-height: 1.5;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        select {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .error {
+            color: #d32f2f;
+            padding: 10px;
+            background: #ffebee;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <select id="encoding">
+            <option value="utf-8">UTF-8</option>
+            <option value="gbk">GBK</option>
+            <option value="iso-8859-1">ISO-8859-1</option>
+        </select>
+    </div>
+    
+    <div class="container">
+        <div class="line-numbers" id="lineNumbers"></div>
+        <pre class="content" id="content"></pre>
+    </div>
+
+    <script>
+        const encodings = {
+            'utf-8': 'utf-8',
+            'gbk': 'gb18030',
+            'iso-8859-1': 'iso-8859-1'
+        };
+
+        // 固定读取当前目录下的temp文件
+        const TARGET_FILE = './temp';
+        let fileBuffer = null;
+
+        // 初始化加载
+        async function loadFile() {
+            try {
+                const response = await fetch(TARGET_FILE);
+                if (!response.ok) throw new Error(`文件不存在 (HTTP ${response.status})`);
+                
+                fileBuffer = await response.arrayBuffer();
+                decodeAndDisplay();
+            } catch (error) {
+                showError(`无法读取文件: ${error.message}`);
+            }
+        }
+
+        function decodeAndDisplay() {
+            const encoding = document.getElementById('encoding').value;
+            try {
+                const decoder = new TextDecoder(encodings[encoding] || 'utf-8');
+                const text = decoder.decode(fileBuffer);
+                updateContent(text);
+            } catch (error) {
+                showError(`解码失败: ${error.message}`);
+            }
+        }
+
+        function updateContent(text) {
+            const content = document.getElementById('content');
+            content.textContent = text;
+            updateLineNumbers(text);
+        }
+
+        function updateLineNumbers(text) {
+            const lineCount = text.split(/\r\n|\r|\n/).length;
+            const numbers = Array.from({length: lineCount}, (_, i) => i + 1).join('\n');
+            document.getElementById('lineNumbers').textContent = numbers;
+        }
+
+        function showError(message) {
+            const content = document.getElementById('content');
+            content.innerHTML = `<div class="error">${message}</div>`;
+            document.getElementById('lineNumbers').textContent = '';
+        }
+
+        // 编码切换事件
+        document.getElementById('encoding').addEventListener('change', () => {
+            if (fileBuffer) {
+                decodeAndDisplay();
+            }
+        });
+
+        // 初始化加载
+        loadFile();
+
+        // 同步滚动处理
+        const contentElement = document.getElementById('content');
+        contentElement.addEventListener('scroll', () => {
+            document.getElementById('lineNumbers').scrollTop = contentElement.scrollTop;
+        });
+    </script>
+</body>
+</html>

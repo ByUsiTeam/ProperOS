@@ -1,0 +1,27 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="WebView">
+<ppt>width=-1
+height=-1
+url=$System/bfq/index.html</ppt>
+<event></event>
+</View>
+<View id="4" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+visibility=gone</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">uycl("#ff7de5ff",true,0)
+fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fdir(sss.url,ml)
+syso(ml)
+fr("@JuOS/src/player/index.html",text_html)
+sr(text_html,"{VideoSourceFile}",ml,text_html)
+sr(text_html,"{Title}",sss.title,text_html)
+fw("$System/bfq/index.html",text_html)
+us(3,"url","$System/bfq/index.html")
+//设置视频播放器全屏配置
+fn lib.webqp(3,4)</eventItme></UIEventset>

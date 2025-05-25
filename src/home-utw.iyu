@@ -1,0 +1,418 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="CardView">
+<ppt>width=-1
+height=350dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=15dp</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="LinearLayout">
+<ppt>width=-1
+height=45dp
+orientation=horizontal
+gravity=left|center
+background=#ffb9f7ff</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="ImageButton">
+<ppt>width=44dp
+height=44dp
+src=17301533
+layout_marginLeft=6dp
+background=through</ppt>
+<event><eventItme type="clicki">fn lib.endutw()</eventItme></event>
+</View>
+<View id="7" did="5" type="TextView">
+<ppt>width=-2
+height=-2
+text=操作菜单
+typeface=@src/ttf/acbt80.ttf
+textSize=16sp
+layout_marginLeft=8dp</ppt>
+<event></event>
+</View>
+<View id="8" did="4" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+background=#ff92ceff</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="RoundImageView">
+<ppt>width=35dp
+height=35dp
+src=@fail.xml
+layout_marginLeft=8dp</ppt>
+<event></event>
+</View>
+<View id="13" did="11" type="TextView">
+<ppt>width=-2
+height=-2
+text=删除该文件
+typeface=@src/ttf/acbt80.ttf
+textSize=24sp
+layout_marginLeft=12dp</ppt>
+<event></event>
+</View>
+<View id="14" did="10" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">s uid_mc =sss.uid_mc
+syso(uid_mc)
+ss("$JuOS/hemo/桌面/"+uid_mc+".app",app_m)
+ss("$JuOS/hemo/桌面/"+uid_mc,app_mm)
+fr(app_m,app_m_nr)
+sj(app_m_nr,"AppLj=","=AppLj",dz_1)
+sj(app_m_nr,"AppM=","=AppM",yym)
+sr(dz_1,"%g","$App/",txt_ml)
+fdir(txt_ml,txt_ml)
+f(yym != null)
+{
+  ss("确定删除："+yym+" 吗？",tsc)
+  //-_-_-_-_-_-_-_-_-_-
+  utw(null,"",tsc,"确定","不行",false,v)
+  {
+    ss("rm -rf "+txt_ml+" && echo true",shell)
+    //-_-_-_-_-_-_-_-_-_-
+    call(rs,"mlua","cmd.shell",shell)
+    fd(app_m,yz_uninstall)
+    f(rs ? "true" && yz_uninstall == "true")
+    {
+      syso(yz_uninstall)
+      fr("$System/Config/home.sys",home)
+      f(home == "false")
+      {
+        uigo("JuOS_Hemo.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+      else f(home == "true")
+      {
+        uigo("home.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+      else
+      {
+        uigo("JuOS_Hemo.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+    }
+  }
+  else
+  {
+    endutw()
+  }
+}
+else
+{
+  ss("确定删除："+uid_mc+" 吗？",tsc)
+  utw(null,"提醒",tsc,"确定","不了",false,v)
+  {
+    fd(app_mm,yz)
+    f(yz == "true")
+    {
+      fr("$System/Config/home.sys",home)
+      f(home == "false")
+      {
+        uigo("JuOS_Hemo.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+      else f(home == "true")
+      {
+        uigo("home.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+      else
+      {
+        uigo("JuOS_Hemo.iyu")
+        lan(0)
+        fn tw.tw("删除成功")
+        end()
+      }
+    }
+  }
+  else
+  {
+    endutw()
+  }
+}</eventItme></event>
+</View>
+<View id="15" did="9" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+background=#ff92ceff</ppt>
+<event></event>
+</View>
+<View id="16" did="15" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="17" did="16" type="RoundImageView">
+<ppt>width=35dp
+height=35dp
+src=@success.xml
+layout_marginLeft=8dp</ppt>
+<event></event>
+</View>
+<View id="18" did="16" type="TextView">
+<ppt>width=-2
+height=-2
+text=启动该文件
+typeface=@src/ttf/acbt80.ttf
+textSize=24sp
+layout_marginLeft=12dp</ppt>
+<event></event>
+</View>
+<View id="19" did="15" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">
+s uid_mc =sss.uid_mc
+fr("$System/Config/app_start_qdq.sys",app_start_qdq)
+f(app_start_qdq == "true")
+{
+  s qdq ="system_start.iyu"
+}
+else f(app_start_qdq == "false")
+{
+  s qdq ="start_app.iyu"
+}
+else
+{
+  fn tw.tw("出现未知错误")
+}
+
+f(uid_mc *? ".apk")
+{
+  ss("$JuOS/hemo/桌面/"+uid_mc,wjlj)
+  fo(wjlj)
+}
+else f(uid_mc *? ".m4a" || uid_mc *? ".mp3" || uid_mc *? ".flac")
+{
+  ss("$JuOS/hemo/桌面/"+uid_mc,m2)
+  fdir(m2,lj)
+  fr("@JuOS/html/MusicPlayer/index-2.html",yybfq)
+  fc("@JuOS/html/MusicPlayer/MusicPlayer.png","$System/yybfq/MusicPlayer.png",yuiof)
+  sr(yybfq,"{music}",lj,yybfqth)
+  sr(yybfqth,"{name}",uid_mc,ykl)
+  fw("$System/yybfq/index.html",ykl)
+  sss url ="$System/yybfq/index.html"
+  uigo(qdq)
+}
+else f(uid_mc *? ".mp4")
+{
+  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+  fdir(m3,m3)
+  ss("file://"+m3,m33)
+  sss url =m33
+  sss title =uid_mc
+  uigo("bfq2.iyu")
+}
+else f(uid_mc *? ".pdf")
+{
+  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+  fdir(m3,m3_2)
+  ss("$JuOS/plug-in_component/pdf/web/viewer.html?file="+m3_2,ljlj)
+  sss url =ljlj
+  uigo("system_start.iyu")
+}
+else f(uid_mc *? ".jush")
+{
+  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+  fdir(m3,u)
+  sss url =u
+  syso(sss.url)
+  uigo("JuOS.terminal.iyu")
+}
+else f(uid_mc *? ".html")
+{
+  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+  fdir(m3,u)
+  ss("file://"+m3,m33)
+  sss url =m33
+  uigo(qdq)
+}
+else
+{
+  ss("$JuOS/hemo/桌面/"+uid_mc+".app",ml)
+  fr(ml,wjuwjnr)
+  //
+  sj(wjuwjnr,"AppLj=","=AppLj",AppLj)
+  sj(wjuwjnr,"AppUrlJr=","=AppUrlJr",AppUrlJr)
+  sj(wjuwjnr,"System=","=System",sys)
+  f(sys == null)
+  {
+    sr(AppLj,"%g","$App/",AppLj)
+    //
+    f(AppUrlJr == null || AppUrlJr == "")
+    {
+      ss(AppLj+"src/index.html",url)
+      sss url =url
+      fw("$JuOS/temp_url/url.jtm",url)
+      uigo(qdq)
+    }
+    else
+    {
+      sss url =AppUrlJr
+      fw("$JuOS/temp_url/url.jtm",url)
+      uigo(qdq)
+    }
+  }
+  else f(sys == "True")
+  {
+    sj(wjuwjnr,"Ui=","=Ui",ui)
+    sj(wjuwjnr,"End=","=End",sys_end)
+    sj(wjuwjnr,"Url=","=Url",Url_System)
+    //
+    sss url =Url_System
+    fw("$JuOS/temp_url/url.jtm",Url_System)
+    //
+    ufnsui()
+    {
+      f(sys_end == "false")
+      {
+        f(Url_System != null)
+        {
+          uigo("system_start.iyu")
+        }
+        else
+        {
+          uigo(ui)
+        }
+      }
+      else f(sys_end == "true")
+      {
+        f(Url_System != null)
+        {
+          uigo("system_start.iyu")
+          end()
+        }
+        else
+        {
+          uigo(ui)
+          end()
+        }
+      }
+    }
+  }
+}</eventItme></event>
+</View>
+<View id="20" did="9" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=6dp
+background=#ff92ceff
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="21" did="20" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="22" did="21" type="RoundImageView">
+<ppt>width=35dp
+height=35dp
+src=@success.xml
+layout_marginLeft=8dp</ppt>
+<event></event>
+</View>
+<View id="23" did="21" type="TextView">
+<ppt>width=-2
+height=-2
+text=查看启动项内容
+typeface=@src/ttf/acbt80.ttf
+textSize=24sp
+layout_marginLeft=12dp</ppt>
+<event></event>
+</View>
+<View id="24" did="20" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">
+fdir("$System/wbylq/index.html",html)
+syso(html)
+ss("$JuOS/hemo/桌面/"+sss.uid_mc,yz)
+fdir(yz,yy)
+ss(yy+".app",app_yz)
+fr(app_yz,c)
+f(c == null)
+{
+  fc(yy,"$System/wbylq/temp",yzll)
+  ufnsui()
+  {
+    sss url =html
+    syso(sss.url)
+  }
+  uigo("system_start.iyu")
+}
+else
+{
+  fc(app_yz,"$System/wbylq/temp",yzll)
+  ufnsui()
+  {
+    sss url =html
+    syso(sss.url)
+  }
+  uigo("system_start.iyu")
+}</eventItme></event>
+</View>
+<UIEventset></UIEventset>

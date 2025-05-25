@@ -1,0 +1,22 @@
+<View id="1" did="0" type="TextView">
+<ppt>width=-1
+height=-2
+text=Terminal ✔ 这里是输出框架的列表项
+textSize=12sp
+textColor=#ffffffff
+background=black
+textIsSelectable=true
+typeface=@fonts/z_c.TTF</ppt>
+<event><eventItme type="clicki">
+ulag(st_vW,1,t)
+//ug(st_vId,"text",t)
+utw(null,"",t,"复制","确定",false,v)
+{
+  sxb(t)
+}
+else
+{
+  endutw()
+}</eventItme></event>
+</View>
+<UIEventset></UIEventset>

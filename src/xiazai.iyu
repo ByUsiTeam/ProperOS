@@ -1,0 +1,165 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event><eventItme type="clicki">us(xiazai.1,"visibility","gone")</eventItme></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="CardView">
+<ppt>width=-1
+height=-2
+app_CardcornerRadius=5dp
+layout_marginLeft=10dp
+layout_marginRight=10dp
+layout_marginBottom=10dp
+layout_marginTop=10dp</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="LinearLayout">
+<ppt>width=-1
+height=70dp
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=下载文件器
+textStyle=bold
+textSize=19sp
+textColor=#448AFF</ppt>
+<event></event>
+</View>
+<View id="8" did="4" type="TextView">
+<ppt>width=-1
+height=1dp
+text=
+background=#fff3f3f3
+layout_marginLeft=10dp
+layout_marginRight=10dp</ppt>
+<event></event>
+</View>
+<View id="9" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="LinearLayout">
+<ppt>width=-1
+height=70dp
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="CardView">
+<ppt>width=-1
+height=45dp
+layout_marginLeft=15dp
+layout_marginRight=15dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+hint=请输入直接链接
+textColor=#448AFF
+textSize=15sp
+paddingLeft=5dp
+singleLine=true
+background=white
+textStyle=bold
+textCursorDrawable=#ffc6c6c6</ppt>
+<event></event>
+</View>
+<View id="13" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="17" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="25" did="4" type="TextView">
+<ppt>width=-1
+height=1dp
+text=
+background=#fff3f3f3
+layout_marginLeft=10dp
+layout_marginRight=10dp</ppt>
+<event></event>
+</View>
+<View id="21" did="4" type="LinearLayout">
+<ppt>width=-1
+height=70dp
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="22" did="21" type="CardView">
+<ppt>width=-1
+height=33dp
+layout_marginLeft=15dp
+layout_marginRight=15dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="23" did="22" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+background=#ffe7e7e7
+gravity=center</ppt>
+<event><eventItme type="clicki">ug(xiazai.12,"text",sss.a)
+utw(null,"","弹窗.iyu","",false,sss.弹窗)
+{
+}
+
+</eventItme></event>
+</View>
+<View id="24" did="23" type="TextView">
+<ppt>width=-2
+height=-2
+text=开始下载
+textStyle=bold
+textColor=#333333
+textSize=14sp</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">/.
+addv(1,"autw.iyu")
+
+us(autw.1,"visibility",0)
+</eventItme><eventItme type="loadingComplete">/. 
+  想要白嫖更多iapp源码就来简源APP
+  https://janes.lanzout.com/b00wy0n0f
+  IAPP学习交流群:569878407
+  觉得多余可删除
+./</eventItme></UIEventset>

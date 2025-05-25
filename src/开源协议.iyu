@@ -1,0 +1,66 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="7" did="2" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="ImageButton">
+<ppt>width=45dp
+height=45dp
+src=17301533
+layout_marginLeft=5dp
+background=through</ppt>
+<event><eventItme type="clicki">end()</eventItme></event>
+</View>
+<View id="9" did="7" type="TextView">
+<ppt>width=-2
+height=-2
+text=LICENSE
+typeface=@src/ttf/acbt80.ttf
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本6
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=12sp
+textIsSelectable=true</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn lib.wp(1)
+uycl("#ff4e66ff",true)</eventItme><eventItme type="loadingComplete">fr("@JuOS/LICENSE",l)
+us(6,"text",l)
+loadjar("armeabi-v7a/classes.dex",class)
+cls(class,"com.Mus.ReboundScrollView",mB)
+gvs(4,a)
+gvs(4,b)
+javanew(mBs,mB,"Context",activity)
+urvw(4)
+nvw(mBs,2)
+nvw(b,mBs)</eventItme></UIEventset>

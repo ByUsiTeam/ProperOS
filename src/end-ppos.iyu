@@ -1,0 +1,161 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event><eventItme type="clicki">fn lib.endutw()</eventItme></event>
+</View>
+<View id="2" did="1" type="CardView">
+<ppt>width=350dp
+height=300dp
+app_CardElevation=12dp
+app_CardcornerRadius=12dp</ppt>
+<event></event>
+</View>
+<View id="7" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="21" did="7" type="CardView">
+<ppt>width=-1
+height=44dp
+app_CardElevation=8dp</ppt>
+<event></event>
+</View>
+<View id="3" did="21" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=确定关闭 ProperOS 吗？
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp</ppt>
+<event></event>
+</View>
+<View id="8" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="22" did="8" type="CardView">
+<ppt>width=38dp
+height=38dp
+layout_marginRight=8dp
+app_CardcornerRadius=4dp
+app_CardElevation=8dp</ppt>
+<event></event>
+</View>
+<View id="4" did="22" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301533
+background=through</ppt>
+<event><eventItme type="clicki">fn lib.endutw()</eventItme></event>
+</View>
+<View id="6" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="9" did="6" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="18" did="10" type="CardView">
+<ppt>width=120dp
+height=120dp
+app_CardElevation=8dp
+app_CardcornerRadius=8dp
+layout_marginTop=5dp</ppt>
+<event></event>
+</View>
+<View id="11" did="18" type="ImageView">
+<ppt>width=-1
+height=-1
+src=@JuOS/logo/properos.png
+scaleType=fitxy</ppt>
+<event></event>
+</View>
+<View id="20" did="10" type="CardView">
+<ppt>width=-1
+height=25dp
+app_CardcornerRadius=5dp
+app_CardElevation=8dp
+layout_marginTop=6dp
+layout_marginLeft=8dp
+layout_marginRight=8dp</ppt>
+<event></event>
+</View>
+<View id="12" did="20" type="TextView">
+<ppt>width=-1
+height=-1
+text=不要离开 ProperOS 嘛，好不好？
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=15sp
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="13" did="10" type="LinearLayout">
+<ppt>width=-1
+height=80dp
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="14" did="13" type="CardView">
+<ppt>width=100dp
+height=55dp
+app_CardcornerRadius=12dp
+app_CardBackgroundColor=#ff5222ff
+app_CardElevation=8dp</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="Button">
+<ppt>width=-1
+height=-1
+text=关闭
+typeface=@JuOS/src/ttf/acbt80.ttf
+background=through
+textColor=#ffffffff</ppt>
+<event><eventItme type="clicki">ends()
+end()</eventItme></event>
+</View>
+<View id="16" did="13" type="CardView">
+<ppt>width=100dp
+height=55dp
+app_CardcornerRadius=12dp
+app_CardBackgroundColor=#ff5222ff
+layout_marginLeft=8dp
+app_CardElevation=8dp</ppt>
+<event></event>
+</View>
+<View id="17" did="16" type="Button">
+<ppt>width=-1
+height=-1
+text=不关闭了
+typeface=@JuOS/src/ttf/acbt80.ttf
+background=through
+textColor=#ffffffff</ppt>
+<event><eventItme type="clicki">fn lib.endutw()</eventItme></event>
+</View>
+<UIEventset></UIEventset>

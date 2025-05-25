@@ -1,0 +1,776 @@
+<View id="14" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="1" did="14" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="Button">
+<ppt>width=-1
+height=-2
+text=清理缓存
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=15dp
+layout_marginTop=15dp
+layout_marginRight=15dp
+layout_marginBottom=25dp</ppt>
+<event><eventItme type="clicki">ss("cd /data/data/miao.bysi.juos/ && rm -rf cache/* && du -sh cache/",shell)
+call(rs,"mlua","cmd.shell",shell)
+syso(rs)
+sj(rs,null,"	cache/",rs)
+ss("缓存：0KB",rs)
+us(3,"text",rs)</eventItme></event>
+</View>
+<View id="3" did="1" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本3
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=14sp</ppt>
+<event></event>
+</View>
+<View id="4" did="1" type="Button">
+<ppt>width=-1
+height=-2
+text=权限申请
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=18sp
+visibility=gone</ppt>
+<event><eventItme type="clicki">ss("cd /data/data/miao.bysi.juos/files/JuOS/Android/SDK && chmod 777 rish && ./rish",shell)
+call(rs,"mlua","cmd.shell",shell)
+syso(rs)</eventItme></event>
+</View>
+<View id="5" did="1" type="CardView">
+<ppt>width=-1
+height=-1
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="7" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top
+background=#daebeae3</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event><eventItme type="clicki">ug(12,"checked",xzsj)
+syso(xzsj)
+f(xzsj == "false")
+{
+  ug(12,"checked","true")
+}
+else
+{
+  ug(12,"checked","true")
+}</eventItme></event>
+</View>
+<View id="10" did="9" type="RoundImageView">
+<ppt>width=44dp
+height=44dp
+src=17301567
+layout_marginLeft=15dp</ppt>
+<event></event>
+</View>
+<View id="13" did="9" type="TextView">
+<ppt>width=-2
+height=-2
+text=hello world
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=14sp
+layout_marginLeft=15dp</ppt>
+<event></event>
+</View>
+<View id="11" did="9" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="CheckBox">
+<ppt>width=-2
+height=-2
+text=
+layout_marginRight=15dp</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="16" did="15" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="20" did="16" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="90" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="91" did="90" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="92" did="91" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="93" did="91" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="94" did="93" type="TextView">
+<ppt>width=-2
+height=-2
+text=ByUsi 账号
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="95" did="90" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">//fn lib.utw("login.iyu")
+fr("$JuOS/data/User/data.json",data)
+f(data == null)
+{
+  uigo("login.iyu")
+}
+else
+{
+  json(data,jsn)
+  json(jsn,"get","status",status)
+  f(status == "success")
+  {
+    json(jsn,"get","data",idata)
+    json(idata,"get","id",id)
+    json(idata,"get","username",username)
+    json(idata,"get","email",email)
+    json(idata,"get","uid",uid)
+    json(idata,"get","uuid",uuid)
+    ss("用户ID："+id+"\nUID："+uid+"\n用户名："+username+"\n邮箱："+email,弹窗信息)
+    utw(null,"用户信息",弹窗信息,"确定","注销登录","签到",true,v)
+    {
+      endutw()
+    }
+    else
+    {
+      fd("$JuOS/data/User/data.json",yz)
+    }
+    else
+    {
+      fr("$JuOS/data/User/.password",password)
+      ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid+"&password="+password,url)
+      sss url =url
+      uigo("start_app.iyu")
+    }
+  }
+}</eventItme></event>
+</View>
+<View id="96" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="97" did="96" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="98" did="97" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="99" did="97" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="100" did="99" type="TextView">
+<ppt>width=-2
+height=-2
+text=Gitee账号
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="101" did="96" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fr("$data/oauth/gitee/user.json",i)
+f(i == null)
+{
+  t()
+  {
+    hs("https://api.oauth.byusi.cn/rid.php",data)
+    json(data,json)
+    json(json,"get","rid",d_u)
+    ss("https://api.oauth.byusi.cn/oauth.php?u="+d_u,gitee_oauth_url)
+    hs(gitee_oauth_url,gitee_oauth_url_data)
+    json(gitee_oauth_url_data,json)
+    json(json,"get","url",j)
+    sss url =j
+    ufnsui()
+    {
+      fn tw.tw("登录完成后返回")
+      utw(null,"","确定完成","确定登录完成",false,v)
+      {
+        t()
+        {
+          ss("https://api.oauth.byusi.cn/api.php?u="+d_u)
+          hs(d_u,data)
+          json(data,d_sj)
+          ufnsui()
+          {
+            utw(null,"",d_sj,"确定",true,v)
+            {
+              endutw()
+            }
+          }
+        }
+      }
+      uigo("system_start.iyu")
+    }
+  }
+}
+else
+{
+  
+}</eventItme></event>
+</View>
+<View id="35" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="36" did="35" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="37" did="36" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="38" did="36" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="39" did="38" type="TextView">
+<ppt>width=-2
+height=-2
+text=新应用启动器
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="41" did="38" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="43" did="41" type="RadioButton">
+<ppt>width=-2
+height=-2
+text=
+layout_marginRight=5dp
+checked=false</ppt>
+<event></event>
+</View>
+<View id="40" did="35" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ug(43,"checked",xz)
+f(xz == "true")
+{
+  us(43,"checked","false")
+  fw("$System/Config/app_start_qdq.sys","false")
+  fn tw.tw("已关闭新启动器")
+}
+else f(xz == "false")
+{
+  us(43,"checked","true")
+  fw("$System/Config/app_start_qdq.sys","true")
+  fn tw.tw("已启动新启动器")
+}</eventItme></event>
+</View>
+<View id="102" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="103" did="102" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="104" did="103" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/elder_care_guide_logo.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="105" did="103" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="106" did="105" type="TextView">
+<ppt>width=-2
+height=-2
+text=启动新桌面
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="107" did="105" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="108" did="107" type="RadioButton">
+<ppt>width=-2
+height=-2
+text=
+layout_marginRight=5dp
+checked=false</ppt>
+<event></event>
+</View>
+<View id="109" did="102" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ug(108,"checked",xz)
+f(xz == "true")
+{
+  us(108,"checked","false")
+  fw("$System/Config/home.sys","false")
+  fn tw.tw("已关闭新桌面")
+  fc("@boot/init.json","$boot/init.json",config)
+}
+else f(xz == "false")
+{
+  us(108,"checked","true")
+  fw("$System/Config/home.sys","true")
+  fn tw.tw("已启动新桌面")
+  fc("@boot/init2.json","$boot/init.json",config)
+}</eventItme></event>
+</View>
+<View id="60" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="61" did="60" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="62" did="61" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="63" did="61" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="64" did="63" type="TextView">
+<ppt>width=-2
+height=-2
+text=更多信息
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="65" did="60" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn lib.utw("JointDevelopmentNotificationList.iyu")
+//fn tw.tw("长按有特殊效果！")
+</eventItme></event>
+</View>
+<View id="110" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="111" did="110" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="112" did="111" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="113" did="111" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="114" did="113" type="TextView">
+<ppt>width=-2
+height=-2
+text=公告
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="115" did="110" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn system.gg("get")
+fn system.gg("zs")</eventItme></event>
+</View>
+<View id="66" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="67" did="66" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="68" did="67" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301562
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="69" did="67" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="70" did="69" type="TextView">
+<ppt>width=-2
+height=-2
+text=修改 boot/init.json 引导文件
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="71" did="66" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">uigo("text_boot_init.iyu")</eventItme></event>
+</View>
+<View id="84" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="85" did="84" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="86" did="85" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/foreground.png
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="87" did="85" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="88" did="87" type="TextView">
+<ppt>width=-2
+height=-2
+text=检查更新
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="89" did="84" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn system.update("true")
+//fn tw.tw2("ProperOS无法正常检查更新",1)</eventItme></event>
+</View>
+<View id="74" did="20" type="CardView">
+<ppt>width=-1
+height=200dp
+app_CardcornerRadius=8dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+app_CardBackgroundColor=#616b3eff</ppt>
+<event></event>
+</View>
+<View id="72" did="74" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="73" did="72" type="WebView">
+<ppt>width=-1
+height=-1
+url=@JuOS/html/AdvertisingDelivery/index.html</ppt>
+<event><eventItme type="onreceivederror">us(st_vId,"url","@JuOS/html/AdvertisingDelivery/index.html")</eventItme></event>
+</View>
+<View id="75" did="72" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">//状态栏配置
+uycl("#daebeae3",true)
+//初始化菜单
+fr("$System/Config/init_fb.sys",init_fb)
+//
+f(init_fb == "true")
+{
+  us(24,"checked","true")
+}
+//
+fr("$System/Config/app_start_qdq.sys",app_start_qdq)
+f(app_start_qdq == "true")
+{
+  us(43,"checked",app_start_qdq)
+}
+else f(app_start_qdq == "false")
+{
+  us(43,"checked",app_start_qdq)
+}
+else
+{
+  us(43,"checked","true")
+}
+fr("$System/Config/home.sys",home)
+f(home == "true")
+{
+  us(108,"checked",home)
+}
+else f(home == "false")
+{
+  us(108,"checked",home)
+}
+else
+{
+  fw("$System/Config/home.sys","false")
+  us(108,"checked","false")
+}
+//引导配置
+fr("$System/Config/gduoshez.sys",init)
+f(init == "true")
+{
+  us(66,"visibility","visible")
+}
+//
+//
+//SVG图片
+fr("$JuOS/ICON/ic_settings_application_and_service.svg",svg)
+fn lib.svg(svg,37)
+//
+fr("$JuOS/ICON/ic_settings_display.svg",svg)
+fn lib.svg(svg,55)
+fr("$JuOS/ICON/ic_settings_about.svg",svg)
+fn lib.svg(svg,62)
+fr("$JuOS/ICON/ic_public_todo.svg",svg)
+fn lib.svg(svg,78)
+fr("$JuOS/ICON/ic_settings_storage.svg",svg)
+fn lib.svg(svg,68)
+fr("$JuOS/ICON/ic_parentcontrol.svg",svg)
+fn lib.svg(svg,92)
+fr("$JuOS/ICON/ic_settings_multi_device_collaboration_svg.svg",svg)
+fn lib.svg(svg,112)
+fr("$JuOS/ICON/ic_settings_more_connections.svg",svg)
+fn lib.svg(svg,86)
+//
+fn api.hide_btn(73)
+//检查更新界面载入
+addv(14,"update.iyu")
+us(update.1,"visibility","gone")</eventItme><eventItme type="loadingComplete">s id =14
+fn lib.wp(id)
+//主题配置
+s a =2
+s b =15
+s c ="#ff6e67ff|#5c6c67ff|#cb8067ff"
+s cw ="#ef373737|#ef373737"
+s d ="#ff000000"
+s e ="lefttop"
+ngde(a,b,c,d,e,f)
+ngde(a,b,cw,d,e,f2)
+ngde(a,b,c,d,e,f3)
+//加载主题到控制键
+us(27,"background",f3)
+us(35,"background",f)
+us(60,"background",f3)
+us(66,"background",f)
+us(84,"background",f3)
+us(90,"background",f)
+us(96,"background",f3)
+us(102,"background",f)
+us(110,"background",f3)
+//
+loadjar("armeabi-v7a/classes.dex",class)
+cls(class,"com.Mus.ReboundScrollView",mB)
+gvs(16,a)
+gvs(16,b)
+javanew(mBs,mB,"Context",activity)
+urvw(16)
+nvw(mBs,15)
+nvw(b,mBs)</eventItme><eventItme type="restart">fr("$System/Config/gduoshez.sys",init)
+f(init == "true")
+{
+  us(66,"visibility","visible")
+}</eventItme></UIEventset>

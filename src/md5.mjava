@@ -1,0 +1,47 @@
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+/*
+
+简源梦情开源
+
+需要定制ui功能可下载简源找到我
+
+简源官网:http://jane.xingyige.cn/
+
+*/
+
+public static String encryption(String text) {
+  try {
+    MessageDigest md = MessageDigest.getInstance("MD5");
+    //使用指定的字节更新摘要信息
+    md.update(text.getBytes());
+    //得到密文MD5哈希值
+    byte[] mdBytes = md.digest();
+    //将二进制转换成16进制字符串形式
+    StringBuilder hexString = new StringBuilder();
+    for (byte b : mdBytes) {
+      String YaoShi = Integer.toHexString(0xff & b);
+      if (YaoShi.length() == 1) {
+        hexString.append('0');
+      }
+      hexString.append(YaoShi);
+    }
+    // 返回MD5哈希值
+    tw("加密成功");
+    syso(hexString);
+    return hexString.toString();
+  } catch (NoSuchAlgorithmException e) {
+    tw("加密失败");
+  }
+}
+
+/*
+
+简源梦情开源
+
+需要定制ui功能可下载简源找到我
+
+简源官网:http://jane.xingyige.cn/
+
+*/
