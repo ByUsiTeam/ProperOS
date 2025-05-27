@@ -4,8 +4,9 @@ f(y == "true")
 {
   t()
   {
+  	s api_url ="https://gitee.com/api/v5/repos/properos/properos/releases/latest?access_token=e41479a1b72747f25afd246fbe8adb09"
     fr("@version.txt",bd_v)
-    hs("https://gitee.com/api/v5/repos/byusi/properos/releases/latest?access_token=e41479a1b72747f25afd246fbe8adb09",url)
+    hs(api_url,url)
     f(url != null)
     {
       json(url,data)

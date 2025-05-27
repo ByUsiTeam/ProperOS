@@ -106,6 +106,42 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">hws("https://gitee.com/byusi")</eventItme></event>
 </View>
+<View id="56" did="10" type="RelativeLayout">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="57" did="56" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="58" did="57" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@JuOS/logo/properos.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="59" did="57" type="TextView">
+<ppt>width=-2
+height=-2
+text=ProperOS开发组
+textColor=#ffffffff
+typeface=serif
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="60" did="56" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">hws("https://gitee.com/properos")</eventItme></event>
+</View>
 <View id="15" did="10" type="RelativeLayout">
 <ppt>width=-1
 height=55dp</ppt>
@@ -140,7 +176,7 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">hws("https://gitee.com/byusi/properos")
+<event><eventItme type="clicki">hws("https://gitee.com/properos/properos")
 fn tw.tw("使用本项目请保留开源协议")</eventItme></event>
 </View>
 <View id="46" did="10" type="RelativeLayout">

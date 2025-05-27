@@ -13,7 +13,7 @@ gravity=top|center</ppt>
 <View id="4" did="2" type="Toolbar">
 <ppt>width=-1
 height=45dp
-background=#ff4e65ff</ppt>
+background=#ffa069ff</ppt>
 <event></event>
 </View>
 <View id="5" did="2" type="WebView">
@@ -129,20 +129,23 @@ f(message == "Login successful")
 }
 break
 //
-case 加入 JuOS 应用开发:
-hws("https://520world.byusi.cn/juos-development-guide.html")
-fn tw.tw("欢迎哦~ 我们又多一名优秀的开发者（太好了）")
-break
-//
 case 查看地址:
 ug(5,"url",url)
+s dir ="$App/"
+fdir(dir,system_data)
+syso(system_data)
 f(url ?* "http")
 {
-  fn tw.tw2("不支持查看",1)
+	fn tw.tw2("抱歉，为保护开发者权益无法显示URL地址")
 }
 else
 {
-  fn tw.tw2(url,0)
+	ss("file://"+system_data,jq1)
+    s jq2 ="/src/"
+    sj(url,"/src/",null,sjj)
+    ss(sq2+sjj,sj2)
+	sj(url,jq1,sj2,text)
+    fn tw.tw2(text,0)
 }
 break</eventItme><eventItme type="loadingComplete">t()
 {

@@ -298,7 +298,7 @@ layout_marginLeft=5dp</ppt>
 <View id="36" did="34" type="TextView">
 <ppt>width=-2
 height=-2
-text=ProperOS下载：https://gitee.com/byusi/properos/releases
+text=ProperOS下载：https://gitee.com/properos/properos/releases
 textColor=#ff000000
 typeface=@JuOS/src/ttf/acbt80.ttf
 layout_marginLeft=8dp
@@ -312,9 +312,9 @@ textColorLink=#9e0011ff</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">utw(null,"","是否访问：https://gitee.com/byusi/properos/releases","是","否",false,v)
+<event><eventItme type="clicki">utw(null,"","是否访问：https://gitee.com/properos/properos/releases","是","否",false,v)
 {
-  hws("https://gitee.com/byusi/properos/releases")
+  hws("https://gitee.com/properos/properos/releases")
 }
 else
 {
@@ -345,7 +345,7 @@ gravity=left|center</ppt>
 <View id="51" did="50" type="RoundImageView">
 <ppt>width=45dp
 height=45dp
-src=$JuOS/ICON/ic_settings_keyboard.png
+src=@JuOS/logo/BySi_logo.png
 layout_marginLeft=5dp</ppt>
 <event></event>
 </View>
@@ -367,6 +367,53 @@ background=through</ppt>
 <event><eventItme type="clicki">
 sss url ="https://gitee.com/byusi"
 uigo("start_app.iyu")</eventItme></event>
+</View>
+<View id="55" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="56" did="55" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="57" did="56" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="58" did="57" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@JuOS/logo/properos.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="59" did="57" type="TextView">
+<ppt>width=-2
+height=-2
+text=了解 ProperOS 开发组
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="60" did="56" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">
+sss url ="https://gitee.com/properos"
+uigo("system_start.iyu")</eventItme></event>
 </View>
 <View id="38" did="3" type="CardView">
 <ppt>width=-1
