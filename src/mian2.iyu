@@ -68,6 +68,13 @@ else
 fr("@version.txt",st)
 fr("$JuOS/v/v.cfg",v)
 fn init.boot()
+//初始化图片加载器
+loadjar("QmLoader",sss.QmLoader)
+//初始化
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+javanew(builder,Builder,"android.content.Context",activity)
+javax(null,null,Loader,"init",Builder,builder)
 //验证引导
 /.
 t()

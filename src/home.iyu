@@ -116,6 +116,13 @@ height=-1</ppt>
 utb(3)</eventItme><eventItme type="loadingComplete">uycl("#ff5f6aff",true)
 //
 us(6,"Refreshing","true")
+//占位图片设置
+sbp("@Image_loading.png",bitmap_loading)
+javanew(ss.drawable_loading,"android.graphics.drawable.BitmapDrawable","android.graphics.Bitmap",bitmap_loading)
+//加载错误占位图
+sbp("@image_error.jpg",bitmap_error)
+javanew(ss.drawable_error,"android.graphics.drawable.BitmapDrawable","android.graphics.Bitmap",bitmap_error)
+//在这里初始化两个占位图 防止列表多次读取图片导致占用运行内存 甚至软件卡顿或者内存泄露
 t()
 {
   s a = "$JuOS/hemo/桌面"
