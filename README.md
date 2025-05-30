@@ -2,7 +2,7 @@
 
 - 基于 OpenJuOS **v3.5** 开发  
   [![ByUsi/OpenJuOS](https://gitee.com/byusi/openjuos/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/byusi/openjuos)
-- **当前版本**: ProperOS **v1.1.7.7**
+- **当前版本**: ProperOS **v1.1.7.8**
 
 ## 基础特性
 1. 基于移动端应用 `iApp` 开发的模拟操作系统环境

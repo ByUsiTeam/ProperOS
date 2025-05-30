@@ -70,7 +70,7 @@ height=20dp
 src=17301533
 background=through
 layout_marginRight=5dp</ppt>
-<event></event>
+<event><eventItme type="clicki">us(news1.1,"visibility","gone")</eventItme></event>
 </View>
 <View id="20" did="7" type="RelativeLayout">
 <ppt>width=-1

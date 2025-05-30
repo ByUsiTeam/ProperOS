@@ -32,6 +32,7 @@ text=发出测试通知</ppt>
     ufnsui()
     {
     	fn n.t("测试通知","@success.xml",url,"1","1")
+        fn n.t_top("测试通知","@success.xml",url,"1","1")
     }
 }</eventItme></event>
 </View>

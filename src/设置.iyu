@@ -545,8 +545,12 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fn system.gg("get")
-fn system.gg("zs")</eventItme></event>
+<event><eventItme type="clicki">/.
+fn system.gg("get")
+fn system.gg("zs")
+./
+sss url ="https://api.juos.byusi.cn/gg/index.html"
+uigo("system_start.iyu")</eventItme></event>
 </View>
 <View id="66" did="20" type="RelativeLayout">
 <ppt>width=-1
@@ -743,26 +747,6 @@ us(update.1,"visibility","gone")
 //
 fn n.ui(14)</eventItme><eventItme type="loadingComplete">s id =14
 fn lib.wp(id)
-//主题配置
-s a =2
-s b =15
-s c ="#ff6e67ff|#5c6c67ff|#cb8067ff"
-s cw ="#ef373737|#ef373737"
-s d ="#ff000000"
-s e ="lefttop"
-ngde(a,b,c,d,e,f)
-ngde(a,b,cw,d,e,f2)
-ngde(a,b,c,d,e,f3)
-//加载主题到控制键
-us(27,"background",f3)
-us(35,"background",f)
-us(60,"background",f3)
-us(66,"background",f)
-us(84,"background",f3)
-us(90,"background",f)
-us(96,"background",f3)
-us(102,"background",f)
-us(110,"background",f3)
 //
 loadjar("armeabi-v7a/classes.dex",class)
 cls(class,"com.Mus.ReboundScrollView",mB)

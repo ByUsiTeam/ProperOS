@@ -264,34 +264,3 @@ else
 }
 
 end fn
-
-fn gg(zt)
-
-f(zt == "get")
-{
-  t()
-  {
-    hs("https://api.juos.byusi.cn/gg/index.html",hs)
-    fw("$System/Data/gg.config.html",hs)
-    syso(hs)
-    sss gg_zt =hs
-  }
-}
-else f(zt == "zs")
-{
-  f(sss.gg_zt != null)
-  {
-    sss url ="$System/Data/gg.config.html"
-    uigo("system_start.iyu")
-  }
-  else
-  {
-    syso("gg_html_null")
-  }
-}
-else
-{
-  fn tw.tw2("传入参数错误",1)
-}
-
-end fn
