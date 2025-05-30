@@ -67,6 +67,7 @@ else
 //加载版本验证文件的内容
 fr("@version.txt",st)
 fr("$JuOS/v/v.cfg",v)
+//引导
 fn init.boot()
 //初始化图片加载器
 loadjar("QmLoader",sss.QmLoader)

@@ -471,7 +471,8 @@ else
 </View>
 <UIEventset><eventItme type="loading">fn lib.wp(1)
 uycl("#e84f78ff",true)
-//fn byusi.ztl()</eventItme><eventItme type="loadingComplete">//连续点击次数初始化
+//fn byusi.ztl()
+fn n.ui(1)</eventItme><eventItme type="loadingComplete">//连续点击次数初始化
 ss djcs ="0"
 //设备消息获取
 sjxx(xx)

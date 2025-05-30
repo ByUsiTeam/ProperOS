@@ -93,7 +93,8 @@ f(type==imagetype||type==imageurl)
 //fn qp.qp2()
 //这个是删除大小缩放控制键的
 s id =5
-fn api.hide_btn(id)</eventItme><eventItme type="menu">//菜单配置
+fn api.hide_btn(id)
+fn n.ui(1)</eventItme><eventItme type="menu">//菜单配置
 case 扫描二维码:
 uqr()
 break

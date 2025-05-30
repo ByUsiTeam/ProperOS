@@ -54,7 +54,8 @@ textIsSelectable=true</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">fn lib.wp(1)
-uycl("#ff4e66ff",true)</eventItme><eventItme type="loadingComplete">fr("@JuOS/LICENSE",l)
+uycl("#ff4e66ff",true)
+fn n.ui(1)</eventItme><eventItme type="loadingComplete">fr("@JuOS/LICENSE",l)
 us(6,"text",l)
 loadjar("armeabi-v7a/classes.dex",class)
 cls(class,"com.Mus.ReboundScrollView",mB)

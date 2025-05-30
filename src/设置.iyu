@@ -739,7 +739,9 @@ fn lib.svg(svg,86)
 fn api.hide_btn(73)
 //检查更新界面载入
 addv(14,"update.iyu")
-us(update.1,"visibility","gone")</eventItme><eventItme type="loadingComplete">s id =14
+us(update.1,"visibility","gone")
+//
+fn n.ui(14)</eventItme><eventItme type="loadingComplete">s id =14
 fn lib.wp(id)
 //主题配置
 s a =2

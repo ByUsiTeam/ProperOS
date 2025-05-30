@@ -1,4 +1,9 @@
-<View id="5" did="0" type="LinearLayout">
+<View id="7" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="5" did="7" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical</ppt>
@@ -126,7 +131,8 @@ t()
 }</eventItme><eventItme type="loadingComplete">fn qp.qp2()
 //sss sdcard ="/sdcard/JuOS/"
 s id =5
-fn lib.wp(id)</eventItme><eventItme type="downkey">f(st_kC==4)
+fn lib.wp(id)
+fn n.ui(7)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
   fr("$System/Config/home.sys",home)
   f(home == "false")

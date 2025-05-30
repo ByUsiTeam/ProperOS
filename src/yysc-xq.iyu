@@ -447,7 +447,8 @@ ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343
 visibility=gone</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">loadjar("armeabi-v7a/classes.dex",class)
+<UIEventset><eventItme type="loading">fn lib.wp(1)
+fn n.ui(1)</eventItme><eventItme type="loadingComplete">loadjar("armeabi-v7a/classes.dex",class)
 cls(class,"com.Mus.ReboundScrollView",mB)
 gvs(2,a)
 gvs(2,b)

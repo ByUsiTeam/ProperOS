@@ -113,7 +113,8 @@ height=-1</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">fn lib.wp(2)
-utb(3)</eventItme><eventItme type="loadingComplete">uycl("#ff5f6aff",true)
+utb(3)
+fn n.ui(1)</eventItme><eventItme type="loadingComplete">uycl("#ff5f6aff",true)
 //
 us(6,"Refreshing","true")
 //占位图片设置

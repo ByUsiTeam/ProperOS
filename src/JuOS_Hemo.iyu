@@ -172,7 +172,8 @@ fw("$System/Config/Update.sys","false")</eventItme><eventItme type="downkey">f(s
 s id =1
 fn lib.wp(id)
 //fn byusi.ztl()
-utb(18)</eventItme><eventItme type="menu">case 设置:
+utb(18)
+fn n.ui(1)</eventItme><eventItme type="menu">case 设置:
 uigo("设置.iyu")
 break
 

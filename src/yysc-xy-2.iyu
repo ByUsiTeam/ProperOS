@@ -172,4 +172,4 @@ t()
       s jsq ="1"
     }
   }
-}</eventItme></UIEventset>
+}</eventItme><eventItme type="loadingComplete">fn n.ui(1)</eventItme></UIEventset>

@@ -280,7 +280,8 @@ fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
 
 fn view.sdk()
 fn view.set(1)
-</eventItme><eventItme type="loadingComplete">hsas(1,true)
+
+fn n.ui(23)</eventItme><eventItme type="loadingComplete">hsas(1,true)
 
 s color = "#000000"
 gvs(26,id)

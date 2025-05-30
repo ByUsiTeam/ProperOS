@@ -59,7 +59,9 @@ height=-1</ppt>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn api.hide_btn(7)
-hsas(7,true)</eventItme><eventItme type="loadingComplete">f(sss.index != null && sss.boot != null)
+hsas(7,true)
+//
+fn n.ui(1)</eventItme><eventItme type="loadingComplete">f(sss.index != null && sss.boot != null)
 {
   ss(sss.boot+"/"+sss.index,url)
   us(7,"url",url)

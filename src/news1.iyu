@@ -6,8 +6,7 @@ height=-1</ppt>
 <View id="4" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=vertical
-gravity=bottom|center</ppt>
+orientation=vertical</ppt>
 <event></event>
 </View>
 <View id="5" did="4" type="CardView">
@@ -17,7 +16,9 @@ app_CardcornerRadius=10dp
 app_CardElevation=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
-layout_marginBottom=5dp</ppt>
+layout_marginBottom=1dp
+layout_marginTop=4dp
+app_CardElevation=8dp</ppt>
 <event></event>
 </View>
 <View id="6" did="5" type="RelativeLayout">
@@ -69,7 +70,7 @@ height=20dp
 src=17301533
 background=through
 layout_marginRight=5dp</ppt>
-<event><eventItme type="clicki">us(news.1,"visibility","gone")</eventItme></event>
+<event></event>
 </View>
 <View id="20" did="7" type="RelativeLayout">
 <ppt>width=-1
