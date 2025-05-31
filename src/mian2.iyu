@@ -75,44 +75,7 @@ loadjar("QmLoader",sss.QmLoader)
 cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
 cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
 javanew(builder,Builder,"android.content.Context",activity)
-javax(null,null,Loader,"init",Builder,builder)
-//验证引导
-/.
-t()
-{
-  stop(4000)
-  sss typ_yz ="true"
-  ufnsui()
-  {
-    f(si_fb == "true")
-    {
-      fw("$System/Config/init_fb.sys","false")
-      uigo("si_fb.iyu")
-      lan(0)
-      end()
-    }
-    else
-    {
-      fe("$System/user/zm.byst.jsys",yz_mm_s)
-      f(yz_mm_s == "false")
-      {
-        fe("$OS/Config/woobe.cfig",obe_yz)
-        f(st == v)
-        {
-          uigo("JuOS_Hemo.iyu")
-          lan(0)
-          end()
-        }
-        else f(st != v)
-        {
-          uigo("设置oobe.iyu")
-          lan(0)
-          end()
-        }
-      }
-    }
-  }
-}</eventItme><eventItme type="downkey">//锁定返回
+javax(null,null,Loader,"init",Builder,builder)</eventItme><eventItme type="downkey">//锁定返回
 f(st_kC==4)
 {
   
@@ -148,20 +111,7 @@ t()
     us(3,"text",系统名)
   }
 }
-//启动动画配置
-/.
-dha(dh,false,true)
-dh(dh,"duration",1500)
-us(2,"dh",dh)
-dha(dh,false,true)
-dh(dh,"duration",1500)
-us(3,"dh",dh)
-dha(dh,false,true)
-dh(dh,"duration",1500)
-us(6,"dh",dh)
-./
-
-//init
+//引导的UI的动画配置
 swh("w",w)
 swh("hh",h)
 syso("w"+w)

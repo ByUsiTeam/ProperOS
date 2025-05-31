@@ -26,6 +26,9 @@ f(title != null && text != null)
     dh(dhyd,"duration",500)
     dhset(dhlist, false, tzdh,dhyd)
     us(news.5,"dh",dhlist)
+    //上传相对应的ID和包名参数
+    ss("[包名]"+bname+"[包名]\n[参数]"+s+"[参数]",truu)
+    us(news.22,"text",truu)
     //继续通知界面配置逻辑
     us(news.17,"text",title)
     us(news.19,"text",text)
@@ -86,6 +89,9 @@ f(title != null && text != null)
     dh(dhyd,"duration",500)
     dhset(dhlist, false, tzdh,dhyd)
     us(news1.5,"dh",dhlist)
+    //上传相对应的ID和包名参数
+    ss("[包名]"+bname+"[包名]\n[参数]"+s+"[参数]",truu)
+    us(news1.22,"text",truu)
     //继续通知界面配置逻辑
     us(news1.17,"text",title)
     us(news1.19,"text",text)

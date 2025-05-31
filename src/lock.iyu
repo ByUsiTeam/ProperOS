@@ -1,0 +1,222 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="CardView">
+<ppt>width=-1
+height=65dp
+layout_marginTop=4dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+layout_marginBottom=4dp
+app_CardcornerRadius=10dp
+app_CardElevation=8dp</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="16" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="17" did="16" type="CardView">
+<ppt>width=45dp
+height=45dp
+layout_marginLeft=6dp
+app_CardcornerRadius=6dp</ppt>
+<event></event>
+</View>
+<View id="18" did="17" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301533
+background=through</ppt>
+<event><eventItme type="clicki">f(sss.lock != "true")
+{
+	sss lock =null
+	end()
+}
+else
+{
+	fn tw.tw2("你正在解锁中，无法关闭该界面",1)
+}</eventItme></event>
+</View>
+<View id="19" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="20" did="19" type="CardView">
+<ppt>width=45dp
+height=45dp
+app_CardcornerRadius=6dp
+layout_marginRight=6dp</ppt>
+<event></event>
+</View>
+<View id="21" did="20" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=@image_error.jpg
+background=through
+scaleType=centerinside</ppt>
+<event><eventItme type="clicki">utw(null,"","你正在设置解锁密码或者正在解锁中","确定",false,v)
+{
+	endutw()
+}</eventItme></event>
+</View>
+<View id="5" did="4" type="TextView">
+<ppt>width=-1
+height=-1
+text=请输入解锁密码
+gravity=center
+typeface=@src/ttf/acbt80.ttf
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="6" did="2" type="CardView">
+<ppt>width=-1
+height=-1
+layout_marginLeft=5dp
+layout_marginTop=7dp
+layout_marginRight=5dp
+layout_marginBottom=14dp
+app_CardcornerRadius=8dp
+app_CardElevation=8dp</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="CardView">
+<ppt>width=-1
+height=60dp
+app_CardcornerRadius=5dp
+app_CardElevation=6dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="TextInputLayout">
+<ppt>width=-1
+height=-1
+app_error=错误</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+hint=请输入解锁密码
+typeface=@src/ttf/acbt80.ttf
+singleLine=true
+inputType=textpassword
+textCursorDrawable=#ff2091f4
+imeOptions=actiondone
+digits=1234567890
+textColorHighlight=#8315b5fa
+maxLength=12
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="12" did="8" type="CardView">
+<ppt>width=120dp
+height=64dp
+app_CardcornerRadius=8dp
+app_CardElevation=8dp
+layout_marginTop=8dp</ppt>
+<event></event>
+</View>
+<View id="13" did="12" type="Button">
+<ppt>width=-1
+height=-1
+text=设置密码
+typeface=@src/ttf/acbt80.ttf
+background=#ff6030ff
+textColor=#ffffffff</ppt>
+<event><eventItme type="clicki">ug(11,"text",pwd)
+f(pwd != "")
+{
+	fw("$System/Config/Pwd/sys",pwd)
+    fn tw.tw("设置成功")
+    end()
+}
+else
+{
+	fn tw.tw2("密码不能为空",1)
+}</eventItme></event>
+</View>
+<View id="14" did="8" type="CardView">
+<ppt>width=120dp
+height=64dp
+app_CardcornerRadius=8dp
+app_CardElevation=8dp
+layout_marginTop=8dp</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="Button">
+<ppt>width=-1
+height=-1
+text=解锁
+typeface=@src/ttf/acbt80.ttf
+background=#ff6030ff
+textColor=#ffffffff</ppt>
+<event><eventItme type="clicki">ug(11,"text",pwd)
+f(pwd != "")
+{
+	fr("$System/Config/Pwd/sys",local_pwd)
+    f(local_pwd == pwd)
+    {
+    	end()
+    }
+    else
+    {
+    	us(11,"text","")
+    	fn tw.tw2("密码错误",1)
+    }
+}
+else
+{
+	fn tw.tw2("密码不能为空",1)
+}</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn n.ui(1)
+fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
+
+//解锁界面UI配置调整（自动的吗？不是，需要我这个开发者通过变量进行调整，或者通过 system 库进行调用）
+//sss lock_ui ="0"
+f(sss.lock_ui == "true")
+{
+	us(12,"visibility","gone")
+}
+else f(sss.lock_ui == "0")
+{
+	syso("特殊调试")
+}
+else
+{
+	us(14,"visibility","gone")
+}</eventItme></UIEventset>

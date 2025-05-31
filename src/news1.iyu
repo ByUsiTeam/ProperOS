@@ -122,11 +122,24 @@ ellipsize=end
 lines=5</ppt>
 <event></event>
 </View>
+<View id="22" did="18" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本22</ppt>
+<event></event>
+</View>
 <View id="21" did="20" type="Button">
 <ppt>width=-1
 height=-1
 text=
 background=through</ppt>
-<event></event>
+<event><eventItme type="clicki">ug(news1.22,"text",data)
+syso(data)
+sj(data,"[包名]","[包名]",包名)
+sj(data,"[参数]","[参数]",参数)
+//数据处理
+ss("$App/"+包名+"/src/"+参数,cl_data)
+sss url =cl_data
+uigo("system_start.iyu")</eventItme></event>
 </View>
 <UIEventset></UIEventset>

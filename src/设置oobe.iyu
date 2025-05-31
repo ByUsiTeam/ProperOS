@@ -74,7 +74,7 @@ t()
         }
         stop(500)
       }
-      elsef(sss.yztz == "true")
+      else f(sss.yztz == "true")
       {
         endcode
       }
@@ -86,7 +86,8 @@ t()
   //导入PDF插件
   fuzs("@JuOS/html/pdf/pdf.juossrc","$JuOS/plug-in_component/pdf",yz_pdf)
   fuzs("@JuOS/src/SystemLevelIcon/SystemLevelIcon.jip","$JuOS/ICON/",yz_sts)
-  //
+  //默认使用新系统桌面
+  fw("$System/Config/home.sys","true")
   //默认应用引入
   fw("$JuOS/hemo/桌面/应用商店.app","System=True=System\nUi=应用市场.iyu=Ui\nAppTb=$sys/JuOS/logo/yysc_logo.png=AppTb\nEnd=false=End")
   fw("$JuOS/hemo/桌面/设置壁纸.app","System=True=System\nUi=设置壁纸.iyu=Ui\nAppTb=$sys/JuOS/src/img/ByUsi/bz.png=AppTb\nEnd=true=End")

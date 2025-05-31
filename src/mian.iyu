@@ -52,6 +52,7 @@ gravity=center</ppt>
 
 fuzs("@JuOS/sdk/player.bysi.sdk","%.data/html_video",a)
 fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
+//验证引导文件是否存在，不存在自动复制默认引导文件
 fe("$boot/init.json",yz)
 f(yz == false)
 {

@@ -1,4 +1,3 @@
-
 fn boot()
 
 s init_json ="$boot/init.json"
@@ -17,7 +16,7 @@ f(init_fe == true)
   fr("$JuOS/v/v.cfg",v)
   f(st == v)
   {
-    us(boot_loading.6,"text","正在引导 "+name+"中...")
+    us(boot_loading.6,"text","正在引导 "+name+" 中...")
     t()
     {
       stop(3500)
@@ -43,9 +42,25 @@ f(init_fe == true)
         {
           fn tw.tw2("错误配置，无法引导",1)
           us(boot_loading.9,"visibility","gone")
-          utw(null,"错误提醒","错误配置导致无法正常引导ROM","退出",true,v)
+          utw(null,"错误提醒","错误配置导致无法正常引导ROM","退出","修复引导",true,v)
           {
             end()
+          }
+          else
+          {
+          	fd("$boot/init.json",fd_init)
+              f(fd_init == "true")
+              {
+              	fn tw.tw2("修复成功",2)
+              	uigo("mian.iyu")
+                  end()
+              }
+              else
+              {
+              	fn tw.tw2("错误❌",1)
+                  ends()
+                  end()
+              }
           }
         }
       }
