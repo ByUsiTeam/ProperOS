@@ -176,6 +176,7 @@ fn n.ui(1)</eventItme><eventItme type="downkey">f(st_kC == 4)
   f(yz_url_dt == "true")
   {
     us(3,"gobackorforward",-1)
+    us(6,"visibility","gone")
   }
   else f(yz_url_dt == "false")
   {

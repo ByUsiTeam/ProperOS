@@ -8,13 +8,21 @@ end fn
 fn y()
 
 fe("$System/Config/Pwd/sys",pwd)
-f(pwd == "true")
+fe("$System/Config/Pwd/pwd_lock",pwd_lock)
+f(pwd == true)
 {
-	fn lk.lock("true")
+	fn lk.lock(pwd)
 }
 else
 {
-	fn lk.lock("false")
+	f(pwd_lock == true)
+	{
+		syso("[Pwd_Lock] true")
+	}
+    else
+    {
+    	fn lk.lock(pwd)
+    }
 }
 
 end fn

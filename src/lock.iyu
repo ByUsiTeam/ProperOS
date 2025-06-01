@@ -44,14 +44,25 @@ app_CardcornerRadius=6dp</ppt>
 height=-1
 src=17301533
 background=through</ppt>
-<event><eventItme type="clicki">f(sss.lock != "true")
+<event><eventItme type="clicki">fe("$System/Config/Pwd/sys",yz)
+endkeyboard()
+f(sss.lock_ui == true || sss.lock_ui == "true")
 {
-	sss lock =null
+	fn tw.tw2("错误",1)
+}
+else f(sss.lock_ui == "false" || sss.lock_ui == false)
+{
+	fw("$System/Config/Pwd/pwd_lock","1")
 	end()
+}
+else f(yz == true)
+{
+	fn tw.tw2("错误",1)
 }
 else
 {
-	fn tw.tw2("你正在解锁中，无法关闭该界面",1)
+	syso("不知道的问题出现了")
+    fn tw.tw2("不知道的问题出现了",1)
 }</eventItme></event>
 </View>
 <View id="19" did="4" type="LinearLayout">
@@ -167,6 +178,7 @@ f(pwd != "")
 else
 {
 	fn tw.tw2("密码不能为空",1)
+    endkeyboard()
 }</eventItme></event>
 </View>
 <View id="14" did="8" type="CardView">
@@ -196,11 +208,13 @@ f(pwd != "")
     {
     	us(11,"text","")
     	fn tw.tw2("密码错误",1)
+        endkeyboard()
     }
 }
 else
 {
 	fn tw.tw2("密码不能为空",1)
+    endkeyboard()
 }</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn n.ui(1)

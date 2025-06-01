@@ -56,7 +56,7 @@ fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
 fe("$boot/init.json",yz)
 f(yz == false)
 {
-  fc("@boot/init.json","$boot/init.json",yz)
+  fc("@boot/init2.json","$boot/init.json",yz)
 }</eventItme><eventItme type="loadingComplete">t()
 {
   stop(2000)

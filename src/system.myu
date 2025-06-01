@@ -264,3 +264,43 @@ else
 }
 
 end fn
+
+fn asystem_t_init()
+
+/.
+java(cs, activity, "android.app.Activity.getWindow")
+java(cs2, cs, "android.view.Window.getDecorView")
+java(null, cs2, "android.view.View.setSystemUiVisibility", "int", "8192")
+java(null, cs, "android.view.Window.addFlags", "int", "67108864")
+swh("pxztl", h)
+us(9,"layout_margintop",h)
+./
+//UI设置
+
+fn GGExpanded.权限检查()
+f(sss.Yos_通知权限)
+{
+  us(11,"text","通知权限已授予")
+}else
+{
+  us(11,"text","注意：通知权限未授予，无法显示通知")
+}
+
+end fn
+
+fn asystem_t_t(通知ID,dicon,xicon,dimg,rtz,title,text,tnr)
+
+sbp(dicon,大图标)
+sbp(xicon,小图标)
+sbp(dimg,大图片)
+s 用户可否删除 = rtz
+s 文本 = text
+fn GGExpanded.初始化(title,tnr,小图标,大图标,大图片,文本,通知ID,用户可否删除)
+
+end fn
+
+fn asystem_t_ts(通知ID)
+
+fn GGExpanded.取消通知(通知ID)
+
+end fn

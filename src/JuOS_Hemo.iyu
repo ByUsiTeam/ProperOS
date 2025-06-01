@@ -134,7 +134,9 @@ textSize=34sp
 gravity=center</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loadingComplete">//-_-_-_-_-_-_-_-_-_-_-
+<UIEventset><eventItme type="loadingComplete">//-_-_-_-_-_-_-_-_-
+fn system.asystem_t_init()
+//-_-_-_-_-_-_-_-_-_-_-
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/ByUsi/loading.json",data)
 fn Lottie.setImageLottie(10,data,-2,true)
@@ -166,13 +168,12 @@ f(Update == "true")
 //
 fw("$System/Config/Update.sys","false")
 
-fn lk.y()</eventItme><eventItme type="downkey">f(st_kC==4)
+fn lk.y()
+
+fn lib.wp(1)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
   syso("确定")
 }</eventItme><eventItme type="loading">uycl("#e84f78ff",true)
-//
-s id =1
-fn lib.wp(id)
 //fn byusi.ztl()
 utb(18)
 fn n.ui(1)</eventItme><eventItme type="menu">case 设置:

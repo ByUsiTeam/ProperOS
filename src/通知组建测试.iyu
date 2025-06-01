@@ -36,4 +36,13 @@ text=发出测试通知</ppt>
     }
 }</eventItme></event>
 </View>
+<View id="6" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=通知，安卓</ppt>
+<event><eventItme type="clicki">fn system.asystem_t_init()
+s tnr ="测试测试功能"
+sran(1,9999,id)
+fn system.asystem_t_t(id,"@JuOS/logo/properos.png","@JuOS/logo/properos.png","@JuOS/logo/properos.png",false,"测试通知",tnr,tnr)</eventItme></event>
+</View>
 <UIEventset></UIEventset>

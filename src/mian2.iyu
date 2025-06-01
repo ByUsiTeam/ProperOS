@@ -121,4 +121,8 @@ dh(dh,"duration",500)
 dha(dh2,false,true)
 dh(dh2,"duration",1000)
 dhset(dhlist,false,dh,dh2)
-us(boot_loading.9,"dh",dhlist)</eventItme></UIEventset>
+us(boot_loading.9,"dh",dhlist)
+//常驻通知
+fn system.asystem_t_init()
+s tnr ="欢迎使用 ProperOS"
+fn system.asystem_t_t(141730,"@JuOS/logo/properos.png","@JuOS/logo/properos.png","@JuOS/logo/properos.png",false,"ProperOS常驻",tnr,tnr)</eventItme></UIEventset>
