@@ -208,17 +208,29 @@ fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
 
 //解锁界面UI配置调整（自动的吗？不是，需要我这个开发者通过变量进行调整，或者通过 system 库进行调用）
 //sss lock_ui ="0"
-f(sss.lock_ui == "true")
+fe("$System/Config/Pwd/sys",key)
+f(key == "true" || key == true)
 {
-	us(12,"visibility","gone")
+    f(sss.lock_ui == "true")
+    {
+    	us(12,"visibility","gone")
+    }
+    else f(sss.lock_ui == "0")
+    {
+    	syso("特殊调试")
+    }
+    else f(sss.lock_ui == "false")
+    {
+    	us(14,"visibility","gone")
+    }
 }
-else f(sss.lock_ui == "0")
-{
-	syso("特殊调试")
-}
-else f(sss.lock_ui == "false")
+else f(sss.lock_ui == "false" && sss.lock_ui != "true")
 {
 	us(14,"visibility","gone")
+}
+else
+{
+	end()
 }</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 	syso("1")
