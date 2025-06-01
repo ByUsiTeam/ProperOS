@@ -1,0 +1,20 @@
+fn lock(data)
+
+uigo("lock.iyu")
+sss lock_ui =data
+
+end fn
+
+fn y()
+
+fe("$System/Config/Pwd/sys",pwd)
+f(pwd == "true")
+{
+	fn lk.lock("true")
+}
+else
+{
+	fn lk.lock("false")
+}
+
+end fn

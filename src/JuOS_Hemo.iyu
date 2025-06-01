@@ -164,7 +164,9 @@ f(Update == "true")
   fn system.update("true")
 }
 //
-fw("$System/Config/Update.sys","false")</eventItme><eventItme type="downkey">f(st_kC==4)
+fw("$System/Config/Update.sys","false")
+
+fn lk.y()</eventItme><eventItme type="downkey">f(st_kC==4)
 {
   syso("确定")
 }</eventItme><eventItme type="loading">uycl("#e84f78ff",true)
@@ -190,4 +192,9 @@ break
 
 case 关闭ProperOS:
 fn lib.utw("end-ppos.iyu")
+break
+
+case 重启:
+uigo("mian.iyu")
+end()
 break</eventItme></UIEventset>

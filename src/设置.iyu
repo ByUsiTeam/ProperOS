@@ -500,6 +500,53 @@ background=through</ppt>
 //fn tw.tw("长按有特殊效果！")
 </eventItme></event>
 </View>
+<View id="116" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="117" did="116" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="118" did="117" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="119" did="117" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="120" did="119" type="TextView">
+<ppt>width=-2
+height=-2
+text=设置或更改密码
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="121" did="116" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn lk.lock("false")</eventItme></event>
+</View>
 <View id="110" did="20" type="RelativeLayout">
 <ppt>width=-1
 height=55dp

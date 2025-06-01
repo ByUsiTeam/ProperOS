@@ -216,7 +216,10 @@ else f(sss.lock_ui == "0")
 {
 	syso("特殊调试")
 }
-else
+else f(sss.lock_ui == "false")
 {
 	us(14,"visibility","gone")
+}</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+	syso("1")
 }</eventItme></UIEventset>

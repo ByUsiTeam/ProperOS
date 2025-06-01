@@ -112,7 +112,8 @@ else
 height=-1</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fn lib.wp(2)
+<UIEventset><eventItme type="loading">fn lk.y()
+fn lib.wp(2)
 utb(3)</eventItme><eventItme type="loadingComplete">uycl("#ff5f6aff",true)
 //
 fn n.ui(1)
@@ -204,6 +205,11 @@ break
 
 case 关闭ProperOS:
 fn lib.utw("end-ppos.iyu")
+break
+
+case 重启:
+uigo("mian.iyu")
+end()
 break</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 }</eventItme></UIEventset>
