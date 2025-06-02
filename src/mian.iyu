@@ -60,10 +60,25 @@ f(yz == false)
 }</eventItme><eventItme type="loadingComplete">t()
 {
   stop(2000)
-  ufnsui()
+  fe("$System/Config/oobe.sys",yz)
+  f(yz == true)
   {
-    uigo("mian2.iyu")
-    lan(0)
-    end()
+  	ufnsui()
+      {
+      	uigo("mian2.iyu")
+          lan(0)
+          end()
+      }
+  }
+  else f(yz == false)
+  {
+  	uigo("oobe.iyu")
+      lan(0)
+      end()
+  }
+  else
+  {
+  	fn tw.tw2("错误",1)
+      end()
   }
 }</eventItme></UIEventset>

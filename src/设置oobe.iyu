@@ -80,8 +80,7 @@ t()
       }
     }
   }
-}</eventItme><eventItme type="loadingComplete">
-t()
+}</eventItme><eventItme type="loadingComplete">t()
 {
   //导入PDF插件
   fuzs("@JuOS/html/pdf/pdf.juossrc","$JuOS/plug-in_component/pdf",yz_pdf)
@@ -128,7 +127,7 @@ t()
   fe("$System/Config/Update.sys",u)
   f(u == "false")
   {
-    fw("$System/Config/Update.sys","true")
+    fw("$System/Config/Update.sys","false")
   }
   else
   {

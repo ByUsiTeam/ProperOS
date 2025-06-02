@@ -139,7 +139,7 @@ fn system.asystem_t_init()
 //-_-_-_-_-_-_-_-_-_-_-
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/ByUsi/loading.json",data)
-fn Lottie.setImageLottie(10,data,-2,true)
+fn Lottie.setImageLottie(10,data,-1,true)
 t()
 {
   fn list_lib.hemo()

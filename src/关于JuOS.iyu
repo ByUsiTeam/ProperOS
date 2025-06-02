@@ -502,4 +502,4 @@ fn lib.svg(svg,41)
 //Lottie动画配置
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/ByUsi/loading2.json",data)
-fn Lottie.setImageLottie(47,data,-2,true)</eventItme></UIEventset>
+fn Lottie.setImageLottie(47,data,-1,true)</eventItme></UIEventset>

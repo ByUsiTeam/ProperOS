@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ProperOS 用户协议</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            padding: 15px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            margin: 20px auto;
+            padding: 25px 20px;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(to right, #5c6bc0, #3949ab);
+            border-radius: 15px;
+            margin-bottom: 25px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .effective-date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .content {
+            padding: 0 10px;
+        }
+        
+        h2 {
+            font-size: 1.6rem;
+            color: #3949ab;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+        
+        ul {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .permission-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+        
+        .restriction-list li::before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+        
+        .warning-list li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+        
+        .termination-list li::before {
+            content: "🔒";
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+        
+        .highlight {
+            background-color: #e8eaf6;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 4px solid #3949ab;
+        }
+        
+        .highlight h3 {
+            color: #3949ab;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .important-notes {
+            background-color: #fff8e1;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 1px solid #ffd54f;
+        }
+        
+        .important-notes h3 {
+            color: #ff8f00;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed #ccc;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            color: #3949ab;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #757575;
+            font-size: 0.9rem;
+        }
+        
+        .logo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3949ab;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 2px;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .container {
+                padding: 15px 10px;
+            }
+            
+            .header {
+                padding: 15px 0;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 700px;
+                padding: 30px;
+            }
+        }
+        
+        /* 动画效果 */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .highlight {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(57, 73, 171, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(57, 73, 171, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(57, 73, 171, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <div class="logo-text">ProperOS</div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>ProperOS 用户协议</h1>
+            <div class="effective-date">生效日期：2025年6月2日</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>1. 协议范围</h2>
+                <p>本协议适用于ProperOS（以下简称"本系统"）——一款基于Android软件的手机模拟操作系统。本系统提供不完全独立于Android的模拟环境。</p>
+            </div>
+            
+            <div class="section">
+                <h2>2. 定义说明</h2>
+                <ul>
+                    <li><strong>ProperOS</strong>：指由我方开发的安卓模拟操作系统软件及相关服务</li>
+                    <li><strong>用户</strong>：指下载、安装或使用ProperOS的个人或实体</li>
+                    <li><strong>虚拟设备</strong>：指通过本系统创建的模拟手机运行环境</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>3. 许可授权</h2>
+                <p>在遵守本协议前提下，我方授予用户：</p>
+                <ul class="permission-list">
+                    <li>非独占、不可转让的个人使用许可</li>
+                    <li>在兼容设备上安装和运行ProperOS的权利</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>4. 核心限制</h2>
+                <p>用户不得：</p>
+                <ul class="restriction-list">
+                    <li>对本系统进行逆向工程或修改核心组件</li>
+                    <li>用于挖矿、网络攻击等资源滥用行为</li>
+                    <li>安装/传播恶意软件或侵犯知识产权的应用</li>
+                    <li>绕过系统安全机制或虚拟设备隔离层</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>5. 数据与隐私</h2>
+                <ul>
+                    <li>本系统可能收集必要的性能数据用于优化体验</li>
+                    <li>用户通过虚拟设备产生的个人数据由用户自行管理</li>
+                    <li>详细数据实践请参阅独立的《ProperOS隐私政策》</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>6. 免责声明</h2>
+                <ul class="warning-list">
+                    <li>本系统按"现状"提供，不承诺：
+                        <ul style="list-style-type: none; margin-top: 10px;">
+                            <li>- 持续无中断的服务可用性</li>
+                            <li>- 特定性能指标或功能完整性</li>
+                        </ul>
+                    </li>
+                    <li>因以下情况造成的损失不承担责任：
+                        <ul style="list-style-type: none; margin-top: 10px;">
+                            <li>- 用户自行修改系统导致的故障</li>
+                            <li>- 第三方应用导致的数据丢失</li>
+                            <li>- 不可抗力造成的服务中断</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>7. 知识产权</h2>
+                <ul>
+                    <li>ProperOS商标及相关权利归我方所有</li>
+                    <li>Android是Google LLC的注册商标</li>
+                    <li>用户通过本系统安装的第三方应用受其各自许可协议约束</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>8. 协议变更</h2>
+                <ul>
+                    <li>重大变更将通过系统通知或官网公告</li>
+                    <li>继续使用视为接受修订后的条款</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>9. 终止条款</h2>
+                <p>用户若违反本协议，我方有权：</p>
+                <ul class="termination-list">
+                    <li>立即终止使用许可</li>
+                    <li>禁用虚拟设备访问权限</li>
+                    <li>保留追究法律责任的权利</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>10. 法律管辖</h2>
+                <ul>
+                    <li>本协议适用中华人民共和国法律</li>
+                    <li>争议应首先通过友好协商解决</li>
+                    <li>协商未果可向被告方所在地法院提起诉讼</li>
+                </ul>
+            </div>
+            
+            <div class="important-notes">
+                <h3>重要提示</h3>
+                <ul>
+                    <li>使用前请确认设备满足最低系统要求</li>
+                    <li>建议定期备份虚拟设备数据</li>
+                    <li>企业用户需联系 <a href="mailto:admin@work.byusi.cn">admin@work.byusi.cn</a> 获取商业授权</li>
+                </ul>
+            </div>
+            
+            <div class="contact-info">
+                技术支持：<a href="mailto:admin@work.byusi.cn">admin@work.byusi.cn</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>ProperOS &copy; 2025 版权所有</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

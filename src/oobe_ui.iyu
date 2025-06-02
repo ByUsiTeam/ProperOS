@@ -1,0 +1,37 @@
+<View id="3" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="LinearLayout">
+<ppt>width=-1
+height=45dp
+orientation=vertical
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="6" did="4" type="ImageButton">
+<ppt>width=45dp
+height=45dp
+src=17301533</ppt>
+<event><eventItme type="clicki">us(oobe_ui.3,"visibility","gone")</eventItme></event>
+</View>
+<View id="2" did="3" type="CardView">
+<ppt>width=400dp
+height=550dp</ppt>
+<event></event>
+</View>
+<View id="8" did="2" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="1" did="8" type="WebView">
+<ppt>width=-2
+height=-2
+url=@ByUsi/UserAgreement.html</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

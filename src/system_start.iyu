@@ -41,7 +41,7 @@ else
 us(9,"text",ii)
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/ByUsi/404.json",data)
-fn Lottie.setImageLottie(7,data,64dp,true)</eventItme><eventItme type="press">s wv = st_vW
+fn Lottie.setImageLottie(7,data,-1,true)</eventItme><eventItme type="press">s wv = st_vW
 java(htr,wv,"android.webkit.WebView.getHitTestResult")
 java(type,htr,"android.webkit.WebView$HitTestResult.getType")
 javags(imagetype,null,"android.webkit.WebView$HitTestResult","IMAGE_TYPE")
