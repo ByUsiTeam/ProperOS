@@ -501,5 +501,5 @@ fr("$JuOS/ICON/ic_accessibility.svg",svg)
 fn lib.svg(svg,41)
 //Lottie动画配置
 fn Lottie.loaddex()
-fr("@JuOS/Lottie/ByUsi/loading2.json",data)
-fn Lottie.setImageLottie(47,data,-1,true)</eventItme></UIEventset>
+fr("@JuOS/Lottie/app.json",data)
+fn Lottie.setImageLottie(47,data,0,true)</eventItme></UIEventset>

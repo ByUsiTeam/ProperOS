@@ -62,7 +62,15 @@ visibility=gone</ppt>
 <ppt>width=66dp
 height=35dp
 src=@100.gif
-scaleType=centercrop</ppt>
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="10" did="5" type="ImageView">
+<ppt>width=35dp
+height=35dp
+src=17301567
+visibility=gone</ppt>
 <event></event>
 </View>
 <UIEventset></UIEventset>

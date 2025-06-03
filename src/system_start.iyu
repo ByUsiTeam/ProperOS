@@ -68,7 +68,10 @@ f(type==imagetype||type==imageurl)
       syso(path)
     }
   }
-}</eventItme></event>
+}</eventItme><eventItme type="onpagestarted">us(14,"visibility","visible")
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(15,data,-1,true)</eventItme><eventItme type="onpagefinished">us(14,"visibility","gone")</eventItme></event>
 </View>
 <View id="4" did="1" type="LinearLayout">
 <ppt>width=-1
@@ -148,6 +151,19 @@ typeface=@JuOS/src/ttf/acbt80.ttf</ppt>
 us(6,"visibility","gone")
 ug(3,"url",url)
 us(3,"url",url)</eventItme></event>
+</View>
+<View id="14" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="ImageView">
+<ppt>width=-2
+height=-2
+src=17301567</ppt>
+<event></event>
 </View>
 <UIEventset><eventItme type="loading">
 uycl("#ff59d8ff",true)

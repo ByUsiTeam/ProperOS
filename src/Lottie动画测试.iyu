@@ -1,0 +1,35 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=按钮3</ppt>
+<event><eventItme type="clicki">ug(4,"text",txt)
+ss("@JuOS/Lottie/"+txt,data)
+fr(data,data)
+fn Lottie.setImageLottie(5,data,-1,true)
+endkeyboard()</eventItme></event>
+</View>
+<View id="4" did="2" type="EditText">
+<ppt>width=-1
+height=-2
+text=</ppt>
+<event></event>
+</View>
+<View id="5" did="2" type="ImageView">
+<ppt>width=-2
+height=-2
+src=17301567</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()</eventItme></UIEventset>

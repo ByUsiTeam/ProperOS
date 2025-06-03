@@ -121,6 +121,9 @@ typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
 <event><eventItme type="clicki">ug(7,"text",zh)
 ug(15,"text",mm)
+us(44,"visibility","visible")
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(45,data,-1,true)
 //检验
 syso(zh)
 syso(mm)
@@ -138,6 +141,8 @@ t()
     json(json,"get","message",message)
     ufnsui()
     {
+    	endkeyboard()
+    	us(44,"visibility","gone")
       ss("登录失败："+message,uui)
       fn tw.tw2(uui,1)
       us(15,"text","")
@@ -148,15 +153,24 @@ t()
     fw("$JuOS/data/User/data.json",sju)
     ufnsui()
     {
+    	endkeyboard()
+        fr("@JuOS/Lottie/yes.json",data)
+        fn Lottie.setImageLottie(45,data,-1,true)
       fw("$JuOS/data/User/.password",mm)
       fn tw.tw2("登录成功",0)
-      end()
+      t()
+      {
+      	stop(2500)
+          end()
+      }
     }
   }
   else
   {
     ufnsui()
     {
+    	endkeyboard()
+    	us(44,"visibility","gone")
       fn tw.tw2(json,1)
     }
   }
@@ -334,6 +348,9 @@ ug(33,"text",mm)
 syso(zh)
 syso(email)
 syso(mm)
+us(44,"visibility","visible")
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(45,data,-1,true)
 //登录基本处理方法
 s url="https://api.www.byusi.cn/user/api.php"
 t()
@@ -348,24 +365,38 @@ t()
     json(json,"get","message",message)
     ufnsui()
     {
+    	endkeyboard()
       ss("注册失败："+message,uui)
       fn tw.tw2(uui,1)
+      us(44,"visibility","gone")
     }
   }
   else f(status == "success")
   {
     ufnsui()
     {
+    	fr("@JuOS/Lottie/yes.json",data)
+        fn Lottie.setImageLottie(45,data,-1,true)
       fn tw.tw2("注册成功",0)
-      us(4,"visibility","visible")
-      us(23,"visibility","gone")
+      t()
+      {
+      	stop(2500)
+          ufnsui()
+          {
+              us(4,"visibility","visible")
+              us(23,"visibility","gone")
+              us(44,"visibility","gone")
+          }
+      }
     }
   }
   else
   {
     ufnsui()
     {
+    	endkeyboard()
       fn tw.tw2(json,1)
+      us(44,"visibility","gone")
     }
   }
 }</eventItme></event>
@@ -394,5 +425,20 @@ textColor=#ffffffff</ppt>
 <event><eventItme type="clicki">us(4,"visibility","visible")
 us(23,"visibility","gone")</eventItme></event>
 </View>
+<View id="44" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="45" did="44" type="ImageView">
+<ppt>width=-2
+height=-2
+src=17301567</ppt>
+<event></event>
+</View>
 <UIEventset><eventItme type="loading">fn lib.wp(1)
-uycl("#daebeae3",true)</eventItme><eventItme type="loadingComplete">fn n.ui(1)</eventItme></UIEventset>
+uycl("#daebeae3",true)</eventItme><eventItme type="loadingComplete">fn n.ui(1)
+fn Lottie.loaddex()</eventItme></UIEventset>
