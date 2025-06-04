@@ -146,17 +146,7 @@ typeface=@JuOS/src/ttf/acbt80.ttf
 background=#ff4537ff
 textColor=#ffffffff</ppt>
 <event><eventItme type="clicki">
-fn lib.xzq("下载更新",sss.durl,sss.lj,sss.jianj)
-swh("w",w)
-swh("hh",h)
-syso("w"+w)
-syso("h"+h)
-dht(dh,0,w,0,h)
-dh(dh,"duration",500)
-dha(dh2,true,false)
-dh(dh2,"duration",2000)
-dhset(dhlist,false,dh,dh2)
-us(update.1,"dh",dhlist)
-us(update.1,"visibility","gone")</eventItme></event>
+//fn lib.xzq("下载更新",sss.durl,sss.lj,sss.jianj)
+hws(sss.durl)</eventItme></event>
 </View>
 <UIEventset></UIEventset>

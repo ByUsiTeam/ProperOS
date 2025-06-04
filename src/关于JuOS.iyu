@@ -102,9 +102,8 @@ app_CardcornerRadius=5dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
 layout_marginTop=8dp</ppt>
-<event><eventItme type="clicki">fn Lottie.loaddex()
-fr("@JuOS/Lottie/ByUsi/loading2.json",data)
-fn Lottie.setImageLottie(47,data,-2,true)</eventItme></event>
+<event><eventItme type="clicki">fr("@JuOS/Lottie/app.json",data)
+fn Lottie.setImageLottie(47,data,0,true)</eventItme></event>
 </View>
 <View id="45" did="44" type="RelativeLayout">
 <ppt>width=-1

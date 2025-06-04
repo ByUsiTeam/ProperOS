@@ -24,7 +24,8 @@ layout_marginRight=8dp
 app_CardcornerRadius=5dp
 app_CardElevation=4dp
 layout_marginTop=5dp</ppt>
-<event></event>
+<event><eventItme type="clicki">fr("@hello.json",data)
+fn Lottie.setImageLottie(5,data,0,true)</eventItme></event>
 </View>
 <View id="6" did="4" type="LinearLayout">
 <ppt>width=-1

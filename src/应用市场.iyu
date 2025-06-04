@@ -92,7 +92,8 @@ t()
     json(j1,"get","title",title)
     ufnsui()
     {
-      us(8,"text",title)
+      //us(8,"text",title)
+      us(8,"text","")
     }
     json(j1,"list","list",list)
     json(list,"size",size)

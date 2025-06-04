@@ -22,7 +22,7 @@ elevation=8dp
 <View id="17" did="16" type="TextView">
 <ppt>width=-2
 height=-2
-text=ProperOS视频播放器
+text=哔哩哔哩视频播放器
 typeface=normal
 textSize=16sp</ppt>
 <event></event>
@@ -52,8 +52,7 @@ layout_marginTop=15dp</ppt>
 <View id="1" did="2" type="WebView">
 <ppt>width=-1
 height=300dp
-layout_margin=5dp
-url=$System/VideoPlayer2/index.htm</ppt>
+layout_margin=5dp</ppt>
 <event></event>
 </View>
 <View id="8" did="5" type="LinearLayout">
@@ -91,7 +90,7 @@ orientation=vertical</ppt>
 height=-1
 text=
 background=
-hint=请输入视频地址
+hint=请输入哔哩哔哩视频bvid
 textColor=#424242
 textColorHint=#42424242
 textSize=16sp
@@ -125,13 +124,10 @@ height=-1
 orientation=vertical
 gravity=center</ppt>
 <event><eventItme type="clicki">ug(3,"text",a)
-f(a ? "http://" || a ? "https://")
-{
-  has(1,"setURL('"+a+"')")
-}else
-{
-  has(1,"setURL('http://"+a+"')")
-}</eventItme></event>
+fr("@ProperOS/Src/html/bilibilivideo.html",html)
+sr(html,"{BV_ID}",a,html)
+fw("$temp/html/bilibilivideo.html",html)
+us(1,"url","$temp/html/bilibilivideo.html")</eventItme></event>
 </View>
 <View id="14" did="12" type="TextView">
 <ppt>width=-2

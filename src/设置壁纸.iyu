@@ -25,13 +25,13 @@ ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
 //
 t()
 {
-  s a = "/sdcard/JuOS/img"
+  s a = "/sdcard/ProperOS/img"
   fl(a,false,wj_list)
   for(sc;wj_list)
   {
     f(sc ? ".gif")
     {
-      ss("/sdcard/JuOS/img/"+sc,img)
+      ss("/sdcard/ProperOS/img/"+sc,img)
       syso(img)
       ula(list_2,11=img,9=sc)
       ufnsui()
@@ -42,7 +42,7 @@ t()
     }
     else
     {
-      ss("/sdcard/JuOS/img/"+sc,img)
+      ss("/sdcard/ProperOS/img/"+sc,img)
       ula(list_cz,8=img,9=sc)
       ufnsui()
       {

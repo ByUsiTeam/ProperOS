@@ -71,12 +71,7 @@ t()
   for(sc;wj_list)
   {
     syso(sc)
-    //
-    f(sc *? ".apk")
-    {
-      s img ="@JuOS/src/img/zy/app.png"
-    }
-    else f(sc *? ".jupk")
+    f(sc *? ".jupk")
     {
       time(4,time)
       ss("/sdcard/ProperOS/"+sc,ns)
@@ -88,10 +83,6 @@ t()
       ss("$temp/"+apm+"_"+time,lj)
       fuz(ns,apt,lj,yz)
       ss(lj+"/"+apt,img)
-      //s img ="@JuOS/src/img/zy/admin.png"
-    }
-    else f()
-    {
     }
     else f(sc *? ".mp3" || sc *? ".mp4" || sc *? ".m4a")
     {
@@ -119,7 +110,7 @@ t()
     }
     else
     {
-      s img ="@JuOS/src/img/zy/tip.png"
+      s img ="@Image_loading.png"
     }
     //
     ula(list_cz,6=img,4=sc)
@@ -128,11 +119,10 @@ t()
   {
     uls(4,list_cz,"list_2.iyu")
   }
-}</eventItme><eventItme type="loadingComplete">fn qp.qp2()
-//sss sdcard ="/sdcard/JuOS/"
+}</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
 s id =5
-fn lib.wp(id)
-fn n.ui(7)</eventItme><eventItme type="downkey">f(st_kC==4)
+fn n.ui(7)
+fn lib.wp(id)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
   fr("$System/Config/home.sys",home)
   f(home == "false")

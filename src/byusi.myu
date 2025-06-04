@@ -32,3 +32,14 @@ java(dow,window,"android.view.Window.getDecorView")
 java(null,dow,"android.view.View.setSystemUiVisibility","int",4098)
 }
 end fn
+
+fn img(id,url)
+
+loadjar("a.dex.i",包)
+cls(包,"com.bumptech.glide.Glide",类)
+gvs(id,对象)
+javax(加载器,null,类,"with","android.app.Activity",activity)
+s 链接=url
+call(null,"mjava","Glide.加载",加载器,对象,链接)
+
+end fn

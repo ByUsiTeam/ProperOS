@@ -124,5 +124,7 @@ dhset(dhlist,false,dh,dh2)
 us(boot_loading.9,"dh",dhlist)
 //常驻通知
 fn system.asystem_t_init()
+fr("@version.txt",xxi)
 s tnr ="欢迎使用 ProperOS"
-fn system.asystem_t_t(141730,"@JuOS/logo/properos.png","@JuOS/logo/properos.png","@JuOS/logo/properos.png",false,"ProperOS常驻",tnr,tnr)</eventItme></UIEventset>
+ss(tnr+"_v"+xxi,tnr)
+fn system.asystem_t_t(141730,"@JuOS/logo/properos.png","@JuOS/logo/properos.png","@JuOS/logo/properos.png",false,"ProperOS消息栏常驻",tnr,tnr)</eventItme></UIEventset>

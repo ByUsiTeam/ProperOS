@@ -40,7 +40,7 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">ulag(st_vW,9,uid_mc)
 syso(uid_mc)
-ss("/sdcard/JuOS/img/"+uid_mc,wjml)
+ss("/sdcard/ProperOS/img/"+uid_mc,wjml)
 //-_-_-_-_-_-_-_-_-_-_-
 f(uid_mc *? ".gif")
 {

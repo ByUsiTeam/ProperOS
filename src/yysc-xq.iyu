@@ -123,21 +123,7 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
-<View id="59" did="17" type="CardView">
-<ppt>width=-1
-height=245dp
-layout_marginLeft=8dp
-layout_marginRight=8dp
-app_CardcornerRadius=5dp
-layout_marginBottom=8dp</ppt>
-<event></event>
-</View>
-<View id="13" did="59" type="NestedScrollView">
-<ppt>width=-1
-height=-1</ppt>
-<event></event>
-</View>
-<View id="18" did="13" type="TextView">
+<View id="18" did="17" type="TextView">
 <ppt>width=-2
 height=-2
 text=简介详情
@@ -479,6 +465,13 @@ t()
       json(j2,"get","img4",img4)
       ufnsui()
       {
+      	/.
+      	fn byusi.img(35,img0)
+          fn byusi.img(37,img1)
+          fn byusi.img(39,img2)
+          fn byusi.img(41,img3)
+          fn byusi.img(43,img4)
+          ./
         us(35,"src",img0)
         us(53,"text",img0)
         us(37,"src",img1)
@@ -512,6 +505,7 @@ t()
       ss("分享者："+developer,developer)
       us(10,"text",developer)
       us(6,"src",icon)
+      //fn byusi.img(6,icon)
       sr(introduce,"&lt;br&gt;","\n",introduce2)
       us(18,"text",introduce2)
     }
