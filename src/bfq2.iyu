@@ -214,6 +214,111 @@ textColor=#ffffffff
 textSize=16sp</ppt>
 <event></event>
 </View>
+<View id="28" did="5" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=vertical
+layout_marginTop=20dp
+layout_marginLeft=20dp
+layout_marginRight=20dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="29" did="28" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardBackgroundColor=#FF2285FC
+app_CardElevation=0
+app_CardcornerRadius=10dp</ppt>
+<event></event>
+</View>
+<View id="30" did="29" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event><eventItme type="clicki">
+
+ug(3,"text",a)
+us(24,"visibility",0)
+t()
+{
+  ufnsui()
+  {
+    hsas(22,true)
+    us(22,"url",a)
+    s 处理="javascript:function mk(){iapp.s("ss.视频",document.getElementsByTagName('video')[0].src);}"
+    t()
+    {
+      w(true)
+      {
+        ufnsui()
+        {
+          us(22,"url",处理)
+        }
+        stop(500)
+        ufnsui()
+        {
+          has(22,"mk()")
+        }
+        f(ss.视频!=null)
+        {
+          break
+        }
+      }
+      ufnsui()
+      {
+        us(3,"text",ss.视频)
+        us(24,"visibility",8)
+        ufnsui()
+        {
+          ss 视频=null
+        }
+      }
+    }
+  }
+}</eventItme></event>
+</View>
+<View id="31" did="30" type="TextView">
+<ppt>width=-2
+height=-2
+text=解析视频
+textColor=#ffffffff
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="32" did="5" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=vertical
+layout_marginTop=20dp
+layout_marginLeft=20dp
+layout_marginRight=20dp</ppt>
+<event></event>
+</View>
+<View id="33" did="32" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardBackgroundColor=#FF2285FC
+app_CardElevation=0
+app_CardcornerRadius=10dp</ppt>
+<event></event>
+</View>
+<View id="34" did="33" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event><eventItme type="clicki">uigo("bili.iyu")</eventItme></event>
+</View>
+<View id="35" did="34" type="TextView">
+<ppt>width=-2
+height=-2
+text=哔哩哔哩视频播放器
+textColor=#ffffffff
+textSize=16sp</ppt>
+<event></event>
+</View>
 <View id="24" did="23" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -248,8 +353,17 @@ visibility=gone</ppt>
 </View>
 <UIEventset><eventItme type="loading">fuz("@JuOS/html/VideoPlayer2/VideoPlayer2.zip","index.htm","$System/VideoPlayer2",yz)
 fr("$System/VideoPlayer2/index.htm",html)
-sr(html,"{VideoAddress}",sss.url,html)
-fw("$System/VideoPlayer2/index.htm",html)
+f(sss.url != null)
+{
+	sr(html,"{VideoAddress}",sss.url,html)
+    fw("$System/VideoPlayer2/index.htm",html)
+}
+else
+{
+	fdir("@ProperOS/Src/Mp4/Ry4.mp4",dir)
+	sr(html,"{VideoAddress}","file://"+dir,html)
+    fw("$System/VideoPlayer2/index.htm",html)
+}
 us(1,"url","$System/VideoPlayer2/index.htm")
 
 

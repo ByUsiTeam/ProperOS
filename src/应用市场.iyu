@@ -25,16 +25,6 @@ background=through
 layout_marginLeft=8dp</ppt>
 <event><eventItme type="clicki">end()</eventItme></event>
 </View>
-<View id="8" did="6" type="TextView">
-<ppt>width=-2
-height=-2
-text=ProperOS应用市场
-textColor=#ffffffff
-typeface=@JuOS/src/ttf/acbt80.ttf
-textSize=16sp
-layout_marginLeft=10dp</ppt>
-<event></event>
-</View>
 <View id="9" did="6" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -75,6 +65,16 @@ background=#ff2f47ff
 textSize=12sp
 textColor=#ffffffff</ppt>
 <event><eventItme type="clicki">fn lib.install("@JuOS/App/ProperOS应用市场.jupk")</eventItme></event>
+</View>
+<View id="8" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=ProperOS应用市场
+textColor=#ffffffff
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=16sp
+layout_marginLeft=10dp</ppt>
+<event></event>
 </View>
 <View id="4" did="2" type="SwipeRefreshLayout">
 <ppt>width=-1

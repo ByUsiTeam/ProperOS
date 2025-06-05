@@ -19,16 +19,29 @@ src=@JuOS/logo/properos.png</ppt>
 </View>
 <View id="5" did="2" type="CardView">
 <ppt>width=-1
-height=-2
+height=55dp
 layout_marginTop=5dp
 app_CardcornerRadius=15dp
 layout_marginLeft=5dp
 layout_marginRight=5dp</ppt>
 <event></event>
 </View>
-<View id="4" did="5" type="TextView">
+<View id="7" did="5" type="LinearLayout">
 <ppt>width=-1
 height=-1
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="6" did="7" type="ImageView">
+<ppt>width=45dp
+height=45dp
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="4" did="7" type="TextView">
+<ppt>width=-2
+height=-2
 text=ProperOS欢迎您的使用
 textSize=25sp
 typeface=@JuOS/src/ttf/acbt80.ttf
@@ -42,6 +55,10 @@ layout_marginBottom=5dp</ppt>
 <UIEventset><eventItme type="loading">//配置全屏
 fn byusi.ztl()
 fn lib.wp(1)
+//
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(6,data,-1,true)
 //
 t()
 {
@@ -89,6 +106,8 @@ t()
   fw("$System/Config/home.sys","true")
   //默认应用引入
   fw("$JuOS/hemo/桌面/应用商店.app","System=True=System\nUi=应用市场.iyu=Ui\nAppTb=$sys/JuOS/logo/yysc_logo.png=AppTb\nEnd=false=End")
+  fw("$JuOS/hemo/桌面/B站视频播放.app","System=True=System\nUi=bili.iyu=Ui\nAppTb=$sys/ProperOS/Src/html/RJS.png=AppTb\nEnd=false=End")
+  fw("$JuOS/hemo/桌面/视频播放器.app","System=True=System\nUi=bfq2.iyu=Ui\nAppTb=$sys/JuOS/logo/properos.png=AppTb\nEnd=false=End")
   fw("$JuOS/hemo/桌面/设置壁纸.app","System=True=System\nUi=设置壁纸.iyu=Ui\nAppTb=$sys/JuOS/src/img/ByUsi/bz.png=AppTb\nEnd=true=End")
   fw("$JuOS/hemo/桌面/设置.app","System=True=System\nUi=设置.iyu=Ui\nAppTb=%@JuOS/ICON/ic_app_icon_settings.png=AppTb\nEnd=false=End")
   fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")

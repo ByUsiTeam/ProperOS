@@ -242,13 +242,7 @@ height=-2
 visibility=gone</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fuz("@JuOS/html/VideoPlayer2/VideoPlayer2.zip","index.htm","$System/VideoPlayer2",yz)
-fr("$System/VideoPlayer2/index.htm",html)
-sr(html,"{VideoAddress}",sss.url,html)
-fw("$System/VideoPlayer2/index.htm",html)
-us(1,"url","$System/VideoPlayer2/index.htm")
-
-
+<UIEventset><eventItme type="loading">
 /.gvs(1,wv)
 java(ws,wv,"android.webkit.WebView.getSettings")
 java(null,ws,"android.webkit.WebSettings.setBuiltInZoomControls","boolean",true)
