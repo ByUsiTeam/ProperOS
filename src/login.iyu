@@ -64,7 +64,8 @@ hint=输入ByUsi账号
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ff000000
 gravity=center
-singleLine=true</ppt>
+singleLine=true
+background=</ppt>
 <event></event>
 </View>
 <View id="13" did="8" type="CardView">
@@ -88,7 +89,8 @@ text=
 hint=输入ByUsi账号密码
 textColor=#ff000000
 gravity=center
-inputType=textpassword</ppt>
+inputType=textpassword
+background=</ppt>
 <event></event>
 </View>
 <View id="16" did="8" type="LinearLayout">
@@ -261,7 +263,8 @@ hint=输入ByUsi账号
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ff000000
 gravity=center
-singleLine=true</ppt>
+singleLine=true
+background=</ppt>
 <event></event>
 </View>
 <View id="41" did="27" type="CardView">
@@ -286,7 +289,8 @@ hint=输入邮箱
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ff000000
 gravity=center
-singleLine=true</ppt>
+singleLine=true
+background=</ppt>
 <event></event>
 </View>
 <View id="31" did="27" type="CardView">
@@ -310,7 +314,8 @@ text=
 hint=输入ByUsi账号密码
 textColor=#ff000000
 gravity=center
-inputType=textpassword</ppt>
+inputType=textpassword
+background=</ppt>
 <event></event>
 </View>
 <View id="34" did="27" type="LinearLayout">

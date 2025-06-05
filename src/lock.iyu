@@ -157,7 +157,8 @@ imeOptions=actiondone
 digits=1234567890
 textColorHighlight=#8315b5fa
 maxLength=12
-gravity=center</ppt>
+gravity=center
+background=</ppt>
 <event></event>
 </View>
 <View id="12" did="8" type="CardView">
