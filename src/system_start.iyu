@@ -40,8 +40,8 @@ else
 }
 us(9,"text",ii)
 fn Lottie.loaddex()
-fr("@JuOS/Lottie/ByUsi/404.json",data)
-fn Lottie.setImageLottie(7,data,-1,true)</eventItme><eventItme type="press">s wv = st_vW
+fr("@JuOS/Lottie/error.json",data)
+fn Lottie.setImageLottie(7,data,0,true)</eventItme><eventItme type="press">s wv = st_vW
 java(htr,wv,"android.webkit.WebView.getHitTestResult")
 java(type,htr,"android.webkit.WebView$HitTestResult.getType")
 javags(imagetype,null,"android.webkit.WebView$HitTestResult","IMAGE_TYPE")
@@ -97,15 +97,17 @@ background=#ffdbf7ff</ppt>
 <event></event>
 </View>
 <View id="7" did="6" type="ImageView">
-<ppt>width=-2
-height=-2
+<ppt>width=180dp
+height=180dp
 src=17301567</ppt>
 <event></event>
 </View>
 <View id="9" did="6" type="TextView">
 <ppt>width=-2
 height=-2
-text=文本9</ppt>
+text=文本9
+layout_marginLeft=12dp
+layout_marginRight=12dp</ppt>
 <event></event>
 </View>
 <View id="10" did="6" type="LinearLayout">

@@ -49,8 +49,7 @@ progress=0</ppt>
 height=60dp
 layout_marginTop=10dp
 layout_marginLeft=5dp
-layout_marginRight=5dp
-app_CardElevation=5dp</ppt>
+layout_marginRight=5dp</ppt>
 <event></event>
 </View>
 <View id="8" did="7" type="LinearLayout">

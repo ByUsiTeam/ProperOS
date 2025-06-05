@@ -55,7 +55,24 @@ background=through</ppt>
 <View id="7" did="2" type="WebView">
 <ppt>width=-1
 height=-1</ppt>
-<event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme></event>
+<event><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)</eventItme><eventItme type="onpagestarted">us(11,"visibility","visible")
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(12,data,-1,true)</eventItme><eventItme type="onpagefinished">us(11,"visibility","gone")</eventItme></event>
+</View>
+<View id="11" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="ImageView">
+<ppt>width=-2
+height=-2
+src=17301567</ppt>
+<event></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn api.hide_btn(7)

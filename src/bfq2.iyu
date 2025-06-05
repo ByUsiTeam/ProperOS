@@ -360,7 +360,7 @@ f(sss.url != null)
 }
 else
 {
-	fdir("@ProperOS/Src/Mp4/Ry4.mp4",dir)
+	fdir("$ProperOS/Src/Mp4/Ry4.mp4",dir)
 	sr(html,"{VideoAddress}","file://"+dir,html)
     fw("$System/VideoPlayer2/index.htm",html)
 }

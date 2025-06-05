@@ -24,6 +24,27 @@ orientation=vertical
 gravity=bottom|center</ppt>
 <event></event>
 </View>
+<View id="8" did="4" type="LinearLayout">
+<ppt>width=-1
+height=45dp
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="ImageView">
+<ppt>width=35dp
+height=35dp
+src=@JuOS/logo/BySi_logo.png</ppt>
+<event></event>
+</View>
+<View id="10" did="8" type="TextView">
+<ppt>width=-2
+height=-2
+text=ByUsi软件
+typeface=@src/ttf/acbt80.ttf
+textColor=#ff000000</ppt>
+<event></event>
+</View>
 <View id="7" did="4" type="LinearLayout">
 <ppt>width=-1
 height=-2

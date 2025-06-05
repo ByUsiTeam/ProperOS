@@ -149,12 +149,19 @@ orientation=horizontal
 gravity=left|center</ppt>
 <event></event>
 </View>
+<View id="122" did="91" type="ImageView">
+<ppt>width=42dp
+height=42dp
+src=17301567
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
 <View id="92" did="91" type="RoundImageView">
 <ppt>width=45dp
 height=45dp
 src=17301567
 layout_marginLeft=5dp
-visibility=visible</ppt>
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="93" did="91" type="LinearLayout">
@@ -731,6 +738,20 @@ text=
 background=through</ppt>
 <event></event>
 </View>
+<View id="123" did="14" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="124" did="123" type="ImageView">
+<ppt>width=-2
+height=-2
+src=17301567</ppt>
+<event></event>
+</View>
 <UIEventset><eventItme type="loading">//状态栏配置
 uycl("#daebeae3",true)
 //初始化菜单
@@ -782,7 +803,9 @@ us(update.1,"visibility","gone")
 //
 fn n.ui(14)
 
-fn lib.wp(14)</eventItme><eventItme type="loadingComplete">loadjar("armeabi-v7a/classes.dex",class)
+fn lib.wp(14)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
+
+loadjar("armeabi-v7a/classes.dex",class)
 cls(class,"com.Mus.ReboundScrollView",mB)
 gvs(16,a)
 gvs(16,b)
@@ -801,14 +824,19 @@ fr("$JuOS/ICON/ic_public_todo.svg",svg)
 fn lib.svg(svg,78)
 fr("$JuOS/ICON/ic_settings_storage.svg",svg)
 fn lib.svg(svg,68)
+/.
 fr("$JuOS/ICON/ic_parentcontrol.svg",svg)
 fn lib.svg(svg,92)
+./
 fr("$JuOS/ICON/ic_settings_multi_device_collaboration_svg.svg",svg)
 fn lib.svg(svg,112)
 fr("$JuOS/ICON/ic_settings_more_connections.svg",svg)
 fn lib.svg(svg,86)
 fr("$JuOS/ICON/ic_settings_biometrics_password.svg",svg)
-fn lib.svg(svg,118)</eventItme><eventItme type="restart">fr("$System/Config/gduoshez.sys",init)
+fn lib.svg(svg,118)
+//Lottie动画
+fr("@JuOS/Lottie/my.json",data)
+fn Lottie.setImageLottie(122,data,-1,true)</eventItme><eventItme type="restart">fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
 {
   us(66,"visibility","visible")

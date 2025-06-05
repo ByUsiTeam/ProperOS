@@ -63,7 +63,7 @@ visibility=gone</ppt>
 height=35dp
 src=@100.gif
 scaleType=centercrop
-visibility=gone</ppt>
+visibility=visible</ppt>
 <event></event>
 </View>
 <View id="10" did="5" type="ImageView">

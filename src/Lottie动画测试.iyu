@@ -20,10 +20,20 @@ fr(data,data)
 fn Lottie.setImageLottie(5,data,-1,true)
 endkeyboard()</eventItme></event>
 </View>
-<View id="4" did="2" type="EditText">
+<View id="6" did="2" type="CardView">
 <ppt>width=-1
-height=-2
-text=</ppt>
+height=45dp
+layout_marginLeft=6dp
+layout_marginRight=6dp</ppt>
+<event></event>
+</View>
+<View id="4" did="6" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+background=
+paddingLeft=6dp
+paddingRight=6dp</ppt>
 <event></event>
 </View>
 <View id="5" did="2" type="ImageView">

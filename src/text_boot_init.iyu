@@ -39,7 +39,12 @@ hint=不要乱改，不然无法引导
 inputType=text
 textColorHighlight=#ff0090ff
 gravity=top|left
-singleLine=false</ppt>
+singleLine=false
+textColorHint=#42424242
+textSize=16sp
+textCursorDrawable=#000000
+typeface=normal
+background=</ppt>
 <event></event>
 </View>
 <View id="8" did="2" type="CardView">
@@ -71,7 +76,7 @@ height=-1
 text=重置
 background=#ff5f6aff
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">fr("@boot/init.json",data)
+<event><eventItme type="clicki">fr("@boot/init2.json",data)
 us(7,"text",data)</eventItme></event>
 </View>
 <View id="12" did="9" type="CardView">
