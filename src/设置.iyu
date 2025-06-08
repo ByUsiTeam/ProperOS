@@ -448,14 +448,18 @@ f(xz == "true")
   us(108,"checked","false")
   fw("$System/Config/home.sys","false")
   fn tw.tw("已关闭新桌面")
-  fc("@boot/init.json","$boot/init.json",config)
+  fr("$boot/init.json",init)
+  sr(init,"home.iyu","JuOS_Hemo.iyu",init_data)
+  fw("$boot/init.json",init_data)
 }
 else f(xz == "false")
 {
   us(108,"checked","true")
   fw("$System/Config/home.sys","true")
   fn tw.tw("已启动新桌面")
-  fc("@boot/init2.json","$boot/init.json",config)
+  fr("$boot/init.json",init)
+  sr(init,"JuOS_Hemo.iyu","home.iyu",init_data)
+  fw("$boot/init.json",init_data)
 }</eventItme></event>
 </View>
 <View id="60" did="20" type="RelativeLayout">

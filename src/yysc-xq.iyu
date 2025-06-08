@@ -299,12 +299,20 @@ text=下载应用
 textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf
 background=through</ppt>
-<event><eventItme type="clicki">s durl =sss.durl
+<event><eventItme type="clicki">fn lib.install("@JuOS/App/mdjdj.jupk")
+s durl =sss.durl
 syso(durl)
 ss("$data/yysc/"+sss.ytv+".json",ggh)
 fr(ggh,json)
 json(json,data)
 json(data,"get","url",url)
+json(data,"get","title",title)
+json(data,"get","developer",developer)
+json(data,"get","introduce",introduce)
+ss("软件名："+title+"\n软件开发者："+developer+"\n软件简介："+introduce,text)
+ss("index.html?软件名："+title+"&软件开发者："+developer+"&软件简介："+introduce,s)
+fn n.t_top("应用市场提示","@JuOS/logo/properos.png",text,"miao.byusi",s)
+/.
 ss("抱歉，由于不知明原因导致无法正常下载应用，所以请手动下载应用\n这是应用下载链接："+url+"\n下载完成请将安装包放到 /sdcard/ProperOS 目录中",tsc)
 utw(null,"抱歉",tsc,"复制下载链接","确定",true,v)
 {
@@ -316,7 +324,6 @@ else
   endutw()
 }
 //uigo("yysc-xy-2.iyu")
-/.
 fn lib.下载器2()
 fd("$ProperOS/.temp.jupk",fd)
 s name = ".temp.jupk"
@@ -526,4 +533,4 @@ t()
     }
   }
 }
-fn SystemOperation.stickers_loading(21)</eventItme></UIEventset>
+fn SystemOperation.meme("@meme/emo/尬笑.png",21,"\[S19\]")</eventItme></UIEventset>

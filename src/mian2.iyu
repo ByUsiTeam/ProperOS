@@ -68,7 +68,7 @@ else
 fr("@version.txt",st)
 fr("$JuOS/v/v.cfg",v)
 //引导
-fn init.boot()
+fn init.boot(7)
 //初始化图片加载器
 loadjar("QmLoader",sss.QmLoader)
 //初始化

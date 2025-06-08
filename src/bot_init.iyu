@@ -9,49 +9,6 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
-<View id="3" did="2" type="LinearLayout">
-<ppt>width=-1
-height=55dp
-orientation=horizontal
-gravity=left|center</ppt>
-<event></event>
-</View>
-<View id="8" did="3" type="CardView">
-<ppt>width=-35dp
-height=35dp
-layout_marginLeft=5dp
-app_CardcornerRadius=5dp</ppt>
-<event></event>
-</View>
-<View id="4" did="8" type="ImageButton">
-<ppt>width=35dp
-height=35dp
-src=17301533
-background=through</ppt>
-<event><eventItme type="clicki">end()</eventItme></event>
-</View>
-<View id="10" did="3" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=horizontal
-gravity=right|center</ppt>
-<event></event>
-</View>
-<View id="9" did="10" type="CardView">
-<ppt>width=240dp
-height=45dp
-app_CardcornerRadius=5dp
-layout_marginLeft=6dp
-layout_marginRight=6dp</ppt>
-<event></event>
-</View>
-<View id="6" did="9" type="Button">
-<ppt>width=-1
-height=-1
-text=ProperOS设置
-background=through</ppt>
-<event><eventItme type="clicki">uigo("设置.iyu")</eventItme></event>
-</View>
 <View id="7" did="2" type="WebView">
 <ppt>width=-1
 height=-1</ppt>
@@ -73,6 +30,44 @@ visibility=gone</ppt>
 height=-2
 src=17301567</ppt>
 <event></event>
+</View>
+<View id="13" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="14" did="13" type="CardView">
+<ppt>width=120dp
+height=34dp
+layout_marginTop=6dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="Button">
+<ppt>width=-1
+height=-1
+text=菜单
+typeface=@src/ttf/acbt80.ttf
+textSize=12sp
+background=#ff954eff
+textColor=#ffffffff</ppt>
+<event><eventItme type="clicki">utw(null,"","请选择你要进行的操作，点击空白区域可以关闭该弹窗","重启","ProperOS设置","恢复默认引导",false,v)
+{
+	uigo("mian.iyu")
+	end()
+}
+else
+{
+	uigo("设置.iyu")
+    end()
+}
+else
+{
+	fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
+    fn tw.tw("重置成功")
+}</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn api.hide_btn(7)

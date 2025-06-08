@@ -30,14 +30,22 @@ fn Lottie.setImageLottie(5,data,0,true)</eventItme></event>
 <View id="6" did="4" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=vertical
+orientation=horizontal
 gravity=center</ppt>
 <event></event>
 </View>
 <View id="5" did="6" type="ImageView">
+<ppt>width=120dp
+height=85dp
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="24" did="6" type="TextView">
 <ppt>width=-2
 height=-2
-src=17301567</ppt>
+text=欢迎使用 ProperOS
+typeface=@src/ttf/acbt80.ttf
+textSize=35sp</ppt>
 <event></event>
 </View>
 <View id="7" did="3" type="CardView">
@@ -76,9 +84,13 @@ height=-1</ppt>
 height=-1
 text=文本11
 textColor=#ff000000
-typeface=@src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="press">us(oobe_ui.3,"visibility","visible")
-us(oobe_ui.1,"url","@ByUsi/UserAgreement.html")</eventItme></event>
+typeface=@src/ttf/acbt80.ttf
+textIsSelectable=true
+textColorHighlight=#a16cbdff
+textColorLink=#a16cbdff
+autoLink=email
+linksClickable=true</ppt>
+<event></event>
 </View>
 <View id="23" did="9" type="WebView">
 <ppt>width=-1
@@ -103,17 +115,8 @@ typeface=@src/ttf/acbt80.ttf
 textSize=24sp
 gravity=center
 checked=false
-background=#ff3769ff</ppt>
-<event><eventItme type="clicki">ug(st_vId,"checked",checked)
-f(checked == true)
-{
-	us(oobe_ui.3,"visibility","visible")
-    us(oobe_ui.1,"url","@ByUsi/UserAgreement.html")
-}
-else
-{
-	syso("1")
-}</eventItme></event>
+background=#a16cbdff</ppt>
+<event></event>
 </View>
 <View id="14" did="13" type="CardView">
 <ppt>width=-1
@@ -214,7 +217,4 @@ nvw(mBs,9)
 nvw(b,mBs)
 //
 fr("@ByUsi/UserAgreement.txt",text)
-us(11,"text",text)
-
-addv(1,"oobe_ui.iyu")
-us(oobe_ui.3,"visibility","gone")</eventItme></UIEventset>
+us(11,"text",text)</eventItme></UIEventset>

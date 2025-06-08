@@ -18,13 +18,12 @@ layout_marginLeft=5dp
 layout_marginRight=5dp
 layout_marginBottom=1dp
 layout_marginTop=4dp
-app_CardElevation=8dp</ppt>
+app_CardElevation=12dp</ppt>
 <event></event>
 </View>
 <View id="6" did="5" type="RelativeLayout">
 <ppt>width=-1
-height=-1
-background=#ffd4e9ff</ppt>
+height=-1</ppt>
 <event></event>
 </View>
 <View id="7" did="6" type="LinearLayout">
@@ -44,7 +43,7 @@ gravity=left|center</ppt>
 <View id="12" did="8" type="RoundImageView">
 <ppt>width=20dp
 height=20dp
-src=@ts2.png
+src=$JuOS/ICON/notification_icon.png
 layout_marginRight=10dp
 layout_marginLeft=10dp</ppt>
 <event></event>
@@ -70,7 +69,12 @@ height=20dp
 src=17301533
 background=through
 layout_marginRight=5dp</ppt>
-<event><eventItme type="clicki">us(news1.1,"visibility","gone")</eventItme></event>
+<event><eventItme type="clicki">dha(dh,true,false)
+dh(dh,"duration",500)
+dhset(dhlist,false,dh)
+us(news1.5,"dh",dhlist)
+//分割线
+us(news1.1,"visibility","gone")</eventItme></event>
 </View>
 <View id="20" did="7" type="RelativeLayout">
 <ppt>width=-1
@@ -133,7 +137,13 @@ text=文本22</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">ug(news1.22,"text",data)
+<event><eventItme type="clicki">dha(dh,true,false)
+dh(dh,"duration",500)
+dhset(dhlist,false,dh)
+us(news1.5,"dh",dhlist)
+us(news1.1,"visibility","gone")
+//分割线
+ug(news1.22,"text",data)
 syso(data)
 sj(data,"[包名]","[包名]",包名)
 sj(data,"[参数]","[参数]",参数)

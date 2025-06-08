@@ -27,12 +27,12 @@ height=-2
 text=发出测试通知</ppt>
 <event><eventItme type="clicki">t()
 {
-	hs("https://pan.byusi.cn",url)
-    ss("获取到的Cdifit：\n"+url,url)
+	hs("https://api.www.byusi.cn/yy/",url)
+    ss("一言：\n"+url,url)
     ufnsui()
     {
-    	fn n.t("测试通知","@success.xml",url,"miao.byusi","index.html?url=https://pan.byusi.cn&title=Title&time=Time")
-        //fn n.t_top("测试通知","@success.xml",url,"miao.byusi","index.html?url=https://pan.byusi.cn&title=Title&time=Time")
+    	fn n.t("测试通知","@success.xml",url,"miao.byusi","index.html?url=https://api.www.byusi.cn/yy/&title=Title&time=Time")
+        fn n.t_top("测试通知","@success.xml",url,"miao.byusi","index.html?url=https://api.www.byusi.cn/yy/&title=Title&time=Time")
     }
 }</eventItme></event>
 </View>
@@ -44,5 +44,29 @@ text=通知，安卓</ppt>
 s tnr ="测试测试功能"
 sran(1,9999,id)
 fn system.asystem_t_t(id,"@JuOS/logo/properos.png","@JuOS/logo/properos.png","@JuOS/logo/properos.png",false,"测试通知",tnr,tnr)</eventItme></event>
+</View>
+<View id="7" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=测试通知</ppt>
+<event><eventItme type="clicki">s iyu ="news1.iyu"
+s bln ="true"
+
+javanew(ss.utwv,"com.google.android.material.bottomsheet.BottomSheetDialog","Context",activity)
+nvw(-1,null,"相对布局","width=-1\nheight=-1\norientation=vertical\nbackgroundcolor=0",ss.载体)
+addv(ss.载体,iyu)
+java(hq,ss.utwv,"android.app.Dialog.getWindow")
+java(null,hq,"android.view.Window.setBackgroundDrawableResource","int",17170445)
+java(null,ss.utwv,"android.app.Dialog.setContentView","android.view.View",ss.载体)
+java(null,ss.utwv,"android.app.Dialog.setCancelable","boolean",bln)
+java(null,ss.utwv,"android.app.Dialog.setCanceledOnTouchOutside","boolean",bln)
+java(null,ss.utwv,"android.app.Dialog.setOnDismissListener",".android.content.DialogInterface$OnDismissListener",null)
+{
+}
+java(null,ss.utwv,"android.app.Dialog.show")
+
+javags(id,null,"com.google.android.material.R$id","design_bottom_sheet")
+java(弹窗根控件,ss.utwv,"androidx.appcompat.app.AppCompatDialog.findViewById","int",id)
+us(弹窗根控件,"backgroundcolor",0)</eventItme></event>
 </View>
 <UIEventset></UIEventset>

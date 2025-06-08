@@ -196,6 +196,17 @@ fn lib.utw("end-ppos.iyu")
 break
 
 case 重启:
-uigo("mian.iyu")
-end()
+utw(null,"","请选择这重启选项","重启到bootrepair","正常重启","不重启了",false,v)
+{
+	fn init.bootrepair("yes",1)
+}
+else
+{
+	uigo(mian.iyu)
+    end()
+}
+else
+{
+	endutw()
+}
 break</eventItme></UIEventset>

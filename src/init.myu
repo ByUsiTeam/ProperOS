@@ -1,90 +1,141 @@
-fn boot()
+fn boot(id)
 
 s init_json ="$boot/init.json"
 fe(init_json,init_fe)
 f(init_fe == true)
 {
-  fr(init_json,data)
-  json(data,json)
-  json(json,"get","name",name)
-  json(json,"get","type",type)
-  json(json,"get","icon",icon)
-  //
-  addv(7,"boot_loading.iyu")
-  us(boot_loading.4,"src",icon)
-  fr("@version.txt",st)
-  fr("$JuOS/v/v.cfg",v)
-  f(st == v)
-  {
-    us(boot_loading.6,"text","正在引导 "+name+" 中...")
-    t()
-    {
-      stop(3500)
-      ufnsui()
-      {
-        f(type == "iapp")
-        {
-          json(json,"get","iyu",iyu)
-          uigo(iyu)
-          lan(0)
-          end()
-        }
-        else f(type == "html")
-        {
-          json(json,"get","boot",boot)
-          json(json,"get","index",index)
-          sss boot =boot
-          sss index =index
-          uigo("bot_init.iyu")
-          end()
-        }
-        else
-        {
-          fn tw.tw2("错误配置，无法引导",1)
-          us(boot_loading.9,"visibility","gone")
-          utw(null,"错误提醒","错误配置导致无法正常引导ROM","退出","修复引导",true,v)
-          {
-            end()
-          }
-          else
-          {
-          	fd("$boot/init.json",fd_init)
-              f(fd_init == "true")
-              {
-              	fn tw.tw2("修复成功",2)
-              	uigo("mian.iyu")
-                  end()
-              }
-              else
-              {
-              	fn tw.tw2("错误❌",1)
-                  ends()
-                  end()
-              }
-          }
-        }
-      }
-    }
-  }
-  else
-  {
-    us(boot_loading.6,"text","正在引导进入自动配置更新界面...")
-    t()
-    {
-      stop(3500)
-      ufnsui()
-      {
-        uigo("设置oobe.iyu")
-        lan(0)
-        end()
-      }
-    }
-  }
+	fr(init_json,data)
+	json(data,json)
+	json(json,"get","name",name)
+	json(json,"get","type",type)
+	json(json,"get","icon",icon)
+	//
+	addv(id,"boot_loading.iyu")
+	us(boot_loading.4,"src",icon)
+	fr("@version.txt",st)
+	fr("$JuOS/v/v.cfg",v)
+	f(st == v)
+	{
+		us(boot_loading.6,"text","正在引导 "+name+" 中...")
+		t()
+		{
+			stop(3500)
+			ufnsui()
+			{
+				f(type == "iapp")
+				{
+					json(json,"get","iyu",iyu)
+					uigo(iyu)
+					lan(0)
+					end()
+				}
+				else f(type == "html")
+				{
+					json(json,"get","boot",boot)
+					json(json,"get","index",index)
+					sss boot =boot
+					sss index =index
+					uigo("bot_init.iyu")
+					end()
+				}
+				else
+				{
+					fn tw.tw2("错误配置，无法引导",1)
+					us(boot_loading.9,"visibility","gone")
+					utw(null,"错误提醒","错误配置导致无法正常引导ROM","退出","修复引导",true,v)
+					{
+						end()
+					}
+					else
+					{
+						fd("$boot/init.json",fd_init)
+						f(fd_init == "true")
+						{
+							fn tw.tw2("修复成功",2)
+							uigo("mian.iyu")
+							end()
+						}
+						else
+						{
+							fn tw.tw2("错误❌",1)
+							ends()
+							end()
+						}
+					}
+				}
+			}
+		}
+	}
+	else
+	{
+		us(boot_loading.6,"text","正在引导进入自动配置更新界面...")
+		t()
+		{
+			stop(3500)
+			ufnsui()
+			{
+				uigo("设置oobe.iyu")
+				lan(0)
+				end()
+			}
+		}
+	}
 }
 else f(init_fe == false)
 {
-  fn tw.tw2("无法加载 boot/init.json 文件\n无法引导",1)
-  end()
+	fn tw.tw2("无法加载 boot/init.json 文件\n无法引导",1)
+	end()
+}
+
+end fn
+
+fn boot_init(type,ui,icon)
+
+f(type == "init")
+{
+	s json_data ="{"name": "ProperOS", "type": "iapp", "iyu": "[UI]", "icon": "[ICON]" }"
+	sr(json_data,"[UI]",ui,json_data)
+	sr(json_data,"[ICON]",icon,json_data)
+	json(json_data,data)
+	fw("$boot/init.json",data)
+}
+
+end fn
+
+fn boot_init_bootrepair(type,ui,icon)
+
+f(type == "init")
+{
+	fc("$boot/init.json","$boot/init.json.bak",bak)
+	s json_data ="{"name": "ProperOS BootRepair Mode", "type": "iapp", "iyu": "[UI]", "icon": "[ICON]" }"
+	sr(json_data,"[UI]",ui,json_data)
+	sr(json_data,"[ICON]",icon,json_data)
+	json(json_data,data)
+	fw("$boot/init.json",data)
+}
+
+end fn
+
+fn bootrepair(type,id)
+
+f(type == "yes")
+{
+	fe("$boot/init.json",yz_bootrepair)
+	f(yz_bootrepair == true)
+	{
+		fn init.boot_init_bootrepair("init","bootrepair.iyu","@JuOS/logo/properos.png")
+        fn init.boot(id)
+	}
+	else
+	{
+		fn tw.tw("初始化并修改引导")
+		fn init.boot_init_bootrepair("init","bootrepair.iyu","@JuOS/logo/properos.png")
+        fn init.boot(id)
+	}
+}
+else
+{
+	fn init.boot_init_bootrepair("init","home.iyu","@JuOS/logo/properos.png")
 }
 
 end fn

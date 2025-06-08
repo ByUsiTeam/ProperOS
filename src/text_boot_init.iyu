@@ -76,7 +76,8 @@ height=-1
 text=重置
 background=#ff5f6aff
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">fr("@boot/init2.json",data)
+<event><eventItme type="clicki">fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
+fr("$boot/init.json",data)
 us(7,"text",data)</eventItme></event>
 </View>
 <View id="12" did="9" type="CardView">
@@ -94,7 +95,8 @@ background=#ff5f6aff
 textColor=#ffffffff</ppt>
 <event><eventItme type="clicki">ug(7,"text",data)
 fw("$boot/init.json",data)
-fn tw.tw("保存成功")</eventItme></event>
+fn tw.tw("保存成功")
+endkeyboard()</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fr("$boot/init.json",data)
 us(7,"text",data)

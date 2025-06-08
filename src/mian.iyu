@@ -63,21 +63,14 @@ layout_marginBottom=15dp
 gravity=center</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">t()
-{
-  ufnsui()
-  {
-    fn byusi.ztl()
-  }
-}
-
+<UIEventset><eventItme type="loading">fn byusi.ztl()
 fuzs("@JuOS/sdk/player.bysi.sdk","%.data/html_video",a)
 fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
 //验证引导文件是否存在，不存在自动复制默认引导文件
 fe("$boot/init.json",yz)
 f(yz == false)
 {
-  fc("@boot/init2.json","$boot/init.json",yz)
+  fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
 }</eventItme><eventItme type="loadingComplete">t()
 {
   stop(2000)

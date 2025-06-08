@@ -215,14 +215,14 @@ text=下载器测试</ppt>
 <View id="24" did="2" type="Button">
 <ppt>width=-2
 height=-2
-text=按钮24</ppt>
-<event></event>
+text=Boot初始化</ppt>
+<event><eventItme type="clicki">fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")</eventItme></event>
 </View>
 <View id="25" did="2" type="Button">
 <ppt>width=-2
 height=-2
-text=按钮25</ppt>
-<event></event>
+text=bootrepair模式配置</ppt>
+<event><eventItme type="clicki">fn init.bootrepair("yes",1)</eventItme></event>
 </View>
 <View id="26" did="2" type="Button">
 <ppt>width=-2
