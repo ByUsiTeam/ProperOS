@@ -69,6 +69,7 @@ f(type==imagetype||type==imageurl)
     }
   }
 }</eventItme><eventItme type="onpagestarted">us(14,"visibility","visible")
+us(6,"visibility","gone")
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(15,data,-1,true)</eventItme><eventItme type="onpagefinished">us(14,"visibility","gone")</eventItme></event>
@@ -102,7 +103,12 @@ height=180dp
 src=17301567</ppt>
 <event></event>
 </View>
-<View id="9" did="6" type="TextView">
+<View id="16" did="6" type="ScrollView">
+<ppt>width=-1
+height=145dp</ppt>
+<event></event>
+</View>
+<View id="9" did="16" type="TextView">
 <ppt>width=-2
 height=-2
 text=文本9

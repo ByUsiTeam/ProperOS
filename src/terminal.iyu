@@ -1,0 +1,83 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom|center
+background=black</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="RecyclerView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="CardView">
+<ppt>width=-1
+height=200dp
+layout_marginLeft=7dp
+layout_marginRight=7dp
+layout_marginTop=6dp
+layout_marginBottom=8dp
+app_CardcornerRadius=10dp
+app_CardBackgroundColor=#303030</ppt>
+<event></event>
+</View>
+<View id="6" did="4" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="Button">
+<ppt>width=-1
+height=45dp
+text=上传执行
+textColor=#ffffffff
+background=through
+gravity=center
+typeface=@src/ttf/acbt80.ttf</ppt>
+<event><eventItme type="clicki">ug(10,"text",nr)
+strim(nr,nr)
+f(nr != null)
+{
+	us(10,"text","")
+	fw("$ProperOS/jush",nr)
+    fn juos.脚本("$ProperOS/jush")
+}
+else
+{
+	fn juos.输出("错误❌  内容不可以是空的")
+}</eventItme></event>
+</View>
+<View id="9" did="7" type="TextInputLayout">
+<ppt>width=-1
+height=-1
+background=#ff242838</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+background=
+textColorHighlight=#603599fe
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">sss 输出框架 =null
+sss 输出框架id =null
+fn byusi.ztl()
+fn n.ui(1)
+fn lib.wp(1)</eventItme><eventItme type="loadingComplete">s id =3
+fn juos.初始化(id)</eventItme></UIEventset>

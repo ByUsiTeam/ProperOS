@@ -143,11 +143,21 @@ t()
     json(json,"get","message",message)
     ufnsui()
     {
+    	us(44,"visibility","visible")
+    	fr("@JuOS/Lottie/errorjson",data1)
+        fn Lottie.setImageLottie(45,data1,0,true)
     	endkeyboard()
-    	us(44,"visibility","gone")
-      ss("登录失败："+message,uui)
-      fn tw.tw2(uui,1)
-      us(15,"text","")
+        t()
+        {
+        	stop(2500)
+            ufnsui()
+            {
+            	us(44,"visibility","gone")
+                ss("登录失败："+message,uui)
+                fn tw.tw2(uui,1)
+                us(15,"text","")
+            }
+        }
     }
   }
   else f(status == "success")
@@ -171,9 +181,19 @@ t()
   {
     ufnsui()
     {
+    	us(44,"visibility","visible")
+    	fr("@JuOS/Lottie/errorjson",data1)
+        fn Lottie.setImageLottie(45,data1,0,true)
     	endkeyboard()
-    	us(44,"visibility","gone")
-      fn tw.tw2(json,1)
+        t()
+        {
+        	stop(2500)
+            ufnsui()
+            {
+            	us(44,"visibility","gone")
+                fn tw.tw2(json,1)
+            }
+        }
     }
   }
 }</eventItme></event>

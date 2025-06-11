@@ -16,6 +16,7 @@ height=-2
 text=按钮3</ppt>
 <event><eventItme type="clicki">ug(4,"text",txt)
 ss("@JuOS/Lottie/"+txt,data)
+//s data =txt
 fr(data,data)
 fn Lottie.setImageLottie(5,data,-1,true)
 endkeyboard()</eventItme></event>
