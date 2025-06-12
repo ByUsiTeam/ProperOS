@@ -190,7 +190,44 @@ background=through</ppt>
 fr("$JuOS/data/User/data.json",data)
 f(data == null)
 {
-  uigo("login.iyu")
+	uigo("login.iyu")
+}
+else
+{
+	/.
+  json(data,jsn)
+  json(jsn,"get","status",status)
+  f(status == "success")
+  {
+    json(jsn,"get","data",idata)
+    json(idata,"get","id",id)
+    json(idata,"get","username",username)
+    json(idata,"get","email",email)
+    json(idata,"get","uid",uid)
+    json(idata,"get","uuid",uuid)
+    ss("用户ID："+id+"\nUID："+uid+"\n用户名："+username+"\n邮箱："+email,弹窗信息)
+    utw(null,"用户信息",弹窗信息,"确定","注销登录","签到",true,v)
+    {
+      endutw()
+    }
+    else
+    {
+      fd("$JuOS/data/User/data.json",yz)
+    }
+    else
+    {
+      ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid,url)
+      sss url =url
+      uigo("start_app.iyu")
+    }
+  }
+  ./
+  uigo("UserCenter.iyu")
+}</eventItme><eventItme type="press">//fn lib.utw("login.iyu")
+fr("$JuOS/data/User/data.json",data)
+f(data == null)
+{
+	uigo("login.iyu")
 }
 else
 {
@@ -215,8 +252,7 @@ else
     }
     else
     {
-      fr("$JuOS/data/User/.password",password)
-      ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid+"&password="+password,url)
+      ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid,url)
       sss url =url
       uigo("start_app.iyu")
     }
@@ -839,8 +875,11 @@ fn lib.svg(svg,86)
 fr("$JuOS/ICON/ic_settings_biometrics_password.svg",svg)
 fn lib.svg(svg,118)
 //Lottie动画
+/.
 fr("@JuOS/Lottie/my.json",data)
-fn Lottie.setImageLottie(122,data,-1,true)</eventItme><eventItme type="restart">fr("$System/Config/gduoshez.sys",init)
+fn Lottie.setImageLottie(122,data,-1,true)
+./
+us(122,"src","$JuOS/ICON/hwid_default_avatar_before.png")</eventItme><eventItme type="restart">fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
 {
   us(66,"visibility","visible")
