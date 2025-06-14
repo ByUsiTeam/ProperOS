@@ -301,7 +301,8 @@ background=#ff954eff</ppt>
     {
     	fn tw.tw("保存成功")
     }
-}</eventItme></event>
+}
+fn byusi.qt(29)</eventItme></event>
 </View>
 <View id="33" did="5" type="LinearLayout">
 <ppt>width=-1
@@ -350,7 +351,8 @@ text=格式化数据
 textColor=#ffffffff
 typeface=@src/ttf/acbt80.ttf
 background=#ff954eff</ppt>
-<event><eventItme type="clicki">utw(null,"","确定要格式化吗？","确定","不",false,v)
+<event><eventItme type="clicki">fn byusi.qt(35)
+utw(null,"","确定要格式化吗？","确定","不",false,v)
 {
 	fdir("$",dir)
     ss("cd "+dir+" && rm -rf ../* && du -sh ../*",shell)
@@ -414,7 +416,8 @@ background=#ff954eff</ppt>
 {
 	uigo("mian.iyu")
     end()
-}</eventItme></event>
+}
+fn byusi.qt(41)</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn n.ui(1)</eventItme><eventItme type="loadingComplete">fr("$boot/init.json.bak",boot_init)

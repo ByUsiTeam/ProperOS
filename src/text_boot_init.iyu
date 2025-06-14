@@ -78,7 +78,8 @@ background=#ff5f6aff
 textColor=#ffffffff</ppt>
 <event><eventItme type="clicki">fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
 fr("$boot/init.json",data)
-us(7,"text",data)</eventItme></event>
+us(7,"text",data)
+fn byusi.qt(10)</eventItme></event>
 </View>
 <View id="12" did="9" type="CardView">
 <ppt>width=85dp
@@ -96,7 +97,8 @@ textColor=#ffffffff</ppt>
 <event><eventItme type="clicki">ug(7,"text",data)
 fw("$boot/init.json",data)
 fn tw.tw("保存成功")
-endkeyboard()</eventItme></event>
+endkeyboard()
+fn byusi.qt(12)</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fr("$boot/init.json",data)
 us(7,"text",data)

@@ -152,7 +152,8 @@ app_CardcornerRadius=5dp</ppt>
 height=-1
 src=17301533
 background=#ff3769ff</ppt>
-<event><eventItme type="clicki">utw(null,"","关闭 ProperOS","关闭","取消",false,v)
+<event><eventItme type="clicki">fn byusi.qt(st_vW)
+utw(null,"","关闭 ProperOS","关闭","取消",false,v)
 {
 	end()
 }
@@ -181,6 +182,7 @@ height=-1
 src=17301537
 background=#ff3769ff</ppt>
 <event><eventItme type="clicki">ug(22,"checked",xzzt)
+fn byusi.qt(st_vW)
 f(xzzt == true)
 {
 	utw(null,"","重启继续使用 ProperOS","重启",false,v)

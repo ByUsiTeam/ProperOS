@@ -248,6 +248,7 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">fr("$System/Config/gduoshez.sys",yz)
+fn byusi.qt(14)
 f(yz != "true")
 {
   f(ss.djcs &gt; "11")
@@ -355,7 +356,8 @@ textColorLink=#9e0011ff</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">utw(null,"","是否访问：https://gitee.com/properos/properos/releases","是","否",false,v)
+<event><eventItme type="clicki">fn byusi.qt(32)
+utw(null,"","是否访问：https://gitee.com/properos/properos/releases","是","否",false,v)
 {
   hws("https://gitee.com/properos/properos/releases")
 }
@@ -407,7 +409,7 @@ textSize=16sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">
+<event><eventItme type="clicki">fn byusi.qt(48)
 sss url ="https://gitee.com/byusi"
 uigo("start_app.iyu")</eventItme></event>
 </View>
@@ -454,7 +456,7 @@ textSize=16sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">
+<event><eventItme type="clicki">fn byusi.qt(55)
 sss url ="https://gitee.com/properos"
 uigo("system_start.iyu")</eventItme></event>
 </View>
@@ -502,7 +504,8 @@ textSize=16sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">utw(null,"","支持官方.iyu","关闭","点击赞助码可以保存赞助码",true,v)
+<event><eventItme type="clicki">fn byusi.qt(38)
+utw(null,"","支持官方.iyu","关闭","点击赞助码可以保存赞助码",true,v)
 {
   endutw()
 }

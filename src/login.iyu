@@ -121,7 +121,8 @@ text=登录
 background=through
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">ug(7,"text",zh)
+<event><eventItme type="clicki">fn byusi.qt(18)
+ug(7,"text",zh)
 ug(15,"text",mm)
 us(44,"visibility","visible")
 fr("@JuOS/Lottie/loading.json",data)
@@ -219,7 +220,8 @@ text=没有账号？注册
 background=through
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">us(4,"visibility","gone")
+<event><eventItme type="clicki">fn byusi.qt(21)
+us(4,"visibility","gone")
 us(23,"visibility","visible")</eventItme></event>
 </View>
 <View id="23" did="1" type="LinearLayout">
@@ -366,7 +368,8 @@ text=注册
 background=through
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">ug(30,"text",zh)
+<event><eventItme type="clicki">fn byusi.qt(36)
+ug(30,"text",zh)
 ug(43,"text",email)
 ug(33,"text",mm)
 //检验
@@ -447,7 +450,8 @@ text=已有账号？登录
 background=through
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">us(4,"visibility","visible")
+<event><eventItme type="clicki">fn byusi.qt(39)
+us(4,"visibility","visible")
 us(23,"visibility","gone")</eventItme></event>
 </View>
 <View id="44" did="1" type="LinearLayout">

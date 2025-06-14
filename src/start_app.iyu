@@ -13,7 +13,7 @@ gravity=top|center</ppt>
 <View id="4" did="2" type="Toolbar">
 <ppt>width=-1
 height=45dp
-background=#ff003532</ppt>
+background=#ff8fa8ff</ppt>
 <event></event>
 </View>
 <View id="5" did="2" type="WebView">

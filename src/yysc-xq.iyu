@@ -299,7 +299,8 @@ text=下载应用
 textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf
 background=through</ppt>
-<event><eventItme type="clicki">fn lib.install("@JuOS/App/mdjdj.jupk")
+<event><eventItme type="clicki">fn byusi.qt(51)
+fn lib.install("@JuOS/App/mdjdj.jupk")
 s durl =sss.durl
 syso(durl)
 ss("$data/yysc/"+sss.ytv+".json",ggh)

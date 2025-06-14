@@ -67,7 +67,8 @@ else
 {
 	fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
     fn tw.tw("重置成功")
-}</eventItme></event>
+}
+fn byusi.qt(14)</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn api.hide_btn(7)

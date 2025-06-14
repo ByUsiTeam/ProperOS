@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ProperOS 应用市场</title>
+    <link rel="stylesheet" href="./mdui/css/mdui.min.css">
+    <style>
+        :root {
+            --primary-color: #5e35b1;
+            --accent-color: #ff4081;
+            --card-bg: #ffffff;
+            --bg-color: #f5f7fa;
+            --text-primary: #263238;
+            --text-secondary: #607d8b;
+        }
+        
+        * {
+            word-wrap: break-word;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        /* 顶部导航栏 */
+        .mdui-appbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .mdui-toolbar {
+            height: 64px;
+        }
+        
+        .mdui-typo-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        
+        /* 主容器 */
+        .mdui-container {
+            margin-top: 80px;
+            margin-bottom: 30px;
+            padding: 0 16px;
+        }
+        
+        /* 应用卡片 - 现代化设计 */
+        .app-card {
+            margin: 0 0 20px 0;
+            border-radius: 16px !important;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: var(--card-bg);
+            border: none;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .app-card:active {
+            transform: translateY(0);
+        }
+        
+        /* 应用图标 */
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .app-icon:hover {
+            transform: scale(1.05);
+        }
+        
+        /* 应用截图 */
+        .app-screenshots {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+            gap: 12px;
+        }
+        
+        .app-screenshot {
+            height: 200px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .app-screenshot:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        /* 分区标题 */
+        .partition-header {
+            margin: 32px 0 16px 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(94, 53, 177, 0.1);
+            position: relative;
+        }
+        
+        .partition-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        /* 加载容器 */
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        
+        /* 应用详情图标 */
+        .app-detail-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+        
+        /* 应用详情头部 */
+        .mdui-card-header {
+            padding: 24px;
+            background: linear-gradient(135deg, var(--primary-color), #7e57c2);
+            color: white;
+            border-radius: 16px 16px 0 0 !important;
+        }
+        
+        .mdui-card-header-title {
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+        
+        .mdui-card-header-subtitle {
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 4px;
+        }
+        
+        /* 应用详情内容 */
+        .mdui-card-content {
+            padding: 24px;
+            color: var(--text-primary);
+        }
+        
+        /* 按钮样式 */
+        .mdui-btn {
+            border-radius: 12px !important;
+            padding: 8px 22px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        
+        .mdui-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .mdui-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        #download-btn {
+            background-color: var(--accent-color) !important;
+            color: white !important;
+        }
+        
+        /* 卡片动作区域 */
+        .mdui-card-actions {
+            padding: 16px 24px;
+            display: flex;
+            gap: 12px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        /* 水波纹效果 - Q谈风格 */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform 0.5s, opacity 1s;
+        }
+        
+        .ripple:active:after {
+            transform: scale(0, 0);
+            opacity: 0.3;
+            transition: 0s;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .mdui-container {
+                margin-top: 64px;
+                padding: 0 12px;
+            }
+            
+            .app-card {
+                margin-bottom: 16px;
+            }
+            
+            .mdui-card-header {
+                padding: 18px;
+            }
+            
+            .mdui-card-content {
+                padding: 18px;
+            }
+            
+            .app-icon {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .app-screenshot {
+                height: 180px;
+            }
+        }
+        
+        /* 滚动条美化 */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #c5c5c5;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+    </style>
+</head>
+<body class="mdui-theme-primary-indigo mdui-theme-accent-pink">
+    <div class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-theme">
+            <span class="mdui-typo-title" id="app-title">ProperOS 应用市场</span>
+            <div class="mdui-toolbar-spacer"></div>
+        </div>
+    </div>
+
+    <div class="mdui-container">
+        <div id="app-list-container">
+            <div class="loading-container">
+                <div class="mdui-spinner mdui-spinner-colorful"></div>
+            </div>
+        </div>
+
+        <div id="app-detail-container" style="display: none;">
+            <div class="mdui-card app-card">
+                <div class="mdui-card-header">
+                    <img class="mdui-card-header-avatar app-detail-icon" id="detail-icon" src="">
+                    <div class="mdui-card-header-title" id="detail-title"></div>
+                    <div class="mdui-card-header-subtitle" id="detail-developer"></div>
+                </div>
+                
+                <div class="mdui-card-content" id="detail-introduce"></div>
+                
+                <div id="screenshots-container" style="display: none;">
+                    <div class="partition-header">应用截图</div>
+                    <div class="app-screenshots" id="app-screenshots"></div>
+                </div>
+                
+                <div class="mdui-card-actions">
+                    <button class="mdui-btn mdui-ripple ripple" id="download-btn">下载应用</button>
+                    <button class="mdui-btn mdui-ripple ripple" onclick="goBack()">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./mdui/js/mdui.min.js"></script>
+    <script>
+        let appData = null;
+        let currentAppDetail = null;
+        const GITEE_TOKEN = 'e41479a1b72747f25afd246fbe8adb09';
+        const REPO_OWNER = 'byusi';
+        const REPO_NAME = 'properos-app';
+        const MAIN_FILE_PATH = 'index.json';
+
+        // URL参数处理函数
+        function getHashParam(name) {
+            const hashParams = new URLSearchParams(window.location.hash.substr(1));
+            return hashParams.get(name);
+        }
+
+        // 初始化加载
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('hashchange', handleHashChange);
+            const initialPath = getHashParam('detail');
+            initialPath ? loadAppDetail(decodeURIComponent(initialPath)) : loadAppList();
+        });
+
+        // Hash路由处理
+        function handleHashChange() {
+            const detailPath = getHashParam('detail');
+            detailPath ? loadAppDetail(decodeURIComponent(detailPath), true) : loadAppList(true);
+        }
+
+        function getGiteeFileContent(path, callback) {
+            const url = `https://gitee.com/api/v5/repos/${REPO_OWNER}/${REPO_NAME}/contents/${encodeURIComponent(path)}?access_token=${GITEE_TOKEN}`;
+            
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        const decodedContent = decodeURIComponent(escape(atob(response.content.replace(/\s/g, ''))));
+                        callback(decodedContent);
+                    } catch (e) {
+                        showError('解析数据失败: ' + e.message);
+                    }
+                } else {
+                    showError('获取数据失败，状态码: ' + xhr.status);
+                }
+            };
+            xhr.onerror = function() {
+                showError('网络错误，请检查网络连接');
+            };
+            xhr.send();
+        }
+
+        function loadAppList(noHistory) {
+            if (!noHistory) window.history.replaceState(null, '', window.location.pathname);
+
+            document.getElementById('app-list-container').innerHTML = `
+                <div class="loading-container">
+                    <div class="mdui-spinner mdui-spinner-colorful"></div>
+                </div>
+            `;
+            
+            document.getElementById('app-detail-container').style.display = 'none';
+            document.getElementById('app-list-container').style.display = 'block';
+            
+            getGiteeFileContent(MAIN_FILE_PATH, function(content) {
+                try {
+                    appData = JSON.parse(content);
+                    renderAppList();
+                } catch (e) {
+                    showError('解析应用列表失败: ' + e.message);
+                }
+            });
+        }
+
+        function renderAppList() {
+            const container = document.getElementById('app-list-container');
+            document.getElementById('app-title').textContent = appData.title || 'ProperOS 应用市场';
+            
+            container.innerHTML = appData.explain ? `
+                <div class="mdui-card app-card">
+                    <div class="mdui-card-content">
+                        ${appData.explain}
+                    </div>
+                </div>
+            ` : '';
+            
+            const partitions = {};
+            appData.list.forEach(app => {
+                partitions[app.partition] = partitions[app.partition] || [];
+                partitions[app.partition].push(app);
+            });
+            
+            for (const partition in partitions) {
+                container.innerHTML += `<div class="partition-header">${partition}</div>`;
+                partitions[partition].forEach(app => {
+                    const relativePath = app.url.replace('https://gitee.com/byusi/properos-app/raw/master/', '');
+                    container.innerHTML += `
+                        <div class="mdui-card app-card mdui-ripple ripple" 
+                             onclick="loadAppDetail('${encodeURIComponent(relativePath)}')">
+                            <div class="mdui-card-primary">
+                                <div class="mdui-card-primary-title" style="display: flex; align-items: center;">
+                                    <img src="${app.icon}" class="app-icon" style="margin-right: 12px;">
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 1.1rem;">${app.title}</div>
+                                        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">${app.partition}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        }
+
+        function loadAppDetail(path, noHistory) {
+            if (!noHistory) window.location.hash = `detail=${encodeURIComponent(path)}`;
+
+            document.getElementById('app-list-container').style.display = 'none';
+            document.getElementById('app-detail-container').style.display = 'block';
+            document.getElementById('detail-title').textContent = '加载中...';
+            document.getElementById('detail-developer').textContent = '';
+            document.getElementById('detail-introduce').innerHTML = '';
+            document.getElementById('screenshots-container').style.display = 'none';
+            
+            getGiteeFileContent(decodeURIComponent(path), function(content) {
+                try {
+                    currentAppDetail = JSON.parse(content);
+                    renderAppDetail();
+                } catch (e) {
+                    showError('解析应用详情失败: ' + e.message);
+                }
+            });
+        }
+
+        function renderAppDetail() {
+            const detail = currentAppDetail;
+            
+            document.getElementById('detail-title').textContent = detail.title;
+            document.getElementById('detail-developer').textContent = `开发者: ${detail.developer}`;
+            document.getElementById('detail-icon').src = detail.icon;
+            document.getElementById('detail-introduce').innerHTML = detail.introduce;
+            
+            const downloadBtn = document.getElementById('download-btn');
+            if (detail.url && detail.url !== 'null') {
+                downloadBtn.style.display = 'inline-block';
+                downloadBtn.onclick = function() {
+                    if (window.iapp && iapp.fn) {
+                        iapp.fn(`install.a('${detail.url}')`);
+                    } else {
+                        window.open(detail.url, '_blank');
+                    }
+                };
+            } else {
+                downloadBtn.style.display = 'none';
+            }
+            
+            const screenshotsContainer = document.getElementById('screenshots-container');
+            const screenshotsElement = document.getElementById('app-screenshots');
+            screenshotsElement.innerHTML = '';
+            
+            if (detail.picture === 'true' && detail.count > 0) {
+                screenshotsContainer.style.display = 'block';
+                for (let i = 0; i < detail.count; i++) {
+                    const imgUrl = detail[`img${i}`];
+                    imgUrl && (screenshotsElement.innerHTML += `
+                        <img src="${imgUrl}" class="app-screenshot" onclick="viewImage('${imgUrl}')">
+                    `);
+                }
+            } else {
+                screenshotsContainer.style.display = 'none';
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function viewImage(url) {
+            new mdui.Dialog({
+                title: '应用截图',
+                content: `<img src="${url}" style="max-width: 100%; border-radius: 8px;">`,
+                buttons: [{ text: '关闭', onClick: dialog => dialog.close() }]
+            }).open();
+        }
+
+        function showError(message) {
+            mdui.snackbar({
+                message: message,
+                position: 'right-top',
+                buttonText: '重试',
+                onClick: loadAppList
+            });
+        }
+    </script>
+</body>
+</html>

@@ -127,7 +127,8 @@ gravity=center</ppt>
 fr("@ProperOS/Src/html/bilibilivideo.html",html)
 sr(html,"{BV_ID}",a,html)
 fw("$temp/html/bilibilivideo.html",html)
-us(1,"url","$temp/html/bilibilivideo.html")</eventItme></event>
+us(1,"url","$temp/html/bilibilivideo.html")
+fn byusi.qt(11)</eventItme></event>
 </View>
 <View id="14" did="12" type="TextView">
 <ppt>width=-2

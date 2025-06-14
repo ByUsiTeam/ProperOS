@@ -64,7 +64,8 @@ typeface=@JuOS/src/ttf/acbt80.ttf
 background=#ff2f47ff
 textSize=12sp
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">fn lib.install("@JuOS/App/ProperOS应用市场.jupk")</eventItme></event>
+<event><eventItme type="clicki">fn byusi.qt(12)
+fn lib.install("@JuOS/App/ProperOS应用市场.jupk")</eventItme></event>
 </View>
 <View id="8" did="6" type="TextView">
 <ppt>width=-2

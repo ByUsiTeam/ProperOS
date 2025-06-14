@@ -187,6 +187,7 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">//fn lib.utw("login.iyu")
+fn byusi.qt(90)
 fr("$JuOS/data/User/data.json",data)
 f(data == null)
 {
@@ -406,6 +407,7 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">ug(43,"checked",xz)
+fn byusi.qt(35)
 f(xz == "true")
 {
   us(43,"checked","false")
@@ -479,6 +481,7 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">ug(108,"checked",xz)
+fn byusi.qt(102)
 f(xz == "true")
 {
   us(108,"checked","false")
@@ -545,7 +548,7 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">fn lib.utw("JointDevelopmentNotificationList.iyu")
 //fn tw.tw("长按有特殊效果！")
-</eventItme></event>
+fn byusi.qt(60)</eventItme></event>
 </View>
 <View id="116" did="20" type="RelativeLayout">
 <ppt>width=-1
@@ -592,7 +595,8 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fn lk.lock("false")</eventItme><eventItme type="press">fd("$System/Config/Pwd/sys",jc)
+<event><eventItme type="clicki">fn lk.lock("false")
+fn byusi.qt(116)</eventItme><eventItme type="press">fd("$System/Config/Pwd/sys",jc)
 f(jc == true)
 {
 	fn tw.tw("密码解除设置成功")
@@ -652,7 +656,8 @@ fn system.gg("get")
 fn system.gg("zs")
 ./
 sss url ="https://api.juos.byusi.cn/gg/index.html"
-uigo("system_start.iyu")</eventItme></event>
+uigo("system_start.iyu")
+fn byusi.qt(110)</eventItme></event>
 </View>
 <View id="66" did="20" type="RelativeLayout">
 <ppt>width=-1
@@ -748,7 +753,8 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">fn system.update("true")
-//fn tw.tw2("ProperOS无法正常检查更新",1)</eventItme></event>
+//fn tw.tw2("ProperOS无法正常检查更新",1)
+fn byusi.qt(84)</eventItme></event>
 </View>
 <View id="74" did="20" type="CardView">
 <ppt>width=-1

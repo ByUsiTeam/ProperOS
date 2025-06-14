@@ -178,7 +178,7 @@ t()
         sr(appml, "%g", "$App/", aml)
         ss(aml + img, img)
       }
-      sj(sc, null, ".app", name)
+      sj(sc,null,".app",name)
     }
     else
     {
@@ -211,6 +211,7 @@ t()
       }
     }
     ula(list_cz, 4=img, 5=name)
+    ula(list_cz,4)
   }
   ufnsui()
   {

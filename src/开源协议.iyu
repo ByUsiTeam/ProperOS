@@ -22,7 +22,8 @@ height=45dp
 src=17301533
 layout_marginLeft=5dp
 background=through</ppt>
-<event><eventItme type="clicki">end()</eventItme></event>
+<event><eventItme type="clicki">fn byusi.qt(st_vW)
+end()</eventItme></event>
 </View>
 <View id="9" did="7" type="TextView">
 <ppt>width=-2

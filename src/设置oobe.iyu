@@ -64,6 +64,12 @@ t()
     {
       f(sss.yztz != "true")
       {
+      	ufnsui()
+        {
+          us(4,"text","ProperOS正在配置更新")
+          syso("0")
+        }
+        stop(500)
         ufnsui()
         {
           us(4,"text","ProperOS正在配置更新.")

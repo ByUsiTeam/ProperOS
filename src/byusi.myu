@@ -43,3 +43,59 @@ s 链接=url
 call(null,"mjava","Glide.加载",加载器,对象,链接)
 
 end fn
+
+fn encrypt(filePath)
+
+call(Result,"mlua","FileCtrl.file_to_hex",filePath)
+otob("utf-8",Result,b)
+sr(b,"0","�",b)
+sr(b,"1","你",b)
+sr(b,"2","好",b)
+sr(b,"3","，",b)
+sr(b,"4","世",b)
+sr(b,"5","界",b)
+sr(b,"6","！",b)
+sr(b,"7","锟斤拷",b)
+sr(b,"8","加",b)
+sr(b,"9","油",b)
+sr(b,"-","呀",b)
+sr(b," ","☃",Result)
+call(Resulte,"mjava","zh.encrypt",Result,"password")
+fw(filePath, Resulte)
+syso("成功加密文件："+filePath)
+
+end fn
+
+fn decode(filePath)
+
+fr(filePath, Result)
+call(Resulte,"mjava","zh.decrypt",Result,"password")
+sr(Resulte,"�","0",b)
+sr(b,"你","1",b)
+sr(b,"好","2",b)
+sr(b,"，","3",b)
+sr(b,"世","4",b)
+sr(b,"界","5",b)
+sr(b,"！","6",b)
+sr(b,"锟斤拷","7",b)
+sr(b,"加","8",b)
+sr(b,"油","9",b)
+sr(b,"呀","-",b)
+sr(b,"☃"," ",b)
+btoo("utf-8",b,Resulte)
+call(Result,"mlua","FileCtrl.hex_to_file",Resulte,filePath)
+syso("解密文件完成："+filePath)
+
+end fn
+
+fn qt(id)
+
+//代码放在控件的单击触屏事件
+dhas(dh,id, "alpha",0.8,0.9,1)
+dh(dh, "duration", 120)
+dh(dh, "start")
+dhs(dh, 0.9, 1, 0.9, 1, 1, 0.5, 1, 0.5)
+dh(dh, "duration", 300)
+us(id, "dh", dh)
+
+end fn

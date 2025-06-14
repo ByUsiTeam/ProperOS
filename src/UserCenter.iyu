@@ -78,6 +78,7 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/avatar/upload.html?uuid="+sss.uuid,url)
+fn byusi.qt(11)
 sss url =url
 uigo("system_start.iyu")</eventItme></event>
 </View>
@@ -139,6 +140,7 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/avatar/upload.html?uuid="+sss.uuid,url)
+fn byusi.qt(50)
 sss url =url
 uigo("system_start.iyu")</eventItme></event>
 </View>
@@ -468,7 +470,8 @@ textColor=#ffffffff
 typeface=@src/ttf/acbt80.ttf</ppt>
 <event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/qd.php?uid="+sss.uid+"&uuid="+sss.uuid,url)
 sss url =url
-uigo("start_app.iyu")</eventItme></event>
+uigo("start_app.iyu")
+fn byusi.qt(54)</eventItme></event>
 </View>
 <View id="56" did="53" type="CardView">
 <ppt>width=100dp
@@ -484,6 +487,7 @@ background=#ffff0000
 textColor=#ffffffff
 typeface=@src/ttf/acbt80.ttf</ppt>
 <event><eventItme type="clicki">fd("$JuOS/data/User/data.json",yz)
+fn byusi.qt(56)
 end()</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()

@@ -125,6 +125,7 @@ height=-1
 orientation=vertical
 gravity=center</ppt>
 <event><eventItme type="clicki">ug(3,"text",a)
+fn byusi.qt(11)
 f(a ? "http://" || a ? "https://")
 {
   has(1,"setURL('"+a+"')")
@@ -309,7 +310,8 @@ app_CardcornerRadius=10dp</ppt>
 height=-1
 orientation=vertical
 gravity=center</ppt>
-<event><eventItme type="clicki">uigo("bili.iyu")</eventItme></event>
+<event><eventItme type="clicki">uigo("bili.iyu")
+fn byusi.qt(33)</eventItme></event>
 </View>
 <View id="35" did="34" type="TextView">
 <ppt>width=-2
