@@ -183,6 +183,7 @@ fn byusi.qt(12)
 f(pwd != "")
 {
 	fw("$System/Config/Pwd/sys",pwd)
+    //fn byusi.encrypt("$System/Config/Pwd/sys")
     fn tw.tw("设置成功")
     end()
 }
@@ -211,6 +212,7 @@ textColor=#ffffffff</ppt>
 fn byusi.qt(14)
 f(pwd != "")
 {
+	//fn byusi.decode("$System/Config/Pwd/sys")
 	fr("$System/Config/Pwd/sys",local_pwd)
     f(local_pwd == pwd)
     {
@@ -222,6 +224,7 @@ f(pwd != "")
     	fn tw.tw2("密码错误",1)
         endkeyboard()
     }
+    //fn byusi.encrypt("$System/Config/Pwd/sys")
 }
 else
 {

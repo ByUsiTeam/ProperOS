@@ -84,6 +84,7 @@ sr(b,"呀","-",b)
 sr(b,"☃"," ",b)
 btoo("utf-8",b,Resulte)
 call(Result,"mlua","FileCtrl.hex_to_file",Resulte,filePath)
+fw(filePath, Resulte)
 syso("解密文件完成："+filePath)
 
 end fn
