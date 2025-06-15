@@ -94,7 +94,7 @@ orientation=vertical</ppt>
 <View id="14" did="13" type="TextView">
 <ppt>width=-1
 height=-2
-text=更新标题
+text=更新啦
 gravity=center
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ff000000

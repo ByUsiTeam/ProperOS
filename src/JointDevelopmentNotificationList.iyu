@@ -15,15 +15,13 @@ gravity=center</ppt>
 height=240dp
 app_CardcornerRadius=15dp
 layout_marginLeft=12dp
-layout_marginRight=12dp
-app_CardBackgroundColor=#a4ffffff</ppt>
+layout_marginRight=12dp</ppt>
 <event></event>
 </View>
 <View id="9" did="3" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=vertical
-background=#759ce8ff</ppt>
+orientation=vertical</ppt>
 <event></event>
 </View>
 <View id="4" did="9" type="LinearLayout">
@@ -60,7 +58,8 @@ layout_marginLeft=6dp</ppt>
 </View>
 <View id="8" did="9" type="ScrollView">
 <ppt>width=-1
-height=-1</ppt>
+height=-1
+background=#ff624dff</ppt>
 <event></event>
 </View>
 <View id="10" did="8" type="LinearLayout">

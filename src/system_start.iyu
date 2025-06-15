@@ -16,7 +16,6 @@ else f(st_nS == "100")
 {
   us(5,"progress","0")
   us(4,"visibility","gone")
-  us(2,"refreshing","false")
 }</eventItme><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)
 /.
 sj(st_url,"juos_sh://",null,iu)
@@ -32,11 +31,15 @@ else f(iu == null)
 }</eventItme><eventItme type="onreceivederror">us(6,"visibility","visible")
 f(st_url ?* "http")
 {
-  ss("在加载该链接时发生了错误",ii)
+	ss("在加载该链接时发生了错误\n错误代码："+st_dN,ii)
 }
 else
 {
-  ss("在加载该链接时发生了错误："+st_url,ii)
+	fdir("$",root_file)
+    ss("file://"+root_file,root_file)
+    stobm(root_file,"utf-8",root_file)
+	sr(st_url,root_file,"ProperOS:Root_Files/",root)
+	ss("错误代码："+st_dN+"\n在加载该链接时发生了错误："+root,ii)
 }
 us(9,"text",ii)
 fn Lottie.loaddex()
@@ -72,20 +75,34 @@ f(type==imagetype||type==imageurl)
 us(6,"visibility","gone")
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
-fn Lottie.setImageLottie(15,data,-1,true)</eventItme><eventItme type="onpagefinished">us(14,"visibility","gone")</eventItme></event>
+fn Lottie.setImageLottie(15,data,-1,true)</eventItme><eventItme type="onpagefinished">us(14,"visibility","gone")</eventItme><eventItme type="ondownloadstart">us(5,"progress","0")
+us(4,"visibility","gone")
+sj(st_cN,';filename="','"',name_impurity)
+
+ss("被下载文件大小："+st_cH+"\n文件名："+name_impurity+"\n被下载文件下载链接："+st_url,tsc)
+utw(null,"发现文件下载事件",tsc,"下载","取消",false,v)
+{
+	endutw()
+    hd(st_url,name_impurity,c)
+    syso(c)
+}
+else
+{
+	endutw()
+}</eventItme></event>
 </View>
 <View id="4" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
-gravity=bottom|center</ppt>
+gravity=top|center</ppt>
 <event></event>
 </View>
 <View id="5" did="4" type="ProgressBar">
 <ppt>width=-1
 height=-2
-background=#ff59d8ff
-max=100</ppt>
+max=100
+background=through</ppt>
 <event></event>
 </View>
 <View id="6" did="1" type="LinearLayout">
@@ -138,7 +155,8 @@ text=关闭该应用
 background=through
 textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="clicki">end()</eventItme></event>
+<event><eventItme type="clicki">fn byusi.qt(11)
+end()</eventItme></event>
 </View>
 <View id="12" did="10" type="CardView">
 <ppt>width=80dp
@@ -155,7 +173,7 @@ text=刷新
 background=through
 textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="clicki">
+<event><eventItme type="clicki">fn byusi.qt(12)
 us(6,"visibility","gone")
 ug(3,"url",url)
 us(3,"url",url)</eventItme></event>
