@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent; /* 去除移动端点击蓝框 */
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -81,7 +81,6 @@
             animation: scaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* 装饰元素 */
         .digital-clock::before {
             content: '';
             position: absolute;
@@ -186,7 +185,6 @@
             animation: fadeIn 2s ease-out;
         }
 
-        /* 浅色主题 */
         body.light-theme {
             background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
             color: #333;
@@ -214,7 +212,6 @@
             border: 2px solid rgba(180, 180, 200, 0.5);
         }
 
-        /* 动画 */
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.4; }
@@ -230,7 +227,6 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* 响应式设计 */
         @media (max-width: 768px) {
             .time-display {
                 font-size: 3.5rem;
@@ -268,10 +264,6 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>现代化数字时钟</h1>
-            <p>优雅的设计 · 流畅的动画 · 响应式布局 · 无干扰体验</p>
-        </div>
         
         <div class="digital-clock">
             <div class="time-display">
@@ -299,9 +291,6 @@
             <span>切换为浅色主题</span>
         </button>
         
-        <div class="footer">
-            <p>现代化UI设计 | 响应式布局 | 无点击蓝框干扰</p>
-        </div>
     </div>
 
     <script>

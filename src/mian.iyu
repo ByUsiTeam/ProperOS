@@ -71,7 +71,8 @@ fe("$boot/init.json",yz)
 f(yz == false)
 {
   fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
-}</eventItme><eventItme type="loadingComplete">t()
+}
+sss lock_verification =null</eventItme><eventItme type="loadingComplete">t()
 {
   stop(2000)
   fe("$System/Config/oobe.sys",yz)

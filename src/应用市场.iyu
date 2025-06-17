@@ -147,7 +147,14 @@ height=-1</ppt>
 <UIEventset><eventItme type="loading">fn n.ui(1)
 fn lib.wp(1)
 //
-uycl("#e84f78ff",true)</eventItme><eventItme type="loadingComplete">s url ="https://gitee.com/byusi/properos-app/raw/master/index.json"
+uycl("#e84f78ff",true)</eventItme><eventItme type="loadingComplete">//加载中占位图
+sbp("@Image_loading.png",bitmap_loading)
+javanew(ss.drawable_loading,"android.graphics.drawable.BitmapDrawable","android.graphics.Bitmap",bitmap_loading)
+//加载错误占位图
+sbp("@image_error.jpg",bitmap_error)
+javanew(ss.drawable_error,"android.graphics.drawable.BitmapDrawable","android.graphics.Bitmap",bitmap_error)
+//在这里初始化两个占位图 防止列表多次读取图片导致占用运行内存 甚至软件卡顿或者内存泄露
+s url ="https://gitee.com/byusi/properos-app/raw/master/index.json"
 us(4,"refreshing","true")
 t()
 {
@@ -186,7 +193,7 @@ t()
       ufnsui()
       {
         us(4,"refreshing","false")
-        uls(5,yylist,"yysc-list.iyu",-2,-2)
+        uls(5,yylist,"yysc_list.iyu",-2,-2)
         gvs(5,v7)
         cls("android.support.v7.widget.RecyclerView",列表类)
         cls("android.support.v7.widget.LinearLayoutManager",布局管理类)

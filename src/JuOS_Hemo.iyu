@@ -142,7 +142,73 @@ fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
 t()
 {
-  fn list_lib.hemo()
+  s a = "$JuOS/hemo/桌面"
+  fl(a, false, home_list)
+  aslist(list_cz)
+  for(sc; home_list)
+  {
+    s img = "@fail.xml"
+    s name = sc
+    f(sc *? ".app")
+    {
+      ss("$JuOS/hemo/桌面/"+sc, ml)
+      fr(ml, app_link_sc)
+      sj(app_link_sc, "AppTb=", "=AppTb", img)
+      f(img ?* "$sys/")
+      {
+        sr(img, "$sys/", "@", img)
+      }
+      else f(img ?* "%@")
+      {
+        sr(img, "%@", "$", img)
+      }
+      else
+      {
+        sj(app_link_sc, "AppLj=", "=AppLj", appml)
+        sr(appml, "%g", "$App/", aml)
+        ss(aml + img, img)
+      }
+      sj(sc, null, ".app", name)
+    }
+    else
+    {
+      f(sc *? ".mp4")
+      {
+        //s img = "@JuOS/src/img/zy/mp4.png"
+        ss("$JuOS/hemo/桌面/"+sc,a)
+        fdir(a,a)
+        call(a,"mjava","awzx2.get",a,"1")
+        s img =a
+      }
+      else f(sc *? ".m4a")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".mp3")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".flac")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".pdf")
+      {
+        s img = "@JuOS/src/Manager/wE.png"
+      }
+      else f(sc *? ".jush")
+      {
+        s img = "@ic_play_pause_regular.png"
+      }
+    }
+    ula(list_cz, 10=img, 14=name)
+  }
+  ufnsui()
+  {
+    us(6, "visibility", "gone")
+    uls(5, list_cz, "list.iyu", -1, -2)
+    us(4,"refreshing","false")
+  }
 }
 //-_-_-_-_-_-_-_-_-_-_-
 s id =2
@@ -168,9 +234,16 @@ f(Update == "true")
 //
 fw("$System/Config/Update.sys","false")
 
-fn lk.y()
+fn lk.y(1)
 
-fn lib.wp(1)</eventItme><eventItme type="downkey">f(st_kC==4)
+fn lib.wp(1)
+
+loadjar("QmLoader",sss.QmLoader)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+//初始化(必写)
+javanew(builder,Builder,"android.content.Context",activity)
+javax(null,null,Loader,"init",Builder,builder)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
   syso("确定")
 }</eventItme><eventItme type="loading">uycl("#e84f78ff",true)
@@ -202,7 +275,7 @@ utw(null,"","请选择这重启选项","重启到bootrepair","正常重启","不
 }
 else
 {
-	uigo(mian.iyu)
+	uigo("mian.iyu")
     end()
 }
 else

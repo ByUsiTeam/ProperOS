@@ -595,7 +595,7 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fn lk.lock("false")
+<event><eventItme type="clicki">fn lk.lock(14,"true")
 fn byusi.qt(116)</eventItme><eventItme type="press">fd("$System/Config/Pwd/sys",jc)
 f(jc == true)
 {

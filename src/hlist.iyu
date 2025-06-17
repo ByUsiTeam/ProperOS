@@ -65,4 +65,16 @@ dh(dh1, "duration", 500)
 dh(dh1, "start")
 dhas(dh2, st_vW, "alpha", 0,1)
 dh(dh2, "duration", 1000)
-dh(dh2, "start")</eventItme></UIEventset>
+dh(dh2, "start")
+
+ulag(st_vW,-4,path)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+  cls(sss.QmLoader,"com.qmdeve.qmloader.LoadRequest",LoadRequest)
+  //获取实例(必写)
+  javax(instance,null,Loader,"getInstance")
+  javax(instance,instance,Loader,"with","android.content.Context",activity)
+  //本地图片路径(必写)
+  javax(instance,instance,LoadRequest,"load","String",path)
+  //绑定图像View(必写)
+  gvs(hlist.4,imageView)
+  javax(instance,instance,LoadRequest,"into","android.widget.ImageView",imageView)</eventItme></UIEventset>

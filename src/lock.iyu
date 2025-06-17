@@ -1,109 +1,19 @@
 <View id="1" did="0" type="RelativeLayout">
 <ppt>width=-1
-height=-1</ppt>
+height=-1
+background=@JuOS/src/wallpaper/DefaultWallpaper_1.png</ppt>
 <event></event>
 </View>
 <View id="2" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=vertical</ppt>
-<event></event>
-</View>
-<View id="3" did="2" type="CardView">
-<ppt>width=-1
-height=65dp
-layout_marginTop=4dp
-layout_marginLeft=5dp
-layout_marginRight=5dp
-layout_marginBottom=4dp
-app_CardcornerRadius=10dp
-app_CardElevation=8dp</ppt>
-<event></event>
-</View>
-<View id="4" did="3" type="RelativeLayout">
-<ppt>width=-1
-height=-1</ppt>
-<event></event>
-</View>
-<View id="16" did="4" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=horizontal
-gravity=left|center</ppt>
-<event></event>
-</View>
-<View id="17" did="16" type="CardView">
-<ppt>width=45dp
-height=45dp
-layout_marginLeft=6dp
-app_CardcornerRadius=6dp</ppt>
-<event></event>
-</View>
-<View id="18" did="17" type="ImageButton">
-<ppt>width=-1
-height=-1
-src=17301533
-background=through</ppt>
-<event><eventItme type="clicki">fn byusi.qt(st_vW)
-fe("$System/Config/Pwd/sys",yz)
-endkeyboard()
-f(sss.lock_ui == true || sss.lock_ui == "true")
-{
-	fn tw.tw2("错误",1)
-}
-else f(sss.lock_ui == "false" || sss.lock_ui == false)
-{
-	fw("$System/Config/Pwd/pwd_lock","1")
-	end()
-}
-else f(yz == true)
-{
-	fn tw.tw2("错误",1)
-}
-else
-{
-	syso("不知道的问题出现了")
-    fn tw.tw2("不知道的问题出现了",1)
-}</eventItme></event>
-</View>
-<View id="19" did="4" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=horizontal
-gravity=right|center</ppt>
-<event></event>
-</View>
-<View id="20" did="19" type="CardView">
-<ppt>width=45dp
-height=45dp
-app_CardcornerRadius=6dp
-layout_marginRight=6dp</ppt>
-<event></event>
-</View>
-<View id="21" did="20" type="ImageButton">
-<ppt>width=-1
-height=-1
-src=@image_error.jpg
-background=through
-scaleType=centerinside</ppt>
-<event><eventItme type="clicki">fn byusi.qt(st_vW)
-utw(null,"","你正在设置解锁密码或者正在解锁中","确定",false,v)
-{
-	endutw()
-}</eventItme></event>
-</View>
-<View id="5" did="4" type="TextView">
-<ppt>width=-1
-height=-1
-text=请输入解锁密码
-gravity=center
-typeface=@src/ttf/acbt80.ttf
-textSize=16sp</ppt>
-<event></event>
+orientation=vertical
+gravity=bottom|center</ppt>
+<event><eventItme type="clicki">syso("no")</eventItme></event>
 </View>
 <View id="6" did="2" type="CardView">
 <ppt>width=-1
-height=-1
+height=450dp
 layout_marginLeft=5dp
 layout_marginTop=7dp
 layout_marginRight=5dp
@@ -127,7 +37,7 @@ gravity=center</ppt>
 <View id="22" did="8" type="ImageView">
 <ppt>width=120dp
 height=120dp
-src=17301567
+src=$JuOS/ICON/ic_settings_biometrics_password.png
 layout_marginBottom=10dp</ppt>
 <event></event>
 </View>
@@ -178,14 +88,13 @@ text=设置密码
 typeface=@src/ttf/acbt80.ttf
 background=#ff6030ff
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">ug(11,"text",pwd)
-fn byusi.qt(12)
+<event><eventItme type="clicki">ug(lock.11,"text",pwd)
 f(pwd != "")
 {
 	fw("$System/Config/Pwd/sys",pwd)
     //fn byusi.encrypt("$System/Config/Pwd/sys")
     fn tw.tw("设置成功")
-    end()
+    us(lock.1,"visibility","gone")
 }
 else
 {
@@ -208,23 +117,20 @@ text=解锁
 typeface=@src/ttf/acbt80.ttf
 background=#ff6030ff
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">ug(11,"text",pwd)
-fn byusi.qt(14)
+<event><eventItme type="clicki">ug(lock.11,"text",pwd)
 f(pwd != "")
 {
-	//fn byusi.decode("$System/Config/Pwd/sys")
 	fr("$System/Config/Pwd/sys",local_pwd)
     f(local_pwd == pwd)
     {
-    	end()
+    	us(lock.1,"visibility","gone")
     }
     else
     {
-    	us(11,"text","")
+    	us(lock.11,"text","")
     	fn tw.tw2("密码错误",1)
         endkeyboard()
     }
-    //fn byusi.encrypt("$System/Config/Pwd/sys")
 }
 else
 {
@@ -232,39 +138,4 @@ else
     endkeyboard()
 }</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">fn n.ui(1)
-fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
-
-//解锁界面UI配置调整（自动的吗？不是，需要我这个开发者通过变量进行调整，或者通过 system 库进行调用）
-//sss lock_ui ="0"
-fe("$System/Config/Pwd/sys",key)
-f(key == "true" || key == true)
-{
-    f(sss.lock_ui == "true")
-    {
-    	us(12,"visibility","gone")
-    }
-    else f(sss.lock_ui == "0")
-    {
-    	syso("特殊调试")
-    }
-    else f(sss.lock_ui == "false")
-    {
-    	us(14,"visibility","gone")
-    }
-}
-else f(sss.lock_ui == "false" && sss.lock_ui != "true")
-{
-	us(14,"visibility","gone")
-}
-else
-{
-	end()
-}
-
-fn Lottie.loaddex()
-fr("@JuOS/Lottie/ByUsi/ai.json",data)
-fn Lottie.setImageLottie(22,data,-1,true)</eventItme><eventItme type="downkey">f(st_kC == 4)
-{
-	syso("1")
-}</eventItme></UIEventset>
+<UIEventset></UIEventset>

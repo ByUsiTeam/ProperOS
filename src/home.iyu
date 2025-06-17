@@ -130,7 +130,7 @@ height=-2
 src=17301567</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fn lk.y()
+<UIEventset><eventItme type="loading">fn lk.y(1)
 fn lib.wp(2)
 utb(3)</eventItme><eventItme type="loadingComplete">uycl("#ff5f6aff",true)
 //
@@ -139,13 +139,12 @@ fn system.asystem_t_init()
 fn n.ui(1)
 //
 us(6,"Refreshing","true")
-//占位图片设置
-sbp("@Image_loading.png",bitmap_loading)
-javanew(ss.drawable_loading,"android.graphics.drawable.BitmapDrawable","android.graphics.Bitmap",bitmap_loading)
-//加载错误占位图
-sbp("@image_error.jpg",bitmap_error)
-javanew(ss.drawable_error,"android.graphics.drawable.BitmapDrawable","android.graphics.Bitmap",bitmap_error)
-//在这里初始化两个占位图 防止列表多次读取图片导致占用运行内存 甚至软件卡顿或者内存泄露
+loadjar("QmLoader",sss.QmLoader)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+//初始化(必写)
+javanew(builder,Builder,"android.content.Context",activity)
+javax(null,null,Loader,"init",Builder,builder)
 us(9,"visibility","visible")
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
@@ -240,7 +239,7 @@ utw(null,"","请选择这重启选项","重启到bootrepair","正常重启","不
 }
 else
 {
-	uigo(mian.iyu)
+	uigo("mian.iyu")
     end()
 }
 else

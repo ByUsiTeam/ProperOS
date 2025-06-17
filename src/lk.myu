@@ -1,27 +1,29 @@
-fn lock(data)
+fn lock(id,data)
 
-uigo("lock.iyu")
-sss lock_ui =data
+f(data == "true")
+{
+	addv(id,"lock.iyu")
+    us(lock.14,"visibility","gone")
+}
 
 end fn
 
-fn y()
+fn y(id)
 
-fe("$System/Config/Pwd/sys",pwd)
-fe("$System/Config/Pwd/pwd_lock",pwd_lock)
-f(pwd == true)
+f(sss.lock_verification == null)
 {
-	fn lk.lock(pwd)
-}
-else
-{
-	f(pwd_lock == true)
-	{
-		syso("[Pwd_Lock] true")
-	}
-    else
+	sss lock_verification =true
+	fe("$System/Config/Pwd/sys",t)
+    fe("$System/Config/Pwd/pwd_lcok",pwd_lock)
+    f(t == true)
     {
-    	fn lk.lock(pwd)
+    	addv(id,"lock.iyu")
+        us(lock.12,"visibility","gone")
+    }
+    else f(pwd_lock == false && t == false)
+    {
+    	addv(id,"lock.iyu")
+        us(lock.11,"visibility","gone")
     }
 }
 
