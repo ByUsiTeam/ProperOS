@@ -1,5 +1,33 @@
 fn lock(id,data)
 
+s wp ="$JuOS/Config/wallpaper/wp.png"
+t()
+{
+  fe("$JuOS/Config/wallpaper/wp.png",wp_cz_yz)
+  f(wp_cz_yz == "true")
+  {
+    ufnsui()
+    {
+    	us(lock.23,"background",wp)
+      us(lock.24,"src",wp)
+    }
+  }
+  else f(wp_cz_yz == "false")
+  {
+    ufnsui()
+    {
+    	us(lock.23,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+      us(lock.24,"src","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+    }
+  }
+  else
+  {
+    ufnsui()
+    {
+      fn tw.tw("出现问题了(つД`)")
+    }
+  }
+}
 f(data == "true")
 {
 	addv(id,"lock.iyu")
@@ -10,6 +38,37 @@ end fn
 
 fn y(id)
 
+//背景配置
+s wp ="$JuOS/Config/wallpaper/wp.png"
+t()
+{
+  fe("$JuOS/Config/wallpaper/wp.png",wp_cz_yz)
+  f(wp_cz_yz == "true")
+  {
+    ufnsui()
+    {
+    	us(lock.23,"background",wp)
+      us(lock.24,"src",wp)
+    }
+  }
+  else f(wp_cz_yz == "false")
+  {
+    ufnsui()
+    {
+    	us(lock.23,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+      us(lock.24,"src","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+    }
+  }
+  else
+  {
+    ufnsui()
+    {
+      fn tw.tw("出现问题了(つД`)")
+    }
+  }
+}
+
+//解锁配置
 f(sss.lock_verification == null)
 {
 	sss lock_verification =true
@@ -22,8 +81,15 @@ f(sss.lock_verification == null)
     }
     else f(pwd_lock == false && t == false)
     {
+    	fw("$System/Config/Pwd/pwd_lcok","1")
+        addv(id,"lock.iyu")
+    	us(lock.23,"visibility","gone")
+        us(lock.14,"visibility","gone")
+    }
+    else f(pwd_lock == true && t == false)
+    {
     	addv(id,"lock.iyu")
-        us(lock.11,"visibility","gone")
+    	us(lock.23,"visibility","gone")
     }
 }
 

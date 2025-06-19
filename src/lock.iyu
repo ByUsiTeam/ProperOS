@@ -1,7 +1,18 @@
-<View id="1" did="0" type="RelativeLayout">
+<View id="23" did="0" type="LinearLayout">
 <ppt>width=-1
 height=-1
-background=@JuOS/src/wallpaper/DefaultWallpaper_1.png</ppt>
+orientation=vertical</ppt>
+<event><eventItme type="clicki">syso("no")</eventItme></event>
+</View>
+<View id="1" did="23" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="24" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567</ppt>
 <event></event>
 </View>
 <View id="2" did="1" type="LinearLayout">
@@ -9,7 +20,7 @@ background=@JuOS/src/wallpaper/DefaultWallpaper_1.png</ppt>
 height=-1
 orientation=vertical
 gravity=bottom|center</ppt>
-<event><eventItme type="clicki">syso("no")</eventItme></event>
+<event></event>
 </View>
 <View id="6" did="2" type="CardView">
 <ppt>width=-1
@@ -91,10 +102,11 @@ textColor=#ffffffff</ppt>
 <event><eventItme type="clicki">ug(lock.11,"text",pwd)
 f(pwd != "")
 {
+	endkeyboard()
+	//fn 8421.encrypt(pwd,"$System/Config/Pwd/sys")
 	fw("$System/Config/Pwd/sys",pwd)
-    //fn byusi.encrypt("$System/Config/Pwd/sys")
     fn tw.tw("设置成功")
-    us(lock.1,"visibility","gone")
+    us(lock.23,"visibility","gone")
 }
 else
 {
@@ -121,9 +133,14 @@ textColor=#ffffffff</ppt>
 f(pwd != "")
 {
 	fr("$System/Config/Pwd/sys",local_pwd)
+    /.
+    fn 8421.decode(local_pwd)
+    s local_pwd =sss.bcd_c
+    ./
     f(local_pwd == pwd)
     {
-    	us(lock.1,"visibility","gone")
+    	us(lock.23,"visibility","gone")
+        endkeyboard()
     }
     else
     {

@@ -224,11 +224,18 @@ height=-2
 text=bootrepair模式配置</ppt>
 <event><eventItme type="clicki">fn init.bootrepair("yes",1)</eventItme></event>
 </View>
+<View id="28" did="2" type="EditText">
+<ppt>width=-1
+height=-2
+text=</ppt>
+<event></event>
+</View>
 <View id="26" did="2" type="Button">
 <ppt>width=-2
 height=-2
-text=按钮26</ppt>
-<event></event>
+text=8421加密</ppt>
+<event><eventItme type="clicki">ug(28,"text",text)
+fn 8421.encrypt(text,"$System/Config/Pwd/sys")</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">uycl("#ff83f1ff",true,0)
 //
