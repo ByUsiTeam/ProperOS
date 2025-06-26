@@ -188,8 +188,8 @@ gravity=center</ppt>
 <event></event>
 </View>
 <View id="17" did="14" type="CardView">
-<ppt>width=280dp
-height=280dp
+<ppt>width=100dp
+height=100dp
 app_CardcornerRadius=999
 app_CardmaxElevation=1
 app_CardElevation=5
