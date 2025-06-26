@@ -100,3 +100,52 @@ dh(dh, "duration", 300)
 us(id, "dh", dh)
 
 end fn
+
+fn mimicry(id1,id2,id3,id4)
+
+loadjar("Blur.dex.i",loadjar)
+//解析动态高斯模糊dex包
+cls(loadjar,"com.BlurView",cls)
+//解析类目
+syso(cls)
+javanew(BlurView,cls,"Context",activity,"android.util.AttributeSet",null)
+javax(null,BlurView,cls,"setBlurRadius","float",1)
+//设置模糊度
+javax(null,BlurView,cls,"setOverlayColor","int",16777215)
+//设置颜色id
+nvw(BlurView,id1)
+loadjar("Blur.dex.i",loadjar)
+//解析动态高斯模糊dex包
+cls(loadjar,"com.BlurView",cls)
+//解析类目
+syso(cls)
+javanew(BlurView,cls,"Context",activity,"android.util.AttributeSet",null)
+javax(null,BlurView,cls,"setBlurRadius","float",2)
+//设置模糊度
+javax(null,BlurView,cls,"setOverlayColor","int",16777215)
+//设置颜色id
+nvw(BlurView,id2)
+loadjar("Blur.dex.i",loadjar)
+//解析动态高斯模糊dex包
+cls(loadjar,"com.BlurView",cls)
+//解析类目
+syso(cls)
+javanew(BlurView,cls,"Context",activity,"android.util.AttributeSet",null)
+javax(null,BlurView,cls,"setBlurRadius","float",4)
+//设置模糊度
+javax(null,BlurView,cls,"setOverlayColor","int",16777215)
+//设置颜色id
+nvw(BlurView,id3)
+loadjar("Blur.dex.i",loadjar)
+//解析动态高斯模糊dex包
+cls(loadjar,"com.BlurView",cls)
+//解析类目
+syso(cls)
+javanew(BlurView,cls,"Context",activity,"android.util.AttributeSet",null)
+javax(null,BlurView,cls,"setBlurRadius","float",8)
+//设置模糊度
+javax(null,BlurView,cls,"setOverlayColor","int",16777215)
+//设置颜色id
+nvw(BlurView,id4)
+
+end fn

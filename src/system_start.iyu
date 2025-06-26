@@ -112,7 +112,7 @@ background=through</ppt>
 height=-1
 orientation=vertical
 gravity=center
-visibility=gone
+//visibility=gone
 background=#ffdbf7ff</ppt>
 <event></event>
 </View>
@@ -187,7 +187,73 @@ orientation=vertical
 gravity=center</ppt>
 <event></event>
 </View>
-<View id="15" did="14" type="ImageView">
+<View id="17" did="14" type="CardView">
+<ppt>width=280dp
+height=280dp
+app_CardcornerRadius=999
+app_CardmaxElevation=1
+app_CardElevation=5
+app_CardBackgroundColor=#1fffffff</ppt>
+<event></event>
+</View>
+<View id="18" did="17" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="19" did="18" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardElevation=0
+app_CardcornerRadius=999
+app_CardBackgroundColor=#00ffffff</ppt>
+<event></event>
+</View>
+<View id="20" did="19" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+gravity=center
+padding=5dp</ppt>
+<event></event>
+</View>
+<View id="21" did="20" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardElevation=0
+app_CardcornerRadius=999
+app_CardBackgroundColor=#00ffffff</ppt>
+<event></event>
+</View>
+<View id="22" did="21" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+gravity=center
+padding=5dp</ppt>
+<event></event>
+</View>
+<View id="23" did="22" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardElevation=0
+app_CardcornerRadius=999
+app_CardBackgroundColor=#00ffffff</ppt>
+<event></event>
+</View>
+<View id="24" did="23" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="25" did="24" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="15" did="25" type="ImageView">
 <ppt>width=-2
 height=-2
 src=17301567</ppt>
@@ -229,4 +295,6 @@ fn n.ui(1)</eventItme><eventItme type="downkey">f(st_kC == 4)
 }</eventItme><eventItme type="loadingComplete">fn api.hide_btn(3)
 addv(1,"app.iyu")
 us(app.7,"visibility","gone")
-us(app.1,"visibility","gone")</eventItme></UIEventset>
+us(app.1,"visibility","gone")
+//拟态玻璃效果
+fn byusi.mimicry(18,20,22,24)</eventItme></UIEventset>

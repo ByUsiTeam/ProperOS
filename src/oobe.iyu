@@ -43,7 +43,7 @@ src=17301567</ppt>
 <View id="24" did="6" type="TextView">
 <ppt>width=-2
 height=-2
-text=欢迎使用 ProperOS
+text=欢迎使用ProperOS
 typeface=@src/ttf/acbt80.ttf
 textSize=35sp</ppt>
 <event></event>
@@ -61,42 +61,7 @@ layout_marginBottom=8dp</ppt>
 <ppt>width=-1
 height=-1
 orientation=vertical
-gravity=center</ppt>
-<event></event>
-</View>
-<View id="9" did="8" type="CardView">
-<ppt>width=-1
-height=420dp
-layout_marginLeft=6dp
-layout_marginRight=6dp
-app_CardcornerRadius=5dp
-app_CardElevation=3dp
-layout_marginTop=6dp</ppt>
-<event></event>
-</View>
-<View id="10" did="9" type="ScrollView">
-<ppt>width=-1
-height=-1</ppt>
-<event></event>
-</View>
-<View id="11" did="10" type="TextView">
-<ppt>width=-1
-height=-1
-text=文本11
-textColor=#ff000000
-typeface=@src/ttf/acbt80.ttf
-textIsSelectable=true
-textColorHighlight=#a16cbdff
-textColorLink=#a16cbdff
-autoLink=email
-linksClickable=true</ppt>
-<event></event>
-</View>
-<View id="23" did="9" type="WebView">
-<ppt>width=-1
-height=-1
-url=@ByUsi/UserAgreement.html
-visibility=gone</ppt>
+gravity=top</ppt>
 <event></event>
 </View>
 <View id="13" did="8" type="LinearLayout">
@@ -109,7 +74,7 @@ gravity=bottom|center</ppt>
 <View id="22" did="13" type="CheckBox">
 <ppt>width=-2
 height=-2
-text=我承诺同意以上条款
+text=我承诺同意以下条款
 textColor=#ff000000
 typeface=@src/ttf/acbt80.ttf
 textSize=24sp
@@ -152,7 +117,7 @@ app_CardcornerRadius=5dp</ppt>
 height=-1
 src=17301533
 background=#ff3769ff</ppt>
-<event><eventItme type="clicki">fn byusi.qt(st_vW)
+<event><eventItme type="clicki">fn byusi.qt(17)
 utw(null,"","关闭 ProperOS","关闭","取消",false,v)
 {
 	end()
@@ -182,7 +147,7 @@ height=-1
 src=17301537
 background=#ff3769ff</ppt>
 <event><eventItme type="clicki">ug(22,"checked",xzzt)
-fn byusi.qt(st_vW)
+fn byusi.qt(20)
 f(xzzt == true)
 {
 	utw(null,"","重启继续使用 ProperOS","重启",false,v)
@@ -200,6 +165,49 @@ else
 		endutw()
 	}
 }</eventItme></event>
+</View>
+<View id="25" did="13" type="ScrollView">
+<ppt>width=-1
+height=-1
+layout_marginLeft=6dp
+layout_marginTop=5dp
+layout_marginRight=6dp
+layout_marginBottom=8dp</ppt>
+<event></event>
+</View>
+<View id="9" did="25" type="CardView">
+<ppt>width=-1
+height=420dp
+layout_marginLeft=6dp
+layout_marginRight=6dp
+app_CardcornerRadius=5dp
+app_CardElevation=12dp
+layout_marginTop=6dp</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="TextView">
+<ppt>width=-1
+height=-1
+text=文本11
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textIsSelectable=true
+textColorHighlight=#a16cbdff
+textColorLink=#a16cbdff
+linksClickable=true</ppt>
+<event></event>
+</View>
+<View id="23" did="9" type="WebView">
+<ppt>width=-1
+height=-1
+url=@ByUsi/UserAgreement.html
+visibility=gone</ppt>
+<event></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn lib.wp(2)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()

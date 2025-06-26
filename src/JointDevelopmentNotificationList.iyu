@@ -366,4 +366,40 @@ else
   endutw()
 }</eventItme></event>
 </View>
+<View id="61" did="10" type="RelativeLayout">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="62" did="61" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="63" did="62" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@ProperOS/Src/Logo/Telegram/ic_launcher.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="64" did="62" type="TextView">
+<ppt>width=-2
+height=-2
+text=加入官方 Telegram
+textColor=#ffffffff
+typeface=serif
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="65" did="61" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">hws("https://t.me/+1iZCP2rBfShhM2E1")</eventItme></event>
+</View>
 <UIEventset></UIEventset>
