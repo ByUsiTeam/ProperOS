@@ -9,7 +9,12 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
-<View id="8" did="2" type="CardView">
+<View id="13" did="2" type="RelativeLayout">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="11" did="13" type="CardView">
 <ppt>width=-1
 height=55dp
 layout_marginLeft=5dp
@@ -17,14 +22,21 @@ layout_marginTop=5dp
 layout_marginRight=5dp
 layout_marginBottom=5dp
 app_CardcornerRadius=6dp
-app_CardElevation=6dp</ppt>
+app_CardElevation=6dp
+app_CardBackgroundColor=#1fffffff
+padding=8dp</ppt>
 <event></event>
 </View>
-<View id="3" did="8" type="Toolbar">
+<View id="12" did="13" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="12" type="Toolbar">
 <ppt>width=-1
 height=55dp
 app_title=ProperOS
-background=#ffdde6ff</ppt>
+background=</ppt>
 <event></event>
 </View>
 <View id="6" did="2" type="SwipeRefreshLayout">
@@ -130,7 +142,31 @@ height=-2
 src=17301567</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fn lk.y(1)
+<View id="14" did="1" type="CardView">
+<ppt>width=150dp
+height=100dp
+app_CardcornerRadius=999
+app_CardmaxElevation=1
+app_CardElevation=5
+app_CardBackgroundColor=#1fffffff
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="16" did="15" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.blur(11)
+fn byusi.blur(15)
+fn lk.y(1)
 fn lib.wp(2)
 utb(3)</eventItme><eventItme type="loadingComplete">uycl("#ff5f6aff",true)
 //

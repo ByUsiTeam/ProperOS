@@ -149,3 +149,19 @@ javax(null,BlurView,cls,"setOverlayColor","int",16777215)
 nvw(BlurView,id4)
 
 end fn
+
+fn blur(id)
+
+loadjar("Blur.dex.i",loadjar)
+//解析动态高斯模糊dex包
+cls(loadjar,"com.BlurView",cls)
+//解析类目
+syso(cls)
+javanew(BlurView,cls,"Context",activity,"android.util.AttributeSet",null)
+javax(null,BlurView,cls,"setBlurRadius","float",1)
+//设置模糊度
+javax(null,BlurView,cls,"setOverlayColor","int",16777215)
+//设置颜色id
+nvw(BlurView,id)
+
+end fn

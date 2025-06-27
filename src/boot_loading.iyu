@@ -3,7 +3,7 @@
 height=-1
 orientation=vertical
 gravity=center</ppt>
-<event></event>
+<event><eventItme type="clicki">syso("拦截")</eventItme></event>
 </View>
 <View id="1" did="9" type="CardView">
 <ppt>width=-1
