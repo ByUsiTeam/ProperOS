@@ -73,4 +73,4 @@ src=17301567
 visibility=gone</ppt>
 <event></event>
 </View>
-<UIEventset></UIEventset>
+<UIEventset><eventItme type="loading">fn byusi.blur(boot_loading.9)</eventItme></UIEventset>

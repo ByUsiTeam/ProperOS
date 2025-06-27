@@ -72,7 +72,13 @@ f(yz == false)
 {
   fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
 }
-sss lock_verification =null</eventItme><eventItme type="loadingComplete">t()
+sss lock_verification =null
+//
+fe("$System/Config/Pwd/pwd_lcok",pwd_lcok)
+f(pwd_lcok == false)
+{
+	fw("$System/Config/Pwd/pwd_lcok","1")
+}</eventItme><eventItme type="loadingComplete">t()
 {
   stop(2000)
   fe("$System/Config/oobe.sys",yz)

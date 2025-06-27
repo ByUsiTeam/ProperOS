@@ -207,8 +207,13 @@ else
 {
 	ss("$JuOS/hemo/桌面/"+uid_mc+".app",ml)
 	fr(ml,wjuwjnr)
+    f(wjuwjnr == null)
+    {
+    	endcode
+    }
 	//
 	sj(wjuwjnr,"AppLj=","=AppLj",AppLj)
+    sj(wjuwjnr,"Config=","=Config",Config)
 	sj(wjuwjnr,"AppUrlJr=","=AppUrlJr",AppUrlJr)
 	sj(wjuwjnr,"System=","=System",sys)
 	f(sys == null)
@@ -220,13 +225,31 @@ else
 			ss(AppLj+"src/index.html",url)
 			sss url =url
 			fw("$JuOS/temp_url/url.jtm",url)
-			uigo(qdq)
+            f(Config != null)
+            {
+            	sss qdq =qdq
+                sss package =AppLj
+                uigo("screen.iyu")
+            }
+            else
+            {
+            	uigo(qdq)
+            }
 		}
 		else
 		{
 			sss url =AppUrlJr
 			fw("$JuOS/temp_url/url.jtm",url)
-			uigo(qdq)
+			f(Config != null)
+            {
+            	sss qdq =qdq
+                sss package =AppLj
+                uigo("screen.iyu")
+            }
+            else
+            {
+            	uigo(qdq)
+            }
 		}
 	}
 	else f(sys == "True")
