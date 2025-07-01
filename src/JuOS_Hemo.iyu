@@ -140,6 +140,7 @@ fn system.asystem_t_init()
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
+fr("$System/Config/fillet.sys",fillet)
 t()
 {
   s a = "$JuOS/hemo/桌面"
@@ -205,6 +206,8 @@ t()
   }
   ufnsui()
   {
+  	fr("$System/Config/fillet.sys",fillet)
+      us(list.7,"app_CardcornerRadius",fillet)
     us(6, "visibility", "gone")
     uls(5, list_cz, "list.iyu", -1, -2)
     us(4,"refreshing","false")

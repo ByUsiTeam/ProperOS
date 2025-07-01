@@ -89,7 +89,8 @@ f(type==imagetype||type==imageurl)
   }
 }</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">uycl("#daebeae3",true)
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+uycl("#daebeae3",true)
 //fn qp.qp2()
 //这个是删除大小缩放控制键的
 s id =5

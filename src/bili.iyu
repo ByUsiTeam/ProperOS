@@ -243,13 +243,11 @@ height=-2
 visibility=gone</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">
-/.gvs(1,wv)
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+gvs(1,wv)
 java(ws,wv,"android.webkit.WebView.getSettings")
 java(null,ws,"android.webkit.WebSettings.setBuiltInZoomControls","boolean",true)
 java(null,ws,"android.webkit.WebSettings.setDisplayZoomControls","boolean",false)
-./
-
 
 s color = "#ffffff"
 uycl(color,true)

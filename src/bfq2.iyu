@@ -355,6 +355,7 @@ visibility=gone</ppt>
 </View>
 <UIEventset><eventItme type="loading">fuz("@JuOS/html/VideoPlayer2/VideoPlayer2.zip","index.htm","$System/VideoPlayer2",yz)
 fr("$System/VideoPlayer2/index.htm",html)
+
 f(sss.url != null)
 {
 	sr(html,"{VideoAddress}",sss.url,html)
@@ -369,12 +370,12 @@ else
 us(1,"url","$System/VideoPlayer2/index.htm")
 
 
-/.gvs(1,wv)
+gvs(1,wv)
 java(ws,wv,"android.webkit.WebView.getSettings")
 java(null,ws,"android.webkit.WebSettings.setBuiltInZoomControls","boolean",true)
 java(null,ws,"android.webkit.WebSettings.setDisplayZoomControls","boolean",false)
-./
 
+fn byusi.ztl()
 
 s color = "#ffffff"
 uycl(color,true)

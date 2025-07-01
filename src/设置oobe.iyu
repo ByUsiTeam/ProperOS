@@ -133,6 +133,12 @@ t()
 	{
 		fw("$System/Config/app_start_qdq.sys","true")
 	}
+    //写入默认桌面圆角配置
+    fe("$System/Config/fillet.sys",fillet)
+    f(fillet != true)
+    {
+    	fw("$System/Config/fillet.sys","25dp")
+    }
 	//导入视频播放器
 	fc("@JuOS/src/player/index.html","$System/bfq/index.html",yz_bfq)
 	fc("@JuOS/src/player/mui-player.min.js","$System/bfq/mui-player.min.js",yz_bfq)

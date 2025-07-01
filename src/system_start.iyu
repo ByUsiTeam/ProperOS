@@ -259,7 +259,87 @@ height=-2
 src=17301567</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">
+<View id="26" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|top</ppt>
+<event></event>
+</View>
+<View id="28" did="26" type="LinearLayout">
+<ppt>width=-1
+height=64dp
+orientation=horizontal
+gravity=center
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="29" did="28" type="CardView">
+<ppt>width=100dp
+height=45dp
+app_CardcornerRadius=35dp</ppt>
+<event></event>
+</View>
+<View id="30" did="29" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301542
+background=through</ppt>
+<event><eventItme type="clicki">ug(3,"cangoback",yz_url_dt)
+//
+f(yz_url_dt == "true")
+{
+	us(3,"gobackorforward",-1)
+    us(6,"visibility","gone")
+}
+else f(yz_url_dt == "false")
+{
+	fn tw.tw("无法返回了")
+}</eventItme></event>
+</View>
+<View id="31" did="28" type="CardView">
+<ppt>width=100dp
+height=45dp
+app_CardcornerRadius=35dp</ppt>
+<event></event>
+</View>
+<View id="32" did="31" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301537
+background=through</ppt>
+<event><eventItme type="clicki">us(3,"gobackorforward",1)</eventItme></event>
+</View>
+<View id="35" did="26" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="33" did="35" type="CardView">
+<ppt>width=26dp
+height=26dp
+app_CardcornerRadius=64dp
+app_CardBackgroundColor=#0fffffff</ppt>
+<event><eventItme type="clicki">f(ss.uii == true)
+{
+	us(28,"visibility","visible")
+    ss uii =false
+}
+else f(ss.uii == false)
+{
+	us(28,"visibility","gone")
+    ss uii =true
+}</eventItme></event>
+</View>
+<View id="34" did="33" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301544</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
 uycl("#ff59d8ff",true)
 f(sss.url != null)
 {
@@ -277,9 +357,11 @@ else
      	endutw()
      }
 }
+fn api.hide_btn(3)
 //开启JavaScript交互
 hsas(3,true)
-fn n.ui(1)</eventItme><eventItme type="downkey">f(st_kC == 4)
+fn n.ui(1)
+ss uii =true</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
   ug(3,"cangoback",yz_url_dt)
   //
@@ -297,4 +379,4 @@ addv(1,"app.iyu")
 us(app.7,"visibility","gone")
 us(app.1,"visibility","gone")
 //拟态玻璃效果
-fn byusi.mimicry(18,20,22,24)</eventItme></UIEventset>
+//fn byusi.mimicry(18,20,22,24)</eventItme></UIEventset>

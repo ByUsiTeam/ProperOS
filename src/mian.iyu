@@ -70,7 +70,13 @@ fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
 fe("$boot/init.json",yz)
 f(yz == false)
 {
-  fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
+	fn init.boot_init("init","JuOS_Hemo.iyu","@JuOS/logo/properos.png")
+}
+else
+{
+	fr("$boot/init.json",j)
+    sr(j,"home.iyu","JuOS_Hemo.iyu",boot)
+    fw("$boot/init.json",boot)
 }
 sss lock_verification =null
 //

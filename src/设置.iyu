@@ -426,7 +426,8 @@ else f(xz == "false")
 height=55dp
 layout_marginTop=5dp
 layout_marginLeft=5dp
-layout_marginRight=5dp</ppt>
+layout_marginRight=5dp
+background=#ae000000</ppt>
 <event></event>
 </View>
 <View id="103" did="102" type="LinearLayout">
@@ -480,7 +481,9 @@ checked=false</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">ug(108,"checked",xz)
+<event><eventItme type="clicki">tws(v, "功能不在支持", 0)
+/.
+ug(108,"checked",xz)
 fn byusi.qt(102)
 f(xz == "true")
 {
@@ -499,7 +502,8 @@ else f(xz == "false")
   fr("$boot/init.json",init)
   sr(init,"JuOS_Hemo.iyu","home.iyu",init_data)
   fw("$boot/init.json",init_data)
-}</eventItme></event>
+}
+./</eventItme></event>
 </View>
 <View id="60" did="20" type="RelativeLayout">
 <ppt>width=-1
@@ -756,6 +760,70 @@ background=through</ppt>
 //fn tw.tw2("ProperOS无法正常检查更新",1)
 fn byusi.qt(84)</eventItme></event>
 </View>
+<View id="125" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="126" did="125" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="127" did="126" type="RoundImageView">
+<ppt>width=44dp
+height=44dp
+src=$JuOS/ICON/ic_settings_display.png
+layout_marginLeft=15dp</ppt>
+<event></event>
+</View>
+<View id="128" did="126" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="129" did="128" type="TextView">
+<ppt>width=-1
+height=-2
+text=设置桌面图标圆角大小
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=12sp</ppt>
+<event></event>
+</View>
+<View id="131" did="128" type="TextView">
+<ppt>width=-2
+height=-2
+text=dp
+typeface=@src/ttf/acbt80.ttf
+textColor=#ff000000
+textSize=9sp</ppt>
+<event></event>
+</View>
+<View id="130" did="128" type="SeekBar">
+<ppt>width=-1
+height=-1
+background=
+max=64
+progress=0
+fadingEdgeLength=10
+overScrollMode=always
+scrollbars=vertical</ppt>
+<event><eventItme type="onprogresschanged2">ug(st_vId,"progress",jd)
+s bl ="1"
+s(jd * bl,dx)
+us(131,"text",dx+"dp")</eventItme><eventItme type="onstoptrackingtouch">ug(st_vId,"progress",jd)
+fw("$System/Config/fillet.sys",jd+"dp")
+utw(null,"","注意重启生效","稍后重启",false,v)
+{
+	endutw()
+}</eventItme></event>
+</View>
 <View id="74" did="20" type="CardView">
 <ppt>width=-1
 height=200dp
@@ -819,8 +887,9 @@ else f(app_start_qdq == "false")
 }
 else
 {
-  us(43,"checked","true")
+  us(43,"checked","false")
 }
+fw("$System/Config/home.sys","false")
 fr("$System/Config/home.sys",home)
 f(home == "true")
 {
@@ -840,6 +909,20 @@ fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
 {
   us(66,"visibility","visible")
+}
+//
+fr("$System/Config/fillet.sys",fillet)
+f(fillet != null)
+{
+	sj(fillet,null,"dp",fillet)
+    us(130,"progress",fillet)
+    us(131,"text",fillet+"dp")
+}
+else
+{
+	fw("$System/Config/fillet.sys","25dp")
+	us(130,"progress","25")
+    us(131,"text","25dp")
 }
 //
 fn api.hide_btn(73)

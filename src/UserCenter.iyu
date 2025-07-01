@@ -144,7 +144,18 @@ fn byusi.qt(50)
 sss url =url
 uigo("system_start.iyu")</eventItme></event>
 </View>
-<View id="16" did="15" type="CardView">
+<View id="63" did="15" type="ScrollView">
+<ppt>width=-1
+height=-2</ppt>
+<event></event>
+</View>
+<View id="64" did="63" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="16" did="64" type="CardView">
 <ppt>width=-1
 height=55dp
 app_CardcornerRadius=8dp
@@ -184,7 +195,7 @@ textIsSelectable=true
 textColorHighlight=#6a4561ff</ppt>
 <event></event>
 </View>
-<View id="21" did="15" type="CardView">
+<View id="21" did="64" type="CardView">
 <ppt>width=-1
 height=55dp
 app_CardcornerRadius=8dp
@@ -227,7 +238,7 @@ textIsSelectable=true
 textColorHighlight=#6a4561ff</ppt>
 <event></event>
 </View>
-<View id="58" did="15" type="CardView">
+<View id="58" did="64" type="CardView">
 <ppt>width=-1
 height=55dp
 app_CardcornerRadius=8dp
@@ -268,7 +279,7 @@ textIsSelectable=true
 textColorHighlight=#6a4561ff</ppt>
 <event></event>
 </View>
-<View id="26" did="15" type="CardView">
+<View id="26" did="64" type="CardView">
 <ppt>width=-1
 height=55dp
 app_CardcornerRadius=8dp
@@ -309,7 +320,7 @@ textIsSelectable=true
 textColorHighlight=#6a4561ff</ppt>
 <event></event>
 </View>
-<View id="31" did="15" type="CardView">
+<View id="31" did="64" type="CardView">
 <ppt>width=-1
 height=55dp
 app_CardcornerRadius=8dp
@@ -351,7 +362,7 @@ textColorHighlight=#6a4561ff
 maxLines=2</ppt>
 <event></event>
 </View>
-<View id="36" did="15" type="CardView">
+<View id="36" did="64" type="CardView">
 <ppt>width=-1
 height=55dp
 app_CardcornerRadius=8dp
@@ -392,7 +403,7 @@ textIsSelectable=true
 textColorHighlight=#6a4561ff</ppt>
 <event></event>
 </View>
-<View id="41" did="15" type="CardView">
+<View id="41" did="64" type="CardView">
 <ppt>width=-1
 height=55dp
 app_CardcornerRadius=8dp

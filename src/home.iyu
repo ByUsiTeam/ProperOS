@@ -185,6 +185,7 @@ us(9,"visibility","visible")
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
+/.
 t()
 {
   s a = "$JuOS/hemo/桌面"
@@ -254,6 +255,12 @@ t()
     us(6,"Refreshing","false")
     us(9,"visibility","gone")
   }
+}
+./
+utw("$JuOS/ICON/foreground.png","","抱歉，该界面已不在支持使用","确定切换桌面",true,v)
+{
+	uigo("JuOS_Hemo.iyu")
+    end()
 }</eventItme><eventItme type="menu">case 设置:
 uigo("设置.iyu")
 break
