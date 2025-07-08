@@ -96,6 +96,25 @@ f(y == "true")
 
 end fn
 
+fn update2()
+
+t()
+{
+	hs("https://gitee.com/properos/properos/raw/master/update.json",json)
+    json(json,json)
+    json(json,"get","version",版本)
+    json(json,"get","title",标题)
+    json(json,"get","introduction",更新简介)
+    json(json,"get","submitter",更新提交者)
+    json(json,"get","url",更新链接)
+    ufnsui()
+    {
+    	
+    }
+}
+
+end fn
+
 fn install(jspk)
 
 f(jspk != null)
@@ -330,5 +349,90 @@ end fn
 fn asystem_t_ts(通知ID)
 
 fn GGExpanded.取消通知(通知ID)
+
+end fn
+
+fn setup(id)
+
+fuzs("@JuOS/sdk/player.bysi.sdk","%.data/html_video",a)
+fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
+//验证引导文件是否存在，不存在自动复制默认引导文件
+fe("$boot/init.json",yz)
+f(yz == false)
+{
+	fn init.boot_init("init","JuOS_Hemo.iyu","@JuOS/logo/properos.png")
+}
+else
+{
+	fr("$boot/init.json",j)
+    sr(j,"home.iyu","JuOS_Hemo.iyu",boot)
+    fw("$boot/init.json",boot)
+}
+sss lock_verification =null
+//
+fe("$System/Config/Pwd/pwd_lcok",pwd_lcok)
+f(pwd_lcok == false)
+{
+	fw("$System/Config/Pwd/pwd_lcok","1")
+}
+
+fr("$System/Config/Qddh.sys",qddh)
+f(qddh == "true")
+{
+  fr("$System/Config/Qddh/i.cfg",iid)
+  ss(iid+"/src/index.html",html)
+  us(6,"url",html)
+}
+else
+{
+  fw("$System/Config/Qddh.sys","false")
+}
+//
+//加载版本验证文件的内容
+fr("@version.txt",st)
+fr("$JuOS/v/v.cfg",v)
+//初始化图片加载器
+loadjar("QmLoader",sss.QmLoader)
+//初始化
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+javanew(builder,Builder,"android.content.Context",activity)
+javax(null,null,Loader,"init",Builder,builder)
+//应用安装侧载管理
+fr("$System/Config/Application_side_load.sys",asls)
+f(asls == "true")
+{
+	fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+}
+else f(asls == "false")
+{
+	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}
+else
+{
+	fr("$System/Config/Application_side_load.sys","false")
+    fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}
+fe("$System/Config/oobe.sys",yz)
+f(yz == true)
+{
+	ufnsui()
+    {
+    	uigo("mian2.iyu")
+        lan(0)
+        end()
+    }
+}
+else f(yz == false)
+{
+	uigo("oobe.iyu")
+    lan(0)
+    end()
+}
+else
+{
+    fn tw.tw2("错误",1)
+    end()
+}
 
 end fn

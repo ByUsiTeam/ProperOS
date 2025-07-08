@@ -365,7 +365,7 @@ gravity=left|center</ppt>
 <View id="37" did="36" type="RoundImageView">
 <ppt>width=45dp
 height=45dp
-src=17301567
+src=$JuOS/ICON/ic_settings_storage.png
 layout_marginLeft=5dp</ppt>
 <event></event>
 </View>
@@ -419,6 +419,82 @@ else f(xz == "false")
   us(43,"checked","true")
   fw("$System/Config/app_start_qdq.sys","true")
   fn tw.tw("已启动新启动器")
+}</eventItme></event>
+</View>
+<View id="132" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="133" did="132" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="134" did="133" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/ic_settings_application_and_service.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="135" did="133" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="136" did="135" type="TextView">
+<ppt>width=-2
+height=-2
+text=应用侧载管理
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="137" did="135" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="138" did="137" type="RadioButton">
+<ppt>width=-2
+height=-2
+text=
+layout_marginRight=5dp
+checked=false</ppt>
+<event></event>
+</View>
+<View id="139" did="132" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ug(138,"checked",xz)
+fn byusi.qt(132)
+f(xz == "true")
+{
+	us(138,"checked","false")
+    fw("$System/Config/Application_side_load.sys","false")
+    fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+    fn tw.tw("已关闭应用侧载")
+}
+else f(xz == "false")
+{
+	us(138,"checked","true")
+    fw("$System/Config/Application_side_load.sys","true")
+    fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+    fn tw.tw("已开启应用侧载")
 }</eventItme></event>
 </View>
 <View id="102" did="20" type="RelativeLayout">
@@ -924,6 +1000,23 @@ else
 	us(130,"progress","25")
     us(131,"text","25dp")
 }
+fr("$System/Config/Application_side_load.sys",asls)
+f(asls == "true")
+{
+	us(138,"checked","true")
+    fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+}
+else f(asls == "false")
+{
+	us(138,"checked","false")
+    fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}
+else
+{
+	fw("$System/Config/Application_side_load.sys","false")
+    us(138,"checked","false")
+    fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}
 //
 fn api.hide_btn(73)
 //检查更新界面载入
@@ -943,8 +1036,6 @@ urvw(16)
 nvw(mBs,15)
 nvw(b,mBs)
 //SVG图片
-fr("$JuOS/ICON/ic_settings_application_and_service.svg",svg)
-fn lib.svg(svg,37)
 fr("$JuOS/ICON/ic_settings_display.svg",svg)
 fn lib.svg(svg,55)
 fr("$JuOS/ICON/ic_settings_about.svg",svg)

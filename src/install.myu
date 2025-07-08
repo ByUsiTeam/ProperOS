@@ -56,6 +56,7 @@ fn a(url)
 syso(url)
 f(url != null)
 {
+	sss install_lock =true
   fn tw.tw("已经开始下载了")
   t()
   {
@@ -72,12 +73,12 @@ f(url != null)
     s data = "abcde123"
     //变量v为赋值变量，为下载对象
     hdda(url,dir,name,title,icon,notsohw,data,v)
-    s jsq="0"
+    sss jsq="0"
     ufnsui()
     {
       us(app.1,"visibility","visible")
     }
-    w(jsq &lt; "1")
+    w(sss.jsq &lt; "1")
     {
       hddg(v,"downloadpercentage",b)
       ufnsui()
@@ -86,10 +87,11 @@ f(url != null)
       }
       f(b == "100")
       {
-        s jsq ="1"
+        sss jsq ="1"
         syso(b)
         ufnsui()
         {
+        	sss install_lock =null
           us(app.7,"visibility","visible")
         }
       }

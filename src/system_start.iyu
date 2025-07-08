@@ -365,14 +365,23 @@ ss uii =true</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
   ug(3,"cangoback",yz_url_dt)
   //
-  f(yz_url_dt == "true")
+  f(sss.install_lock == null)
   {
-    us(3,"gobackorforward",-1)
-    us(6,"visibility","gone")
+  	f(yz_url_dt == "true")
+      {
+      	us(3,"gobackorforward",-1)
+          us(6,"visibility","gone")
+      }
+      else f(yz_url_dt == "false")
+      {
+      	end()
+      }
   }
-  else f(yz_url_dt == "false")
+  else
   {
-    end()
+  	sss jsq ="1"
+  	us(app.1,"visibility","gone")
+      sss install_lock =null
   }
 }</eventItme><eventItme type="loadingComplete">fn api.hide_btn(3)
 addv(1,"app.iyu")

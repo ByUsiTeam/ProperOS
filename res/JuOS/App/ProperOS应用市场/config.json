@@ -1,0 +1,18 @@
+{
+  //定义显示的logo
+  "icon": "src/icon.png",
+  //应用大标题
+  "title": "ProperOS应用市场",
+  //背景颜色
+  "background": "#ffffffff",
+  "text": {
+    //大标题字体，可以使用 false 不定义
+    "font": false,
+    //定义大标题字体颜色，可以使用 false 来不定义
+    "textColor": "#ff000000",
+    //定义大标题字体大小，必须是整数，可以使用 false 来取消定义
+    "textSize": false
+  },
+  //配置在启动屏的停留时长，整数，单位毫秒
+  "pause": 1200
+}

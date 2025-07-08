@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>系统启动</title>
+    <style>
+        /* 内置Poppins和Montserrat字体样式 */
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            src: local('Poppins Medium'), local('Poppins-Medium');
+        }
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 800;
+            src: local('Poppins ExtraBold'), local('Poppins-ExtraBold');
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Montserrat Regular'), local('Montserrat-Regular');
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Montserrat Bold'), local('Montserrat-Bold');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+        }
+        
+        #screen1 {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        #screen2 {
+            background-color: #000000;
+            color: #ffffff;
+            display: none;
+        }
+        
+        /* 第一屏样式 */
+        .first-screen-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-container {
+            width: 60vmin;
+            height: 60vmin;
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3vmin;
+        }
+        
+        .logo-container img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        
+        .text-content {
+            text-align: center;
+            position: absolute;
+            bottom: 8vmin;
+            width: 100%;
+        }
+        
+        .team-name {
+            font-size: 4vmin;
+            font-weight: bold;
+            margin-bottom: 2vmin;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+        
+        .powered-by {
+            font-size: 3vmin;
+            opacity: 0.7;
+        }
+        
+        /* 第二屏圆角卡片样式 */
+        .card-container {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-radius: 20px;
+            width: 85vw;
+            max-width: 420px;
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transform: translate(100vw, 100vh) scale(0.8);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-container.show {
+            transform: translate(0, 0) scale(1);
+            opacity: 1;
+        }
+        
+        /* 加载动画容器 */
+        .loader-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 20px;
+        }
+        
+        /* 加载动画 */
+        .loader {
+            border: 6px solid rgba(255, 255, 255, 0.15);
+            border-top: 6px solid #ffffff;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            animation: spin 1s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* 第二屏内容 */
+        .second-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.6s ease 0.3s;
+        }
+        
+        .second-content.show {
+            opacity: 1;
+        }
+        
+        .second-logo {
+            width: 35vmin;
+            height: 35vmin;
+            max-width: 180px;
+            max-height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .second-logo img {
+            width: 75%;
+            height: 75%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        
+        .os-name {
+            font-size: 7vmin;
+            font-weight: 800;
+            color: white;
+            margin-top: 15px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 备用字体设置 */
+        @supports not (font-family: 'Poppins') {
+            .team-name, .os-name {
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 第一屏 -->
+    <div id="screen1" class="screen">
+        <div class="first-screen-content">
+            <div class="logo-container">
+                <img src="byusi.png" alt="ByUsi Logo" id="byusi-logo">
+            </div>
+            <div class="text-content">
+                <div class="team-name">[ByUsi软件]</div>
+                <div class="powered-by">Powered by OpenJuOS</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 第二屏 -->
+    <div id="screen2" class="screen">
+        <div class="card-container" id="cardContainer">
+            <!-- 加载动画容器 -->
+            <div class="loader-container" id="loaderContainer">
+                <div class="loader" id="loader"></div>
+            </div>
+            
+            <!-- 第二屏内容 -->
+            <div class="second-content" id="secondContent">
+                <div class="second-logo">
+                    <img src="properos.png" alt="ProperOS Logo" id="properos-logo">
+                </div>
+                <p>正在启动基础组件</p>
+                <div class="loader" id="loader"></div>
+                <div class="os-name">ProperOS</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 确保所有资源加载完成
+        window.addEventListener('load', function() {
+            // 显示第一屏
+            document.getElementById('screen1').style.display = 'flex';
+            
+            // 3秒后切换到第二屏
+            setTimeout(function() {
+                // 显示第二屏和卡片容器
+                document.getElementById('screen2').style.display = 'flex';
+                
+                // 显示加载动画
+                document.getElementById('loaderContainer').style.display = 'flex';
+                
+                // 预加载第二屏图片
+                var img = new Image();
+                img.src = 'properos.png';
+                
+                img.onload = function() {
+                    // 图片加载完成后，显示内容并启动滑入动画
+                    setTimeout(function() {
+                        // 启动卡片滑入动画
+                        document.getElementById('cardContainer').classList.add('show');
+                        
+                        // 隐藏加载动画
+                        setTimeout(function() {
+                            document.getElementById('loaderContainer').style.display = 'none';
+                            
+                            // 显示内容
+                            document.getElementById('secondContent').classList.add('show');
+                            
+                            // 隐藏第一屏
+                            document.getElementById('screen1').style.opacity = '0';
+                            setTimeout(function() {
+                                document.getElementById('screen1').style.display = 'none';
+                                
+                                // 所有动画完成后等待4秒，然后执行iapp.fn
+                                setTimeout(function() {
+                                    if(typeof iapp !== 'undefined' && typeof iapp.fn === 'function') {
+                                        iapp.fn("system.setup('1')");
+                                    } else {
+                                        console.log("iapp.fn('system.setup()') would be called here");
+                                    }
+                                }, 4000); // 额外等待4秒
+                                
+                            }, 500);
+                        }, 300);
+                    }, 100);
+                };
+                
+                // 如果图片加载失败也继续切换
+                img.onerror = function() {
+                    document.getElementById('cardContainer').classList.add('show');
+                    setTimeout(function() {
+                        document.getElementById('loaderContainer').style.display = 'none';
+                        document.getElementById('secondContent').classList.add('show');
+                        document.getElementById('screen1').style.display = 'none';
+                        
+                        // 所有动画完成后等待4秒，然后执行iapp.fn
+                        setTimeout(function() {
+                            if(typeof iapp !== 'undefined' && typeof iapp.fn === 'function') {
+                                iapp.fn("system.setup('1')");
+                            } else {
+                                console.log("iapp.fn('system.setup()') would be called here");
+                            }
+                        }, 4000); // 额外等待4秒
+                        
+                    }, 300);
+                };
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

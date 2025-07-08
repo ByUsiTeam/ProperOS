@@ -75,7 +75,23 @@ loadjar("QmLoader",sss.QmLoader)
 cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
 cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
 javanew(builder,Builder,"android.content.Context",activity)
-javax(null,null,Loader,"init",Builder,builder)</eventItme><eventItme type="downkey">//锁定返回
+javax(null,null,Loader,"init",Builder,builder)
+//应用安装侧载管理
+//fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+fr("$System/Config/Application_side_load.sys",asls)
+f(asls == "true")
+{
+	fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+}
+else f(asls == "false")
+{
+	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}
+else
+{
+	fr("$System/Config/Application_side_load.sys","false")
+    fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}</eventItme><eventItme type="downkey">//锁定返回
 f(st_kC==4)
 {
   

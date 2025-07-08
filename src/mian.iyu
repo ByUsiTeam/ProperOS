@@ -1,111 +1,23 @@
 <View id="1" did="0" type="RelativeLayout">
 <ppt>width=-1
-height=-1
-background=white</ppt>
+height=-1</ppt>
 <event></event>
 </View>
-<View id="2" did="1" type="LinearLayout">
+<View id="2" did="1" type="WebView">
 <ppt>width=-1
 height=-1
-orientation=vertical
-gravity=center</ppt>
-<event></event>
+url=@system/StartupScreen/index.html</ppt>
+<event><eventItme type="onreceivederror">us(st_vId,"url","@system/StartupScreen/index.html")</eventItme></event>
 </View>
-<View id="3" did="2" type="ImageView">
-<ppt>width=-2
-height=-2
-src=@JuOS/logo/BySi_logo.png</ppt>
-<event></event>
-</View>
-<View id="4" did="1" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=vertical
-gravity=bottom|center</ppt>
-<event></event>
-</View>
-<View id="8" did="4" type="LinearLayout">
-<ppt>width=-1
-height=45dp
-orientation=horizontal
-gravity=center</ppt>
-<event></event>
-</View>
-<View id="9" did="8" type="ImageView">
-<ppt>width=35dp
-height=35dp
-src=@JuOS/logo/BySi_logo.png</ppt>
-<event></event>
-</View>
-<View id="10" did="8" type="TextView">
-<ppt>width=-2
-height=-2
-text=ByUsi软件
-typeface=@src/ttf/acbt80.ttf
-textColor=#ff000000</ppt>
-<event></event>
-</View>
-<View id="7" did="4" type="LinearLayout">
-<ppt>width=-1
-height=-2
-orientation=vertical
-gravity=center</ppt>
-<event></event>
-</View>
-<View id="6" did="7" type="TextView">
-<ppt>width=-1
-height=-1
-text=Powered by OpenJuOS
-textColor=#ff000000
-typeface=@JuOS/src/ttf/acbt80.ttf
-textSize=18sp
-layout_marginBottom=15dp
-gravity=center</ppt>
-<event></event>
-</View>
-<UIEventset><eventItme type="loading">fn byusi.ztl()
-fuzs("@JuOS/sdk/player.bysi.sdk","%.data/html_video",a)
-fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
-//验证引导文件是否存在，不存在自动复制默认引导文件
-fe("$boot/init.json",yz)
-f(yz == false)
+<UIEventset><eventItme type="loading">fn byusi.ztl()</eventItme><eventItme type="loadingComplete">has(2,true)
+t()
 {
-	fn init.boot_init("init","JuOS_Hemo.iyu","@JuOS/logo/properos.png")
-}
-else
+	stop(6000)
+    ufnsui()
+    {
+    	fn system.setup(1)
+    }
+}</eventItme><eventItme type="downkey">f(st_eA == 4)
 {
-	fr("$boot/init.json",j)
-    sr(j,"home.iyu","JuOS_Hemo.iyu",boot)
-    fw("$boot/init.json",boot)
-}
-sss lock_verification =null
-//
-fe("$System/Config/Pwd/pwd_lcok",pwd_lcok)
-f(pwd_lcok == false)
-{
-	fw("$System/Config/Pwd/pwd_lcok","1")
-}</eventItme><eventItme type="loadingComplete">t()
-{
-  stop(2000)
-  fe("$System/Config/oobe.sys",yz)
-  f(yz == true)
-  {
-  	ufnsui()
-      {
-      	uigo("mian2.iyu")
-          lan(0)
-          end()
-      }
-  }
-  else f(yz == false)
-  {
-  	uigo("oobe.iyu")
-      lan(0)
-      end()
-  }
-  else
-  {
-  	fn tw.tw2("错误",1)
-      end()
-  }
+	
 }</eventItme></UIEventset>
