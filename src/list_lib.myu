@@ -1,0 +1,79 @@
+fn home()
+
+us(6,"visibility","visible")
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(10,data,-1,true)
+fn lib.endutw()
+t()
+{
+  s a = "$JuOS/hemo/桌面"
+  fl(a, false, home_list)
+  aslist(list_cz)
+  for(sc; home_list)
+  {
+    s img = "@fail.xml"
+    s name = sc
+    f(sc *? ".app")
+    {
+      ss("$JuOS/hemo/桌面/"+sc, ml)
+      fr(ml, app_link_sc)
+      sj(app_link_sc, "AppTb=", "=AppTb", img)
+      f(img ?* "$sys/")
+      {
+        sr(img, "$sys/", "@", img)
+      }
+      else f(img ?* "%@")
+      {
+        sr(img, "%@", "$", img)
+      }
+      else
+      {
+        sj(app_link_sc, "AppLj=", "=AppLj", appml)
+        sr(appml, "%g", "$App/", aml)
+        ss(aml + img, img)
+      }
+      sj(sc, null, ".app", name)
+    }
+    else
+    {
+      f(sc *? ".mp4")
+      {
+        //s img = "@JuOS/src/img/zy/mp4.png"
+        ss("$JuOS/hemo/桌面/"+sc,a)
+        fdir(a,a)
+        call(a,"mjava","awzx2.get",a,"1")
+        s img =a
+      }
+      else f(sc *? ".m4a")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".mp3")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".flac")
+      {
+        s img = "@JuOS/src/Manager/6e.png"
+      }
+      else f(sc *? ".pdf")
+      {
+        s img = "@JuOS/src/Manager/wE.png"
+      }
+      else f(sc *? ".jush")
+      {
+        s img = "@ic_play_pause_regular.png"
+      }
+    }
+    ula(list_cz, 10=img, 14=name)
+  }
+  ufnsui()
+  {
+    us(6, "visibility", "gone")
+    uls(5, list_cz, "list.iyu", -1, -2)
+    us(4,"refreshing","false")
+  }
+}
+
+end fn

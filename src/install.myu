@@ -22,6 +22,7 @@ t()
       ufnsui()
       {
         fn tw.tw(tsc)
+        us(app.18,"text","➤ 安装成功")
       }
     }
     else
@@ -29,6 +30,7 @@ t()
       ufnsui()
       {
         fn tw.tw("资源文件解压失败")
+        us(app.18,"text","➤ 资源文件解压失败")
       }
     }
   }
@@ -38,6 +40,7 @@ t()
     {
       //fn tw.tw2("主要索引文件解压失败或者没有签名jupk文件",1)
       utw(null,"","主要索引文件解压失败或者没有签名jupk文件\n请去官方工具进行jupk签名：https://jupk-sign.byusi.cn/","打开官方工具","确定",true,v)
+      us(app.18,"text","➤ 主要索引文件解压失败或者没有签名jupk文件\n请去官方工具进行jupk签名：https://jupk-sign.byusi.cn/","打开官方工具")
       {
         sss url ="https://jupk-sign.byusi.cn/"
         uigo("system_start.iyu")
@@ -83,7 +86,9 @@ f(url != null)
       hddg(v,"downloadpercentage",b)
       ufnsui()
       {
-        us(app.6,"progress",b)
+      	us(app.18,"text","➤ 软件下载中...")
+      	us(app.17,"text",b+"%")
+          us(app.6,"progress",b)
       }
       f(b == "100")
       {
@@ -91,8 +96,9 @@ f(url != null)
         syso(b)
         ufnsui()
         {
+        	us(app.18,"text","➤ 软件下载成功")
         	sss install_lock =null
-          us(app.7,"visibility","visible")
+            us(app.8,"visibility","visible")
         }
       }
       else

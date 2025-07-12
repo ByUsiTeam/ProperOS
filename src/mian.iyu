@@ -7,9 +7,15 @@ height=-1</ppt>
 <ppt>width=-1
 height=-1
 url=@system/StartupScreen/index.html</ppt>
-<event><eventItme type="onreceivederror">us(st_vId,"url","@system/StartupScreen/index.html")</eventItme></event>
+<event><eventItme type="onreceivederror">us(st_vId,"url","$System/StartupScreen/index.html")</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">fn byusi.ztl()</eventItme><eventItme type="loadingComplete">has(2,true)
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+fe("$System/StartupScreen/index.html",yanz)
+f(yanz == false)
+{
+	fuzs("@system/StartupScreen/StartupScreen.zip","$System/StartupScreen/",false,yanz)
+	us(2,"url","$System/StartupScreen/index.html")
+}</eventItme><eventItme type="loadingComplete">has(2,true)
 t()
 {
 	stop(6000)

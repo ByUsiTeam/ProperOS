@@ -497,6 +497,53 @@ else f(xz == "false")
     fn tw.tw("已开启应用侧载")
 }</eventItme></event>
 </View>
+<View id="140" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+background=#ae000000</ppt>
+<event></event>
+</View>
+<View id="141" did="140" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="142" did="141" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/ic_settings_multi_device_collaboration_svg.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="143" did="141" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="144" did="143" type="TextView">
+<ppt>width=-2
+height=-2
+text=自定义启动动画
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="147" did="140" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">tws(v,"敬请期待",0)</eventItme></event>
+</View>
 <View id="102" did="20" type="RelativeLayout">
 <ppt>width=-1
 height=55dp

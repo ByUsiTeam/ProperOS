@@ -5,14 +5,6 @@ height=-1
 background=#daebeae3</ppt>
 <event></event>
 </View>
-<View id="2" did="1" type="WebView">
-<ppt>width=-1
-height=-1
-background=through
-//visibility=gone
-url=%JuOS/img/20210704170635_218ac.jpg</ppt>
-<event></event>
-</View>
 <View id="3" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -112,10 +104,10 @@ syso(st_bT)</eventItme></event>
 height=-1
 orientation=vertical
 gravity=center
-background=#ffff0000
+background=through
 visibility=visible</ppt>
 <event><eventItme type="clicki">us(4,"refreshing","true")
-fn list_lib.hemo()
+fn list_lib.home()
 us(4,"refreshing","false")</eventItme></event>
 </View>
 <View id="10" did="6" type="ImageView">
@@ -128,7 +120,7 @@ src=@fail.xml</ppt>
 <ppt>width=-2
 height=-2
 text=如果长期我已加载出首界面列表，请点击该界面进行首界面列表刷新
-textColor=#ffffffff
+textColor=#ffff0000
 typeface=@src/ttf/acbt80.ttf
 textSize=34sp
 gravity=center</ppt>
@@ -216,19 +208,6 @@ t()
 //-_-_-_-_-_-_-_-_-_-_-
 s id =2
 fn api.hide_btn(id)
-//-_-_-_-_-_-_-_-_-_-_-
-fr("$JuOS/Config/wallpaper/wp.gif.config",list)
-sj(list,"[system]","[/system]",list_2)
-f(list_2 ? ".gif")
-{
-  us(2,"visibility","visible")
-  us(1,"background","through")
-  us(2,"url","$JuOS/Config/wallpaper/wp.gif")
-}
-else
-{
-  us(2,"visibility","gone")
-}
 fr("$System/Config/Update.sys",Update)
 f(Update == "true")
 {

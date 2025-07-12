@@ -185,10 +185,16 @@ fn byusi.qt(50)
 sss url =url
 uigo("system_start.iyu")</eventItme></event>
 </View>
-<View id="64" did="15" type="LinearLayout">
+<View id="72" did="15" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="64" did="72" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=vertical</ppt>
+orientation=vertical
+gravity=center</ppt>
 <event></event>
 </View>
 <View id="16" did="64" type="CardView">
@@ -479,63 +485,6 @@ textSize=18sp
 textIsSelectable=true
 textColorHighlight=#6a4561ff</ppt>
 <event></event>
-</View>
-<View id="52" did="15" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=vertical
-gravity=bottom</ppt>
-<event></event>
-</View>
-<View id="51" did="52" type="CardView">
-<ppt>width=-1
-height=65dp
-layout_marginBottom=10dp
-layout_marginRight=8dp
-layout_marginLeft=8dp
-app_CardcornerRadius=8dp</ppt>
-<event></event>
-</View>
-<View id="53" did="51" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=horizontal
-gravity=center</ppt>
-<event></event>
-</View>
-<View id="54" did="53" type="CardView">
-<ppt>width=100dp
-height=45dp</ppt>
-<event></event>
-</View>
-<View id="55" did="54" type="Button">
-<ppt>width=-1
-height=-1
-text=签到
-background=#ff3863ff
-textColor=#ffffffff
-typeface=@src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/qd.php?uid="+sss.uid+"&uuid="+sss.uuid,url)
-sss url =url
-uigo("start_app.iyu")
-fn byusi.qt(54)</eventItme></event>
-</View>
-<View id="56" did="53" type="CardView">
-<ppt>width=100dp
-height=45dp
-layout_marginLeft=10dp</ppt>
-<event></event>
-</View>
-<View id="57" did="56" type="Button">
-<ppt>width=-1
-height=-1
-text=退出登录
-background=#ffff0000
-textColor=#ffffffff
-typeface=@src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="clicki">fd("$JuOS/data/User/data.json",yz)
-fn byusi.qt(56)
-end()</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn n.ui(1)
