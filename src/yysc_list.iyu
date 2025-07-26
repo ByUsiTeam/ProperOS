@@ -78,24 +78,24 @@ syso(uid_mc)
 //tws(v,uid_mc,0)
 f(uid_mc != "null")
 {
-  sss yysc_url =uid_mc
-  syso(sss.yysc_url)
-  t()
-  {
-    hs(sss.yysc_url,jsoj)
-    time(4,ss.y)
-    sss ytv =ss.y
-    ss("$data/yysc/"+ss.y+".json",ut)
-    fw(ut,jsoj)
-    ufnsui()
-    {
-      uigo("yysc-xq.iyu")
-    }
-  }
+	sss yysc_url =uid_mc
+	syso(sss.yysc_url)
+	t()
+	{
+		hs(sss.yysc_url,jsoj)
+		time(4,ss.y)
+		sss ytv =ss.y
+		ss("$data/yysc/"+ss.y+".json",ut)
+		fw(ut,jsoj)
+		ufnsui()
+		{
+			uigo("yysc-xq.iyu")
+		}
+	}
 }
 else
 {
-  fn tw.tw2("请检查应用是否正常",2)
+	fn tw.tw2("请检查应用是否正常",2)
 }</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">ulag(st_vW,-3,imageUrl)

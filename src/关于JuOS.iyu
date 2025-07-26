@@ -64,11 +64,11 @@ layout_marginTop=8dp</ppt>
 height=-1</ppt>
 <event><eventItme type="clicki">utw(null,"开源协议相关","开源协议为 MIT 协议","查看协议","关闭",true,v)
 {
-  hws("https://gitee.com/byusi/properos/blob/master/LICENSE")
+	hws("https://gitee.com/byusi/properos/blob/master/LICENSE")
 }
 else
 {
-  endutw()
+	endutw()
 }</eventItme></event>
 </View>
 <View id="63" did="62" type="LinearLayout">
@@ -108,11 +108,11 @@ layout_marginTop=8dp</ppt>
 height=-1</ppt>
 <event><eventItme type="clicki">utw(null,"开源协议相关","开源协议为 MIT 协议","查看协议","关闭",true,v)
 {
-  hws("https://gitee.com/properos/properos/blob/master/LICENSE")
+	hws("https://gitee.com/properos/properos/blob/master/LICENSE")
 }
 else
 {
-  endutw()
+	endutw()
 }</eventItme></event>
 </View>
 <View id="28" did="27" type="LinearLayout">
@@ -251,19 +251,19 @@ background=through</ppt>
 fn byusi.qt(14)
 f(yz != "true")
 {
-  f(ss.djcs &gt; "11")
-  {
-    fn tw.tw("已开启更多设置设置项")
-    fw("$System/Config/gduoshez.sys","true")
-  }
-  else
-  {
-    s(ss.djcs + "1",ss.djcs)
-  }
+	f(ss.djcs &gt; "11")
+	{
+		fn tw.tw("已开启更多设置设置项")
+		fw("$System/Config/gduoshez.sys","true")
+	}
+	else
+	{
+		s(ss.djcs + "1",ss.djcs)
+	}
 }
 else
 {
-  fn tw.tw2("你已经开启该选项了，不要在开启了",1)
+	fn tw.tw2("你已经开启该选项了，不要在开启了",1)
 }</eventItme></event>
 </View>
 <View id="20" did="3" type="CardView">
@@ -359,11 +359,11 @@ background=through</ppt>
 <event><eventItme type="clicki">fn byusi.qt(32)
 utw(null,"","是否访问：https://gitee.com/properos/properos/releases","是","否",false,v)
 {
-  hws("https://gitee.com/properos/properos/releases")
+	hws("https://gitee.com/properos/properos/releases")
 }
 else
 {
-  endutw()
+	endutw()
 }</eventItme></event>
 </View>
 <View id="48" did="3" type="CardView">
@@ -507,12 +507,12 @@ background=through</ppt>
 <event><eventItme type="clicki">fn byusi.qt(38)
 utw(null,"","支持官方.iyu","关闭","点击赞助码可以保存赞助码",true,v)
 {
-  endutw()
+	endutw()
 }
 else
 {
-  fn tw.tw("点我并不会保存图片，点击图片才会保存")
-  endutw()
+	fn tw.tw("点我并不会保存图片，点击图片才会保存")
+	endutw()
 }</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn n.ui(1)

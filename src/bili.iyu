@@ -167,40 +167,40 @@ ug(3,"text",a)
 us(24,"visibility",0)
 t()
 {
-  ufnsui()
-  {
-    hsas(22,true)
-    us(22,"url",a)
-    s 处理="javascript:function mk(){iapp.s("ss.视频",document.getElementsByTagName('video')[0].src);}"
-    t()
-    {
-      w(true)
-      {
-        ufnsui()
-        {
-          us(22,"url",处理)
-        }
-        stop(500)
-        ufnsui()
-        {
-          has(22,"mk()")
-        }
-        f(ss.视频!=null)
-        {
-          break
-        }
-      }
-      ufnsui()
-      {
-        us(3,"text",ss.视频)
-        us(24,"visibility",8)
-        ufnsui()
-        {
-          ss 视频=null
-        }
-      }
-    }
-  }
+	ufnsui()
+	{
+		hsas(22,true)
+		us(22,"url",a)
+		s 处理="javascript:function mk(){iapp.s("ss.视频",document.getElementsByTagName('video')[0].src);}"
+		t()
+		{
+			w(true)
+			{
+			ufnsui()
+			{
+				us(22,"url",处理)
+			}
+			stop(500)
+			ufnsui()
+			{
+				has(22,"mk()")
+			}
+			f(ss.视频!=null)
+			{
+				break
+			}
+		}
+		ufnsui()
+		{
+			us(3,"text",ss.视频)
+			us(24,"visibility",8)
+			ufnsui()
+			{
+				ss 视频=null
+			}
+		}
+	}
+	}
 }</eventItme></event>
 </View>
 <View id="21" did="20" type="TextView">
@@ -253,11 +253,11 @@ s color = "#ffffff"
 uycl(color,true)
 f(color=="#ffffff")
 {
-  s c="8192"
+	s c="8192"
 }
 else
 {
-  s c="81920"
+	s c="81920"
 }
 java(cs,activity,"android.app.Activity.getWindow")
 java(cs2,cs,"android.view.Window.getDecorView")
@@ -280,10 +280,10 @@ javags(atop,null,"android.graphics.PorterDuff$Mode","SRC_ATOP")
 javanew(pdcf,"android.graphics.PorterDuffColorFilter","int",color,"android.graphics.PorterDuff$Mode",atop)
 java(null,drawable,"android.graphics.drawable.Drawable.setColorFilter","android.graphics.ColorFilter",pdcf)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
-  cls(sss.dex,"viek.dmpap.WebViewUtil",webViewUtilCls)
-  javax(is,null,webViewUtilCls,"isVideoState")
-  f(!is)
-  {
-    end()
-  }
+	cls(sss.dex,"viek.dmpap.WebViewUtil",webViewUtilCls)
+	javax(is,null,webViewUtilCls,"isVideoState")
+	f(!is)
+	{
+		end()
+	}
 }</eventItme></UIEventset>

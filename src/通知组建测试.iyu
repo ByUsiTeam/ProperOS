@@ -28,12 +28,12 @@ text=发出测试通知</ppt>
 <event><eventItme type="clicki">t()
 {
 	hs("https://api.www.byusi.cn/yy/",url)
-    ss("一言：\n"+url,url)
-    ufnsui()
-    {
-    	fn n.t("测试通知","@success.xml",url,"miao.byusi","index.html?url=https://api.www.byusi.cn/yy/&title=Title&time=Time")
-        fn n.t_top("测试通知","@success.xml",url,"miao.byusi","index.html?url=https://api.www.byusi.cn/yy/&title=Title&time=Time")
-    }
+	ss("一言：\n"+url,url)
+	ufnsui()
+	{
+		fn n.t("测试通知","@success.xml",url,"miao.byusi","index.html?url=https://api.www.byusi.cn/yy/&title=Title&time=Time")
+		fn n.t_top("测试通知","@success.xml",url,"miao.byusi","index.html?url=https://api.www.byusi.cn/yy/&title=Title&time=Time")
+	}
 }</eventItme></event>
 </View>
 <View id="6" did="2" type="Button">

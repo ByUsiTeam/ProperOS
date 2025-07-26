@@ -21,47 +21,47 @@ background=#ff8fa8ff</ppt>
 height=-1</ppt>
 <event><eventItme type="onprogresschanged">f(st_nS != "100")
 {
-  ss uft ="false"
-  t()
-  {
-    ss("已加载："+st_nS+"%",jd)
-    ufnsui()
-    {
-      utb("set","title",jd)
-    }
-  }
+	ss uft ="false"
+	t()
+	{
+		ss("已加载："+st_nS+"%",jd)
+		ufnsui()
+		{
+			utb("set","title",jd)
+		}
+	}
 }
 else f(st_nS == "100")
 {
-  ss uft ="true"
-  ug(5,"title",t)
-  utb("set","title",t)
+	ss uft ="true"
+	ug(5,"title",t)
+	utb("set","title",t)
 }
 syso(st_nS)</eventItme><eventItme type="onreceivederror">us(st_vId,"url","@JuOS/html/start.null.html/null.html")
 //报错详情显示
 ss("描述错误字符串："+st_dN+"\n整数错误代码："+st_eE,nnuu)
 utw(null,"报错了",nnuu,"知道了","复制报错详情","关闭应用",true,v)
 {
-  endutw()
+	endutw()
 }
 else
 {
-  sxb(nnuu)
+	sxb(nnuu)
 }
 else
 {
-  end()
+	end()
 }</eventItme><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)
 /.
 f(st_url ?* "juos_sh://")
 {
-  sj(st_url,"juos_sh://",null,itt)
-  sss url =itt
-  uigo("JuOS.terminal.iyu")
+	sj(st_url,"juos_sh://",null,itt)
+	sss url =itt
+	uigo("JuOS.terminal.iyu")
 }
 else
 {
-  us(st_vId,"url",st_url)
+	us(st_vId,"url",st_url)
 }</eventItme><eventItme type="onpagefinished">syso(st_url)</eventItme><eventItme type="press">s wv = st_vW
 java(htr,wv,"android.webkit.WebView.getHitTestResult")
 java(type,htr,"android.webkit.WebView$HitTestResult.getType")
@@ -69,24 +69,24 @@ javags(imagetype,null,"android.webkit.WebView$HitTestResult","IMAGE_TYPE")
 javags(imageurl,null,"android.webkit.WebView$HitTestResult","SRC_IMAGE_ANCHOR_TYPE")
 f(type==imagetype||type==imageurl)
 {
-  java(url,htr,"android.webkit.WebView$HitTestResult.getExtra")
-  fdir("$ByU_Si",path)
-  fl(path,dir)
-  sgszl(dir,size)
-  ss(path+"/"+size+".jpg",path)
-  t()
-  {
-    hd(url,path,c)
-    ufnsui()
-    {
-      utw(null,"","dialog.iyu",false,v)
-      {
-      }
-      gvs(v,1,vw)
-      us(vw,"src",path)
-      syso(path)
-    }
-  }
+	java(url,htr,"android.webkit.WebView$HitTestResult.getExtra")
+	fdir("$ByU_Si",path)
+	fl(path,dir)
+	sgszl(dir,size)
+	ss(path+"/"+size+".jpg",path)
+	t()
+	{
+		hd(url,path,c)
+		ufnsui()
+		{
+			utw(null,"","dialog.iyu",false,v)
+			{
+			}
+			gvs(v,1,vw)
+			us(vw,"src",path)
+			syso(path)
+		}
+	}
 }</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
@@ -120,14 +120,14 @@ json(sju,jsn)
 json(jsn,"get","message",message)
 f(message == "Login successful")
 {
-  f(url ?* "http")
-  {
-    hws(url)
-  }
-  else
-  {
-    fn tw.tw2("不可用在浏览器中启动 JuOS 原生应用",1)
-  }
+	f(url ?* "http")
+	{
+		hws(url)
+	}
+	else
+	{
+		fn tw.tw2("不可用在浏览器中启动 JuOS 原生应用",1)
+	}
 }
 break
 //
@@ -143,112 +143,113 @@ f(url ?* "http")
 else
 {
 	ss("file://"+system_data,jq1)
-    s jq2 ="/src/"
-    sj(url,"/src/",null,sjj)
-    ss(sq2+sjj,sj2)
+		s jq2 ="/src/"
+		sj(url,"/src/",null,sjj)
+		ss(sq2+sjj,sj2)
 	sj(url,jq1,sj2,text)
-    fn tw.tw2(text,0)
+		fn tw.tw2(text,0)
 }
 break</eventItme><eventItme type="loadingComplete">t()
 {
-  w(true)
-  {
-    f(ss.uft == "true")
-    {
-      ufnsui()
-      {
-        ug(5,"title",t)
-        syso(t)
-        utb("set","title",t)
-      }
-    }
-    else f(ss.uft == "false")
-    {
-      syso("....")
-    }
-    //
-    f(ss.sotp_yz == "true")
-    {
-      syso("跳出")
-      break
-    }
-    stop(500)
-  }
+	w(true)
+	{
+		f(ss.uft == "true")
+		{
+			ufnsui()
+			{
+				ug(5,"title",t)
+				syso(t)
+				utb("set","title",t)
+			}
+		}
+		else f(ss.uft == "false")
+		{
+			syso("....")
+		}
+		//
+		f(ss.sotp_yz == "true")
+		{
+			syso("跳出")
+			break
+		}
+		stop(500)
+	}
 }
 //设置工具栏
 utb(4)
 
-//上面是设置颜色的
+
+//上面是设置颜色的
 utb("set","leftck",4)
 {
-  end()
+	end()
 }
 //
 f(sss.url != null)
 {
-  us(5,"url",sss.url)
+	us(5,"url",sss.url)
 }
 //
 hsas(5,true)</eventItme><eventItme type="onactivityresult">f(st_sC == 1102)
 {
-  git(st_iT,"extra","result",1_c)
-  f(1_c ?* "http")
-  {
-    utw(null,"","扫描成功，是否添加到应用窗口？","是","不",false,v)
-    {
-      us(5,"url",1_c)
-      fn tw.tw("添加成功")
-    }
-    else
-    {
-      fn tw.tw("好的")
-    }
-  }
-  else f(1_c != null)
-  {
-    ss("扫描成功，扫描结果："+1_c,111_q)
-    fn tw.tw(111_q)
-  }
-  else
-  {
-    fn tw.tw2("没有扫描到任何结果",1)
-  }
-  //tw(c)
+	git(st_iT,"extra","result",1_c)
+	f(1_c ?* "http")
+	{
+		utw(null,"","扫描成功，是否添加到应用窗口？","是","不",false,v)
+		{
+			us(5,"url",1_c)
+			fn tw.tw("添加成功")
+		}
+		else
+		{
+			fn tw.tw("好的")
+		}
+	}
+	else f(1_c != null)
+	{
+		ss("扫描成功，扫描结果："+1_c,111_q)
+		fn tw.tw(111_q)
+	}
+	else
+	{
+		fn tw.tw2("没有扫描到任何结果",1)
+	}
+	//tw(c)
 }</eventItme><eventItme type="downkey">//懒得写了
 f(st_kC==4)
 {
-  ug(5,"cangoback",url_ky_yz)
-  ug(5,"url",yes_url)
-  f(url_ky_yz == "true")
-  {
-    ss yty_url =null
-    f(yes_url ? "api.hucl.link/url?url=")
-    {
-      t()
-      {
-        w(true)
-        {
-          ug(5,"url",t_url)
-          f(t_url ?* "api.hucl.link/url/?url=")
-          {
-            us(5,"gobackorforward",-1)
-          }
-          else
-          {
-            syso("跳出验证")
-            break
-            endcode
-          }
-        }
-      }
-    }
-    else
-    {
-      us(5,"gobackorforward",-1)
-    }
-  }
-  else f(url_ky_yz == "false")
-  {
-    end()
-  }
+	ug(5,"cangoback",url_ky_yz)
+	ug(5,"url",yes_url)
+	f(url_ky_yz == "true")
+	{
+		ss yty_url =null
+		f(yes_url ? "api.hucl.link/url?url=")
+		{
+			t()
+			{
+				w(true)
+				{
+					ug(5,"url",t_url)
+					f(t_url ?* "api.hucl.link/url/?url=")
+					{
+						us(5,"gobackorforward",-1)
+					}
+					else
+					{
+						syso("跳出验证")
+						break
+						endcode
+					}
+				}
+			}
+		}
+		else
+		{
+			us(5,"gobackorforward",-1)
+		}
+	}
+	else f(url_ky_yz == "false")
+	{
+		end()
+	}
 }</eventItme><eventItme type="destroy">ss sotp_yz ="true"</eventItme><eventItme type="stop">ss sotp_yz ="true"</eventItme><eventItme type="pause">ss sotp_yz ="true"</eventItme></UIEventset>

@@ -84,59 +84,59 @@ ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
 <event><eventItme type="onrefresh">s url ="https://gitee.com/byusi/properos-app/raw/master/index.json"
 t()
 {
-  hs(url,url)
-  syso(url)
-  json(url,j1)
-  syso(j1)
-  f(j1 != null)
-  {
-    json(j1,"get","title",title)
-    ufnsui()
-    {
-      //us(8,"text",title)
-      us(8,"text","")
-    }
-    json(j1,"list","list",list)
-    json(list,"size",size)
-    w(size &gt; 0)
-    {
-      s-(1,size)
-      json(list,"data",size,item)
-      json(item,"get","title",title2)
-      json(item,"get","icon",icon)
-      json(item,"get","url",url)
-      json(item,"get","partition",partition)
-      syso(url)
-      syso(title)
-      f(icon != "null")
-      {
-        ula(yylist,3=icon,4=title2,5=url,9=partition)
-      }
-      else
-      {
-        ula(yylist,3="@fail.xml",4=title,5=url,9=partition)
-      }
-      ufnsui()
-      {
-        us(4,"refreshing","false")
-        uls(5,yylist,"yysc-list.iyu",-2,-2)
-        gvs(5,v7)
-        cls("android.support.v7.widget.RecyclerView",列表类)
-        cls("android.support.v7.widget.LinearLayoutManager",布局管理类)
-        javanew(布局,布局管理类,"Context",activity,"int",1,"boolean",true)
-        //上面参数中int后面的那个"1"代表垂直排列(默认),"0"代表水平排列.
-        //boolean后面的那个"false"代表正常排序(默认),"true"代表反向排序.
-        javax(null,v7,列表类,"setLayoutManager","android.support.v7.widget.RecyclerView$LayoutManager",布局)
-      }
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw("无法连接到 Gitee，数据获取有问题")
-    }
-  }
+	hs(url,url)
+	syso(url)
+	json(url,j1)
+	syso(j1)
+	f(j1 != null)
+	{
+		json(j1,"get","title",title)
+		ufnsui()
+		{
+			//us(8,"text",title)
+			us(8,"text","")
+		}
+		json(j1,"list","list",list)
+		json(list,"size",size)
+		w(size &gt; 0)
+		{
+			s-(1,size)
+			json(list,"data",size,item)
+			json(item,"get","title",title2)
+			json(item,"get","icon",icon)
+			json(item,"get","url",url)
+			json(item,"get","partition",partition)
+			syso(url)
+			syso(title)
+			f(icon != "null")
+			{
+				ula(yylist,3=icon,4=title2,5=url,9=partition)
+			}
+			else
+			{
+				ula(yylist,3="@fail.xml",4=title,5=url,9=partition)
+			}
+			ufnsui()
+			{
+				us(4,"refreshing","false")
+				uls(5,yylist,"yysc-list.iyu",-2,-2)
+				gvs(5,v7)
+				cls("android.support.v7.widget.RecyclerView",列表类)
+				cls("android.support.v7.widget.LinearLayoutManager",布局管理类)
+				javanew(布局,布局管理类,"Context",activity,"int",1,"boolean",true)
+				//上面参数中int后面的那个"1"代表垂直排列(默认),"0"代表水平排列.
+				//boolean后面的那个"false"代表正常排序(默认),"true"代表反向排序.
+				javax(null,v7,列表类,"setLayoutManager","android.support.v7.widget.RecyclerView$LayoutManager",布局)
+			}
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw("无法连接到 Gitee，数据获取有问题")
+		}
+	}
 }</eventItme></event>
 </View>
 <View id="5" did="4" type="RecyclerView">
@@ -158,57 +158,57 @@ s url ="https://gitee.com/byusi/properos-app/raw/master/index.json"
 us(4,"refreshing","true")
 t()
 {
-  hs(url,url)
-  syso(url)
-  json(url,j1)
-  syso(j1)
-  f(j1 != null)
-  {
-    json(j1,"get","title",title)
-    ufnsui()
-    {
-      us(8,"text",title)
-      us(8,"text","")
-    }
-    json(j1,"list","list",list)
-    json(list,"size",size)
-    w(size &gt; 0)
-    {
-      s-(1,size)
-      json(list,"data",size,item)
-      json(item,"get","title",title2)
-      json(item,"get","icon",icon)
-      json(item,"get","url",url)
-      json(item,"get","partition",partition)
-      syso(url)
-      syso(title)
-      f(icon != "null")
-      {
-        ula(yylist,3=icon,4=title2,5=url,9=partition)
-      }
-      else
-      {
-        ula(yylist,3="@fail.xml",4=title,5=url,9=partition)
-      }
-      ufnsui()
-      {
-        us(4,"refreshing","false")
-        uls(5,yylist,"yysc_list.iyu",-2,-2)
-        gvs(5,v7)
-        cls("android.support.v7.widget.RecyclerView",列表类)
-        cls("android.support.v7.widget.LinearLayoutManager",布局管理类)
-        javanew(布局,布局管理类,"Context",activity,"int",1,"boolean",true)
-        //上面参数中int后面的那个"1"代表垂直排列(默认),"0"代表水平排列.
-        //boolean后面的那个"false"代表正常排序(默认),"true"代表反向排序.
-        javax(null,v7,列表类,"setLayoutManager","android.support.v7.widget.RecyclerView$LayoutManager",布局)
-      }
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw("无法连接到 应用源，数据获取有问题")
-    }
-  }
+	hs(url,url)
+	syso(url)
+	json(url,j1)
+	syso(j1)
+	f(j1 != null)
+	{
+		json(j1,"get","title",title)
+		ufnsui()
+		{
+			us(8,"text",title)
+			us(8,"text","")
+		}
+		json(j1,"list","list",list)
+		json(list,"size",size)
+		w(size &gt; 0)
+		{
+			s-(1,size)
+			json(list,"data",size,item)
+			json(item,"get","title",title2)
+			json(item,"get","icon",icon)
+			json(item,"get","url",url)
+			json(item,"get","partition",partition)
+			syso(url)
+			syso(title)
+			f(icon != "null")
+			{
+				ula(yylist,3=icon,4=title2,5=url,9=partition)
+			}
+			else
+			{
+				ula(yylist,3="@fail.xml",4=title,5=url,9=partition)
+			}
+			ufnsui()
+			{
+				us(4,"refreshing","false")
+				uls(5,yylist,"yysc_list.iyu",-2,-2)
+				gvs(5,v7)
+				cls("android.support.v7.widget.RecyclerView",列表类)
+				cls("android.support.v7.widget.LinearLayoutManager",布局管理类)
+				javanew(布局,布局管理类,"Context",activity,"int",1,"boolean",true)
+				//上面参数中int后面的那个"1"代表垂直排列(默认),"0"代表水平排列.
+				//boolean后面的那个"false"代表正常排序(默认),"true"代表反向排序.
+				javax(null,v7,列表类,"setLayoutManager","android.support.v7.widget.RecyclerView$LayoutManager",布局)
+			}
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw("无法连接到 应用源，数据获取有问题")
+		}
+	}
 }</eventItme><eventItme type="restart">fn lib.下载器()</eventItme><eventItme type="resume">fn lib.下载器()</eventItme></UIEventset>

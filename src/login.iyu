@@ -134,69 +134,69 @@ syso(mm)
 s url="https://api.www.byusi.cn/user/api.php"
 t()
 {
-  ss("&identifier="+zh+"&password="+mm+"&action=login",data)
-  hs(url,data,"utf-8",sju)
-  syso(sju)
-  json(sju,json)
-  json(json,"get","status",status)
-  f(status == "error")
-  {
-    json(json,"get","message",message)
-    ufnsui()
-    {
-    	us(44,"visibility","visible")
-    	fr("@JuOS/Lottie/errorjson",data1)
-        fn Lottie.setImageLottie(45,data1,0,true)
-    	endkeyboard()
-        t()
-        {
-        	stop(2500)
-            ufnsui()
-            {
-            	us(44,"visibility","gone")
-                ss("登录失败："+message,uui)
-                fn tw.tw2(uui,1)
-                us(15,"text","")
-            }
-        }
-    }
-  }
-  else f(status == "success")
-  {
-    fw("$JuOS/data/User/data.json",sju)
-    ufnsui()
-    {
-    	endkeyboard()
-        fr("@JuOS/Lottie/yes.json",data)
-        fn Lottie.setImageLottie(45,data,-1,true)
-      fw("$JuOS/data/User/.password",mm)
-      fn tw.tw2("登录成功",0)
-      t()
-      {
-      	stop(2500)
-          end()
-      }
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-    	us(44,"visibility","visible")
-    	fr("@JuOS/Lottie/errorjson",data1)
-        fn Lottie.setImageLottie(45,data1,0,true)
-    	endkeyboard()
-        t()
-        {
-        	stop(2500)
-            ufnsui()
-            {
-            	us(44,"visibility","gone")
-                fn tw.tw2(json,1)
-            }
-        }
-    }
-  }
+	ss("&identifier="+zh+"&password="+mm+"&action=login",data)
+	hs(url,data,"utf-8",sju)
+	syso(sju)
+	json(sju,json)
+	json(json,"get","status",status)
+	f(status == "error")
+	{
+		json(json,"get","message",message)
+		ufnsui()
+		{
+			us(44,"visibility","visible")
+			fr("@JuOS/Lottie/errorjson",data1)
+			fn Lottie.setImageLottie(45,data1,0,true)
+			endkeyboard()
+			t()
+			{
+				stop(2500)
+				ufnsui()
+				{
+					us(44,"visibility","gone")
+					ss("登录失败："+message,uui)
+					fn tw.tw2(uui,1)
+					us(15,"text","")
+				}
+			}
+		}
+	}
+	else f(status == "success")
+	{
+		fw("$JuOS/data/User/data.json",sju)
+		ufnsui()
+		{
+			endkeyboard()
+			fr("@JuOS/Lottie/yes.json",data)
+			fn Lottie.setImageLottie(45,data,-1,true)
+			fw("$JuOS/data/User/.password",mm)
+			fn tw.tw2("登录成功",0)
+			t()
+			{
+				stop(2500)
+				end()
+			}
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			us(44,"visibility","visible")
+			fr("@JuOS/Lottie/errorjson",data1)
+			fn Lottie.setImageLottie(45,data1,0,true)
+			endkeyboard()
+			t()
+			{
+				stop(2500)
+				ufnsui()
+				{
+					us(44,"visibility","gone")
+					fn tw.tw2(json,1)
+				}
+			}
+		}
+	}
 }</eventItme></event>
 </View>
 <View id="20" did="16" type="LinearLayout">
@@ -383,50 +383,50 @@ fn Lottie.setImageLottie(45,data,-1,true)
 s url="https://api.www.byusi.cn/user/api.php"
 t()
 {
-  ss("username="+zh+"&email="+email+"&password="+mm+"&action=register",data)
-  hs(url,data,"utf-8",sju)
-  syso(sju)
-  json(sju,json)
-  json(json,"get","status",status)
-  f(status == "error")
-  {
-    json(json,"get","message",message)
-    ufnsui()
-    {
-    	endkeyboard()
-      ss("注册失败："+message,uui)
-      fn tw.tw2(uui,1)
-      us(44,"visibility","gone")
-    }
-  }
-  else f(status == "success")
-  {
-    ufnsui()
-    {
-    	fr("@JuOS/Lottie/yes.json",data)
-        fn Lottie.setImageLottie(45,data,-1,true)
-      fn tw.tw2("注册成功",0)
-      t()
-      {
-      	stop(2500)
-          ufnsui()
-          {
-              us(4,"visibility","visible")
-              us(23,"visibility","gone")
-              us(44,"visibility","gone")
-          }
-      }
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-    	endkeyboard()
-      fn tw.tw2(json,1)
-      us(44,"visibility","gone")
-    }
-  }
+	ss("username="+zh+"&email="+email+"&password="+mm+"&action=register",data)
+	hs(url,data,"utf-8",sju)
+	syso(sju)
+	json(sju,json)
+	json(json,"get","status",status)
+	f(status == "error")
+	{
+		json(json,"get","message",message)
+		ufnsui()
+		{
+			endkeyboard()
+			ss("注册失败："+message,uui)
+			fn tw.tw2(uui,1)
+			us(44,"visibility","gone")
+		}
+	}
+	else f(status == "success")
+	{
+		ufnsui()
+		{
+			fr("@JuOS/Lottie/yes.json",data)
+			fn Lottie.setImageLottie(45,data,-1,true)
+			fn tw.tw2("注册成功",0)
+			t()
+			{
+				stop(2500)
+				ufnsui()
+				{
+					us(4,"visibility","visible")
+					us(23,"visibility","gone")
+					us(44,"visibility","gone")
+				}
+			}
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			endkeyboard()
+			fn tw.tw2(json,1)
+			us(44,"visibility","gone")
+		}
+	}
 }</eventItme></event>
 </View>
 <View id="38" did="34" type="LinearLayout">

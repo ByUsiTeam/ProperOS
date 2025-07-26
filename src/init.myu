@@ -124,13 +124,13 @@ f(type == "yes")
 	f(yz_bootrepair == true)
 	{
 		fn init.boot_init_bootrepair("init","bootrepair.iyu","@JuOS/logo/properos.png")
-        fn init.boot(id)
+		fn init.boot(id)
 	}
 	else
 	{
 		fn tw.tw("初始化并修改引导")
 		fn init.boot_init_bootrepair("init","bootrepair.iyu","@JuOS/logo/properos.png")
-        fn init.boot(id)
+		fn init.boot(id)
 	}
 }
 else

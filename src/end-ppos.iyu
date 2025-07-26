@@ -21,8 +21,7 @@ gravity=center</ppt>
 </View>
 <View id="21" did="7" type="CardView">
 <ppt>width=-1
-height=44dp
-app_CardElevation=8dp</ppt>
+height=44dp</ppt>
 <event></event>
 </View>
 <View id="3" did="21" type="LinearLayout">
@@ -84,9 +83,8 @@ gravity=top|center</ppt>
 <View id="18" did="10" type="CardView">
 <ppt>width=120dp
 height=120dp
-app_CardElevation=8dp
-app_CardcornerRadius=8dp
-layout_marginTop=5dp</ppt>
+layout_marginTop=5dp
+app_CardcornerRadius=8dp</ppt>
 <event></event>
 </View>
 <View id="11" did="18" type="ImageView">
@@ -100,7 +98,6 @@ scaleType=fitxy</ppt>
 <ppt>width=-1
 height=25dp
 app_CardcornerRadius=5dp
-app_CardElevation=8dp
 layout_marginTop=6dp
 layout_marginLeft=8dp
 layout_marginRight=8dp</ppt>
@@ -126,8 +123,7 @@ gravity=center</ppt>
 <ppt>width=100dp
 height=55dp
 app_CardcornerRadius=12dp
-app_CardBackgroundColor=#ff5222ff
-app_CardElevation=8dp</ppt>
+app_CardBackgroundColor=#ff5222ff</ppt>
 <event></event>
 </View>
 <View id="15" did="14" type="Button">
@@ -145,8 +141,7 @@ end()</eventItme></event>
 height=55dp
 app_CardcornerRadius=12dp
 app_CardBackgroundColor=#ff5222ff
-layout_marginLeft=8dp
-app_CardElevation=8dp</ppt>
+layout_marginLeft=8dp</ppt>
 <event></event>
 </View>
 <View id="17" did="16" type="Button">

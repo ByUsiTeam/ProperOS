@@ -25,26 +25,26 @@ java(null,通知,"android.app.Notification$Builder.setOngoing","boolean",用户�
 
 f(大图片 != null)
 {
-  javanew(样式,"android.app.Notification$BigPictureStyle")
-  java(大图片, 样式, "android.app.Notification$BigPictureStyle.bigPicture","android.graphics.Bitmap",大图片)
+	javanew(样式,"android.app.Notification$BigPictureStyle")
+	java(大图片, 样式, "android.app.Notification$BigPictureStyle.bigPicture","android.graphics.Bitmap",大图片)
 }
 else
 {
-  javanew(样式,"android.app.Notification$BigTextStyle")
-  java(文本a,样式,"android.app.Notification$BigTextStyle.bigText","CharSequence",文本)
+	javanew(样式,"android.app.Notification$BigTextStyle")
+	java(文本a,样式,"android.app.Notification$BigTextStyle.bigText","CharSequence",文本)
 }
 java(null,通知,"android.app.Notification$Builder.setStyle","android.app.Notification$Style",样式)
 
 f(小图标 != null)
 {
-  java(小图标,null,"android.graphics.drawable.Icon.createWithBitmap","android.graphics.Bitmap",小图标)
-  java(null,通知,"android.app.Notification$Builder.setSmallIcon","android.graphics.drawable.Icon",小图标)
+	java(小图标,null,"android.graphics.drawable.Icon.createWithBitmap","android.graphics.Bitmap",小图标)
+	java(null,通知,"android.app.Notification$Builder.setSmallIcon","android.graphics.drawable.Icon",小图标)
 }
 f(大图标 != null)
 {
-  java(大图标,null,"android.graphics.drawable.Icon.createWithBitmap","android.graphics.Bitmap",大图标)
-  java(null,通知,"android.app.Notification$Builder.setLargeIcon","android.graphics.drawable.Icon",大图标)
-  java(大图片, 样式, "android.app.Notification$BigPictureStyle.bigLargeIcon","android.graphics.Bitmap",null)
+	java(大图标,null,"android.graphics.drawable.Icon.createWithBitmap","android.graphics.Bitmap",大图标)
+	java(null,通知,"android.app.Notification$Builder.setLargeIcon","android.graphics.drawable.Icon",大图标)
+	java(大图片, 样式, "android.app.Notification$BigPictureStyle.bigLargeIcon","android.graphics.Bitmap",null)
 }
 java(通知对象,通知,"android.app.Notification$Builder.build")
 java(null,通知管理器,"android.app.NotificationManager.notify","int",通知ID,"android.app.Notification",通知对象)
@@ -55,9 +55,9 @@ end fn
 fn 更新进度(进度,通知ID)
 f(sss.Yos_通知 == null || sss.Yos_通知管理器 == null)
 {
-  syso("错误：通知对象未初始化，请先发送一次通知")
-  tw("错误：通知对象未初始化，请先发送一次通知",0)
-  endcode
+	syso("错误：通知对象未初始化，请先发送一次通知")
+	tw("错误：通知对象未初始化，请先发送一次通知",0)
+	endcode
 }
 java(null,sss.Yos_通知,"android.app.Notification$Builder.setProgress","int",100,"int",进度,"boolean",false)
 java(通知对象,sss.Yos_通知,"android.app.Notification$Builder.build")
@@ -67,14 +67,14 @@ end fn
 fn 取消通知(通知ID)
 f(sss.Yos_通知 == null || sss.Yos_通知管理器 == null)
 {
-  syso("错误：通知对象未初始化，请先发送一次通知")
-  tw("错误：通知对象未初始化，请先发送一次通知",0)
-  endcode
+	syso("错误：通知对象未初始化，请先发送一次通知")
+	tw("错误：通知对象未初始化，请先发送一次通知",0)
+	endcode
 }
 sj(通知ID,null,".",ID)
 f(ID==null)
 {
-  s ID = 通知ID
+	s ID = 通知ID
 }
 java(null,sss.Yos_通知管理器,"android.app.NotificationManager.cancel","int",ID)
 end fn

@@ -7,27 +7,27 @@ s ii =1
 t()
 {
 	w(length &gt; 0)
-    {
-    	ssg(text,i,ii,d)
-        s(length - 1,length)
-        s(ii + 1,ii)
-        s(i + 1,i)
-    	sr(d,"0","0000",bcd)
-        sr(bcd,"1","0001",bcd)
-        sr(bcd,"2","0010",bcd)
-        sr(bcd,"3","0011",bcd)
-        sr(bcd,"4","0100",bcd)
-        sr(bcd,"5","0101",bcd)
-        sr(bcd,"6","0110",bcd)
-        sr(bcd,"7","0111",bcd)
-        sr(bcd,"8","1000",bcd)
-        sr(bcd,"9","1001",bcd)
-        ss(sss.bcd_e+"/"+bcd,bcd_e)
-        sr(bcd_e,"null/","",bcd_e)
-        sss bcd_e =bcd_e
-    }
-    syso(sss.bcd_e)
-    fw(lj,bcd_e)
+	{
+		ssg(text,i,ii,d)
+		s(length - 1,length)
+		s(ii + 1,ii)
+		s(i + 1,i)
+		sr(d,"0","0000",bcd)
+		sr(bcd,"1","0001",bcd)
+		sr(bcd,"2","0010",bcd)
+		sr(bcd,"3","0011",bcd)
+		sr(bcd,"4","0100",bcd)
+		sr(bcd,"5","0101",bcd)
+		sr(bcd,"6","0110",bcd)
+		sr(bcd,"7","0111",bcd)
+		sr(bcd,"8","1000",bcd)
+		sr(bcd,"9","1001",bcd)
+		ss(sss.bcd_e+"/"+bcd,bcd_e)
+		sr(bcd_e,"null/","",bcd_e)
+		sss bcd_e =bcd_e
+	}
+	syso(sss.bcd_e)
+	fw(lj,bcd_e)
 }
 
 end fn
@@ -39,18 +39,18 @@ sl(text,b,c)
 for(d;c)
 {
 	sr(d,"0000","0",bcd)
-    sr(bcd,"0001","1",bcd)
-    sr(bcd,"0010","2",bcd)
-    sr(bcd,"0011","3",bcd)
-    sr(bcd,"0100","4",bcd)
-    sr(bcd,"0101","5",bcd)
-    sr(bcd,"0110","6",bcd)
-    sr(bcd,"0111","7",bcd)
-    sr(bcd,"1000","8",bcd)
-    sr(bcd,"1001","9",bcd)
-    ss(sss.bcd_c+bcd,bcd_c)
-    sr(bcd_c,"null","",bcd_c)
-    sss bcd_c =bcd_c
+	sr(bcd,"0001","1",bcd)
+	sr(bcd,"0010","2",bcd)
+	sr(bcd,"0011","3",bcd)
+	sr(bcd,"0100","4",bcd)
+	sr(bcd,"0101","5",bcd)
+	sr(bcd,"0110","6",bcd)
+	sr(bcd,"0111","7",bcd)
+	sr(bcd,"1000","8",bcd)
+	sr(bcd,"1001","9",bcd)
+	ss(sss.bcd_c+bcd,bcd_c)
+	sr(bcd_c,"null","",bcd_c)
+	sss bcd_c =bcd_c
 }
 syso(sss.bcd_c)
 

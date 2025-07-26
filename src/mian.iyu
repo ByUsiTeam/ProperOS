@@ -19,11 +19,10 @@ f(yanz == false)
 t()
 {
 	stop(6000)
-    ufnsui()
-    {
-    	fn system.setup(1)
-    }
+	ufnsui()
+	{
+		fn system.setup(1)
+	}
 }</eventItme><eventItme type="downkey">f(st_eA == 4)
 {
-	
 }</eventItme></UIEventset>

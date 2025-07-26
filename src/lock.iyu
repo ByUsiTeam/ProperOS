@@ -105,13 +105,13 @@ f(pwd != "")
 	endkeyboard()
 	//fn 8421.encrypt(pwd,"$System/Config/Pwd/sys")
 	fw("$System/Config/Pwd/sys",pwd)
-    fn tw.tw("设置成功")
-    us(lock.23,"visibility","gone")
+	fn tw.tw("设置成功")
+	us(lock.23,"visibility","gone")
 }
 else
 {
 	fn tw.tw2("密码不能为空",1)
-    endkeyboard()
+	endkeyboard()
 }</eventItme></event>
 </View>
 <View id="14" did="8" type="CardView">
@@ -133,26 +133,26 @@ textColor=#ffffffff</ppt>
 f(pwd != "")
 {
 	fr("$System/Config/Pwd/sys",local_pwd)
-    /.
-    fn 8421.decode(local_pwd)
-    s local_pwd =sss.bcd_c
-    ./
-    f(local_pwd == pwd)
-    {
-    	us(lock.23,"visibility","gone")
-        endkeyboard()
-    }
-    else
-    {
-    	us(lock.11,"text","")
-    	fn tw.tw2("密码错误",1)
-        endkeyboard()
-    }
+	/.
+	fn 8421.decode(local_pwd)
+	s local_pwd =sss.bcd_c
+	./
+	f(local_pwd == pwd)
+	{
+		us(lock.23,"visibility","gone")
+		endkeyboard()
+	}
+	else
+	{
+		us(lock.11,"text","")
+		fn tw.tw2("密码错误",1)
+		endkeyboard()
+	}
 }
 else
 {
 	fn tw.tw2("密码不能为空",1)
-    endkeyboard()
+	endkeyboard()
 }</eventItme></event>
 </View>
 <UIEventset></UIEventset>

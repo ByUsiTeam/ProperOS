@@ -1,12 +1,12 @@
 fn 茜file(类型,操作,路径)
 f(sss.茜和达琳!=null)
 {
-  f(类型=="私有")
-  {
-    fn 茜tool.权限("私有")
-    fn 茜tool.查看授权()
-  }
-  javax(sss.返回json,sss.茜初始化,sss.茜和达琳,"茜files","String",类型,"String",操作,"String",路径)
+	f(类型=="私有")
+	{
+		fn 茜tool.权限("私有")
+		fn 茜tool.查看授权()
+	}
+	javax(sss.返回json,sss.茜初始化,sss.茜和达琳,"茜files","String",类型,"String",操作,"String",路径)
 }
 end fn
 //类型:雫,私有,漏洞
@@ -16,34 +16,34 @@ end fn
 fn 茜file(类型,操作,路径一,路径二)
 f(sss.茜和达琳!=null)
 {
-  f(类型=="私有")
-  {
-    fn 茜tool.权限("私有")
-    fn 茜tool.查看授权()
-  }
-  javax(sss.返回json,sss.茜初始化,sss.茜和达琳,"茜files","String",类型,"String",操作,"String",路径一,"String",路径二)
+	f(类型=="私有")
+	{
+		fn 茜tool.权限("私有")
+		fn 茜tool.查看授权()
+	}
+	javax(sss.返回json,sss.茜初始化,sss.茜和达琳,"茜files","String",类型,"String",操作,"String",路径一,"String",路径二)
 }
 end fn
 
 fn 查看授权()
 f(sss.茜和达琳!=null)
 {
-  javax(sss.查看授权,sss.茜初始化,sss.茜和达琳,"查看授权")
+	javax(sss.查看授权,sss.茜初始化,sss.茜和达琳,"查看授权")
 }
 end fn
 
 fn 私有记录(sc,lc,it)
 f(sss.茜和达琳!=null)
 {
-  javax(null,sss.茜初始化,sss.茜和达琳,"私有记录","int",sc,"int",lc,"android.content.Intent",it)
+	javax(null,sss.茜初始化,sss.茜和达琳,"私有记录","int",sc,"int",lc,"android.content.Intent",it)
 }
 f(lc==-1)
 {
-  sss 是否授权=true
+	sss 是否授权=true
 }
 else
 {
-  sss 是否授权=false
+	sss 是否授权=false
 }
 end fn
 
@@ -54,7 +54,7 @@ end fn
 fn 权限(茜)
 f(sss.茜和达琳!=null)
 {
-  javax(null,sss.茜初始化,sss.茜和达琳,"权限","String",茜)
+	javax(null,sss.茜初始化,sss.茜和达琳,"权限","String",茜)
 }
 end fn
 
@@ -65,27 +65,27 @@ javags(filePath,app,"android.content.pm.ApplicationInfo","deviceProtectedDataDir
 fuzs("@x.SDK",filePath,fu_is)
 f(fu_is)
 {
-  s Uri="/0.0.2/达琳/"
-  ss(filePath+Uri,filepath)
-  ss(filePath+Uri+"茜.dex",dex)
-  ss(filePath+Uri+"达琳.sh",sh)
-  java(classLoader,activity,"android.content.ContextWrapper.getClassLoader")
-  javanew(DexClassLoader,"dalvik.system.DexClassLoader","String",dex,"String",filepath,"String",null,"java.lang.ClassLoader",classLoader)
-  fr(sh,to)
-  java(PKGDarlene,activity,"Context.getPackageName")
-  sr(to,"PKGDarlene",PKGDarlene,appu)
-  fd(sh,urid)
-  fw(sh,appu)
-  java(null,null,"android.system.Os.chmod","String",dex,"int",777)
-  java(null,null,"android.system.Os.chmod","String",sh,"int",777)
-  cls(DexClassLoader,"茜.茜",茜)
-  javanew(达琳,茜,"Context",activity)
-  javax(达琳,达琳,茜,"达琳")
-  cls(达琳,"茜.达琳.达琳",sss.茜和达琳)
-  f(sss.茜和达琳!=null)
-  {
-    javax(null,sss.茜初始化,sss.茜和达琳,"私有路径","String",sss.路径)
-    javanew(sss.茜初始化,sss.茜和达琳,"Context",activity,"String","茜和达琳")
-  }
+	s Uri="/0.0.2/达琳/"
+	ss(filePath+Uri,filepath)
+	ss(filePath+Uri+"茜.dex",dex)
+	ss(filePath+Uri+"达琳.sh",sh)
+	java(classLoader,activity,"android.content.ContextWrapper.getClassLoader")
+	javanew(DexClassLoader,"dalvik.system.DexClassLoader","String",dex,"String",filepath,"String",null,"java.lang.ClassLoader",classLoader)
+	fr(sh,to)
+	java(PKGDarlene,activity,"Context.getPackageName")
+	sr(to,"PKGDarlene",PKGDarlene,appu)
+	fd(sh,urid)
+	fw(sh,appu)
+	java(null,null,"android.system.Os.chmod","String",dex,"int",777)
+	java(null,null,"android.system.Os.chmod","String",sh,"int",777)
+	cls(DexClassLoader,"茜.茜",茜)
+	javanew(达琳,茜,"Context",activity)
+	javax(达琳,达琳,茜,"达琳")
+	cls(达琳,"茜.达琳.达琳",sss.茜和达琳)
+	f(sss.茜和达琳!=null)
+	{
+		javax(null,sss.茜初始化,sss.茜和达琳,"私有路径","String",sss.路径)
+		javanew(sss.茜初始化,sss.茜和达琳,"Context",activity,"String","茜和达琳")
+	}
 }
 end fn

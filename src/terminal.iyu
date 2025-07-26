@@ -52,7 +52,7 @@ f(nr != null)
 {
 	us(10,"text","")
 	fw("$ProperOS/jush",nr)
-    fn juos.脚本("$ProperOS/jush")
+	fn juos.脚本("$ProperOS/jush")
 }
 else
 {

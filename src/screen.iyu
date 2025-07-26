@@ -84,9 +84,9 @@ else
 t()
 {
 	stop(pause)
-    ufnsui()
-    {
-    	uigo(sss.qdq)
-        end()
-    }
+	ufnsui()
+	{
+		uigo(sss.qdq)
+		end()
+	}
 }</eventItme></UIEventset>

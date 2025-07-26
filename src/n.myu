@@ -18,8 +18,8 @@ f(title != null && text != null)
 	us(news.1,"visibility","visible")
 	//动画配置
 	dha(dh,false,true)
-    dh(dh,"duration",500)
-    dhset(dhlist,false,dh)
+	dh(dh,"duration",500)
+	dhset(dhlist,false,dh)
 	us(news.5,"dh",dhlist)
 	//上传相对应的ID和包名参数
 	ss("[包名]"+bname+"[包名]\n[参数]"+s+"[参数]",truu)
@@ -76,8 +76,8 @@ f(title != null && text != null)
 	us(news1.1,"visibility","visible")
 	//动画配置
 	dha(dh,false,true)
-    dh(dh,"duration",500)
-    dhset(dhlist,false,dh)
+	dh(dh,"duration",500)
+	dhset(dhlist,false,dh)
 	us(news1.5,"dh",dhlist)
 	//上传相对应的ID和包名参数
 	ss("[包名]"+bname+"[包名]\n[参数]"+s+"[参数]",truu)

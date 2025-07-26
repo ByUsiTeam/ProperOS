@@ -317,12 +317,12 @@ fn n.t_top("应用市场提示","@JuOS/logo/properos.png",text,"miao.byusi",s)
 ss("抱歉，由于不知明原因导致无法正常下载应用，所以请手动下载应用\n这是应用下载链接："+url+"\n下载完成请将安装包放到 /sdcard/ProperOS 目录中",tsc)
 utw(null,"抱歉",tsc,"复制下载链接","确定",true,v)
 {
-  sxb(sss.durl)
-  endutw()
+	sxb(sss.durl)
+	endutw()
 }
 else
 {
-  endutw()
+	endutw()
 }
 //uigo("yysc-xy-2.iyu")
 fn lib.下载器2()
@@ -331,7 +331,7 @@ s name = ".temp.jupk"
 s data = "ByUsi-ProperOS-App-D"
 t()
 {
-  hdda(durl,name,data,v)
+	hdda(durl,name,data,v)
 }
 us(51,"visibility","gone")
 us(60,"visibility","visible")
@@ -339,30 +339,30 @@ us(62,"visibility","visible")
 //hdduigo()
 t()
 {
-  w(jsq != "1")
-  {
-    hddg(v,"downloadpercentage",xzjd)
-    f(xzjd &lt; "100")
-    {
-      ufnsui()
-      {
-        us(61,"progress",xzjd)
-        us(62,"text",xzjd+"%")
-      }
-    }
-    else
-    {
-      ufnsui()
-      {
-        us(60,"visibility","visible")
-        us(61,"progress",xzjd)
-        us(60,"visibility","gone")
-        us(56,"visibility","visible")
-        us(62,"visibility","gone")
-      }
-      s jsq ="1"
-    }
-  }
+	w(jsq != "1")
+	{
+		hddg(v,"downloadpercentage",xzjd)
+		f(xzjd &lt; "100")
+		{
+			ufnsui()
+			{
+				us(61,"progress",xzjd)
+				us(62,"text",xzjd+"%")
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				us(60,"visibility","visible")
+				us(61,"progress",xzjd)
+				us(60,"visibility","gone")
+				us(56,"visibility","visible")
+				us(62,"visibility","gone")
+			}
+			s jsq ="1"
+		}
+	}
 }</eventItme></event>
 </View>
 <View id="56" did="49" type="CardView">
@@ -384,54 +384,54 @@ background=through</ppt>
 
 f(uid_mc *? ".jupk")
 {
-  s ml =uid_mc
-  syso(ml)
-  t()
-  {
-    fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
-    //
-    fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
-    //
-    sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
-    sj(txt_yz_t,"AppM=","=AppM",AppM_2)
-    sr(txt_yz,"%g","$App/",txt_ml)
-    //应用link创建
-    ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
-    fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
-    //
-    fuzs(ml,txt_ml,yz_stty)
-    //
-    f(yz_stty == "true")
-    {
-      ufnsui()
-      {
-        fn tw.tw("安装成功啦")
-        us(56,"visibility","gone")
-        fd("/sdcard/ProperOS/.temp.jupk",djupk)
-      }
-    }
-    else
-    {
-      ufnsui()
-      {
-        fn tw.tw("资源文件解压失败")
-      }
-    }
-  }
+	s ml =uid_mc
+	syso(ml)
+	t()
+	{
+		fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
+		//
+		fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
+		//
+		sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
+		sj(txt_yz_t,"AppM=","=AppM",AppM_2)
+		sr(txt_yz,"%g","$App/",txt_ml)
+		//应用link创建
+		ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
+		fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
+		//
+		fuzs(ml,txt_ml,yz_stty)
+		//
+		f(yz_stty == "true")
+		{
+			ufnsui()
+			{
+				fn tw.tw("安装成功啦")
+				us(56,"visibility","gone")
+				fd("/sdcard/ProperOS/.temp.jupk",djupk)
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				fn tw.tw("资源文件解压失败")
+			}
+		}
+	}
 }
 else
 {
-  ss("/sdcard/JuOS/"+uid_mc,ml)
-  ss("$JuOS/hemo/桌面/"+uid_mc,ml_2)
-  fc(ml,ml_2,yz)
-  f(yz == "true")
-  {
-    fn tw.tw("导入成功")
-  }
-  else
-  {
-    fn tw.tw("导入失败")
-  }
+	ss("/sdcard/JuOS/"+uid_mc,ml)
+	ss("$JuOS/hemo/桌面/"+uid_mc,ml_2)
+	fc(ml,ml_2,yz)
+	f(yz == "true")
+	{
+		fn tw.tw("导入成功")
+	}
+	else
+	{
+		fn tw.tw("导入失败")
+	}
 }</eventItme></event>
 </View>
 <View id="58" did="1" type="SwipeRefreshLayout">
@@ -453,85 +453,85 @@ nvw(b,mBs)
 
 t()
 {
-  ss("$data/yysc/"+sss.ytv+".json",ggh)
-  fr(ggh,ur2l)
-  syso(ur2l)
-  f(ur2l != null)
-  {
-    json(ur2l,j2)
-    json(j2,"get","title",title)
-    json(j2,"get","icon",icon)
-    json(j2,"get","developer",developer)
-    json(j2,"get","introduce",introduce)
-    json(j2,"get","picture",picture)
-    f(picture == "true")
-    {
-      json(j2,"get","img0",img0)
-      json(j2,"get","img1",img1)
-      json(j2,"get","img2",img2)
-      json(j2,"get","img3",img3)
-      json(j2,"get","img4",img4)
-      ufnsui()
-      {
-      	/.
-      	fn byusi.img(35,img0)
-          fn byusi.img(37,img1)
-          fn byusi.img(39,img2)
-          fn byusi.img(41,img3)
-          fn byusi.img(43,img4)
-          ./
-        us(35,"src",img0)
-        us(53,"text",img0)
-        us(37,"src",img1)
-        us(39,"src",img2)
-        us(41,"src",img3)
-        us(43,"src",img4)
-      }
-    }
-    else f(picture == "false")
-    {
-      ufnsui()
-      {
-        fn tw.tw("开发者没有提供宣传图")
-        us(22,"visibility","gone")
-      }
-    }
-    else
-    {
-      ufnsui()
-      {
-        fn tw.tw2("出现解析问题了，抱歉哈",1)
-      }
-    }
-    //应用下载链接解析
-    json(json,"get","url",durl)
-    sss durl =durl
-    ufnsui()
-    {
-      us(9,"text",title)
-      sss title =title
-      ss("分享者："+developer,developer)
-      us(10,"text",developer)
-      us(6,"src",icon)
-      //fn byusi.img(6,icon)
-      sr(introduce,"&lt;br&gt;","\n",introduce2)
-      us(18,"text",introduce2)
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      utw(null,"","请检查网络，因为无法获取 Gitee 中的应用源","确定并关闭","我就是要查看",true,v)
-      {
-        end()
-      }
-      else
-      {
-        uigo("yysc-xq.iyu")
-        end()
-      }
-    }
-  }
+	ss("$data/yysc/"+sss.ytv+".json",ggh)
+	fr(ggh,ur2l)
+	syso(ur2l)
+	f(ur2l != null)
+	{
+		json(ur2l,j2)
+		json(j2,"get","title",title)
+		json(j2,"get","icon",icon)
+		json(j2,"get","developer",developer)
+		json(j2,"get","introduce",introduce)
+		json(j2,"get","picture",picture)
+		f(picture == "true")
+		{
+			json(j2,"get","img0",img0)
+			json(j2,"get","img1",img1)
+			json(j2,"get","img2",img2)
+			json(j2,"get","img3",img3)
+			json(j2,"get","img4",img4)
+			ufnsui()
+			{
+				/.
+				fn byusi.img(35,img0)
+					fn byusi.img(37,img1)
+					fn byusi.img(39,img2)
+					fn byusi.img(41,img3)
+					fn byusi.img(43,img4)
+					./
+				us(35,"src",img0)
+				us(53,"text",img0)
+				us(37,"src",img1)
+				us(39,"src",img2)
+				us(41,"src",img3)
+				us(43,"src",img4)
+			}
+		}
+		else f(picture == "false")
+		{
+			ufnsui()
+			{
+				fn tw.tw("开发者没有提供宣传图")
+				us(22,"visibility","gone")
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				fn tw.tw2("出现解析问题了，抱歉哈",1)
+			}
+		}
+		//应用下载链接解析
+		json(json,"get","url",durl)
+		sss durl =durl
+		ufnsui()
+		{
+			us(9,"text",title)
+			sss title =title
+			ss("分享者："+developer,developer)
+			us(10,"text",developer)
+			us(6,"src",icon)
+			//fn byusi.img(6,icon)
+			sr(introduce,"&lt;br&gt;","\n",introduce2)
+			us(18,"text",introduce2)
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			utw(null,"","请检查网络，因为无法获取 Gitee 中的应用源","确定并关闭","我就是要查看",true,v)
+			{
+				end()
+			}
+			else
+			{
+				uigo("yysc-xq.iyu")
+				end()
+			}
+		}
+	}
 }
 fn SystemOperation.meme("@meme/emo/尬笑.png",21,"\[S19\]")</eventItme></UIEventset>

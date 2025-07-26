@@ -358,12 +358,12 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">utw(null,"","支持官方.iyu","关闭","点击赞助码可以保存赞助码",true,v)
 {
-  endutw()
+	endutw()
 }
 else
 {
-  fn tw.tw("点我并不会保存图片，点击图片才会保存")
-  endutw()
+	fn tw.tw("点我并不会保存图片，点击图片才会保存")
+	endutw()
 }</eventItme></event>
 </View>
 <View id="61" did="10" type="RelativeLayout">

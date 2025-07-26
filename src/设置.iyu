@@ -77,11 +77,11 @@ gravity=left|center</ppt>
 syso(xzsj)
 f(xzsj == "false")
 {
-  ug(12,"checked","true")
+	ug(12,"checked","true")
 }
 else
 {
-  ug(12,"checked","true")
+	ug(12,"checked","true")
 }</eventItme></event>
 </View>
 <View id="10" did="9" type="RoundImageView">
@@ -196,34 +196,34 @@ f(data == null)
 else
 {
 	/.
-  json(data,jsn)
-  json(jsn,"get","status",status)
-  f(status == "success")
-  {
-    json(jsn,"get","data",idata)
-    json(idata,"get","id",id)
-    json(idata,"get","username",username)
-    json(idata,"get","email",email)
-    json(idata,"get","uid",uid)
-    json(idata,"get","uuid",uuid)
-    ss("用户ID："+id+"\nUID："+uid+"\n用户名："+username+"\n邮箱："+email,弹窗信息)
-    utw(null,"用户信息",弹窗信息,"确定","注销登录","签到",true,v)
-    {
-      endutw()
-    }
-    else
-    {
-      fd("$JuOS/data/User/data.json",yz)
-    }
-    else
-    {
-      ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid,url)
-      sss url =url
-      uigo("start_app.iyu")
-    }
-  }
-  ./
-  uigo("UserCenter.iyu")
+	json(data,jsn)
+	json(jsn,"get","status",status)
+	f(status == "success")
+	{
+		json(jsn,"get","data",idata)
+		json(idata,"get","id",id)
+		json(idata,"get","username",username)
+		json(idata,"get","email",email)
+		json(idata,"get","uid",uid)
+		json(idata,"get","uuid",uuid)
+		ss("用户ID："+id+"\nUID："+uid+"\n用户名："+username+"\n邮箱："+email,弹窗信息)
+		utw(null,"用户信息",弹窗信息,"确定","注销登录","签到",true,v)
+		{
+			endutw()
+		}
+		else
+		{
+			fd("$JuOS/data/User/data.json",yz)
+		}
+		else
+		{
+			ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid,url)
+			sss url =url
+			uigo("start_app.iyu")
+		}
+	}
+	./
+	uigo("UserCenter.iyu")
 }</eventItme><eventItme type="press">//fn lib.utw("login.iyu")
 fr("$JuOS/data/User/data.json",data)
 f(data == null)
@@ -232,32 +232,32 @@ f(data == null)
 }
 else
 {
-  json(data,jsn)
-  json(jsn,"get","status",status)
-  f(status == "success")
-  {
-    json(jsn,"get","data",idata)
-    json(idata,"get","id",id)
-    json(idata,"get","username",username)
-    json(idata,"get","email",email)
-    json(idata,"get","uid",uid)
-    json(idata,"get","uuid",uuid)
-    ss("用户ID："+id+"\nUID："+uid+"\n用户名："+username+"\n邮箱："+email,弹窗信息)
-    utw(null,"用户信息",弹窗信息,"确定","注销登录","签到",true,v)
-    {
-      endutw()
-    }
-    else
-    {
-      fd("$JuOS/data/User/data.json",yz)
-    }
-    else
-    {
-      ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid,url)
-      sss url =url
-      uigo("start_app.iyu")
-    }
-  }
+	json(data,jsn)
+	json(jsn,"get","status",status)
+	f(status == "success")
+	{
+		json(jsn,"get","data",idata)
+		json(idata,"get","id",id)
+		json(idata,"get","username",username)
+		json(idata,"get","email",email)
+		json(idata,"get","uid",uid)
+		json(idata,"get","uuid",uuid)
+		ss("用户ID："+id+"\nUID："+uid+"\n用户名："+username+"\n邮箱："+email,弹窗信息)
+		utw(null,"用户信息",弹窗信息,"确定","注销登录","签到",true,v)
+		{
+			endutw()
+		}
+		else
+		{
+			fd("$JuOS/data/User/data.json",yz)
+		}
+		else
+		{
+			ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid,url)
+			sss url =url
+			uigo("start_app.iyu")
+		}
+	}
 }</eventItme></event>
 </View>
 <View id="96" did="20" type="RelativeLayout">
@@ -309,42 +309,42 @@ background=through</ppt>
 <event><eventItme type="clicki">fr("$data/oauth/gitee/user.json",i)
 f(i == null)
 {
-  t()
-  {
-    hs("https://api.oauth.byusi.cn/rid.php",data)
-    json(data,json)
-    json(json,"get","rid",d_u)
-    ss("https://api.oauth.byusi.cn/oauth.php?u="+d_u,gitee_oauth_url)
-    hs(gitee_oauth_url,gitee_oauth_url_data)
-    json(gitee_oauth_url_data,json)
-    json(json,"get","url",j)
-    sss url =j
-    ufnsui()
-    {
-      fn tw.tw("登录完成后返回")
-      utw(null,"","确定完成","确定登录完成",false,v)
-      {
-        t()
-        {
-          ss("https://api.oauth.byusi.cn/api.php?u="+d_u)
-          hs(d_u,data)
-          json(data,d_sj)
-          ufnsui()
-          {
-            utw(null,"",d_sj,"确定",true,v)
-            {
-              endutw()
-            }
-          }
-        }
-      }
-      uigo("system_start.iyu")
-    }
-  }
+	t()
+	{
+		hs("https://api.oauth.byusi.cn/rid.php",data)
+		json(data,json)
+		json(json,"get","rid",d_u)
+		ss("https://api.oauth.byusi.cn/oauth.php?u="+d_u,gitee_oauth_url)
+		hs(gitee_oauth_url,gitee_oauth_url_data)
+		json(gitee_oauth_url_data,json)
+		json(json,"get","url",j)
+		sss url =j
+		ufnsui()
+		{
+			fn tw.tw("登录完成后返回")
+			utw(null,"","确定完成","确定登录完成",false,v)
+			{
+				t()
+				{
+					ss("https://api.oauth.byusi.cn/api.php?u="+d_u)
+					hs(d_u,data)
+					json(data,d_sj)
+					ufnsui()
+					{
+						utw(null,"",d_sj,"确定",true,v)
+						{
+							endutw()
+						}
+					}
+				}
+			}
+			uigo("system_start.iyu")
+		}
+	}
 }
 else
 {
-  
+	
 }</eventItme></event>
 </View>
 <View id="35" did="20" type="RelativeLayout">
@@ -410,15 +410,15 @@ background=through</ppt>
 fn byusi.qt(35)
 f(xz == "true")
 {
-  us(43,"checked","false")
-  fw("$System/Config/app_start_qdq.sys","false")
-  fn tw.tw("已关闭新启动器")
+	us(43,"checked","false")
+	fw("$System/Config/app_start_qdq.sys","false")
+	fn tw.tw("已关闭新启动器")
 }
 else f(xz == "false")
 {
-  us(43,"checked","true")
-  fw("$System/Config/app_start_qdq.sys","true")
-  fn tw.tw("已启动新启动器")
+	us(43,"checked","true")
+	fw("$System/Config/app_start_qdq.sys","true")
+	fn tw.tw("已启动新启动器")
 }</eventItme></event>
 </View>
 <View id="132" did="20" type="RelativeLayout">
@@ -485,16 +485,16 @@ fn byusi.qt(132)
 f(xz == "true")
 {
 	us(138,"checked","false")
-    fw("$System/Config/Application_side_load.sys","false")
-    fd("$JuOS/hemo/桌面/导入插件.app",dasls)
-    fn tw.tw("已关闭应用侧载")
+	fw("$System/Config/Application_side_load.sys","false")
+	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+	fn tw.tw("已关闭应用侧载")
 }
 else f(xz == "false")
 {
 	us(138,"checked","true")
-    fw("$System/Config/Application_side_load.sys","true")
-    fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
-    fn tw.tw("已开启应用侧载")
+	fw("$System/Config/Application_side_load.sys","true")
+	fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+	fn tw.tw("已开启应用侧载")
 }</eventItme></event>
 </View>
 <View id="140" did="20" type="RelativeLayout">
@@ -610,21 +610,21 @@ ug(108,"checked",xz)
 fn byusi.qt(102)
 f(xz == "true")
 {
-  us(108,"checked","false")
-  fw("$System/Config/home.sys","false")
-  fn tw.tw("已关闭新桌面")
-  fr("$boot/init.json",init)
-  sr(init,"home.iyu","JuOS_Hemo.iyu",init_data)
-  fw("$boot/init.json",init_data)
+	us(108,"checked","false")
+	fw("$System/Config/home.sys","false")
+	fn tw.tw("已关闭新桌面")
+	fr("$boot/init.json",init)
+	sr(init,"home.iyu","JuOS_Hemo.iyu",init_data)
+	fw("$boot/init.json",init_data)
 }
 else f(xz == "false")
 {
-  us(108,"checked","true")
-  fw("$System/Config/home.sys","true")
-  fn tw.tw("已启动新桌面")
-  fr("$boot/init.json",init)
-  sr(init,"JuOS_Hemo.iyu","home.iyu",init_data)
-  fw("$boot/init.json",init_data)
+	us(108,"checked","true")
+	fw("$System/Config/home.sys","true")
+	fn tw.tw("已启动新桌面")
+	fr("$boot/init.json",init)
+	sr(init,"JuOS_Hemo.iyu","home.iyu",init_data)
+	fw("$boot/init.json",init_data)
 }
 ./</eventItme></event>
 </View>
@@ -996,73 +996,73 @@ fr("$System/Config/init_fb.sys",init_fb)
 //
 f(init_fb == "true")
 {
-  us(24,"checked","true")
+	us(24,"checked","true")
 }
 //
 fr("$System/Config/app_start_qdq.sys",app_start_qdq)
 f(app_start_qdq == "true")
 {
-  us(43,"checked",app_start_qdq)
+	us(43,"checked",app_start_qdq)
 }
 else f(app_start_qdq == "false")
 {
-  us(43,"checked",app_start_qdq)
+	us(43,"checked",app_start_qdq)
 }
 else
 {
-  us(43,"checked","false")
+	us(43,"checked","false")
 }
 fw("$System/Config/home.sys","false")
 fr("$System/Config/home.sys",home)
 f(home == "true")
 {
-  us(108,"checked",home)
+	us(108,"checked",home)
 }
 else f(home == "false")
 {
-  us(108,"checked",home)
+	us(108,"checked",home)
 }
 else
 {
-  fw("$System/Config/home.sys","false")
-  us(108,"checked","false")
+	fw("$System/Config/home.sys","false")
+	us(108,"checked","false")
 }
 //引导配置
 fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
 {
-  us(66,"visibility","visible")
+	us(66,"visibility","visible")
 }
 //
 fr("$System/Config/fillet.sys",fillet)
 f(fillet != null)
 {
 	sj(fillet,null,"dp",fillet)
-    us(130,"progress",fillet)
-    us(131,"text",fillet+"dp")
+	us(130,"progress",fillet)
+	us(131,"text",fillet+"dp")
 }
 else
 {
 	fw("$System/Config/fillet.sys","25dp")
 	us(130,"progress","25")
-    us(131,"text","25dp")
+	us(131,"text","25dp")
 }
 fr("$System/Config/Application_side_load.sys",asls)
 f(asls == "true")
 {
 	us(138,"checked","true")
-    fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+	fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
 }
 else f(asls == "false")
 {
 	us(138,"checked","false")
-    fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
 }
 else
 {
 	fw("$System/Config/Application_side_load.sys","false")
-    us(138,"checked","false")
-    fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+	us(138,"checked","false")
+	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
 }
 //
 fn api.hide_btn(73)
@@ -1109,5 +1109,5 @@ fn Lottie.setImageLottie(122,data,-1,true)
 us(122,"src","$JuOS/ICON/hwid_default_avatar_before.png")</eventItme><eventItme type="restart">fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
 {
-  us(66,"visibility","visible")
+	us(66,"visibility","visible")
 }</eventItme></UIEventset>

@@ -9,37 +9,37 @@ height=-1
 url=http://null.null.com</ppt>
 <event><eventItme type="onprogresschanged">f(st_nS != "100")
 {
-  us(4,"visibility","visible")
-  us(5,"progress",st_nS)
+	us(4,"visibility","visible")
+	us(5,"progress",st_nS)
 }
 else f(st_nS == "100")
 {
-  us(5,"progress","0")
-  us(4,"visibility","gone")
+	us(5,"progress","0")
+	us(4,"visibility","gone")
 }</eventItme><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)
 /.
 sj(st_url,"juos_sh://",null,iu)
 syso(iu)
 f(iu != null)
 {
-  uigo("JuOS.terminal.iyu")
-  sss url =iu
+	uigo("JuOS.terminal.iyu")
+	sss url =iu
 }
 else f(iu == null)
 {
-  us(st_vId,"url",st_url)
+	us(st_vId,"url",st_url)
 }</eventItme><eventItme type="onreceivederror">us(6,"visibility","visible")
 f(st_url ?* "http")
 {
 	sss Root_Interlinkage =st_url
-    syso(sss.Root_Interlinkage)
+	syso(sss.Root_Interlinkage)
 	ss("在加载该链接时发生了错误\n错误代码："+st_dN+"\n报错的加载链接：ProperOS:Root_Interlinkage",ii)
 }
 else
 {
 	fdir("$",root_file)
-    ss("file://"+root_file,root_file)
-    stobm(root_file,"utf-8",root_file)
+	ss("file://"+root_file,root_file)
+	stobm(root_file,"utf-8",root_file)
 	sr(st_url,root_file,"ProperOS:Root_Files/",root)
 	ss("错误代码："+st_dN+"\n在加载该链接时发生了错误："+root,ii)
 }
@@ -53,26 +53,26 @@ javags(imagetype,null,"android.webkit.WebView$HitTestResult","IMAGE_TYPE")
 javags(imageurl,null,"android.webkit.WebView$HitTestResult","SRC_IMAGE_ANCHOR_TYPE")
 f(type==imagetype||type==imageurl)
 {
-  java(url,htr,"android.webkit.WebView$HitTestResult.getExtra")
-  fdir("$ProperOS/Web/img/temp",path)
-  fl(path,dir)
-  sgszl(dir,size)
-  ss(path+"/"+size+".jpg",path)
-  t()
-  {
-    hd(url,path,c)
-    ufnsui()
-    {
-      utw(null,"","dialog.iyu","关闭预览",true,v)
-      {
-      	endutw()
-      }
-      gvs(v,3,vw)
-      //us(vw,"src",path)
-      us(vw,"url",path)
-      syso(path)
-    }
-  }
+	java(url,htr,"android.webkit.WebView$HitTestResult.getExtra")
+	fdir("$ProperOS/Web/img/temp",path)
+	fl(path,dir)
+	sgszl(dir,size)
+	ss(path+"/"+size+".jpg",path)
+	t()
+	{
+		hd(url,path,c)
+		ufnsui()
+		{
+			utw(null,"","dialog.iyu","关闭预览",true,v)
+			{
+				endutw()
+			}
+			gvs(v,3,vw)
+			//us(vw,"src",path)
+			us(vw,"url",path)
+			syso(path)
+		}
+	}
 }</eventItme><eventItme type="onpagestarted">us(14,"visibility","visible")
 us(6,"visibility","gone")
 fn Lottie.loaddex()
@@ -85,8 +85,8 @@ ss("被下载文件大小："+st_cH+"\n文件名："+name_impurity+"\n被下载�
 utw(null,"发现文件下载事件",tsc,"下载","取消",false,v)
 {
 	endutw()
-    hd(st_url,name_impurity,c)
-    syso(c)
+	hd(st_url,name_impurity,c)
+	syso(c)
 }
 else
 {
@@ -290,7 +290,7 @@ background=through</ppt>
 f(yz_url_dt == "true")
 {
 	us(3,"gobackorforward",-1)
-    us(6,"visibility","gone")
+	us(6,"visibility","gone")
 }
 else f(yz_url_dt == "false")
 {
@@ -325,12 +325,12 @@ app_CardBackgroundColor=#0fffffff</ppt>
 <event><eventItme type="clicki">f(ss.uii == true)
 {
 	us(28,"visibility","visible")
-    ss uii =false
+	ss uii =false
 }
 else f(ss.uii == false)
 {
 	us(28,"visibility","gone")
-    ss uii =true
+	ss uii =true
 }</eventItme></event>
 </View>
 <View id="34" did="33" type="ImageView">
@@ -349,13 +349,13 @@ else
 {
   fn tw.tw2("抱歉，启动配置出现问题，无法正常启动",2)
   utw(null,"","是否退出？","确定","不退出",true,v)
-    {
-    	end()
-    }
-    else
-     {
-     	endutw()
-     }
+	{
+		end()
+	}
+	else
+	 {
+	 	endutw()
+	 }
 }
 fn api.hide_btn(3)
 //开启JavaScript交互
@@ -363,26 +363,26 @@ hsas(3,true)
 fn n.ui(1)
 ss uii =true</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
-  ug(3,"cangoback",yz_url_dt)
-  //
-  f(sss.install_lock == null)
-  {
-  	f(yz_url_dt == "true")
-      {
-      	us(3,"gobackorforward",-1)
-          us(6,"visibility","gone")
-      }
-      else f(yz_url_dt == "false")
-      {
-      	end()
-      }
-  }
-  else
-  {
-  	sss jsq ="1"
-  	us(app.1,"visibility","gone")
-      sss install_lock =null
-  }
+	ug(3,"cangoback",yz_url_dt)
+	//
+	f(sss.install_lock == null)
+	{
+		f(yz_url_dt == "true")
+		{
+			us(3,"gobackorforward",-1)
+			us(6,"visibility","gone")
+		}
+		else f(yz_url_dt == "false")
+		{
+			end()
+		}
+	}
+	else
+	{
+		sss jsq ="1"
+		us(app.1,"visibility","gone")
+		sss install_lock =null
+	}
 }</eventItme><eventItme type="loadingComplete">fn api.hide_btn(3)
 addv(1,"app.iyu")
 us(app.7,"visibility","gone")

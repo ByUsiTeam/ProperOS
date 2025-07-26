@@ -27,7 +27,7 @@ javax(null,lottieDrawable,ld,"setComposition",lc,composition)
 javax(null,lottieDrawable,ld,"setRepeatCount","int",repeat)
 f(start)
 {
-  javax(null,lottieDrawable,ld,"start")
+	javax(null,lottieDrawable,ld,"start")
 }
 end fn
 

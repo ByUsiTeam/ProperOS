@@ -25,33 +25,33 @@ ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
 //
 t()
 {
-  s a = "/sdcard/ProperOS/img"
-  fl(a,false,wj_list)
-  for(sc;wj_list)
-  {
-    f(sc ? ".gif")
-    {
-      ss("/sdcard/ProperOS/img/"+sc,img)
-      syso(img)
-      ula(list_2,11=img,9=sc)
-      ufnsui()
-      {
-        us(6,"visibility","gone")
-        uls(3,list_2,"list_4.iyu")
-      }
-    }
-    else
-    {
-      ss("/sdcard/ProperOS/img/"+sc,img)
-      ula(list_cz,8=img,9=sc)
-      ufnsui()
-      {
-        us(6,"visibility","gone")
-        uls(3,list_cz,"list_3.iyu")
-      }
-    }
-    //syso(sc)
-  }
+	s a = "/sdcard/ProperOS/img"
+	fl(a,false,wj_list)
+	for(sc;wj_list)
+	{
+		f(sc ? ".gif")
+		{
+			ss("/sdcard/ProperOS/img/"+sc,img)
+			syso(img)
+			ula(list_2,11=img,9=sc)
+			ufnsui()
+			{
+				us(6,"visibility","gone")
+				uls(3,list_2,"list_4.iyu")
+			}
+		}
+		else
+		{
+			ss("/sdcard/ProperOS/img/"+sc,img)
+			ula(list_cz,8=img,9=sc)
+			ufnsui()
+			{
+				us(6,"visibility","gone")
+				uls(3,list_cz,"list_3.iyu")
+			}
+		}
+		//syso(sc)
+	}
 }
 //-_-_-_-_-_-_-_-_-_-
 us(4,"refreshing","false")</eventItme></event>
@@ -89,55 +89,55 @@ gravity=center</ppt>
 //
 t()
 {
-  s a = "/sdcard/ProperOS/img"
-  fl(a,false,wj_list)
-  for(sc;wj_list)
-  {
-    ss("/sdcard/ProperOS/img/"+sc,img)
-    ula(list_cz,8=img,9=sc)
-    ufnsui()
-    {
-      us(6,"visibility","gone")
-      uls(3,list_cz,"list_3.iyu")
-    }
-    //syso(sc)
-  }
+	s a = "/sdcard/ProperOS/img"
+	fl(a,false,wj_list)
+	for(sc;wj_list)
+	{
+		ss("/sdcard/ProperOS/img/"+sc,img)
+		ula(list_cz,8=img,9=sc)
+		ufnsui()
+		{
+			us(6,"visibility","gone")
+			uls(3,list_cz,"list_3.iyu")
+		}
+		//syso(sc)
+	}
 }
 fn n.ui(1)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
-  fr("$System/Config/home.sys",home)
-  f(home == "false")
-  {
-    uigo("JuOS_Hemo.iyu")
-    end()
-  }
-  else f(home == "true")
-  {
-    uigo("home.iyu")
-    end()
-  }
-  else
-  {
-    uigo("JuOS_Hemo.iyu")
-    end()
-  }
+	fr("$System/Config/home.sys",home)
+	f(home == "false")
+	{
+		uigo("JuOS_Hemo.iyu")
+		end()
+	}
+	else f(home == "true")
+	{
+		uigo("home.iyu")
+		end()
+	}
+	else
+	{
+		uigo("JuOS_Hemo.iyu")
+		end()
+	}
 }</eventItme><eventItme type="loadingComplete">uycl("#daebeae3",true)
 utb(2)</eventItme><eventItme type="menu">case 退出:
 fr("$System/Config/home.sys",home)
 f(home == "false")
 {
-  uigo("JuOS_Hemo.iyu")
-  end()
+	uigo("JuOS_Hemo.iyu")
+	end()
 }
 else f(home == "true")
 {
-  uigo("home.iyu")
-  end()
+	uigo("home.iyu")
+	end()
 }
 else
 {
-  uigo("JuOS_Hemo.iyu")
-  end()
+	uigo("JuOS_Hemo.iyu")
+	end()
 }
 break
 //
@@ -146,16 +146,16 @@ fd("$JuOS/Config/wallpaper/wp.png",yz_dl_wp)
 fd("$JuOS/Config/wallpaper/wp.gif",yz_dl_wp_2)
 f(yz_dl_wp == "true")
 {
-  fn tw.tw("删除好了")
-  fd("$JuOS/Config/wallpaper/wp.gif.config",yvv)
+	fn tw.tw("删除好了")
+	fd("$JuOS/Config/wallpaper/wp.gif.config",yvv)
 }
 else f(yz_dl_wp_2 == "true")
 {
-  fn tw.tw("删除好了")
-  fd("$JuOS/Config/wallpaper/wp.gif.config",yvv)
+	fn tw.tw("删除好了")
+	fd("$JuOS/Config/wallpaper/wp.gif.config",yvv)
 }
 else
 {
-  fn tw.tw("没有删除成功，请验证您是否有设置壁纸")
+	fn tw.tw("没有删除成功，请验证您是否有设置壁纸")
 }
 break</eventItme></UIEventset>

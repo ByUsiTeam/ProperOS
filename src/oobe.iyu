@@ -151,12 +151,12 @@ fn byusi.qt(20)
 f(xzzt == true)
 {
 	utw(null,"","重启继续使用 ProperOS","重启",false,v)
-    {
-    	fw("$System/Config/oobe.sys","1")
-	    uigo("mian.iyu")
-        lan(0)
-        end()
-    }
+	{
+		fw("$System/Config/oobe.sys","1")
+		uigo("mian.iyu")
+		lan(0)
+		end()
+	}
 }
 else
 {

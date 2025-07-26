@@ -4,36 +4,35 @@ fr("$ByUsi/JuOS/StartA/config.jc",config)
 sj(config,"S=","=S",s)
 f(s == "true")
 {
-  sj(config,"P=","=P",p)
-  sj(config,"D=","=D",d)
-  ss(p+d,wj)
-  fuz(wj,"index.json","$ByUsi/temp/starta",jy)
-  f(jy == "true")
-  {
-    fr("$ByUsi/temp/starta/index.json",dhjson)
-    //数据解析
-    json(dhjson,jxwc)
-    json(jxwc,"get","Total-number-of-pictures",tnop)
-    json(jxwc,"get","prefix",prefix)
-    json(jxwc,"get","suffix",suffix)
-    json(jxwc,"get","Splicing-method",sm)
-    //数据使用
-    
-  }
-  else
-  {
-    fn tw.tw("解压出现问题了，抱歉了")
-  }
+	sj(config,"P=","=P",p)
+	sj(config,"D=","=D",d)
+	ss(p+d,wj)
+	fuz(wj,"index.json","$ByUsi/temp/starta",jy)
+	f(jy == "true")
+	{
+		fr("$ByUsi/temp/starta/index.json",dhjson)
+		//数据解析
+		json(dhjson,jxwc)
+		json(jxwc,"get","Total-number-of-pictures",tnop)
+		json(jxwc,"get","prefix",prefix)
+		json(jxwc,"get","suffix",suffix)
+		json(jxwc,"get","Splicing-method",sm)
+		//数据使用
+	}
+	else
+	{
+		fn tw.tw("解压出现问题了，抱歉了")
+	}
 }
 else f(s == "false")
 {
-  endcode
+	endcode
 }
 else
 {
-  fn tw.tw("配置出现异常，正在自动恢复默认配置")
-  fr("@JuOS/src/StartA/config.jc",def)
-  fw("$ByUsi/JuOS/StartA/config.jc",def)
+	fn tw.tw("配置出现异常，正在自动恢复默认配置")
+	fr("@JuOS/src/StartA/config.jc",def)
+	fw("$ByUsi/JuOS/StartA/config.jc",def)
 }
 
 end fn
@@ -85,29 +84,29 @@ fn wp(id)
 s wp ="$JuOS/Config/wallpaper/wp.png"
 t()
 {
-  fe("$JuOS/Config/wallpaper/wp.png",wp_cz_yz)
-  f(wp_cz_yz == "true")
-  {
-    ufnsui()
-    {
-      us(id,"background",wp)
-      us(id,"src",wp)
-    }
-  }
-  else f(wp_cz_yz == "false")
-  {
-    ufnsui()
-    {
-      us(id,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw("出现问题了(つД`)")
-    }
-  }
+	fe("$JuOS/Config/wallpaper/wp.png",wp_cz_yz)
+	f(wp_cz_yz == "true")
+	{
+		ufnsui()
+		{
+			us(id,"background",wp)
+			us(id,"src",wp)
+		}
+	}
+	else f(wp_cz_yz == "false")
+	{
+		ufnsui()
+		{
+			us(id,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw("出现问题了(つД`)")
+		}
+	}
 }
 end fn
 
@@ -115,30 +114,30 @@ fn wp2(id,id2)
 s wp ="$JuOS/Config/wallpaper/wp.png"
 t()
 {
-  fe("$JuOS/Config/wallpaper/wp.png",wp_cz_yz)
-  f(wp_cz_yz == true)
-  {
-    ufnsui()
-    {
-      us(id,"background",wp)
-      us(id2,"src",wp)
-    }
-  }
-  else f(wp_cz_yz == false)
-  {
-    ufnsui()
-    {
-      us(id,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
-      us(id2,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw("出现问题了(つД`)")
-    }
-  }
+	fe("$JuOS/Config/wallpaper/wp.png",wp_cz_yz)
+	f(wp_cz_yz == true)
+	{
+		ufnsui()
+		{
+			us(id,"background",wp)
+			us(id2,"src",wp)
+		}
+	}
+	else f(wp_cz_yz == false)
+	{
+		ufnsui()
+		{
+			us(id,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+			us(id2,"background","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw("出现问题了(つД`)")
+		}
+	}
 }
 end fn
 
@@ -202,7 +201,7 @@ gvs(id2,相对布局)
 javanew(类对象,类,"android.app.Activity",activity,"android.webkit.WebView",浏览器,"android.widget.RelativeLayout",相对布局)
 f(类对象!=null)
 {
-  javax(chromeClient,类对象,类,"getWebChromeClient")
+	javax(chromeClient,类对象,类,"getWebChromeClient")
 } javax(null,浏览器,"android.webkit.WebView","setWebChromeClient","android.webkit.WebChromeClient",chromeClient)
 
 end fn
@@ -313,37 +312,37 @@ fn apk(path)
 javags(er,activity,"android.app.Activity","RESULT_OK")
 f(st_lC==er)
 {
-  f(st_sC==2)
-  {
-    java(uri,st_iT,"android.content.Intent.getData")
-    call(path, "mjava", "uri.getRealPath", activity, uri)
-    ufnsui()
-    {
-      //s path="/storage/emulated/0/小趣/app/云手机.apk"
-      fs(path,b)
-      s2(b/1024/1024, b)
-      sn(b/1024/1024, b2)
-      ss(b+"MB",wjdax)
-      //us(5,"text",wjdax)
-      call(result,"mlua","apk.getApkInfo",path)
-      sgsz(result,0,包名)
-      //us(6,"text",包名)
-      sgsz(result,1,版本)
-      //us(4,"text",版本)
-      javax(pm,activity,"android.content.ContextWrapper","getPackageManager")
-      javax(icon,pm,"android.content.pm.PackageManager","getApplicationInfo","String",包名,"int",0)
-      javax(图标,icon,"android.content.pm.PackageItemInfo","loadIcon","android.content.pm.PackageManager",pm)
-      //us(7,"src",图标)
-      sgsz(result,2,应用名)
-      //us(3,"text",应用名)
-      ss(版本+","+包名,包名版本)
-      ss("应用解析\n包名："+包名+"\n版本："+版本+"\n大小："+wjdax,iio)
-      utw(图标,应用名,iio,"确定",true,v)
-      {
-        endutw()
-      }
-    }
-  }
+	f(st_sC==2)
+	{
+		java(uri,st_iT,"android.content.Intent.getData")
+		call(path, "mjava", "uri.getRealPath", activity, uri)
+		ufnsui()
+		{
+			//s path="/storage/emulated/0/小趣/app/云手机.apk"
+			fs(path,b)
+			s2(b/1024/1024, b)
+			sn(b/1024/1024, b2)
+			ss(b+"MB",wjdax)
+			//us(5,"text",wjdax)
+			call(result,"mlua","apk.getApkInfo",path)
+			sgsz(result,0,包名)
+			//us(6,"text",包名)
+			sgsz(result,1,版本)
+			//us(4,"text",版本)
+			javax(pm,activity,"android.content.ContextWrapper","getPackageManager")
+			javax(icon,pm,"android.content.pm.PackageManager","getApplicationInfo","String",包名,"int",0)
+			javax(图标,icon,"android.content.pm.PackageItemInfo","loadIcon","android.content.pm.PackageManager",pm)
+			//us(7,"src",图标)
+			sgsz(result,2,应用名)
+			//us(3,"text",应用名)
+			ss(版本+","+包名,包名版本)
+			ss("应用解析\n包名："+包名+"\n版本："+版本+"\n大小："+wjdax,iio)
+			utw(图标,应用名,iio,"确定",true,v)
+			{
+				endutw()
+			}
+		}
+	}
 }
 
 end fn
@@ -366,21 +365,22 @@ cls(dex,"org.Darlene.cn.Downloader$DownloadListener",DownloadListener)
 javanew(newDownloadListener,DownloadListener)
 
 javacb(newDownloadListener,DownloadListener){
-  f(st_mD?"onDownloadComplete")
-  {
-    t()
-    {
-      syso("下载成功")
-      fn lib.fo(lj)
-    }
-  }
-  f(st_mD?"onDownloadFailed")
-  {
-    sgsz(st_aS,0,e)
-    ufnsui(){
-      fn tw.tw("失败："+e)
-    }
-  }
+	f(st_mD?"onDownloadComplete")
+	{
+		t()
+		{
+			syso("下载成功")
+			fn lib.fo(lj)
+		}
+	}
+	f(st_mD?"onDownloadFailed")
+	{
+		sgsz(st_aS,0,e)
+		ufnsui()
+		{
+			fn tw.tw("失败："+e)
+		}
+	}
 }
 
 //设置下载图标
@@ -420,52 +420,52 @@ fn install(uid_mc)
 //
 f(uid_mc *? ".jupk")
 {
-  s ml =uid_mc
-  syso(ml)
-  t()
-  {
-    fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
-    //
-    fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
-    //
-    sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
-    sj(txt_yz_t,"AppM=","=AppM",AppM_2)
-    sr(txt_yz,"%g","$App/",txt_ml)
-    //应用link创建
-    ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
-    fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
-    //
-    fuzs(ml,txt_ml,yz_stty)
-    //
-    f(yz_stty == "true")
-    {
-      ufnsui()
-      {
-        //fn tw.tw("安装成功啦")
-      }
-    }
-    else
-    {
-      ufnsui()
-      {
-        fn tw.tw("资源文件解压失败")
-      }
-    }
-  }
+	s ml =uid_mc
+	syso(ml)
+	t()
+	{
+		fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
+		//
+		fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
+		//
+		sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
+		sj(txt_yz_t,"AppM=","=AppM",AppM_2)
+		sr(txt_yz,"%g","$App/",txt_ml)
+		//应用link创建
+		ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
+		fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
+		//
+		fuzs(ml,txt_ml,yz_stty)
+		//
+		f(yz_stty == "true")
+		{
+			ufnsui()
+			{
+				fn tw.tw("安装成功啦")
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				fn tw.tw("资源文件解压失败")
+			}
+		}
+	}
 }
 else
 {
-  ss("/sdcard/JuOS/"+uid_mc,ml)
-  ss("$JuOS/hemo/桌面/"+uid_mc,ml_2)
-  fc(ml,ml_2,yz)
-  f(yz == "true")
-  {
-    fn tw.tw("导入成功")
-  }
-  else
-  {
-    fn tw.tw("导入失败")
-  }
+	ss("/sdcard/JuOS/"+uid_mc,ml)
+	ss("$JuOS/hemo/桌面/"+uid_mc,ml_2)
+	fc(ml,ml_2,yz)
+	f(yz == "true")
+	{
+		fn tw.tw("导入成功")
+	}
+	else
+	{
+		fn tw.tw("导入失败")
+	}
 }
 
 end fn

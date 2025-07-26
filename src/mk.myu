@@ -9,23 +9,23 @@ s2(use/ga,gb)
 s2(use/ta,tb)
 f(tb&gt;=1)
 {
-  ss(tb+"T",suse)
+	ss(tb+"T",suse)
 }
 else f(gb&gt;=1)
 {
-  ss(gb+"G",suse)
+	ss(gb+"G",suse)
 }
 else f(mb&gt;=1)
 {
-  ss(mb+"M",suse)
+	ss(mb+"M",suse)
 }
 else f(kb&gt;=1)
 {
-  ss(kb+"K",suse)
+	ss(kb+"K",suse)
 }
 else
 {
-  ss(use+"B",suse)
+	ss(use+"B",suse)
 }
 
 sss mk_lts=suse
@@ -34,52 +34,52 @@ fn totime(timems)
 s(timems/1000,ts)
 f(ts&gt;=60)
 {
-  s(ts/60,tm)
-  s(ts-tm*60,tss)
-  f(tm&gt;=60)
-  {
-    s(tm/60,thh)
-    s(tm-thh*60,tmm)
-  }
-  else
-  {
-    s tmm=tm
-  }
+	s(ts/60,tm)
+	s(ts-tm*60,tss)
+	f(tm&gt;=60)
+	{
+		s(tm/60,thh)
+		s(tm-thh*60,tmm)
+	}
+	else
+	{
+		s tmm=tm
+	}
 }
 else
 {
-  s tss=ts
+	s tss=ts
 }
 f(thh&gt;0)
 {
-  ss(thh+":",shh)
+	ss(thh+":",shh)
 }
 else
 {
-  s shh=""
+	s shh=""
 }
 f(tmm&gt;0)
 {
-  f(tmm&lt;10)
-  {
-    ss("0"+tmm+":",smm)
-  }
-  else
-  {
-    ss(tmm+":",smm)
-  }
+	f(tmm&lt;10)
+	{
+		ss("0"+tmm+":",smm)
+	}
+	else
+	{
+		ss(tmm+":",smm)
+	}
 }
 else
 {
-  s smm="00:"
+	s smm="00:"
 }
 f(tss&lt;10)
 {
-  ss("0"+tss,szzz)
+	ss("0"+tss,szzz)
 }
 else
 {
-  s szzz=tss
+	s szzz=tss
 }
 ss(shh+smm+szzz,sss.mk_totime)
 

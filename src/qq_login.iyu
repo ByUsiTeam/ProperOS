@@ -59,50 +59,50 @@ layout_margintop=20dp</ppt>
 </View>
 <UIEventset><eventItme type="onactivityresult">f(st_iT==null)
 {
-  tw("登录取消")
+	tw("登录取消")
 }
 else
 {
-  java(bundle,st_iT,"android.content.Intent.getExtras")
-  java(info,bundle,"android.os.BaseBundle.get","String","key_response")
-  json(info,info)
-  syso(info)
-  //openid:QQ授权登陆后返回的用户在该应用的唯一标识
-  json(info,"get","openid",openid)
-  //access_token:QQ授权登陆后返回的访问令牌
-  json(info,"get","access_token",access_token)
-  t()
-  {
-    //腾讯QQ用户信息查询接口
-    s url = "https://graph.qq.com/user/get_simple_userinfo"
-    s ua = "Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.134 Mobile Safari/537.36 LeBrowser/7.4.0"
-    ss("appid=1107961986&access_token="+access_token+"&openid="+openid+"&Format=json",data)
-    //访问腾讯官方接口获取QQ用户相关个人信息
-    hs(url,data,"utf-8",null,"true",ua,back)
-    //json解析相关返回参数
-    json(back,back)
-    syso(back)
-    //nickname:用户在QQ空间的昵称
-    json(back,"get","nickname",nickname)
-    //gender:性别
-    json(back,"get","gender",gender)
-    //figureurl:头像
-    json(back,"get","figureurl_2",figureurl)
-    //province:省
-    json(back,"get","province",province)
-    //city:市
-    json(back,"get","city",city)
-    //还有好多参数没有解析,不过一般拿来并没有什么用.需要的自行解析调用
-    ss(province+"-"+city,location)
-    ufnsui()
-    {
-      //把用户信息在下面这些控件中显示出来
-      us(3,"text",nickname)
-      us(4,"text",gender)
-      us(5,"text",location)
-      us(6,"text",openid)
-      us(7,"text",access_token)
-      us(8,"src",figureurl)
-    }
-  }
+	java(bundle,st_iT,"android.content.Intent.getExtras")
+	java(info,bundle,"android.os.BaseBundle.get","String","key_response")
+	json(info,info)
+	syso(info)
+	//openid:QQ授权登陆后返回的用户在该应用的唯一标识
+	json(info,"get","openid",openid)
+	//access_token:QQ授权登陆后返回的访问令牌
+	json(info,"get","access_token",access_token)
+	t()
+	{
+		//腾讯QQ用户信息查询接口
+		s url = "https://graph.qq.com/user/get_simple_userinfo"
+		s ua = "Mozilla/5.0 (Linux; Android 7.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.134 Mobile Safari/537.36 LeBrowser/7.4.0"
+		ss("appid=1107961986&access_token="+access_token+"&openid="+openid+"&Format=json",data)
+		//访问腾讯官方接口获取QQ用户相关个人信息
+		hs(url,data,"utf-8",null,"true",ua,back)
+		//json解析相关返回参数
+		json(back,back)
+		syso(back)
+		//nickname:用户在QQ空间的昵称
+		json(back,"get","nickname",nickname)
+		//gender:性别
+		json(back,"get","gender",gender)
+		//figureurl:头像
+		json(back,"get","figureurl_2",figureurl)
+		//province:省
+		json(back,"get","province",province)
+		//city:市
+		json(back,"get","city",city)
+		//还有好多参数没有解析,不过一般拿来并没有什么用.需要的自行解析调用
+		ss(province+"-"+city,location)
+		ufnsui()
+		{
+			//把用户信息在下面这些控件中显示出来
+			us(3,"text",nickname)
+			us(4,"text",gender)
+			us(5,"text",location)
+			us(6,"text",openid)
+			us(7,"text",access_token)
+			us(8,"src",figureurl)
+		}
+	}
 }</eventItme></UIEventset>

@@ -44,52 +44,53 @@ ss("/sdcard/ProperOS/img/"+uid_mc,wjml)
 //-_-_-_-_-_-_-_-_-_-_-
 f(uid_mc *? ".gif")
 {
-  ss("[system]"+uid_mc+"[/system]",ml_nr)
-  fw("$JuOS/Config/wallpaper/wp.gif.config",ml_nr)
-  //-_-_-_-_-_-_-_-
-  fc(wjml,"$JuOS/Config/wallpaper/wp.gif",yz)
-  f(yz == "true")
-  {
-    ufnsui()
-    {
-      fn tw.tw("动态壁纸导入成功")
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw("动态壁纸导入失败")
-    }
-  }
+	ss("[system]"+uid_mc+"[/system]",ml_nr)
+	fw("$JuOS/Config/wallpaper/wp.gif.config",ml_nr)
+	//-_-_-_-_-_-_-_-
+	fc(wjml,"$JuOS/Config/wallpaper/wp.gif",yz)
+	f(yz == "true")
+	{
+		ufnsui()
+		{
+			fn tw.tw("动态壁纸导入成功")
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw("动态壁纸导入失败")
+		}
+	}
 }
 else
 {
-  ss("[system]"+uid_mc+"[/system]",ml_nr)
-  fw("$JuOS/Config/wallpaper/wp.gif.config",ml_nr)
-  //-_-_-_-_-_-_-_-_-_-
-  fc(wjml,"$JuOS/Config/wallpaper/wp.png",yz)
-  f(yz == "true")
-  {
-    ufnsui()
-    {
-      fn tw.tw("壁纸导入成功")
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw("壁纸导入失败")
-    }
-  }
+	ss("[system]"+uid_mc+"[/system]",ml_nr)
+	fw("$JuOS/Config/wallpaper/wp.gif.config",ml_nr)
+	//-_-_-_-_-_-_-_-_-_-
+	fc(wjml,"$JuOS/Config/wallpaper/wp.png",yz)
+	f(yz == "true")
+	{
+		ufnsui()
+		{
+			fn tw.tw("壁纸导入成功")
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw("壁纸导入失败")
+		}
+	}
 }</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">/.
 dhas(dh,st_vW,"translationX",0,180,0)
 dh(dh,"duration",800)
 dh(dh,"start")
-//透明度
+
+//透明度
 //输入动画变量对象，输入控件ID或控件对象，输入动画类型，可见度比例(0.0至1.0)...（可输入N个参数）
 dhas(dh1,st_vW,"alpha",0,1)
 dh(dh1,"duration",500)

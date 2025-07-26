@@ -61,12 +61,12 @@ textColor=#ffffffff</ppt>
 else
 {
 	uigo("设置.iyu")
-    end()
+	end()
 }
 else
 {
 	fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
-    fn tw.tw("重置成功")
+	fn tw.tw("重置成功")
 }
 fn byusi.qt(14)</eventItme></event>
 </View>
@@ -76,30 +76,30 @@ hsas(7,true)
 //
 fn n.ui(1)</eventItme><eventItme type="loadingComplete">f(sss.index != null && sss.boot != null)
 {
-  ss(sss.boot+"/"+sss.index,url)
-  us(7,"url",url)
+	ss(sss.boot+"/"+sss.index,url)
+	us(7,"url",url)
 }
 else
 {
-  fn tw.tw2("引导路径配置错误",1)
-  end()
+	fn tw.tw2("引导路径配置错误",1)
+	end()
 }</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
-  ug(7,"cangoback",yz_url_dt)
-  //
-  f(yz_url_dt == "true")
-  {
-    us(7,"gobackorforward",-1)
-  }
-  else f(yz_url_dt == "false")
-  {
-    utw(null,"","要退出吗？","确定","不退出",true,v)
-    {
-      end()
-    }
-    else
-    {
-      endutw()
-    }
-  }
+	ug(7,"cangoback",yz_url_dt)
+	//
+	f(yz_url_dt == "true")
+	{
+		us(7,"gobackorforward",-1)
+	}
+	else f(yz_url_dt == "false")
+	{
+		utw(null,"","要退出吗？","确定","不退出",true,v)
+		{
+			end()
+		}
+		else
+		{
+			endutw()
+		}
+	}
 }</eventItme></UIEventset>
