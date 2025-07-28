@@ -129,6 +129,8 @@ gravity=center</ppt>
 <UIEventset><eventItme type="loadingComplete">//-_-_-_-_-_-_-_-_-
 fn system.asystem_t_init()
 //-_-_-_-_-_-_-_-_-_-_-
+//s counter =0
+//-_-_-_-_-_-_-_-_-_-_-
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
@@ -140,6 +142,7 @@ t()
 	aslist(list_cz)
 	for(sc; home_list)
 	{
+		//s(counter + 1,counter)
 		s img = "@fail.xml"
 		s name = sc
 		f(sc *? ".app")
@@ -194,14 +197,21 @@ t()
 				s img = "@ic_play_pause_regular.png"
 			}
 		}
-		ula(list_cz, 10=img, 14=name)
+        fr("$System/homeList",tui)
+        sr(tui,"null","",tui)
+        ss(tui+"Img="+img+"=Img;;Name="+name+"=Name\n",utt)
+        fw("$System/homeList",utt)
+        ula(list_cz, 10=img, 14=name)
 	}
+    ufnsui()
+    {
+    	uls(5, list_cz, "list.iyu", -1, -2)
+    }
 	ufnsui()
 	{
 		fr("$System/Config/fillet.sys",fillet)
 		us(list.7,"app_CardcornerRadius",fillet)
 		us(6, "visibility", "gone")
-		uls(5, list_cz, "list.iyu", -1, -2)
 		us(4,"refreshing","false")
 	}
 }

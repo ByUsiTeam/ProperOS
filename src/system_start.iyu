@@ -119,7 +119,7 @@ background=#ffdbf7ff</ppt>
 <View id="7" did="6" type="ImageView">
 <ppt>width=180dp
 height=180dp
-src=17301567</ppt>
+src=@fail.xml</ppt>
 <event></event>
 </View>
 <View id="16" did="6" type="ScrollView">
@@ -130,7 +130,7 @@ height=145dp</ppt>
 <View id="9" did="16" type="TextView">
 <ppt>width=-2
 height=-2
-text=文本9
+text=错误代码
 layout_marginLeft=12dp
 layout_marginRight=12dp</ppt>
 <event></event>
@@ -256,7 +256,7 @@ gravity=center</ppt>
 <View id="15" did="25" type="ImageView">
 <ppt>width=-2
 height=-2
-src=17301567</ppt>
+src=@fail.xml</ppt>
 <event></event>
 </View>
 <View id="26" did="1" type="LinearLayout">

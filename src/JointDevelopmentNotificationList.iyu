@@ -59,7 +59,7 @@ layout_marginLeft=6dp</ppt>
 <View id="8" did="9" type="ScrollView">
 <ppt>width=-1
 height=-1
-background=#ff624dff</ppt>
+background=#5d6d6d6d</ppt>
 <event></event>
 </View>
 <View id="10" did="8" type="LinearLayout">

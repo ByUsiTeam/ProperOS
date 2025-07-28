@@ -417,7 +417,7 @@ background=#ff954eff</ppt>
 	uigo("mian.iyu")
 	end()
 }
-fn byusi.qt(41)</eventItme></event>
+fn byusi.qt(43)</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 fn n.ui(1)</eventItme><eventItme type="loadingComplete">fr("$boot/init.json.bak",boot_init)
