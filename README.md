@@ -40,6 +40,8 @@ zip -r ProperOS.iApp .
 3. 选择打开方式：**类型** → **全部** → **iApp**
 4. 完成导入后即可运行或二次开发
 
+> JiYU.mtsx 为 MT管理器 的语法高亮文件
+
 ### 分发须知
 修改或二次分发时，必须在项目中标注原始仓库地址：  
 [https://gitee.com/properos/properos](https://gitee.com/properos/properos)  

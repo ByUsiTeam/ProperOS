@@ -1,0 +1,18 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">f(sss.ui == null)
+{
+	sss ui = "@jsonui.json"
+}
+fn jsonui.parse(sss.ui)
+
+//iyu转jsonui
+loadjar("jsonui.dex.i",a)
+cls(a,"com.mycompany.application22.WdDownToJsonUIConverter",b)
+javax(c,null,b,"convert", "String", "/storage/emulated/0/iApp/MyApp/com.bzk.wallpaper/src/download.iyu", "String", "/sdcard/index.json", "String", "/sdcard/click", "String", "下载", "String", "download", "String", "#ffffff")
+syso(c)
+</eventItme></UIEventset>

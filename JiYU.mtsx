@@ -1,0 +1,65 @@
+{
+    name: ["JiYU",".jiyu", ".iyu", ".myu", ".jush", ".tps"]
+    ignoreCase: true
+    comment: {startsWith: "//"}
+    comment: {startsWith: "/.", endsWith: "./"}
+    comment: {startsWith: "<!--", endsWith: "-->"}
+    hide: false
+    ignoreCase: true
+    styles: [
+        "g", #9876AA, #9876AA
+        "t", #CC7832, #CC7832
+        "arf", #60E2FF, #60E2FF
+        "tagNameDef", #000000, #E8BF6A
+    ]
+    defines: [
+        "colorMatcher": {
+            match: /(?<![;&])#([a-fA-F0-9]{3,8})\b/, 0: "parseColor(auto,1,HEX)"
+        }
+    ]
+    lineBackground: {match: /[\t ]*\fn */, style: "atf"}
+    contains: [
+        {match: /(#)([0-9A-Fa-f]{6})\b/, 0: "parseColor(auto,2,HEX,default)"}
+        {match: /\b(else|else f|end|ends|t|fn|w|for|fi|f|endcode|break|endutw|null|true|false)\b/, 0: "t"}
+        {match: /\b(s |ss |sss )([a-z]+)\b/, 0:"g", 2:"meta"}
+        //{match: /\b(fn )([a-z]+)\b/, 0:"arf", 2:"meta"}
+        //{match: }
+        {match: /\b(=)}\b/, 0:"arf"}
+        {match: /\b(json|uigo|fr|fw|fe|syso|hs|hw|hws|ufnsui|stop|java|sot|hdd|hd|tw|tws|utw|ug|us|dhas|dh|uycl|addv|javanew|fc|javax|fl|sr|sj|ula|bfms|s|ss|sss|lan|gvs|utb|loadjar|cls|sbp|bfvss|sn|javass|javags|ushsp|swh|zdp|call|uls|case|nvw|fd|ulag|sssz|ssg|slg|usjxm|fo|fuz|fuzs|ngde|fdir|sit|uit|sxb|bfv|shb|bfm|sl)\b/, 0:"g"}
+        {match: /(\d+)/, 0:"number"}
+        {match: /(#)([0-9A-Fa-f]{6})\b/, 0: "parseColor(2,_,HEX,default)"}
+        {
+            style: "string"
+            start: {match: /"/}
+            end: {match: /"/}
+        }
+        {
+            style: "number"
+            start: {match: /'/}
+            end: {match: /'/}
+        }
+        {
+            start: {match: "<\\??([^/>\\s]+)", 0: "tagNameDef", 1: "tagName"}
+            end: {match: "[?/]?>|$", 0: "tagNameDef"}
+            contains: [
+                {match: /(?s)<!--.*?(-->|$)/, 0: "comment"}
+                {match: /(xmlns:)([^='"\s]+)/, 1: "attrName", 2: "namespace"}
+                {match: /(?:([^='"<\/>\s]+)(:))?([^='"<\/>\s]+)/, 1: "namespace", 2: "attrName", 3: "attrName"}
+                {
+                    group: link
+                    contains: [
+                        {match: /=\s*/, 0: "string"}
+                        {match: /(?s)(["'])(.*?)\1/, 0: "string", 2: {include: "colorMatcher"}}
+                    ]
+                }
+            ]
+        }
+        {
+            match: "</\\s*([^>\\s]+)\\s*>", 0: "tagNameDef", 1: "tagName"
+        }
+        {
+            include: "colorMatcher"
+        }
+    ]
+    codeFormatter: #BUILT_IN_XML_FORMATTER#
+}

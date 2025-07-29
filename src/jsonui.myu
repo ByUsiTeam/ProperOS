@@ -1,0 +1,65 @@
+fn parse(json)
+t()
+{
+	fr(json, ui)
+	json(ui, data)
+	json(data, "get", "title", UI名)
+	json(data, "get", "page", 页面名称)
+	json(data, "get", "statusColor", color)
+	ufnsui()
+	{
+		fn jsonui.status(color)
+	}
+	json(data, "list", "view", view)
+	json(view, "size", size)
+	s ids = -1
+	w(size &gt; 0)
+	{
+		s+(1, ids)
+		s-(1, size)
+		json(view, "data", ids, views)
+		json(views, "get", "ViewName", ss.viewname)
+		json(views, "get", "id", ss.id)
+		json(views, "get", "did", ss.did)
+		json(views, "list", "style", ss.style)
+		call(ss.liste, "mjava", "append.processAttributes", ss.style)
+		f(ss.liste != null)
+		{
+			json(views, "get", "onclick", click)
+			ufnsui()
+			{
+				nvw(ss.id, ss.did, ss.viewname, ss.liste)
+			}
+			f(click != null)
+			{
+				ufnsui()
+				{
+					fr(click, code)
+					call(代码,"mjava","代码处理器.Process",code)
+					fn model.设置代码(ss.id, "clicki", 代码)
+				}
+			}
+		}
+		stop(100)
+	}
+}
+end fn
+
+fn status(color)
+uycl(color,true)
+f(color=="#ffffff")
+{
+	s c="8192"
+}
+else
+{
+	s c="81920"
+}
+f(color == "#f8f8f8")
+{
+	s c = "8192"
+}
+java(cs,activity,"android.app.Activity.getWindow")
+java(cs2,cs,"android.view.Window.getDecorView")
+java(null,cs2,"android.view.View.setSystemUiVisibility","int",c)
+end fn
