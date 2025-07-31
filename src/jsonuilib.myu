@@ -1,0 +1,9 @@
+fn c(ui)
+
+fn jsonui.parse(ui)
+
+//iyu转jsonui
+loadjar("jsonui.dex.i",a)
+cls(a,"com.mycompany.application22.WdDownToJsonUIConverter",b)
+
+end fn

@@ -4,15 +4,21 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">f(sss.ui == null)
+<UIEventset><eventItme type="loading">f(sss.url == null)
 {
-	sss ui = "@jsonui.json"
+	fn jsonuilib.c("@jsonui.json")
 }
-fn jsonui.parse(sss.ui)
-
-//iyu转jsonui
-loadjar("jsonui.dex.i",a)
-cls(a,"com.mycompany.application22.WdDownToJsonUIConverter",b)
-javax(c,null,b,"convert", "String", "/storage/emulated/0/iApp/MyApp/com.bzk.wallpaper/src/download.iyu", "String", "/sdcard/index.json", "String", "/sdcard/click", "String", "下载", "String", "download", "String", "#ffffff")
-syso(c)
+else f(sss.url != null)
+{
+	ss(sss.url+"/main.json",master_boot_file)
+    ss(sss.url+"/main.tps",first_execution_code)
+	fn jsonuilib.c(master_boot_file)
+    fr(first_execution_code,code)
+	call(代码,"mjava","代码处理器.Process",code)
+	fn model.设置代码(9600,"clicki",代码)
+}
+else
+{
+	fn jsonuilib.c("@jsonui.json")
+}
 </eventItme></UIEventset>

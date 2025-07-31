@@ -159,6 +159,10 @@ t()
 	{
 		syso("false")
 	}
+    //初始化一些必要的文件
+    fw("$System/dev/null","null")
+    fw("$System/dev/false","false")
+    fw("$System/dev/true","true")
 	//版本号同步
 	fr("@version.txt",v)
 	fw("$JuOS/v/v.cfg",v)

@@ -234,79 +234,101 @@ else
 	sj(wjuwjnr,"Config=","=Config",Config)
 	sj(wjuwjnr,"AppUrlJr=","=AppUrlJr",AppUrlJr)
 	sj(wjuwjnr,"System=","=System",sys)
-	f(sys == null)
-	{
-		sr(AppLj,"%g","$App/",AppLj)
-		//
-		f(AppUrlJr == null || AppUrlJr == "")
-		{
-			ss(AppLj+"src/index.html",url)
-			sss url =url
-			fw("$JuOS/temp_url/url.jtm",url)
-			f(Config != null)
-			{
-				sss qdq =qdq
-				sss package =AppLj
-				uigo("screen.iyu")
-			}
-			else
-			{
-				uigo(qdq)
-			}
-		}
-		else
-		{
-			sss url =AppUrlJr
-			fw("$JuOS/temp_url/url.jtm",url)
-			f(Config != null)
-			{
-				sss qdq =qdq
-				sss package =AppLj
-				uigo("screen.iyu")
-			}
-			else
-			{
-				uigo(qdq)
-			}
-		}
-	}
-	else f(sys == "True")
-	{
-		sj(wjuwjnr,"Ui=","=Ui",ui)
-		sj(wjuwjnr,"End=","=End",sys_end)
-		sj(wjuwjnr,"Url=","=Url",Url_System)
-		//
-		sss url =Url_System
-		fw("$JuOS/temp_url/url.jtm",Url_System)
-		//
-		ufnsui()
-		{
-			f(sys_end == "false")
-			{
-				f(Url_System != null)
-				{
-					uigo("system_start.iyu")
-				}
-				else
-				{
-					uigo(ui)
-				}
-			}
-			else f(sys_end == "true")
-			{
-				f(Url_System != null)
-				{
-					uigo("system_start.iyu")
-					end()
-				}
-				else
-				{
-					uigo(ui)
-					end()
-				}
-			}
-		}
-	}
+    sj(wjuwjnr,"jsonUi=","=jsonUi",jsonui)
+    slower(jsonui,jsonui)
+    f(jsonui == null)
+    {
+    	f(sys == null)
+    	{
+	    	sr(AppLj,"%g","$App/",AppLj)
+	    	//
+	    	f(AppUrlJr == null || AppUrlJr == "")
+	    	{
+		    	ss(AppLj+"src/index.html",url)
+		    	sss url =url
+		    	fw("$JuOS/temp_url/url.jtm",url)
+		    	f(Config != null)
+	    		{
+			    	sss qdq =qdq
+			    	sss package =AppLj
+			    	uigo("screen.iyu")
+		    	}
+		    	else
+		    	{
+			    	uigo(qdq)
+		    	}
+	    	}
+	    	else
+	    	{
+		    	sss url =AppUrlJr
+	    		fw("$JuOS/temp_url/url.jtm",url)
+	    		f(Config != null)
+	    		{
+			    	sss qdq =qdq
+			    	sss package =AppLj
+			    	uigo("screen.iyu")
+	    		}
+	    		else
+	    		{
+		    		uigo(qdq)
+	    		}
+    		}
+    	}
+    	else f(sys == "True")
+    	{
+	    	sj(wjuwjnr,"Ui=","=Ui",ui)
+    		sj(wjuwjnr,"End=","=End",sys_end)
+	    	sj(wjuwjnr,"Url=","=Url",Url_System)
+	    	//
+	    	sss url =Url_System
+	    	fw("$JuOS/temp_url/url.jtm",Url_System)
+	    	//
+	    	ufnsui()
+	    	{
+		    	f(sys_end == "false")
+		    	{
+			    	f(Url_System != null)
+		    		{
+			    		uigo("system_start.iyu")
+		    		}
+			    	else
+			    	{
+				    	uigo(ui)
+		    		}
+		    	}
+	    		else f(sys_end == "true")
+	    		{
+		    		f(Url_System != null)
+			    	{
+			    		uigo("system_start.iyu")
+				    	end()
+	    			}
+	    			else
+		    		{
+			    		uigo(ui)
+			    		end()
+		    		}
+		    	}
+	    	}
+    	}
+    }
+    else f(jsonui == "true")
+    {
+    	sr(AppLj,"%g","$App/",package)
+        sss url =package
+        uigo("jsonUi.iyu")
+        lan(11)
+    }
+    else
+    {
+    	ufnsui()
+    	{
+    		utw(null,"","出现错误了","确定",false,v)
+    		{
+    			endutw()
+    		}
+    	}
+    }
 }
 
 end fn
