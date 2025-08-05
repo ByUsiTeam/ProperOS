@@ -145,8 +145,8 @@ text=下载更新
 typeface=@JuOS/src/ttf/acbt80.ttf
 background=#ff4537ff
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">
-//fn lib.xzq("下载更新",sss.durl,sss.lj,sss.jianj)
-hws(sss.durl)</eventItme></event>
+<event><eventItme type="clicki">//fn lib.xzq("下载更新",sss.durl,sss.lj,sss.jianj)
+hws(sss.durl)
+uigo("OSUpdate.iyu")</eventItme></event>
 </View>
 <UIEventset></UIEventset>

@@ -451,7 +451,8 @@ height=55dp
 app_CardcornerRadius=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
-layout_marginTop=8dp</ppt>
+layout_marginTop=8dp
+layout_marginBottom=18dp</ppt>
 <event></event>
 </View>
 <View id="42" did="41" type="LinearLayout">

@@ -3,7 +3,12 @@
 height=-1</ppt>
 <event></event>
 </View>
-<View id="3" did="1" type="WebView">
+<View id="36" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="36" type="WebView">
 <ppt>width=-1
 height=-1
 url=http://null.null.com</ppt>

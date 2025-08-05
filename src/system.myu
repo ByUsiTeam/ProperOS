@@ -317,7 +317,6 @@ else
     	sr(AppLj,"%g","$App/",package)
         sss url =package
         uigo("jsonUi.iyu")
-        lan(11)
     }
     else
     {
@@ -334,16 +333,6 @@ else
 end fn
 
 fn asystem_t_init()
-
-/.
-java(cs, activity, "android.app.Activity.getWindow")
-java(cs2, cs, "android.view.Window.getDecorView")
-java(null, cs2, "android.view.View.setSystemUiVisibility", "int", "8192")
-java(null, cs, "android.view.Window.addFlags", "int", "67108864")
-swh("pxztl", h)
-us(9,"layout_margintop",h)
-./
-//UI设置
 
 fn GGExpanded.权限检查()
 f(sss.Yos_通知权限)
