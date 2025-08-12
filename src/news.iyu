@@ -150,6 +150,6 @@ sj(data,"[参数]","[参数]",参数)
 //数据处理
 ss("$App/"+包名+"/src/"+参数,cl_data)
 sss url =cl_data
-uigo("system_start.iyu")</eventItme></event>
+fn core.uigo("system_start.iyu")</eventItme></event>
 </View>
 <UIEventset></UIEventset>

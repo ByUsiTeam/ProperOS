@@ -86,7 +86,7 @@ t()
 	stop(pause)
 	ufnsui()
 	{
-		uigo(sss.qdq)
+		fn core.uigo(sss.qdq)
 		end()
 	}
 }</eventItme></UIEventset>

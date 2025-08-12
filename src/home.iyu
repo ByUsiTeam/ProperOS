@@ -259,10 +259,10 @@ t()
 ./
 utw("$JuOS/ICON/foreground.png","","抱歉，该界面已不在支持使用","确定切换桌面",true,v)
 {
-	uigo("JuOS_Hemo.iyu")
+	fn core.uigo("JuOS_Hemo.iyu")
 	end()
 }</eventItme><eventItme type="menu">case 设置:
-uigo("设置.iyu")
+fn core.uigo("设置.iyu")
 break
 
 case 时间:
@@ -282,7 +282,7 @@ utw(null,"","请选择这重启选项","重启到bootrepair","正常重启","不
 }
 else
 {
-	uigo("mian.iyu")
+	fn core.uigo("mian.iyu")
 	end()
 }
 else

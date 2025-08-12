@@ -262,7 +262,7 @@ end fn
 fn webui(url)
 
 sss url =url
-uigo("system_start.iyu")
+fn core.uigo("system_start.iyu")
 lan(5)
 
 end fn
@@ -271,7 +271,7 @@ end fn
 //变量 ui 用来指定系统页面
 fn sysui(ui)
 
-uigo(ui)
+fn core.uigo(ui)
 lan(0)
 
 end fn
@@ -350,7 +350,7 @@ end fn
 fn juos_api_1(i)
 
 sss url =i
-uigo("JuOS.terminal.iyu")
+fn core.uigo("JuOS.terminal.iyu")
 
 end fn
 

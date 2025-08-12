@@ -57,7 +57,7 @@ f(st_url ?* "juos_sh://")
 {
 	sj(st_url,"juos_sh://",null,itt)
 	sss url =itt
-	uigo("JuOS.terminal.iyu")
+	fn core.uigo("JuOS.terminal.iyu")
 }
 else
 {

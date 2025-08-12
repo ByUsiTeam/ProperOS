@@ -1,0 +1,210 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=white</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="CardView">
+<ppt>width=-1
+height=-1
+layout_marginLeft=6dp
+layout_marginTop=12dp
+layout_marginRight=6dp
+layout_marginBottom=16dp
+app_CardcornerRadius=12dp</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="LinearLayout">
+<ppt>width=-1
+height=85dp
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="RoundImageView">
+<ppt>width=55dp
+height=55dp
+src=@JuOS/logo/properos.png</ppt>
+<event></event>
+</View>
+<View id="8" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=ProperOS用户登录
+layout_marginLeft=8dp
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=24sp</ppt>
+<event></event>
+</View>
+<View id="9" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="16" did="9" type="TextView">
+<ppt>width=-2
+height=-2
+text=用户名
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+gravity=center
+textSize=25sp
+layout_marginBottom=65dp</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=10dp
+layout_marginRight=10dp
+layout_marginBottom=15dp
+app_CardcornerRadius=15dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="TextInputLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+hint=在线ByUsi账户用户名
+gravity=center
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+singleLine=true
+background=</ppt>
+<event></event>
+</View>
+<View id="13" did="9" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=10dp
+layout_marginRight=10dp
+layout_marginBottom=15dp
+app_CardcornerRadius=15dp</ppt>
+<event></event>
+</View>
+<View id="14" did="13" type="TextInputLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+hint=在线ByUsi账户密码
+gravity=center
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+singleLine=true
+background=
+inputType=textpassword</ppt>
+<event></event>
+</View>
+<View id="18" did="9" type="LinearLayout">
+<ppt>width=-1
+height=65dp
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="19" did="18" type="CardView">
+<ppt>width=100dp
+height=45dp
+app_CardcornerRadius=10dp</ppt>
+<event></event>
+</View>
+<View id="20" did="19" type="Button">
+<ppt>width=-1
+height=-1
+text=登录
+textColor=#ffffffff
+typeface=@JuOS/src/ttf/acbt80.ttf
+background=#ff0055ff</ppt>
+<event><eventItme type="clicki">ug(15,"text",pass)
+
+fr("$JuOS/data/User/.password",paw)
+fr("$System/BootUI.ui",ui)
+f(paw == pass)
+{
+	fn core.uigo(ui)
+    end()
+}
+else
+{
+	fn tw.tw2("密码错误",1)
+}</eventItme></event>
+</View>
+<View id="17" did="9" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center
+visibility=gone</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+uycl("#ff0055ff",true)</eventItme><eventItme type="loadingComplete">fn lib.wp(1)
+fe("$JuOS/data/User/data.json",user)
+fr("$JuOS/data/User/.username",data)
+f(user == true)
+{
+	ss("欢迎您 "+data,uuuu)
+    us(16,"text",uuuu)
+}
+else f(user == false)
+{
+	fn core.uigo("login.iyu")
+}
+else
+{
+	utw(null,"","抱歉，出现错误了","重启",true,v)
+	{
+		fn core.uigo("mian.iyu")
+        end()
+	}
+}</eventItme><eventItme type="restart">fe("$JuOS/data/User/data.json",user)
+f(user == true)
+{
+	fr("$System/BootUI.ui",iyu_ui)
+	fn core.uigo(iyu_ui)
+    end()
+}
+else f(user == false)
+{
+	fn core.uigo("login.iyu")
+}
+else
+{
+	utw(null,"","抱歉，出现错误了","重启",true,v)
+	{
+		fn core.uigo("mian.iyu")
+        end()
+	}
+}</eventItme></UIEventset>

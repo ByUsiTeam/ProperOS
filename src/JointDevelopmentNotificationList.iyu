@@ -212,7 +212,7 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">uigo("开源协议.iyu")</eventItme></event>
+<event><eventItme type="clicki">fn core.uigo("开源协议.iyu")</eventItme></event>
 </View>
 <View id="41" did="10" type="RelativeLayout">
 <ppt>width=-1
@@ -248,7 +248,7 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">uigo("关于JuOS.iyu")</eventItme></event>
+<event><eventItme type="clicki">fn core.uigo("关于JuOS.iyu")</eventItme></event>
 </View>
 <View id="25" did="10" type="RelativeLayout">
 <ppt>width=-1

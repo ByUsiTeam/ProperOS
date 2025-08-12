@@ -411,7 +411,7 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">fn byusi.qt(48)
 sss url ="https://gitee.com/byusi"
-uigo("start_app.iyu")</eventItme></event>
+fn core.uigo("start_app.iyu")</eventItme></event>
 </View>
 <View id="55" did="3" type="CardView">
 <ppt>width=-1
@@ -458,7 +458,7 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">fn byusi.qt(55)
 sss url ="https://gitee.com/properos"
-uigo("system_start.iyu")</eventItme></event>
+fn core.uigo("system_start.iyu")</eventItme></event>
 </View>
 <View id="38" did="3" type="CardView">
 <ppt>width=-1

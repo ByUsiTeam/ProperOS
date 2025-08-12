@@ -25,7 +25,7 @@
         //{match: /\b(fn )([a-z]+)\b/, 0:"arf", 2:"meta"}
         //{match: }
         {match: /\b(=)}\b/, 0:"arf"}
-        {match: /\b(json|uigo|fr|fw|fe|syso|hs|hw|hws|ufnsui|stop|java|sot|hdd|hd|tw|tws|utw|ug|us|dhas|dh|uycl|addv|javanew|fc|javax|fl|sr|sj|ula|bfms|s|ss|sss|lan|gvs|utb|loadjar|cls|sbp|bfvss|sn|javass|javags|ushsp|swh|zdp|call|uls|case|nvw|fd|ulag|sssz|ssg|slg|usjxm|fo|fuz|fuzs|ngde|fdir|sit|uit|sxb|bfv|shb|bfm|sl)\b/, 0:"g"}
+        {match: /\b(json|uigo|fr|fw|fe|syso|hs|hw|hws|ufnsui|stop|java|sot|hdd|hd|tw|tws|utw|ug|us|dhas|dh|uycl|addv|javanew|fc|javax|fl|sr|sj|ula|bfms|s|ss|sss|lan|gvs|utb|loadjar|cls|sbp|bfvss|sn|javass|javags|ushsp|swh|zdp|call|uls|case|nvw|fd|ulag|sssz|ssg|slg|usjxm|fo|fuz|fuzs|ngde|fdir|sit|uit|sxb|bfv|shb|bfm|sl|sqlite||hddg|sqlsele|sqlsele|sql)\b/, 0:"g"}
         {match: /(\d+)/, 0:"number"}
         {match: /(#)([0-9A-Fa-f]{6})\b/, 0: "parseColor(2,_,HEX,default)"}
         {

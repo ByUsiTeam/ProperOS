@@ -324,7 +324,7 @@ else
 {
 	endutw()
 }
-//uigo("yysc-xy-2.iyu")
+//fn core.uigo("yysc-xy-2.iyu")
 fn lib.下载器2()
 fd("$ProperOS/.temp.jupk",fd)
 s name = ".temp.jupk"
@@ -336,7 +336,7 @@ t()
 us(51,"visibility","gone")
 us(60,"visibility","visible")
 us(62,"visibility","visible")
-//hdduigo()
+//hddfn core.uigo()
 t()
 {
 	w(jsq != "1")
@@ -528,7 +528,7 @@ t()
 			}
 			else
 			{
-				uigo("yysc-xq.iyu")
+				fn core.uigo("yysc-xq.iyu")
 				end()
 			}
 		}

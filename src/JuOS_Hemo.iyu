@@ -73,7 +73,7 @@ typeface=@JuOS/src/ttf/acbt80.ttf
 gravity=right|center
 layout_marginRight=12dp</ppt>
 <event><eventItme type="clicki">sss url ="@JuOS/html/Time/index.html"
-uigo("system_start.iyu")</eventItme></event>
+fn core.uigo("system_start.iyu")</eventItme></event>
 </View>
 <View id="4" did="3" type="SwipeRefreshLayout">
 <ppt>width=-1
@@ -242,7 +242,7 @@ javax(null,null,Loader,"init",Builder,builder)</eventItme><eventItme type="downk
 //fn byusi.ztl()
 utb(18)
 fn n.ui(1)</eventItme><eventItme type="menu">case 设置:
-uigo("设置.iyu")
+fn core.uigo("设置.iyu")
 break
 
 case 菜单:
@@ -267,7 +267,7 @@ utw(null,"","请选择这重启选项","重启到bootrepair","正常重启","不
 }
 else
 {
-	uigo("mian.iyu")
+	fn core.uigo("mian.iyu")
 	end()
 }
 else

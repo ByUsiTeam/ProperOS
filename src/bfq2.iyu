@@ -310,7 +310,7 @@ app_CardcornerRadius=10dp</ppt>
 height=-1
 orientation=vertical
 gravity=center</ppt>
-<event><eventItme type="clicki">uigo("bili.iyu")
+<event><eventItme type="clicki">fn core.uigo("bili.iyu")
 fn byusi.qt(33)</eventItme></event>
 </View>
 <View id="35" did="34" type="TextView">

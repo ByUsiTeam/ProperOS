@@ -186,7 +186,7 @@ else f(uid_mc *? ".m4a" || uid_mc *? ".mp3" || uid_mc *? ".flac")
 	sr(yybfqth,"{name}",uid_mc,ykl)
 	fw("$System/yybfq/index.html",ykl)
 	sss url ="$System/yybfq/index.html"
-	uigo(qdq)
+	fn core.uigo(qdq)
 }
 else f(uid_mc *? ".mp4")
 {
@@ -195,7 +195,7 @@ else f(uid_mc *? ".mp4")
 	ss("file://"+m3,m33)
 	sss url =m33
 	sss title =uid_mc
-	uigo("bfq2.iyu")
+	fn core.uigo("bfq2.iyu")
 }
 else f(uid_mc *? ".pdf")
 {
@@ -203,7 +203,7 @@ else f(uid_mc *? ".pdf")
 	fdir(m3,m3_2)
 	ss("$JuOS/plug-in_component/pdf/web/viewer.html?file="+m3_2,ljlj)
 	sss url =ljlj
-	uigo("system_start.iyu")
+	fn core.uigo("system_start.iyu")
 }
 else f(uid_mc *? ".jush")
 {
@@ -211,7 +211,7 @@ else f(uid_mc *? ".jush")
 	fdir(m3,u)
 	sss url =u
 	syso(sss.url)
-	uigo("JuOS.terminal.iyu")
+	fn core.uigo("JuOS.terminal.iyu")
 }
 else f(uid_mc *? ".html")
 {
@@ -219,7 +219,7 @@ else f(uid_mc *? ".html")
 	fdir(m3,u)
 	ss("file://"+m3,m33)
 	sss url =m33
-	uigo(qdq)
+	fn core.uigo(qdq)
 }
 else
 {
@@ -251,11 +251,11 @@ else
 	    		{
 			    	sss qdq =qdq
 			    	sss package =AppLj
-			    	uigo("screen.iyu")
+			    	fn core.uigo("screen.iyu")
 		    	}
 		    	else
 		    	{
-			    	uigo(qdq)
+			    	fn core.uigo(qdq)
 		    	}
 	    	}
 	    	else
@@ -266,11 +266,11 @@ else
 	    		{
 			    	sss qdq =qdq
 			    	sss package =AppLj
-			    	uigo("screen.iyu")
+			    	fn core.uigo("screen.iyu")
 	    		}
 	    		else
 	    		{
-		    		uigo(qdq)
+		    		fn core.uigo(qdq)
 	    		}
     		}
     	}
@@ -289,23 +289,23 @@ else
 		    	{
 			    	f(Url_System != null)
 		    		{
-			    		uigo("system_start.iyu")
+			    		fn core.uigo("system_start.iyu")
 		    		}
 			    	else
 			    	{
-				    	uigo(ui)
+				    	fn core.uigo(ui)
 		    		}
 		    	}
 	    		else f(sys_end == "true")
 	    		{
 		    		f(Url_System != null)
 			    	{
-			    		uigo("system_start.iyu")
+			    		fn core.uigo("system_start.iyu")
 				    	end()
 	    			}
 	    			else
 		    		{
-			    		uigo(ui)
+			    		fn core.uigo(ui)
 			    		end()
 		    		}
 		    	}
@@ -316,7 +316,7 @@ else
     {
     	sr(AppLj,"%g","$App/",package)
         sss url =package
-        uigo("jsonUi.iyu")
+        fn core.uigo("jsonUi.iyu")
     }
     else
     {
@@ -428,14 +428,14 @@ f(yz == true)
 {
 	ufnsui()
 	{
-		uigo("mian2.iyu")
+		fn core.uigo("mian2.iyu")
 		lan(0)
 		end()
 	}
 }
 else f(yz == false)
 {
-	uigo("oobe.iyu")
+	fn core.uigo("oobe.iyu")
 	lan(0)
 	end()
 }

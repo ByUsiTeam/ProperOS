@@ -207,7 +207,7 @@ textSize=24sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">uigo("设置.iyu")</eventItme></event>
+<event><eventItme type="clicki">fn core.uigo("设置.iyu")</eventItme></event>
 </View>
 <View id="16" did="15" type="RelativeLayout">
 <ppt>width=-1

@@ -108,17 +108,17 @@ fn n.ui(1)</eventItme><eventItme type="downkey">f(st_kC==4)
 	fr("$System/Config/home.sys",home)
 	f(home == "false")
 	{
-		uigo("JuOS_Hemo.iyu")
+		fn core.uigo("JuOS_Hemo.iyu")
 		end()
 	}
 	else f(home == "true")
 	{
-		uigo("home.iyu")
+		fn core.uigo("home.iyu")
 		end()
 	}
 	else
 	{
-		uigo("JuOS_Hemo.iyu")
+		fn core.uigo("JuOS_Hemo.iyu")
 		end()
 	}
 }</eventItme><eventItme type="loadingComplete">uycl("#daebeae3",true)
@@ -126,17 +126,17 @@ utb(2)</eventItme><eventItme type="menu">case 退出:
 fr("$System/Config/home.sys",home)
 f(home == "false")
 {
-	uigo("JuOS_Hemo.iyu")
+	fn core.uigo("JuOS_Hemo.iyu")
 	end()
 }
 else f(home == "true")
 {
-	uigo("home.iyu")
+	fn core.uigo("home.iyu")
 	end()
 }
 else
 {
-	uigo("JuOS_Hemo.iyu")
+	fn core.uigo("JuOS_Hemo.iyu")
 	end()
 }
 break

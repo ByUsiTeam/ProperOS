@@ -25,8 +25,9 @@ f(init_fe == true)
 				f(type == "iapp")
 				{
 					json(json,"get","iyu",iyu)
-					uigo(iyu)
-					lan(0)
+					//fn core.uigo(iyu)
+                    fw("$System/BootUI.ui",iyu)
+                    fn core.uigo("user.login.iyu")
 					end()
 				}
 				else f(type == "html")
@@ -35,7 +36,7 @@ f(init_fe == true)
 					json(json,"get","index",index)
 					sss boot =boot
 					sss index =index
-					uigo("bot_init.iyu")
+					fn core.uigo("bot_init.iyu")
 					end()
 				}
 				else
@@ -52,13 +53,12 @@ f(init_fe == true)
 						f(fd_init == "true")
 						{
 							fn tw.tw2("修复成功",2)
-							uigo("mian.iyu")
+							fn core.uigo("mian.iyu")
 							end()
 						}
 						else
 						{
 							fn tw.tw2("错误❌",1)
-							ends()
 							end()
 						}
 					}
@@ -74,7 +74,7 @@ f(init_fe == true)
 			stop(3500)
 			ufnsui()
 			{
-				uigo("设置oobe.iyu")
+				fn core.uigo("设置oobe.iyu")
 				lan(0)
 				end()
 			}

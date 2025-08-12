@@ -153,7 +153,7 @@ f(xzzt == true)
 	utw(null,"","重启继续使用 ProperOS","重启",false,v)
 	{
 		fw("$System/Config/oobe.sys","1")
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 		lan(0)
 		end()
 	}

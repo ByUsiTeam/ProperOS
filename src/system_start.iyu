@@ -27,7 +27,7 @@ sj(st_url,"juos_sh://",null,iu)
 syso(iu)
 f(iu != null)
 {
-	uigo("JuOS.terminal.iyu")
+	fn core.uigo("JuOS.terminal.iyu")
 	sss url =iu
 }
 else f(iu == null)

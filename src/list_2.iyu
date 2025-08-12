@@ -79,7 +79,7 @@ f(uid_mc *? ".jupk")
 				utw(null,"","主要索引文件解压失败或者没有签名jupk文件\n请去官方工具进行jupk签名：https://jupk-sign.byusi.cn/","打开官方工具","确定",true,v)
 				{
 					sss url ="https://jupk-sign.byusi.cn/"
-					uigo("system_start.iyu")
+					fn core.uigo("system_start.iyu")
 				}
 				else
 				{

@@ -31,17 +31,17 @@ background=through</ppt>
 <event><eventItme type="clicki">fr("$System/Config/home.sys",home)
 f(home == "false")
 {
-	uigo("JuOS_Hemo.iyu")
+	fn core.uigo("JuOS_Hemo.iyu")
 	end()
 }
 else f(home == "true")
 {
-	uigo("home.iyu")
+	fn core.uigo("home.iyu")
 	end()
 }
 else
 {
-	uigo("JuOS_Hemo.iyu")
+	fn core.uigo("JuOS_Hemo.iyu")
 	end()
 }
 fn byusi.qt(st_vW)</eventItme></event>
@@ -194,17 +194,17 @@ fn lib.wp(id)</eventItme><eventItme type="downkey">f(st_kC==4)
 	fr("$System/Config/home.sys",home)
 	f(home == "false")
 	{
-		uigo("JuOS_Hemo.iyu")
+		fn core.uigo("JuOS_Hemo.iyu")
 		end()
 	}
 	else f(home == "true")
 	{
-		uigo("home.iyu")
+		fn core.uigo("home.iyu")
 		end()
 	}
 	else
 	{
-		uigo("JuOS_Hemo.iyu")
+		fn core.uigo("JuOS_Hemo.iyu")
 		end()
 	}
 }</eventItme></UIEventset>

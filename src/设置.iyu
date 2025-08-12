@@ -191,7 +191,7 @@ fn byusi.qt(90)
 fr("$JuOS/data/User/data.json",data)
 f(data == null)
 {
-	uigo("login.iyu")
+	fn core.uigo("login.iyu")
 }
 else
 {
@@ -219,16 +219,16 @@ else
 		{
 			ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid,url)
 			sss url =url
-			uigo("start_app.iyu")
+			fn core.uigo("start_app.iyu")
 		}
 	}
 	./
-	uigo("UserCenter.iyu")
+	fn core.uigo("UserCenter.iyu")
 }</eventItme><eventItme type="press">//fn lib.utw("login.iyu")
 fr("$JuOS/data/User/data.json",data)
 f(data == null)
 {
-	uigo("login.iyu")
+	fn core.uigo("login.iyu")
 }
 else
 {
@@ -255,7 +255,7 @@ else
 		{
 			ss("https://api.www.byusi.cn/user/qd.php?uid="+uid+"&uuid="+uuid,url)
 			sss url =url
-			uigo("start_app.iyu")
+			fn core.uigo("start_app.iyu")
 		}
 	}
 }</eventItme></event>
@@ -338,7 +338,7 @@ f(i == null)
 					}
 				}
 			}
-			uigo("system_start.iyu")
+			fn core.uigo("system_start.iyu")
 		}
 	}
 }
@@ -783,7 +783,7 @@ fn system.gg("get")
 fn system.gg("zs")
 ./
 sss url ="https://api.juos.byusi.cn/gg/index.html"
-uigo("system_start.iyu")
+fn core.uigo("system_start.iyu")
 fn byusi.qt(110)</eventItme></event>
 </View>
 <View id="66" did="20" type="RelativeLayout">
@@ -832,7 +832,7 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">uigo("text_boot_init.iyu")</eventItme></event>
+<event><eventItme type="clicki">fn core.uigo("text_boot_init.iyu")</eventItme></event>
 </View>
 <View id="84" did="20" type="RelativeLayout">
 <ppt>width=-1
@@ -1028,11 +1028,13 @@ else
 	us(108,"checked","false")
 }
 //引导配置
+/.
 fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
 {
 	us(66,"visibility","visible")
 }
+./
 //
 fr("$System/Config/fillet.sys",fillet)
 f(fillet != null)
@@ -1106,8 +1108,10 @@ fn lib.svg(svg,118)
 fr("@JuOS/Lottie/my.json",data)
 fn Lottie.setImageLottie(122,data,-1,true)
 ./
-us(122,"src","$JuOS/ICON/hwid_default_avatar_before.png")</eventItme><eventItme type="restart">fr("$System/Config/gduoshez.sys",init)
+us(122,"src","$JuOS/ICON/hwid_default_avatar_before.png")</eventItme><eventItme type="restart">/.
+fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
 {
 	us(66,"visibility","visible")
-}</eventItme></UIEventset>
+}
+./</eventItme></UIEventset>

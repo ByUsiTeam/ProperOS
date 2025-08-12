@@ -66,7 +66,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{
@@ -120,7 +120,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{
@@ -174,7 +174,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{
@@ -229,7 +229,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{
@@ -283,7 +283,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{
@@ -337,7 +337,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{
@@ -392,7 +392,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{
@@ -446,7 +446,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{
@@ -500,7 +500,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{
@@ -555,7 +555,7 @@ f(a==6)
 		}
 		ss mm=
 		sss sz=2
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 	}
 	else
 	{

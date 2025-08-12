@@ -170,7 +170,7 @@ t()
 	ufnsui()
 	{
 		sss yztz ="true"
-		uigo("mian.iyu")
+		fn core.uigo("mian.iyu")
 		lan(0)
 		end()
 	}

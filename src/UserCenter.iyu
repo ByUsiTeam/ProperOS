@@ -63,7 +63,7 @@ textColor=#ffffffff
 typeface=@src/ttf/acbt80.ttf</ppt>
 <event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/qd.php?uid="+sss.uid+"&uuid="+sss.uuid,url)
 sss url =url
-uigo("start_app.iyu")
+fn core.uigo("start_app.iyu")
 fn byusi.qt(66)</eventItme></event>
 </View>
 <View id="67" did="68" type="CardView">
@@ -82,6 +82,8 @@ background=#ffff0000
 textColor=#ffffffff
 typeface=@src/ttf/acbt80.ttf</ppt>
 <event><eventItme type="clicki">fd("$JuOS/data/User/data.json",yz)
+fd("$JuOS/data/User/.username",yz)
+fd("$JuOS/data/User/.password",yt)
 fn byusi.qt(67)
 end()</eventItme></event>
 </View>
@@ -121,7 +123,7 @@ background=through</ppt>
 <event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/avatar/upload.html?uuid="+sss.uuid,url)
 fn byusi.qt(11)
 sss url =url
-uigo("system_start.iyu")</eventItme></event>
+fn core.uigo("system_start.iyu")</eventItme></event>
 </View>
 <View id="9" did="2" type="CardView">
 <ppt>width=-1
@@ -183,7 +185,7 @@ background=through</ppt>
 <event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/avatar/upload.html?uuid="+sss.uuid,url)
 fn byusi.qt(50)
 sss url =url
-uigo("system_start.iyu")</eventItme></event>
+fn core.uigo("system_start.iyu")</eventItme></event>
 </View>
 <View id="72" did="15" type="ScrollView">
 <ppt>width=-1
@@ -202,7 +204,8 @@ gravity=center</ppt>
 height=55dp
 app_CardcornerRadius=8dp
 layout_marginLeft=5dp
-layout_marginRight=5dp</ppt>
+layout_marginRight=5dp
+layout_marginTop=6dp</ppt>
 <event></event>
 </View>
 <View id="17" did="16" type="LinearLayout">

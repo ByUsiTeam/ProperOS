@@ -414,7 +414,7 @@ typeface=@src/ttf/acbt80.ttf
 background=#ff954eff</ppt>
 <event><eventItme type="clicki">utw(null,"","确定重启吗？","重启",false,v)
 {
-	uigo("mian.iyu")
+	fn core.uigo("mian.iyu")
 	end()
 }
 fn byusi.qt(43)</eventItme></event>

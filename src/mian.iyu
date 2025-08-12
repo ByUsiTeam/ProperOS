@@ -15,10 +15,17 @@ f(yanz == false)
 {
 	fuzs("@system/StartupScreen/StartupScreen.zip","$System/StartupScreen/",false,yanz)
 	us(2,"url","$System/StartupScreen/index.html")
-}</eventItme><eventItme type="loadingComplete">has(2,true)
+}
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">has(2,true)
 t()
 {
-	stop(6000)
+	fr("$System/StartupScreen/config.json",jjjs)
+    json(jjjs,geu)
+    json(geu,"get","stop",hts)
+	stop(hts)
 	ufnsui()
 	{
 		fn system.setup(1)

@@ -170,6 +170,7 @@ t()
 			fr("@JuOS/Lottie/yes.json",data)
 			fn Lottie.setImageLottie(45,data,-1,true)
 			fw("$JuOS/data/User/.password",mm)
+            fw("$JuOS/data/User/.username",zh)
 			fn tw.tw2("登录成功",0)
 			t()
 			{
