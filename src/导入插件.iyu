@@ -187,9 +187,9 @@ t()
 		uls(4,list_cz,"list_2.iyu")
 	}
 }</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
-s id =5
+uycl("#ff0099ff",true)
 fn n.ui(7)
-fn lib.wp(id)</eventItme><eventItme type="downkey">f(st_kC==4)
+fn lib.wp(5)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
 	fr("$System/Config/home.sys",home)
 	f(home == "false")
