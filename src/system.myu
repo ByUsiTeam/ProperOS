@@ -8,61 +8,44 @@ f(y == "true")
 	fn Lottie.setImageLottie(124,data,0,true)
 	t()
 	{
-		s api_url ="https://gitee.com/api/v5/repos/properos/properos/releases/latest?access_token=e41479a1b72747f25afd246fbe8adb09"
+		s api_url ="https://gitee.com/properos/mirror/raw/master/update.json"
 		fr("@version.txt",bd_v)
 		hs(api_url,url)
 		f(url != null)
 		{
 			json(url,data)
-			json(data,"get","tag_name",v)
+			json(data,"get","version",v)
+            json(data,"get","body",jianj)
+            json(data,"get","durl-zh",durl_zh)
+            json(data,"get","durl-en",durl_en)
+            json(data,"get","name",apk_name)
+            slower(apk_name,n)
 			f(bd_v != v)
 			{
-				json(data,"get","body",jianj)
-				json(data,"list","assets",list)
-				json(list,"size",size)
-				w(size &gt; 0)
+				f(n *? ".apk")
 				{
-					s-(1,size)
-					json(list,"data",size,item)
-					json(item,"get","browser_download_url",durl)
-					json(item,"get","name",apk_name)
-					slower(apk_name,n)
-					f(n *? ".apk")
+					ufnsui()
 					{
-						ufnsui()
-						{
-							us(123,"visibility","gone")
-							us(update.1,"visibility","visible")
-							swh("w",w)
-							swh("hh",h)
-							syso("w"+w)
-							syso("h"+h)
-							dht(dh,w,0,h,0)
-							dh(dh,"duration",500)
-							dha(dh2,false,true)
-							dh(dh2,"duration",1000)
-							dhset(dhlist,false,dh,dh2)
-							us(update.1,"dh",dhlist)
-							us(update.15,"text",jianj)
-							sss durl =durl
-							fw("$ProperOS/update/base.apk","1")
-							fd("$ProperOS/update/base.apk",y)
-							fdir("$ProperOS/update/base.apk",lj)
-							sss lj =lj
-							sss jianj =jianj
-							/. utw(null,"更新提示",jianj,"下载更新","取消更新",false,v)
-							{
-							fw("$ProperOS/update/base.apk","1")
-							fd("$ProperOS/update/base.apk",y)
-							fdir("$ProperOS/update/base.apk",lj)
-							fn lib.xzq("下载更新",durl,lj,jianj)
-							}
-							else
-							{
-							endutw()
-							}
-							./
-						}
+						us(123,"visibility","gone")
+						us(update.1,"visibility","visible")
+						swh("w",w)
+						swh("hh",h)
+						syso("w"+w)
+                        syso("h"+h)
+						dht(dh,w,0,h,0)
+						dh(dh,"duration",500)
+						dha(dh2,false,true)
+						dh(dh2,"duration",1000)
+						dhset(dhlist,false,dh,dh2)
+						us(update.1,"dh",dhlist)
+						us(update.15,"text",jianj)
+                        sss durl_en =durl_en
+                        sss durl_zh =durl_zh
+						fw("$ProperOS/update/base.apk","1")
+						fd("$ProperOS/update/base.apk",y)
+						fdir("$ProperOS/update/base.apk",lj)
+						sss lj =lj
+						sss jianj =jianj
 					}
 				}
 			}

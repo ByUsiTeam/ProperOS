@@ -880,7 +880,6 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">fn system.update("true")
-//fn tw.tw2("ProperOS无法正常检查更新",1)
 fn byusi.qt(84)</eventItme></event>
 </View>
 <View id="125" did="20" type="RelativeLayout">
