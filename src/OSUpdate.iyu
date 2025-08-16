@@ -21,9 +21,15 @@ gravity=center
 textSize=25sp</ppt>
 <event></event>
 </View>
-<View id="4" did="2" type="ProgressBar">
+<View id="7" did="2" type="CardView">
 <ppt>width=-1
-height=-2
+height=24dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="4" did="7" type="ProgressBar">
+<ppt>width=-1
+height=-1
 max=100
 progress=0</ppt>
 <event></event>
@@ -46,7 +52,8 @@ typeface=@src/ttf/acbt80.ttf
 visibility=gone</ppt>
 <event><eventItme type="clicki">fo(ss.dapk)</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">fn byusi.ztl()
+<UIEventset><eventItme type="loading">uycl("#e84f78ff",true)
+fn byusi.ztl()
 fn lib.wp(1)</eventItme><eventItme type="loadingComplete">t()
 {
 	fn lib.下载器2()

@@ -13,8 +13,7 @@ gravity=center</ppt>
 <View id="7" did="17" type="CardView">
 <ppt>width=64dp
 height=64dp
-app_CardcornerRadius=25dp
-app_CardElevation=8dp</ppt>
+app_CardcornerRadius=16dp</ppt>
 <event></event>
 </View>
 <View id="8" did="7" type="RelativeLayout">
@@ -67,7 +66,8 @@ gravity=bottom|center
 layout_gravity=bottom|center</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">dhas(dh, st_vW, "scaleX", 0.5, 1)
+<UIEventset><eventItme type="loading">/.
+dhas(dh, st_vW, "scaleX", 0.5, 1)
 dh(dh, "duration", 500)
 dh(dh, "start")
 
@@ -77,15 +77,4 @@ dh(dh1, "start")
 dhas(dh2, st_vW, "alpha", 0,1)
 dh(dh2, "duration", 1000)
 dh(dh2, "start")
-//
-ulag(st_vW,10,path)
-cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
-  cls(sss.QmLoader,"com.qmdeve.qmloader.LoadRequest",LoadRequest)
-  //获取实例(必写)
-  javax(instance,null,Loader,"getInstance")
-  javax(instance,instance,Loader,"with","android.content.Context",activity)
-  //本地图片路径(必写)
-  javax(instance,instance,LoadRequest,"load","String",path)
-  //绑定图像View(必写)
-  gvs(st_vW,imageView)
-  javax(instance,instance,LoadRequest,"into","android.widget.ImageView",imageView)</eventItme></UIEventset>
+./</eventItme></UIEventset>

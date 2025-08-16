@@ -210,7 +210,11 @@ visibility=gone</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
-fn lib.wp(2)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
+fn lib.wp(2)
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
 fr("@hello.json",data)
 fn Lottie.setImageLottie(5,data,0,true)
 

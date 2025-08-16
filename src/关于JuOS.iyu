@@ -518,7 +518,11 @@ else
 <UIEventset><eventItme type="loading">fn n.ui(1)
 fn lib.wp(1)
 uycl("#e84f78ff",true)
-//fn byusi.ztl()</eventItme><eventItme type="loadingComplete">//连续点击次数初始化
+//fn byusi.ztl()
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">//连续点击次数初始化
 ss djcs ="0"
 //设备消息获取
 sjxx(xx)

@@ -345,7 +345,7 @@ src=17301544</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
-uycl("#ff59d8ff",true)
+uycl("#e84f78ff",true)
 f(sss.url != null)
 {
   us(3,"url",sss.url)
@@ -366,7 +366,12 @@ fn api.hide_btn(3)
 //开启JavaScript交互
 hsas(3,true)
 fn n.ui(1)
-ss uii =true</eventItme><eventItme type="downkey">f(st_kC == 4)
+ss uii =true
+
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 	ug(3,"cangoback",yz_url_dt)
 	//

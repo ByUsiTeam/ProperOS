@@ -5,20 +5,20 @@ background=through
 layout_marginTop=15dp</ppt>
 <event></event>
 </View>
-<View id="10" did="1" type="CardView">
-<ppt>width=-1
-height=-1
-app_CardcornerRadius=20dp</ppt>
-<event></event>
-</View>
-<View id="2" did="10" type="LinearLayout">
+<View id="11" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
 gravity=center</ppt>
 <event></event>
 </View>
-<View id="9" did="2" type="TextView">
+<View id="8" did="11" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="9" did="11" type="TextView">
 <ppt>width=-2
 height=-2
 text=null
@@ -27,13 +27,7 @@ typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=5sp</ppt>
 <event></event>
 </View>
-<View id="8" did="2" type="ImageView">
-<ppt>width=-1
-height=-1
-src=17301567</ppt>
-<event></event>
-</View>
-<View id="5" did="10" type="Button">
+<View id="5" did="1" type="Button">
 <ppt>width=-1
 height=-1
 text=

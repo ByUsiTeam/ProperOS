@@ -1074,7 +1074,12 @@ us(update.1,"visibility","gone")
 //
 fn n.ui(14)
 
-fn lib.wp(14)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
+fn lib.wp(14)
+
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">fn Lottie.loaddex()
 
 loadjar("armeabi-v7a/classes.dex",class)
 cls(class,"com.Mus.ReboundScrollView",mB)

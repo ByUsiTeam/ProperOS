@@ -91,7 +91,11 @@ else
 {
 	fr("$System/Config/Application_side_load.sys","false")
 	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
-}</eventItme><eventItme type="downkey">//锁定返回
+}
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="downkey">//锁定返回
 f(st_kC==4)
 {
 }</eventItme><eventItme type="loadingComplete">//zip工具
@@ -142,4 +146,4 @@ fn system.asystem_t_init()
 fr("@version.txt",xxi)
 s tnr ="欢迎使用 ProperOS"
 ss(tnr+"_v"+xxi,tnr)
-fn system.asystem_t_t(141730,"@JuOS/logo/properos.png","@JuOS/logo/properos.png","@JuOS/logo/properos.png",false,"ProperOS消息栏常驻",tnr,tnr)</eventItme></UIEventset>
+//fn system.asystem_t_t(141730,"@JuOS/logo/properos.png","@JuOS/logo/properos.png","@JuOS/logo/properos.png",false,"ProperOS消息栏常驻",tnr,tnr)</eventItme></UIEventset>

@@ -17,7 +17,7 @@ orientation=vertical</ppt>
 </View>
 <View id="1" did="6" type="LinearLayout">
 <ppt>width=-1
-height=-2
+height=55dp
 orientation=horizontal
 gravity=left|center
 background=#daebeae3</ppt>
@@ -186,8 +186,8 @@ t()
 	{
 		uls(4,list_cz,"list_2.iyu")
 	}
-}</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
-uycl("#ff0099ff",true)
+}</eventItme><eventItme type="loadingComplete">uycl("#e84f78ff",true)
+fn byusi.ztl()
 fn n.ui(7)
 fn lib.wp(5)</eventItme><eventItme type="downkey">f(st_kC==4)
 {

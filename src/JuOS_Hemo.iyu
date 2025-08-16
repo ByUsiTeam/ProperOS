@@ -226,8 +226,6 @@ f(Update == "true")
 //
 fw("$System/Config/Update.sys","false")
 
-fn lk.y(1)
-
 fn lib.wp(1)
 
 loadjar("QmLoader",sss.QmLoader)
@@ -238,10 +236,15 @@ javanew(builder,Builder,"android.content.Context",activity)
 javax(null,null,Loader,"init",Builder,builder)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
 	syso("确定")
-}</eventItme><eventItme type="loading">uycl("#e84f78ff",true)
+}</eventItme><eventItme type="loading">fn byusi.ztl()
+uycl("#e84f78ff",true)
 //fn byusi.ztl()
 utb(18)
-fn n.ui(1)</eventItme><eventItme type="menu">case 设置:
+fn n.ui(1)
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="menu">case 设置:
 fn core.uigo("设置.iyu")
 break
 

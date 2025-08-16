@@ -25,9 +25,15 @@ f(init_fe == true)
 				f(type == "iapp")
 				{
 					json(json,"get","iyu",iyu)
-					//fn core.uigo(iyu)
-                    fw("$System/BootUI.ui",iyu)
-                    fn core.uigo("user.login.iyu")
+                    f(iyu == "bootrepair.iyu")
+                    {
+                    	fn core.uigo(iyu)
+                    }
+                    else
+                    {
+                    	fw("$System/BootUI.ui",iyu)
+                        fn core.uigo("user.login.iyu")
+                    }
 					end()
 				}
 				else f(type == "html")
