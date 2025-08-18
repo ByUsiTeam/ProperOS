@@ -502,8 +502,7 @@ else f(xz == "false")
 height=55dp
 layout_marginTop=5dp
 layout_marginLeft=5dp
-layout_marginRight=5dp
-background=#ae000000</ppt>
+layout_marginRight=5dp</ppt>
 <event></event>
 </View>
 <View id="141" did="140" type="LinearLayout">
@@ -542,7 +541,17 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">tws(v,"敬请期待",0)</eventItme></event>
+<event><eventItme type="clicki">//tws(v,"敬请期待",0)
+fe("$JuOS/data/User/data.json",ul)
+f(ul == true)
+{
+	fn core.uigo("设置启动动画.iyu")
+}
+else
+{
+	fn tw.tw2("请先登录",2)
+    fn core.uigo("login.iyu")
+}</eventItme></event>
 </View>
 <View id="102" did="20" type="RelativeLayout">
 <ppt>width=-1

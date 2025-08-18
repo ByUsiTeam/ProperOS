@@ -111,8 +111,8 @@ t()
 	fw("$JuOS/hemo/桌面/JuOS音乐.app","System=True=System\nUi=juos_music.iyu=Ui\nAppTb=$sys/JuOS/logo/MusicPlayerIcon.png=AppTb\nEnd=false=End")
 	fw("$JuOS/hemo/桌面/FoxCM.app","System=True=System\nAppTb=$sys/JuOS/logo/foxcm.ico=AppTb\nEnd=false=End\nUrl=http://foxcm.byusi.cn=Url")
 	fw("$JuOS/hemo/桌面/Cdifit.app","System=True=System\nAppTb=$sys/JuOS/logo/cdifit.png=AppTb\nEnd=false=End\nUrl=http://pan.byusi.cn=Url")
-		fw("$JuOS/hemo/桌面/音乐分享.app","System=True=System\nAppTb=$JuOS/ICON/ic_appicon_gallery3d.png=AppTb\nEnd=false=End\nUrl=https://pan.hucl.link/s/e8hq=Url")
-		fw("$JuOS/hemo/桌面/Terminal.app","System=True=System\nUi=terminal.iyu=Ui\nAppTb=%@JuOS/ICON/ic_device_matebook_filled.png=AppTb\nEnd=false=End")
+	fw("$JuOS/hemo/桌面/音乐分享.app","System=True=System\nAppTb=$JuOS/ICON/ic_appicon_gallery3d.png=AppTb\nEnd=false=End\nUrl=https://pan.hucl.link/s/e8hq=Url")
+	fw("$JuOS/hemo/桌面/Terminal.app","System=True=System\nUi=terminal.iyu=Ui\nAppTb=%@JuOS/ICON/ic_device_matebook_filled.png=AppTb\nEnd=false=End")
 	//
 	fc("@JuOS/App/HASH获取工具.jush","$JuOS/hemo/桌面/HASH获取工具.jush",yz)
 	fn lib.install("@JuOS/App/LitCalculator.jupk")
@@ -131,6 +131,8 @@ t()
 	{
 		fw("$System/Config/app_start_qdq.sys","true")
 	}
+    //写入强制启动新启动器
+    fw("$System/Config/app_start_qdq.sys","true")
 	//写入默认桌面圆角配置
 	fe("$System/Config/fillet.sys",fillet)
 	f(fillet != true)

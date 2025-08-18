@@ -104,10 +104,6 @@ case 扫描二维码:
 uqr()
 break
 //
-case 退出:
-end()
-break
-//
 case 刷新:
 ug(5,"url",url)
 us(5,"url",url)
@@ -126,7 +122,7 @@ f(message == "Login successful")
 {
 	f(url ?* "http")
 	{
-		hws(url)
+		fn tw.tw2("为保护开发者权益，所以不提供外部浏览器打开的方式",1)
 	}
 	else
 	{
@@ -135,24 +131,8 @@ f(message == "Login successful")
 }
 break
 //
-case 查看地址:
-ug(5,"url",url)
-s dir ="$App/"
-fdir(dir,system_data)
-syso(system_data)
-f(url ?* "http")
-{
-	fn tw.tw2("抱歉，为保护开发者权益无法显示URL地址")
-}
-else
-{
-	ss("file://"+system_data,jq1)
-		s jq2 ="/src/"
-		sj(url,"/src/",null,sjj)
-		ss(sq2+sjj,sj2)
-	sj(url,jq1,sj2,text)
-		fn tw.tw2(text,0)
-}
+case 退出:
+end()
 break</eventItme><eventItme type="loadingComplete">t()
 {
 	w(true)
