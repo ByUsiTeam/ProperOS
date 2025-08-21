@@ -129,7 +129,33 @@ gravity=center</ppt>
 <UIEventset><eventItme type="loadingComplete">//-_-_-_-_-_-_-_-_-
 fn system.asystem_t_init()
 //-_-_-_-_-_-_-_-_-_-_-
-//s counter =0
+fn PromptLibrary.interface(1)
+t()
+{
+	hs("https://gitee.com/properos/mirror/raw/master/properos-tos.json",jsuu)
+    json(jsuu,data)
+    json(data,"get","text",txj)
+    f(txj != null)
+    {
+    	fw("$temp/tos.txt",txj)
+    	ufnsui()
+    	{
+    		fn PromptLibrary.pop(txj,"@JuOS/logo/properos.png",3500)
+    	}
+    }
+    else
+    {
+    	fe("$temp/tos.txt",tos)
+        f(tos == true)
+        {
+        	ufnsui()
+        	{
+        		fr("$temp/tos.txt",toss)
+        		fn PromptLibrary.pop(toss,"@JuOS/logo/properos.png",3500)
+        	}
+        }
+    }
+}
 //-_-_-_-_-_-_-_-_-_-_-
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)

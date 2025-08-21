@@ -302,7 +302,7 @@ background=#ff954eff</ppt>
 		fn tw.tw("保存成功")
 	}
 }
-fn byusi.qt(29)</eventItme></event>
+fn byusi.qt(31)</eventItme></event>
 </View>
 <View id="33" did="5" type="LinearLayout">
 <ppt>width=-1
@@ -351,7 +351,7 @@ text=格式化数据
 textColor=#ffffffff
 typeface=@src/ttf/acbt80.ttf
 background=#ff954eff</ppt>
-<event><eventItme type="clicki">fn byusi.qt(35)
+<event><eventItme type="clicki">fn byusi.qt(37)
 utw(null,"","确定要格式化吗？","确定","不",false,v)
 {
 	fdir("$",dir)
@@ -420,7 +420,9 @@ background=#ff954eff</ppt>
 fn byusi.qt(43)</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
-fn n.ui(1)</eventItme><eventItme type="loadingComplete">fr("$boot/init.json.bak",boot_init)
+fn n.ui(1)
+fn PromptLibrary.interface(1)
+fn PromptLibrary.pop("欢迎您使用 BootRepair 模式","@JuOS/logo/properos.png",3500)</eventItme><eventItme type="loadingComplete">fr("$boot/init.json.bak",boot_init)
 fr("$boot/init.json",init)
 //
 json(init,boot)
