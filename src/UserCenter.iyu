@@ -61,7 +61,7 @@ text=签到
 background=#ff3863ff
 textColor=#ffffffff
 typeface=@src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/qd.php?uid="+sss.uid+"&uuid="+sss.uuid,url)
+<event><eventItme type="clicki">ss("https://api.www.cdifit.cn/user/qd.php?uid="+sss.uid+"&uuid="+sss.uuid,url)
 sss url =url
 fn core.uigo("start_app.iyu")
 fn byusi.qt(66)</eventItme></event>
@@ -120,7 +120,7 @@ height=-1</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/avatar/upload.html?uuid="+sss.uuid,url)
+<event><eventItme type="clicki">ss("https://api.www.cdifit.cn/user/avatar/upload.html?uuid="+sss.uuid,url)
 fn byusi.qt(11)
 sss url =url
 fn core.uigo("system_start.iyu")</eventItme></event>
@@ -182,7 +182,7 @@ height=-1</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">ss("https://api.www.byusi.cn/user/avatar/upload.html?uuid="+sss.uuid,url)
+<event><eventItme type="clicki">ss("https://api.www.cdifit.cn/user/avatar/upload.html?uuid="+sss.uuid,url)
 fn byusi.qt(50)
 sss url =url
 fn core.uigo("system_start.iyu")</eventItme></event>
@@ -501,7 +501,7 @@ json(udata,"get","uuid",uuid)
 sss uuid =uuid
 //解析完成，加载信息上去
 us(8,"text",user_name)
-ss("https://api.www.byusi.cn/user/avatar/?uuid="+uuid+"&operate=examine",avatar)
+ss("https://api.www.cdifit.cn/user/avatar/?uuid="+uuid+"&operate=examine",avatar)
 fr("@ProperOS/Src/html/Avatar.html",html)
 sr(html,"[IMG]",avatar,html_sr)
 fw("$ByUsi/UserSystem/html/Avatar.html",html_sr)
@@ -528,7 +528,7 @@ json(udata,"get","uuid",uuid)
 sss uuid =uuid
 //解析完成，加载信息上去
 us(8,"text",user_name)
-ss("https://api.www.byusi.cn/user/avatar/?uuid="+uuid+"&operate=examine",avatar)
+ss("https://api.www.cdifit.cn/user/avatar/?uuid="+uuid+"&operate=examine",avatar)
 fr("@ProperOS/Src/html/Avatar.html",html)
 sr(html,"[IMG]",avatar,html_sr)
 fw("$ByUsi/UserSystem/html/Avatar.html",html_sr)

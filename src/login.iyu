@@ -131,7 +131,7 @@ fn Lottie.setImageLottie(45,data,-1,true)
 syso(zh)
 syso(mm)
 //登录基本处理方法
-s url="https://api.www.byusi.cn/user/api.php"
+s url="https://api.www.cdifit.cn/user/api.php"
 t()
 {
 	ss("&identifier="+zh+"&password="+mm+"&action=login",data)
@@ -381,7 +381,7 @@ us(44,"visibility","visible")
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(45,data,-1,true)
 //登录基本处理方法
-s url="https://api.www.byusi.cn/user/api.php"
+s url="https://api.www.cdifit.cn/user/api.php"
 t()
 {
 	ss("username="+zh+"&email="+email+"&password="+mm+"&action=register",data)
