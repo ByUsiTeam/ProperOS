@@ -147,7 +147,9 @@ text=登录
 textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf
 background=#ff0055ff</ppt>
-<event><eventItme type="clicki">ug(15,"text",pass)
+<event><eventItme type="clicki">fn byusi.qt(19)
+ug(15,"text",pass)
+endkeyboard()
 
 fr("$JuOS/data/User/.password",paw)
 fr("$System/BootUI.ui",ui)
@@ -155,6 +157,10 @@ f(paw == pass)
 {
 	fn core.uigo(ui)
     end()
+}
+else f(pass == null)
+{
+	fn tw.tw2("密码不可为空",1)
 }
 else
 {

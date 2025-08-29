@@ -14,10 +14,24 @@ gravity=top|center
 background=through</ppt>
 <event></event>
 </View>
-<View id="18" did="3" type="Toolbar">
+<View id="19" did="3" type="CardView">
 <ppt>width=-1
-height=45dp
-visibility=visible</ppt>
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginBottom=5dp
+layout_marginRight=5dp
+app_CardcornerRadius=15dp</ppt>
+<event></event>
+</View>
+<View id="18" did="19" type="Toolbar">
+<ppt>width=-1
+height=-1
+app_title=ProperOS
+app_subtitle=ProperExplorer
+BackgroundColor=#ff0099ff
+app_TitleColor=#ffffffff
+app_subTitleColor=#ffd0d0d0</ppt>
 <event></event>
 </View>
 <View id="11" did="3" type="LinearLayout">
@@ -290,7 +304,7 @@ fn lib.utw("end-ppos.iyu")
 break
 
 case 重启:
-utw(null,"","请选择这重启选项","重启到bootrepair","正常重启","不重启了",false,v)
+utw(null,"","请选择这重启选项\n点击外部区域可取消","重启到bootrepair","正常重启",false,v)
 {
 	fn init.bootrepair("yes",1)
 }
@@ -298,9 +312,5 @@ else
 {
 	fn core.uigo("mian.iyu")
 	end()
-}
-else
-{
-	endutw()
 }
 break</eventItme></UIEventset>

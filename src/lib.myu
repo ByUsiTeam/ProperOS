@@ -417,34 +417,36 @@ sss md5 =MD5
 end fn
 
 fn install(uid_mc)
-//
+
 f(uid_mc *? ".jupk")
 {
 	s ml =uid_mc
 	syso(ml)
 	t()
 	{
-		fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
-		//
-		fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
-		//
+		time(4,sjc)
+        ss("$temp/ProperOS/AppInstall/"+sjc+"/",files)
+		fuz(ml,"InstallAppLog.f",files,z_yz)
+		//读取安装索引
+		fr(files+"InstallAppLog.f",txt_yz_t)
+		//安装引导解析
 		sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
 		sj(txt_yz_t,"AppM=","=AppM",AppM_2)
 		sr(txt_yz,"%g","$App/",txt_ml)
 		//应用link创建
 		ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
-		fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
-		//
+		fc(files+"InstallAppLog.f",AppLink,yz)
+		//安装解压
 		fuzs(ml,txt_ml,yz_stty)
-		//
-		f(yz_stty == "true")
-		{
-			ufnsui()
-			{
-				fn tw.tw("安装成功啦")
-			}
-		}
-		else
+		//提示信息
+        f(yz_stty == true)
+        {
+        	ufnsui()
+        	{
+        		fn tw.tw("安装成功了")
+        	}
+        }
+		else f(yz_stty == false)
 		{
 			ufnsui()
 			{
@@ -455,7 +457,7 @@ f(uid_mc *? ".jupk")
 }
 else
 {
-	ss("/sdcard/JuOS/"+uid_mc,ml)
+	ss("/sdcard/ProperOS/"+uid_mc,ml)
 	ss("$JuOS/hemo/桌面/"+uid_mc,ml_2)
 	fc(ml,ml_2,yz)
 	f(yz == "true")
@@ -470,9 +472,15 @@ else
 
 end fn
 
-//文件打开（调用iApp的方法）
 fn fo(data)
 
 fo(data)
+
+end fn
+
+fn fr(data)
+
+fr(data,yto)
+sss fr =yto
 
 end fn

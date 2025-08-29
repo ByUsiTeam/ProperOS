@@ -74,9 +74,7 @@ syso("w"+w)
 syso("h"+h)
 dht(dh,0,w,0,h)
 dh(dh,"duration",500)
-dha(dh2,true,false)
-dh(dh2,"duration",2000)
-dhset(dhlist,false,dh,dh2)
+dhset(dhlist,false,dh)
 us(update.1,"dh",dhlist)
 us(update.1,"visibility","gone")</eventItme></event>
 </View>

@@ -1,19 +1,21 @@
 fn install(ml,tsc)
 t()
 {
-	fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
+	time(4,sjc)
+    ss("$temp/ProperOS/AppInstall/"+sjc+"/",files)
+	fuz(ml,"InstallAppLog.f",files,z_yz)
 	fuz(ml,"SIGN/KeySign.k","$ProperOS/Install/Sign",keyyz)
 	//
 	f(z_yz == "true" && keyyz == "true")
 	{
-		fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
+		fr(files+"InstallAppLog.f",txt_yz_t)
 		//
 		sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
 		sj(txt_yz_t,"AppM=","=AppM",AppM_2)
 		sr(txt_yz,"%g","$App/",txt_ml)
 		//应用link创建
 		ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
-		fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
+		fc(files+"InstallAppLog.f",AppLink,yz)
 		//
 		fuzs(ml,txt_ml,yz_stty)
 		//
@@ -38,7 +40,6 @@ t()
 	{
 		ufnsui()
 		{
-			//fn tw.tw2("主要索引文件解压失败或者没有签名jupk文件",1)
 			utw(null,"","主要索引文件解压失败或者没有签名jupk文件\n请去官方工具进行jupk签名：https://jupk-sign.byusi.cn/","打开官方工具","确定",true,v)
 			us(app.18,"text","➤ 主要索引文件解压失败或者没有签名jupk文件\n请去官方工具进行jupk签名：https://jupk-sign.byusi.cn/","打开官方工具")
 			{

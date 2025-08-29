@@ -19,7 +19,10 @@ f(yanz == false)
 loadjar("typeface.de",dex)
 cls(dex,"com.mus.alltypeface.set",class)
 fdir("@JuOS/src/ttf/acbt80.ttf",path)
-javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">has(2,true)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)
+//ProperOS开机启动时间戳
+time(4,sjc)
+fw("$System/dev/BootTimestamp",sjc)</eventItme><eventItme type="loadingComplete">has(2,true)
 t()
 {
 	fr("$System/StartupScreen/config.json",jjjs)

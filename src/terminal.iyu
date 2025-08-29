@@ -18,7 +18,7 @@ height=-1</ppt>
 </View>
 <View id="4" did="2" type="CardView">
 <ppt>width=-1
-height=200dp
+height=120dp
 layout_marginLeft=7dp
 layout_marginRight=7dp
 layout_marginTop=6dp
@@ -47,12 +47,18 @@ background=through
 gravity=center
 typeface=@src/ttf/acbt80.ttf</ppt>
 <event><eventItme type="clicki">ug(10,"text",nr)
-strim(nr,nr)
 f(nr != null)
 {
 	us(10,"text","")
-	fw("$ProperOS/jush",nr)
-	fn juos.脚本("$ProperOS/jush")
+	f(nr *? ".jush")
+	{
+		fn juos.脚本(nr)
+	}
+    else
+    {
+    	fw("$temp/jush",nr)
+        fn juos.脚本("$temp/jush")
+    }
 }
 else
 {
