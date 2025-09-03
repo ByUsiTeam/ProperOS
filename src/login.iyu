@@ -163,14 +163,17 @@ t()
 	}
 	else f(status == "success")
 	{
-		fw("$JuOS/data/User/data.json",sju)
+		call(fil,"mjava","aes.encryptString",sju,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+		fw("$JuOS/data/User/data.json",fil)
 		ufnsui()
 		{
 			endkeyboard()
 			fr("@JuOS/Lottie/yes.json",data)
 			fn Lottie.setImageLottie(45,data,-1,true)
-			fw("$JuOS/data/User/.password",mm)
-            fw("$JuOS/data/User/.username",zh)
+            call(nr,"mjava","aes.encryptString",mm,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+            call(nr2,"mjava","aes.encryptString",zh,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+			fw("$JuOS/data/User/.password",nr)
+            fw("$JuOS/data/User/.username",nr2)
 			fn tw.tw2("登录成功",0)
 			t()
 			{
