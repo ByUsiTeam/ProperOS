@@ -83,7 +83,7 @@ typeface=@src/ttf/acbt80.ttf</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">sss 输出框架 =null
-sss 输出框架id =null
+sss 输出框架id =3
 fn byusi.ztl()
 fn n.ui(1)
 fn lib.wp(1)</eventItme><eventItme type="loadingComplete">s id =3

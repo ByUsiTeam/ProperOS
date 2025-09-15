@@ -30,14 +30,15 @@ fn Lottie.setImageLottie(5,data,0,true)</eventItme></event>
 <View id="6" did="4" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=horizontal
+orientation=vertical
 gravity=center</ppt>
 <event></event>
 </View>
 <View id="5" did="6" type="ImageView">
-<ppt>width=120dp
-height=85dp
-src=17301567</ppt>
+<ppt>width=240dp
+height=120dp
+src=17301567
+scaleType=centerinside</ppt>
 <event></event>
 </View>
 <View id="24" did="6" type="TextView">

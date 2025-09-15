@@ -1,0 +1,36 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=测试php</ppt>
+<event><eventItme type="clicki">sss projectHome ="/storage/emulated/0/"
+
+/.
+sr(sss.projectHome,"/storage/emulated/0/","",url)
+ss("http://127.0.0.1:21200/"+url,sss.lj)
+./
+
+sss url ="http://127.0.0.1:21200"
+fn core.uigo("system_start.iyu")
+ss("chmod -R 777 /data/data/miao.byusi.properos/files/PhpRuntime/* && export LD_LIBRARY_PATH='/data/data/miao.byusi.properos/files/PhpRuntime/lib' && cd "+sss.projectHome+" && exec /data/data/miao.byusi.properos/files/PhpRuntime/php -S 0.0.0.0:21200 -t "+sss.projectHome+" &gt; /data/data/miao.byusi.properos/files/log.php.log",shell)
+//进去到私有文件夹，给予二进制权限，以sh的格式执行
+
+call(rs,"mlua","cmd.shell",shell)
+
+/.
+ss("/sdcard/"+sss.projectHome,home)
+call(re,"mjava","doc.run",home)
+./</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme></UIEventset>

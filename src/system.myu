@@ -15,11 +15,11 @@ f(y == "true")
 		{
 			json(url,data)
 			json(data,"get","version",v)
-            json(data,"get","body",jianj)
-            json(data,"get","durl-zh",durl_zh)
-            json(data,"get","durl-en",durl_en)
-            json(data,"get","name",apk_name)
-            slower(apk_name,n)
+			json(data,"get","body",jianj)
+			json(data,"get","durl-zh",durl_zh)
+			json(data,"get","durl-en",durl_en)
+			json(data,"get","name",apk_name)
+			slower(apk_name,n)
 			f(bd_v != v)
 			{
 				f(n *? ".apk")
@@ -31,7 +31,7 @@ f(y == "true")
 						swh("w",w)
 						swh("hh",h)
 						syso("w"+w)
-                        syso("h"+h)
+						syso("h"+h)
 						dht(dh,w,0,h,0)
 						dh(dh,"duration",500)
 						dha(dh2,false,true)
@@ -39,8 +39,8 @@ f(y == "true")
 						dhset(dhlist,false,dh,dh2)
 						us(update.1,"dh",dhlist)
 						us(update.15,"text",jianj)
-                        sss durl_en =durl_en
-                        sss durl_zh =durl_zh
+						sss durl_en =durl_en
+						sss durl_zh =durl_zh
 						fw("$ProperOS/update/base.apk","1")
 						fd("$ProperOS/update/base.apk",y)
 						fdir("$ProperOS/update/base.apk",lj)
@@ -217,100 +217,100 @@ else
 	sj(wjuwjnr,"Config=","=Config",Config)
 	sj(wjuwjnr,"AppUrlJr=","=AppUrlJr",AppUrlJr)
 	sj(wjuwjnr,"System=","=System",sys)
-    sj(wjuwjnr,"jsonUi=","=jsonUi",jsonui)
-    slower(jsonui,jsonui)
-    f(jsonui == null)
-    {
-    	f(sys == null)
-    	{
-	    	sr(AppLj,"%g","$App/",AppLj)
-	    	//
-	    	f(AppUrlJr == null || AppUrlJr == "")
-	    	{
-		    	ss(AppLj+"src/index.html",url)
-		    	sss url =url
-		    	fw("$JuOS/temp_url/url.jtm",url)
-		    	f(Config != null)
-	    		{
-			    	sss qdq =qdq
-			    	sss package =AppLj
-			    	fn core.uigo("screen.iyu")
-		    	}
-		    	else
-		    	{
-			    	fn core.uigo(qdq)
-		    	}
-	    	}
-	    	else
-	    	{
-		    	sss url =AppUrlJr
-	    		fw("$JuOS/temp_url/url.jtm",url)
-	    		f(Config != null)
-	    		{
-			    	sss qdq =qdq
-			    	sss package =AppLj
-			    	fn core.uigo("screen.iyu")
-	    		}
-	    		else
-	    		{
-		    		fn core.uigo(qdq)
-	    		}
-    		}
-    	}
-    	else f(sys == "True")
-    	{
-	    	sj(wjuwjnr,"Ui=","=Ui",ui)
-    		sj(wjuwjnr,"End=","=End",sys_end)
-	    	sj(wjuwjnr,"Url=","=Url",Url_System)
-	    	//
-	    	sss url =Url_System
-	    	fw("$JuOS/temp_url/url.jtm",Url_System)
-	    	//
-	    	ufnsui()
-	    	{
-		    	f(sys_end == "false")
-		    	{
-			    	f(Url_System != null)
-		    		{
-			    		fn core.uigo("system_start.iyu")
-		    		}
-			    	else
-			    	{
-				    	fn core.uigo(ui)
-		    		}
-		    	}
-	    		else f(sys_end == "true")
-	    		{
-		    		f(Url_System != null)
-			    	{
-			    		fn core.uigo("system_start.iyu")
-				    	end()
-	    			}
-	    			else
-		    		{
-			    		fn core.uigo(ui)
-			    		end()
-		    		}
-		    	}
-	    	}
-    	}
-    }
-    else f(jsonui == "true")
-    {
-    	sr(AppLj,"%g","$App/",package)
-        sss url =package
-        fn core.uigo("jsonUi.iyu")
-    }
-    else
-    {
-    	ufnsui()
-    	{
-    		utw(null,"","出现错误了","确定",false,v)
-    		{
-    			endutw()
-    		}
-    	}
-    }
+	sj(wjuwjnr,"jsonUi=","=jsonUi",jsonui)
+	slower(jsonui,jsonui)
+	f(jsonui == null)
+	{
+		f(sys == null)
+		{
+			sr(AppLj,"%g","$App/",AppLj)
+			//
+			f(AppUrlJr == null || AppUrlJr == "")
+			{
+				ss(AppLj+"src/index.html",url)
+				sss url =url
+				fw("$JuOS/temp_url/url.jtm",url)
+				f(Config != null)
+				{
+					sss qdq =qdq
+					sss package =AppLj
+					fn core.uigo("screen.iyu")
+				}
+				else
+				{
+					fn core.uigo(qdq)
+				}
+			}
+			else
+			{
+				sss url =AppUrlJr
+				fw("$JuOS/temp_url/url.jtm",url)
+				f(Config != null)
+				{
+					sss qdq =qdq
+					sss package =AppLj
+					fn core.uigo("screen.iyu")
+				}
+				else
+				{
+					fn core.uigo(qdq)
+				}
+			}
+		}
+		else f(sys == "True")
+		{
+			sj(wjuwjnr,"Ui=","=Ui",ui)
+			sj(wjuwjnr,"End=","=End",sys_end)
+			sj(wjuwjnr,"Url=","=Url",Url_System)
+			//
+			sss url =Url_System
+			fw("$JuOS/temp_url/url.jtm",Url_System)
+			//
+			ufnsui()
+			{
+				f(sys_end == "false")
+				{
+					f(Url_System != null)
+					{
+						fn core.uigo("system_start.iyu")
+					}
+					else
+					{
+						fn core.uigo(ui)
+					}
+				}
+				else f(sys_end == "true")
+				{
+					f(Url_System != null)
+					{
+						fn core.uigo("system_start.iyu")
+						end()
+					}
+					else
+					{
+						fn core.uigo(ui)
+						end()
+					}
+				}
+			}
+		}
+	}
+	else f(jsonui == "true")
+	{
+		sr(AppLj,"%g","$App/",package)
+		sss url =package
+		fn core.uigo("jsonUi.iyu")
+	}
+	else
+	{
+		ufnsui()
+		{
+			utw(null,"","出现错误了","确定",false,v)
+			{
+				endutw()
+			}
+		}
+	}
 }
 
 end fn

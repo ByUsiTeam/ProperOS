@@ -201,22 +201,5 @@ else
 		fn core.uigo("mian.iyu")
         end()
 	}
-}</eventItme><eventItme type="restart">fe("$JuOS/data/User/data.json",user)
-f(user == true)
-{
-	fr("$System/BootUI.ui",iyu_ui)
-	fn core.uigo(iyu_ui)
-    end()
-}
-else f(user == false)
-{
-	fn core.uigo("login.iyu")
-}
-else
-{
-	utw(null,"","抱歉，出现错误了","重启",true,v)
-	{
-		fn core.uigo("mian.iyu")
-        end()
-	}
-}</eventItme></UIEventset>
+}</eventItme><eventItme type="restart">fn core.uigo("user.login.iyu")
+end()</eventItme></UIEventset>

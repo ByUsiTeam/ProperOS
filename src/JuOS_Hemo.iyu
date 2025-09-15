@@ -144,6 +144,9 @@ gravity=center</ppt>
 fn system.asystem_t_init()
 //-_-_-_-_-_-_-_-_-_-_-
 fn PromptLibrary.interface(1)
+//
+fn lib.utw("loading.iyu")
+//
 t()
 {
 	hs("https://gitee.com/properos/mirror/raw/master/properos-tos.json",jsuu)
@@ -242,6 +245,12 @@ t()
         ss(tui+"Img="+img+"=Img;;Name="+name+"=Name\n",utt)
         fw("$System/homeList",utt)
         ula(list_cz, 10=img, 14=name)
+        /.
+        ufnsui()
+        {
+        	ula(5)
+        }
+        ./
 	}
     ufnsui()
     {
@@ -253,6 +262,7 @@ t()
 		us(list.7,"app_CardcornerRadius",fillet)
 		us(6, "visibility", "gone")
 		us(4,"refreshing","false")
+        fn lib.endutw()
 	}
 }
 //-_-_-_-_-_-_-_-_-_-_-

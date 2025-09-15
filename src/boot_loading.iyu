@@ -53,9 +53,9 @@ layout_marginRight=6dp</ppt>
 <event></event>
 </View>
 <View id="7" did="5" type="ProgressBar">
-<ppt>width=-2
-height=-2
-visibility=gone</ppt>
+<ppt>width=35dp
+height=35dp
+style=16842874</ppt>
 <event></event>
 </View>
 <View id="8" did="5" type="GifView">
@@ -63,7 +63,7 @@ visibility=gone</ppt>
 height=35dp
 src=@100.gif
 scaleType=centercrop
-visibility=visible</ppt>
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="10" did="5" type="ImageView">

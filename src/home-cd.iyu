@@ -142,8 +142,7 @@ t()
 				//s img = "@JuOS/src/img/zy/mp4.png"
 				ss("$JuOS/hemo/桌面/"+sc,a)
 				fdir(a,a)
-				call(a,"mjava","awzx2.get",a,"1")
-				s img =a
+				call(a,"mjava","awzx2.get",img,"1")
 			}
 			else f(sc *? ".m4a")
 			{

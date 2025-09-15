@@ -145,6 +145,8 @@ t()
 	fc("@JuOS/src/player/mui-player.min.css","$System/bfq/mui-player.min.css",yz_bfq)
 	//解压第2代视频播放器
 	fuzs("@JuOS/html/VideoPlayer2/VideoPlayer2.zip","$System/VideoPlayer2",yz_vp)
+    //解压php基本环境
+    fuzs("@ProperOS/Package/php_8.4.2-2.zip","$PhpRuntime",yz_php)
 	//导入HTML5音乐播放器
 	fc("@JuOS/html/MusicPlayer/index.html","$System/yybfq/index.html",yz_yybfq)
 	//配置文本预览器
