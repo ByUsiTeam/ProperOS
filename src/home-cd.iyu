@@ -105,6 +105,7 @@ fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
 fn lib.endutw()
+fn lib.utw("loading.iyu")
 t()
 {
 	s a = "$JuOS/hemo/桌面"
@@ -169,6 +170,7 @@ t()
 	}
 	ufnsui()
 	{
+		fn lib.endutw()
 		us(6, "visibility", "gone")
 		uls(5, list_cz, "list.iyu", -1, -2)
 		us(4,"refreshing","false")
