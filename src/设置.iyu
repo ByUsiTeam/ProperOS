@@ -876,7 +876,7 @@ gravity=left|center</ppt>
 <View id="88" did="87" type="TextView">
 <ppt>width=-2
 height=-2
-text=检查更新
+text=检查系统资源包更新
 textColor=#ff000000
 typeface=@src/ttf/acbt80.ttf
 textSize=15sp
@@ -890,6 +890,54 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">fn system.update("true")
 fn byusi.qt(84)</eventItme></event>
+</View>
+<View id="148" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="149" did="148" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="150" did="149" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/foreground.png
+layout_marginLeft=5dp
+visibility=visible</ppt>
+<event></event>
+</View>
+<View id="151" did="149" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="152" did="151" type="TextView">
+<ppt>width=-2
+height=-2
+text=检查更新
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="153" did="148" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn system.update("true")
+fn byusi.qt(184)</eventItme></event>
 </View>
 <View id="125" did="20" type="RelativeLayout">
 <ppt>width=-1
@@ -1114,6 +1162,8 @@ fr("$JuOS/ICON/ic_settings_multi_device_collaboration_svg.svg",svg)
 fn lib.svg(svg,112)
 fr("$JuOS/ICON/ic_settings_more_connections.svg",svg)
 fn lib.svg(svg,86)
+fr("$JuOS/ICON/ic_settings_more_connections.svg",svg)
+fn lib.svg(svg,150)
 fr("$JuOS/ICON/ic_settings_biometrics_password.svg",svg)
 fn lib.svg(svg,118)
 //Lottie动画

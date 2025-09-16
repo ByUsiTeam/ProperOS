@@ -133,8 +133,7 @@ text=关闭
 typeface=@JuOS/src/ttf/acbt80.ttf
 background=through
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">ends()
-end()</eventItme></event>
+<event><eventItme type="clicki">end()</eventItme></event>
 </View>
 <View id="16" did="13" type="CardView">
 <ppt>width=100dp
@@ -147,7 +146,7 @@ layout_marginLeft=8dp</ppt>
 <View id="17" did="16" type="Button">
 <ppt>width=-1
 height=-1
-text=不关闭了
+text=取消
 typeface=@JuOS/src/ttf/acbt80.ttf
 background=through
 textColor=#ffffffff</ppt>

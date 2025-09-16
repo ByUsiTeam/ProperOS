@@ -175,8 +175,10 @@ t()
 }
 //-_-_-_-_-_-_-_-_-_-_-
 fn Lottie.loaddex()
+/.
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
+./
 fr("$System/Config/fillet.sys",fillet)
 t()
 {
@@ -285,7 +287,7 @@ cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
 javanew(builder,Builder,"android.content.Context",activity)
 javax(null,null,Loader,"init",Builder,builder)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
-	syso("确定")
+	fn lib.utw("end-ppos.iyu")
 }</eventItme><eventItme type="loading">fn byusi.ztl()
 uycl("#e84f78ff",true)
 //fn byusi.ztl()

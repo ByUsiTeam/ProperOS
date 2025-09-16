@@ -28,7 +28,8 @@ layout_marginTop=5dp</ppt>
 <View id="6" did="7" type="ImageView">
 <ppt>width=35dp
 height=35dp
-src=17301567</ppt>
+src=17301567
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="4" did="7" type="TextView">
@@ -47,10 +48,6 @@ layout_marginBottom=5dp</ppt>
 <UIEventset><eventItme type="loading">//配置全屏
 fn byusi.ztl()
 fn lib.wp(1)
-//
-fn Lottie.loaddex()
-fr("@JuOS/Lottie/loading.json",data)
-fn Lottie.setImageLottie(6,data,-1,true)
 //
 t()
 {
@@ -95,34 +92,23 @@ t()
 			}
 		}
 	}
-}</eventItme><eventItme type="loadingComplete">t()
+}</eventItme><eventItme type="loadingComplete">fn lib.utw("loading.iyu")
+t()
 {
-	//导入PDF插件
-	fuzs("@JuOS/html/pdf/pdf.juossrc","$JuOS/plug-in_component/pdf",yz_pdf)
-	fuzs("@JuOS/src/SystemLevelIcon/SystemLevelIcon.jip","$JuOS/ICON/",yz_sts)
-	//默认使用新系统桌面
-	fw("$System/Config/home.sys","true")
-	//默认应用引入
-	fw("$JuOS/hemo/桌面/B站视频播放.app","System=True=System\nUi=bili.iyu=Ui\nAppTb=$sys/ProperOS/Src/html/RJS.png=AppTb\nEnd=false=End")
-	fw("$JuOS/hemo/桌面/视频播放器.app","System=True=System\nUi=bfq2.iyu=Ui\nAppTb=$sys/JuOS/logo/properos.png=AppTb\nEnd=false=End")
-	fw("$JuOS/hemo/桌面/设置壁纸.app","System=True=System\nUi=设置壁纸.iyu=Ui\nAppTb=$sys/JuOS/src/img/ByUsi/bz.png=AppTb\nEnd=true=End")
-	fw("$JuOS/hemo/桌面/设置.app","System=True=System\nUi=设置.iyu=Ui\nAppTb=%@JuOS/ICON/ic_app_icon_settings.png=AppTb\nEnd=false=End")
-	fw("$JuOS/hemo/桌面/FoxCM.app","System=True=System\nAppTb=$sys/JuOS/logo/foxcm.ico=AppTb\nEnd=false=End\nUrl=http://foxcm.cdifit.cn=Url")
-	fw("$JuOS/hemo/桌面/Cdifit.app","System=True=System\nAppTb=$sys/JuOS/logo/cdifit.png=AppTb\nEnd=false=End\nUrl=http://pan.byusi.cn=Url")
-	fw("$JuOS/hemo/桌面/音乐分享.app","System=True=System\nAppTb=$sys/JuOS/ICON/ic_appicon_gallery3d.png=AppTb\nEnd=false=End\nUrl=https://www.cdifit.cn/s/e8hq=Url")
-	fw("$JuOS/hemo/桌面/Terminal.app","System=True=System\nUi=terminal.iyu=Ui\nAppTb=%@JuOS/ICON/ic_device_matebook_filled.png=AppTb\nEnd=false=End")
-	//
-	fc("@JuOS/App/HASH获取工具.jush","$JuOS/hemo/桌面/HASH获取工具.jush",yz)
-	//fn lib.install("@JuOS/App/LitCalculator.jupk")
-    fn lib.install("@JuOS/App/ProperOS应用市场.jupk")
-	//复制视频文件到特殊目录
-	fc("@ProperOS/Src/Mp4/Ry4.mp4","$ProperOS/Src/Mp4/Ry4.mp4",false,fc_mp4)
+	fuzs("@ProperOS/Package/properos-rom.zip","$",rom)
+    f(rom == false)
+    {
+    	ufnsui()
+    	{
+    		fn tw.tw2("解压默认包失败",1)
+            end()
+    	}
+    }
 	//删除之前的系统应用索引
     fd("$JuOS/hemo/桌面/应用商店.app",yz)
     fd("$JuOS/hemo/桌面/JuOS音乐.app",yz)
 	fd("$JuOS/hemo/桌面/飓云盘.app",yz)
 	fd("$JuOS/hemo/桌面/通知信息流.app",yz)
-	fd("$JuOS/hemo/桌面/计算器.app",yz)
 	fd("$JuOS/hemo/HASH获取工具.jush",yz)
 	fd("$JuOS/hemo/桌面/宿主机应用.app",yz)
 	//
@@ -143,15 +129,10 @@ t()
 	fc("@JuOS/src/player/index.html","$System/bfq/index.html",yz_bfq)
 	fc("@JuOS/src/player/mui-player.min.js","$System/bfq/mui-player.min.js",yz_bfq)
 	fc("@JuOS/src/player/mui-player.min.css","$System/bfq/mui-player.min.css",yz_bfq)
-	//解压第2代视频播放器
-	fuzs("@JuOS/html/VideoPlayer2/VideoPlayer2.zip","$System/VideoPlayer2",yz_vp)
-    //解压php基本环境
-    fuzs("@ProperOS/Package/php_8.4.2-2.zip","$PhpRuntime",yz_php)
 	//导入HTML5音乐播放器
-	fc("@JuOS/html/MusicPlayer/index.html","$System/yybfq/index.html",yz_yybfq)
+	fc("@JuOS/html/MusicPlayer/index.html","$System/yybfq/index-2.html",yz_yybfq)
 	//配置文本预览器
 	fc("@JuOS/html/TextPreviewer/TextPreviewer.html","$System/wbylq/index.html",yz_wbylq)
-	fuzs("@JuOS/src/yybfq/jc.zip","$System/yybfq",yc)
 	//自动检查更新配置
 	fe("$System/Config/Update.sys",u)
 	f(u == "false")
@@ -172,6 +153,7 @@ t()
 	//
 	ufnsui()
 	{
+		fn lib.endutw()
 		sss yztz ="true"
 		fn core.uigo("mian.iyu")
 		lan(0)
