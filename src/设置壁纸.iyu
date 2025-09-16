@@ -105,25 +105,7 @@ loadjar("typeface.de",dex)
 cls(dex,"com.mus.alltypeface.set",class)
 fdir("@JuOS/src/ttf/acbt80.ttf",path)
 javax(null,null,class,"set","android.app.Activity",activity,"String",path)
-fn lib.wp(1)</eventItme><eventItme type="downkey">f(st_kC==4)
-{
-	fr("$System/Config/home.sys",home)
-	f(home == "false")
-	{
-		fn core.uigo("JuOS_Hemo.iyu")
-		end()
-	}
-	else f(home == "true")
-	{
-		fn core.uigo("home.iyu")
-		end()
-	}
-	else
-	{
-		fn core.uigo("JuOS_Hemo.iyu")
-		end()
-	}
-}</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
+fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
 uycl("#daebeae3",true)
 utb(2)</eventItme><eventItme type="menu">case 退出:
 fr("$System/Config/home.sys",home)
