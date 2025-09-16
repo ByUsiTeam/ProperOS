@@ -105,6 +105,7 @@ fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
 fn lib.endutw()
+fn lib.wp_src(20,false)
 t()
 {
 	s a = "$JuOS/hemo/桌面"
