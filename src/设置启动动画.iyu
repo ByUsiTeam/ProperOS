@@ -4,6 +4,14 @@ height=-1
 background=white</ppt>
 <event></event>
 </View>
+<View id="22" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="2" did="1" type="ImageView">
 <ppt>width=-1
 height=-1
@@ -193,4 +201,4 @@ else
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 uycl("#ff0099ff",true)
 //
-fn lib.wp(1)</eventItme></UIEventset>
+fn lib.wp_src(22)</eventItme></UIEventset>

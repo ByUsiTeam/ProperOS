@@ -3,6 +3,14 @@
 height=-1</ppt>
 <event></event>
 </View>
+<View id="9" did="7" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="5" did="7" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -60,7 +68,8 @@ layout_marginLeft=15dp</ppt>
 <ppt>width=-1
 height=-1
 Refreshing=false</ppt>
-<event><eventItme type="onrefresh">fdir("$temp",t_pwd)
+<event><eventItme type="onrefresh">fn lib.wp_src(9)
+fdir("$temp",t_pwd)
 ss("cd "+t_pwd+" && rm -rf "+t_pwd+"/*",shell)
 call(rs,"mlua","cmd.shell",shell)
 //这个不用我写注释吧,这么简单的内容
@@ -189,7 +198,7 @@ t()
 }</eventItme><eventItme type="loadingComplete">uycl("#e84f78ff",true)
 fn byusi.ztl()
 fn n.ui(7)
-fn lib.wp(5)</eventItme><eventItme type="downkey">f(st_kC==4)
+fn lib.wp_src(9)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
 	fr("$System/Config/home.sys",home)
 	f(home == "false")

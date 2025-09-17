@@ -145,6 +145,42 @@ t()
 
 end fn
 
+fn wp_src(id)
+
+s yc =true
+f(yc == true)
+{
+	us(id,"visibility","visible")
+}
+s wp ="$JuOS/Config/wallpaper/wp.png"
+t()
+{
+	fe("$JuOS/Config/wallpaper/wp.png",wp_cz_yz)
+	f(wp_cz_yz == "true")
+	{
+		ufnsui()
+		{
+			us(id,"src",wp)
+		}
+	}
+	else f(wp_cz_yz == "false")
+	{
+		ufnsui()
+		{
+			us(id,"src","@JuOS/src/wallpaper/DefaultWallpaper_1.png")
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw("出现问题了(つД`)")
+		}
+	}
+}
+
+end fn
+
 fn wp2(id,id2)
 s wp ="$JuOS/Config/wallpaper/wp.png"
 t()

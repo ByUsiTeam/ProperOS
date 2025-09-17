@@ -3,6 +3,14 @@
 height=-1</ppt>
 <event></event>
 </View>
+<View id="46" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="4" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -472,7 +480,7 @@ height=-2
 src=17301567</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fn lib.wp(1)
-fn byusi.ztl()
-uycl("#daebeae3",true)</eventItme><eventItme type="loadingComplete">fn n.ui(1)
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+uycl("#daebeae3",true)
+fn lib.wp_src(46)</eventItme><eventItme type="loadingComplete">fn n.ui(1)
 fn Lottie.loaddex()</eventItme></UIEventset>

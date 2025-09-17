@@ -4,6 +4,14 @@ height=-1
 background=white</ppt>
 <event></event>
 </View>
+<View id="8" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="2" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -54,7 +62,7 @@ visibility=gone</ppt>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 uycl("#e84f78ff",true)
-fn lib.wp(1)</eventItme><eventItme type="loadingComplete">t()
+fn lib.wp_src(8)</eventItme><eventItme type="loadingComplete">t()
 {
 	fn lib.下载器2()
     time(4,time_stamp)

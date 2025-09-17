@@ -3,6 +3,14 @@
 height=-1</ppt>
 <event></event>
 </View>
+<View id="73" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="2" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -493,7 +501,7 @@ textColorHighlight=#6a4561ff</ppt>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 uycl("#e84f78ff",true)
 fn n.ui(1)
-fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fr("$JuOS/data/User/data.json",dataData)
+fn lib.wp_src(73)</eventItme><eventItme type="loadingComplete">fr("$JuOS/data/User/data.json",dataData)
 call(data,"mjava","aes.decryptString",dataData,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
 json(data,data)
 json(data,"get","data",udata)

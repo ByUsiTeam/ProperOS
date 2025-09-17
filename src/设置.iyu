@@ -3,6 +3,14 @@
 height=-1</ppt>
 <event></event>
 </View>
+<View id="154" did="14" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="1" did="14" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -1046,7 +1054,7 @@ src=17301567</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">//状态栏配置
-uycl("#daebeae3",true)
+uycl("#ff6f56ff",true)
 //初始化菜单
 fr("$System/Config/init_fb.sys",init_fb)
 //
@@ -1130,7 +1138,7 @@ us(update.1,"visibility","gone")
 //
 fn n.ui(14)
 
-fn lib.wp(14)
+fn lib.wp_src(154)
 
 loadjar("typeface.de",dex)
 cls(dex,"com.mus.alltypeface.set",class)
