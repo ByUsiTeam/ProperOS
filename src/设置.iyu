@@ -1144,13 +1144,11 @@ else
 	us(108,"checked","false")
 }
 //引导配置
-/.
 fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
 {
 	us(66,"visibility","visible")
 }
-./
 //
 fr("$System/Config/fillet.sys",fillet)
 f(fillet != null)
@@ -1231,10 +1229,8 @@ fn lib.svg(svg,118)
 fr("@JuOS/Lottie/my.json",data)
 fn Lottie.setImageLottie(122,data,-1,true)
 ./
-us(122,"src","$JuOS/ICON/hwid_default_avatar_before.png")</eventItme><eventItme type="restart">/.
-fr("$System/Config/gduoshez.sys",init)
+us(122,"src","$JuOS/ICON/hwid_default_avatar_before.png")</eventItme><eventItme type="restart">fr("$System/Config/gduoshez.sys",init)
 f(init == "true")
 {
 	us(66,"visibility","visible")
-}
-./</eventItme></UIEventset>
+}</eventItme></UIEventset>

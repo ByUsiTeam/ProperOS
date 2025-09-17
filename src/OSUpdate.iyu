@@ -65,16 +65,21 @@ visibility=gone</ppt>
 else f(ss.rom == true)
 {
 	us(3,"text","安装新ROM中...")
-	t()
-	{
-		fuzs(ss.dapk,"$",true,yzfuza)
-	}
+    fuzs(ss.dapk,"$",yzfuza)
 	f(yzfuza == true)
 	{
 		fn tw.tw("更新成功")
-		end()
+		utw(null,"","是否重启？","是","否",true,v)
+		{
+			fn lib.breakdown()
+		}
+        else
+        {
+        	endutw()
+            end()
+        }
 	}
-	else
+	else f(yzfuza == false)
 	{
 		fn tw.tw2("更新失败",1)
 	}
@@ -131,6 +136,7 @@ t()
             ufnsui()
             {
             	us(6,"visibility","visible")
+                call(null,"mjava","set.setBackground",activity,6,40,40,40,40,"#2196f3")
             }
         	s ujsq =1
         }

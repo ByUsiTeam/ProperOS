@@ -129,7 +129,8 @@ text=登录
 background=through
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">fn byusi.qt(18)
+<event><eventItme type="clicki">endkeyboard()
+fn byusi.qt(18)
 ug(7,"text",zh)
 ug(15,"text",mm)
 us(44,"visibility","visible")
@@ -155,7 +156,6 @@ t()
 			us(44,"visibility","visible")
 			fr("@JuOS/Lottie/errorjson",data1)
 			fn Lottie.setImageLottie(45,data1,0,true)
-			endkeyboard()
 			t()
 			{
 				stop(2500)
@@ -197,7 +197,6 @@ t()
 			us(44,"visibility","visible")
 			fr("@JuOS/Lottie/errorjson",data1)
 			fn Lottie.setImageLottie(45,data1,0,true)
-			endkeyboard()
 			t()
 			{
 				stop(2500)

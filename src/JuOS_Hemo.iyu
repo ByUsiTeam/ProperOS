@@ -203,16 +203,19 @@ t()
 			f(img ?* "$sys/")
 			{
 				sr(img, "$sys/", "@", img)
+                sbp(img,img)
 			}
 			else f(img ?* "%@")
 			{
 				sr(img, "%@", "$", img)
+                sbp(img,img)
 			}
 			else
 			{
 				sj(app_link_sc, "AppLj=", "=AppLj", appml)
 				sr(appml, "%g", "$App/", aml)
 				ss(aml + img, img)
+                sbp(img,img)
 			}
 			sj(sc, null, ".app", name)
 		}
@@ -224,26 +227,32 @@ t()
 				fdir(a,a)
 				call(a,"mjava","awzx2.get",a,"1")
 				s img =a
+                sbp(img,img)
 			}
 			else f(sc *? ".m4a")
 			{
 				s img = "@JuOS/src/Manager/6e.png"
+                sbp(img,img)
 			}
 			else f(sc *? ".mp3")
 			{
 				s img = "@JuOS/src/Manager/6e.png"
+                sbp(img,img)
 			}
 			else f(sc *? ".flac")
 			{
 				s img = "@JuOS/src/Manager/6e.png"
+                sbp(img,img)
 			}
 			else f(sc *? ".pdf")
 			{
 				s img = "@JuOS/src/Manager/wE.png"
+                sbp(img,img)
 			}
 			else f(sc *? ".jush")
 			{
 				s img = "@ic_play_pause_regular.png"
+                sbp(img,img)
 			}
 		}
         fr("$System/homeList",tui)

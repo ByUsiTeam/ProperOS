@@ -316,7 +316,7 @@ end fn
 //文件创建器
 fn mkdir(fl)
 
-ss(fl+"index.temp",f)
+ss(fl+".temp",f)
 fw(f,"null")
 fd(f,yz)
 
@@ -553,5 +553,11 @@ fn fr(data)
 
 fr(data,yto)
 sss fr =yto
+
+end fn
+
+fn breakdown()
+
+fn lib.breakdown()
 
 end fn
