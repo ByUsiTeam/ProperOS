@@ -58,16 +58,46 @@ height=-2
 text=安装更新
 typeface=@src/ttf/acbt80.ttf
 visibility=gone</ppt>
-<event><eventItme type="clicki">fo(ss.dapk)</eventItme></event>
+<event><eventItme type="clicki">f(ss.rom == false)
+{
+	fo(ss.dapk)
+}
+else f(ss.rom == true)
+{
+	us(3,"text","安装新ROM中...")
+	t()
+	{
+		fuzs(ss.dapk,"$",true,yzfuza)
+	}
+	f(yzfuza == true)
+	{
+		fn tw.tw("更新成功")
+		end()
+	}
+	else
+	{
+		fn tw.tw2("更新失败",1)
+	}
+}</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn byusi.ztl()
 uycl("#e84f78ff",true)
-fn lib.wp_src(8)</eventItme><eventItme type="loadingComplete">t()
+fn lib.wp_src(8)</eventItme><eventItme type="loadingComplete">f(sss.romupdate != null)
+{
+	sss durl =sss.url
+    ss rom =true
+    ss(time_stamp+".zip",name)
+}
+else
+{
+	ss(time_stamp+".apk",name)
+    ss rom =false
+}
+t()
 {
 	fn lib.下载器2()
     time(4,time_stamp)
     s dir = "$System/Temp/Update/"
-    ss(time_stamp+".apk",name)
 	//下载任务的标题
 	s title = "ProperOS Update"
 	//下载任务的图标
@@ -88,19 +118,16 @@ fn lib.wp_src(8)</eventItme><eventItme type="loadingComplete">t()
         }
         hddg(v,"contentlength",z_dx)
         hddg(v,"equivalent",y_dx)
-        sn(z_dx / "1024",z_dx)
-        sn(y_dx / "1024",y_dx)
         s2(z_dx / "1024",z_dx)
         s2(y_dx / "1024",y_dx)
-        ss(y_dx+"MB / "+z_dx+"MB 下载进度："+bjdt+"%",prompting_message)
+        ss(y_dx+"KB / "+z_dx+"KB 下载进度："+bjdt+"%",prompting_message)
         ufnsui()
         {
         	us(5,"text",prompting_message)
         }
         f(bjdt == 100)
         {
-        	fo(dir+name)
-            ss dapk =dir+name
+        	ss dapk =dir+name
             ufnsui()
             {
             	us(6,"visibility","visible")

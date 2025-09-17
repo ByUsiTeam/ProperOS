@@ -105,7 +105,6 @@ fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
 fn lib.endutw()
-fn lib.wp_src(20,false)
 t()
 {
 	s a = "$JuOS/hemo/桌面"
@@ -140,10 +139,10 @@ t()
 		{
 			f(sc *? ".mp4")
 			{
-				//s img = "@JuOS/src/img/zy/mp4.png"
 				ss("$JuOS/hemo/桌面/"+sc,a)
 				fdir(a,a)
-				call(a,"mjava","awzx2.get",img,"1")
+				call(a,"mjava","awzx2.get",a,"1")
+                s img =a
 			}
 			else f(sc *? ".m4a")
 			{
@@ -174,7 +173,8 @@ t()
 		uls(5, list_cz, "list.iyu", -1, -2)
 		us(4,"refreshing","false")
 	}
-}</eventItme></event>
+}
+fn lib.wp_src(20,false)</eventItme></event>
 </View>
 <View id="21" did="15" type="RelativeLayout">
 <ppt>width=-1

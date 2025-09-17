@@ -183,10 +183,8 @@ t()
 }
 //-_-_-_-_-_-_-_-_-_-_-
 fn Lottie.loaddex()
-/.
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
-./
 fr("$System/Config/fillet.sys",fillet)
 t()
 {
@@ -195,7 +193,6 @@ t()
 	aslist(list_cz)
 	for(sc; home_list)
 	{
-		//s(counter + 1,counter)
 		s img = "@fail.xml"
 		s name = sc
 		f(sc *? ".app")
@@ -223,7 +220,6 @@ t()
 		{
 			f(sc *? ".mp4")
 			{
-				//s img = "@JuOS/src/img/zy/mp4.png"
 				ss("$JuOS/hemo/桌面/"+sc,a)
 				fdir(a,a)
 				call(a,"mjava","awzx2.get",a,"1")

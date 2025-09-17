@@ -896,7 +896,59 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fn system.update("true")
+<event><eventItme type="clicki">fn lib.utw("loading.iyu")
+fr("$version.json",bd)
+json(bd,bddata)
+json(bddata,"get","version",bdversion)
+json(bddata,"get","updateAcquisition",updateAcquisition)
+t()
+{
+	hs(updateAcquisition,url)
+    json(url,dataurl)
+    f(dataurl != null)
+    {
+    	ufnsui()
+    	{
+    		fn lib.endutw()
+    	}
+    	json(dataurl,"get","version",yunversion)
+        json(dataurl,"get","url",updateurl)
+        f(bdversion != yunversion)
+        {
+        	ufnsui()
+        	{
+        		utw(null,"","可更新，是否更新呢？","是","否",false,v)
+        		{
+        			sss url =updateurl
+                    sss romupdate =true
+                    fn core.uigo("OSUpdate.iyu")
+        		}
+                else
+                {
+                	endutw()
+                }
+        	}
+        }
+        else
+        {
+        	ufnsui()
+        	{
+        		fn tw.tw2("无需更新",2)
+        	}
+        }
+    }
+    else
+    {
+    	ufnsui()
+    	{
+    		fn lib.endutw()
+    		utw(null,"","获取失败，出错了，抱歉")
+    		{
+    			
+    		}
+    	}
+    }
+}
 fn byusi.qt(84)</eventItme></event>
 </View>
 <View id="148" did="20" type="RelativeLayout">
