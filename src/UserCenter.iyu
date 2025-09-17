@@ -137,7 +137,8 @@ fn core.uigo("system_start.iyu")</eventItme></event>
 <ppt>width=-1
 height=-1
 app_CardcornerRadius=15dp
-layout_marginTop=6dp</ppt>
+layout_marginTop=6dp
+app_CardBackgroundColor=#4fffffff</ppt>
 <event></event>
 </View>
 <View id="10" did="9" type="LinearLayout">
@@ -156,7 +157,8 @@ layout_marginRight=10dp
 layout_marginLeft=10dp
 layout_marginBottom=18dp
 app_CardcornerRadius=15dp
-app_CardElevation=4dp</ppt>
+app_CardElevation=4dp
+app_CardBackgroundColor=#4fffffff</ppt>
 <event></event>
 </View>
 <View id="15" did="14" type="LinearLayout">
@@ -213,7 +215,8 @@ height=55dp
 app_CardcornerRadius=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
-layout_marginTop=6dp</ppt>
+layout_marginTop=6dp
+app_CardBackgroundColor=#4fffffff</ppt>
 <event></event>
 </View>
 <View id="17" did="16" type="LinearLayout">
@@ -254,7 +257,8 @@ height=55dp
 app_CardcornerRadius=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
-layout_marginTop=8dp</ppt>
+layout_marginTop=8dp
+app_CardBackgroundColor=#4fffffff</ppt>
 <event></event>
 </View>
 <View id="22" did="21" type="LinearLayout">
@@ -297,7 +301,8 @@ height=55dp
 app_CardcornerRadius=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
-layout_marginTop=8dp</ppt>
+layout_marginTop=8dp
+app_CardBackgroundColor=#4fffffff</ppt>
 <event></event>
 </View>
 <View id="59" did="58" type="LinearLayout">
@@ -338,7 +343,8 @@ height=55dp
 app_CardcornerRadius=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
-layout_marginTop=8dp</ppt>
+layout_marginTop=8dp
+app_CardBackgroundColor=#4fffffff</ppt>
 <event></event>
 </View>
 <View id="27" did="26" type="LinearLayout">
@@ -379,7 +385,8 @@ height=55dp
 app_CardcornerRadius=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
-layout_marginTop=8dp</ppt>
+layout_marginTop=8dp
+app_CardBackgroundColor=#4fffffff</ppt>
 <event></event>
 </View>
 <View id="32" did="31" type="LinearLayout">
@@ -421,7 +428,8 @@ height=55dp
 app_CardcornerRadius=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
-layout_marginTop=8dp</ppt>
+layout_marginTop=8dp
+app_CardBackgroundColor=#4fffffff</ppt>
 <event></event>
 </View>
 <View id="37" did="36" type="LinearLayout">
@@ -463,7 +471,8 @@ app_CardcornerRadius=8dp
 layout_marginLeft=5dp
 layout_marginRight=5dp
 layout_marginTop=8dp
-layout_marginBottom=18dp</ppt>
+layout_marginBottom=18dp
+app_CardBackgroundColor=#4fffffff</ppt>
 <event></event>
 </View>
 <View id="42" did="41" type="LinearLayout">
