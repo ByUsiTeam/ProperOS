@@ -4,6 +4,14 @@ height=-1
 background=white</ppt>
 <event></event>
 </View>
+<View id="21" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="2" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -11,18 +19,7 @@ orientation=vertical
 gravity=center</ppt>
 <event></event>
 </View>
-<View id="3" did="2" type="CardView">
-<ppt>width=-1
-height=-1
-layout_marginLeft=6dp
-layout_marginTop=12dp
-layout_marginRight=6dp
-layout_marginBottom=16dp
-app_CardcornerRadius=12dp
-app_CardBackgroundColor=#4fffffff</ppt>
-<event></event>
-</View>
-<View id="4" did="3" type="RelativeLayout">
+<View id="4" did="2" type="RelativeLayout">
 <ppt>width=-1
 height=-1</ppt>
 <event></event>
@@ -30,14 +27,24 @@ height=-1</ppt>
 <View id="5" did="4" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=vertical</ppt>
+orientation=vertical
+gravity=center</ppt>
 <event></event>
 </View>
-<View id="6" did="5" type="LinearLayout">
+<View id="9" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+background=#4fffffff</ppt>
+<event></event>
+</View>
+<View id="6" did="9" type="LinearLayout">
 <ppt>width=-1
 height=85dp
 orientation=horizontal
-gravity=center</ppt>
+gravity=center
+layout_marginBottom=10dp</ppt>
 <event></event>
 </View>
 <View id="7" did="6" type="RoundImageView">
@@ -54,13 +61,6 @@ layout_marginLeft=8dp
 textColor=#ff000000
 typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=24sp</ppt>
-<event></event>
-</View>
-<View id="9" did="5" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=vertical
-gravity=center</ppt>
 <event></event>
 </View>
 <View id="16" did="9" type="TextView">
@@ -182,7 +182,17 @@ uycl("#e84f78ff",true)
 loadjar("typeface.de",dex)
 cls(dex,"com.mus.alltypeface.set",class)
 fdir("@JuOS/src/ttf/acbt80.ttf",path)
-javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">fn lib.wp(1)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)
+
+s id =9
+swh("w",w)
+swh("hh",h)
+sn(w / "0.5",w)
+sn(h * "1",h)
+syso("w："+w)
+syso("h："+h)
+us(id,"width",w)
+us(id,"height",h)</eventItme><eventItme type="loadingComplete">fn lib.wp_src(21)
 fe("$JuOS/data/User/data.json",user)
 fr("$JuOS/data/User/.username",dataName)
 call(data,"mjava","aes.decryptString",dataName,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")

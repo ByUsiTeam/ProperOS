@@ -72,7 +72,7 @@ layout_marginTop=8dp</ppt>
 height=-1</ppt>
 <event><eventItme type="clicki">utw(null,"开源协议相关","开源协议为 MIT 协议","查看协议","关闭",true,v)
 {
-	hws("https://gitee.com/byusi/properos/blob/master/LICENSE")
+	hws("https://gitee.com/properos/properos/blob/master/LICENSE")
 }
 else
 {
@@ -263,6 +263,7 @@ f(yz != "true")
 	{
 		fn tw.tw("已开启更多设置设置项")
 		fw("$System/Config/gduoshez.sys","true")
+        fw("$System/Config/DeveloperOptions.sys","1")
 	}
 	else
 	{
@@ -271,7 +272,16 @@ f(yz != "true")
 }
 else
 {
-	fn tw.tw2("你已经开启该选项了，不要在开启了",1)
+	fe("$System/Config/DeveloperOptions.sys",DeveloperOptions)
+    f(DeveloperOptions == true)
+    {
+    	syso("DeveloperOptions.sys："+true)
+    }
+	else
+	{
+		fw("$System/Config/DeveloperOptions.sys","1")
+		fn tw.tw2("你已经开启该选项了，不要在开启了",1)
+	}
 }</eventItme></event>
 </View>
 <View id="20" did="3" type="CardView">

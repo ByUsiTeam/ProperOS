@@ -39,6 +39,7 @@ f(y == "true")
 						dhset(dhlist,false,dh,dh2)
 						us(update.1,"dh",dhlist)
 						us(update.15,"text",jianj)
+                        us(update.24,"text","最新版本版本号："+v)
 						sss durl_en =durl_en
 						sss durl_zh =durl_zh
 						fw("$ProperOS/update/base.apk","1")

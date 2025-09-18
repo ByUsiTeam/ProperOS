@@ -76,7 +76,7 @@ height=-1
 text=重置
 background=#ff5f6aff
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")
+<event><eventItme type="clicki">fn init.boot_init("init","JuOS_Hemo.iyu","@JuOS/logo/properos.png")
 fr("$boot/init.json",data)
 us(7,"text",data)
 fn byusi.qt(10)</eventItme></event>

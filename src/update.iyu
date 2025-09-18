@@ -99,6 +99,17 @@ textColor=#ff000000
 textSize=25sp</ppt>
 <event></event>
 </View>
+<View id="24" did="13" type="TextView">
+<ppt>width=-1
+height=-2
+text=版本号
+gravity=left|center
+typeface=@JuOS/src/ttf/acbt80.ttf
+textColor=#ff000000
+textSize=15sp
+layout_marginLeft=4dp</ppt>
+<event></event>
+</View>
 <View id="22" did="13" type="ScrollView">
 <ppt>width=-2
 height=-2</ppt>
@@ -118,7 +129,8 @@ text=更新内容
 textColor=#ff000000
 layout_marginTop=5dp
 typeface=@JuOS/src/ttf/acbt80.ttf
-textSize=15sp</ppt>
+textSize=15sp
+autoLink=web</ppt>
 <event></event>
 </View>
 <View id="17" did="16" type="LinearLayout">

@@ -182,6 +182,7 @@ t()
     }
 }
 //-_-_-_-_-_-_-_-_-_-_-
+fd("$System/homeList",yzfd)
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)

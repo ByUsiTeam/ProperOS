@@ -100,7 +100,8 @@ textSize=24sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">us(6,"visibility","visible")
+<event><eventItme type="clicki"> //桌面图标刷新逻辑
+us(6,"visibility","visible")
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
@@ -109,7 +110,6 @@ t()
 {
 	s a = "$JuOS/hemo/桌面"
 	fl(a, false, home_list)
-	aslist(list_cz)
 	for(sc; home_list)
 	{
 		s img = "@fail.xml"
@@ -174,7 +174,7 @@ t()
                 sbp(img,img)
 			}
 		}
-		ula(list_cz, 10=img, 14=name)
+        ula(list_cz, 10=img, 14=name)
 	}
 	ufnsui()
 	{
@@ -183,7 +183,8 @@ t()
 		us(4,"refreshing","false")
 	}
 }
-fn lib.wp_src(20,false)</eventItme></event>
+//桌面壁纸刷新
+fn lib.wp_src(20)</eventItme></event>
 </View>
 <View id="21" did="15" type="RelativeLayout">
 <ppt>width=-1
