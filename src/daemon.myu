@@ -1,0 +1,78 @@
+fn import(file,appname,id)
+
+
+//ByUsi账号数据获取
+fe("$JuOS/data/User/data.json",yanzlogin)
+f(yanzlogin == true)
+{
+	fr("$JuOS/data/User/data.json",userdata)
+    call(user,"mjava","aes.decryptString",userdata,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+    json(user,user)
+    json(user,"get","data",pt1_data)
+    //获取用户邮箱数据
+    json(pt1_data,"email",email)
+    //获取用户UUID
+    json(pt1_data,"uuid",uuid)
+}
+else
+{
+	fn tw.tw("用户你好，该应用配置了守护进程，由于守护进程需要登录 ByUsi账户，所以请登录 ByUsi账户")
+	fn core.uigo("login.iyu")
+}
+
+f(id == true)
+{
+	ss("$App/"+appname+"/"+file,dirfile)
+	fc(dirfile,"$System/daemon/"+appname+".service",true,jiancadian)
+    f(jiancadian == true)
+    {
+        fn tw.tw("完成")
+    }
+    else
+    {
+	    fn tw.tw2("出错了",1)
+    }
+}
+else f(id == false)
+{
+	ss("$App/"+appname+"/"+file,dirfile)
+    //读取引导配置json文件
+    fr(dirfile,guide_json)
+    //初始化一下数据
+    json(guide_json,jx_guide_json)
+    //获取数据
+    json(jx_guide_json,"get","version",version)
+    json(jx_guide_json,"get","data",data)
+    t()
+    {
+    	json(data,"list","fileList",fileList)
+        json(fileList,"size",size)
+        s size2 =-1
+        w(size &lt; size2)
+        {
+        	s(size2 + 1,size2)
+            json(fileList,"data",size2,item)
+            json(item,"get","file",dfile)
+            json(item,"get","name",dname)
+            fr("$App/"+appname+"/daemon/"+dfile,original)
+            sr(original,"&email&",email,update_data)
+            sr(update_data,"&uuid&",uuid,update_data)
+            fw("$System/daemon/"+appname+"/"+dname+".service",update_data)
+        }
+    }
+}
+else
+{
+	utw("@fail.xml","错误","传入的参数错误，无法完成应用守护进程配置","确定",true,v)
+	{
+        endutw()
+	}
+}
+
+end fn
+
+fn core()
+
+
+
+end fn
