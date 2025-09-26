@@ -1,3 +1,0 @@
-public static int 按位与(int i1,int i2){
-	return i1&i2;
-}
