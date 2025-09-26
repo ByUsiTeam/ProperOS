@@ -1,0 +1,17 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="WebView">
+<ppt>width=-1
+height=-1
+url=http://127.0.0.1:20000/m.php</ppt>
+<event><eventItme type="onreceivederror">us(st_vId,"url","@JuOS/html/start.null.html/null.html")
+//
+utw(null,"JuOS音乐启动失败了","JuOS音乐音乐启动失败了，请检查一下JuOS音乐模块是否正常启动，或者去：奇妙应用下载一下 JuOS音乐模块吧","知道了",true,v)
+{
+	endutw()
+}</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">uycl("#78a1d8ff",true,0)</eventItme><eventItme type="loadingComplete">fn lib.wp(1)</eventItme></UIEventset>

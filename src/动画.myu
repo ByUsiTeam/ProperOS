@@ -1,0 +1,43 @@
+fn 显示弹窗1(弹窗布局)
+s ti=300
+dhas(dh2, 弹窗布局, "alpha",0,1)
+dh(dh2,"duration", ti)
+dh(dh2,"start")
+dhas(dh, 弹窗布局,"scaleX", 0.8,1)
+dh(dh, "duration", ti)
+dh(dh, "start")
+
+dhas(dh1,弹窗布局,"scaleY",0.8,1)
+dh(dh1, "duration", ti)
+dh(dh1, "start")
+end fn
+
+fn 关闭弹窗1(弹窗布局,弹窗)
+ s ti=150
+dhas(dh, 弹窗布局, "scaleX",1,0.8)
+dh(dh, "duration", ti)
+dh(dh, "start")
+
+dhas(dh1, 弹窗布局, "scaleY",1,0.8)
+dh(dh1, "duration", ti)
+dh(dh1, "start")
+dhas(dh2, 弹窗布局, "alpha",1,0)
+dh(dh2, "duration",120)
+dh(dh2, "start")
+dhon(dh){
+	java(null,弹窗,"android.app.Dialog.dismiss")
+}
+end fn
+
+fn 显示弹窗2(弹窗布局)
+dhas(dh, 弹窗布局, "rotation",180,0)
+dh(dh, "duration",300)
+dh(dh, "start")
+
+dhas(dh1, 弹窗布局, "scaleY",0,1)
+dh(dh1, "duration", 500)
+dh(dh1, "start")
+dhas(dh3, 弹窗布局, "scaleX", 0,1)
+dh(dh3, "duration", 500)
+dh(dh3, "start")
+end fn

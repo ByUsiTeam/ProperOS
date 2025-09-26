@@ -1,0 +1,277 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=测试新安装应用</ppt>
+<event><eventItme type="clicki">fn install.install2("/sdcard/isns/isjsh.bpk")</eventItme></event>
+</View>
+<View id="5" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=hash验证测试</ppt>
+<event><eventItme type="clicki">fn lib.hash("/sdcard/欢乐的北洋/验证.txt")
+fn tw.tw(sss.hash)</eventItme></event>
+</View>
+<View id="6" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=壁纸设置测试</ppt>
+<event><eventItme type="clicki">fn lib.wp(1)</eventItme></event>
+</View>
+<View id="7" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=lib.utw测试</ppt>
+<event><eventItme type="clicki">fn lib.utw("JointDevelopmentNotificationList.iyu")</eventItme></event>
+</View>
+<View id="8" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=lib.endutw测试</ppt>
+<event><eventItme type="clicki">fn lib.endutw()</eventItme></event>
+</View>
+<View id="9" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=音乐通知栏测试</ppt>
+<event><eventItme type="clicki">fn lib.yy("@JuOS/logo/juos_logo.png","测试模块","测试模块_2")</eventItme></event>
+</View>
+<View id="10" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=tw工具测试</ppt>
+<event><eventItme type="clicki">fn lib.tw("测试")</eventItme></event>
+</View>
+<View id="11" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=lib.utww测试</ppt>
+<event><eventItme type="clicki">fn lib.utww(null,"","测试","测试按钮1","测试按钮2",true)</eventItme></event>
+</View>
+<View id="12" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=获取更新</ppt>
+<event><eventItme type="clicki">sss v="1.1.2"
+fn system.update("true")</eventItme></event>
+</View>
+<View id="13" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=SVG处理测试</ppt>
+<event><eventItme type="clicki">fr("$JuOS/ICON/ic_bluetooth_control_panel_empty.svg",svg)
+fn lib.svg(svg,27)</eventItme></event>
+</View>
+<View id="27" did="2" type="ImageView">
+<ppt>width=-2
+height=-2
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="15" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=选择zip文件</ppt>
+<event><eventItme type="clicki">javags(agc,"android.content.Intent","android.content.Intent.ACTION_GET_CONTENT")
+javanew(it,"android.content.Intent","String",agc)
+java(c,it,"android.content.Intent.setType","String","*/*")
+javags(ca,"android.content.Intent","android.content.Intent.CATEGORY_OPENABLE")
+java(c,it,"android.content.Intent.addCategory","String",ca)
+java(c,activity,"android.app.Activity.startActivityForResult","android.content.Intent",it,"int",2)</eventItme></event>
+</View>
+<View id="16" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=解压zip</ppt>
+<event><eventItme type="clicki">t()
+{
+	f(sss.zip路径==null)
+	{
+		ufnsui()
+		{
+			tw("请选择zip文件")
+		}
+		endcode
+	}
+	s num=0
+	ufnsui()
+	{
+		utw(null,"请稍等……","loading.iyu",true,v)
+		gvs(v,3,mmview)
+		gvs(v,5,numview)
+	}
+	fr("@dictionaries.txt",字典)
+	sl(字典,"\n",数组)
+	for(password;数组)
+	{
+		s+(1,num)
+		ufnsui()
+		{
+			us(numview,"text","正在进行第"+num+"次尝试")
+			us(mmview,"text","当前密码为："+password)
+		}
+		javax(是否成功,null,sss.zip4j,"解压","String",sss.zip路径,"String","/storage/emulated/0/JuOS/zip","String",password)
+		f(是否成功)
+		{
+			ss 密码=password
+			break
+		}
+	}
+	endutw()
+	f(ss.密码!=null)
+	{
+		ufnsui()
+		{
+			us(6,"text","密码为："+ss.密码)
+			utw(null,"破解成功","密码为："+ss.密码,"知道了","复制密码",false,v)
+			{
+			}
+			else
+			{
+				sxb(ss.密码)
+			}
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			utw(null,"破解失败","请换个字典重试","知道了",false,v)
+			{
+			}
+		}
+	}
+}</eventItme></event>
+</View>
+<View id="17" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=dex调用</ppt>
+<event><eventItme type="clicki">loadjar("zip",dex)
+cls(dex,"hy.io.压缩扩展$iApp",sss.zip4j)</eventItme></event>
+</View>
+<View id="18" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=sl</ppt>
+<event><eventItme type="clicki">fr("@dictionaries.txt",7)
+sl(7,"\n",77)
+for(8s;77)
+{
+	//fn tw.tw(8s)
+	syso(8s)
+}</eventItme></event>
+</View>
+<View id="19" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=下载</ppt>
+<event><eventItme type="clicki">us(xiazai.1,"visibility","visible")</eventItme></event>
+</View>
+<View id="21" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=apk解析</ppt>
+<event><eventItme type="clicki">javags(agc,"android.content.Intent","android.content.Intent.ACTION_GET_CONTENT")
+javanew(it,"android.content.Intent","String",agc)
+
+java(c,it,"android.content.Intent.setType","String","*/*")
+
+javags(ca,"android.content.Intent","android.content.Intent.CATEGORY_OPENABLE")
+java(c,it,"android.content.Intent.addCategory","String",ca)
+
+java(c,activity,"android.app.Activity.startActivityForResult","android.content.Intent",it,"int",2)
+</eventItme></event>
+</View>
+<View id="22" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=脚本执行测试</ppt>
+<event><eventItme type="clicki">fn juos.初始化(124)
+fn juos.脚本("@cs.txt")</eventItme></event>
+</View>
+<View id="23" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=下载器测试</ppt>
+<event><eventItme type="clicki">fn lib.xzq("测试","https://www.hucl.link/App/down.php/473cd1ff8d28bf9c5409536c2308da12.apk","/sdcard/测试.apk","测试下载器")</eventItme></event>
+</View>
+<View id="24" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=Boot初始化</ppt>
+<event><eventItme type="clicki">fn init.boot_init("init","home.iyu","@JuOS/logo/properos.png")</eventItme></event>
+</View>
+<View id="25" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=bootrepair模式配置</ppt>
+<event><eventItme type="clicki">fn init.bootrepair("yes",1)</eventItme></event>
+</View>
+<View id="28" did="2" type="EditText">
+<ppt>width=-1
+height=-2
+text=</ppt>
+<event></event>
+</View>
+<View id="26" did="2" type="Button">
+<ppt>width=-2
+height=-2
+text=8421加密</ppt>
+<event><eventItme type="clicki">ug(28,"text",text)
+fn 8421.encrypt(text,"$System/Config/Pwd/sys")</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">uycl("#ff83f1ff",true,0)
+//
+addv(1,"xiazai.iyu")
+us(xiazai.1,"visibility","gone")</eventItme><eventItme type="onactivityresult">javags(er,activity,"android.app.Activity","RESULT_OK")
+f(st_lC==er)
+{
+	f(st_sC==2)
+	{
+		java(uri,st_iT,"android.content.Intent.getData")
+		call(path, "mjava", "uri.getRealPath", activity, uri)
+		ufnsui()
+		{
+			//s path="/storage/emulated/0/小趣/app/云手机.apk"
+			fs(path,b)
+			s2(b/1024/1024, b)
+			sn(b/1024/1024, b2)
+			ss(b+"MB",wjdax)
+			//us(5,"text",wjdax)
+			call(result,"mlua","apk.getApkInfo",path)
+			sgsz(result,0,包名)
+			//us(6,"text",包名)
+			sgsz(result,1,版本)
+			//us(4,"text",版本)
+			javax(pm,activity,"android.content.ContextWrapper","getPackageManager")
+			javax(icon,pm,"android.content.pm.PackageManager","getApplicationInfo","String",包名,"int",0)
+			javax(图标,icon,"android.content.pm.PackageItemInfo","loadIcon","android.content.pm.PackageManager",pm)
+			//us(7,"src",图标)
+			sgsz(result,2,应用名)
+			//us(3,"text",应用名)
+			ss(版本+","+包名,包名版本)
+			ss("应用解析\n包名："+包名+"\n版本："+版本+"\n大小："+wjdax,iio)
+			utw(图标,应用名,iio,"确定",true,v)
+			{
+				endutw()
+			}
+		}
+	}
+}</eventItme></UIEventset>

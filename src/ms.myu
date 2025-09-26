@@ -1,0 +1,83 @@
+fn pd()
+fr("$模式",a)
+syso(a)
+f(a=="跟随系统"){
+	fn ms.xt()
+}
+else f(a=="开"){
+	sss zt="#ff3f4552"
+	us(1,"background",sss.zt)
+	sss kp="#ff666d80"
+	us(2,"app_CardBackgroundColor",sss.kp)
+	us(11,"app_CardBackgroundColor",sss.kp)
+	us(15,"app_CardBackgroundColor",sss.kp)
+	uycl(sss.zt,true)
+	s ztys="#ffffffff"
+	us(9,"textcolor",ztys)
+	us(13,"textcolor",ztys)
+	us(17,"textcolor",ztys)
+	us(21,"textcolor",ztys)
+	fn 着色.控件着色(20,ztys)
+}
+else f(a=="关"){
+	sss zt="#ffececec"
+	us(1,"background",sss.zt)
+	sss kp="#ffffffff"
+	us(2,"app_CardBackgroundColor",sss.kp)
+	us(11,"app_CardBackgroundColor",sss.kp)
+	us(15,"app_CardBackgroundColor",sss.kp)
+	uycl(sss.zt,true)
+	s ztys="#ff000000"
+	us(9,"textcolor",ztys)
+	us(13,"textcolor",ztys)
+	us(17,"textcolor",ztys)
+	us(21,"textcolor",ztys)
+	fn 着色.控件着色(20,ztys)
+}
+end fn
+fn xt()
+javax(mode1,activity,"android.content.Context","getResources")
+javax(mode2,mode1,"android.content.res.Resources","getConfiguration")
+javags(mode3,mode2,"android.content.res.Configuration","uiMode")
+javags(UI_MODE_NIGHT_MASK,null,"android.content.res.Configuration","UI_MODE_NIGHT_MASK")
+javags(UI_MODE_NIGHT_YES,null,"android.content.res.Configuration","UI_MODE_NIGHT_YES")
+//iApp的iyu不支持按位与只好使用call
+//s(mode3&UI_MODE_NIGHT_MASK,aa)
+call(currentNightMode,"mjava","按位与.按位与",UI_MODE_NIGHT_MASK,mode3)
+syso(currentNightMode)
+syso(UI_MODE_NIGHT_YES)
+f(UI_MODE_NIGHT_YES==currentNightMode){
+	sss zt="#ff3f4552"
+	sss kp="#ff666d80"
+	ufnsui(){
+	us(1,"background",sss.zt)
+	us(2,"app_CardBackgroundColor",sss.kp)
+	us(11,"app_CardBackgroundColor",sss.kp)
+	us(15,"app_CardBackgroundColor",sss.kp)
+	uycl(sss.zt,true)
+	sss ztys="#ffffffff"
+	us(9,"textcolor",sss.ztys)
+	us(13,"textcolor",sss.ztys)
+	us(17,"textcolor",sss.ztys)
+	us(21,"textcolor",sss.ztys)
+	fn 着色.控件着色(20,sss.ztys)
+}
+}
+else{
+	sss zt="#ffececec"
+	sss kp="#ffffffff"
+	ufnsui(){
+	us(1,"background",sss.zt)
+	us(2,"app_CardBackgroundColor",sss.kp)
+	us(11,"app_CardBackgroundColor",sss.kp)
+	us(15,"app_CardBackgroundColor",sss.kp)
+	uycl(sss.zt,true)
+	sss ztys="#ff000000"
+	us(9,"textcolor",sss.ztys)
+	us(13,"textcolor",sss.ztys)
+	us(17,"textcolor",sss.ztys)
+	us(21,"textcolor",sss.ztys)
+	fn 着色.控件着色(20,sss.ztys)
+	}
+}
+end fn

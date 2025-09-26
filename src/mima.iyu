@@ -1,0 +1,616 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-2
+height=-2
+orientation=horizontal
+layout_marginTop=50dp</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=○</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=○</ppt>
+<event></event>
+</View>
+<View id="5" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=○</ppt>
+<event></event>
+</View>
+<View id="6" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=○</ppt>
+<event></event>
+</View>
+<View id="7" did="1" type="LinearLayout">
+<ppt>width=-2
+height=-2
+orientation=horizontal
+layout_marginTop=100dp</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=1
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"a",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890</eventItme></event>
+</View>
+<View id="21" did="7" type="TextView">
+<ppt>width=20dp
+height=0
+text=</ppt>
+<event></event>
+</View>
+<View id="9" did="7" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=2
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"b",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890</eventItme></event>
+</View>
+<View id="22" did="7" type="TextView">
+<ppt>width=20dp
+height=0
+text=</ppt>
+<event></event>
+</View>
+<View id="10" did="7" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=3
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"c",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890</eventItme></event>
+</View>
+<View id="18" did="1" type="LinearLayout">
+<ppt>width=-2
+height=-2
+orientation=horizontal
+layout_marginTop=10dp</ppt>
+<event></event>
+</View>
+<View id="11" did="18" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=4
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"d",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890</eventItme></event>
+</View>
+<View id="23" did="18" type="TextView">
+<ppt>width=20dp
+height=0
+text=</ppt>
+<event></event>
+</View>
+<View id="12" did="18" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=5
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"e",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890</eventItme></event>
+</View>
+<View id="24" did="18" type="TextView">
+<ppt>width=20dp
+height=0
+text=</ppt>
+<event></event>
+</View>
+<View id="13" did="18" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=6
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"f",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890</eventItme></event>
+</View>
+<View id="19" did="1" type="LinearLayout">
+<ppt>width=-2
+height=-2
+orientation=horizontal
+layout_marginTop=10dp</ppt>
+<event></event>
+</View>
+<View id="14" did="19" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=7
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"g",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890</eventItme></event>
+</View>
+<View id="25" did="19" type="TextView">
+<ppt>width=20dp
+height=0
+text=</ppt>
+<event></event>
+</View>
+<View id="15" did="19" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=8
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"h",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890</eventItme></event>
+</View>
+<View id="26" did="19" type="TextView">
+<ppt>width=20dp
+height=0
+text=</ppt>
+<event></event>
+</View>
+<View id="16" did="19" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=9
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"i",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890</eventItme></event>
+</View>
+<View id="20" did="1" type="LinearLayout">
+<ppt>width=-2
+height=-2
+orientation=horizontal
+layout_marginTop=10dp</ppt>
+<event></event>
+</View>
+<View id="17" did="20" type="TextView">
+<ppt>width=60dp
+height=60dp
+text=0
+background=through
+gravity=center</ppt>
+<event><eventItme type="clicki">s+(1,sss.sz)
+s a=sss.sz
+us(a,"text","●")
+ss(ss.mm+"j",ss.mm)
+f(a==6)
+{
+	syso("ok")
+	f(ss.mm==sss.密码)
+	{
+		s sza=2
+		for(1;4)
+		{
+			s+(1,sza)
+			us(sza,"text","○")
+		}
+		ss mm=
+		sss sz=2
+		fn core.uigo("mian.iyu")
+	}
+	else
+	{
+		s sz=2
+		ss mm=
+		t()
+		{
+		stop(100)
+		for(1;4)
+		{
+			stop(100)
+			ufnsui()
+			{
+			s+(1,sz)
+			us(sz,"text","○")
+			}
+		}
+		}
+		sss sz=2
+	}
+}
+.abcdefghijklmnopqrstuvwxyz
+.1234567890
+</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">s a = 3
+s b = 100
+s c = "#ffffff"
+s d = "#000000"
+ngde(a, b, c, d, e)
+s id=7
+for(1;10)
+{
+	s+(1,id)
+	us(id,"background",e)
+}
+uycl("#FFF0EFF4",true,0)
+java(cs, activity, "android.app.Activity.getWindow")
+java(cs2, cs, "android.view.Window.getDecorView")
+//8192改成1024为白色
+java(null, cs2, "android.view.View.setSystemUiVisibility", "int", "8192")
+
+sss sz=2</eventItme><eventItme type="loadingComplete">sss 密码="jjjj"
+.				 ↓
+.				↙
+.			↙
+.		 ↓
+//密码输入方式
+.a	b	c	d	e	f	g	h	i	j	
+.1	2	3	4	5	6	7	8	9	0
+//密码输入方式
+fn lib.wp(1)</eventItme><eventItme type="restart">f(sss.cxks=="end")
+{
+	end()
+}
+else
+{
+}</eventItme></UIEventset>

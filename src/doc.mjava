@@ -1,0 +1,42 @@
+/.
+public void del(String dir){
+  boolean is=i.fe(dir);
+  if(is){
+    boolean isdel=i.fd(dir);
+  }
+  for(Object va:i.fl(dir)){
+    if(!i.fd(dir+"/"+va)){
+      del(dir+"/"+va);
+    }
+  }
+  i.fd(dir);
+}
+./
+
+public boolean run(String dir){
+  
+  boolean b=false;
+  
+  String shell="chmod -R 755 /data/data/miao.byusi.properos/files/PhpRuntime && export LD_LIBRARY_PATH='/data/data/miao.byusi.properos/files/PhpRuntime/lib' && cd /data/data/miao.byusi.properos/files/PhpRuntime && ./php -S 0.0.0.0:21200 -t "+dir+" > /data/data/miao.byusi.properos/files/log.php.log";
+  
+  //加载shell.mjava模块
+  fn("shell");
+  
+  //直接调用shell.mjava模块 的 exec 方法
+  String[] cmd = new String[] {"/system/bin/sh","-c",shell};
+  
+  exec(cmd);
+  b=true;
+  return b;
+}
+
+
+public boolean stopphp(){
+  // kill -9 `lsof -i :22 -t` 查出使用22端口的进程pid，并杀掉该进程
+  boolean b=false;
+  fn("shell");
+  String[] cmd = new String[] {"kill","-9","lsof -i :21200"};
+  exec(cmd);
+  b=true;
+  return b;
+}

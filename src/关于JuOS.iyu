@@ -1,0 +1,573 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="66" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="5" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="4" did="5" type="RelativeLayout">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="7" did="4" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center
+background=#ff4e66ff</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="ImageButton">
+<ppt>width=45dp
+height=45dp
+src=17301533
+background=through</ppt>
+<event><eventItme type="clicki">end()</eventItme></event>
+</View>
+<View id="9" did="7" type="TextView">
+<ppt>width=-1
+height=-1
+text=关于ProperOS
+typeface=@JuOS/src/ttf/acbt80.ttf
+gravity=left|center
+textSize=25sp
+textColor=#ffffffff</ppt>
+<event></event>
+</View>
+<View id="2" did="5" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="61" did="3" type="CardView">
+<ppt>width=-1
+height=64dp
+app_CardcornerRadius=5dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+layout_marginTop=8dp</ppt>
+<event></event>
+</View>
+<View id="62" did="61" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event><eventItme type="clicki">utw(null,"开源协议相关","开源协议为 MIT 协议","查看协议","关闭",true,v)
+{
+	hws("https://gitee.com/properos/properos/blob/master/LICENSE")
+}
+else
+{
+	endutw()
+}</eventItme></event>
+</View>
+<View id="63" did="62" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="64" did="63" type="ImageView">
+<ppt>width=50dp
+height=50dp
+src=@JuOS/logo/BySi_logo.png</ppt>
+<event></event>
+</View>
+<View id="65" did="63" type="TextView">
+<ppt>width=-2
+height=-2
+text=ByUsi软件
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=18sp
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="26" did="3" type="CardView">
+<ppt>width=-1
+height=-2
+app_CardcornerRadius=5dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+layout_marginTop=8dp</ppt>
+<event></event>
+</View>
+<View id="27" did="26" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event><eventItme type="clicki">utw(null,"开源协议相关","开源协议为 MIT 协议","查看协议","关闭",true,v)
+{
+	hws("https://gitee.com/properos/properos/blob/master/LICENSE")
+}
+else
+{
+	endutw()
+}</eventItme></event>
+</View>
+<View id="28" did="27" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="30" did="28" type="ImageView">
+<ppt>width=380dp
+height=240dp
+src=@JuOS/logo/JuOS-OpenJuOS.png</ppt>
+<event></event>
+</View>
+<View id="31" did="28" type="TextView">
+<ppt>width=-1
+height=-1
+text=Powered by OpenJuOS
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=18sp
+layout_marginBottom=15dp
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="44" did="3" type="CardView">
+<ppt>width=-1
+height=-2
+app_CardcornerRadius=5dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+layout_marginTop=8dp</ppt>
+<event><eventItme type="clicki">fr("@JuOS/Lottie/app.json",data)
+fn Lottie.setImageLottie(47,data,0,true)</eventItme></event>
+</View>
+<View id="45" did="44" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="46" did="45" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="47" did="46" type="ImageView">
+<ppt>width=380dp
+height=240dp
+src=@JuOS/logo/JuOS-OpenJuOS.png</ppt>
+<event></event>
+</View>
+<View id="13" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+app_CardcornerRadius=5dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+layout_marginTop=8dp</ppt>
+<event></event>
+</View>
+<View id="10" did="13" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="11" did="10" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="54" did="11" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=17301659
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="TextView">
+<ppt>width=-2
+height=-2
+text=设备消息：null
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="14" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="16" did="15" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="17" did="16" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/ic_settings_keyboard.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="18" did="16" type="TextView">
+<ppt>width=-2
+height=-2
+text=ProperOS软件版本：
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="19" did="15" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fr("$System/Config/gduoshez.sys",yz)
+fn byusi.qt(14)
+f(yz != "true")
+{
+	f(ss.djcs &gt; "11")
+	{
+		fn tw.tw("已开启更多设置设置项")
+		fw("$System/Config/gduoshez.sys","true")
+        fw("$System/Config/DeveloperOptions.sys","1")
+	}
+	else
+	{
+		s(ss.djcs + "1",ss.djcs)
+	}
+}
+else
+{
+	fe("$System/Config/DeveloperOptions.sys",DeveloperOptions)
+    f(DeveloperOptions == true)
+    {
+    	syso("DeveloperOptions.sys："+true)
+    }
+	else
+	{
+		fw("$System/Config/DeveloperOptions.sys","1")
+		fn tw.tw2("你已经开启该选项了，不要在开启了",1)
+	}
+}</eventItme></event>
+</View>
+<View id="20" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="21" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="22" did="21" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="23" did="22" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/ic_settings_keyboard.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="24" did="22" type="TextView">
+<ppt>width=-2
+height=-2
+text=开发者：ByUsi团队
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="25" did="21" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event></event>
+</View>
+<View id="32" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="33" did="32" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="34" did="33" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="35" did="34" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/ic_settings_more_connections.svg
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="36" did="34" type="TextView">
+<ppt>width=-2
+height=-2
+text=ProperOS下载：https://gitee.com/properos/properos/releases
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp
+autoLink=web
+textColorLink=#9e0011ff</ppt>
+<event></event>
+</View>
+<View id="37" did="33" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn byusi.qt(32)
+utw(null,"","是否访问：https://gitee.com/properos/properos/releases","是","否",false,v)
+{
+	hws("https://gitee.com/properos/properos/releases")
+}
+else
+{
+	endutw()
+}</eventItme></event>
+</View>
+<View id="48" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="49" did="48" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="50" did="49" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="51" did="50" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@JuOS/logo/BySi_logo.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="52" did="50" type="TextView">
+<ppt>width=-2
+height=-2
+text=了解 ByUsi 团队
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="53" did="49" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn byusi.qt(48)
+sss url ="https://gitee.com/byusi"
+fn core.uigo("start_app.iyu")</eventItme></event>
+</View>
+<View id="55" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="56" did="55" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="57" did="56" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="58" did="57" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@JuOS/logo/properos.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="59" did="57" type="TextView">
+<ppt>width=-2
+height=-2
+text=了解 ProperOS 开发组
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="60" did="56" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn byusi.qt(55)
+sss url ="https://gitee.com/properos"
+fn core.uigo("system_start.iyu")</eventItme></event>
+</View>
+<View id="38" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=5dp
+layout_marginBottom=8dp</ppt>
+<event></event>
+</View>
+<View id="39" did="38" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="40" did="39" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="41" did="40" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/ic_settings_keyboard.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="42" did="40" type="TextView">
+<ppt>width=-2
+height=-2
+text=支持官方
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="43" did="39" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn byusi.qt(38)
+utw(null,"","支持官方.iyu","关闭","点击赞助码可以保存赞助码",true,v)
+{
+	endutw()
+}
+else
+{
+	fn tw.tw("点我并不会保存图片，点击图片才会保存")
+	endutw()
+}</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn n.ui(1)
+fn lib.wp_src(66)
+uycl("#e84f78ff",true)
+//fn byusi.ztl()
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">//连续点击次数初始化
+ss djcs ="0"
+//设备消息获取
+sjxx(xx)
+sgsz(xx,2,xxb)
+sj(xxb,null,"\n",xh)
+sj(xxb,"\n","\n",cs)
+ss("手机厂商："+cs+"\n设备型号："+xh,xxi)
+us(12,"text",xxi)
+//软件版本消息获取
+fr("@version.txt",v)
+ss("ProperOS软件版本："+v,v1)
+us(18,"text",v1)
+//滚动布局回弹效果实现
+loadjar("armeabi-v7a/classes.dex",class)
+cls(class,"com.Mus.ReboundScrollView",mB)
+gvs(2,a)
+gvs(2,b)
+javanew(mBs,mB,"Context",activity)
+urvw(2)
+nvw(mBs,5)
+nvw(b,mBs)
+//svg图片配置
+fr("$JuOS/ICON/ic_settings_more_connections.svg",svg)
+fn lib.svg(svg,35)
+fr("$JuOS/ICON/ic_accessibility.svg",svg)
+fn lib.svg(svg,41)
+//Lottie动画配置
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/app.json",data)
+fn Lottie.setImageLottie(47,data,0,true)</eventItme></UIEventset>

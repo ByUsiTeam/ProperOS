@@ -1,0 +1,18 @@
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.lang.String.getBytes;
+
+awzx(byte[] nr,String xyt,int port) {
+  syso("开");
+  ServerSocket serverSocket = new ServerSocket(port);
+  Socket socket = serverSocket.accept();
+  syso("连");
+  OutputStream outputStream = socket.getOutputStream();
+  byte[] bytes = xyt.getBytes();
+  outputStream.write(bytes);
+  outputStream.write(nr);
+  socket.close();
+  serverSocket.close();
+  syso("关");
+}

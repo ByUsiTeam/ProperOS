@@ -1,0 +1,173 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=@JuOS/src/wallpaper/DefaultWallpaper_1.png</ppt>
+<event></event>
+</View>
+<View id="8" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="RoundImageView">
+<ppt>width=85dp
+height=85dp
+src=@JuOS/logo/properos.png</ppt>
+<event></event>
+</View>
+<View id="7" did="2" type="LinearLayout">
+<ppt>width=-1
+height=110dp
+orientation=vertical
+gravity=center
+layout_marginTop=5dp</ppt>
+<event></event>
+</View>
+<View id="6" did="7" type="ImageView">
+<ppt>width=35dp
+height=35dp
+src=17301567
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="4" did="7" type="TextView">
+<ppt>width=-2
+height=-2
+text=ProperOS欢迎您的使用
+textSize=25sp
+typeface=@JuOS/src/ttf/acbt80.ttf
+gravity=center
+layout_marginLeft=5dp
+layout_marginRight=5dp
+layout_marginTop=5dp
+layout_marginBottom=5dp</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">//配置全屏
+fn byusi.ztl()
+fn lib.wp_src(8)
+//
+t()
+{
+	f(sss.yztz == "true")
+	{
+		endcode
+	}
+	else
+	{
+		w(true)
+		{
+			f(sss.yztz != "true")
+			{
+				ufnsui()
+				{
+					us(4,"text","ProperOS正在配置更新")
+					syso("0")
+				}
+				stop(500)
+				ufnsui()
+				{
+					us(4,"text","ProperOS正在配置更新.")
+					syso("1")
+				}
+				stop(500)
+				ufnsui()
+				{
+					us(4,"text","ProperOS正在配置更新..")
+					syso("2")
+				}
+				stop(500)
+				ufnsui()
+				{
+					us(4,"text","ProperOS正在配置更新...")
+					syso("3")
+				}
+				stop(500)
+			}
+			else f(sss.yztz == "true")
+			{
+				endcode
+			}
+		}
+	}
+}</eventItme><eventItme type="loadingComplete">fn lib.utw("loading.iyu")
+t()
+{
+	fuzs("@ProperOS/Package/properos-rom.zip","$",true,rom)
+    f(rom == false)
+    {
+    	ufnsui()
+    	{
+    		fn tw.tw2("解压默认包失败",1)
+            end()
+    	}
+    }
+	//删除之前的系统应用索引
+    fd("$JuOS/hemo/桌面/应用商店.app",yz)
+    fd("$JuOS/hemo/桌面/JuOS音乐.app",yz)
+	fd("$JuOS/hemo/桌面/飓云盘.app",yz)
+	fd("$JuOS/hemo/桌面/通知信息流.app",yz)
+	fd("$JuOS/hemo/HASH获取工具.jush",yz)
+	fd("$JuOS/hemo/桌面/宿主机应用.app",yz)
+	//
+	fe("$System/Config/app_start_qdq.sys",yz_app_start_qdq)
+	f(yz_app_start_qdq == "false")
+	{
+		fw("$System/Config/app_start_qdq.sys","true")
+	}
+    //写入强制启动新启动器
+    fw("$System/Config/app_start_qdq.sys","true")
+	//写入默认桌面圆角配置
+	fe("$System/Config/fillet.sys",fillet)
+	f(fillet != true)
+	{
+		fw("$System/Config/fillet.sys","25dp")
+	}
+	//导入视频播放器
+	fc("@JuOS/src/player/index.html","$System/bfq/index.html",yz_bfq)
+	fc("@JuOS/src/player/mui-player.min.js","$System/bfq/mui-player.min.js",yz_bfq)
+	fc("@JuOS/src/player/mui-player.min.css","$System/bfq/mui-player.min.css",yz_bfq)
+	//导入HTML5音乐播放器
+	fc("@JuOS/html/MusicPlayer/index.html","$System/yybfq/index-2.html",yz_yybfq)
+	//配置文本预览器
+	fc("@JuOS/html/TextPreviewer/TextPreviewer.html","$System/wbylq/index.html",yz_wbylq)
+	//自动检查更新配置
+	fe("$System/Config/Update.sys",u)
+	f(u == "false")
+	{
+		fw("$System/Config/Update.sys","false")
+	}
+	else
+	{
+		syso("false")
+	}
+    //初始化一些必要的文件
+    fw("$System/dev/null","null")
+    fw("$System/dev/false","false")
+    fw("$System/dev/true","true")
+	//版本号同步
+	fr("@version.txt",v)
+	fw("$JuOS/v/v.cfg",v)
+	//
+	ufnsui()
+	{
+		fn lib.endutw()
+		sss yztz ="true"
+		fn core.uigo("mian.iyu")
+		lan(0)
+		end()
+	}
+}</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+	
+}</eventItme></UIEventset>

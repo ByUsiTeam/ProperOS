@@ -1,0 +1,259 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=80dp
+height=80dp
+background=through
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="6" did="2" type="RoundImageView">
+<ppt>width=56dp
+height=56dp
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="TextView">
+<ppt>width=-1
+height=-1
+text=文本4
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=8sp
+gravity=center
+singleLine=true
+ellipsize=end</ppt>
+<event></event>
+</View>
+<View id="5" did="1" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ulag(st_vW,4,uid_mc)
+syso(uid_mc)
+//
+fr("$System/Config/app_start_qdq.sys",app_start_qdq)
+f(app_start_qdq == "true")
+{
+	s qdq ="system_start.iyu"
+}
+else f(app_start_qdq == "false")
+{
+	s qdq ="start_app.iyu"
+}
+else
+{
+	fn tw.tw("出现未知错误")
+}
+//
+f(uid_mc *? ".apk")
+{
+	ss("$JuOS/hemo/桌面/"+uid_mc,wjlj)
+	fo(wjlj)
+}
+else f(uid_mc *? ".m4a" || uid_mc *? ".mp3" || uid_mc *? ".flac")
+{
+	ss("$JuOS/hemo/桌面/"+uid_mc,m2)
+	fdir(m2,lj)
+	fr("@JuOS/html/MusicPlayer/index-2.html",yybfq)
+	fc("@JuOS/html/MusicPlayer/MusicPlayer.png","$System/yybfq/MusicPlayer.png",yuiof)
+	sr(yybfq,"{music}",lj,yybfqth)
+	sr(yybfqth,"{name}",uid_mc,ykl)
+	fw("$System/yybfq/index.html",ykl)
+	sss url ="$System/yybfq/index.html"
+	fn core.uigo(qdq)
+}
+else f(uid_mc *? ".mp4")
+{
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,m3)
+	ss("file://"+m3,m33)
+	sss url =m33
+	sss title =uid_mc
+	fn core.uigo("bfq2.iyu")
+}
+else f(uid_mc *? ".pdf")
+{
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,m3_2)
+	ss("$JuOS/plug-in_component/pdf/web/viewer.html?file="+m3_2,ljlj)
+	sss url =ljlj
+	fn core.uigo("system_start.iyu")
+}
+else f(uid_mc *? ".jush")
+{
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,u)
+	sss url =u
+	syso(sss.url)
+	fn core.uigo("JuOS.terminal.iyu")
+}
+else f(uid_mc *? ".html")
+{
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,u)
+	ss("file://"+m3,m33)
+	sss url =m33
+	fn core.uigo(qdq)
+}
+else
+{
+	ss("$JuOS/hemo/桌面/"+uid_mc+".app",ml)
+	fr(ml,wjuwjnr)
+	//
+	sj(wjuwjnr,"AppLj=","=AppLj",AppLj)
+	sj(wjuwjnr,"AppUrlJr=","=AppUrlJr",AppUrlJr)
+	sj(wjuwjnr,"System=","=System",sys)
+	f(sys == null)
+	{
+		sr(AppLj,"%g","$App/",AppLj)
+		//
+		f(AppUrlJr == null || AppUrlJr == "")
+		{
+			ss(AppLj+"src/index.html",url)
+			sss url =url
+			fw("$JuOS/temp_url/url.jtm",url)
+			fn core.uigo(qdq)
+		}
+		else
+		{
+			sss url =AppUrlJr
+			fw("$JuOS/temp_url/url.jtm",url)
+			fn core.uigo(qdq)
+		}
+	}
+	else f(sys == "True")
+	{
+		sj(wjuwjnr,"Ui=","=Ui",ui)
+		sj(wjuwjnr,"End=","=End",sys_end)
+		sj(wjuwjnr,"Url=","=Url",Url_System)
+		//
+		sss url =Url_System
+		fw("$JuOS/temp_url/url.jtm",Url_System)
+		//
+		ufnsui()
+		{
+			f(sys_end == "false")
+			{
+				f(Url_System != null)
+				{
+					fn core.uigo("system_start.iyu")
+				}
+				else
+				{
+					fn core.uigo(ui)
+				}
+			}
+			else f(sys_end == "true")
+			{
+				f(Url_System != null)
+				{
+					fn core.uigo("system_start.iyu")
+					end()
+				}
+				else
+				{
+					fn core.uigo(ui)
+					end()
+				}
+			}
+		}
+	}
+}</eventItme><eventItme type="press">ulag(st_vW,4,uid_mc)
+sss uid_mc =uid_mc
+fn lib.utw("home-utw.iyu")</eventItme></event>
+</View>
+<View id="18" did="0" type="RelativeLayout">
+<ppt>width=80dp
+height=80dp</ppt>
+<event></event>
+</View>
+<View id="17" did="18" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="7" did="17" type="CardView">
+<ppt>width=64dp
+height=64dp
+app_CardcornerRadius=18dp
+app_CardElevation=8dp</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="9" did="8" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="15" did="8" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ulag(st_vW,14,uid_mc)
+syso(uid_mc)
+//</eventItme><eventItme type="press">ulag(st_vW,14,uid_mc)
+sss uid_mc =uid_mc
+fn lib.utw("home-utw.iyu")</eventItme></event>
+</View>
+<View id="12" did="18" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=bottom|center</ppt>
+<event></event>
+</View>
+<View id="14" did="12" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本14
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=8sp
+gravity=center
+singleLine=true
+ellipsize=end
+layout_marginLeft=4dp
+layout_marginRight=4dp
+gravity=bottom|center
+layout_gravity=bottom|center</ppt>
+<event></event>
+</View>
+<View id="19" did="12" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本19
+textSize=1sp</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">/.
+dhas(dh, st_vW, "scaleX", 0.5, 1)
+dh(dh, "duration", 500)
+dh(dh, "start")
+
+dhas(dh1, st_vW, "scaleY", 0.5, 1)
+dh(dh1, "duration", 500)
+dh(dh1, "start")
+dhas(dh2, st_vW, "alpha", 0,1)
+dh(dh2, "duration", 1000)
+dh(dh2, "start")</eventItme></UIEventset>

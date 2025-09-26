@@ -1,0 +1,149 @@
+<View id="7" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="1" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+background=#25252B</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="RoundImageView">
+<ppt>width=85dp
+height=85dp
+src=@JuOS/logo/properos.png
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="TextView">
+<ppt>width=-2
+height=-2
+text=ProperOS
+textColor=#ffffffff
+gravity=center
+textSize=16sp
+layout_marginTop=15dp
+typeface=@fonts/z_c.TTF
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="5" did="1" type="ProgressBar">
+<ppt>width=45dp
+height=45dp
+style=16842871
+layout_marginTop=25dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="6" did="1" type="WebView">
+<ppt>width=90dp
+height=90dp
+url=@system/css/Loading/index.html
+layout_marginTop=25dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">//初始化全屏
+fn byusi.ztl()
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+//下载器
+fn lib.下载器()
+//
+fr("$System/Config/Qddh.sys",qddh)
+f(qddh == "true")
+{
+	fr("$System/Config/Qddh/i.cfg",iid)
+	ss(iid+"/src/index.html",html)
+	us(6,"url",html)
+}
+else
+{
+	fw("$System/Config/Qddh.sys","false")
+}
+//
+//加载版本验证文件的内容
+fr("@version.txt",st)
+fr("$JuOS/v/v.cfg",v)
+//引导
+fn init.boot(7)
+//初始化图片加载器
+loadjar("QmLoader",sss.QmLoader)
+//初始化
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+javanew(builder,Builder,"android.content.Context",activity)
+javax(null,null,Loader,"init",Builder,builder)
+//应用安装侧载管理
+//fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+fr("$System/Config/Application_side_load.sys",asls)
+f(asls == "true")
+{
+	fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+}
+else f(asls == "false")
+{
+	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}
+else
+{
+	fr("$System/Config/Application_side_load.sys","false")
+	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="downkey">//锁定返回
+f(st_kC==4)
+{
+}</eventItme><eventItme type="loadingComplete">//zip工具
+loadjar("zip",dex)
+cls(dex,"hy.io.压缩扩展$iApp",sss.zip4j)
+//设置版本号
+fr("@version.txt",v)
+sss v =v
+//初始化基本配置
+fr("@JuOS_Third-party_Configuration/config.json",config)
+//解析系统配置的JSON文件
+json(config,config)
+t()
+{
+	json(config,"get","company",公司)
+	json(config,"get","group",小组)
+	json(config,"get","server",system_server_url)
+	json(config,"get","logo",标志)
+	json(config,"get","system",系统名)
+	json(config,"get","website",官网)
+	//全局化配置
+	ufnsui()
+	{
+		sss company =公司
+		sss group =小组
+		sss server =system_server_url
+		sss logo =标志
+		sss website =官网
+		sss system =系统名
+		//配置当前界面的配置
+		us(2,"src",标志)
+		us(3,"text",系统名)
+	}
+}
+//引导的UI的动画配置
+swh("w",w)
+swh("hh",h)
+syso("w"+w)
+syso("h"+h)
+dht(dh,w,0,h,0)
+dh(dh,"duration",500)
+dha(dh2,false,true)
+dh(dh2,"duration",1000)
+dhset(dhlist,false,dh,dh2)
+us(boot_loading.9,"dh",dhlist)
+//常驻通知
+fn system.asystem_t_init()
+fr("@version.txt",xxi)
+s tnr ="欢迎使用 ProperOS"
+ss(tnr+"_v"+xxi,tnr)
+//fn system.asystem_t_t(141730,"@JuOS/logo/properos.png","@JuOS/logo/properos.png","@JuOS/logo/properos.png",false,"ProperOS消息栏常驻",tnr,tnr)</eventItme></UIEventset>
