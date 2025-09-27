@@ -856,7 +856,8 @@ background=through</ppt>
 height=55dp
 layout_marginTop=5dp
 layout_marginLeft=5dp
-layout_marginRight=5dp</ppt>
+layout_marginRight=5dp
+visibility=gone</ppt>
 <event></event>
 </View>
 <View id="85" did="84" type="LinearLayout">
@@ -1218,8 +1219,8 @@ fn lib.svg(svg,92)
 ./
 fr("$JuOS/ICON/ic_settings_multi_device_collaboration_svg.svg",svg)
 fn lib.svg(svg,112)
-fr("$JuOS/ICON/ic_settings_more_connections.svg",svg)
-fn lib.svg(svg,86)
+//fr("$JuOS/ICON/ic_settings_more_connections.svg",svg)
+//fn lib.svg(svg,86)
 fr("$JuOS/ICON/ic_settings_more_connections.svg",svg)
 fn lib.svg(svg,150)
 fr("$JuOS/ICON/ic_settings_biometrics_password.svg",svg)

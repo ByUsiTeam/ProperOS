@@ -1,0 +1,72 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=55dp
+orientation=horizontal
+background=white
+clickable=true
+paddingleft=10dp
+gravity=center_vertical</ppt>
+<event><eventItme type="clicki">ulag(st_vW, 5, name)
+ulag(st_vW, -1, ll)
+f(ll == false)
+{
+	ss(sss.oo + name, filename)
+	fdir(filename, filename)
+	sss pp = filename
+	syso(sss.pp)
+	endcode
+	}
+f(name == "../上层文件夹")
+{
+	slof(sss.oo, "/", fg)
+	f(sss.oo ? sss.oo2)
+	{
+		f(fg &gt; 0)
+		{
+			ssg(sss.oo, 0, fg, filename)
+			sss oo = filename
+			fn selector.a()
+		}
+	}
+	else
+	{
+		fn tw.tw("已经到底了")
+	}
+}
+else
+{
+	ss(sss.oo + "/" + name, filename)
+	sss oo = filename
+	fn selector.a()
+}
+</eventItme></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-2
+height=-2
+orientation=vertical
+gravity=center
+layout_marginRight=10dp</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="ImageView">
+<ppt>width=40dp
+height=40dp
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="4" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="TextView">
+<ppt>width=-1
+height=-1
+text=文件名
+gravity=center_vertical
+textsize=17sp</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>
