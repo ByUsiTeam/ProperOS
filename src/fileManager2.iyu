@@ -26,8 +26,7 @@ app_CardcornerRadius=25dp
 layout_marginLeft=5dp
 layout_marginTop=5dp
 layout_marginRight=5dp
-layout_marginBottom=6dp
-visibility=gone</ppt>
+layout_marginBottom=6dp</ppt>
 <event></event>
 </View>
 <View id="6" did="5" type="LinearLayout">
@@ -51,6 +50,18 @@ src=17301533
 background=through</ppt>
 <event><eventItme type="clicki">end()</eventItme></event>
 </View>
+<View id="9" did="6" type="TextView">
+<ppt>width=-2
+height=-2
+text=ProperOS 文件管理器（文件浏览器）
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+gravity=center
+textSize=15sp
+layout_marginLeft=6dp
+ellipsize=middle</ppt>
+<event></event>
+</View>
 <View id="4" did="3" type="RecyclerView">
 <ppt>width=-1
 height=-1</ppt>
@@ -61,6 +72,9 @@ uycl("#ff6a00ff",true)</eventItme><eventItme type="loadingComplete">ss mlu =sss.
 fdir("$",mlu)
 sbp("$System/icon/folder.png", dirimg)
 sbp("$System/icon/file-earmark.png", fileimg)
+fdir("$",root_dir)
+sr(ss.mlu,root_dir,"ProperOS:Root_Files",bl)
+us(9,"text",bl)
 ula(list, "clear")
 ula(list,4=null,5="../上层文件夹",6="end", -1=true)
 fl(ss.mlu, true, szdir)
@@ -74,6 +88,15 @@ fl(ss.mlu, false, szfile)
 for(a; szfile)
 {
 	ss(ss.mlu+"/"+a,yu)
-	ula(list, 4=fileimg, 5=a, 6="file", 8=yu, -1=false)
+    slower(yu,yux)
+    f(yux *? ".png" || yux *? "pg")
+    {
+    	sbp(yu,img)
+    	ula(list, 4=img, 5=a, 6="file", 8=yu, -1=false)
+    }
+    else
+    {
+    	ula(list, 4=fileimg, 5=a, 6="file", 8=yu, -1=false)
+    }
 }
 uls(4,list,"flist.iyu", -1, -2)</eventItme></UIEventset>

@@ -71,7 +71,9 @@ f(type == "dir")
 }
 else f(type == "file")
 {
-	fn tw.tw(path)
+	fdir("$",root_dir)
+    sr(path,root_dir,"ProperOS:Root_Files",nl)
+	fn tw.tw(nl)
 }
 else f(type == "end")
 {
