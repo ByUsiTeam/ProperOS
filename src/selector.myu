@@ -3,13 +3,13 @@
 fn a()
 
 //加载文件夹图像
-sbp("@byusi/resources/icon/folder.png", dirimg)
+sbp("$System/icon/folder.png", dirimg)
 //加载文件图标
-sbp("@byusi/resources/icon/file-earmark.png", fileimg)
+sbp("$System/icon/file-earmark.png", fileimg)
 //清空列表
 ula(list, "clear")
 //设置返回上级
-ula(list, 1=null, 3=dirimg, 5="../上层文件夹", -1=true)
+ula(list, 1=null, 3=null, 5="../上层文件夹", -1=true)
 //获取文件夹列表
 fl(sss.oo, true, szdir)
 for(a; szdir)

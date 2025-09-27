@@ -1,0 +1,79 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=top|center</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+app_CardElevation=12dp
+app_CardcornerRadius=25dp
+layout_marginLeft=5dp
+layout_marginTop=5dp
+layout_marginRight=5dp
+layout_marginBottom=6dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="8" did="6" type="CardView">
+<ppt>width=45dp
+height=45dp
+app_CardcornerRadius=25dp
+layout_marginLeft=12dp</ppt>
+<event></event>
+</View>
+<View id="7" did="8" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301533
+background=through</ppt>
+<event><eventItme type="clicki">end()</eventItme></event>
+</View>
+<View id="4" did="3" type="RecyclerView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn lib.wp_src(2)
+uycl("#ff6a00ff",true)</eventItme><eventItme type="loadingComplete">ss mlu =sss.mlu
+fdir("$",mlu)
+sbp("$System/icon/folder.png", dirimg)
+sbp("$System/icon/file-earmark.png", fileimg)
+ula(list, "clear")
+ula(list,4=null,5="../上层文件夹",6="end", -1=true)
+fl(ss.mlu, true, szdir)
+for(a; szdir)
+{
+	ss(ss.mlu+"/"+a,yu)
+	ula(list, 4=dirimg, 5=a, 6="dir", 8=yu, -1=true)
+}
+
+fl(ss.mlu, false, szfile)
+for(a; szfile)
+{
+	ss(ss.mlu+"/"+a,yu)
+	ula(list, 4=fileimg, 5=a, 6="file", 8=yu, -1=false)
+}
+uls(4,list,"flist.iyu", -1, -2)</eventItme></UIEventset>

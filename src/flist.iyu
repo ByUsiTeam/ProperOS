@@ -1,0 +1,99 @@
+<View id="1" did="0" type="CardView">
+<ppt>width=-1
+height=50dp
+app_CardcornerRadius=25dp
+layout_marginLeft=6dp
+layout_marginTop=5dp
+layout_marginRight=6dp
+layout_marginBottom=1dp</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="RoundImageView">
+<ppt>width=38dp
+height=38dp
+src=17301567
+layout_marginLeft=10dp</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本5
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+textColor=#ff000000
+layout_marginLeft=5dp
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="7" did="2" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">//获取数据
+ulag(st_vW,6,type)
+ulag(st_vW,8,path)
+//调试输出
+syso("Type → "+type)
+syso("Path → "+path)
+//判断其为目录还是文件
+f(type == "dir")
+{
+    fdir("$",protect)
+    ss(protect+"/App",protect_app)
+    ss(protect+"/JuOS/data",protect_juos_data)
+    f(path ? protect_app)
+    {
+    	fn tw.tw2("目录受到系统保护",1)
+    }
+    else f(path ? protect_juos_data)
+    {
+    	fn tw.tw2("用户数据目录，受到System保护",1)
+    }
+    else
+    {
+    	sss mlu =path
+        fn core.uigo("fileManager2.iyu")
+    }
+}
+else f(type == "file")
+{
+	fn tw.tw(path)
+}
+else f(type == "end")
+{
+	end()
+}
+else
+{
+	fn tw.tw2("类型错误",1)
+}</eventItme></event>
+</View>
+<View id="6" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本6
+textSize=0sp</ppt>
+<event></event>
+</View>
+<View id="8" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=文本8
+textSize=0sp</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>
