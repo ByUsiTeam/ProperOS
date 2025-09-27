@@ -59,7 +59,8 @@ typeface=@src/ttf/acbt80.ttf
 gravity=center
 textSize=15sp
 layout_marginLeft=6dp
-ellipsize=middle</ppt>
+ellipsize=middle
+singleLine=true</ppt>
 <event></event>
 </View>
 <View id="4" did="3" type="RecyclerView">
