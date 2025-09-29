@@ -83,6 +83,40 @@ else f(type == "end")
 else
 {
 	fn tw.tw2("类型错误",1)
+}</eventItme><eventItme type="press">ulag(st_vW,6,type)
+ulag(st_vW,8,path)
+//调试输出
+syso("Type → "+type)
+syso("Path → "+path)
+//正式处理
+sr(path,"//","/",path)
+f(type == "file")
+{
+	utw(null,"","确定要删除 "+path+" 吗？","确定","取消",false,v)
+	{
+		fd(path,fdel)
+        f(fdel == true)
+        {
+        	fn tw.tw("删除成功")
+            fn core.document(ss.shuaxFile,ss.mlu)
+        }
+        else
+        {
+        	fn tw.tw2("删除失败",1)
+        }
+	}
+    else
+    {
+    	endutw()
+    }
+}
+else f(type == "dir")
+{
+	fn tw.tw2("禁止删除目录",1)
+}
+else
+{
+	syso(path)
 }</eventItme></event>
 </View>
 <View id="6" did="2" type="TextView">

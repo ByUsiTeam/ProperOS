@@ -4,3 +4,68 @@ uigo(iyu)
 call(null,"mjava","a.tz")
 
 end fn
+
+fn document(qr,mlu)
+
+f(qr == true)
+{
+	sbp("$System/icon/folder.png", dirimg)
+    sbp("$System/icon/file-earmark.png", fileimg)
+    ula(list, "clear")
+    //ula(list,4=null,5="../上层文件夹",6="end", -1=true)
+    fl(mlu, true, szdir)
+    for(a; szdir)
+    {
+    	ss(mlu+"/"+a,yu)
+        ula(list, 4=dirimg, 5=a, 6="dir", 8=yu, -1=true)
+        }
+        
+        fl(mlu, false, szfile)
+        for(a; szfile)
+        {
+        	ss(mlu+"/"+a,yu)
+            slower(yu,yux)
+            f(yux *? ".png" || yux *? "pg")
+            {
+            	sbp(yu,img)
+                ula(list, 4=img, 5=a, 6="file", 8=yu, -1=false)
+            }
+            else
+            {
+            	ula(list, 4=fileimg, 5=a, 6="file", 8=yu, -1=false)
+            }
+        }
+    uls(4,list,"flist.iyu", -1, -2)
+}
+else f(qr == false)
+{
+	sbp("$System/icon/folder.png", dirimg)
+    sbp("$System/icon/file-earmark.png", fileimg)
+    ula(list, "clear")
+    ula(list,4=null,5="../上层文件夹",6="end", -1=true)
+    fl(mlu, true, szdir)
+    for(a; szdir)
+    {
+    	ss(mlu+"/"+a,yu)
+        ula(list, 4=dirimg, 5=a, 6="dir", 8=yu, -1=true)
+        }
+        
+        fl(mlu, false, szfile)
+        for(a; szfile)
+        {
+        	ss(mlu+"/"+a,yu)
+            slower(yu,yux)
+            f(yux *? ".png" || yux *? "pg")
+            {
+            	sbp(yu,img)
+                ula(list, 4=img, 5=a, 6="file", 8=yu, -1=false)
+            }
+            else
+            {
+            	ula(list, 4=fileimg, 5=a, 6="file", 8=yu, -1=false)
+            }
+        }
+    uls(4,list,"flist.iyu", -1, -2)
+}
+
+end fn

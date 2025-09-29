@@ -71,33 +71,7 @@ height=-1</ppt>
 <UIEventset><eventItme type="loading">fn lib.wp_src(2)
 uycl("#ff6a00ff",true)</eventItme><eventItme type="loadingComplete">ss mlu =sss.mlu
 fdir("$",mlu)
-sbp("$System/icon/folder.png", dirimg)
-sbp("$System/icon/file-earmark.png", fileimg)
-fdir("$",root_dir)
-sr(ss.mlu,root_dir,"ProperOS:Root_Files",bl)
-us(9,"text",bl)
-ula(list, "clear")
-ula(list,4=null,5="../上层文件夹",6="end", -1=true)
-fl(ss.mlu, true, szdir)
-for(a; szdir)
-{
-	ss(ss.mlu+"/"+a,yu)
-	ula(list, 4=dirimg, 5=a, 6="dir", 8=yu, -1=true)
-}
-
-fl(ss.mlu, false, szfile)
-for(a; szfile)
-{
-	ss(ss.mlu+"/"+a,yu)
-    slower(yu,yux)
-    f(yux *? ".png" || yux *? "pg")
-    {
-    	sbp(yu,img)
-    	ula(list, 4=img, 5=a, 6="file", 8=yu, -1=false)
-    }
-    else
-    {
-    	ula(list, 4=fileimg, 5=a, 6="file", 8=yu, -1=false)
-    }
-}
-uls(4,list,"flist.iyu", -1, -2)</eventItme></UIEventset>
+ss shuaxFile =false
+fn core.document(ss.shuaxFile,ss.mlu)
+sr(ss.mlu,mlu,"ProperOS:Root_Files",txt)
+us(9,"text",txt)</eventItme></UIEventset>
