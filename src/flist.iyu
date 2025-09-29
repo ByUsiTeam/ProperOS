@@ -73,6 +73,7 @@ else f(type == "file")
 {
 	fdir("$",root_dir)
     sr(path,root_dir,"ProperOS:Root_Files",nl)
+    fo(path)
 	fn tw.tw(nl)
 }
 else f(type == "end")
