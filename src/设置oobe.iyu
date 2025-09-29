@@ -133,6 +133,12 @@ t()
 	{
 		fw("$System/Config/fillet.sys","25dp")
 	}
+    //强制登录设置，强制的
+    fe("$System/Config/UserLoginLock.sys",UserLoginLock)
+    f(UserLoginLock == false)
+    {
+    	fw("$System/Config/UserLoginLock.sys","true")
+    }
 	//导入视频播放器
 	fc("@JuOS/src/player/index.html","$System/bfq/index.html",yz_bfq)
 	fc("@JuOS/src/player/mui-player.min.js","$System/bfq/mui-player.min.js",yz_bfq)

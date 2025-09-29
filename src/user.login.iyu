@@ -193,24 +193,34 @@ syso("w："+w)
 syso("h："+h)
 us(id,"width",w)
 us(id,"height",h)</eventItme><eventItme type="loadingComplete">fn lib.wp_src(21)
-fe("$JuOS/data/User/data.json",user)
-fr("$JuOS/data/User/.username",dataName)
-call(data,"mjava","aes.decryptString",dataName,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
-f(user == true)
+fr("$System/Config/UserLoginLock.sys",qzdl)
+f(qzdl == "true")
 {
-	ss("欢迎您 "+data,uuuu)
-    us(16,"text",uuuu)
+	fe("$JuOS/data/User/data.json",user)
+    fr("$JuOS/data/User/.username",dataName)
+    call(data,"mjava","aes.decryptString",dataName,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+    f(user == true)
+    {
+    	ss("欢迎您 "+data,uuuu)
+        us(16,"text",uuuu)
+    }
+    else f(user == false)
+    {
+    	fn core.uigo("login.iyu")
+    }
+    else
+    {
+    	utw(null,"","抱歉，出现错误了","重启",true,v)
+        {
+        	fn core.uigo("mian.iyu")
+            end()
+	    }
+    }
 }
-else f(user == false)
+else f(qzdl == "false")
 {
-	fn core.uigo("login.iyu")
-}
-else
-{
-	utw(null,"","抱歉，出现错误了","重启",true,v)
-	{
-		fn core.uigo("mian.iyu")
-        end()
-	}
+	fr("$System/BootUI.ui",ui)
+    fn core.uigo(ui)
+    end()
 }</eventItme><eventItme type="restart">fn core.uigo("user.login.iyu")
 end()</eventItme></UIEventset>

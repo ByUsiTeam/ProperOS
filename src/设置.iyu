@@ -645,6 +645,78 @@ else f(xz == "false")
 }
 ./</eventItme></event>
 </View>
+<View id="155" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="156" did="155" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="157" did="156" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=$JuOS/ICON/ic_device_matebook_filled.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="158" did="156" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="159" did="158" type="TextView">
+<ppt>width=-2
+height=-2
+text=开启强制登录
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="160" did="158" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="161" did="160" type="RadioButton">
+<ppt>width=-2
+height=-2
+text=
+layout_marginRight=5dp
+checked=false</ppt>
+<event></event>
+</View>
+<View id="162" did="155" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">ug(161,"checked",xz)
+fn byusi.qt(155)
+f(xz == "true")
+{
+	us(161,"checked","false")
+	fw("$System/Config/UserLoginLock.sys","false")
+}
+else f(xz == "false")
+{
+	us(161,"checked","true")
+	fw("$System/Config/UserLoginLock.sys","true")
+}</eventItme></event>
+</View>
 <View id="60" did="20" type="RelativeLayout">
 <ppt>width=-1
 height=55dp
@@ -693,62 +765,6 @@ background=through</ppt>
 <event><eventItme type="clicki">fn lib.utw("JointDevelopmentNotificationList.iyu")
 //fn tw.tw("长按有特殊效果！")
 fn byusi.qt(60)</eventItme></event>
-</View>
-<View id="116" did="20" type="RelativeLayout">
-<ppt>width=-1
-height=55dp
-layout_marginTop=5dp
-layout_marginLeft=5dp
-layout_marginRight=5dp</ppt>
-<event></event>
-</View>
-<View id="117" did="116" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=horizontal
-gravity=left|center</ppt>
-<event></event>
-</View>
-<View id="118" did="117" type="RoundImageView">
-<ppt>width=45dp
-height=45dp
-src=17301567
-layout_marginLeft=5dp
-visibility=visible</ppt>
-<event></event>
-</View>
-<View id="119" did="117" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=horizontal
-gravity=left|center</ppt>
-<event></event>
-</View>
-<View id="120" did="119" type="TextView">
-<ppt>width=-2
-height=-2
-text=设置或更改密码
-textColor=#ff000000
-typeface=@src/ttf/acbt80.ttf
-textSize=15sp
-layout_marginLeft=5dp</ppt>
-<event></event>
-</View>
-<View id="121" did="116" type="Button">
-<ppt>width=-1
-height=-1
-text=
-background=through</ppt>
-<event><eventItme type="clicki">fn lk.lock(14,"true")
-fn byusi.qt(116)</eventItme><eventItme type="press">fd("$System/Config/Pwd/sys",jc)
-f(jc == true)
-{
-	fn tw.tw("密码解除设置成功")
-}
-else
-{
-	fn tw.tw2("密码解除失败",1)
-}</eventItme></event>
 </View>
 <View id="110" did="20" type="RelativeLayout">
 <ppt>width=-1
@@ -1181,6 +1197,9 @@ else
 	us(138,"checked","false")
 	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
 }
+//登录强制
+fr("$System/Config/UserLoginLock.sys",qzdl)
+us(161,"checked",qzdl)
 //
 fn api.hide_btn(73)
 //检查更新界面载入
