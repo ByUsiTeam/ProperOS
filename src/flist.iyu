@@ -98,7 +98,15 @@ f(type == "file")
         f(fdel == true)
         {
         	fn tw.tw("删除成功")
-            fn core.document(ss.shuaxFile,ss.mlu)
+            //fn core.document(ss.shuaxFile,ss.mlu)
+            ula(ss.list,"list",v)
+            syso(v)
+            /.
+            //删除项
+            dslist(v,position)
+            //刷新列表
+            ula(ss.list)
+            ./
         }
         else
         {

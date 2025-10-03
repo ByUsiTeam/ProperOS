@@ -37,9 +37,9 @@ app_CardcornerRadius=15dp</ppt>
 height=-1
 app_title=ProperOS
 app_subtitle=ProperExplorer
-BackgroundColor=#ff0099ff
-app_TitleColor=#ffffffff
-app_subTitleColor=#ffd0d0d0</ppt>
+BackgroundColor=#ffdfe1f8
+app_TitleColor=#ff000000
+app_subTitleColor=#ff000000</ppt>
 <event></event>
 </View>
 <View id="11" did="3" type="LinearLayout">
@@ -104,7 +104,12 @@ background=through
 ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
 <event><eventItme type="onrefresh">fn lib.utw("home-cd.iyu")</eventItme></event>
 </View>
-<View id="5" did="4" type="GridView">
+<View id="21" did="4" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="5" did="21" type="GridView">
 <ppt>width=-1
 height=-1
 gravity=top|center
@@ -121,16 +126,14 @@ tw("到底了")
 ./
 syso(st_bT)</eventItme></event>
 </View>
-<View id="6" did="1" type="LinearLayout">
+<View id="6" did="21" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
 gravity=center
 background=through
 visibility=visible</ppt>
-<event><eventItme type="clicki">us(4,"refreshing","true")
-fn list_lib.home()
-us(4,"refreshing","false")</eventItme></event>
+<event></event>
 </View>
 <View id="10" did="6" type="ImageView">
 <ppt>width=155dp
