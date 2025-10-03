@@ -144,7 +144,7 @@ src=@fail.xml</ppt>
 <View id="9" did="6" type="TextView">
 <ppt>width=-2
 height=-2
-text=如果长期我已加载出首界面列表，请点击该界面进行首界面列表刷新
+text=刷新中...
 textColor=#ffff0000
 typeface=@src/ttf/acbt80.ttf
 textSize=34sp
@@ -155,8 +155,6 @@ gravity=center</ppt>
 fn system.asystem_t_init()
 //-_-_-_-_-_-_-_-_-_-_-
 fn PromptLibrary.interface(1)
-//
-fn lib.utw("loading.iyu")
 //
 t()
 {
@@ -281,7 +279,6 @@ t()
 		us(list.7,"app_CardcornerRadius",fillet)
 		us(6, "visibility", "gone")
 		us(4,"refreshing","false")
-        fn lib.endutw()
 	}
 }
 //-_-_-_-_-_-_-_-_-_-_-
@@ -302,7 +299,36 @@ cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
 cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
 //初始化(必写)
 javanew(builder,Builder,"android.content.Context",activity)
-javax(null,null,Loader,"init",Builder,builder)</eventItme><eventItme type="downkey">f(st_kC==4)
+javax(null,null,Loader,"init",Builder,builder)
+//必要界面添加
+addv(1,"start_menu.iyu")
+//设置界面
+//获取屏幕分辨率
+swh("w",w)
+swh("hh",h)
+//计算
+s2(w / 1.2,wp)
+s2(h / 1.5,hp)
+//应用数据
+sss wp =wp
+sss hp =hp
+us(start_menu.4,"width",wp+"dp")
+us(start_menu.4,"height",hp+"dp")
+//获取配置信息
+fr("@Config/start_menu.json",data)
+json(data,data)
+json(data,"get","title",Td)
+json(Td,"get","text",TitleText)
+json(Td,"get","color",TitleColor)
+json(Td,"get","script",TitleFont)
+json(Td,"get","size",TitleSize)
+//应用
+us(start_menu.56,"text",TitleText)
+us(start_menu.56,"textColor",TitleColor)
+us(start_menu.56,"typeface",TitleFont)
+us(start_menu.56,"textSize",TitleSize)
+//隐藏界面
+us(start_menu.1,"visibility","gone")</eventItme><eventItme type="downkey">f(st_kC==4)
 {
 	fn lib.utw("end-ppos.iyu")
 }</eventItme><eventItme type="loading">fn byusi.ztl()
@@ -313,7 +339,23 @@ fn n.ui(1)
 loadjar("typeface.de",dex)
 cls(dex,"com.mus.alltypeface.set",class)
 fdir("@JuOS/src/ttf/acbt80.ttf",path)
-javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="menu">case 设置:
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="menu">case 开始菜单:
+
+us(start_menu.1,"visibility","visible")
+swh("w",w)
+swh("hh",h)
+ss("-"+w,fw)
+ss("-"+h,fh)
+dht(dh,fw,0,fh,0)
+dh(dh,"duration",500)
+dha(dh2,false,true)
+dh(dh2,"duration",1000)
+dhset(dhlist,false,dh2,dh)
+us(start_menu.4,"dh",dhlist)
+
+break
+
+case 设置:
 fn core.uigo("设置.iyu")
 break
 
@@ -324,7 +366,7 @@ break
 case 时间:
 utw(null,"","time.iyu",false,v)
 {
-
+	
 }
 break
 

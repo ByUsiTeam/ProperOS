@@ -2,3 +2,8 @@
 
 59 149 174
 47 149 153
+
+<p>联系官方请发邮件到：<a href="mailto:admin@work.cdifit.cn">admin@work.cdifit.cn</a></p>
+<a href="tel:150***16891">手机号码</a>
+
+<a href="mailto:xxx@qq.com">邮箱</a>

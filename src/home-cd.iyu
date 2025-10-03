@@ -100,7 +100,28 @@ textSize=24sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki"> //桌面图标刷新逻辑
+<event><eventItme type="clicki">//开始菜单设置
+swh("w",w)
+swh("hh",h)
+ss("-"+w,fw)
+ss("-"+h,fh)
+s2(fw * 2,fw)
+s2(fh *2,fh)
+dht(dh,0,fw,0,fh)
+dh(dh,"duration",500)
+dha(dh2,true,false)
+dh(dh2,"duration",1000)
+dhset(dhlist,false,dh2,dh)
+us(start_menu.4,"dh",dhlist)
+t()
+{
+	stop(950)
+    ufnsui()
+    {
+    	us(start_menu.1,"visibility","gone")
+    }
+}
+//桌面图标刷新逻辑
 us(6,"visibility","visible")
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
