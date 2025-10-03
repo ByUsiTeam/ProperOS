@@ -36,6 +36,7 @@ f(qr == true)
             }
         }
     uls(4,list,"flist.iyu", -1, -2)
+    ss list =list
 }
 else f(qr == false)
 {
@@ -66,6 +67,17 @@ else f(qr == false)
             }
         }
     uls(4,list,"flist.iyu", -1, -2)
+    ss list =list
 }
+
+end fn
+
+//获取设备电量
+fn battery(id)
+
+java(管理器,activity,"android.app.Activity.getSystemService","String","batterymanager")
+//初始化
+java(a,管理器,"android.os.BatteryManager.getIntProperty","int",4)
+sss battery =a
 
 end fn
