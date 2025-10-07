@@ -41,14 +41,8 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">ulag(st_vW,14,uid_mc)
 ulag(st_vW,19,uuid)
-f(uuid == "false")
-{
-	fn system.app_start(uid_mc)
-}
-else
-{
-	fn system.app_start2(uuid)
-}</eventItme><eventItme type="press">ulag(st_vW,14,uid_mc)
+syso(uuid)
+fn system.app_start(uid_mc,uuid)</eventItme><eventItme type="press">ulag(st_vW,14,uid_mc)
 sss uid_mc =uid_mc
 fn lib.utw("home-utw.iyu")</eventItme></event>
 </View>
@@ -77,7 +71,7 @@ layout_gravity=bottom|center</ppt>
 <View id="19" did="12" type="TextView">
 <ppt>width=-2
 height=-2
-text=false
+text=
 textSize=0sp</ppt>
 <event></event>
 </View>

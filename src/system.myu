@@ -189,7 +189,7 @@ f(jspk != null)
                                     {
                                     }
                                 	fc("$temp/"+time+"/MainIndex.json","$JuOS/hemo/桌面/"+app_uuid+".plink",true,yzfc)
-                                    fuzs(jspk,"$App/"+package,true,fuzs)
+                                    fuzs(jspk,"$App/"+app_package,true,fuzs)
                                     endutw()
                                     f(yzfc == true && fuzs == true)
                                     {
@@ -241,8 +241,10 @@ else
 
 end fn
 
-fn app_start(uid_mc)
+fn app_start(uid_mc,uuid)
 
+f(uuid == null)
+{
 syso(uid_mc)
 //
 fr("$System/Config/app_start_qdq.sys",app_start_qdq)
@@ -426,6 +428,11 @@ else
 			}
 		}
 	}
+}
+}
+else
+{
+	fn system.app_start2(uuid)
 }
 
 end fn
