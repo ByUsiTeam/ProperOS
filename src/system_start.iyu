@@ -10,8 +10,7 @@ height=-1</ppt>
 </View>
 <View id="3" did="36" type="WebView">
 <ppt>width=-1
-height=-1
-url=http://null.null.com</ppt>
+height=-1</ppt>
 <event><eventItme type="onprogresschanged">f(st_nS != "100")
 {
 	us(4,"visibility","visible")

@@ -1,36 +1,16 @@
-<View id="1" did="0" type="RelativeLayout">
+<View id="1" did="0" type="CardView">
 <ppt>width=-1
+layout_weight=1
+background=#495890
+height=-1</ppt>
+<event><eventItme type="clicki">ug(2,"background",a)
+us(1,"background",a)</eventItme></event>
+</View>
+<View id="2" did="0" type="CardView">
+<ppt>width=-1
+layout_weight=1
+background=#275bd9
 height=-1</ppt>
 <event></event>
-</View>
-<View id="2" did="1" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=vertical
-gravity=center</ppt>
-<event></event>
-</View>
-<View id="3" did="2" type="Button">
-<ppt>width=-2
-height=-2
-text=按钮3</ppt>
-<event><eventItme type="clicki">utw(null, "请选择文件", "b.iyu", "", false, sss.v)
-{
-
-}
-//弹窗全局变量为v
-
-
-//开始执行添加列表
-
-//默认访问的文件夹
-fdir("$", dir)
-sss oo2 = dir
-sss oo = dir
-//显示选择文件
-sss ii = true
-
-fn selector.a()
-</eventItme></event>
 </View>
 <UIEventset></UIEventset>

@@ -49,51 +49,11 @@ orientation=vertical</ppt>
 <event></event>
 </View>
 <View id="68" did="65" type="LinearLayout">
-<ppt>width=-1
+<ppt>width=-2
 height=-1
 orientation=horizontal
 gravity=left|center</ppt>
 <event></event>
-</View>
-<View id="66" did="68" type="CardView">
-<ppt>width=80dp
-height=45dp
-layout_marginLeft=7dp
-app_CardcornerRadius=8dp</ppt>
-<event></event>
-</View>
-<View id="69" did="66" type="Button">
-<ppt>width=-1
-height=-1
-text=签到
-background=#ff3863ff
-textColor=#ffffffff
-typeface=@src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="clicki">ss("https://api.www.cdifit.cn/user/qd.php?uid="+sss.uid+"&uuid="+sss.uuid,url)
-sss url =url
-fn core.uigo("start_app.iyu")
-fn byusi.qt(66)</eventItme></event>
-</View>
-<View id="67" did="68" type="CardView">
-<ppt>width=80dp
-height=45dp
-layout_marginLeft=7dp
-app_CardcornerRadius=8dp
-layout_marginRight=7dp</ppt>
-<event></event>
-</View>
-<View id="70" did="67" type="Button">
-<ppt>width=-1
-height=-1
-text=退出登录
-background=#ffff0000
-textColor=#ffffffff
-typeface=@src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="clicki">fd("$JuOS/data/User/data.json",yz)
-fd("$JuOS/data/User/.username",yz)
-fd("$JuOS/data/User/.password",yt)
-fn byusi.qt(67)
-end()</eventItme></event>
 </View>
 <View id="6" did="68" type="LinearLayout">
 <ppt>width=-1
@@ -112,10 +72,22 @@ textSize=16sp
 layout_marginRight=5dp</ppt>
 <event></event>
 </View>
-<View id="11" did="6" type="RelativeLayout">
+<View id="78" did="6" type="CardView">
 <ppt>width=45dp
 height=45dp
-layout_marginRight=6dp</ppt>
+layout_marginRight=6dp
+app_CardcornerRadius=25dp</ppt>
+<event></event>
+</View>
+<View id="79" did="78" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal</ppt>
+<event></event>
+</View>
+<View id="11" did="79" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
 <event></event>
 </View>
 <View id="12" did="11" type="WebView">
@@ -131,6 +103,78 @@ background=through</ppt>
 <event><eventItme type="clicki">ss("https://api.www.cdifit.cn/user/avatar/upload.html?uuid="+sss.uuid,url)
 fn byusi.qt(11)
 sss url =url
+fn core.uigo("system_start.iyu")</eventItme></event>
+</View>
+<View id="76" did="68" type="HorizontalScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="77" did="76" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="66" did="77" type="CardView">
+<ppt>width=80dp
+height=45dp
+layout_marginLeft=7dp
+app_CardcornerRadius=8dp</ppt>
+<event><eventItme type="clicki">fn byusi.qt(st_vId)</eventItme></event>
+</View>
+<View id="69" did="66" type="Button">
+<ppt>width=-1
+height=-1
+text=签到
+background=#ff3863ff
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf</ppt>
+<event><eventItme type="clicki">fn byusi.qt(66)
+ss("https://api.www.cdifit.cn/user/qd.php?uid="+sss.uid+"&uuid="+sss.uuid,url)
+sss url =url
+fn core.uigo("start_app.iyu")
+fn byusi.qt(66)</eventItme></event>
+</View>
+<View id="74" did="77" type="CardView">
+<ppt>width=80dp
+height=45dp
+layout_marginLeft=7dp
+app_CardcornerRadius=8dp</ppt>
+<event><eventItme type="clicki">fn byusi.qt(st_vId)</eventItme></event>
+</View>
+<View id="75" did="74" type="Button">
+<ppt>width=-1
+height=-1
+text=退出登录
+background=#ffff0000
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf</ppt>
+<event><eventItme type="clicki">fn byusi.qt(74)
+fd("$JuOS/data/User/data.json",yz)
+fd("$JuOS/data/User/.username",yz)
+fd("$JuOS/data/User/.password",yt)
+fn byusi.qt(67)
+end()</eventItme></event>
+</View>
+<View id="67" did="77" type="CardView">
+<ppt>width=80dp
+height=45dp
+layout_marginLeft=7dp
+app_CardcornerRadius=8dp
+layout_marginRight=7dp</ppt>
+<event><eventItme type="clicki">fn byusi.qt(st_vId)</eventItme></event>
+</View>
+<View id="70" did="67" type="Button">
+<ppt>width=-1
+height=-1
+text=关于
+background=#ff7bff5a
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf</ppt>
+<event><eventItme type="clicki">fn byusi.qt(67)
+sss url ="https://api.www.cdifit.cn/user/dashboard.html"
 fn core.uigo("system_start.iyu")</eventItme></event>
 </View>
 <View id="9" did="2" type="CardView">

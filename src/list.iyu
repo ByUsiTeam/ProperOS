@@ -40,7 +40,15 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">ulag(st_vW,14,uid_mc)
-fn system.app_start(uid_mc)</eventItme><eventItme type="press">ulag(st_vW,14,uid_mc)
+ulag(st_vW,19,uuid)
+f(uuid == "false")
+{
+	fn system.app_start(uid_mc)
+}
+else
+{
+	fn system.app_start2(uuid)
+}</eventItme><eventItme type="press">ulag(st_vW,14,uid_mc)
 sss uid_mc =uid_mc
 fn lib.utw("home-utw.iyu")</eventItme></event>
 </View>
@@ -64,6 +72,13 @@ layout_marginLeft=4dp
 layout_marginRight=4dp
 gravity=bottom|center
 layout_gravity=bottom|center</ppt>
+<event></event>
+</View>
+<View id="19" did="12" type="TextView">
+<ppt>width=-2
+height=-2
+text=false
+textSize=0sp</ppt>
 <event></event>
 </View>
 <UIEventset><eventItme type="loading">/.

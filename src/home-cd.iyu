@@ -135,7 +135,41 @@ t()
 	{
 		s img = "@fail.xml"
 		s name = sc
-		f(sc *? ".app")
+        s plink =false
+        f(sc *? ".plink")
+        {
+        	s plink =true
+        	ss("$JuOS/hemo/桌面/"+sc, ml)
+            fr(ml,ml)
+            json(ml,data)
+        	json(data,"get","name",name)
+            json(data,"get","package",package)
+            json(data,"get","icon",icon)
+            json(data,"get","system",system)
+            json(data,"get","sign",sd)
+            json(sd,"get","uuid",uuid)
+            f(system != true)
+            {
+            	json(icon,"get","systemIcon",systemIcon)
+                f(systemIcon == false)
+                {
+                	ss("$App/"+package+"/",app_files_dir)
+                    json(icon,"get","icon",icon_file)
+                    ss(app_files_dir+icon_file,icd)
+                    sbp(icd,img)
+                }
+                else f(systemIcon == true)
+                {
+                	json(icon,"get","icon",icon_file)
+                    sbp(icon_file,img)
+                }
+            }
+            else
+            {
+            	sbp(icon,img)
+            }
+        }
+		else f(sc *? ".app")
 		{
 			ss("$JuOS/hemo/桌面/"+sc, ml)
 			fr(ml, app_link_sc)
@@ -195,7 +229,14 @@ t()
                 sbp(img,img)
 			}
 		}
-        ula(list_cz, 10=img, 14=name)
+        f(plink == true)
+        {
+        	ula(list_cz, 10=img, 14=name, 19=uuid)
+        }
+        else
+        {
+        	ula(list_cz, 10=img, 14=name)
+        }
 	}
 	ufnsui()
 	{
