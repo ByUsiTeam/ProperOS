@@ -121,7 +121,15 @@ t()
     	us(start_menu.1,"visibility","gone")
     }
 }
+//数据输出日志
+syso(sss.home)
+//解析输出
+ula(sss.home,"list",homeZmList)
+sss homeZmList =homeZmList
+syso(sss.homeZmList)
 //桌面图标刷新逻辑
+ula(sss.home,"clear")
+uls(5,sss.home,"list.iyu",-1,-2)
 us(6,"visibility","visible")
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
@@ -242,6 +250,7 @@ t()
 	{
 		us(6, "visibility", "gone")
 		uls(5, list_cz, "list.iyu", -1, -2)
+        sss home =list_cz
 		us(4,"refreshing","false")
 	}
 }

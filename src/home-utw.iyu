@@ -97,6 +97,7 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">s uid_mc =sss.uid_mc
+s app_uuid =sss.app_uuid
 syso(uid_mc)
 ss("$JuOS/hemo/桌面/"+uid_mc+".app",app_m)
 ss("$JuOS/hemo/桌面/"+uid_mc,app_mm)
@@ -125,6 +126,10 @@ f(yym != null)
 	{
 		endutw()
 	}
+}
+else f(app_uuid != null)
+{
+	
 }
 else
 {

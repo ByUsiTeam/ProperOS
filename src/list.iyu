@@ -44,6 +44,11 @@ ulag(st_vW,19,uuid)
 syso(uuid)
 fn system.app_start(uid_mc,uuid)</eventItme><eventItme type="press">ulag(st_vW,14,uid_mc)
 sss uid_mc =uid_mc
+ulag(st_vW,19,uuid)
+f(uuid != "")
+{
+	sss app_uuid =uuid
+}
 fn lib.utw("home-utw.iyu")</eventItme></event>
 </View>
 <View id="12" did="18" type="LinearLayout">

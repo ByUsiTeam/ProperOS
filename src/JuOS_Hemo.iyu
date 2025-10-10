@@ -254,6 +254,7 @@ t()
     ufnsui()
     {
     	uls(5, list_cz, "list.iyu", -1, -2)
+        sss home =list_cz
     }
 	ufnsui()
 	{
