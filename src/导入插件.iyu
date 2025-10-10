@@ -184,10 +184,33 @@ t()
 		{
 			s img ="@ic_play_pause_regular.png"
 		}
+        else f(sc *? ".jspk")
+        {
+        	ss("/sdcard/ProperOS/"+sc,jspk_dir)
+            fd("$ProperOS/temp/MainIndex.json",yz)
+        	fuz(jspk_dir,"MainIndex.json","$ProperOS/temp/",yz)
+            fr("$ProperOS/temp/MainIndex.json",data)
+            json(data,data)
+            json(data,"get","icon",iconDara)
+            json(iconDara,"systemIcon",systemIcon)
+            f(systemIcon == "true")
+            {
+            	json(iconDara,"get","icon",icon)
+            	s img =icon
+            }
+            else
+            {
+            	json(iconDara,"get","icon",iconDir)
+                time(4,stamp)
+                fuz(jspk_dir,iconDir,"$temp/"+stamp,tco)
+                ss("$temp/"+stamp+"/"+iconDir,img)
+            }
+        }
 		else
 		{
 			s img ="@Image_loading.png"
 		}
+        sbp(img,img)
 		//
 		ula(list_cz,6=img,4=sc)
 	}
@@ -195,8 +218,8 @@ t()
 	{
 		uls(4,list_cz,"list_2.iyu")
 	}
-}</eventItme><eventItme type="loadingComplete">uycl("#e84f78ff",true)
-fn byusi.ztl()
+}</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
+uycl("#e84f78ff",true)
 fn n.ui(7)
 fn lib.wp_src(9)</eventItme><eventItme type="downkey">f(st_kC==4)
 {

@@ -42,61 +42,6 @@ app_TitleColor=#ff000000
 app_subTitleColor=#ff000000</ppt>
 <event></event>
 </View>
-<View id="11" did="3" type="LinearLayout">
-<ppt>width=-1
-height=55dp
-orientation=horizontal
-gravity=left|center
-visibility=gone</ppt>
-<event></event>
-</View>
-<View id="12" did="11" type="ImageButton">
-<ppt>width=45dp
-height=45dp
-src=17301611
-background=through
-layout_marginLeft=5dp
-visibility=gone</ppt>
-<event><eventItme type="clicki">fn lib.utw("home-cd.iyu")</eventItme></event>
-</View>
-<View id="16" did="11" type="FloatingActionButton">
-<ppt>width=45dp
-height=45dp
-src=17301611
-background=through
-layout_marginLeft=5dp
-BackgroundColor=#9fffffff
-adjustViewBounds=true</ppt>
-<event><eventItme type="clicki">fn lib.utw("home-cd.iyu")</eventItme><eventItme type="press">
-ug(18,"visibility",pz)
-f(pz == "gone")
-{
-	us(18,"visibility","visible")
-}
-else
-{
-	us(18,"visibility","gone")
-}</eventItme></event>
-</View>
-<View id="13" did="11" type="TextView">
-<ppt>width=-2
-height=-2
-text=ProperOS菜单
-typeface=@JuOS/src/ttf/acbt80.ttf
-textSize=15sp
-layout_marginLeft=4dp</ppt>
-<event></event>
-</View>
-<View id="14" did="11" type="TextView">
-<ppt>width=-1
-height=-1
-text=时间
-typeface=@JuOS/src/ttf/acbt80.ttf
-gravity=right|center
-layout_marginRight=12dp</ppt>
-<event><eventItme type="clicki">sss url ="@JuOS/html/Time/index.html"
-fn core.uigo("system_start.iyu")</eventItme></event>
-</View>
 <View id="4" did="3" type="SwipeRefreshLayout">
 <ppt>width=-1
 height=-1
@@ -104,12 +49,7 @@ background=through
 ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
 <event><eventItme type="onrefresh">fn lib.utw("home-cd.iyu")</eventItme></event>
 </View>
-<View id="21" did="4" type="RelativeLayout">
-<ppt>width=-1
-height=-1</ppt>
-<event></event>
-</View>
-<View id="5" did="21" type="GridView">
+<View id="5" did="4" type="GridView">
 <ppt>width=-1
 height=-1
 gravity=top|center
@@ -126,7 +66,13 @@ tw("到底了")
 ./
 syso(st_bT)</eventItme></event>
 </View>
-<View id="6" did="21" type="LinearLayout">
+<View id="21" did="4" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="6" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
@@ -364,7 +310,12 @@ us(start_menu.56,"textColor",TitleColor)
 us(start_menu.56,"typeface",TitleFont)
 us(start_menu.56,"textSize",TitleSize)
 //隐藏界面
-us(start_menu.1,"visibility","gone")</eventItme><eventItme type="downkey">f(st_kC==4)
+us(start_menu.1,"visibility","gone")
+call(sdcard,"mjava","data.sdcard",activity)
+f(sdcard == false)
+{
+	call(null,"mjava","data.getsdcard",activity)
+}</eventItme><eventItme type="downkey">f(st_kC==4)
 {
 	fn lib.utw("end-ppos.iyu")
 }</eventItme><eventItme type="loading">fn byusi.ztl()

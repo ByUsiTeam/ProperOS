@@ -89,6 +89,11 @@ f(uid_mc *? ".jupk")
 		}
 	}
 }
+else f(uid_mc *? ".jspk")
+{
+	ss("/sdcard/ProperOS/"+uid_mc,jspk_dir)
+    fn system.install(jspk_dir)
+}
 else
 {
 	ss("/sdcard/ProperOS/"+uid_mc,ml)
