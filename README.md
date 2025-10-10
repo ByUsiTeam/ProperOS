@@ -1,5 +1,8 @@
 # ProperOS
 
+- [更新计划.MD](更新计划.MD)  
+<br>
+
 - 基于 OpenJuOS **v3.5** 开发  
   [![ByUsi/OpenJuOS](https://gitee.com/byusi/openjuos/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/byusi/openjuos)
 
