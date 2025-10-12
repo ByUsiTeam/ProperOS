@@ -1,0 +1,34 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="3" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="EditText">
+<ppt>width=-1
+height=-2
+text=</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="Button">
+<ppt>width=-2
+height=-2
+text=按钮5</ppt>
+<event><eventItme type="clicki">ug(4,"text",jspk)
+fn system.install(jspk)</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn lib.wp_src(2)</eventItme></UIEventset>

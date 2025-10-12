@@ -1,8 +1,10 @@
 # ProperOS
 
+- [更新计划.MD](更新计划.MD)  
+<br>
+
 - 基于 OpenJuOS **v3.5** 开发  
   [![ByUsi/OpenJuOS](https://gitee.com/byusi/openjuos/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/byusi/openjuos)
-- **当前版本**: ProperOS **v1.1.7.5**
 
 ## 基础特性
 1. 基于移动端应用 `iApp` 开发的模拟操作系统环境
@@ -41,6 +43,10 @@ zip -r ProperOS.iApp .
 3. 选择打开方式：**类型** → **全部** → **iApp**
 4. 完成导入后即可运行或二次开发
 
+> JiYU.mtsx 为 MT管理器 的语法高亮文件
+
 ### 分发须知
 修改或二次分发时，必须在项目中标注原始仓库地址：  
-[https://gitee.com/properos/properos](https://gitee.com/properos/properos)
+[https://gitee.com/properos/properos](https://gitee.com/properos/properos)  
+或者  
+[https://github.com/ByUsiTeam/ProperOS](https://github.com/ByUsiTeam/ProperOS)

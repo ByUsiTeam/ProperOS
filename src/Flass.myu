@@ -1,0 +1,33 @@
+//光芒送给大家的温馨提示：
+//1.我不建议在列表使用回调 
+//2.占位图在列表当中 不应该直接重复生成drawable 而是应该在界面直接声明 防止内存泄露
+//3.如果图片很大 图片画质根据情况调整
+//4.更多高级用法 阅读加载一张网络图片(用法详细).iyu即可
+
+//不带占位图使用它
+fn loadImage(imageView,imageUrl)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+cls(sss.QmLoader,"com.qmdeve.qmloader.LoadRequest",LoadRequest)
+javax(instance,null,Loader,"getInstance")
+javax(instance,instance,Loader,"with","android.content.Context",activity)
+//网络图片链接(必写)
+javax(instance,instance,LoadRequest,"load","String",imageUrl)
+//绑定图像View(必写)
+javax(instance,instance,LoadRequest,"into","android.widget.ImageView",imageView)
+end fn
+
+//带占位图使用它
+fn loadImage(imageView,imageUrl,drawable_loading,drawable_error)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+cls(sss.QmLoader,"com.qmdeve.qmloader.LoadRequest",LoadRequest)
+javax(instance,null,Loader,"getInstance")
+javax(instance,instance,Loader,"with","android.content.Context",activity)
+//网络图片链接(必写)
+javax(instance,instance,LoadRequest,"load","String",imageUrl)
+//加载中占位图(可选)
+javax(instance,instance,LoadRequest,"placeholder","android.graphics.drawable.Drawable",drawable_loading)
+//加载错误占位图(可选)
+javax(instance,instance,LoadRequest,"error","android.graphics.drawable.Drawable",drawable_error)
+//绑定图像View(必写)
+javax(instance,instance,LoadRequest,"into","android.widget.ImageView",imageView)
+end fn

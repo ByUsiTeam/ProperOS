@@ -1,6 +1,15 @@
-<View id="1" did="0" type="RelativeLayout">
+<View id="7" did="0" type="CardView">
 <ppt>width=-1
 height=55dp
+layout_marginTop=6dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+app_CardcornerRadius=8dp</ppt>
+<event></event>
+</View>
+<View id="1" did="7" type="RelativeLayout">
+<ppt>width=-1
+height=-1
 background=through</ppt>
 <event></event>
 </View>
@@ -37,69 +46,75 @@ syso(uid_mc)
 //
 f(uid_mc *? ".jupk")
 {
-  ss("/sdcard/ProperOS/"+uid_mc,ml)
-  syso(ml)
-  t()
-  {
-    fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
-    fuz(ml,"SIGN/KeySign.k","$ProperOS/Install/Sign",keyyz)
-    //
-    fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
-    //
-    sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
-    sj(txt_yz_t,"AppM=","=AppM",AppM_2)
-    sr(txt_yz,"%g","$App/",txt_ml)
-    //应用link创建
-    ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
-    fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
-    //
-    fuzs(ml,txt_ml,yz_stty)
-    //
-    f(yz_stty == "true")
-    {
-      ufnsui()
-      {
-        fn tw.tw("安装成功啦")
-      }
-    }
-    else
-    {
-      ufnsui()
-      {
-       // fn tw.tw2("主要索引文件解压失败或者没有签名jupk文件",1)
-        utw(null,"","主要索引文件解压失败或者没有签名jupk文件\n请去官方工具进行jupk签名：https://jupk-sign.byusi.cn/","打开官方工具","确定",true,v)
-        {
-          sss url ="https://jupk-sign.byusi.cn/"
-          uigo("system_start.iyu")
-        }
-        else
-        {
-          endutw()
-        }
-      }
-    }
-  }
+	ss("/sdcard/ProperOS/"+uid_mc,ml)
+	syso(ml)
+	t()
+	{
+		fuz(ml,"InstallAppLog.f","$JuOS/.temp",z_yz)
+		fuz(ml,"SIGN/KeySign.k","$ProperOS/Install/Sign",keyyz)
+		//
+		fr("$JuOS/.temp/InstallAppLog.f",txt_yz_t)
+		//
+		sj(txt_yz_t,"AppLj=","=AppLj",txt_yz)
+		sj(txt_yz_t,"AppM=","=AppM",AppM_2)
+		sr(txt_yz,"%g","$App/",txt_ml)
+		//应用link创建
+		ss("$JuOS/hemo/桌面/"+AppM_2+".app",AppLink)
+		fc("$JuOS/.temp/InstallAppLog.f",AppLink,yz)
+		//
+		fuzs(ml,txt_ml,yz_stty)
+		//
+		f(yz_stty == "true")
+		{
+			ufnsui()
+			{
+				fn tw.tw("安装成功啦")
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+			 // fn tw.tw2("主要索引文件解压失败或者没有签名jupk文件",1)
+				utw(null,"","主要索引文件解压失败或者没有签名jupk文件\n请去官方工具进行jupk签名：https://jupk-sign.byusi.cn/","打开官方工具","确定",true,v)
+				{
+					sss url ="https://jupk-sign.byusi.cn/"
+					fn core.uigo("system_start.iyu")
+				}
+				else
+				{
+					endutw()
+				}
+			}
+		}
+	}
+}
+else f(uid_mc *? ".jspk")
+{
+	ss("/sdcard/ProperOS/"+uid_mc,jspk_dir)
+    fn system.install(jspk_dir)
 }
 else
 {
-  ss("/sdcard/ProperOS/"+uid_mc,ml)
-  ss("$JuOS/hemo/桌面/"+uid_mc,ml_2)
-  fc(ml,ml_2,yz)
-  f(yz == "true")
-  {
-    fn tw.tw("导入成功")
-  }
-  else
-  {
-    fn tw.tw("导入失败")
-  }
+	ss("/sdcard/ProperOS/"+uid_mc,ml)
+	ss("$JuOS/hemo/桌面/"+uid_mc,ml_2)
+	fc(ml,ml_2,yz)
+	f(yz == "true")
+	{
+		fn tw.tw("导入成功")
+	}
+	else
+	{
+		fn tw.tw("导入失败")
+	}
 }</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">/.
 dhas(dh, st_vW, "scaleX", 0.5, 1)
 dh(dh, "duration", 500)
 dh(dh, "start")
-dhas(dh1, st_vW, "scaleY", 0.5, 1)
+
+dhas(dh1, st_vW, "scaleY", 0.5, 1)
 dh(dh1, "duration", 500)
 dh(dh1, "start")
 dhas(dh2, st_vW, "alpha", 0,1)

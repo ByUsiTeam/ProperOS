@@ -1,0 +1,446 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=black</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text={Nema}
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=35sp
+gravity=center
+layout_marginTop=6dp</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="CardView">
+<ppt>width=-1
+height=-1
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp
+layout_marginBottom=12dp
+app_CardcornerRadius=10dp
+app_CardBackgroundColor=#303030</ppt>
+<event></event>
+</View>
+<View id="7" did="4" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="5" did="7" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="28" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=left
+layout_marginTop=5dp</ppt>
+<event></event>
+</View>
+<View id="27" did="28" type="TextView">
+<ppt>width=-2
+height=-2
+text=&gt; 修改引导
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=25sp</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=8dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+layout_marginBottom=2dp
+app_CardcornerRadius=5dp
+app_CardBackgroundColor=#151515</ppt>
+<event></event>
+</View>
+<View id="10" did="6" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal</ppt>
+<event></event>
+</View>
+<View id="8" did="10" type="TextView">
+<ppt>width=-2
+height=-1
+text=引导名称：
+gravity=center
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=12sp</ppt>
+<event></event>
+</View>
+<View id="9" did="10" type="TextInputLayout">
+<ppt>width=-1
+height=-1
+background=#ff213b49</ppt>
+<event></event>
+</View>
+<View id="11" did="9" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+background=
+typeface=@src/ttf/acbt80.ttf
+paddingLeft=5dp
+paddingRight=5dp
+singleLine=true
+textColorHighlight=#a16cbdff
+textColor=#ffffffff
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="12" did="5" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=8dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+layout_marginBottom=2dp
+app_CardcornerRadius=5dp
+app_CardBackgroundColor=#151515</ppt>
+<event></event>
+</View>
+<View id="13" did="12" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal</ppt>
+<event></event>
+</View>
+<View id="14" did="13" type="TextView">
+<ppt>width=-2
+height=-1
+text=引导类型：
+gravity=center
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=12sp</ppt>
+<event></event>
+</View>
+<View id="15" did="13" type="TextInputLayout">
+<ppt>width=-1
+height=-1
+background=#ff213b49</ppt>
+<event></event>
+</View>
+<View id="16" did="15" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+background=
+typeface=@src/ttf/acbt80.ttf
+paddingLeft=5dp
+paddingRight=5dp
+singleLine=true
+textColorHighlight=#a16cbdff
+textColor=#ffffffff
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="17" did="5" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=8dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+layout_marginBottom=2dp
+app_CardcornerRadius=5dp
+app_CardBackgroundColor=#151515</ppt>
+<event></event>
+</View>
+<View id="18" did="17" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal</ppt>
+<event></event>
+</View>
+<View id="19" did="18" type="TextView">
+<ppt>width=-2
+height=-1
+text=被加载界面：
+gravity=center
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=12sp</ppt>
+<event></event>
+</View>
+<View id="20" did="18" type="TextInputLayout">
+<ppt>width=-1
+height=-1
+background=#ff213b49</ppt>
+<event></event>
+</View>
+<View id="21" did="20" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+background=
+typeface=@src/ttf/acbt80.ttf
+paddingLeft=5dp
+paddingRight=5dp
+singleLine=true
+textColorHighlight=#a16cbdff
+textColor=#ffffffff
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="22" did="5" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginTop=8dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+layout_marginBottom=2dp
+app_CardcornerRadius=5dp
+app_CardBackgroundColor=#151515</ppt>
+<event></event>
+</View>
+<View id="23" did="22" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal</ppt>
+<event></event>
+</View>
+<View id="24" did="23" type="TextView">
+<ppt>width=-2
+height=-1
+text=引导时显示的界面：
+gravity=center
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=12sp</ppt>
+<event></event>
+</View>
+<View id="25" did="23" type="TextInputLayout">
+<ppt>width=-1
+height=-1
+background=#ff213b49</ppt>
+<event></event>
+</View>
+<View id="26" did="25" type="EditText">
+<ppt>width=-1
+height=-1
+text=
+background=
+typeface=@src/ttf/acbt80.ttf
+paddingLeft=5dp
+paddingRight=5dp
+singleLine=true
+textColorHighlight=#a16cbdff
+textColor=#ffffffff
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="29" did="5" type="CardView">
+<ppt>width=-1
+height=65dp
+app_CardcornerRadius=10dp
+layout_marginTop=6dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+app_CardBackgroundColor=#151515</ppt>
+<event></event>
+</View>
+<View id="30" did="29" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="31" did="30" type="CardView">
+<ppt>width=120dp
+height=55dp
+app_CardcornerRadius=12dp</ppt>
+<event></event>
+</View>
+<View id="32" did="31" type="Button">
+<ppt>width=-1
+height=-1
+text=保存配置
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+background=#ff954eff</ppt>
+<event><eventItme type="clicki">t()
+{
+	ug(11,"text",name)
+	ug(16,"text",type)
+	ug(21,"text",ui)
+	ug(26,"text",icon)
+
+	fr("@boot/init.json",get)
+
+	sr(get,"{Name}",name,get)
+	sr(get,"{Type}",type,get)
+	sr(get,"{Ui}",ui,get)
+	sr(get,"{Icon}",icon,get)
+
+	json(get,data)
+	syso(data)
+	fw("$boot/init.json",data)
+	ufnsui()
+	{
+		fn tw.tw("保存成功")
+	}
+}
+fn byusi.qt(31)</eventItme></event>
+</View>
+<View id="33" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=left
+layout_marginTop=16dp</ppt>
+<event></event>
+</View>
+<View id="34" did="33" type="TextView">
+<ppt>width=-2
+height=-2
+text=&gt; 删除格式化数据
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=25sp</ppt>
+<event></event>
+</View>
+<View id="35" did="5" type="CardView">
+<ppt>width=-1
+height=65dp
+app_CardcornerRadius=10dp
+layout_marginTop=6dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+app_CardBackgroundColor=#151515</ppt>
+<event></event>
+</View>
+<View id="36" did="35" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="37" did="36" type="CardView">
+<ppt>width=120dp
+height=55dp
+app_CardcornerRadius=12dp</ppt>
+<event></event>
+</View>
+<View id="38" did="37" type="Button">
+<ppt>width=-1
+height=-1
+text=格式化数据
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+background=#ff954eff</ppt>
+<event><eventItme type="clicki">fn byusi.qt(37)
+utw(null,"","确定要格式化吗？","确定","不",false,v)
+{
+	fdir("$",dir)
+	ss("cd "+dir+" && rm -rf ../* && du -sh ../*",shell)
+	call(rs,"mlua","cmd.shell",shell)
+	syso(rs)
+	fn tw.tw(rs)
+}
+else
+{
+	endutw()
+}</eventItme></event>
+</View>
+<View id="39" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+gravity=left
+layout_marginTop=16dp</ppt>
+<event></event>
+</View>
+<View id="40" did="39" type="TextView">
+<ppt>width=-2
+height=-2
+text=&gt; 重启设备
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+textSize=25sp</ppt>
+<event></event>
+</View>
+<View id="41" did="5" type="CardView">
+<ppt>width=-1
+height=65dp
+app_CardcornerRadius=10dp
+layout_marginTop=6dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+app_CardBackgroundColor=#151515</ppt>
+<event></event>
+</View>
+<View id="42" did="41" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="43" did="42" type="CardView">
+<ppt>width=120dp
+height=55dp
+app_CardcornerRadius=12dp</ppt>
+<event></event>
+</View>
+<View id="44" did="43" type="Button">
+<ppt>width=-1
+height=-1
+text=重启
+textColor=#ffffffff
+typeface=@src/ttf/acbt80.ttf
+background=#ff954eff</ppt>
+<event><eventItme type="clicki">utw(null,"","确定重启吗？","重启",false,v)
+{
+	fn core.uigo("mian.iyu")
+	end()
+}
+fn byusi.qt(43)</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+fn n.ui(1)
+fn PromptLibrary.interface(1)
+fn PromptLibrary.pop("欢迎您使用 BootRepair 模式","@JuOS/logo/properos.png",3500)</eventItme><eventItme type="loadingComplete">fr("$boot/init.json.bak",boot_init)
+fr("$boot/init.json",init)
+//
+json(init,boot)
+json(boot,"get","name",name)
+us(3,"text",name)
+//
+json(boot_init,data)
+json(data,"get","name",name)
+json(data,"get","type",type)
+json(data,"get","iyu",iyu)
+json(data,"get","icon",icon)
+fc("$boot/init.json.bak","$boot/init.json",fc)
+fd("$boot/init.json.bak",fd)
+//
+us(11,"text",name)
+us(16,"text",type)
+us(21,"text",iyu)
+us(26,"text",icon)</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+	
+}</eventItme></UIEventset>

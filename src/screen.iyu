@@ -1,0 +1,92 @@
+<View id="1" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+background=white</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="RoundImageView">
+<ppt>width=180dp
+height=180dp
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="TextView">
+<ppt>width=-2
+height=-2
+text=大标题
+textColor=#ff624dff
+typeface=@src/ttf/acbt80.ttf
+textSize=35sp</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()</eventItme><eventItme type="loadingComplete">fr(sss.package+"/config.json",data)
+json(data,data)
+json(data,"get","icon",icon)
+json(data,"get","title",title)
+json(data,"get","background",背景色)
+json(data,"get","pause",pause)
+json(data,"get","text",data_text)
+//Text数据解析
+json(data_text,"get","font",font)
+json(data_text,"get","textColor",tc)
+json(data_text,"get","textSize",ts)
+//应用配置
+us(1,"background",背景色)
+ss(sss.package+icon,icon)
+us(3,"src",icon)
+us(4,"text",title)
+//
+f(font != false)
+{
+	ss(sss.package+font,font)
+	us(4,"typeface",font)
+}
+else f(font == false)
+{
+	
+}
+else
+{
+	fn tw.tw("该软件配置存在问题，无法加载字体配置")
+}
+f(tc != false)
+{
+	us(4,"textColor",tc)
+}
+else f(tc == false)
+{
+	
+}
+else
+{
+	fn tw.tw("该软件配置存在问题，无法加载字体颜色配置")
+}
+f(ts != false)
+{
+	us(4,"textSize",ts)
+}
+else f(ts == false)
+{
+	
+}
+else
+{
+	fn tw.tw("该软件配置存在问题，无法加载字体大小配置")
+}
+//界面加载
+t()
+{
+	stop(pause)
+	ufnsui()
+	{
+		fn core.uigo(sss.qdq)
+		end()
+	}
+}</eventItme></UIEventset>

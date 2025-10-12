@@ -1,5 +1,3 @@
-
-
 //加载表情
 fn stickers_loading(id)
 sbp("@stickers/01.png",stickers_01)
@@ -22,6 +20,7 @@ sbp("@stickers/17.png",stickers_17)
 sbp("@stickers/18.png",stickers_18)
 sbp("@stickers/19.png",stickers_19)
 sbp("@stickers/20.png",stickers_20)
+sbp("@JuOS/logo/BySi_logo.png",byusi_logo)
 call(null,"mlua","Super.EditText4Bitmap",id,"\[S01\]",stickers_01)
 call(null,"mlua","Super.EditText4Bitmap",id,"\[S02\]",stickers_02)
 call(null,"mlua","Super.EditText4Bitmap",id,"\[S03\]",stickers_03)
@@ -42,4 +41,12 @@ call(null,"mlua","Super.EditText4Bitmap",id,"\[S17\]",stickers_17)
 call(null,"mlua","Super.EditText4Bitmap",id,"\[S18\]",stickers_18)
 call(null,"mlua","Super.EditText4Bitmap",id,"\[S19\]",stickers_19)
 call(null,"mlua","Super.EditText4Bitmap",id,"\[S20\]",stickers_20)
+call(null,"mlua","Super.EditText4Bitmap",id,"\[byusi\]",byusi_logo)
+end fn
+
+fn meme(icon,id,txt)
+
+sbp(icon,in)
+call(null,"mlua","Super.EditText4Bitmap",id,txt,in)
+
 end fn

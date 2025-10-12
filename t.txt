@@ -1,0 +1,9 @@
+帮我写一个Python程序，他可以将 shell 脚本文件转换成二进制文件（shell和zip的结合），需要有日志输出（使用rich库），使用命令行参数形式，不要使用运行对话 使用加密算法加密shell脚本内容，将加密好的脚本内容写入到一个新的shell脚本，新的shell脚本需要是二进制形式 修改算法，增加偏移量，根据偏移量来进行文件解压，解压需要有密码（密码根据偏移量计算而得），解压完成之后会获得一个脚本（该脚本写入在内存中，而非是储存中） 脚本的头部是 NAME="${BASH_SOURCE[0]}" DIR="$(pwd)"
+
+59 149 174
+47 149 153
+
+<p>联系官方请发邮件到：<a href="mailto:admin@work.cdifit.cn">admin@work.cdifit.cn</a></p>
+<a href="tel:150***16891">手机号码</a>
+
+<a href="mailto:xxx@qq.com">邮箱</a>

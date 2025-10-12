@@ -2,15 +2,15 @@
 <ppt>width=-1
 height=-1
 //background=@JuOS/src/img/bz/20210704170635_218ac.jpg
-background=#daebeae3</ppt>
+background=white</ppt>
 <event></event>
 </View>
-<View id="2" did="1" type="WebView">
+<View id="20" did="1" type="ImageView">
 <ppt>width=-1
 height=-1
-background=through
-//visibility=gone
-url=%JuOS/img/20210704170635_218ac.jpg</ppt>
+src=17301567
+visibility=gone
+scaleType=centercrop</ppt>
 <event></event>
 </View>
 <View id="3" did="1" type="LinearLayout">
@@ -22,66 +22,25 @@ gravity=top|center
 background=through</ppt>
 <event></event>
 </View>
-<View id="18" did="3" type="Toolbar">
+<View id="19" did="3" type="CardView">
 <ppt>width=-1
 height=55dp
-visibility=visible</ppt>
-<event></event>
-</View>
-<View id="11" did="3" type="LinearLayout">
-<ppt>width=-1
-height=55dp
-orientation=horizontal
-gravity=left|center
-visibility=gone</ppt>
-<event></event>
-</View>
-<View id="12" did="11" type="ImageButton">
-<ppt>width=45dp
-height=45dp
-src=17301611
-background=through
+layout_marginTop=5dp
 layout_marginLeft=5dp
-visibility=gone</ppt>
-<event><eventItme type="clicki">fn lib.utw("home-cd.iyu")</eventItme></event>
-</View>
-<View id="16" did="11" type="FloatingActionButton">
-<ppt>width=45dp
-height=45dp
-src=17301611
-background=through
-layout_marginLeft=5dp
-BackgroundColor=#9fffffff
-adjustViewBounds=true</ppt>
-<event><eventItme type="clicki">fn lib.utw("home-cd.iyu")</eventItme><eventItme type="press">
-ug(18,"visibility",pz)
-f(pz == "gone")
-{
-  us(18,"visibility","visible")
-}
-else
-{
-  us(18,"visibility","gone")
-}</eventItme></event>
-</View>
-<View id="13" did="11" type="TextView">
-<ppt>width=-2
-height=-2
-text=ProperOS菜单
-typeface=@JuOS/src/ttf/acbt80.ttf
-textSize=15sp
-layout_marginLeft=4dp</ppt>
+layout_marginBottom=5dp
+layout_marginRight=5dp
+app_CardcornerRadius=15dp</ppt>
 <event></event>
 </View>
-<View id="14" did="11" type="TextView">
+<View id="18" did="19" type="Toolbar">
 <ppt>width=-1
 height=-1
-text=时间
-typeface=@JuOS/src/ttf/acbt80.ttf
-gravity=right|center
-layout_marginRight=12dp</ppt>
-<event><eventItme type="clicki">sss url ="@JuOS/html/Time/index.html"
-uigo("system_start.iyu")</eventItme></event>
+app_title=ProperOS
+app_subtitle=ProperExplorer
+BackgroundColor=#ffdfe1f8
+app_TitleColor=#ff000000
+app_subTitleColor=#ff000000</ppt>
+<event></event>
 </View>
 <View id="4" did="3" type="SwipeRefreshLayout">
 <ppt>width=-1
@@ -107,16 +66,20 @@ tw("到底了")
 ./
 syso(st_bT)</eventItme></event>
 </View>
+<View id="21" did="4" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="6" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
 gravity=center
-background=#ffff0000
+background=through
 visibility=visible</ppt>
-<event><eventItme type="clicki">us(4,"refreshing","true")
-fn list_lib.hemo()
-us(4,"refreshing","false")</eventItme></event>
+<event></event>
 </View>
 <View id="10" did="6" type="ImageView">
 <ppt>width=155dp
@@ -127,53 +90,262 @@ src=@fail.xml</ppt>
 <View id="9" did="6" type="TextView">
 <ppt>width=-2
 height=-2
-text=如果长期我已加载出首界面列表，请点击该界面进行首界面列表刷新
-textColor=#ffffffff
+text=刷新中...
+textColor=#ffff0000
 typeface=@src/ttf/acbt80.ttf
 textSize=34sp
 gravity=center</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loadingComplete">//-_-_-_-_-_-_-_-_-_-_-
-fn Lottie.loaddex()
-fr("@JuOS/Lottie/ByUsi/loading.json",data)
-fn Lottie.setImageLottie(10,data,-2,true)
+<UIEventset><eventItme type="loadingComplete">//-_-_-_-_-_-_-_-_-
+fn system.asystem_t_init()
+//-_-_-_-_-_-_-_-_-_-_-
+fn PromptLibrary.interface(1)
+//
 t()
 {
-  fn list_lib.hemo()
+	hs("https://gitee.com/properos/mirror/raw/master/properos-tos.json",jsuu)
+    json(jsuu,data)
+    json(data,"get","text",txj)
+    f(txj != null)
+    {
+    	fw("$temp/tos.txt",txj)
+    	ufnsui()
+    	{
+    		fn PromptLibrary.pop(txj,"@JuOS/logo/properos.png",3500)
+    	}
+    }
+    else
+    {
+    	fe("$temp/tos.txt",tos)
+        f(tos == true)
+        {
+        	ufnsui()
+        	{
+        		fr("$temp/tos.txt",toss)
+        		fn PromptLibrary.pop(toss,"@JuOS/logo/properos.png",3500)
+        	}
+        }
+    }
+}
+//-_-_-_-_-_-_-_-_-_-_-
+fd("$System/homeList",yzfd)
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(10,data,-1,true)
+fr("$System/Config/fillet.sys",fillet)
+t()
+{
+	s a = "$JuOS/hemo/桌面"
+	fl(a, false, home_list)
+	aslist(list_cz)
+    s plink =false
+	for(sc; home_list)
+	{
+		s img = "@fail.xml"
+		s name = sc
+        f(sc *? ".plink")
+        {
+        	s plink =true
+        	ss("$JuOS/hemo/桌面/"+sc, ml)
+            fr(ml,ml)
+            json(ml,data)
+        	json(data,"get","name",name)
+            json(data,"get","package",package)
+            json(data,"get","icon",icon)
+            json(data,"get","system",system)
+            json(data,"get","sign",sd)
+            json(sd,"get","uuid",uuid)
+            f(system != true)
+            {
+            	json(icon,"get","systemIcon",systemIcon)
+                f(systemIcon == false)
+                {
+                	ss("$App/"+package+"/",app_files_dir)
+                    json(icon,"get","icon",icon_file)
+                    ss(app_files_dir+icon_file,icd)
+                    sbp(icd,img)
+                }
+                else f(systemIcon == true)
+                {
+                	json(icon,"get","icon",icon_file)
+                    sbp(icon_file,img)
+                }
+            }
+            else
+            {
+            	sbp(icon,img)
+            }
+        }
+		else f(sc *? ".app")
+		{
+			ss("$JuOS/hemo/桌面/"+sc, ml)
+			fr(ml, app_link_sc)
+			sj(app_link_sc, "AppTb=", "=AppTb", img)
+			f(img ?* "$sys/")
+			{
+				sr(img, "$sys/", "@", img)
+                sbp(img,img)
+			}
+			else f(img ?* "%@")
+			{
+				sr(img, "%@", "$", img)
+                sbp(img,img)
+			}
+			else
+			{
+				sj(app_link_sc, "AppLj=", "=AppLj", appml)
+				sr(appml, "%g", "$App/", aml)
+				ss(aml + img, img)
+                sbp(img,img)
+			}
+			sj(sc, null, ".app", name)
+		}
+		else
+		{
+			f(sc *? ".mp4")
+			{
+				ss("$JuOS/hemo/桌面/"+sc,a)
+				fdir(a,a)
+				call(a,"mjava","awzx2.get",a,"1")
+				s img =a
+                sbp(img,img)
+			}
+			else f(sc *? ".m4a")
+			{
+				s img = "@JuOS/src/Manager/6e.png"
+                sbp(img,img)
+			}
+			else f(sc *? ".mp3")
+			{
+				s img = "@JuOS/src/Manager/6e.png"
+                sbp(img,img)
+			}
+			else f(sc *? ".flac")
+			{
+				s img = "@JuOS/src/Manager/6e.png"
+                sbp(img,img)
+			}
+			else f(sc *? ".pdf")
+			{
+				s img = "@JuOS/src/Manager/wE.png"
+                sbp(img,img)
+			}
+			else f(sc *? ".jush")
+			{
+				s img = "@ic_play_pause_regular.png"
+                sbp(img,img)
+			}
+		}
+        fr("$System/homeList",tui)
+        sr(tui,"null","",tui)
+        ss(tui+"Img="+img+"=Img;;Name="+name+"=Name\n",utt)
+        fw("$System/homeList",utt)
+        f(plink == true)
+        {
+        	s plink =false
+        	ula(list_cz, 10=img, 14=name, 19=uuid)
+        }
+        else
+        {
+        	ula(list_cz, 10=img, 14=name)
+        }
+	}
+    ufnsui()
+    {
+    	uls(5, list_cz, "list.iyu", -1, -2)
+        sss home =list_cz
+    }
+	ufnsui()
+	{
+		fr("$System/Config/fillet.sys",fillet)
+		us(list.7,"app_CardcornerRadius",fillet)
+		us(6, "visibility", "gone")
+		us(4,"refreshing","false")
+	}
 }
 //-_-_-_-_-_-_-_-_-_-_-
 s id =2
 fn api.hide_btn(id)
-//-_-_-_-_-_-_-_-_-_-_-
-fr("$JuOS/Config/wallpaper/wp.gif.config",list)
-sj(list,"[system]","[/system]",list_2)
-f(list_2 ? ".gif")
-{
-  us(2,"visibility","visible")
-  us(1,"background","through")
-  us(2,"url","$JuOS/Config/wallpaper/wp.gif")
-}
-else
-{
-  us(2,"visibility","gone")
-}
 fr("$System/Config/Update.sys",Update)
 f(Update == "true")
 {
-  fn system.update("true")
+	fn system.update("true")
 }
 //
-fw("$System/Config/Update.sys","false")</eventItme><eventItme type="downkey">f(st_kC==4)
+fw("$System/Config/Update.sys","false")
+
+fn lib.wp_src(20,true)
+
+loadjar("QmLoader",sss.QmLoader)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+//初始化(必写)
+javanew(builder,Builder,"android.content.Context",activity)
+javax(null,null,Loader,"init",Builder,builder)
+//必要界面添加
+addv(1,"start_menu.iyu")
+//设置界面
+//获取屏幕分辨率
+swh("w",w)
+swh("hh",h)
+//计算
+s2(w / 1.2,wp)
+s2(h / 1.5,hp)
+//应用数据
+sss wp =wp
+sss hp =hp
+us(start_menu.4,"width",wp+"dp")
+us(start_menu.4,"height",hp+"dp")
+//获取配置信息
+fr("@Config/start_menu.json",data)
+json(data,data)
+json(data,"get","title",Td)
+json(Td,"get","text",TitleText)
+json(Td,"get","color",TitleColor)
+json(Td,"get","script",TitleFont)
+json(Td,"get","size",TitleSize)
+//应用
+us(start_menu.56,"text",TitleText)
+us(start_menu.56,"textColor",TitleColor)
+us(start_menu.56,"typeface",TitleFont)
+us(start_menu.56,"textSize",TitleSize)
+//隐藏界面
+us(start_menu.1,"visibility","gone")
+call(sdcard,"mjava","data.sdcard",activity)
+f(sdcard == false)
 {
-  syso("确定")
-}</eventItme><eventItme type="loading">uycl("#e84f78ff",true)
-//
-s id =1
-fn lib.wp(id)
+	fn tw.tw2("请给于ProperOS管理所有文件的权限",2)
+	call(null,"mjava","data.getsdcard",activity)
+}</eventItme><eventItme type="downkey">f(st_kC==4)
+{
+	fn lib.utw("end-ppos.iyu")
+}</eventItme><eventItme type="loading">fn byusi.ztl()
+uycl("#e84f78ff",true)
 //fn byusi.ztl()
-utb(18)</eventItme><eventItme type="menu">case 设置:
-uigo("设置.iyu")
+utb(18)
+fn n.ui(1)
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="menu">case 开始菜单:
+
+us(start_menu.1,"visibility","visible")
+swh("w",w)
+swh("hh",h)
+ss("-"+w,fw)
+ss("-"+h,fh)
+dht(dh,fw,0,fh,0)
+dh(dh,"duration",500)
+dha(dh2,false,true)
+dh(dh2,"duration",1000)
+dhset(dhlist,false,dh2,dh)
+us(start_menu.4,"dh",dhlist)
+
+break
+
+case 设置:
+fn core.uigo("设置.iyu")
 break
 
 case 菜单:
@@ -183,10 +355,22 @@ break
 case 时间:
 utw(null,"","time.iyu",false,v)
 {
-  
+	
 }
 break
 
 case 关闭ProperOS:
 fn lib.utw("end-ppos.iyu")
+break
+
+case 重启:
+utw(null,"","请选择这重启选项\n点击外部区域可取消","重启到bootrepair","正常重启",false,v)
+{
+	fn init.bootrepair("yes",1)
+}
+else
+{
+	fn core.uigo("mian.iyu")
+	end()
+}
 break</eventItme></UIEventset>

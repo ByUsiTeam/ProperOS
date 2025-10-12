@@ -35,7 +35,7 @@ layout_marginRight=8dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">  ulag(st_vW,4,uid_mc)
+<event><eventItme type="clicki">	ulag(st_vW,4,uid_mc)
 //
 ss("/sdcard/JuOS/qddh/"+uid_mc,iu)
 ss("$JuOS/temp",ioe)
@@ -46,28 +46,28 @@ ss("$System/Config/Qddh/i.cfg",config)
 //
 f(uid_mc *? ".zip")
 {
-  fuz(iu,"icon.png",ioe,u_yz)
-  ufnsui()
-  {
-    utw(icon,"询问",text,"确定","不确定",true,v)
-    {
-      fuzs(iu,tr,yz)
-      f(yz == true)
-      {
-        fw("$System/Config/Qddh.sys","true")
-        fw(config,tr)
-        fn tw.tw("安装成功")
-      }
-      else
-      {
-        fn tw.tw("失败了")
-      }
-    }
-  }
+	fuz(iu,"icon.png",ioe,u_yz)
+	ufnsui()
+	{
+		utw(icon,"询问",text,"确定","不确定",true,v)
+		{
+			fuzs(iu,tr,yz)
+			f(yz == true)
+			{
+				fw("$System/Config/Qddh.sys","true")
+				fw(config,tr)
+				fn tw.tw("安装成功")
+			}
+			else
+			{
+				fn tw.tw("失败了")
+			}
+		}
+	}
 }
 else
 {
-  fn tw.tw("请检查文件是否已“.zip”结尾")
+	fn tw.tw("请检查文件是否已“.zip”结尾")
 }</eventItme></event>
 </View>
 <UIEventset></UIEventset>

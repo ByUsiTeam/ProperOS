@@ -3,6 +3,14 @@
 height=-1</ppt>
 <event></event>
 </View>
+<View id="66" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="5" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -50,6 +58,50 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
+<View id="61" did="3" type="CardView">
+<ppt>width=-1
+height=64dp
+app_CardcornerRadius=5dp
+layout_marginLeft=8dp
+layout_marginRight=8dp
+layout_marginTop=8dp</ppt>
+<event></event>
+</View>
+<View id="62" did="61" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event><eventItme type="clicki">utw(null,"开源协议相关","开源协议为 MIT 协议","查看协议","关闭",true,v)
+{
+	hws("https://gitee.com/properos/properos/blob/master/LICENSE")
+}
+else
+{
+	endutw()
+}</eventItme></event>
+</View>
+<View id="63" did="62" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="64" did="63" type="ImageView">
+<ppt>width=50dp
+height=50dp
+src=@JuOS/logo/BySi_logo.png</ppt>
+<event></event>
+</View>
+<View id="65" did="63" type="TextView">
+<ppt>width=-2
+height=-2
+text=ByUsi软件
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+textSize=18sp
+gravity=center</ppt>
+<event></event>
+</View>
 <View id="26" did="3" type="CardView">
 <ppt>width=-1
 height=-2
@@ -64,11 +116,11 @@ layout_marginTop=8dp</ppt>
 height=-1</ppt>
 <event><eventItme type="clicki">utw(null,"开源协议相关","开源协议为 MIT 协议","查看协议","关闭",true,v)
 {
-  hws("https://gitee.com/byusi/properos/blob/master/LICENSE")
+	hws("https://gitee.com/properos/properos/blob/master/LICENSE")
 }
 else
 {
-  endutw()
+	endutw()
 }</eventItme></event>
 </View>
 <View id="28" did="27" type="LinearLayout">
@@ -102,9 +154,8 @@ app_CardcornerRadius=5dp
 layout_marginLeft=8dp
 layout_marginRight=8dp
 layout_marginTop=8dp</ppt>
-<event><eventItme type="clicki">fn Lottie.loaddex()
-fr("@JuOS/Lottie/ByUsi/loading2.json",data)
-fn Lottie.setImageLottie(47,data,-2,true)</eventItme></event>
+<event><eventItme type="clicki">fr("@JuOS/Lottie/app.json",data)
+fn Lottie.setImageLottie(47,data,0,true)</eventItme></event>
 </View>
 <View id="45" did="44" type="RelativeLayout">
 <ppt>width=-1
@@ -205,21 +256,32 @@ height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">fr("$System/Config/gduoshez.sys",yz)
+fn byusi.qt(14)
 f(yz != "true")
 {
-  f(ss.djcs &gt; "11")
-  {
-    fn tw.tw("已开启更多设置设置项")
-    fw("$System/Config/gduoshez.sys","true")
-  }
-  else
-  {
-    s(ss.djcs + "1",ss.djcs)
-  }
+	f(ss.djcs &gt; "11")
+	{
+		fn tw.tw("已开启更多设置设置项")
+		fw("$System/Config/gduoshez.sys","true")
+        fw("$System/Config/DeveloperOptions.sys","1")
+	}
+	else
+	{
+		s(ss.djcs + "1",ss.djcs)
+	}
 }
 else
 {
-  fn tw.tw2("你已经开启该选项了，不要在开启了",1)
+	fe("$System/Config/DeveloperOptions.sys",DeveloperOptions)
+    f(DeveloperOptions == true)
+    {
+    	syso("DeveloperOptions.sys："+true)
+    }
+	else
+	{
+		fw("$System/Config/DeveloperOptions.sys","1")
+		fn tw.tw2("你已经开启该选项了，不要在开启了",1)
+	}
 }</eventItme></event>
 </View>
 <View id="20" did="3" type="CardView">
@@ -312,13 +374,14 @@ textColorLink=#9e0011ff</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">utw(null,"","是否访问：https://gitee.com/properos/properos/releases","是","否",false,v)
+<event><eventItme type="clicki">fn byusi.qt(32)
+utw(null,"","是否访问：https://gitee.com/properos/properos/releases","是","否",false,v)
 {
-  hws("https://gitee.com/properos/properos/releases")
+	hws("https://gitee.com/properos/properos/releases")
 }
 else
 {
-  endutw()
+	endutw()
 }</eventItme></event>
 </View>
 <View id="48" did="3" type="CardView">
@@ -364,9 +427,9 @@ textSize=16sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">
+<event><eventItme type="clicki">fn byusi.qt(48)
 sss url ="https://gitee.com/byusi"
-uigo("start_app.iyu")</eventItme></event>
+fn core.uigo("start_app.iyu")</eventItme></event>
 </View>
 <View id="55" did="3" type="CardView">
 <ppt>width=-1
@@ -411,9 +474,9 @@ textSize=16sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">
+<event><eventItme type="clicki">fn byusi.qt(55)
 sss url ="https://gitee.com/properos"
-uigo("system_start.iyu")</eventItme></event>
+fn core.uigo("system_start.iyu")</eventItme></event>
 </View>
 <View id="38" did="3" type="CardView">
 <ppt>width=-1
@@ -459,19 +522,25 @@ textSize=16sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">utw(null,"","支持官方.iyu","关闭","点击赞助码可以保存赞助码",true,v)
+<event><eventItme type="clicki">fn byusi.qt(38)
+utw(null,"","支持官方.iyu","关闭","点击赞助码可以保存赞助码",true,v)
 {
-  endutw()
+	endutw()
 }
 else
 {
-  fn tw.tw("点我并不会保存图片，点击图片才会保存")
-  endutw()
+	fn tw.tw("点我并不会保存图片，点击图片才会保存")
+	endutw()
 }</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">fn lib.wp(1)
+<UIEventset><eventItme type="loading">fn n.ui(1)
+fn lib.wp_src(66)
 uycl("#e84f78ff",true)
-//fn byusi.ztl()</eventItme><eventItme type="loadingComplete">//连续点击次数初始化
+//fn byusi.ztl()
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="loadingComplete">//连续点击次数初始化
 ss djcs ="0"
 //设备消息获取
 sjxx(xx)
@@ -500,5 +569,5 @@ fr("$JuOS/ICON/ic_accessibility.svg",svg)
 fn lib.svg(svg,41)
 //Lottie动画配置
 fn Lottie.loaddex()
-fr("@JuOS/Lottie/ByUsi/loading2.json",data)
-fn Lottie.setImageLottie(47,data,-2,true)</eventItme></UIEventset>
+fr("@JuOS/Lottie/app.json",data)
+fn Lottie.setImageLottie(47,data,0,true)</eventItme></UIEventset>

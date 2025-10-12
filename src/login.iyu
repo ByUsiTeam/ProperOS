@@ -3,6 +3,14 @@
 height=-1</ppt>
 <event></event>
 </View>
+<View id="46" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="4" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -64,7 +72,8 @@ hint=输入ByUsi账号
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ff000000
 gravity=center
-singleLine=true</ppt>
+singleLine=true
+background=</ppt>
 <event></event>
 </View>
 <View id="13" did="8" type="CardView">
@@ -88,7 +97,8 @@ text=
 hint=输入ByUsi账号密码
 textColor=#ff000000
 gravity=center
-inputType=textpassword</ppt>
+inputType=textpassword
+background=</ppt>
 <event></event>
 </View>
 <View id="16" did="8" type="LinearLayout">
@@ -119,47 +129,85 @@ text=登录
 background=through
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">ug(7,"text",zh)
+<event><eventItme type="clicki">endkeyboard()
+fn byusi.qt(18)
+ug(7,"text",zh)
 ug(15,"text",mm)
+us(44,"visibility","visible")
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(45,data,-1,true)
 //检验
 syso(zh)
 syso(mm)
 //登录基本处理方法
-s url="https://api.www.byusi.cn/user/api.php"
+s url="https://api.www.cdifit.cn/user/api.php"
 t()
 {
-  ss("&identifier="+zh+"&password="+mm+"&action=login",data)
-  hs(url,data,"utf-8",sju)
-  syso(sju)
-  json(sju,json)
-  json(json,"get","status",status)
-  f(status == "error")
-  {
-    json(json,"get","message",message)
-    ufnsui()
-    {
-      ss("登录失败："+message,uui)
-      fn tw.tw2(uui,1)
-      us(15,"text","")
-    }
-  }
-  else f(status == "success")
-  {
-    fw("$JuOS/data/User/data.json",sju)
-    ufnsui()
-    {
-      fw("$JuOS/data/User/.password",mm)
-      fn tw.tw2("登录成功",0)
-      end()
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw2(json,1)
-    }
-  }
+	ss("&identifier="+zh+"&password="+mm+"&action=login",data)
+	hs(url,data,"utf-8",sju)
+	syso(sju)
+	json(sju,json)
+	json(json,"get","status",status)
+	f(status == "error")
+	{
+		json(json,"get","message",message)
+		ufnsui()
+		{
+			us(44,"visibility","visible")
+			fr("@JuOS/Lottie/errorjson",data1)
+			fn Lottie.setImageLottie(45,data1,0,true)
+			t()
+			{
+				stop(2500)
+				ufnsui()
+				{
+					us(44,"visibility","gone")
+					ss("登录失败："+message,uui)
+					fn tw.tw2(uui,1)
+					us(15,"text","")
+				}
+			}
+		}
+	}
+	else f(status == "success")
+	{
+		call(fil,"mjava","aes.encryptString",sju,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+		fw("$JuOS/data/User/data.json",fil)
+		ufnsui()
+		{
+			endkeyboard()
+			fr("@JuOS/Lottie/yes.json",data)
+			fn Lottie.setImageLottie(45,data,-1,true)
+            call(nr,"mjava","aes.encryptString",mm,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+            call(nr2,"mjava","aes.encryptString",zh,"18IQy8di0trjIZhmY_7d2hoAVGqUMlKyCgfMedru")
+			fw("$JuOS/data/User/.password",nr)
+            fw("$JuOS/data/User/.username",nr2)
+			fn tw.tw2("登录成功",0)
+			t()
+			{
+				stop(2500)
+				end()
+			}
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			us(44,"visibility","visible")
+			fr("@JuOS/Lottie/errorjson",data1)
+			fn Lottie.setImageLottie(45,data1,0,true)
+			t()
+			{
+				stop(2500)
+				ufnsui()
+				{
+					us(44,"visibility","gone")
+					fn tw.tw2(json,1)
+				}
+			}
+		}
+	}
 }</eventItme></event>
 </View>
 <View id="20" did="16" type="LinearLayout">
@@ -183,7 +231,8 @@ text=没有账号？注册
 background=through
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">us(4,"visibility","gone")
+<event><eventItme type="clicki">fn byusi.qt(21)
+us(4,"visibility","gone")
 us(23,"visibility","visible")</eventItme></event>
 </View>
 <View id="23" did="1" type="LinearLayout">
@@ -247,7 +296,8 @@ hint=输入ByUsi账号
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ff000000
 gravity=center
-singleLine=true</ppt>
+singleLine=true
+background=</ppt>
 <event></event>
 </View>
 <View id="41" did="27" type="CardView">
@@ -272,7 +322,8 @@ hint=输入邮箱
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ff000000
 gravity=center
-singleLine=true</ppt>
+singleLine=true
+background=</ppt>
 <event></event>
 </View>
 <View id="31" did="27" type="CardView">
@@ -296,7 +347,8 @@ text=
 hint=输入ByUsi账号密码
 textColor=#ff000000
 gravity=center
-inputType=textpassword</ppt>
+inputType=textpassword
+background=</ppt>
 <event></event>
 </View>
 <View id="34" did="27" type="LinearLayout">
@@ -327,47 +379,65 @@ text=注册
 background=through
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">ug(30,"text",zh)
+<event><eventItme type="clicki">fn byusi.qt(36)
+ug(30,"text",zh)
 ug(43,"text",email)
 ug(33,"text",mm)
 //检验
 syso(zh)
 syso(email)
 syso(mm)
+us(44,"visibility","visible")
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(45,data,-1,true)
 //登录基本处理方法
-s url="https://api.www.byusi.cn/user/api.php"
+s url="https://api.www.cdifit.cn/user/api.php"
 t()
 {
-  ss("username="+zh+"&email="+email+"&password="+mm+"&action=register",data)
-  hs(url,data,"utf-8",sju)
-  syso(sju)
-  json(sju,json)
-  json(json,"get","status",status)
-  f(status == "error")
-  {
-    json(json,"get","message",message)
-    ufnsui()
-    {
-      ss("注册失败："+message,uui)
-      fn tw.tw2(uui,1)
-    }
-  }
-  else f(status == "success")
-  {
-    ufnsui()
-    {
-      fn tw.tw2("注册成功",0)
-      us(4,"visibility","visible")
-      us(23,"visibility","gone")
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw2(json,1)
-    }
-  }
+	ss("username="+zh+"&email="+email+"&password="+mm+"&action=register",data)
+	hs(url,data,"utf-8",sju)
+	syso(sju)
+	json(sju,json)
+	json(json,"get","status",status)
+	f(status == "error")
+	{
+		json(json,"get","message",message)
+		ufnsui()
+		{
+			endkeyboard()
+			ss("注册失败："+message,uui)
+			fn tw.tw2(uui,1)
+			us(44,"visibility","gone")
+		}
+	}
+	else f(status == "success")
+	{
+		ufnsui()
+		{
+			fr("@JuOS/Lottie/yes.json",data)
+			fn Lottie.setImageLottie(45,data,-1,true)
+			fn tw.tw2("注册成功",0)
+			t()
+			{
+				stop(2500)
+				ufnsui()
+				{
+					us(4,"visibility","visible")
+					us(23,"visibility","gone")
+					us(44,"visibility","gone")
+				}
+			}
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			endkeyboard()
+			fn tw.tw2(json,1)
+			us(44,"visibility","gone")
+		}
+	}
 }</eventItme></event>
 </View>
 <View id="38" did="34" type="LinearLayout">
@@ -391,8 +461,25 @@ text=已有账号？登录
 background=through
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">us(4,"visibility","visible")
+<event><eventItme type="clicki">fn byusi.qt(39)
+us(4,"visibility","visible")
 us(23,"visibility","gone")</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">fn lib.wp(1)
-uycl("#daebeae3",true)</eventItme></UIEventset>
+<View id="44" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="45" did="44" type="ImageView">
+<ppt>width=-2
+height=-2
+src=17301567</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+uycl("#daebeae3",true)
+fn lib.wp_src(46)</eventItme><eventItme type="loadingComplete">fn n.ui(1)
+fn Lottie.loaddex()</eventItme></UIEventset>

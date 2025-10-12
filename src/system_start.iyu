@@ -3,85 +3,112 @@
 height=-1</ppt>
 <event></event>
 </View>
-<View id="3" did="1" type="WebView">
+<View id="36" did="1" type="RelativeLayout">
 <ppt>width=-1
-height=-1
-url=http://null.null.com</ppt>
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="36" type="WebView">
+<ppt>width=-1
+height=-1</ppt>
 <event><eventItme type="onprogresschanged">f(st_nS != "100")
 {
-  us(4,"visibility","visible")
-  us(5,"progress",st_nS)
+	us(4,"visibility","visible")
+	us(5,"progress",st_nS)
 }
 else f(st_nS == "100")
 {
-  us(5,"progress","0")
-  us(4,"visibility","gone")
-  us(2,"refreshing","false")
+	us(5,"progress","0")
+	us(4,"visibility","gone")
 }</eventItme><eventItme type="shouldoverrideurlloading">us(st_vId,"url",st_url)
 /.
 sj(st_url,"juos_sh://",null,iu)
 syso(iu)
 f(iu != null)
 {
-  uigo("JuOS.terminal.iyu")
-  sss url =iu
+	fn core.uigo("JuOS.terminal.iyu")
+	sss url =iu
 }
 else f(iu == null)
 {
-  us(st_vId,"url",st_url)
+	us(st_vId,"url",st_url)
 }</eventItme><eventItme type="onreceivederror">us(6,"visibility","visible")
 f(st_url ?* "http")
 {
-  ss("在加载该链接时发生了错误",ii)
+	sss Root_Interlinkage =st_url
+	syso(sss.Root_Interlinkage)
+	ss("在加载该链接时发生了错误\n错误代码："+st_dN+"\n报错的加载链接：ProperOS:Root_Interlinkage",ii)
 }
 else
 {
-  ss("在加载该链接时发生了错误："+st_url,ii)
+	fdir("$",root_file)
+	ss("file://"+root_file,root_file)
+	stobm(root_file,"utf-8",root_file)
+	sr(st_url,root_file,"ProperOS:Root_Files/",root)
+	ss("错误代码："+st_dN+"\n在加载该链接时发生了错误："+root,ii)
 }
 us(9,"text",ii)
 fn Lottie.loaddex()
-fr("@JuOS/Lottie/ByUsi/404.json",data)
-fn Lottie.setImageLottie(7,data,64dp,true)</eventItme><eventItme type="press">s wv = st_vW
+fr("@JuOS/Lottie/error.json",data)
+fn Lottie.setImageLottie(7,data,0,true)</eventItme><eventItme type="press">s wv = st_vW
 java(htr,wv,"android.webkit.WebView.getHitTestResult")
 java(type,htr,"android.webkit.WebView$HitTestResult.getType")
 javags(imagetype,null,"android.webkit.WebView$HitTestResult","IMAGE_TYPE")
 javags(imageurl,null,"android.webkit.WebView$HitTestResult","SRC_IMAGE_ANCHOR_TYPE")
 f(type==imagetype||type==imageurl)
 {
-  java(url,htr,"android.webkit.WebView$HitTestResult.getExtra")
-  fdir("$ProperOS/Web/img/temp",path)
-  fl(path,dir)
-  sgszl(dir,size)
-  ss(path+"/"+size+".jpg",path)
-  t()
-  {
-    hd(url,path,c)
-    ufnsui()
-    {
-      utw(null,"","dialog.iyu","关闭预览",true,v)
-      {
-      	endutw()
-      }
-      gvs(v,3,vw)
-      //us(vw,"src",path)
-      us(vw,"url",path)
-      syso(path)
-    }
-  }
+	java(url,htr,"android.webkit.WebView$HitTestResult.getExtra")
+	fdir("$ProperOS/Web/img/temp",path)
+	fl(path,dir)
+	sgszl(dir,size)
+	ss(path+"/"+size+".jpg",path)
+	t()
+	{
+		hd(url,path,c)
+		ufnsui()
+		{
+			utw(null,"","dialog.iyu","关闭预览",true,v)
+			{
+				endutw()
+			}
+			gvs(v,3,vw)
+			//us(vw,"src",path)
+			us(vw,"url",path)
+			syso(path)
+		}
+	}
+}</eventItme><eventItme type="onpagestarted">us(14,"visibility","visible")
+us(6,"visibility","gone")
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(15,data,-1,true)</eventItme><eventItme type="onpagefinished">us(14,"visibility","gone")</eventItme><eventItme type="ondownloadstart">us(5,"progress","0")
+us(4,"visibility","gone")
+sj(st_cN,';filename="','"',name_impurity)
+
+ss("被下载文件大小："+st_cH+"\n文件名："+name_impurity+"\n被下载文件下载链接："+st_url,tsc)
+utw(null,"发现文件下载事件",tsc,"下载","取消",false,v)
+{
+	endutw()
+	hd(st_url,name_impurity,c)
+	syso(c)
+}
+else
+{
+	endutw()
 }</eventItme></event>
 </View>
 <View id="4" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
-gravity=bottom|center</ppt>
+gravity=top|center</ppt>
 <event></event>
 </View>
 <View id="5" did="4" type="ProgressBar">
 <ppt>width=-1
 height=-2
-background=#ff59d8ff
-max=100</ppt>
+max=100
+background=through</ppt>
 <event></event>
 </View>
 <View id="6" did="1" type="LinearLayout">
@@ -89,20 +116,27 @@ max=100</ppt>
 height=-1
 orientation=vertical
 gravity=center
-visibility=gone
+//visibility=gone
 background=#ffdbf7ff</ppt>
 <event></event>
 </View>
 <View id="7" did="6" type="ImageView">
-<ppt>width=-2
-height=-2
-src=17301567</ppt>
+<ppt>width=180dp
+height=180dp
+src=@fail.xml</ppt>
 <event></event>
 </View>
-<View id="9" did="6" type="TextView">
+<View id="16" did="6" type="ScrollView">
+<ppt>width=-1
+height=145dp</ppt>
+<event></event>
+</View>
+<View id="9" did="16" type="TextView">
 <ppt>width=-2
 height=-2
-text=文本9</ppt>
+text=错误代码
+layout_marginLeft=12dp
+layout_marginRight=12dp</ppt>
 <event></event>
 </View>
 <View id="10" did="6" type="LinearLayout">
@@ -127,7 +161,8 @@ text=关闭该应用
 background=through
 textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="clicki">end()</eventItme></event>
+<event><eventItme type="clicki">fn byusi.qt(11)
+end()</eventItme></event>
 </View>
 <View id="12" did="10" type="CardView">
 <ppt>width=80dp
@@ -144,13 +179,172 @@ text=刷新
 background=through
 textColor=#ffffffff
 typeface=@JuOS/src/ttf/acbt80.ttf</ppt>
-<event><eventItme type="clicki">
+<event><eventItme type="clicki">fn byusi.qt(12)
 us(6,"visibility","gone")
 ug(3,"url",url)
 us(3,"url",url)</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">
-uycl("#ff59d8ff",true)
+<View id="14" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="17" did="14" type="CardView">
+<ppt>width=100dp
+height=100dp
+app_CardcornerRadius=999
+app_CardmaxElevation=1
+app_CardElevation=5
+app_CardBackgroundColor=#1fffffff</ppt>
+<event></event>
+</View>
+<View id="18" did="17" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="19" did="18" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardElevation=0
+app_CardcornerRadius=999
+app_CardBackgroundColor=#00ffffff</ppt>
+<event></event>
+</View>
+<View id="20" did="19" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+gravity=center
+padding=5dp</ppt>
+<event></event>
+</View>
+<View id="21" did="20" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardElevation=0
+app_CardcornerRadius=999
+app_CardBackgroundColor=#00ffffff</ppt>
+<event></event>
+</View>
+<View id="22" did="21" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+gravity=center
+padding=5dp</ppt>
+<event></event>
+</View>
+<View id="23" did="22" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardElevation=0
+app_CardcornerRadius=999
+app_CardBackgroundColor=#00ffffff</ppt>
+<event></event>
+</View>
+<View id="24" did="23" type="RelativeLayout">
+<ppt>width=-1
+height=-1
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="25" did="24" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center</ppt>
+<event></event>
+</View>
+<View id="15" did="25" type="ImageView">
+<ppt>width=-2
+height=-2
+src=@fail.xml</ppt>
+<event></event>
+</View>
+<View id="26" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|top</ppt>
+<event></event>
+</View>
+<View id="28" did="26" type="LinearLayout">
+<ppt>width=-1
+height=64dp
+orientation=horizontal
+gravity=center
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="29" did="28" type="CardView">
+<ppt>width=100dp
+height=45dp
+app_CardcornerRadius=35dp</ppt>
+<event></event>
+</View>
+<View id="30" did="29" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301542
+background=through</ppt>
+<event><eventItme type="clicki">ug(3,"cangoback",yz_url_dt)
+//
+f(yz_url_dt == "true")
+{
+	us(3,"gobackorforward",-1)
+	us(6,"visibility","gone")
+}
+else f(yz_url_dt == "false")
+{
+	fn tw.tw("无法返回了")
+}</eventItme></event>
+</View>
+<View id="31" did="28" type="CardView">
+<ppt>width=100dp
+height=45dp
+app_CardcornerRadius=35dp</ppt>
+<event></event>
+</View>
+<View id="32" did="31" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301537
+background=through</ppt>
+<event><eventItme type="clicki">us(3,"gobackorforward",1)</eventItme></event>
+</View>
+<View id="35" did="26" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=right|center</ppt>
+<event></event>
+</View>
+<View id="33" did="35" type="CardView">
+<ppt>width=26dp
+height=26dp
+app_CardcornerRadius=64dp
+app_CardBackgroundColor=#0fffffff</ppt>
+<event><eventItme type="clicki">f(ss.uii == true)
+{
+	us(28,"visibility","visible")
+	ss uii =false
+}
+else f(ss.uii == false)
+{
+	us(28,"visibility","gone")
+	ss uii =true
+}</eventItme></event>
+</View>
+<View id="34" did="33" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301544</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+uycl("#e84f78ff",true)
 f(sss.url != null)
 {
   us(3,"url",sss.url)
@@ -159,28 +353,48 @@ else
 {
   fn tw.tw2("抱歉，启动配置出现问题，无法正常启动",2)
   utw(null,"","是否退出？","确定","不退出",true,v)
-    {
-    	end()
-    }
-    else
-     {
-     	endutw()
-     }
+	{
+		end()
+	}
+	else
+	 {
+	 	endutw()
+	 }
 }
+fn api.hide_btn(3)
 //开启JavaScript交互
-hsas(3,true)</eventItme><eventItme type="downkey">f(st_kC == 4)
+hsas(3,true)
+fn n.ui(1)
+ss uii =true
+
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
-  ug(3,"cangoback",yz_url_dt)
-  //
-  f(yz_url_dt == "true")
-  {
-    us(3,"gobackorforward",-1)
-  }
-  else f(yz_url_dt == "false")
-  {
-    end()
-  }
+	ug(3,"cangoback",yz_url_dt)
+	//
+	f(sss.install_lock == null)
+	{
+		f(yz_url_dt == "true")
+		{
+			us(3,"gobackorforward",-1)
+			us(6,"visibility","gone")
+		}
+		else f(yz_url_dt == "false")
+		{
+			end()
+		}
+	}
+	else
+	{
+		sss jsq ="1"
+		us(app.1,"visibility","gone")
+		sss install_lock =null
+	}
 }</eventItme><eventItme type="loadingComplete">fn api.hide_btn(3)
 addv(1,"app.iyu")
 us(app.7,"visibility","gone")
-us(app.1,"visibility","gone")</eventItme></UIEventset>
+us(app.1,"visibility","gone")
+//拟态玻璃效果
+//fn byusi.mimicry(18,20,22,24)</eventItme></UIEventset>

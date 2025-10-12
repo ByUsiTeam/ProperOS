@@ -30,7 +30,8 @@ java(window,activity,"android.app.Activity.getWindow")
 java(lp,window,"android.view.Window.getAttributes")
 javass(nu,lp,"android.view.WindowManager$LayoutParams","screenBrightness",value)
 javax(null,window,"android.view.Window","setAttributes","android.view.WindowManager$LayoutParams",lp)
-end fn
+
+end fn
 
 //控件透明度0-1 
 fn tran(id,value)
@@ -64,20 +65,20 @@ end fn
 fn cown(id,tim,ms,text)
 t()
 {
-  s d=tim
-  w(d&gt;0)
-  {
-    s-(1,d)
-    ufnsui()
-    {
-      us(id,"text",d)
-      f(d==0)
-      {
-        us(id,"text",text)
-      }
-    }
-    stop(ms)
-  }
+	s d=tim
+	w(d&gt;0)
+	{
+		s-(1,d)
+		ufnsui()
+		{
+			us(id,"text",d)
+			f(d==0)
+			{
+				us(id,"text",text)
+			}
+		}
+		stop(ms)
+	}
 }
 end fn
 

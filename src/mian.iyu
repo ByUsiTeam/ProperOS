@@ -1,68 +1,38 @@
 <View id="1" did="0" type="RelativeLayout">
 <ppt>width=-1
-height=-1
-background=white</ppt>
+height=-1</ppt>
 <event></event>
 </View>
-<View id="2" did="1" type="LinearLayout">
+<View id="2" did="1" type="WebView">
 <ppt>width=-1
 height=-1
-orientation=vertical
-gravity=center</ppt>
-<event></event>
+url=@system/StartupScreen/index.html</ppt>
+<event><eventItme type="onreceivederror">us(st_vId,"url","$System/StartupScreen/index.html")</eventItme></event>
 </View>
-<View id="3" did="2" type="ImageView">
-<ppt>width=-2
-height=-2
-src=@JuOS/logo/BySi_logo.png</ppt>
-<event></event>
-</View>
-<View id="4" did="1" type="LinearLayout">
-<ppt>width=-1
-height=-1
-orientation=vertical
-gravity=bottom|center</ppt>
-<event></event>
-</View>
-<View id="7" did="4" type="LinearLayout">
-<ppt>width=-1
-height=-2
-orientation=vertical
-gravity=center</ppt>
-<event></event>
-</View>
-<View id="6" did="7" type="TextView">
-<ppt>width=-1
-height=-1
-text=Powered by OpenJuOS
-textColor=#ff000000
-typeface=@JuOS/src/ttf/acbt80.ttf
-textSize=18sp
-layout_marginBottom=15dp
-gravity=center</ppt>
-<event></event>
-</View>
-<UIEventset><eventItme type="loading">t()
+<UIEventset><eventItme type="loading">fn byusi.ztl()
+fe("$System/StartupScreen/index.html",yanz)
+f(yanz == false)
 {
-  ufnsui()
-  {
-    fn byusi.ztl()
-  }
+	fuzs("@system/StartupScreen/StartupScreen.zip","$System/StartupScreen/",false,yanz)
+	us(2,"url","$System/StartupScreen/index.html")
 }
-
-fuzs("@JuOS/sdk/player.bysi.sdk","%.data/html_video",a)
-fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
-fe("$boot/init.json",yz)
-f(yz == false)
+loadjar("typeface.de",dex)
+cls(dex,"com.mus.alltypeface.set",class)
+fdir("@JuOS/src/ttf/acbt80.ttf",path)
+javax(null,null,class,"set","android.app.Activity",activity,"String",path)
+//ProperOS开机启动时间戳
+time(4,sjc)
+fw("$System/dev/BootTimestamp",sjc)</eventItme><eventItme type="loadingComplete">has(2,true)
+t()
 {
-  fc("@boot/init.json","$boot/init.json",yz)
-}</eventItme><eventItme type="loadingComplete">t()
+	fr("$System/StartupScreen/config.json",jjjs)
+    json(jjjs,geu)
+    json(geu,"get","stop",hts)
+	stop(hts)
+	ufnsui()
+	{
+		fn system.setup(1)
+	}
+}</eventItme><eventItme type="downkey">f(st_eA == 4)
 {
-  stop(2000)
-  ufnsui()
-  {
-    uigo("mian2.iyu")
-    lan(0)
-    end()
-  }
 }</eventItme></UIEventset>

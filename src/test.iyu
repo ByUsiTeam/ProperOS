@@ -1,0 +1,16 @@
+<View id="1" did="0" type="CardView">
+<ppt>width=-1
+layout_weight=1
+background=#495890
+height=-1</ppt>
+<event><eventItme type="clicki">ug(2,"background",a)
+us(1,"background",a)</eventItme></event>
+</View>
+<View id="2" did="0" type="CardView">
+<ppt>width=-1
+layout_weight=1
+background=#275bd9
+height=-1</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

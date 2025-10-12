@@ -9,7 +9,12 @@ height=-1
 orientation=vertical</ppt>
 <event></event>
 </View>
-<View id="8" did="2" type="CardView">
+<View id="13" did="2" type="RelativeLayout">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="11" did="13" type="CardView">
 <ppt>width=-1
 height=55dp
 layout_marginLeft=5dp
@@ -17,14 +22,21 @@ layout_marginTop=5dp
 layout_marginRight=5dp
 layout_marginBottom=5dp
 app_CardcornerRadius=6dp
-app_CardElevation=6dp</ppt>
+app_CardElevation=6dp
+app_CardBackgroundColor=#1fffffff
+padding=8dp</ppt>
 <event></event>
 </View>
-<View id="3" did="8" type="Toolbar">
+<View id="12" did="13" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="12" type="Toolbar">
 <ppt>width=-1
 height=55dp
 app_title=ProperOS
-background=#ffdde6ff</ppt>
+background=</ppt>
 <event></event>
 </View>
 <View id="6" did="2" type="SwipeRefreshLayout">
@@ -33,78 +45,82 @@ height=-1
 ColorSchemecolors=#ff4479ff|#ff2bff87|#ffff4343</ppt>
 <event><eventItme type="onrefresh">utw(null,"","确定刷新吗？","确定","不了",true,v)
 {
-  t()
-  {
-    s a = "$JuOS/hemo/桌面"
-    fl(a, false, home_list)
-    aslist(list_cz)
-    for(sc; home_list)
-    {
-      s img = "@fail.xml"
-      s name = sc
-      f(sc *? ".app")
-      {
-        ss("$JuOS/hemo/桌面/"+sc, ml)
-        fr(ml, app_link_sc)
-        sj(app_link_sc, "AppTb=", "=AppTb", img)
-        f(img ?* "$sys/")
-        {
-          sr(img, "$sys/", "@", img)
-        }
-        else f(img ?* "%@")
-        {
-          sr(img, "%@", "$", img)
-        }
-        else
-        {
-          sj(app_link_sc, "AppLj=", "=AppLj", appml)
-          sr(appml, "%g", "$App/", aml)
-          ss(aml + img, img)
-        }
-        sj(sc, null, ".app", name)
-      }
-      else
-      {
-        f(sc *? ".mp4")
-        {
-          ss("$JuOS/hemo/桌面/"+sc,a)
-          fdir(a,a)
-          call(a,"mjava","awzx2.get",a,"1")
-          s img =a
-        }
-       else f(sc *? ".m4a")
-        {
-          s img = "@JuOS/src/Manager/6e.png"
-        }
-        else f(sc *? ".mp3")
-        {
-          s img = "@JuOS/src/Manager/6e.png"
-        }
-        else f(sc *? ".flac")
-        {
-          s img = "@JuOS/src/Manager/6e.png"
-        }
-        else f(sc *? ".pdf")
-        {
-          s img = "@JuOS/src/Manager/wE.png"
-        }
-        else f(sc *? ".jush")
-        {
-          s img = "@ic_play_pause_regular.png"
-        }
-      }
-      ula(list_cz, 4=img, 5=name)
-    }
-    ufnsui()
-    {
-      uls(4, list_cz, "hlist.iyu", -1, -2)
-      us(st_vId,"Refreshing","false")
-    }
-  }
+	us(9,"visibility","visible")
+	fr("@JuOS/Lottie/loading.json",data)
+	fn Lottie.setImageLottie(10,data,-1,true)
+	t()
+	{
+		s a = "$JuOS/hemo/桌面"
+		fl(a, false, home_list)
+		aslist(list_cz)
+		for(sc; home_list)
+		{
+			s img = "@fail.xml"
+			s name = sc
+			f(sc *? ".app")
+			{
+				ss("$JuOS/hemo/桌面/"+sc, ml)
+				fr(ml, app_link_sc)
+				sj(app_link_sc, "AppTb=", "=AppTb", img)
+				f(img ?* "$sys/")
+				{
+					sr(img, "$sys/", "@", img)
+				}
+				else f(img ?* "%@")
+				{
+					sr(img, "%@", "$", img)
+				}
+				else
+				{
+					sj(app_link_sc, "AppLj=", "=AppLj", appml)
+					sr(appml, "%g", "$App/", aml)
+					ss(aml + img, img)
+				}
+				sj(sc, null, ".app", name)
+			}
+			else
+			{
+				f(sc *? ".mp4")
+				{
+					ss("$JuOS/hemo/桌面/"+sc,a)
+					fdir(a,a)
+					call(a,"mjava","awzx2.get",a,"1")
+					s img =a
+				}
+				else f(sc *? ".m4a")
+				{
+					s img = "@JuOS/src/Manager/6e.png"
+				}
+				else f(sc *? ".mp3")
+				{
+					s img = "@JuOS/src/Manager/6e.png"
+				}
+				else f(sc *? ".flac")
+				{
+					s img = "@JuOS/src/Manager/6e.png"
+				}
+				else f(sc *? ".pdf")
+				{
+					s img = "@JuOS/src/Manager/wE.png"
+				}
+				else f(sc *? ".jush")
+				{
+					s img = "@ic_play_pause_regular.png"
+				}
+			}
+			ula(list_cz, 4=img, 5=name)
+		}
+		ufnsui()
+		{
+			uls(4, list_cz, "hlist.iyu", -1, -2)
+			us(st_vId,"Refreshing","false")
+			us(9,"visibility","gone")
+		}
+	}
 }
 else
 {
-  us(st_vId,"Refreshing","false")
+	us(st_vId,"Refreshing","false")
 }</eventItme></event>
 </View>
 <View id="4" did="6" type="RecyclerView">
@@ -112,10 +128,64 @@ else
 height=-1</ppt>
 <event></event>
 </View>
-<UIEventset><eventItme type="loading">fn lib.wp(2)
+<View id="9" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="10" did="9" type="ImageView">
+<ppt>width=-2
+height=-2
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="14" did="1" type="CardView">
+<ppt>width=150dp
+height=100dp
+app_CardcornerRadius=999
+app_CardmaxElevation=1
+app_CardElevation=5
+app_CardBackgroundColor=#1fffffff
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="15" did="14" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="16" did="15" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.blur(11)
+fn byusi.blur(15)
+fn lk.y(1)
+fn lib.wp(2)
 utb(3)</eventItme><eventItme type="loadingComplete">uycl("#ff5f6aff",true)
 //
+fn system.asystem_t_init()
+//
+fn n.ui(1)
+//
 us(6,"Refreshing","true")
+loadjar("QmLoader",sss.QmLoader)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+//初始化(必写)
+javanew(builder,Builder,"android.content.Context",activity)
+javax(null,null,Loader,"init",Builder,builder)
+us(9,"visibility","visible")
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(10,data,-1,true)
+/.
 t()
 {
   s a = "$JuOS/hemo/桌面"
@@ -123,68 +193,76 @@ t()
   aslist(list_cz)
   for(sc; home_list)
   {
-    s img = "@fail.xml"
-    s name = sc
-    f(sc *? ".app")
-    {
-      ss("$JuOS/hemo/桌面/"+sc, ml)
-      fr(ml, app_link_sc)
-      sj(app_link_sc, "AppTb=", "=AppTb", img)
-      f(img ?* "$sys/")
-      {
-        sr(img, "$sys/", "@", img)
-      }
-      else f(img ?* "%@")
-      {
-        sr(img, "%@", "$", img)
-      }
-      else
-      {
-        sj(app_link_sc, "AppLj=", "=AppLj", appml)
-        sr(appml, "%g", "$App/", aml)
-        ss(aml + img, img)
-      }
-      sj(sc, null, ".app", name)
-    }
-    else
-    {
-      f(sc *? ".mp4")
-      {
-        ss("$JuOS/hemo/桌面/"+sc,a)
-        fdir(a,a)
-        call(a,"mjava","awzx2.get",a,"1")
-        s img =a
-      }
-      else f(sc *? ".m4a")
-      {
-        s img = "@JuOS/src/Manager/6e.png"
-      }
-      else f(sc *? ".mp3")
-      {
-        s img = "@JuOS/src/Manager/6e.png"
-      }
-      else f(sc *? ".flac")
-      {
-        s img = "@JuOS/src/Manager/6e.png"
-      }
-      else f(sc *? ".pdf")
-      {
-        s img = "@JuOS/src/Manager/wE.png"
-      }
-      else f(sc *? ".jush")
-      {
-        s img = "@ic_play_pause_regular.png"
-      }
-    }
-    ula(list_cz, 4=img, 5=name)
+	s img = "@fail.xml"
+	s name = sc
+	f(sc *? ".app")
+	{
+	  ss("$JuOS/hemo/桌面/"+sc, ml)
+	  fr(ml, app_link_sc)
+	  sj(app_link_sc, "AppTb=", "=AppTb", img)
+	  f(img ?* "$sys/")
+	  {
+		sr(img, "$sys/", "@", img)
+	  }
+	  else f(img ?* "%@")
+	  {
+		sr(img, "%@", "$", img)
+	  }
+	  else
+	  {
+		sj(app_link_sc, "AppLj=", "=AppLj", appml)
+		sr(appml, "%g", "$App/", aml)
+		ss(aml + img, img)
+	  }
+	  sj(sc,null,".app",name)
+	}
+	else
+	{
+	  f(sc *? ".mp4")
+	  {
+		ss("$JuOS/hemo/桌面/"+sc,a)
+		fdir(a,a)
+		call(a,"mjava","awzx2.get",a,"1")
+		s img =a
+	  }
+	  else f(sc *? ".m4a")
+	  {
+		s img = "@JuOS/src/Manager/6e.png"
+	  }
+	  else f(sc *? ".mp3")
+	  {
+		s img = "@JuOS/src/Manager/6e.png"
+	  }
+	  else f(sc *? ".flac")
+	  {
+		s img = "@JuOS/src/Manager/6e.png"
+	  }
+	  else f(sc *? ".pdf")
+	  {
+		s img = "@JuOS/src/Manager/wE.png"
+	  }
+	  else f(sc *? ".jush")
+	  {
+		s img = "@ic_play_pause_regular.png"
+	  }
+	}
+	ula(list_cz, 4=img, 5=name)
+	ula(list_cz,4)
   }
   ufnsui()
   {
-    uls(4, list_cz, "hlist.iyu", -1, -2)
-    us(6,"Refreshing","false")
+	uls(4, list_cz, "hlist.iyu", -1, -2)
+	us(6,"Refreshing","false")
+	us(9,"visibility","gone")
   }
+}
+./
+utw("$JuOS/ICON/foreground.png","","抱歉，该界面已不在支持使用","确定切换桌面",true,v)
+{
+	fn core.uigo("JuOS_Hemo.iyu")
+	end()
 }</eventItme><eventItme type="menu">case 设置:
-uigo("设置.iyu")
+fn core.uigo("设置.iyu")
 break
 
 case 时间:
@@ -195,6 +273,22 @@ break
 
 case 关闭ProperOS:
 fn lib.utw("end-ppos.iyu")
+break
+
+case 重启:
+utw(null,"","请选择这重启选项","重启到bootrepair","正常重启","不重启了",false,v)
+{
+	fn init.bootrepair("yes",1)
+}
+else
+{
+	fn core.uigo("mian.iyu")
+	end()
+}
+else
+{
+	endutw()
+}
 break</eventItme><eventItme type="downkey">f(st_kC == 4)
 {
 }</eventItme></UIEventset>

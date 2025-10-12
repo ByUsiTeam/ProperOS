@@ -1,4 +1,17 @@
-<View id="5" did="0" type="LinearLayout">
+<View id="7" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="9" did="7" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="5" did="7" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical</ppt>
@@ -12,7 +25,7 @@ orientation=vertical</ppt>
 </View>
 <View id="1" did="6" type="LinearLayout">
 <ppt>width=-1
-height=-2
+height=55dp
 orientation=horizontal
 gravity=left|center
 background=#daebeae3</ppt>
@@ -26,19 +39,20 @@ background=through</ppt>
 <event><eventItme type="clicki">fr("$System/Config/home.sys",home)
 f(home == "false")
 {
-  uigo("JuOS_Hemo.iyu")
-  end()
+	fn core.uigo("JuOS_Hemo.iyu")
+	end()
 }
 else f(home == "true")
 {
-  uigo("home.iyu")
-  end()
+	fn core.uigo("home.iyu")
+	end()
 }
 else
 {
-  uigo("JuOS_Hemo.iyu")
-  end()
-}</eventItme></event>
+	fn core.uigo("JuOS_Hemo.iyu")
+	end()
+}
+fn byusi.qt(st_vW)</eventItme></event>
 </View>
 <View id="3" did="1" type="TextView">
 <ppt>width=-2
@@ -50,7 +64,74 @@ textSize=20sp
 layout_marginLeft=15dp</ppt>
 <event></event>
 </View>
-<View id="4" did="6" type="RecyclerView">
+<View id="8" did="6" type="SwipeRefreshLayout">
+<ppt>width=-1
+height=-1
+Refreshing=false</ppt>
+<event><eventItme type="onrefresh">fn lib.wp_src(9)
+fdir("$temp",t_pwd)
+ss("cd "+t_pwd+" && rm -rf "+t_pwd+"/*",shell)
+call(rs,"mlua","cmd.shell",shell)
+//这个不用我写注释吧,这么简单的内容
+t()
+{
+	s a = "/sdcard/ProperOS"
+	fl(a,false,wj_list)
+	for(sc;wj_list)
+	{
+		syso(sc)
+		f(sc *? ".jupk")
+		{
+			time(4,time)
+			ss("/sdcard/ProperOS/"+sc,ns)
+			s TAM ="$JuOS/.temp/App/InstallAppLog.f"
+			fuz(ns,"InstallAppLog.f","$JuOS/.temp/App",ayz)
+			fr(TAM,tamnr)
+			sj(tamnr,"AppM=","=AppM",apm)
+			sj(tamnr,"AppTb=","=AppTb",apt)
+			ss("$temp/"+apm+"_"+time,lj)
+			fuz(ns,apt,lj,yz)
+			ss(lj+"/"+apt,img)
+		}
+		else f(sc *? ".mp3" || sc *? ".mp4" || sc *? ".m4a")
+		{
+			s img ="@JuOS/src/img/zy/mp4.png"
+		}
+		else f(sc *? ".png")
+		{
+			ss("/sdcard/ProperOS/"+sc,img)
+		}
+		else f(sc *? "pg")
+		{
+			ss("/sdcard/ProperOS/"+sc,img)
+		}
+		else f(sc *? ".zip" || sc *? ".7z" || ".rar")
+		{
+			s img ="@JuOS/src/Manager/aD.png"
+		}
+		else f(sc *? ".pdf")
+		{
+			s img ="@JuOS/src/Manager/wE.png"
+		}
+		else f(sc *? ".jush")
+		{
+			s img ="@ic_play_pause_regular.png"
+		}
+		else
+		{
+			s img ="@Image_loading.png"
+		}
+		//
+		ula(list_cz,6=img,4=sc)
+	}
+	ufnsui()
+	{
+		us(st_vId,"refreshing",false)
+		uls(4,list_cz,"list_2.iyu")
+	}
+}</eventItme></event>
+</View>
+<View id="4" did="8" type="RecyclerView">
 <ppt>width=-1
 height=-1</ppt>
 <event></event>
@@ -61,87 +142,101 @@ call(rs,"mlua","cmd.shell",shell)
 //这个不用我写注释吧,这么简单的内容
 t()
 {
-  s a = "/sdcard/ProperOS"
-  fl(a,false,wj_list)
-  for(sc;wj_list)
-  {
-    syso(sc)
-    //
-    f(sc *? ".apk")
-    {
-      s img ="@JuOS/src/img/zy/app.png"
-    }
-    else f(sc *? ".jupk")
-    {
-      time(4,time)
-      ss("/sdcard/ProperOS/"+sc,ns)
-      s TAM ="$JuOS/.temp/App/InstallAppLog.f"
-      fuz(ns,"InstallAppLog.f","$JuOS/.temp/App",ayz)
-      fr(TAM,tamnr)
-      sj(tamnr,"AppM=","=AppM",apm)
-      sj(tamnr,"AppTb=","=AppTb",apt)
-      ss("$temp/"+apm+"_"+time,lj)
-      fuz(ns,apt,lj,yz)
-      ss(lj+"/"+apt,img)
-      //s img ="@JuOS/src/img/zy/admin.png"
-    }
-    else f()
-    {
-    }
-    else f(sc *? ".mp3" || sc *? ".mp4" || sc *? ".m4a")
-    {
-      s img ="@JuOS/src/img/zy/mp4.png"
-    }
-    else f(sc *? ".png")
-    {
-      ss("/sdcard/ProperOS/"+sc,img)
-    }
-    else f(sc *? "pg")
-    {
-      ss("/sdcard/ProperOS/"+sc,img)
-    }
-    else f(sc *? ".zip" || sc *? ".7z" || ".rar")
-    {
-      s img ="@JuOS/src/Manager/aD.png"
-    }
-    else f(sc *? ".pdf")
-    {
-      s img ="@JuOS/src/Manager/wE.png"
-    }
-    else f(sc *? ".jush")
-    {
-      s img ="@ic_play_pause_regular.png"
-    }
-    else
-    {
-      s img ="@JuOS/src/img/zy/tip.png"
-    }
-    //
-    ula(list_cz,6=img,4=sc)
-  }
-  ufnsui()
-  {
-    uls(4,list_cz,"list_2.iyu")
-  }
-}</eventItme><eventItme type="loadingComplete">fn qp.qp2()
-//sss sdcard ="/sdcard/JuOS/"
-s id =5
-fn lib.wp(id)</eventItme><eventItme type="downkey">f(st_kC==4)
+	s a = "/sdcard/ProperOS"
+	fl(a,false,wj_list)
+	for(sc;wj_list)
+	{
+		syso(sc)
+		f(sc *? ".jupk")
+		{
+			time(4,time)
+			ss("/sdcard/ProperOS/"+sc,ns)
+			s TAM ="$JuOS/.temp/App/InstallAppLog.f"
+			fuz(ns,"InstallAppLog.f","$JuOS/.temp/App",ayz)
+			fr(TAM,tamnr)
+			sj(tamnr,"AppM=","=AppM",apm)
+			sj(tamnr,"AppTb=","=AppTb",apt)
+			ss("$temp/"+apm+"_"+time,lj)
+			fuz(ns,apt,lj,yz)
+			ss(lj+"/"+apt,img)
+		}
+		else f(sc *? ".mp3" || sc *? ".mp4" || sc *? ".m4a")
+		{
+			s img ="@JuOS/src/img/zy/mp4.png"
+		}
+		else f(sc *? ".png")
+		{
+			ss("/sdcard/ProperOS/"+sc,img)
+		}
+		else f(sc *? "pg")
+		{
+			ss("/sdcard/ProperOS/"+sc,img)
+		}
+		else f(sc *? ".zip" || sc *? ".7z" || ".rar")
+		{
+			s img ="@JuOS/src/Manager/aD.png"
+		}
+		else f(sc *? ".pdf")
+		{
+			s img ="@JuOS/src/Manager/wE.png"
+		}
+		else f(sc *? ".jush")
+		{
+			s img ="@ic_play_pause_regular.png"
+		}
+        else f(sc *? ".jspk")
+        {
+        	ss("/sdcard/ProperOS/"+sc,jspk_dir)
+            fd("$ProperOS/temp/MainIndex.json",yz)
+        	fuz(jspk_dir,"MainIndex.json","$ProperOS/temp/",yz)
+            fr("$ProperOS/temp/MainIndex.json",data)
+            json(data,data)
+            json(data,"get","icon",iconDara)
+            json(iconDara,"systemIcon",systemIcon)
+            f(systemIcon == "true")
+            {
+            	json(iconDara,"get","icon",icon)
+            	s img =icon
+            }
+            else
+            {
+            	json(iconDara,"get","icon",iconDir)
+                time(4,stamp)
+                fuz(jspk_dir,iconDir,"$temp/"+stamp,tco)
+                ss("$temp/"+stamp+"/"+iconDir,img)
+            }
+        }
+		else
+		{
+			s img ="@Image_loading.png"
+		}
+        sbp(img,img)
+		//
+		ula(list_cz,6=img,4=sc)
+	}
+	ufnsui()
+	{
+		uls(4,list_cz,"list_2.iyu")
+	}
+}</eventItme><eventItme type="loadingComplete">fn byusi.ztl()
+uycl("#e84f78ff",true)
+fn n.ui(7)
+fn lib.wp_src(9)</eventItme><eventItme type="downkey">f(st_kC==4)
 {
-  fr("$System/Config/home.sys",home)
-  f(home == "false")
-  {
-    uigo("JuOS_Hemo.iyu")
-    end()
-  }
-  else f(home == "true")
-  {
-    uigo("home.iyu")
-    end()
-  }
-  else
-  {
-    uigo("JuOS_Hemo.iyu")
-    end()
-  }
+	fr("$System/Config/home.sys",home)
+	f(home == "false")
+	{
+		fn core.uigo("JuOS_Hemo.iyu")
+		end()
+	}
+	else f(home == "true")
+	{
+		fn core.uigo("home.iyu")
+		end()
+	}
+	else
+	{
+		fn core.uigo("JuOS_Hemo.iyu")
+		end()
+	}
 }</eventItme></UIEventset>

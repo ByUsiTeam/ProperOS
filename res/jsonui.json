@@ -1,0 +1,115 @@
+{
+	"title": "首页",
+	"page": "home",
+	"statusColor": "#ffffff",
+	"view": [
+		{
+			"ViewName": "线性布局",
+			"style": [
+				"width=-1",
+				"height=-1",
+				"orientation=vertical",
+				"background=#ffffff"
+			],
+			"id": 1000,
+			"did": 1
+		},
+		{
+			"ViewName": "线性布局",
+			"style": [
+				"width=-1",
+				"height=50dp",
+				"orientation=horizontal",
+				"background=#ffffff",
+				"gravity=center|left",
+				"paddingleft=10dp"
+			],
+			"id": 1001,
+			"did": 1000
+		},
+		{
+			"ViewName": "文本",
+			"style": [
+				"width=-2",
+				"height=-2",
+				"textcolor=#000000",
+				"textsize=15sp",
+				"text=JSONUI使用实例"
+			],
+			"id": 1002,
+			"did": 1001
+		},
+		{
+			"ViewName": "线性布局",
+			"style": [
+				"width=-1",
+				"height=1",
+				"background=#e1e1e1"
+			],
+			"id": 1003,
+			"did": 1000
+		},
+		{
+			"ViewName": "线性布局",
+			"style": [
+				"width=-1",
+				"height=-1",
+				"gravity=center",
+				"orientation=vertical"
+			],
+			"id": 1004,
+			"did": 1000
+		},
+		{
+			"ViewName": "文本",
+			"style": [
+				"width=-2",
+				"height=-2",
+				"text=JsonUI渲染示例项目",
+				"textcolor=#000000",
+				"textstyle=bold",
+				"textsize=18sp"
+			],
+			"id": 1005,
+			"did": 1004
+		},
+		{
+			"ViewName": "卡片",
+			"style": [
+				"width=-2",
+				"height=-2",
+				"app_CardcornerRadius=6dp",
+				"app_CardBackgroundColor=#ffffff",
+				"app_CardElevation=20dp",
+				"layout_marginTop=10dp"
+			],
+			"id": 1006,
+			"did": 1004
+		},
+		{
+			"ViewName": "线性布局",
+			"style": [
+				"width=-1",
+				"height=-1",
+				"gravity=center",
+				"orientation=vertical",
+				"padding=15dp"
+			],
+			"onclick": "@click1.tps",
+			"id": 1007,
+			"did": 1006
+		},
+		{
+			"ViewName": "文本",
+			"style": [
+				"width=-2",
+				"height=-2",
+				"text=你好世界，JsonUI",
+				"textcolor=#000000",
+				"textsize=14sp"
+			],
+			"id": 1005,
+			"did": 1007
+		}
+	]
+}

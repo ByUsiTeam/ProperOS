@@ -1,0 +1,76 @@
+fn interface(id)
+
+addv(id,"tui.iyu")
+addv(id,"tui1.iyu")
+us(tui.1,"visibility","gone")
+us(tui1.1,"visibility","gone")
+syso("初始化成功")
+
+end fn
+
+fn pop(content,srxx,ztsj)
+
+us(tui.1,"visibility","visible")
+swh("hh",h)
+dht(dh,0,0,h,0)
+dh(dh,"duration",500)
+dha(dh2,false,true)
+dh(dh2,"duration",1000)
+dhset(dhlist,false,dh,dh2)
+us(tui.3,"dh",dhlist)
+sr(content,"\n"," ",content)
+us(tui.6,"text",content)
+us(tui.9,"src",srxx)
+syso("提示内容："+content)
+syso("图标路径："+srxx)
+t()
+{
+	stop(ztsj)
+    ufnsui()
+    {
+    	swh("hh",h)
+        dht(dh,0,0,0,h)
+        dh(dh,"duration",500)
+        dha(dh2,false,true)
+        dh(dh2,"duration",1000)
+        dhset(dhlist,false,dh,dh2)
+        us(tui.3,"dh",dhlist)
+        us(tui.1,"visibility","gone")
+    }
+}
+
+end fn
+
+
+fn pop2(content,srxx,ztsj)
+
+us(tui1.1,"visibility","visible")
+swh("hh",h)
+dht(dh,0,0,h,0)
+dh(dh,"duration",500)
+dha(dh2,false,true)
+dh(dh2,"duration",1000)
+dhset(dhlist,false,dh,dh2)
+us(tui1.3,"dh",dhlist)
+sr(content,"\n"," ",content)
+us(tui1.6,"text",content)
+us(tui1.9,"src",srxx)
+syso("提示内容："+content)
+syso("图片路径："+srxx)
+t()
+{
+	stop(ztsj)
+    ufnsui()
+    {
+    	swh("hh",h)
+        dht(dh,0,0,0,h)
+        dh(dh,"duration",500)
+        dha(dh2,false,true)
+        dh(dh2,"duration",1000)
+        dhset(dhlist,false,dh,dh2)
+        us(tui1.3,"dh",dhlist)
+        us(tui1.1,"visibility","gone")
+    }
+}
+
+end fn

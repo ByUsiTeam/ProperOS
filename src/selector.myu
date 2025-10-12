@@ -1,0 +1,32 @@
+
+//获取列表方法
+fn a()
+
+//加载文件夹图像
+sbp("$System/icon/folder.png", dirimg)
+//加载文件图标
+sbp("$System/icon/file-earmark.png", fileimg)
+//清空列表
+ula(list, "clear")
+//设置返回上级
+ula(list, 1=null, 3=null, 5="../上层文件夹", -1=true)
+//获取文件夹列表
+fl(sss.oo, true, szdir)
+for(a; szdir)
+{
+	ula(list, 1=null, 3=dirimg, 5=a, -1=true)
+}
+
+//获取文件列表
+fl(sss.oo, false, szfile)
+for(a; szfile)
+{
+	ula(list, 1=null, 3=fileimg, 5=a, -1=false)
+}
+//设置列表控件
+gvs(sss.v,4,bb)
+//gvs用于获取弹窗中的页面中的ID为4的列表控件为对象，赋值给bb
+uls(bb, list, "a.iyu", -1, -2)
+//这里的bb代表弹窗中4号id这个控件
+end fn
+

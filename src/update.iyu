@@ -74,9 +74,7 @@ syso("w"+w)
 syso("h"+h)
 dht(dh,0,w,0,h)
 dh(dh,"duration",500)
-dha(dh2,true,false)
-dh(dh2,"duration",2000)
-dhset(dhlist,false,dh,dh2)
+dhset(dhlist,false,dh)
 us(update.1,"dh",dhlist)
 us(update.1,"visibility","gone")</eventItme></event>
 </View>
@@ -94,11 +92,22 @@ orientation=vertical</ppt>
 <View id="14" did="13" type="TextView">
 <ppt>width=-1
 height=-2
-text=更新标题
+text=更新啦
 gravity=center
 typeface=@JuOS/src/ttf/acbt80.ttf
 textColor=#ff000000
 textSize=25sp</ppt>
+<event></event>
+</View>
+<View id="24" did="13" type="TextView">
+<ppt>width=-1
+height=-2
+text=版本号
+gravity=left|center
+typeface=@JuOS/src/ttf/acbt80.ttf
+textColor=#ff000000
+textSize=15sp
+layout_marginLeft=4dp</ppt>
 <event></event>
 </View>
 <View id="22" did="13" type="ScrollView">
@@ -120,7 +129,8 @@ text=更新内容
 textColor=#ff000000
 layout_marginTop=5dp
 typeface=@JuOS/src/ttf/acbt80.ttf
-textSize=15sp</ppt>
+textSize=15sp
+autoLink=web</ppt>
 <event></event>
 </View>
 <View id="17" did="16" type="LinearLayout">
@@ -145,18 +155,15 @@ text=下载更新
 typeface=@JuOS/src/ttf/acbt80.ttf
 background=#ff4537ff
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">
-fn lib.xzq("下载更新",sss.durl,sss.lj,sss.jianj)
-swh("w",w)
-swh("hh",h)
-syso("w"+w)
-syso("h"+h)
-dht(dh,0,w,0,h)
-dh(dh,"duration",500)
-dha(dh2,true,false)
-dh(dh2,"duration",2000)
-dhset(dhlist,false,dh,dh2)
-us(update.1,"dh",dhlist)
-us(update.1,"visibility","gone")</eventItme></event>
+<event><eventItme type="clicki">utw(null,"","请选择下载源\n- Gitee 源（国内）\n- GitHub 源（国外）","GITEE","GITHUB",true,v)
+{
+	sss durl =sss.durl_zh
+    fn core.uigo("OSUpdate.iyu")
+}
+else
+{
+	sss durl =sss.durl_en
+    fn core.uigo("OSUpdate.iyu")
+}</eventItme></event>
 </View>
 <UIEventset></UIEventset>

@@ -100,9 +100,162 @@ textSize=24sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">fn list_lib.hemo()
-us(4,"refreshing","false")
-fn lib.endutw()</eventItme></event>
+<event><eventItme type="clicki">//开始菜单设置
+swh("w",w)
+swh("hh",h)
+ss("-"+w,fw)
+ss("-"+h,fh)
+s2(fw * 2,fw)
+s2(fh *2,fh)
+dht(dh,0,fw,0,fh)
+dh(dh,"duration",500)
+dha(dh2,true,false)
+dh(dh2,"duration",1000)
+dhset(dhlist,false,dh2,dh)
+us(start_menu.4,"dh",dhlist)
+t()
+{
+	stop(950)
+    ufnsui()
+    {
+    	us(start_menu.1,"visibility","gone")
+    }
+}
+//数据输出日志
+syso(sss.home)
+//解析输出
+ula(sss.home,"list",homeZmList)
+sss homeZmList =homeZmList
+syso(sss.homeZmList)
+//桌面图标刷新逻辑
+ula(sss.home,"clear")
+uls(5,sss.home,"list.iyu",-1,-2)
+us(6,"visibility","visible")
+fn Lottie.loaddex()
+fr("@JuOS/Lottie/loading.json",data)
+fn Lottie.setImageLottie(10,data,-1,true)
+fn lib.endutw()
+t()
+{
+	s a = "$JuOS/hemo/桌面"
+	fl(a, false, home_list)
+	for(sc; home_list)
+	{
+		s img = "@fail.xml"
+		s name = sc
+        s plink =false
+        f(sc *? ".plink")
+        {
+        	s plink =true
+        	ss("$JuOS/hemo/桌面/"+sc, ml)
+            fr(ml,ml)
+            json(ml,data)
+        	json(data,"get","name",name)
+            json(data,"get","package",package)
+            json(data,"get","icon",icon)
+            json(data,"get","system",system)
+            json(data,"get","sign",sd)
+            json(sd,"get","uuid",uuid)
+            f(system != true)
+            {
+            	json(icon,"get","systemIcon",systemIcon)
+                f(systemIcon == false)
+                {
+                	ss("$App/"+package+"/",app_files_dir)
+                    json(icon,"get","icon",icon_file)
+                    ss(app_files_dir+icon_file,icd)
+                    sbp(icd,img)
+                }
+                else f(systemIcon == true)
+                {
+                	json(icon,"get","icon",icon_file)
+                    sbp(icon_file,img)
+                }
+            }
+            else
+            {
+            	sbp(icon,img)
+            }
+        }
+		else f(sc *? ".app")
+		{
+			ss("$JuOS/hemo/桌面/"+sc, ml)
+			fr(ml, app_link_sc)
+			sj(app_link_sc, "AppTb=", "=AppTb", img)
+			f(img ?* "$sys/")
+			{
+				sr(img, "$sys/", "@", img)
+                sbp(img,img)
+			}
+			else f(img ?* "%@")
+			{
+				sr(img, "%@", "$", img)
+                sbp(img,img)
+			}
+			else
+			{
+				sj(app_link_sc, "AppLj=", "=AppLj", appml)
+				sr(appml, "%g", "$App/", aml)
+				ss(aml + img, img)
+                sbp(img,img)
+			}
+			sj(sc, null, ".app", name)
+		}
+		else
+		{
+			f(sc *? ".mp4")
+			{
+				ss("$JuOS/hemo/桌面/"+sc,a)
+				fdir(a,a)
+				call(a,"mjava","awzx2.get",a,"1")
+                s img =a
+                sbp(img,img)
+			}
+			else f(sc *? ".m4a")
+			{
+				s img = "@JuOS/src/Manager/6e.png"
+                sbp(img,img)
+			}
+			else f(sc *? ".mp3")
+			{
+				s img = "@JuOS/src/Manager/6e.png"
+                sbp(img,img)
+			}
+			else f(sc *? ".flac")
+			{
+				s img = "@JuOS/src/Manager/6e.png"
+                sbp(img,img)
+			}
+			else f(sc *? ".pdf")
+			{
+				s img = "@JuOS/src/Manager/wE.png"
+                sbp(img,img)
+			}
+			else f(sc *? ".jush")
+			{
+				s img = "@ic_play_pause_regular.png"
+                sbp(img,img)
+			}
+		}
+        f(plink == true)
+        {
+        	ula(list_cz, 10=img, 14=name, 19=uuid)
+        }
+        else
+        {
+        	ula(list_cz, 10=img, 14=name)
+        }
+	}
+	ufnsui()
+	{
+		us(6, "visibility", "gone")
+		uls(5, list_cz, "list.iyu", -1, -2)
+        sss home =list_cz
+		us(4,"refreshing","false")
+	}
+}
+//桌面壁纸刷新
+fn lib.wp_src(20)</eventItme></event>
 </View>
 <View id="21" did="15" type="RelativeLayout">
 <ppt>width=-1
@@ -135,7 +288,7 @@ textSize=24sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">uigo("设置.iyu")</eventItme></event>
+<event><eventItme type="clicki">fn core.uigo("设置.iyu")</eventItme></event>
 </View>
 <View id="16" did="15" type="RelativeLayout">
 <ppt>width=-1
@@ -168,7 +321,11 @@ textSize=24sp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">ends()
-end()</eventItme></event>
+<event><eventItme type="clicki">fn lib.endutw()
+us(4,"refreshing","false")
+utw(null,"","请在其它区域进行该操作进行","确定",false,v)
+{
+	endutw()
+}</eventItme></event>
 </View>
 <UIEventset></UIEventset>

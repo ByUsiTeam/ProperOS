@@ -5,20 +5,20 @@ background=through
 layout_marginTop=15dp</ppt>
 <event></event>
 </View>
-<View id="10" did="1" type="CardView">
-<ppt>width=-1
-height=-1
-app_CardcornerRadius=20dp</ppt>
-<event></event>
-</View>
-<View id="2" did="10" type="LinearLayout">
+<View id="11" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
 orientation=vertical
 gravity=center</ppt>
 <event></event>
 </View>
-<View id="9" did="2" type="TextView">
+<View id="8" did="11" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567</ppt>
+<event></event>
+</View>
+<View id="9" did="11" type="TextView">
 <ppt>width=-2
 height=-2
 text=null
@@ -27,69 +27,64 @@ typeface=@JuOS/src/ttf/acbt80.ttf
 textSize=5sp</ppt>
 <event></event>
 </View>
-<View id="8" did="2" type="ImageView">
-<ppt>width=-1
-height=-1
-src=17301567</ppt>
-<event></event>
-</View>
-<View id="5" did="10" type="Button">
+<View id="5" did="1" type="Button">
 <ppt>width=-1
 height=-1
 text=
 background=through</ppt>
 <event><eventItme type="clicki">ulag(st_vW,9,uid_mc)
 syso(uid_mc)
-ss("/sdcard/JuOS/img/"+uid_mc,wjml)
+ss("/sdcard/ProperOS/img/"+uid_mc,wjml)
 //-_-_-_-_-_-_-_-_-_-_-
 f(uid_mc *? ".gif")
 {
-  ss("[system]"+uid_mc+"[/system]",ml_nr)
-  fw("$JuOS/Config/wallpaper/wp.gif.config",ml_nr)
-  //-_-_-_-_-_-_-_-
-  fc(wjml,"$JuOS/Config/wallpaper/wp.gif",yz)
-  f(yz == "true")
-  {
-    ufnsui()
-    {
-      fn tw.tw("动态壁纸导入成功")
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw("动态壁纸导入失败")
-    }
-  }
+	ss("[system]"+uid_mc+"[/system]",ml_nr)
+	fw("$JuOS/Config/wallpaper/wp.gif.config",ml_nr)
+	//-_-_-_-_-_-_-_-
+	fc(wjml,"$JuOS/Config/wallpaper/wp.gif",yz)
+	f(yz == "true")
+	{
+		ufnsui()
+		{
+			fn tw.tw("动态壁纸导入成功")
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw("动态壁纸导入失败")
+		}
+	}
 }
 else
 {
-  ss("[system]"+uid_mc+"[/system]",ml_nr)
-  fw("$JuOS/Config/wallpaper/wp.gif.config",ml_nr)
-  //-_-_-_-_-_-_-_-_-_-
-  fc(wjml,"$JuOS/Config/wallpaper/wp.png",yz)
-  f(yz == "true")
-  {
-    ufnsui()
-    {
-      fn tw.tw("壁纸导入成功")
-    }
-  }
-  else
-  {
-    ufnsui()
-    {
-      fn tw.tw("壁纸导入失败")
-    }
-  }
+	ss("[system]"+uid_mc+"[/system]",ml_nr)
+	fw("$JuOS/Config/wallpaper/wp.gif.config",ml_nr)
+	//-_-_-_-_-_-_-_-_-_-
+	fc(wjml,"$JuOS/Config/wallpaper/wp.png",yz)
+	f(yz == "true")
+	{
+		ufnsui()
+		{
+			fn tw.tw("壁纸导入成功")
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn tw.tw("壁纸导入失败")
+		}
+	}
 }</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">/.
 dhas(dh,st_vW,"translationX",0,180,0)
 dh(dh,"duration",800)
 dh(dh,"start")
-//透明度
+
+//透明度
 //输入动画变量对象，输入控件ID或控件对象，输入动画类型，可见度比例(0.0至1.0)...（可输入N个参数）
 dhas(dh1,st_vW,"alpha",0,1)
 dh(dh1,"duration",500)

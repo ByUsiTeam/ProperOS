@@ -3,7 +3,7 @@
 height=-1
 orientation=vertical
 gravity=center</ppt>
-<event></event>
+<event><eventItme type="clicki">syso("拦截")</eventItme></event>
 </View>
 <View id="1" did="9" type="CardView">
 <ppt>width=-1
@@ -53,16 +53,24 @@ layout_marginRight=6dp</ppt>
 <event></event>
 </View>
 <View id="7" did="5" type="ProgressBar">
-<ppt>width=-2
-height=-2
-visibility=gone</ppt>
+<ppt>width=35dp
+height=35dp
+style=16842874</ppt>
 <event></event>
 </View>
 <View id="8" did="5" type="GifView">
 <ppt>width=66dp
 height=35dp
 src=@100.gif
-scaleType=centercrop</ppt>
+scaleType=centercrop
+visibility=gone</ppt>
 <event></event>
 </View>
-<UIEventset></UIEventset>
+<View id="10" did="5" type="ImageView">
+<ppt>width=35dp
+height=35dp
+src=17301567
+visibility=gone</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">fn byusi.blur(boot_loading.9)</eventItme></UIEventset>

@@ -41,130 +41,130 @@ syso(uid_mc)
 fr("$System/Config/app_start_qdq.sys",app_start_qdq)
 f(app_start_qdq == "true")
 {
-  s qdq ="system_start.iyu"
+	s qdq ="system_start.iyu"
 }
 else f(app_start_qdq == "false")
 {
-  s qdq ="start_app.iyu"
+	s qdq ="start_app.iyu"
 }
 else
 {
-  fn tw.tw("出现未知错误")
+	fn tw.tw("出现未知错误")
 }
 //
 f(uid_mc *? ".apk")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,wjlj)
-  fo(wjlj)
+	ss("$JuOS/hemo/桌面/"+uid_mc,wjlj)
+	fo(wjlj)
 }
 else f(uid_mc *? ".m4a" || uid_mc *? ".mp3" || uid_mc *? ".flac")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m2)
-  fdir(m2,lj)
-  fr("@JuOS/html/MusicPlayer/index-2.html",yybfq)
-  fc("@JuOS/html/MusicPlayer/MusicPlayer.png","$System/yybfq/MusicPlayer.png",yuiof)
-  sr(yybfq,"{music}",lj,yybfqth)
-  sr(yybfqth,"{name}",uid_mc,ykl)
-  fw("$System/yybfq/index.html",ykl)
-  sss url ="$System/yybfq/index.html"
-  uigo(qdq)
+	ss("$JuOS/hemo/桌面/"+uid_mc,m2)
+	fdir(m2,lj)
+	fr("@JuOS/html/MusicPlayer/index-2.html",yybfq)
+	fc("@JuOS/html/MusicPlayer/MusicPlayer.png","$System/yybfq/MusicPlayer.png",yuiof)
+	sr(yybfq,"{music}",lj,yybfqth)
+	sr(yybfqth,"{name}",uid_mc,ykl)
+	fw("$System/yybfq/index.html",ykl)
+	sss url ="$System/yybfq/index.html"
+	fn core.uigo(qdq)
 }
 else f(uid_mc *? ".mp4")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
-  fdir(m3,m3)
-  ss("file://"+m3,m33)
-  sss url =m33
-  sss title =uid_mc
-  uigo("bfq2.iyu")
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,m3)
+	ss("file://"+m3,m33)
+	sss url =m33
+	sss title =uid_mc
+	fn core.uigo("bfq2.iyu")
 }
 else f(uid_mc *? ".pdf")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
-  fdir(m3,m3_2)
-  ss("$JuOS/plug-in_component/pdf/web/viewer.html?file="+m3_2,ljlj)
-  sss url =ljlj
-  uigo("system_start.iyu")
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,m3_2)
+	ss("$JuOS/plug-in_component/pdf/web/viewer.html?file="+m3_2,ljlj)
+	sss url =ljlj
+	fn core.uigo("system_start.iyu")
 }
 else f(uid_mc *? ".jush")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
-  fdir(m3,u)
-  sss url =u
-  syso(sss.url)
-  uigo("JuOS.terminal.iyu")
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,u)
+	sss url =u
+	syso(sss.url)
+	fn core.uigo("JuOS.terminal.iyu")
 }
 else f(uid_mc *? ".html")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
-  fdir(m3,u)
-  ss("file://"+m3,m33)
-  sss url =m33
-  uigo(qdq)
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,u)
+	ss("file://"+m3,m33)
+	sss url =m33
+	fn core.uigo(qdq)
 }
 else
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc+".app",ml)
-  fr(ml,wjuwjnr)
-  //
-  sj(wjuwjnr,"AppLj=","=AppLj",AppLj)
-  sj(wjuwjnr,"AppUrlJr=","=AppUrlJr",AppUrlJr)
-  sj(wjuwjnr,"System=","=System",sys)
-  f(sys == null)
-  {
-    sr(AppLj,"%g","$App/",AppLj)
-    //
-    f(AppUrlJr == null || AppUrlJr == "")
-    {
-      ss(AppLj+"src/index.html",url)
-      sss url =url
-      fw("$JuOS/temp_url/url.jtm",url)
-      uigo(qdq)
-    }
-    else
-    {
-      sss url =AppUrlJr
-      fw("$JuOS/temp_url/url.jtm",url)
-      uigo(qdq)
-    }
-  }
-  else f(sys == "True")
-  {
-    sj(wjuwjnr,"Ui=","=Ui",ui)
-    sj(wjuwjnr,"End=","=End",sys_end)
-    sj(wjuwjnr,"Url=","=Url",Url_System)
-    //
-    sss url =Url_System
-    fw("$JuOS/temp_url/url.jtm",Url_System)
-    //
-    ufnsui()
-    {
-      f(sys_end == "false")
-      {
-        f(Url_System != null)
-        {
-          uigo("system_start.iyu")
-        }
-        else
-        {
-          uigo(ui)
-        }
-      }
-      else f(sys_end == "true")
-      {
-        f(Url_System != null)
-        {
-          uigo("system_start.iyu")
-          end()
-        }
-        else
-        {
-          uigo(ui)
-          end()
-        }
-      }
-    }
-  }
+	ss("$JuOS/hemo/桌面/"+uid_mc+".app",ml)
+	fr(ml,wjuwjnr)
+	//
+	sj(wjuwjnr,"AppLj=","=AppLj",AppLj)
+	sj(wjuwjnr,"AppUrlJr=","=AppUrlJr",AppUrlJr)
+	sj(wjuwjnr,"System=","=System",sys)
+	f(sys == null)
+	{
+		sr(AppLj,"%g","$App/",AppLj)
+		//
+		f(AppUrlJr == null || AppUrlJr == "")
+		{
+			ss(AppLj+"src/index.html",url)
+			sss url =url
+			fw("$JuOS/temp_url/url.jtm",url)
+			fn core.uigo(qdq)
+		}
+		else
+		{
+			sss url =AppUrlJr
+			fw("$JuOS/temp_url/url.jtm",url)
+			fn core.uigo(qdq)
+		}
+	}
+	else f(sys == "True")
+	{
+		sj(wjuwjnr,"Ui=","=Ui",ui)
+		sj(wjuwjnr,"End=","=End",sys_end)
+		sj(wjuwjnr,"Url=","=Url",Url_System)
+		//
+		sss url =Url_System
+		fw("$JuOS/temp_url/url.jtm",Url_System)
+		//
+		ufnsui()
+		{
+			f(sys_end == "false")
+			{
+				f(Url_System != null)
+				{
+					fn core.uigo("system_start.iyu")
+				}
+				else
+				{
+					fn core.uigo(ui)
+				}
+			}
+			else f(sys_end == "true")
+			{
+				f(Url_System != null)
+				{
+					fn core.uigo("system_start.iyu")
+					end()
+				}
+				else
+				{
+					fn core.uigo(ui)
+					end()
+				}
+			}
+		}
+	}
 }</eventItme><eventItme type="press">ulag(st_vW,4,uid_mc)
 sss uid_mc =uid_mc
 fn lib.utw("home-utw.iyu")</eventItme></event>

@@ -1,6 +1,6 @@
 {
-  "name": "ProperOS",
-  "type": "iapp",
-  "iyu": "JuOS_Hemo.iyu",
-  "icon": "@JuOS/logo/properos.png"
+  "name": "{Name}",
+  "type": "{Type}",
+  "iyu": "{Ui}",
+  "icon": "{Icon}"
 }

@@ -22,18 +22,18 @@ addv(fkj,"janz1.iyu")
 gvs(fkj,janz1.1,背景)
 f(选项==0)
 {
-s 颜色="#FF38B367"
-s 图片="@ts0.png"
+	s 颜色="#FF38B367"
+	s 图片="@ts0.png"
 }
 else f(选项==1)
 {
-s 颜色="#fffe1d1d"
-s 图片="@ts1.png"
+	s 颜色="#fffe1d1d"
+	s 图片="@ts1.png"
 }
 else
 {
-s 颜色="#FF06A7FF"
-s 图片="@ts2.png"
+	s 颜色="#FF06A7FF"
+	s 图片="@ts2.png"
 }
 ngde("0","100",颜色,颜色,bj)
 us(背景,"background",bj)

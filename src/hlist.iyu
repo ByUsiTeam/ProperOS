@@ -56,13 +56,14 @@ fn system.app_start(uid_mc)</eventItme><eventItme type="press">ulag(st_vW,5,uid_
 sss uid_mc =uid_mc
 fn lib.utw("home-utw.iyu")</eventItme></event>
 </View>
-<UIEventset><eventItme type="loading">dhas(dh, st_vW, "scaleX", 0.5, 1)
-dh(dh, "duration", 500)
-dh(dh, "start")
-
-dhas(dh1, st_vW, "scaleY", 0.5, 1)
-dh(dh1, "duration", 500)
-dh(dh1, "start")
-dhas(dh2, st_vW, "alpha", 0,1)
-dh(dh2, "duration", 1000)
-dh(dh2, "start")</eventItme></UIEventset>
+<UIEventset><eventItme type="loading">ulag(st_vW,4,path)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+  cls(sss.QmLoader,"com.qmdeve.qmloader.LoadRequest",LoadRequest)
+  //获取实例(必写)
+  javax(instance,null,Loader,"getInstance")
+  javax(instance,instance,Loader,"with","android.content.Context",activity)
+  //本地图片路径(必写)
+  javax(instance,instance,LoadRequest,"load","String",path)
+  //绑定图像View(必写)
+  gvs(st_vW,imageView)
+  javax(instance,instance,LoadRequest,"into","android.widget.ImageView",imageView)</eventItme></UIEventset>

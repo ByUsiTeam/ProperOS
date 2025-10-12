@@ -4,6 +4,14 @@ height=-1
 background=@JuOS/src/wallpaper/DefaultWallpaper_1.png</ppt>
 <event></event>
 </View>
+<View id="8" did="1" type="ImageView">
+<ppt>width=-1
+height=-1
+src=17301567
+scaleType=centercrop
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="2" did="1" type="LinearLayout">
 <ppt>width=-1
 height=-1
@@ -17,18 +25,24 @@ height=85dp
 src=@JuOS/logo/properos.png</ppt>
 <event></event>
 </View>
-<View id="5" did="2" type="CardView">
+<View id="7" did="2" type="LinearLayout">
 <ppt>width=-1
-height=-2
-layout_marginTop=5dp
-app_CardcornerRadius=15dp
-layout_marginLeft=5dp
-layout_marginRight=5dp</ppt>
+height=110dp
+orientation=vertical
+gravity=center
+layout_marginTop=5dp</ppt>
 <event></event>
 </View>
-<View id="4" did="5" type="TextView">
-<ppt>width=-1
-height=-1
+<View id="6" did="7" type="ImageView">
+<ppt>width=35dp
+height=35dp
+src=17301567
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="4" did="7" type="TextView">
+<ppt>width=-2
+height=-2
 text=ProperOS欢迎您的使用
 textSize=25sp
 typeface=@JuOS/src/ttf/acbt80.ttf
@@ -41,107 +55,125 @@ layout_marginBottom=5dp</ppt>
 </View>
 <UIEventset><eventItme type="loading">//配置全屏
 fn byusi.ztl()
-fn lib.wp(1)
+fn lib.wp_src(8)
 //
 t()
 {
-  f(sss.yztz == "true")
-  {
-    endcode
-  }
-  else
-  {
-    w(true)
-    {
-      f(sss.yztz != "true")
-      {
-        ufnsui()
-        {
-          us(4,"text","ProperOS正在配置更新.")
-          syso("1")
-        }
-        stop(500)
-        ufnsui()
-        {
-          us(4,"text","ProperOS正在配置更新..")
-          syso("2")
-        }
-        stop(500)
-        ufnsui()
-        {
-          us(4,"text","ProperOS正在配置更新...")
-          syso("3")
-        }
-        stop(500)
-      }
-      elsef(sss.yztz == "true")
-      {
-        endcode
-      }
-    }
-  }
-}</eventItme><eventItme type="loadingComplete">
+	f(sss.yztz == "true")
+	{
+		endcode
+	}
+	else
+	{
+		w(true)
+		{
+			f(sss.yztz != "true")
+			{
+				ufnsui()
+				{
+					us(4,"text","ProperOS正在配置更新")
+					syso("0")
+				}
+				stop(500)
+				ufnsui()
+				{
+					us(4,"text","ProperOS正在配置更新.")
+					syso("1")
+				}
+				stop(500)
+				ufnsui()
+				{
+					us(4,"text","ProperOS正在配置更新..")
+					syso("2")
+				}
+				stop(500)
+				ufnsui()
+				{
+					us(4,"text","ProperOS正在配置更新...")
+					syso("3")
+				}
+				stop(500)
+			}
+			else f(sss.yztz == "true")
+			{
+				endcode
+			}
+		}
+	}
+}</eventItme><eventItme type="loadingComplete">fn lib.utw("loading.iyu")
 t()
 {
-  //导入PDF插件
-  fuzs("@JuOS/html/pdf/pdf.juossrc","$JuOS/plug-in_component/pdf",yz_pdf)
-  fuzs("@JuOS/src/SystemLevelIcon/SystemLevelIcon.jip","$JuOS/ICON/",yz_sts)
-  //
-  //默认应用引入
-  fw("$JuOS/hemo/桌面/应用商店.app","System=True=System\nUi=应用市场.iyu=Ui\nAppTb=$sys/JuOS/logo/yysc_logo.png=AppTb\nEnd=false=End")
-  fw("$JuOS/hemo/桌面/设置壁纸.app","System=True=System\nUi=设置壁纸.iyu=Ui\nAppTb=$sys/JuOS/src/img/ByUsi/bz.png=AppTb\nEnd=true=End")
-  fw("$JuOS/hemo/桌面/设置.app","System=True=System\nUi=设置.iyu=Ui\nAppTb=%@JuOS/ICON/ic_app_icon_settings.png=AppTb\nEnd=false=End")
-  fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
-  fw("$JuOS/hemo/桌面/JuOS音乐.app","System=True=System\nUi=juos_music.iyu=Ui\nAppTb=$sys/JuOS/logo/MusicPlayerIcon.png=AppTb\nEnd=false=End")
-  fw("$JuOS/hemo/桌面/FoxCM.app","System=True=System\nAppTb=$sys/JuOS/logo/foxcm.ico=AppTb\nEnd=false=End\nUrl=http://foxcm.byusi.cn=Url")
-  fw("$JuOS/hemo/桌面/Cdifit.app","System=True=System\nAppTb=$sys/JuOS/logo/cdifit.png=AppTb\nEnd=false=End\nUrl=http://pan.byusi.cn=Url")
-  //fw("$JuOS/hemo/桌面/计算器.app","System=True=System\nUi=system_start.iyu=Ui\nAppTb=$sys/JuOS/html/jsj/jsj.png=AppTb\nEnd=false=End\nUrl=@JuOS/html/jsj/index.html=Url")
-  //
-  fc("@JuOS/App/HASH获取工具.jush","$JuOS/hemo/桌面/HASH获取工具.jush",yz)
-  fn lib.install("@JuOS/App/LitCalculator.jupk")
-  //删除之前的系统应用索引
-  //零时
-  fd("$JuOS/hemo/桌面/飓云盘.app",yz)
-  fd("$JuOS/hemo/桌面/通知信息流.app",yz)
-  fd("$JuOS/hemo/桌面/计算器.app",yz)
-  fd("$JuOS/hemo/HASH获取工具.jush",yz)
-  fd("$JuOS/hemo/桌面/宿主机应用.app",yz)
-  //
-  fe("$System/Config/app_start_qdq.sys",yz_app_start_qdq)
-  f(yz_app_start_qdq == "false")
-  {
+	fuzs("@ProperOS/Package/properos-rom.zip","$",true,rom)
+    f(rom == false)
+    {
+    	ufnsui()
+    	{
+    		fn tw.tw2("解压默认包失败",1)
+            end()
+    	}
+    }
+	//删除之前的系统应用索引
+    fd("$JuOS/hemo/桌面/应用商店.app",yz)
+    fd("$JuOS/hemo/桌面/JuOS音乐.app",yz)
+	fd("$JuOS/hemo/桌面/飓云盘.app",yz)
+	fd("$JuOS/hemo/桌面/通知信息流.app",yz)
+	fd("$JuOS/hemo/HASH获取工具.jush",yz)
+	fd("$JuOS/hemo/桌面/宿主机应用.app",yz)
+	//
+	fe("$System/Config/app_start_qdq.sys",yz_app_start_qdq)
+	f(yz_app_start_qdq == "false")
+	{
+		fw("$System/Config/app_start_qdq.sys","true")
+	}
+    //写入强制启动新启动器
     fw("$System/Config/app_start_qdq.sys","true")
-  }
-  //导入视频播放器
-  fc("@JuOS/src/player/index.html","$System/bfq/index.html",yz_bfq)
-  fc("@JuOS/src/player/mui-player.min.js","$System/bfq/mui-player.min.js",yz_bfq)
-  fc("@JuOS/src/player/mui-player.min.css","$System/bfq/mui-player.min.css",yz_bfq)
-  //解压第2代视频播放器
-  fuzs("@JuOS/html/VideoPlayer2/VideoPlayer2.zip","$System/VideoPlayer2",yz_vp)
-  //导入HTML5音乐播放器
-  fc("@JuOS/html/MusicPlayer/index.html","$System/yybfq/index.html",yz_yybfq)
-  //配置文本预览器
-  fc("@JuOS/html/TextPreviewer/TextPreviewer.html","$System/wbylq/index.html",yz_wbylq)
-  fuzs("@JuOS/src/yybfq/jc.zip","$System/yybfq",yc)
-  //自动检查更新配置
-  fe("$System/Config/Update.sys",u)
-  f(u == "false")
-  {
-    fw("$System/Config/Update.sys","true")
-  }
-  else
-  {
-    syso("false")
-  }
-  //版本号同步
-  fr("@version.txt",v)
-  fw("$JuOS/v/v.cfg",v)
-  //
-  ufnsui()
-  {
-    sss yztz ="true"
-    uigo("mian.iyu")
-    lan(0)
-    end()
-  }
+	//写入默认桌面圆角配置
+	fe("$System/Config/fillet.sys",fillet)
+	f(fillet != true)
+	{
+		fw("$System/Config/fillet.sys","25dp")
+	}
+    //强制登录设置，强制的
+    fe("$System/Config/UserLoginLock.sys",UserLoginLock)
+    f(UserLoginLock == false)
+    {
+    	fw("$System/Config/UserLoginLock.sys","true")
+    }
+	//导入视频播放器
+	fc("@JuOS/src/player/index.html","$System/bfq/index.html",yz_bfq)
+	fc("@JuOS/src/player/mui-player.min.js","$System/bfq/mui-player.min.js",yz_bfq)
+	fc("@JuOS/src/player/mui-player.min.css","$System/bfq/mui-player.min.css",yz_bfq)
+	//导入HTML5音乐播放器
+	fc("@JuOS/html/MusicPlayer/index.html","$System/yybfq/index-2.html",yz_yybfq)
+	//配置文本预览器
+	fc("@JuOS/html/TextPreviewer/TextPreviewer.html","$System/wbylq/index.html",yz_wbylq)
+	//自动检查更新配置
+	fe("$System/Config/Update.sys",u)
+	f(u == "false")
+	{
+		fw("$System/Config/Update.sys","false")
+	}
+	else
+	{
+		syso("false")
+	}
+    //初始化一些必要的文件
+    fw("$System/dev/null","null")
+    fw("$System/dev/false","false")
+    fw("$System/dev/true","true")
+	//版本号同步
+	fr("@version.txt",v)
+	fw("$JuOS/v/v.cfg",v)
+	//
+	ufnsui()
+	{
+		fn lib.endutw()
+		sss yztz ="true"
+		fn core.uigo("mian.iyu")
+		lan(0)
+		end()
+	}
+}</eventItme><eventItme type="downkey">f(st_kC == 4)
+{
+	
 }</eventItme></UIEventset>

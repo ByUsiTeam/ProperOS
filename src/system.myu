@@ -2,90 +2,98 @@ fn update(y)
 
 f(y == "true")
 {
-  t()
-  {
-    fr("@version.txt",bd_v)
-    hs("https://gitee.com/api/v5/properos/properos/releases/latest?access_token=e41479a1b72747f25afd246fbe8adb09",url)
-    f(url != null)
-    {
-      json(url,data)
-      json(data,"get","tag_name",v)
-      f(bd_v != v)
-      {
-        json(data,"get","body",jianj)
-        json(data,"list","assets",list)
-        json(list,"size",size)
-        w(size &gt; 0)
-        {
-          s-(1,size)
-          json(list,"data",size,item)
-          json(item,"get","browser_download_url",durl)
-          json(item,"get","name",apk_name)
-          slower(apk_name,n)
-          f(n *? ".apk")
-          {
-            ufnsui()
-            {
-              us(update.1,"visibility","visible")
-              swh("w",w)
-              swh("hh",h)
-              syso("w"+w)
-              syso("h"+h)
-              dht(dh,w,0,h,0)
-              dh(dh,"duration",500)
-              dha(dh2,false,true)
-              dh(dh2,"duration",1000)
-              dhset(dhlist,false,dh,dh2)
-              us(update.1,"dh",dhlist)
-              us(update.15,"text",jianj)
-              sss durl =durl
-              fw("$ProperOS/update/base.apk","1")
-              fd("$ProperOS/update/base.apk",y)
-              fdir("$ProperOS/update/base.apk",lj)
-              sss lj =lj
-              sss jianj =jianj
-             /. utw(null,"更新提示",jianj,"下载更新","取消更新",false,v)
-              {
-                fw("$ProperOS/update/base.apk","1")
-                fd("$ProperOS/update/base.apk",y)
-                fdir("$ProperOS/update/base.apk",lj)
-                fn lib.xzq("下载更新",durl,lj,jianj)
-              }
-              else
-              {
-                endutw()
-              }
-              ./
-            }
-          }
-        }
-      }
-      else f(v == bd_v)
-      {
-        ufnsui()
-        {
-          fn tw.tw2("无可更新版本",2)
-        }
-      }
-      else
-      {
-        ufnsui()
-        {
-          fn tw.tw2(data,1)
-        }
-      }
-    }
-    else
-    {
-      ufnsui()
-      {
-        utw(null,"","请检查网络","确定",false,v)
-        {
-          endutw()
-        }
-      }
-    }
-  }
+	us(123,"visibility","visible")
+	fn Lottie.loaddex()
+	fr("@JuOS/Lottie/loading.json",data)
+	fn Lottie.setImageLottie(124,data,0,true)
+	t()
+	{
+		s api_url ="https://gitee.com/properos/mirror/raw/master/update.json"
+		fr("@version.txt",bd_v)
+		hs(api_url,url)
+		f(url != null)
+		{
+			json(url,data)
+			json(data,"get","version",v)
+			json(data,"get","body",jianj)
+			json(data,"get","durl-zh",durl_zh)
+			json(data,"get","durl-en",durl_en)
+			json(data,"get","name",apk_name)
+			slower(apk_name,n)
+			f(bd_v != v)
+			{
+				f(n *? ".apk")
+				{
+					ufnsui()
+					{
+						us(123,"visibility","gone")
+						us(update.1,"visibility","visible")
+						swh("w",w)
+						swh("hh",h)
+						syso("w"+w)
+						syso("h"+h)
+						dht(dh,w,0,h,0)
+						dh(dh,"duration",500)
+						dha(dh2,false,true)
+						dh(dh2,"duration",1000)
+						dhset(dhlist,false,dh,dh2)
+						us(update.1,"dh",dhlist)
+						us(update.15,"text",jianj)
+						us(update.24,"text","最新版本版本号："+v)
+						sss durl_en =durl_en
+						sss durl_zh =durl_zh
+						fw("$ProperOS/update/base.apk","1")
+						fd("$ProperOS/update/base.apk",y)
+						fdir("$ProperOS/update/base.apk",lj)
+						sss lj =lj
+						sss jianj =jianj
+					}
+				}
+			}
+			else f(v == bd_v)
+			{
+				ufnsui()
+				{
+					fn tw.tw2("无可更新版本",2)
+				}
+			}
+			else
+			{
+				ufnsui()
+				{
+					fn tw.tw2(data,1)
+				}
+			}
+		}
+		else
+		{
+			ufnsui()
+			{
+				utw(null,"","请检查网络","确定",false,v)
+				{
+					endutw()
+				}
+			}
+		}
+	}
+}
+
+end fn
+
+fn update2()
+
+t()
+{
+	hs("https://gitee.com/properos/properos/raw/master/update.json",json)
+	json(json,json)
+	json(json,"get","version",版本)
+	json(json,"get","title",标题)
+	json(json,"get","introduction",更新简介)
+	json(json,"get","submitter",更新提交者)
+	json(json,"get","url",更新链接)
+	ufnsui()
+	{
+	}
 }
 
 end fn
@@ -94,203 +102,477 @@ fn install(jspk)
 
 f(jspk != null)
 {
-  fuz(jspk,"MainIndex.json","$temp",fuzjspk)
-  f(fuzjspk == true)
-  {
-    fr("$temp/MainIndex.json",nr)
-    json(nr,json)
-    json(json,"get","name",name)
-    json(json,"get","package",package)
-    //存储jspk文件
-    ss("$data/app/jspk/"+package+"/base.jspk",base)
-    fc(jspk,base,yz)
-    //
-    ss("$JuOS/data/app/"+package,dataapp)
-    fuzs(jspk,dataapp,dapp)
-    f(dapp == true)
-    {
-      ss("$JuOS/hemo/桌面/"+name+".alink",lj)
-      fc("$temp/MainIndex.json",lj,iu)
-    }
-    else
-    {
-      fn tw.tw("解压安装程序失败")
-    }
-  }
-  else
-  {
-    fn tw.tw("主文件解压失败")
-  }
+	time(4,time)
+	fuz(jspk,"MainIndex.json","$temp/"+time,fuzjspk)
+	f(fuzjspk == true)
+	{
+		fr("$temp/"+time+"/MainIndex.json",nr)
+		json(nr,json)
+		json(json,"get","system",system)
+		f(system == true)
+		{
+			json(json,"get","sign",sign)
+			json(sign,"get","byusi",byusi_user_system)
+			json(byusi_user_system,"get","uuid",uuid)
+			json(byusi_user_system,"get","email",email)
+			t()
+			{
+				hs("https://api.www.cdifit.cn/user/query.php","action=query_username&uuid="+uuid,"utf-8",name1)
+				hs("https://api.www.cdifit.cn/user/query.php","action=query_username&email="+email,"utf-8",name2)
+				json(name1,name1)
+				json(name2,name2)
+				f(name1 != null && name2 != null)
+				{
+					json(name1,"get","status",status)
+					f(status == "success")
+					{
+						json(name1,"get","username",username)
+						syso("UserName："+username)
+						json(sign,"get","uuid",sign_uuid)
+						fc("$temp/"+time+"/MainIndex.json","$JuOS/hemo/桌面/"+sign_uuid+".plink",true,yzfc)
+                        f(yzfc == true)
+                        {
+                        	json(json,"get","package",package)
+                            fuzs(jspk,"$App/"+package,true,fuzs)
+                            f(yzfc == true && fuzs == true)
+                            {
+                            	ufnsui()
+                            	{
+                            		fn tw.tw("安装完成")
+                            	}
+                            }
+                        }
+					}
+					else
+					{
+						ufnsui()
+						{
+							fn tw.tw2("非法应用无法进行安装",1)
+						}
+					}
+				}
+				else
+				{
+					ufnsui()
+					{
+						fn tw.tw2("请联网进行应用安装",1)
+					}
+				}
+			}
+		}
+		else
+		{
+			json(json,"get","name",app_name)
+            json(json,"get","package",app_package)
+            json(json,"get","sign",app_sign)
+            f(app_sign != null && app_name != null && app_package != null)
+            {
+            	json(app_sign,"get","uuid",app_uuid)
+                json(app_sign,"get","byusi",user_byusi)
+                json(user_byusi,"get","uuid",byusi_uuid)
+                t()
+                {
+                	hs("https://api.www.cdifit.cn/user/query.php","action=query_username&uuid="+byusi_uuid,"utf-8",hd)
+                    json(hd,hdd)
+                    f(hdd != null)
+                    {
+                    	json(hdd,"get","status",status)
+                        f(status == "success")
+                        {
+                        	json(hdd,"get","username",username)
+                            ufnsui()
+                            {
+                            	utw(null,"","应用名："+app_name+"\n包名："+app_package+"\n开发者："+username+"\n\n确定安装该应用吗？","确定","取消",true,v)
+                                {
+                                	endutw()
+                                    utw(null,"","安装中...",true,vv)
+                                    {
+                                    }
+                                	fc("$temp/"+time+"/MainIndex.json","$JuOS/hemo/桌面/"+app_uuid+".plink",true,yzfc)
+                                    fuzs(jspk,"$App/"+app_package,true,fuzs)
+                                    endutw()
+                                    f(yzfc == true && fuzs == true)
+                                    {
+                                    	fn tw.tw("安装成功")
+                                    }
+                                    else
+                                    {
+                                    	fn tw.tw2("安装失败",1)
+                                    }
+                                }
+                                else
+                                {
+                                	endutw()
+                                }
+                            }
+                        }
+                        else
+                        {
+                        	ufnsui()
+                        	{
+                        		fn tw.tw2("查询失败，非法安装包",1)
+                        	}
+                        }
+                    }
+                    else
+                    {
+                    	ufnsui()
+                    	{
+                    		fn tw.tw2("服务端错误",1)
+                    	}
+                    }
+                }
+            }
+            else
+            {
+            	fn tw.tw2("错误的安装包",1)
+            }
+		}
+	}
+	else
+	{
+		fn tw.tw("主文件解压失败")
+	}
 }
 else
 {
-  fn tw.tw("无 .jspk 文件路径")
+	fn tw.tw("无 .jspk 文件路径")
 }
 
 end fn
 
-fn app_start(uid_mc)
+fn app_start(uid_mc,uuid)
 
+f(uuid == null)
+{
 syso(uid_mc)
 //
 fr("$System/Config/app_start_qdq.sys",app_start_qdq)
 f(app_start_qdq == "true")
 {
-  s qdq ="system_start.iyu"
+	s qdq ="system_start.iyu"
 }
 else f(app_start_qdq == "false")
 {
-  s qdq ="start_app.iyu"
+	s qdq ="start_app.iyu"
 }
 else
 {
-  fn tw.tw("出现未知错误")
+	fn tw.tw("出现未知错误")
 }
 //
 f(uid_mc *? ".apk")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,wjlj)
-  fo(wjlj)
+	ss("$JuOS/hemo/桌面/"+uid_mc,wjlj)
+	fo(wjlj)
 }
 else f(uid_mc *? ".m4a" || uid_mc *? ".mp3" || uid_mc *? ".flac")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m2)
-  fdir(m2,lj)
-  fr("@JuOS/html/MusicPlayer/index-2.html",yybfq)
-  fc("@JuOS/html/MusicPlayer/MusicPlayer.png","$System/yybfq/MusicPlayer.png",yuiof)
-  sr(yybfq,"{music}",lj,yybfqth)
-  sr(yybfqth,"{name}",uid_mc,ykl)
-  fw("$System/yybfq/index.html",ykl)
-  sss url ="$System/yybfq/index.html"
-  uigo(qdq)
+	ss("$JuOS/hemo/桌面/"+uid_mc,m2)
+	fdir(m2,lj)
+	fr("@JuOS/html/MusicPlayer/index-2.html",yybfq)
+	fc("@JuOS/html/MusicPlayer/MusicPlayer.png","$System/yybfq/MusicPlayer.png",yuiof)
+	sr(yybfq,"{music}",lj,yybfqth)
+	sr(yybfqth,"{name}",uid_mc,ykl)
+	fw("$System/yybfq/index.html",ykl)
+	sss url ="$System/yybfq/index.html"
+	fn core.uigo(qdq)
 }
 else f(uid_mc *? ".mp4")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
-  fdir(m3,m3)
-  ss("file://"+m3,m33)
-  sss url =m33
-  sss title =uid_mc
-  uigo("bfq2.iyu")
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,m3)
+	ss("file://"+m3,m33)
+	sss url =m33
+	sss title =uid_mc
+	fn core.uigo("bfq2.iyu")
 }
 else f(uid_mc *? ".pdf")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
-  fdir(m3,m3_2)
-  ss("$JuOS/plug-in_component/pdf/web/viewer.html?file="+m3_2,ljlj)
-  sss url =ljlj
-  uigo("system_start.iyu")
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,m3_2)
+	ss("$JuOS/plug-in_component/pdf/web/viewer.html?file="+m3_2,ljlj)
+	sss url =ljlj
+	fn core.uigo("system_start.iyu")
 }
 else f(uid_mc *? ".jush")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
-  fdir(m3,u)
-  sss url =u
-  syso(sss.url)
-  uigo("JuOS.terminal.iyu")
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,u)
+	sss url =u
+	syso(sss.url)
+	fn core.uigo("JuOS.terminal.iyu")
 }
 else f(uid_mc *? ".html")
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc,m3)
-  fdir(m3,u)
-  ss("file://"+m3,m33)
-  sss url =m33
-  uigo(qdq)
+	ss("$JuOS/hemo/桌面/"+uid_mc,m3)
+	fdir(m3,u)
+	ss("file://"+m3,m33)
+	sss url =m33
+	fn core.uigo(qdq)
 }
 else
 {
-  ss("$JuOS/hemo/桌面/"+uid_mc+".app",ml)
-  fr(ml,wjuwjnr)
-  //
-  sj(wjuwjnr,"AppLj=","=AppLj",AppLj)
-  sj(wjuwjnr,"AppUrlJr=","=AppUrlJr",AppUrlJr)
-  sj(wjuwjnr,"System=","=System",sys)
-  f(sys == null)
-  {
-    sr(AppLj,"%g","$App/",AppLj)
-    //
-    f(AppUrlJr == null || AppUrlJr == "")
-    {
-      ss(AppLj+"src/index.html",url)
-      sss url =url
-      fw("$JuOS/temp_url/url.jtm",url)
-      uigo(qdq)
-    }
-    else
-    {
-      sss url =AppUrlJr
-      fw("$JuOS/temp_url/url.jtm",url)
-      uigo(qdq)
-    }
-  }
-  else f(sys == "True")
-  {
-    sj(wjuwjnr,"Ui=","=Ui",ui)
-    sj(wjuwjnr,"End=","=End",sys_end)
-    sj(wjuwjnr,"Url=","=Url",Url_System)
-    //
-    sss url =Url_System
-    fw("$JuOS/temp_url/url.jtm",Url_System)
-    //
-    ufnsui()
-    {
-      f(sys_end == "false")
-      {
-        f(Url_System != null)
-        {
-          uigo("system_start.iyu")
-        }
-        else
-        {
-          uigo(ui)
-        }
-      }
-      else f(sys_end == "true")
-      {
-        f(Url_System != null)
-        {
-          uigo("system_start.iyu")
-          end()
-        }
-        else
-        {
-          uigo(ui)
-          end()
-        }
-      }
-    }
-  }
+	ss("$JuOS/hemo/桌面/"+uid_mc+".app",ml)
+	fr(ml,wjuwjnr)
+	f(wjuwjnr == null)
+	{
+		ss("$JuOS/hemo/桌面/"+uid_mc+".plink",ml)
+		fe(ml,plk)
+		f(plk == true)
+		{
+			fr(ml,plkdata)
+			json(plkdata,jplk)
+		}
+		else
+		{
+			endcode
+		}
+	}
+	//
+	sj(wjuwjnr,"AppLj=","=AppLj",AppLj)
+	sj(wjuwjnr,"Config=","=Config",Config)
+	sj(wjuwjnr,"AppUrlJr=","=AppUrlJr",AppUrlJr)
+	sj(wjuwjnr,"System=","=System",sys)
+	sj(wjuwjnr,"jsonUi=","=jsonUi",jsonui)
+	slower(jsonui,jsonui)
+	f(jsonui == null)
+	{
+		f(sys == null)
+		{
+			sr(AppLj,"%g","$App/",AppLj)
+			//
+			f(AppUrlJr == null || AppUrlJr == "")
+			{
+				ss(AppLj+"src/index.html",url)
+				sss url =url
+				fw("$JuOS/temp_url/url.jtm",url)
+				f(Config != null)
+				{
+					sss qdq =qdq
+					sss package =AppLj
+					fn core.uigo("screen.iyu")
+				}
+				else
+				{
+					fn core.uigo(qdq)
+				}
+			}
+			else
+			{
+				sss url =AppUrlJr
+				fw("$JuOS/temp_url/url.jtm",url)
+				f(Config != null)
+				{
+					sss qdq =qdq
+					sss package =AppLj
+					fn core.uigo("screen.iyu")
+				}
+				else
+				{
+					fn core.uigo(qdq)
+				}
+			}
+		}
+		else f(sys == "True")
+		{
+			sj(wjuwjnr,"Ui=","=Ui",ui)
+			sj(wjuwjnr,"End=","=End",sys_end)
+			sj(wjuwjnr,"Url=","=Url",Url_System)
+			//
+			sss url =Url_System
+			fw("$JuOS/temp_url/url.jtm",Url_System)
+			//
+			ufnsui()
+			{
+				f(sys_end == "false")
+				{
+					f(Url_System != null)
+					{
+						fn core.uigo("system_start.iyu")
+					}
+					else
+					{
+						fn core.uigo(ui)
+					}
+				}
+				else f(sys_end == "true")
+				{
+					f(Url_System != null)
+					{
+						fn core.uigo("system_start.iyu")
+						end()
+					}
+					else
+					{
+						fn core.uigo(ui)
+						end()
+					}
+				}
+			}
+		}
+	}
+	else f(jsonui == "true")
+	{
+		sr(AppLj,"%g","$App/",package)
+		sss url =package
+		fn core.uigo("jsonUi.iyu")
+	}
+	else
+	{
+		ufnsui()
+		{
+			utw(null,"","出现错误了","确定",false,v)
+			{
+				endutw()
+			}
+		}
+	}
+}
+}
+else
+{
+	fn system.app_start2(uuid)
 }
 
 end fn
 
-fn gg(zt)
+fn app_start2(uuid)
 
-f(zt == "get")
+syso(uuid)
+ss("$JuOS/hemo/桌面/"+uuid+".plink",ml)
+fr(ml,ml)
+json(ml,data)
+json(data,"get","startUrl",startUrl)
+json(startUrl,"get","qiyue",startUrl_qiyue)
+f(startUrl_qiyue == true)
 {
-  t()
-  {
-    hs("https://api.juos.byusi.cn/gg/index.html",hs)
-    fw("$System/Data/gg.config.html",hs)
-    syso(hs)
-    sss gg_zt =hs
-  }
-}
-else f(zt == "zs")
-{
-  f(sss.gg_zt != null)
-  {
-    sss url ="$System/Data/gg.config.html"
-    uigo("system_start.iyu")
-  }
-  else
-  {
-    syso("gg_html_null")
-  }
+	json(startUrl,"get","url",url)
+    sss url =url
+    fn core.uigo("system_start.iyu")
 }
 else
 {
-  fn tw.tw2("传入参数错误",1)
+	json(data,"get","package",package)
+    json(data,"get","guide",guide)
+    ss("$App/"+package+"/src/"+guide,start)
+    sss url =start
+    fn core.uigo("system_start.iyu")
+}
+
+end fn
+
+fn asystem_t_init()
+
+fn GGExpanded.权限检查()
+f(sss.Yos_通知权限)
+{
+	us(11,"text","通知权限已授予")
+}else
+{
+	us(11,"text","注意：通知权限未授予，无法显示通知")
+}
+
+end fn
+
+fn asystem_t_t(通知ID,dicon,xicon,dimg,rtz,title,text,tnr)
+
+sbp(dicon,大图标)
+sbp(xicon,小图标)
+sbp(dimg,大图片)
+s 用户可否删除 = rtz
+s 文本 = text
+fn GGExpanded.初始化(title,tnr,小图标,大图标,大图片,文本,通知ID,用户可否删除)
+
+end fn
+
+fn asystem_t_ts(通知ID)
+
+fn GGExpanded.取消通知(通知ID)
+
+end fn
+
+fn setup(id)
+
+fuzs("@JuOS/sdk/player.bysi.sdk","%.data/html_video",a)
+fuzs("@JuOS/sdk/player.bysi.sdk","$",a)
+//验证引导文件是否存在，不存在自动复制默认引导文件
+fe("$boot/init.json",yz)
+f(yz == false)
+{
+	fn init.boot_init("init","JuOS_Hemo.iyu","@JuOS/logo/properos.png")
+}
+else
+{
+	fr("$boot/init.json",j)
+	sr(j,"home.iyu","JuOS_Hemo.iyu",boot)
+	fw("$boot/init.json",boot)
+}
+sss lock_verification =null
+//
+fe("$System/Config/Pwd/pwd_lcok",pwd_lcok)
+f(pwd_lcok == false)
+{
+	fw("$System/Config/Pwd/pwd_lcok","1")
+}
+
+fr("$System/Config/Qddh.sys",qddh)
+f(qddh == "true")
+{
+	fr("$System/Config/Qddh/i.cfg",iid)
+	ss(iid+"/src/index.html",html)
+	us(6,"url",html)
+}
+else
+{
+	fw("$System/Config/Qddh.sys","false")
+}
+//
+//加载版本验证文件的内容
+fr("@version.txt",st)
+fr("$JuOS/v/v.cfg",v)
+//初始化图片加载器
+loadjar("QmLoader",sss.QmLoader)
+//初始化
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader$Builder",Builder)
+cls(sss.QmLoader,"com.qmdeve.qmloader.QmImageLoader",Loader)
+javanew(builder,Builder,"android.content.Context",activity)
+javax(null,null,Loader,"init",Builder,builder)
+//应用安装侧载管理
+fr("$System/Config/Application_side_load.sys",asls)
+f(asls == "true")
+{
+	fw("$JuOS/hemo/桌面/导入插件.app","System=True=System\nUi=导入插件.iyu=Ui\nAppTb=$sys/JuOS/src/img/zy/exit.png=AppTb\nEnd=true=End")
+}
+else f(asls == "false")
+{
+	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}
+else
+{
+	fr("$System/Config/Application_side_load.sys","false")
+	fd("$JuOS/hemo/桌面/导入插件.app",dasls)
+}
+fe("$System/Config/oobe.sys",yz)
+f(yz == true)
+{
+	ufnsui()
+	{
+		fn core.uigo("mian2.iyu")
+		lan(0)
+		end()
+	}
+}
+else f(yz == false)
+{
+	fn core.uigo("oobe.iyu")
+	lan(0)
+	end()
+}
+else
+{
+	fn tw.tw2("错误",1)
+	end()
 }
 
 end fn

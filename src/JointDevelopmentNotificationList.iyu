@@ -15,15 +15,13 @@ gravity=center</ppt>
 height=240dp
 app_CardcornerRadius=15dp
 layout_marginLeft=12dp
-layout_marginRight=12dp
-app_CardBackgroundColor=#a4ffffff</ppt>
+layout_marginRight=12dp</ppt>
 <event></event>
 </View>
 <View id="9" did="3" type="LinearLayout">
 <ppt>width=-1
 height=-1
-orientation=vertical
-background=#759ce8ff</ppt>
+orientation=vertical</ppt>
 <event></event>
 </View>
 <View id="4" did="9" type="LinearLayout">
@@ -60,7 +58,8 @@ layout_marginLeft=6dp</ppt>
 </View>
 <View id="8" did="9" type="ScrollView">
 <ppt>width=-1
-height=-1</ppt>
+height=-1
+background=#5d6d6d6d</ppt>
 <event></event>
 </View>
 <View id="10" did="8" type="LinearLayout">
@@ -213,7 +212,7 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">uigo("开源协议.iyu")</eventItme></event>
+<event><eventItme type="clicki">fn core.uigo("开源协议.iyu")</eventItme></event>
 </View>
 <View id="41" did="10" type="RelativeLayout">
 <ppt>width=-1
@@ -249,7 +248,7 @@ layout_marginLeft=5dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event><eventItme type="clicki">uigo("关于JuOS.iyu")</eventItme></event>
+<event><eventItme type="clicki">fn core.uigo("关于JuOS.iyu")</eventItme></event>
 </View>
 <View id="25" did="10" type="RelativeLayout">
 <ppt>width=-1
@@ -359,12 +358,48 @@ text=
 background=through</ppt>
 <event><eventItme type="clicki">utw(null,"","支持官方.iyu","关闭","点击赞助码可以保存赞助码",true,v)
 {
-  endutw()
+	endutw()
 }
 else
 {
-  fn tw.tw("点我并不会保存图片，点击图片才会保存")
-  endutw()
+	fn tw.tw("点我并不会保存图片，点击图片才会保存")
+	endutw()
 }</eventItme></event>
+</View>
+<View id="61" did="10" type="RelativeLayout">
+<ppt>width=-1
+height=55dp</ppt>
+<event></event>
+</View>
+<View id="62" did="61" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="63" did="62" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@ProperOS/Src/Logo/Telegram/ic_launcher.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="64" did="62" type="TextView">
+<ppt>width=-2
+height=-2
+text=加入官方 Telegram
+textColor=#ffffffff
+typeface=serif
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="65" did="61" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">hws("https://t.me/+1iZCP2rBfShhM2E1")</eventItme></event>
 </View>
 <UIEventset></UIEventset>

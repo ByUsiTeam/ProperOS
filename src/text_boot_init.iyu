@@ -39,7 +39,12 @@ hint=不要乱改，不然无法引导
 inputType=text
 textColorHighlight=#ff0090ff
 gravity=top|left
-singleLine=false</ppt>
+singleLine=false
+textColorHint=#42424242
+textSize=16sp
+textCursorDrawable=#000000
+typeface=normal
+background=</ppt>
 <event></event>
 </View>
 <View id="8" did="2" type="CardView">
@@ -71,8 +76,10 @@ height=-1
 text=重置
 background=#ff5f6aff
 textColor=#ffffffff</ppt>
-<event><eventItme type="clicki">fr("@boot/init.json",data)
-us(7,"text",data)</eventItme></event>
+<event><eventItme type="clicki">fn init.boot_init("init","JuOS_Hemo.iyu","@JuOS/logo/properos.png")
+fr("$boot/init.json",data)
+us(7,"text",data)
+fn byusi.qt(10)</eventItme></event>
 </View>
 <View id="12" did="9" type="CardView">
 <ppt>width=85dp
@@ -89,7 +96,10 @@ background=#ff5f6aff
 textColor=#ffffffff</ppt>
 <event><eventItme type="clicki">ug(7,"text",data)
 fw("$boot/init.json",data)
-fn tw.tw("保存成功")</eventItme></event>
+fn tw.tw("保存成功")
+endkeyboard()
+fn byusi.qt(12)</eventItme></event>
 </View>
 <UIEventset><eventItme type="loading">fn lib.wp(1)</eventItme><eventItme type="loadingComplete">fr("$boot/init.json",data)
-us(7,"text",data)</eventItme></UIEventset>
+us(7,"text",data)
+fn n.ui(1)</eventItme></UIEventset>
