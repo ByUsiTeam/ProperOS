@@ -315,6 +315,7 @@ us(start_menu.1,"visibility","gone")
 call(sdcard,"mjava","data.sdcard",activity)
 f(sdcard == false)
 {
+	fn tw.tw2("请给于ProperOS管理所有文件的权限",2)
 	call(null,"mjava","data.getsdcard",activity)
 }</eventItme><eventItme type="downkey">f(st_kC==4)
 {
