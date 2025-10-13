@@ -968,6 +968,54 @@ t()
 }
 fn byusi.qt(84)</eventItme></event>
 </View>
+<View id="163" did="20" type="RelativeLayout">
+<ppt>width=-1
+height=55dp
+layout_marginTop=5dp
+layout_marginLeft=5dp
+layout_marginRight=5dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="164" did="163" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="165" did="164" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@sp.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="166" did="164" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="167" did="166" type="TextView">
+<ppt>width=-2
+height=-2
+text=扫描二维码
+textColor=#ff000000
+typeface=@src/ttf/acbt80.ttf
+textSize=15sp
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="168" did="163" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn core.扫描二维码()
+fn byusi.qt(163)</eventItme></event>
+</View>
 <View id="148" did="20" type="RelativeLayout">
 <ppt>width=-1
 height=55dp

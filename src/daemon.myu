@@ -71,8 +71,34 @@ else
 
 end fn
 
-fn core()
+fn start(key)
 
-
+f(key != null && key != "")
+{
+	fl("$System/daemon/",false,list)
+    for(value;list)
+    {
+    	ss("$System/daemon/"+value,value)
+        fr(value,code)
+        call(代码,"mjava","代码处理器.Process",code)
+        fn model.设置代码(9600,"clicki",代码)
+    }
+    fl("$System/daemon/",true,list)
+    for(value;list)
+    {
+    	fl("$System/daemon/"+value,false,list2)
+        for(z;list2)
+        {
+        	ss("$System/daemon/"+value+"/"+z,file)
+            fr(file,code)
+            call(代码,"mjava","代码处理器.Process",code)
+            fn model.设置代码(9600,"clicki",代码)
+        }
+    }
+}
+else
+{
+	fn tw.tw2("key值空，抱歉抱歉无法启动守护进程")
+}
 
 end fn

@@ -1,0 +1,40 @@
+-- 基于开源 Vie 浏览器
+-- https://gitee.com/awzx3214/VieBrowser
+import "dalvik.system.DexClassLoader";
+import "android.webkit.*";
+function mime(mime)
+return MimeTypeMap:getSingleton():getMimeTypeFromExtension(mime);
+end
+
+function loadDex(dexPath)
+return DexClassLoader(i:fdir(dexPath),"/data/data/"..activity:getPackageName().."/files/",nil,activity:getClassLoader());
+end
+
+function tmd(id,tmd)
+id:setAlpha(tmd)
+end
+
+function zs(id, color)
+if id ~= nil then
+import "android.graphics.Color"
+local color = Color:parseColor(tos(color))
+id:setColorFilter(color)
+else
+end
+end
+
+function get()
+import "android.content.Intent"
+local intent= Intent(Intent.ACTION_PICK)
+intent:setType("image/*")
+activity:startActivityForResult(intent,4)
+end
+
+function Path(uri)
+import "android.provider.MediaStore$Images$Media"
+local proj = i:sl(Media.DATA,":")
+local cursor = activity:managedQuery(uri,proj,nil,nil,nil)
+local column_index = cursor:getColumnIndexOrThrow(Media.DATA)
+cursor:moveToFirst()
+return cursor:getString(column_index)
+end

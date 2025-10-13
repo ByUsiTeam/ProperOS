@@ -1,0 +1,411 @@
+import android.content.Intent;
+import android.net.Uri;
+import java.io.File;
+import android.app.*;
+import android.content.res.*;
+import android.graphics.*;
+import android.view.*;
+import androidx.transition.TransitionManager;
+import androidx.transition.AutoTransition;
+import android.os.Build;
+import android.os.Bundle;
+import android.app.ActivityOptions;
+import android.content.Intent;
+import android.widget.ImageView;
+import androidx.core.app.ActivityOptionsCompat;
+import android.graphics.Paint;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.webkit.CookieSyncManager;
+import android.webkit.CookieManager;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.gesture.GestureLibraries;
+import android.gesture.Gesture;
+import android.gesture.GestureLibrary;
+import android.widget.PopupMenu$OnMenuItemClickListener;
+import android.widget.PopupMenu;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.pm.ResolveInfo;
+import android.content.pm.PackageManager;
+import androidx.appcompat.app.AppCompatActivity;
+import java.security.MessageDigest;
+import java.util.zip.CRC32;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+import android.app.Activity;
+import android.view.WindowManager;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+banShoot() {
+	activity.getWindow().addFlags(8192);
+}
+passShoot() {
+	activity.getWindow().clearFlags(8192);
+}
+
+public static void tw(View v) {
+	LinearLayout linearLayout = new LinearLayout(activity);
+	linearLayout.setOrientation(LinearLayout.VERTICAL);
+	linearLayout.addView(v);
+	Toast toast = new Toast(activity);
+	int hh = i.swh("pxh") / 5;
+	toast.setGravity(Gravity.BOTTOM, 0, hh);
+	toast.setDuration(Toast.LENGTH_SHORT);
+	toast.setView(linearLayout);
+	toast.show();
+}
+
+public static void setCache(v,ty) {
+	String mode = ty+"";
+	WebSettings webSettings = v.getSettings();
+	if(mode.equals("从不读取缓存")) {
+		syso(mode);
+		webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+	} else if(mode.equals("必须读取缓存")) {
+		webSettings.setCacheMode(WebSettings.LOAD_CACHE_ONLY);
+	} else if(mode.equals("优先读取缓存")) {
+		webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+	} else {
+		webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+	}
+}
+
+public static String getContentMenu(activity) {
+	String n="";
+	Intent intent = new Intent(Intent.ACTION_PROCESS_TEXT);
+	intent.setType("text/plain");
+	PackageManager packageManager = activity.getPackageManager();
+	List resolveInfoList = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+	for (ResolveInfo resolveInfo : resolveInfoList) {
+		String packageName = resolveInfo.activityInfo.packageName;
+		String label = resolveInfo.loadLabel(packageManager).toString();
+		n=n+"\n" + packageName + "；" + label;
+	}
+	return n;
+}
+
+public static void setContentMenu(activity, String text, String str) {
+	int number=Integer.parseInt(str);
+	Intent intent = new Intent(Intent.ACTION_PROCESS_TEXT);
+	intent.setType("text/plain");
+	PackageManager packageManager = activity.getPackageManager();
+	List resolveInfoList = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+	if (number >= 0 && number < resolveInfoList.size()) {
+		ResolveInfo resolveInfo = resolveInfoList.get(number);
+		intent.putExtra(Intent.EXTRA_PROCESS_TEXT, text);
+		Intent appIntent = new Intent(intent);
+		appIntent.setClassName(resolveInfo.activityInfo.packageName, resolveInfo.activityInfo.name);
+		activity.startActivity(appIntent);
+	}
+}
+
+Scrollx(a){
+	return a.getScrollX();
+}
+
+getssl(v){
+	String by = v.certificate.issuedBy.dName;
+	String to = v.certificate.issuedTo.dName;
+	ida = v.certificate.validNotBeforeDate;
+	eda = v.certificate.validNotAfterDate;
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy 年 MM 月 dd 日 HH:mm:ss", Locale.getDefault());
+	String issueDate = sdf.format(ida);
+	String expireDate = sdf.format(eda);
+	
+	String back;
+	if (Build.VERSION.SDK_INT >= 29) {
+		byte[] key = v.certificate.getX509Certificate().getPublicKey().getEncoded();
+		yssj = v.certificate.getX509Certificate();
+		byte[] input = v.certificate.getX509Certificate().getEncoded();
+		String serialNumber = v.certificate.getX509Certificate().getSerialNumber().toString(16).toUpperCase();
+		while (serialNumber.length() < 32) {
+			serialNumber = "0" + serialNumber;
+		}
+		back = "颁发者：\n"+by+"\n\n颁发对象：\n"+to+"\n\n颁发日期：\n"+issueDate+"\n\n截止日期：\n"+expireDate+"\n\n序列号：\n"+serialNumber+"\n\n证书 MD5：\n"+getHash(input,"MD5")+"\n\n证书 CRC32：\n"+getHash(input,"CRC32")+"\n\n证书 SHA1：\n"+getHash(input,"SHA-1")+"\n\n证书 SHA224：\n"+getHash(input,"SHA-224")+"\n\n证书 SHA256：\n"+getHash(input,"SHA-256")+"\n\n证书 SHA384：\n"+getHash(input,"SHA-384")+"\n\n证书 SHA512：\n"+getHash(input,"SHA-512")+"\n\n公钥 MD5：\n"+getHash(key,"MD5")+"\n\n公钥 SHA256：\n"+getHash(key,"SHA-256")+"\n\n\n\n\n\n原始数据：\n\n"+yssj;
+		return back;
+	} else {
+		back = "颁发者：\n"+by+"\n\n颁发对象：\n"+to+"\n\n颁发日期：\n"+issueDate+"\n\n截止日期：\n"+expireDate+"\n\n当前系统不支持详细信息获取";
+		return back;
+	}
+}
+
+
+public static String getHash(byte[] input, String way) {
+	try {
+		if(way.equals("CRC32")) {
+			CRC32 crc32 = new CRC32();
+			crc32.update(input);
+			String crc32str = Long.toHexString(crc32.getValue());
+			while (crc32str.length() < 8) {
+				crc32str = "0" + crc32str;
+			}
+			return crc32str.toUpperCase();
+		}
+		MessageDigest md = MessageDigest.getInstance(way);
+		byte[] hash = md.digest(input);
+		StringBuilder hexString = new StringBuilder();
+		for (byte b : hash) {
+			String hex = Integer.toHexString(0xff & b);
+			if (hex.length() == 1) hexString.append('0');
+			hexString.append(hex);
+		}
+		return hexString.toString().toUpperCase();
+	} catch (e) {
+		return "哈希计算失败,错误: "+e;
+	}
+}
+
+
+public static void cd(GestureLibrary 手势储存文件,PopupMenu 泡泡菜单,String 手势名称,Gesture 手势对象){
+	泡泡菜单.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener(){
+		public boolean onMenuItemClick(android.view.MenuItem 菜单项){
+			手势储存文件.removeGesture(手势名称,手势对象);
+			手势储存文件.save();
+			i.call("myu","dy.sscz");
+			i.call("myu","mk.tw",new Object[]{ 手势名称 });
+			return true;
+		}
+	});
+}
+
+setCookie(String 网站,String cookies){
+	CookieManager cookieManager = CookieManager.getInstance();
+	cookieManager.setAcceptCookie(true);
+	String[] cookie = cookies.split(";");
+	for (int i = 0; i < cookie.length; i++) {
+		cookieManager.setCookie(网站, cookie[i]);
+	}
+	CookieSyncManager.getInstance().sync();
+}
+
+String getCookie(String url){
+	CookieManager cookieManager = CookieManager.getInstance();
+	return cookieManager.getCookie(url);
+}
+
+public void clearCookies(String domain) {
+	CookieManager cookieManager = CookieManager.getInstance();
+	String cookiestring = cookieManager.getCookie(domain);
+	String[] cookies =  cookiestring.split(";");
+	for (int i=0; i<cookies.length; i++) {
+		String[] cookieparts = cookies[i].split("=");
+		cookieManager.setCookie(domain, cookieparts[0].trim()+"=; Expires=Wed, 31 Dec 2035 23:59:59 GMT");
+	}
+}
+
+clearCookie(){
+	CookieManager cookieManager = CookieManager.getInstance();
+	cookieManager.removeAllCookie();
+}
+
+public void 渲染(String an){
+	Paint a=new Paint();
+	if(an.equals("灰度"))
+	{
+		ColorMatrix b=new ColorMatrix();
+		b.setSaturation(0);
+		a.setColorFilter(new ColorMatrixColorFilter(b));
+		activity.getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE,a);
+	}
+	else if(an.equals("默认"))
+	{
+		ColorMatrix b=new ColorMatrix();
+		b.setSaturation(1);
+		a.setColorFilter(new ColorMatrixColorFilter(b));
+		activity.getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE,a);
+	}
+	else if(an.equals("灰度反色"))
+	{
+		ColorMatrix b=new ColorMatrix();
+		b.setSaturation(0);
+		ColorMatrix bb=new ColorMatrix(new float[]{
+			-1f, 0f, 0f, 0f, 255f,
+			0f, -1f, 0f, 0f, 255f,
+			0f, 0f, -1f, 0f, 255f,
+			0f, 0f, 0f, 1f, 0f,
+		});
+		ColorMatrix imageMatrix = new ColorMatrix();
+		imageMatrix.postConcat(b);
+		imageMatrix.postConcat(bb);
+		a.setColorFilter(new ColorMatrixColorFilter(imageMatrix));
+		activity.getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE,a);
+	}
+	else if(an.equals("反色"))
+	{
+		ColorMatrix b=new ColorMatrix(new float[]{
+			-1f, 0f, 0f, 0f, 255f,
+			0f, -1f, 0f, 0f, 255f,
+			0f, 0f, -1f, 0f, 255f,
+			0f, 0f, 0f, 1f, 0f,
+		});
+		a.setColorFilter(new ColorMatrixColorFilter(b));
+		activity.getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE,a);
+	}
+	else if(an.equals("去蓝光"))
+	{
+		ColorMatrix b=new ColorMatrix(new float[]{
+			1f, 0f, 0f, 0f, 0f,
+			0f, 1f, 0f, 0f, 0f,
+			0f, 0f, 0.7f, 0f, 0f,
+			0f, 0f, 0f, 1f, 0f,
+		});
+		a.setColorFilter(new ColorMatrixColorFilter(b));
+		activity.getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE,a);
+	}
+}
+
+public void setg(ImageView v,String viewname)
+{
+	v.setTransitionName(viewname);
+	activity.getWindow().setAllowEnterTransitionOverlap(true);
+	activity.getWindow().setAllowReturnTransitionOverlap(true);
+}
+public void uigo(ImageView mIa,String viewname,String uigoname,String packageName)
+{
+	Bundle mBd=new Bundle();
+	mBd.putString("OpenFilexmlui",uigoname);
+	mBd.putString("ProjectPackageName",packageName);
+	Intent in=new Intent(activity,com.iapp.app.run.mian.class);
+	in.putExtras(mBd);
+	ActivityOptionsCompat optionsCompat=ActivityOptionsCompat.makeSceneTransitionAnimation(activity,mIa,viewname);
+	activity.startActivity(in,optionsCompat.toBundle());
+}
+public void end()
+{
+	activity.finishAfterTransition();
+}
+
+public static void save(webView,path)
+{
+	webView.saveWebArchive(path);
+	path = i.fdir(path);
+	path = "保存成功!\n保存在了"+path;
+	i.call("myu","mk.tw",new Object[]{ path });
+}
+
+public static void set(Activity activity,vw)
+{
+	try
+	{
+		TransitionManager.beginDelayedTransition(vw,new AutoTransition());
+	}
+	catch (Exception e)
+	{
+		
+	}
+}
+
+public 更新(String 目录)
+{
+	syso(目录);
+	File file = new File(i.fdir(目录));
+	activity.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + file)));
+}
+
+public String encrypt(byte[] st, String key)
+{
+	javax.crypto.Cipher localCipher = null;
+	try {
+		localCipher = javax.crypto.Cipher.getInstance("AES/CBC/PKCS5Padding");
+	} catch (java.lang.Exception e) {
+		e.printStackTrace();
+	}
+	if(localCipher != null)
+	{
+		try {
+			localCipher.init(1, new javax.crypto.spec.SecretKeySpec(key.getBytes(), "AES"), new javax.crypto.spec.IvParameterSpec(key.getBytes()));
+			return android.util.Base64.encodeToString(localCipher.doFinal(st), 4).trim();
+		} catch (java.lang.Exception e) {
+			e.printStackTrace();
+		}
+	}
+	return null;
+}
+
+public String md5(byte[] btInput) {
+	char[] hexDigits = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+	try {
+		java.security.MessageDigest mdInst = java.security.MessageDigest.getInstance("MD5");
+		mdInst.update(btInput);
+		byte[] md = mdInst.digest();
+		int j = md.length;
+		char[] str = new char[j * 2];
+		int k = 0;
+		for (int i = 0; i < j; i++) {
+			byte byte0 = md[i];
+			str[k++] = hexDigits[byte0 >>> 4 & 0xf];
+			str[k++] = hexDigits[byte0 & 0xf];
+		}
+		return new String(str);
+	} catch (java.lang.Exception e) {
+		e.printStackTrace();
+		return null;
+	}
+}
+
+public String md5st(String btInput) {
+	md5(btInput.getBytes());
+}
+
+public byte[] decrypt(String st, String key)
+{
+	javax.crypto.Cipher localCipher = null;
+	try {
+		localCipher = javax.crypto.Cipher.getInstance("AES/CBC/PKCS5Padding");
+	} catch (java.lang.Exception e) {
+		e.printStackTrace();
+	}
+	if(localCipher != null)
+	{
+		try {
+			localCipher.init(2, new javax.crypto.spec.SecretKeySpec(key.getBytes(), "AES"), new javax.crypto.spec.IvParameterSpec(key.getBytes()));
+			return localCipher.doFinal(android.util.Base64.decode(st, 4));
+		} catch (java.lang.Exception e) {
+			e.printStackTrace();
+		}
+	}
+	return null;
+}
+
+public String encryptString(String st, String key)
+{
+	return encrypt(st.getBytes(), md5st(key).substring(16));
+}
+
+public String encryptString16(String st, String key)
+{
+	return encrypt(st.getBytes(), key);
+}
+
+public String decryptString(String st, String key)
+{
+	return new String(decrypt(st, md5st(key).substring(16)));
+}
+
+public String decryptString16(String st, String key)
+{
+	return new String(decrypt(st, key));
+}
+
+public static void smoothScrollTop(listView){
+	listView.post(new Runnable() {
+		public void run() {
+			listView.smoothScrollToPosition(0);
+		}
+	});
+}
+
+public static void smoothScrollBottom(listView){
+	listView.post(new Runnable() {
+		public void run() {
+			listView.smoothScrollToPosition(listView.getBottom());
+		}
+	});
+}

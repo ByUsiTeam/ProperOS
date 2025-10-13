@@ -1,86 +1,1272 @@
-fn lts(use)
-s(1024,ka)
-s(1024*1024,ma)
-s(1024*1024*1024,ga)
-s(1024*1024*1024*1024,ta)
-s2(use/ka,kb)
-s2(use/ma,mb)
-s2(use/ga,gb)
-s2(use/ta,tb)
-f(tb&gt;=1)
-{
-	ss(tb+"T",suse)
-}
-else f(gb&gt;=1)
-{
-	ss(gb+"G",suse)
-}
-else f(mb&gt;=1)
-{
-	ss(mb+"M",suse)
-}
-else f(kb&gt;=1)
-{
-	ss(kb+"K",suse)
-}
-else
-{
-	ss(use+"B",suse)
-}
-
-sss mk_lts=suse
+/.
+* 基于开源 Vie浏览器
+* https://gitee.com/awzx3214/VieBrowser
+./
+fn out()
+fn mk.tw("核心错误！此设备无法使用 Vie！")
+ends()
+javanew(c,"android.os.Process")
+java(id,c,"android.os.Process.myPid")
+java(a,c,"android.os.Process.killProcess","int",id)
 end fn
-fn totime(timems)
-s(timems/1000,ts)
-f(ts&gt;=60)
-{
-	s(ts/60,tm)
-	s(ts-tm*60,tss)
-	f(tm&gt;=60)
-	{
-		s(tm/60,thh)
-		s(tm-thh*60,tmm)
-	}
-	else
-	{
-		s tmm=tm
-	}
-}
-else
-{
-	s tss=ts
-}
-f(thh&gt;0)
-{
-	ss(thh+":",shh)
-}
-else
-{
-	s shh=""
-}
-f(tmm&gt;0)
-{
-	f(tmm&lt;10)
-	{
-		ss("0"+tmm+":",smm)
-	}
-	else
-	{
-		ss(tmm+":",smm)
-	}
-}
-else
-{
-	s smm="00:"
-}
-f(tss&lt;10)
-{
-	ss("0"+tss,szzz)
-}
-else
-{
-	s szzz=tss
-}
-ss(shh+smm+szzz,sss.mk_totime)
 
+fn show()
+end fn
+
+fn openMagnet()
+f(sss.dex_magnet=="null"||sss.dex_magnet==null)
+{
+	fdir("$插件/magnet/classes.dex",dexpath)
+	java(pm,activity,"android.content.ContextWrapper.getPackageName")
+	ss("/data/data/"+pm+"/files/",pa)
+	java(cl,activity,"android.content.ContextWrapper.getClassLoader")
+	javanew(sss.dex_magnet,"dalvik.system.DexClassLoader","String",dexpath,"String",pa,"String",null,"java.lang.ClassLoader",cl)
+}
+end fn
+
+fn gbxz()
+ug(xz.137,"text",xztext)
+f(xztext=="关")
+{
+	endcode
+}
+us(xz.137,"text","关")
+f(sss.动画=="true")
+{
+	dha(dha,true,false)
+	dh(dha,"duration",250)
+	us(xz.16,"dh",dha)
+	dhon(dha)
+	{
+		us(xz.8,"visibility","visible")
+		us(xz.77,"visibility","visible")
+		us(xz.73,"visibility","visible")
+		us(xz.16,"visibility","gone")
+		us(xz.137,"text","开")
+	}
+}
+else
+{
+	us(xz.8,"visibility","visible")
+	us(xz.77,"visibility","visible")
+	us(xz.73,"visibility","visible")
+	us(xz.137,"text","开")
+	us(xz.16,"visibility","gone")
+}
+us(xz.36,"visibility","gone")
+endkeyboard()
+end fn
+
+fn gb61()
+us(61,"visibility","gone")
+us(3,"singleline",true)
+gvs(3,v)
+java(null,v,"android.view.View.clearFocus")
+endkeyboard()
+gvs(61,v)
+call(null,"mlua","mk.tmd",v,1)
+fn diy.barWz()
+end fn
+
+fn dkxsz()
+fr("$sz/夜间",st_yj)
+f(st_yj=="true")
+{
+}
+else
+{
+	uycl("#aaaaaa",true,0)
+	uycl("#ffffff",true,1)
+}
+us(cos.168,"visibility","visible")
+dht(dh,5000,0,0,0)
+dh(dh,"duration",800)
+us(cos.160,"dh",dh)
+dhon(dh)
+{
+	us(cos.168,"visibility","gone")
+	us(cos.160,"visibility","visible")
+}
+end fn
+
+fn gbcos()
+us(cos.1,"visibility","gone")
+us(cos.2,"visibility","gone")
+us(cos.29,"visibility","gone")
+us(cos.35,"visibility","gone")
+us(cos.41,"visibility","gone")
+us(cos.60,"visibility","gone")
+us(cos.62,"visibility","gone")
+us(cos.97,"visibility","gone")
+us(cos.122,"visibility","gone")
+us(cos.138,"visibility","gone")
+us(cos.132,"visibility","gone")
+us(cos.142,"visibility","gone")
+us(cos.178,"visibility","gone")
+us(cos.48,"visibility","visible")
+us(cos.49,"visibility","visible")
+end fn
+
+fn jztw()
+f(aa=="点九"||aa=="动态显示"||aa=="安卓系统")
+{
+	fn mk.tw("加载中...")
+}
+else f(aa=="叠加显示")
+{
+	fn awzx.toasts("loading","","3000")
+}
+else
+{
+	nvw(null,null,"线性布局","gravity=bottom|center_horizontal\norientation=vertical",kk)
+	nvw(kp,kk,"卡片","app_cardcornerradius=10dp\nwidth=-2\nheight=-2\nlayout_marginleft=10dp\nlayout_marginright=10dp\napp_CardBackgroundColor=#00ffffff\napp_CardElevation=0",c)
+	nvw(p,c,"线性布局","gravity=center\nbackgroundcolor=#a0000000\nwidth=-2\nheight=-2\norientation=horizontal",d)
+	sr(wb,"\n","&lt;br/&gt;",wb)
+	nvw(kn,d,"卡片","app_cardcornerradius=6dp\nlayout_margin=5dp\nwidth=20dp\nheight=20dp\napp_CardBackgroundColor=#ffffff\napp_CardElevation=0",b)
+	nvw(ky,b,"图像","src=$logo\nwidth=20dp\nheight=20dp",tp)
+	nvw(k,d,"进度条","width=32dp\nheight=32dp\nstyle=16842874")
+	call(null,"mjava","mk.tw",kk)
+}
+end fn
+
+fn tws(view,text,bs,an)
+ss twsview=view
+cls("com.google.android.material.snackbar.Snackbar",类)
+javax(snk,null,类,"make","android.view.View",view,"java.lang.CharSequence","","int",3000)
+cls("android.view.View$OnClickListener", 事件类)
+javax(ss.tws,snk,"com.google.android.material.snackbar.BaseTransientBottomBar","getView")
+us(ss.tws,"background","#00000000")
+us(ss.tws,"width","-1")
+ug(191,"text",a)
+f(a!="我是刷新窗口按钮")
+{
+	us(ss.tws,"paddingbottom","80dp")
+}
+else
+{
+	fr("$sz/工具栏高度",kc)
+	f(kc==""||kc=="null"||kc==null)
+	{
+		s kc="45dp"
+	}
+	sj(kc,null,"dp",kcc)
+	zdp(kcc,kcc)
+	fr("$sz/工具栏位置",wz)
+	f(wz==""||wz=="null"||wz==null)
+	{
+		s wz="默认"
+	}
+	f(wz=="默认"||wz=="置底")
+	{
+		us(152,"layout_marginbottom",kcc)
+		us(ss.tws,"paddingbottom","40dp")
+	}
+	else f(wz=="叠底")
+	{
+		s(kcc*2,kcc)
+		us(152,"layout_marginbottom",kcc)
+		us(ss.tws,"paddingbottom","40dp")
+	}
+	else
+	{
+		us(ss.tws,"paddingbottom","80dp")
+	}
+}
+addv(ss.tws,"tws.iyu")
+f(bs=="提示")
+{
+	gvs(ss.tws,tws.6,a)
+	us(a,"visibility","gone")
+}
+gvs(ss.tws,tws.4,a)
+us(a,"text",text)
+fr("$sz/夜间",st_yj)
+f(st_yj=="true")
+{
+	us(a,"textcolor","#000000")
+	gvs(ss.tws,tws.2,a)
+	us(a,"app_cardbackgroundcolor","#c0ffffff")
+}
+gvs(ss.tws,tws.8,a)
+us(a,"text",bs)
+gvs(ss.tws,tws.5,a)
+us(a,"text",an)
+fr("$sz/全局字体",n)
+f(n=="true")
+{
+	fdir("$diy/全局字体",路径)
+	gvs(ss.tws,tws.4,a)
+	us(a,"typeface",路径)
+	gvs(ss.tws,tws.5,a)
+	us(a,"typeface",路径)
+}
+java(null, snk, "com.google.android.material.snackbar.BaseTransientBottomBar.show")
+end fn
+
+fn savexz(path,tim,url,name)
+fs(path,all)
+f(all&lt;=1024)
+{
+	ss(all+" B",all)
+}
+else f(all&lt;=1048576)
+{
+	s2(all/1024,all)
+	ss(all+" KB",all)
+}
+else f(all&lt;=1073741824)
+{
+	s2(all/1048576,all)
+	ss(all+" MB",all)
+}
+else
+{
+	s2(all/1073741824,all)
+	ss(all+" GB",all)
+}
+ss(tim+"  ·  "+all,nr)
+sr(name,"/","\\",name)
+ss("$下载记录/"+nr+"#"+name,vr)
+ss("#Vie链接#"+url+"#Vie路径#"+path,kr)
+fw(vr,kr)
+end fn
+
+fn dksys()
+ug(61,"visibility",a)
+f(a==0||a==4)
+{
+	fn gj.搜索引擎()
+}
+else
+{
+	ug(xz.17,"visibility",a)
+	f(a==0)
+	{
+		f(sss.动画=="true")
+		{
+			dht(dhs,0,-1000,0,0)
+			dh(dhs,"duration",500)
+			us(xz.18,"dh",dhs)
+			dha(dha,true,false)
+			dh(dha,"duration",500)
+			us(xz.17,"dh",dha)
+		}
+		us(xz.17,"visibility","gone")
+		endkeyboard()
+		endcode
+	}
+	f(sss.动画=="true")
+	{
+		dha(dha,false,true)
+		dh(dha,"duration",400)
+		us(xz.17,"dh",dha)
+		dht(dhs,-1000,0,0,0)
+		dh(dhs,"duration",500)
+		us(xz.18,"dh",dhs)
+	}
+	ug(102,"text",id)
+	ug(id,"title",title)
+	ug(id,"url",url)
+	ss("$缓存/id/"+id+"_36",b36)
+	fe(b36,e36)
+	f(e36)
+	{
+		us(xz.80,"src",b36)
+	}
+	else
+	{
+		us(xz.80,"src","$logo")
+	}
+	fr("$sz/域名检测",ymaqx)
+	f(ymaqx=="true"&&url?*"http")
+	{
+		t()
+		{
+			ss("http://apis.kit9.cn/api/tencent_security/api.php?url="+url,a)
+			hs(a,aa)
+			json(aa,aa)
+			json(aa,"get","data",aa)
+			json(aa,"get","state",state)
+			f(state=="1")
+			{
+				json(aa,"get","reason",reason)
+				ss("(html)&lt;font color=#ff0000&gt;"+reason+"&lt;/font&gt;",an)
+				us(xz.35,"text",an)
+				sr(url,"(html)","",url)
+				ss("(html)&lt;font color=#ff0000&gt;"+url+"&lt;/font&gt;",url)
+				us(xz.21,"text",url)
+			}
+		}
+	}
+	
+	us(xz.17,"visibility","visible")
+	us(xz.18,"visibility","visible")
+	ss("$缓存/id/"+id+"_46",a46)
+	fr(a46,ak)
+	f(ak?*"viek://encrypt/")
+	{
+		sj(url,"://",null,zz)
+		sj(zz,"/",null,zz)
+		ss(ak+zz,url)
+	}
+	ss("$缓存/id/"+id+"_44",a44)
+	fr(a44,a44)
+	f(a44=="proxy")
+	{
+		sj(url,"__cpo=",null,cpo)
+		f(cpo?"&")
+		{
+			sj(cpo,null,"&",cpo)
+		}
+		ss("viek://proxy/cpo="+cpo,url)
+		f(title?"__cpo=")
+		{
+			s title="Vie Browser"
+		}
+	}
+	f(url?*"file://"||url?*"view-source:file://")
+	{
+		call(url,"mjava","webViewUtil.urrl",url)
+	}
+	s an="(html)&lt;font color=#00ff00&gt;浏览此网页时是比较安全的&lt;/font&gt;"
+	f(url?*"file://")
+	{
+		sj(url,"://",null,nr)
+		ss("(html)&lt;font color=#00ff00&gt;file://&lt;/font&gt;"+nr,url)
+	}
+	else f(url?*"viek://home/")
+	{
+		sj(url,"://",null,nr)
+		sj(nr,"/",null,nr)
+		ss("(html)&lt;font color=#00ff00&gt;viek://home/&lt;/font&gt;"+nr,url)
+	}
+	else f(url?*"wss://")
+	{
+		sj(url,"://",null,nr)
+		ss("(html)&lt;font color=#00d000&gt;wss://&lt;/font&gt;"+nr,url)
+		s an="(html)&lt;font color=#00d000&gt;浏览此网页时建立了加密链接&lt;/font&gt;"
+	}
+	else f(url?*"viek://encrypt/"&&url?"ts→1")
+	{
+		sj(url,"viek://encrypt/",null,nr)
+		ss("(html)&lt;font color=#00d000&gt;viek://encrypt/&lt;/font&gt;"+nr,url)
+		sr(url,"ts→1","&lt;font color=#00d000&gt;ts→1&lt;/font&gt;",url)
+		s an="(html)&lt;font color=#00d000&gt;浏览此网页时建立了加密链接&lt;/font&gt;"
+	}
+	else f(url?*"viek://proxy/")
+	{
+		sj(url,"viek://proxy/",null,nr)
+		ss("(html)&lt;font color=#00d000&gt;viek://proxy/&lt;/font&gt;"+nr,url)
+		s an="(html)&lt;font color=#00d000&gt;浏览此网页时建立了加密链接&lt;/font&gt;"
+	}
+	else f(url?*"https://")
+	{
+		sj(url,"://",null,nr)
+		ss("(html)&lt;font color=#00d000&gt;https://&lt;/font&gt;"+nr,url)
+		s an="(html)&lt;font color=#00d000&gt;浏览此网页时建立了加密链接&lt;/font&gt;"
+	}
+	else
+	{
+		s an="浏览此网页时没有建立加密链接"
+	}
+	us(xz.20,"text",title)
+	fn llq.titlen(title)
+	us(xz.35,"text",an)
+	us(xz.21,"text",url)
+}
+end fn
+
+fn hw(a,b,c)
+ss(b+"&\n"+c+"#\n"+a,a)
+fw("$缓存/hw",a)
+uigo("ViekBrowserHw.iyu")
+end fn
+
+fn gbce()
+us(214,"visibility","gone")
+us(204,"visibility","gone")
+us(199,"visibility","gone")
+us(194,"visibility","gone")
+us(218,"visibility","gone")
+us(260,"visibility","gone")
+us(266,"visibility","gone")
+us(273,"visibility","gone")
+us(359,"visibility","gone")
+us(373,"visibility","gone")
+us(379,"visibility","gone")
+us(388,"visibility","visible")
+fw("$缓存/自动/刷新","f")
+tts(ss.ld,"sp",a)
+sss langdu=null
+end fn
+
+fn click(控件)
+java(类,控件,"Object.getClass")
+java(类名,类,"java.lang.Class.getName")
+f(类名*?"String" || 类名*?"Integer")
+{
+	gvs(控件,控件)
+}
+java(null,控件,"android.view.View.performClick")
+end fn
+
+fn add(控件,方法名,代码)
+java(类,控件,"Object.getClass")
+java(类名,类,"java.lang.Class.getName")
+f(类名*?"String" || 类名*?"Integer")
+{
+	gvs(控件,控件)
+}
+java(tag,控件,"android.view.View.getTag")
+sgsz(tag,2,原代码)
+ss("&lt;eventItme type=""+方法名+""&gt;\n",头部)
+s 尾部="\n&lt;/eventItme&gt;\n"
+f(原代码?头部){
+	sj(原代码,头部,尾部,旧代码)
+	ss(头部+旧代码+尾部,旧代码)
+	ss(头部+代码+尾部,代码)
+	sr(原代码,旧代码,代码,代码)
+}else{
+	ss(原代码+头部+代码+尾部,代码)
+	ssj(控件,方法名)
+	{
+	}
+}
+sssz(tag,2,代码)
+java(null,控件,"android.view.View.setTag","Object",tag)
+end fn
+
+fn js2zjs(n,n0)
+fr("$脚本/hc",js)
+sj(js,null,"==/UserScript==",nr)
+sj(js,"==/UserScript==",null,js)
+//sr(js,"%","%25",js)
+sr(js,"\n","%0a",js)
+ss("GM_info('"+n+"')",gm)
+sr(js,"GM_info",gm,js)
+ss("GM_getResourceURL('"+n+"',",gm)
+sr(js,"GM_getResourceURL(",gm,js)
+ss("GM_getResourceText('"+n+"',",gm)
+sr(js,"GM_getResourceText(",gm,js)
+ss("GM_registerMenuCommand('"+n+"',",gm)
+sr(js,"GM_registerMenuCommand(",gm,js)
+ss("GM_unregisterMenuCommand('"+n+"',",gm)
+sr(js,"GM_unregisterMenuCommand(",gm,js)
+sr(js,"GM_xmlhttpRequest.abort()","GM_xmlhttpRequestabort()",js)
+sr(js,"GM_xmlHttpRequest.abort()","GM_xmlhttpRequestabort()",js)
+
+ss("var unsafeWindow = window;"+js,js)
+
+sl(nr,"// @require",nr)
+for(nrr;nr)
+{
+	f(nrr?*"// ==UserScript==")
+	{
+	}
+	else
+	{
+		f(nrr?"\n")
+		{
+			sj(nrr,null,"\n",nrr)
+		}
+		strim(nrr,nrr)
+		f(nrr?*"data:text/javascript;base64,")
+		{
+			sj(nrr,"data:text/javascript;base64,",null,nrr)
+			java(字节组,null,"android.util.Base64.decode","String",nrr,"int",0)
+			btoo(字节组,"$缓存/js依赖")
+			fr("$缓存/js依赖",nrr)
+			ss("%0a"+nrr+"%0a"+js,js)
+		}
+		else f(nrr?*"data:text/javascript,")
+		{
+			sj(nrr,"data:text/javascript,",null,nrr)
+			sutf8to(nrr,nrr)
+			ss("%0a"+nrr+"%0a"+js,js)
+		}
+		else
+		{
+			sr("%0avar viek_script_require = document.createElement('script');viek_script_require.setAttribute('type','text/javascript');viek_script_require.src = '依赖';viek_script_require.async = true;var targetElement = document.getElementsByTagName('head')[0] || document.body;targetElement.appendChild(viek_script_require);%0a","依赖",nrr,nk)
+			ss(nk+js,js)
+		}
+	}
+}
+fw(n0,js)
+end fn
+
+fn sq()
+us(ls.32,"text","")
+gvs(ls.107,cj)
+fn mk.click(cj)
+end fn
+
+fn endutw()
+endutw()
+java(null,sss.myutw,"android.app.Dialog.dismiss")
+end fn
+
+fn tw(wb)
+fr("$sz/吐司提示样式",aa)
+f(aa=="点九")
+{
+	fr("$sz/吐司点九",d9)
+	fdir("$插件/吐司.dex",dex路径)
+	java(pm,activity,"android.content.ContextWrapper.getPackageName")
+	ss("/data/data/"+pm+"/files/",pa)
+	java(cl,activity,"android.content.ContextWrapper.getClassLoader")
+	javanew(a,"dalvik.system.DexClassLoader","String",dex路径,"String",pa,"String",null,"java.lang.ClassLoader",cl)
+	cls(a,"xbun.MA",b)
+	cls("android.graphics.Bitmap",d)
+	sbp(d9,c)
+	javax(null,null,b,"toast","Context",activity,d,c,"String",wb)
+}
+else f(aa=="安卓系统")
+{
+	tw(wb)
+}
+else f(aa=="动态显示")
+{
+	nvw(o,o,"线性布局","",obj)
+	nvw(kp,obj,"浏览器","height=-1\nwidth=-1\nbackgroundcolor=#00000000\nscrollbars=none\noverscrollmode=none",kk)
+	swh("pxw",w)
+	swh("pxh",h)
+	us(kk,"width",w)
+	us(kk,"height",h)
+	ss("$插件/toast.html?nr="+wb,url)
+	us(kk,"url",url)
+	call(toast,"mlua","mk.tw",obj)
+}
+else f(aa=="叠加显示")
+{
+	f(wb?*"哎呀"||wb?*"纳尼")
+	{
+		fn awzx.toasts("error",wb,"3000")
+	}
+	else
+	{
+		fn awzx.toasts("log",wb,"3000")
+	}
+}
+else
+{
+	nvw(null,null,"线性布局","gravity=bottom|center_horizontal\norientation=vertical",kk)
+	nvw(kp,kk,"卡片","app_cardcornerradius=10dp\nwidth=-2\nheight=-2\nlayout_marginleft=10dp\nlayout_marginright=10dp\napp_CardBackgroundColor=#00ffffff\napp_CardElevation=0",c)
+	nvw(p,c,"线性布局","gravity=center\nbackgroundcolor=#a0000000\nwidth=-2\nheight=-2\norientation=horizontal",d)
+	sr(wb,"\n","&lt;br/&gt;",wb)
+	nvw(kn,d,"卡片","app_cardcornerradius=6dp\nlayout_margin=5dp\nwidth=20dp\nheight=20dp\napp_CardBackgroundColor=#ffffff\napp_CardElevation=0",b)
+	nvw(ky,b,"图像","src=@ts2.png\nwidth=20dp\nheight=20dp",tp)
+	ss("width=-2\nheight=-2\nlayout_margin=5dp\nlayout_marginLeft=0\ntext=(html)"+wb+"\ngravity=center\nshadowColor=#000000\ntextColor=#ffffff\nshadowRadius=20",wb)
+	nvw(k,d,"文本",wb,wb)
+	fr("$sz/全局字体",sz_qjzt)
+	f(sz_qjzt=="true")
+	{
+		fdir("$diy/全局字体",路径)
+		us(wb,"typeface",路径)
+	}
+	call(null,"mjava","mk.tw",kk)
+}
+end fn
+
+fn load_file()
+slg(sss.file_path,l)
+slof(sss.file_path,"/",l,l1)
+f(l1!=-1&&l1!=0&&sss.file_path!="/storage/emulated/0")
+{
+	ula(c,5="上级目录…",6="文件夹",8="")
+}
+fl(sss.file_path,true,sz)
+for(a;sz)
+{
+	ula(c,5=a,6="文件夹",8="")
+}
+fl(sss.file_path,false,sz)
+for(a;sz)
+{
+	f(a*?".bf"||a*?".txt")
+	{
+		ss(sss.file_path+"/"+a,b)
+		fs(b,f)
+		s2(f/1024,fh)
+		f(fh&gt;1024)
+		{
+			s2(fh/1024,fh)
+			ss(fh+" MB",f)
+		}
+		else
+		{
+			ss(fh+" KB",f)
+		}
+		ula(c,5=a,6=f,8="")
+	}
+}
+ufnsui()
+{
+	uls(szz.78,c,"d.iyu",-1,-2)
+	ug(szz.78,"count",lbs)
+	s(lbs*50,h)
+	ss(h+"dp",h)
+	us(szz.78,"height",h)
+	us(szz.3,"text","书签导入-")
+	us(szz.7,"text","(支持后缀.bf/.txt)")
+	us(szz.78,"visibility","visible")
+	us(szz.20,"visibility","gone")
+}
+end fn
+
+fn dksz(name,a1,a2,a3)
+syso(name)
+us(szz.7,"text",name)
+us(szz.3,"text","功能-")
+us(szz.37,"visibility","gone")
+us(szz.62,"visibility","gone")
+us(szz.59,"visibility","gone")
+us(szz.95,"visibility","gone")
+us(szz.2,"visibility","visible")
+us(szz.20,"visibility","visible")
+us(szz.28,"visibility","gone")
+us(szz.8,"visibility","gone")
+us(szz.9,"visibility","gone")
+us(szz.30,"visibility","gone")
+us(szz.78,"visibility","gone")
+us(szz.32,"visibility","gone")
+us(szz.79,"visibility","gone")
+us(szz.80,"visibility","gone")
+us(szz.85,"visibility","gone")
+us(szz.42,"visibility","gone")
+us(szz.41,"visibility","gone")
+us(szz.48,"visibility","gone")
+us(szz.73,"visibility","gone")
+us(szz.76,"visibility","gone")
+us(szz.103,"visibility","gone")
+us(szz.31,"text","")
+us(szz.35,"text","已开")
+us(szz.21,"text",a1)
+us(szz.24,"text",a2)
+us(szz.22,"text",a3)
+us(szz.21,"visibility","visible")
+us(szz.22,"visibility","visible")
+us(szz.24,"visibility","visible")
+f(sss.动画=="true")
+{
+	dha(dha,false,true)
+	dh(dha,"duration",250)
+	us(szz.2,"dh",dha)
+	dhs(dhs,0.9,1,0.9,1,1,0.5,1,0.5)
+	dh(dhs,"duration",250)
+	us(szz.1,"dh",dhs)
+}
+end fn
+
+fn gbsz()
+ug(szz.35,"text",szz_35)
+f(szz_35=="在关")
+{
+	us(szz.2,"visibility","gone")
+}
+else
+{
+	us(szz.2,"visibility","gone")
+	us(szz.28,"visibility","visible")
+	f(sss.动画=="true")
+	{
+		dha(dha,true,false)
+		dh(dha,"duration",250)
+		us(szz.2,"dh",dha)
+		dhs(dhs,1,0.9,1,0.9,1,0.5,1,0.5)
+		dh(dhs,"duration",250)
+		us(szz.1,"dh",dhs)
+	}
+	us(szz.35,"text","在关")
+}
+us(szz.2,"visibility","gone")
+gvs(102,a)
+syso(a)
+f(a?"Text")
+{
+	ug(a,"text",id)
+	us(id,"focusable",true)
+}
+end fn
+
+fn sz()
+javax(pm,activity,"android.content.ContextWrapper","getPackageManager")
+javax(pknm,activity,"android.content.ContextWrapper","getPackageName")
+javax(icon,pm,"android.content.pm.PackageManager","getApplicationInfo","String",pknm,"int",0)
+javax(图标,icon,"android.content.pm.PackageItemInfo","loadIcon","android.content.pm.PackageManager",pm)
+javax(ver,pm,"android.content.pm.PackageManager","getPackageInfo","String",pknm,"int",0)
+javags(版本,ver,"android.content.pm.PackageInfo.versionName")
+us(sz.75,"src",图标)
+us(sz.78,"text",版本)
+sr(版本,".","",版本)
+f(版本?"a"||版本?"b"||版本?"c"||版本?"d"||版本?"e"||版本?"f")
+{
+	sr(版本,"a","1",版本)
+	sr(版本,"b","2",版本)
+	sr(版本,"c","3",版本)
+	sr(版本,"d","4",版本)
+	sr(版本,"e","5",版本)
+	sr(版本,"f","6",版本)
+}
+else
+{
+	ss(版本+"0",版本)
+}
+us(sz.100,"text",版本)
+end fn
+
+fn gbd()
+us(17,"visibility","gone")
+us(34,"visibility","gone")
+us(28,"visibility","gone")
+us(29,"visibility","gone")
+us(49,"visibility","gone")
+us(175,"visibility","gone")
+us(233,"visibility","gone")
+ug(459,"text",a)
+f(a=="下")
+{
+	fn diy.barWz()
+	us(459,"text","上")
+}
+fr("$sz/textsize",a)
+f(a==""||a=="null"||a==null)
+{
+}
+else
+{
+	s zttz="t"
+}
+fr("$sz/textweight",a)
+f(a==""||a=="null"||a==null)
+{
+}
+else
+{
+	s zttz="t"
+}
+fr("$sz/cutext",a)
+fr("$sz/blacktext",b)
+fr("$sz/texta下划线",c)
+fr("$sz/retext",d)
+f(a=="true"||b=="true"||c=="true"||d=="true")
+{
+	s zttz="t"
+}
+f(zttz=="t")
+{
+	fw("$sz/字体调节","true")
+	fn diy.colorn("字体调节","#00ffdd")
+}
+else
+{
+	fw("$sz/字体调节","false")
+	fn diy.colorn("字体调节","#000000")
+}
+end fn
+
+fn zkdi()
+fe("$重要/单页显示",dyxs)
+f(dyxs==true)
+{
+	fd("$重要/单页显示",dyxs)
+	us(di.94,"visibility","visible")
+	fr("$sz/菜单主题",aa)
+	f(aa!="按钮长菜单")
+	{
+		us(di.12,"visibility","visible")
+		us(di.1,"background","#60000000")
+	}
+	us(di.106,"visibility","gone")
+	us(di.107,"visibility","gone")
+	us(di.64,"visibility","visible")
+	us(di.8,"app_CardcornerRadius","15dp")
+	us(di.2,"app_CardcornerRadius","15dp")
+	sss isShowDy = null
+	ssj(di.10,"touchmonitor")
+	{
+	}
+}
+f(ss.di=="t")
+{
+}
+else
+{
+	ss di="t"
+	fn mk.sz()
+	ug(ls.45,"text",a)
+	f(a=="竹板")
+	{
+	}
+	else
+	{
+		fr("$sz/新屏幕高",h)
+		us(9,"height",h)
+		us(ls.64,"visibility","gone")
+		us(ls.22,"visibility","gone")
+		us(ls.23,"visibility","gone")
+		us(ls.29,"visibility","gone")
+		us(ls.33,"visibility","gone")
+		us(ls.104,"visibility","gone")
+		us(ls.106,"visibility","gone")
+		us(ls.47,"visibility","visible")
+		us(ls.51,"visibility","gone")
+		us(ls.52,"visibility","gone")
+		us(ls.53,"visibility","gone")
+		us(ls.111,"visibility","gone")
+		us(ls.113,"visibility","gone")
+		us(ls.7,"visibility","gone")
+		us(ls.45,"text","竹板")
+		us(ls.48,"visibility","visible")
+	}
+	ug(23,"text",a)
+	us(di.7,"text",a)
+	endkeyboard()
+	fr("$sz/菜单主题",aa)
+	f(aa=="侧滑栏")
+	{
+		ss di="n"
+	}
+	else f(aa=="小侧栏")
+	{
+		us(289,"visibility","visible")
+		ss di="n"
+	}
+	else f(aa=="自由拖动栏")
+	{
+		us(di.12,"visibility","visible")
+		us(di.1,"background","#60000000")
+		ss di="n"
+		ug(tuo.16,"text",ttf)
+		gvs(tuo.9,vkv)
+		us(tuo.15,"visibility","visible")
+		gvs(tuo.7,控件)
+		javanew(at,"android.transition.AutoTransition")
+		javanew(tm,"android.transition.TransitionManager")
+		java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","android.view.ViewGroup",控件,"android.transition.Transition",at)
+		f(ttf=="t")
+		{
+			us(tuo.16,"text","f")
+			swh("pxhh",h)
+			s(h+h/3*2,h)
+			java(null,vkv,"android.view.View.setY","float",h)
+			swh("pxhh",h)
+			s(h/3,h)
+			zdp(25,dpp)
+			s(dpp+h,daa)
+			us(tuo.18,"height",daa)
+		}
+		else f(ttf=="k")
+		{
+			dht(dh,0,0,1000,0)
+			dh(dh,"duration",250)
+			us(vkv, "dh", dh)
+			us(tuo.16,"text","f")
+			swh("pxhh",h)
+			s(h/3,h)
+			zdp(25,dpp)
+			s(dpp+h,daa)
+			us(tuo.18,"height",daa)
+			java(null,vkv,"android.view.View.setY","float",h)
+		}
+		us(vkv,"layout_margintop",0)
+	}
+	else f(aa=="按钮长菜单")
+	{
+		us(di.12,"visibility","gone")
+		us(di.1,"background","#00000000")
+		ss di="n"
+		us(di.3,"visibility","gone")
+		us(di.4,"visibility","gone")
+		us(di.1,"visibility","visible")
+		us(di.104,"visibility","visible")
+		gvs(di.91,控件)
+		javanew(at,"android.transition.AutoTransition")
+		javanew(tm,"android.transition.TransitionManager")
+		java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","android.view.ViewGroup",控件,"android.transition.Transition",at)
+		us(di.104,"height","-2")
+	}
+	else f(aa=="简单底栏")
+	{
+		us(di.12,"visibility","gone")
+		us(di.1,"background","#40000000")
+		ss di="n"
+		us(di.3,"visibility","gone")
+		us(di.4,"visibility","gone")
+		us(di.1,"visibility","visible")
+		us(di.128,"visibility","visible")
+		f(sss.动画=="true")
+		{
+			dht(dh,0,0,1000,0)
+			dh(dh,"duration",500)
+			us(di.128, "dh", dh)
+		}
+	}
+	else f(aa=="悬浮菜单")
+	{
+		ss di="n"
+		fr("$diy/menu",a)
+		ug(di.44,"visibility",jk)
+		ss("软件设置/ce\n"+a,a)
+		f(jk==0)
+		{
+			ss("⚠更新软件/\n"+a,a)
+		}
+		sl(a,"\n",ssa)
+		sgszl(ssa,cd)
+		s title_alert = "悬浮菜单："
+		cls("java.lang.String",c)
+		java(cs,null,"java.lang.reflect.Array.newInstance","java.lang.Class",c,"int",cd)
+		s acd=0
+		for(ssb;ssa)
+		{
+			f(b!="")
+			{
+				sj(ssb,null,"/",ssb)
+				sssz(cs,acd,ssb)
+				s(acd+1,acd)
+			}
+		}
+		cls("kawaii.vie.mk$jk",c2)
+		javacb(back,c2)
+		{
+			f(st_mD?"onListClick")
+			{
+				sgsz(st_aS,1,a)
+				sgsz(ssa,a,名称)
+				sj(名称,null,"/",a)
+				f(a=="刷新页面")
+				{
+					gvs(35,vw)
+					fn llq.功能(a,vw)
+				}
+				else f(a=="⚠更新软件")
+				{
+					fn dy.gxb()
+				}
+				else f(a=="下载管理")
+				{
+					us(tool.2,"src","$i/bb.png")
+					gvs(tool.2,vw)
+					fn llq.功能(a,vw)
+				}
+				else f(a=="云端服务")
+				{
+					us(tool.2,"src","$i/yp.png")
+					gvs(tool.2,vw)
+					fn llq.功能(a,vw)
+				}
+				else f(a=="视频播放")
+				{
+					us(tool.2,"src","$i/bf.png")
+					gvs(tool.2,vw)
+					fn llq.功能(a,vw)
+				}
+				else
+				{
+					fn llq.功能(a,a)
+				}
+			}
+		}
+		fn dy.sA(title_alert,cs,c2,back,true)
+	}
+	else
+	{
+		us(di.12,"visibility","visible")
+		us(di.1,"background","#60000000")
+		us(di.3,"visibility","visible")
+		us(di.137,"visibility","visible")
+		t()
+		{
+			ufnsui()
+			{
+				us(di.10,"currentitem",1)
+				us(ls.117,"visibility","gone")
+				us(di.94,"layout_weight","3")
+				us(di.94,"visibility","visible")
+			}
+			stop(100)
+			ufnsui()
+			{
+				us(di.1,"visibility","visible")
+				us(di.4,"visibility","visible")
+				f(sss.动画=="true")
+				{
+					dha(dh,false,true)
+					dh(dh, "duration", 440)
+					us(di.1,"dh",dh)
+					dht(dh,0,0,1000,0)
+					dh(dh,"duration",500)
+					us(di.4, "dh", dh)
+				}
+				us(di.4,"visibility","visible")
+			}
+			stop(600)
+			ufnsui()
+			{
+				us(di.137,"visibility","gone")
+			}
+			ss di="n"
+		}
+	}
+}
+end fn
+
+fn gbdi()
+fr("$sz/菜单主题",aa)
+f(aa=="侧滑栏")
+{
+}
+else f(aa=="小侧栏")
+{
+	us(289,"visibility","gone")
+}
+else f(aa=="自由拖动栏")
+{
+	gvs(tuo.9,vuv)
+	gvs(tuo.7,控件)
+	t()
+	{
+		stop(1200)
+		ufnsui()
+		{
+			us(tuo.15,"visibility","gone")
+		}
+	}
+	java(a,vuv,"android.view.View.getY")
+	us(vuv,"layout_margintop",a)
+	javanew(at,"android.transition.AutoTransition")
+	javanew(tm,"android.transition.TransitionManager")
+	java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","android.view.ViewGroup",控件,"android.transition.Transition",at)
+	swh("pxhh",h)
+	s(h+500,h)
+	us(vuv,"layout_margintop",h)
+}
+else f(aa=="按钮长菜单")
+{
+	us(di.137,"visibility","visible")
+	t()
+	{
+		stop(1200)
+		ufnsui()
+		{
+			us(di.137,"visibility","gone")
+			us(di.1,"visibility","gone")
+			us(di.104,"visibility","gone")
+		}
+	}
+	gvs(di.91,控件)
+	javanew(at,"android.transition.AutoTransition")
+	javanew(tm,"android.transition.TransitionManager")
+	java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","android.view.ViewGroup",控件,"android.transition.Transition",at)
+	us(di.104,"height","0")
+}
+else f(aa=="简单底栏")
+{
+	f(sss.动画=="true")
+	{
+		us(di.137,"visibility","visible")
+		dha(dh,true,false)
+		dh(dh, "duration", 440)
+		us(di.1,"dh",dh)
+		dhon(dh)
+		{
+			us(di.137,"visibility","gone")
+			us(di.128,"visibility","gone")
+			us(di.1,"visibility","gone")
+		}
+	}
+	else
+	{
+		us(di.1,"visibility","gone")
+		us(di.128,"visibility","gone")
+	}
+}
+else f(aa=="悬浮菜单")
+{
+}
+else
+{
+	ug(di.1,"visibility",an)
+	f(an==8)
+	{
+		endcode
+	}
+	fr("$sz/新屏幕高",h)
+	us(9,"height",h)
+	us(84,"visibility","gone")
+	f(ss.di=="t")
+	{
+		endcode
+	}
+	else f(sss.动画=="true")
+	{
+		us(di.137,"visibility","visible")
+		endkeyboard()
+		t()
+		{
+			ss di="t"
+			ufnsui()
+			{
+				dht(dh, 0, 0,0, -200)
+				dh(dh, "duration", 80)
+				us(di.4, "dh", dh)
+			}
+			stop(80)
+			ufnsui()
+			{
+				dht(dh, 0, 0, -250, 1000)
+				dh(dh, "duration", 540)
+				us(di.4, "dh", dh)
+				us(di.4,"visibility","gone")
+				dha(dh,true,false)
+				dh(dh, "duration", 540)
+				us(di.1,"dh",dh)
+				us(di.1,"visibility","gone")
+			}
+			stop(500)
+			ufnsui()
+			{
+				us(di.1,"visibility","gone")
+				us(di.4,"visibility","gone")
+			}
+			ufnsui()
+			{
+				us(di.1,"visibility","gone")
+				us(di.4,"visibility","gone")
+				us(di.137,"visibility","gone")
+			}
+			ufnsui()
+			{
+				us(di.1,"visibility","gone")
+				us(di.4,"visibility","gone")
+				us(di.137,"visibility","gone")
+			}
+		}
+		t()
+		{
+			stop(800)
+			ss di="n"
+			ufnsui()
+			{
+				us(di.1,"visibility","gone")
+				us(di.4,"visibility","gone")
+				us(di.137,"visibility","gone")
+			}
+			ufnsui()
+			{
+				us(di.1,"visibility","gone")
+				us(di.4,"visibility","gone")
+				us(di.137,"visibility","gone")
+			}
+		}
+	}
+	else
+	{
+		us(di.1,"visibility","gone")
+		us(di.4,"visibility","gone")
+		ss di="n"
+	}
+}
+fr("$sz/设置样式",aa)
+f(aa=="递进式")
+{
+	ug(cos.160,"visibility",a)
+	f(a=="0")
+	{
+		gvs(cos.166,v)
+		fn mk.click(v)
+	}
+}
+end fn
+
+fn ck(aa)
+gvs(aa,l)
+call(null,"mjava","dy.ks",l)
+
+fn awzx.rollg()
+fr("$sz/夜间",ms)
+f(ms!="true")
+{
+	fr("$sz/色彩",a)
+	f(a=="true")
+	{
+		ss("$缓存/id/"+aa+"_17",a17)
+		fr(a17,a17)
+		sj(a17,null,"#",g)
+		sj(a17,g,null,color)
+		fn diy.colorMode(g,color)
+	}
+}
+
+fr("$sz/顶栏无favicon",favv)
+f(favv=="true")
+{
+	us(20,"src","$i/lo.png")
+}
+else
+{
+	ss("$缓存/id/"+aa+"_36",a36)
+	fe(a36,sf36)
+	f(!sf36)
+	{
+		s a36="$logo"
+	}
+	us(20,"src",a36)
+}
+
+ss("$缓存/id/"+aa+"_12",a12)
+fr(a12,a12nr)
+f(a12nr=="t")
+{
+	fn diy.colorn("审查元素","#00ffdd")
+	us(sc.20,"visibility","visible")
+}
+else
+{
+	fn diy.colorn("审查元素","#000000")
+	us(sc.20,"visibility","gone")
+}
+
+ss("$缓存/id/"+aa+"_52",a52)
+fr(a52,a52)
+f(a52=="true")
+{
+	fn diy.colorn("智能拼页","#00ffdd")
+}
+else
+{
+	fn diy.colorn("智能拼页","#000000")
+}
+
+ss("$缓存/id/"+aa+"_51",a51)
+fr(a51,a51)
+f(a51=="true"||a51=="menu")
+{
+	fn diy.colorn("阅读模式","#00ffdd")
+}
+else
+{
+	fn diy.colorn("阅读模式","#000000")
+}
+
+ss("$缓存/id/"+aa+"_13",a13)
+fr(a13,a13nr)
+f(a13nr=="true")
+{
+	fn diy.colorn("禁用JS","#00ffdd")
+}
+else
+{
+	fn diy.colorn("禁用JS","#000000")
+}
+
+fr("$sz/自动嗅探",a)
+f(a=="true")
+{
+	fr("$插件/资源嗅探自动.js",xjs)
+	sr(xjs,"标识",aa,xjs)
+	has(aa,xjs)
+}
+
+fn llq.pullre(aa)
 end fn
