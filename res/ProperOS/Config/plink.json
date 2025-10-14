@@ -1,6 +1,7 @@
 {
   "name": "demo",
   "package": "miao.byusi.properos.app.demo",
+  "version": "0",
   "icon": {
     "systemIcon": true,
     "icon": "@JuOS/logo/properos.png"

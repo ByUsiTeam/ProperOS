@@ -2,7 +2,8 @@
   "system": true,
   "name": "demo",
   "package": "miao.byusi.properos.app.demo",
-  "icon": "@JuOS/logo/properos.png"
+  "version": "0",
+  "icon": "@JuOS/logo/properos.png",
   "startUrl": {
     "qiyue": false,
     "url": "https://byusi.cdifit.cn"
