@@ -87,6 +87,13 @@ height=155dp
 src=@fail.xml</ppt>
 <event></event>
 </View>
+<View id="22" did="6" type="RoundImageView">
+<ppt>width=155dp
+height=155dp
+src=@fail.xml
+visibility=gone</ppt>
+<event></event>
+</View>
 <View id="9" did="6" type="TextView">
 <ppt>width=-2
 height=-2
@@ -133,6 +140,7 @@ fd("$System/homeList",yzfd)
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
 fn Lottie.setImageLottie(10,data,-1,true)
+//us(10,"visibility","gone")
 fr("$System/Config/fillet.sys",fillet)
 t()
 {
