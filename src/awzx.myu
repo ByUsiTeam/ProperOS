@@ -1,0 +1,2445 @@
+fn app_name(n)
+ufnsui()
+{
+	ug(21,"text",g)
+    f(g?*"kawaii.vie.web2app" || g=="")
+    {
+    	ss("kawaii.vie.web2app."+n,n)
+        us(21,"text",n)
+    }
+}
+end fn
+
+fn silverlight()
+ufnsui()
+{
+	fn dy.sA("SilverLight 介绍","SilverLight 是微软早期的浏览器插件技术，基于 .NET/XAML，支持 Windows 和 macOS，从未支持过安卓系统。\n\n2021 年 10 月微软已终止对其的支持，现多使用 HTML5 与 WebAssembly 替代。\n\n如果您仍需使用，可用 OpenSilver（https://opensilver.net）迁移或重写，无需插件即可在现代浏览器运行。\n\n从技术层面来看，SilverLight 使用了 .dll 等文件，安卓设备无法直接支持。")
+}
+end fn
+
+fn applet()
+ufnsui()
+{
+	fn dy.sA("Applet 介绍","Applet 标签是早期 HTML ( HTML 3.2 ~ HTML 4 ) 为在网页中嵌入 Java 小程序 ( Java Applet ) 而引入的元素。浏览器在解析到该标签时，会启动内置或外挂的 Java 运行环境，下载指定的字节码文件并在页面指定区域执行。它支持通过属性传递参数给小程序，也能设定显示尺寸、对齐方式等布局信息。随着浏览器对 Java 支持的削弱、安全沙箱限制趋严以及 HTML5 的兴起，这一标签已被官方废弃，不再推荐使用。")
+}
+end fn
+
+fn shockwave()
+ufnsui()
+{
+	fn dy.sA("ShockWave 介绍","ShockWave 是 Adobe 早期的浏览器插件技术，基于 Director 引擎，支持 Windows 与 macOS，从未支持过安卓系统。\n\n2019 年 4 月 Adobe 正式终止对其的支持，现多使用 HTML5 替代。\n\n如果您仍需使用，可将 Shockwave 内容迁移至 Adobe AIR 或 Unity WebGL\n\n从技术层面来看，或许可使用 DirPlayer 项目进行支持，但由于其开源协议与本应用不兼容，故未做深入研究，也未做支持。")
+}
+end fn
+
+fn getmagnet(ul,id_magnet)
+t()
+{
+	hs(ul, null, "utf-8", null, true, "User-Agent=Mozilla/5.0 (iPad; U; CPU OS 6_0 like Mac OS X; zh-CN; iPad2)||accept=*/*||Referer=https://whatslink.info/||accept-language=zh-CN", sss.magnetData)
+	ufnsui()
+	{
+		has(id_magnet,"getMagnet();")
+	}
+}
+end fn
+
+fn magnet(ul)
+ufnsui()
+{
+	us(xz.36, "visibility", "gone")
+	s name=""
+	f(ul?"&dn=")
+	{
+		sj(ul,"&dn=",null,name)
+	}
+	f(name?"&")
+	{
+		sj(name,null,"&",name)
+	}
+	s mb = ""
+	f(ul ? "&xl=")
+	{
+		sj(ul, "&xl=", null, st_cH)
+		f(st_cH ? "&")
+		{
+			sj(st_cH, null, "&", st_cH)
+		}
+		f(st_cH &lt; 1024)
+		{
+			ss(st_cH + " B", mb)
+		}
+		else f(st_cH &gt;= 1024 && st_cH &lt; 1048576)
+		{
+			s2(st_cH / 1024, mb)
+			ss(mb + " KB", mb)
+		}
+		else f(st_cH &gt;= 1048576 && st_cH &lt; 1073741824)
+		{
+			s2(st_cH / 1048576, mb)
+			ss(mb + " MB", mb)
+		}
+		else f(st_cH &gt;= 1073741824)
+		{
+			s2(st_cH / 1073741824, mb)
+			ss(mb + " GB", mb)
+		}
+		ss("\n文件大小："+mb,mb)
+	}
+	f(name=="")
+	{
+		sj(ul,"btih:",null,hash)
+		f(hash?"&")
+		{
+			sj(hash,null,"&",hash)
+		}
+        s name=hash
+	}
+	ss("下载类型：磁力链接(magnet)" + mb +"\n文件名为空时，会自动获取\n", ts)
+	us(xz.13, "text", ul)
+	us(xz.2, "visibility", "visible")
+	us(xz.16, "visibility", "visible")
+	us(xz.6, "text", ts)
+	us(xz.5, "text", name)
+	gvs(xz.5, v)
+	fn dy.拉起(v, "k")
+}
+end fn
+
+fn flash(sss.flash_id)
+fe("$插件/flash/m",e)
+f(!e)
+{
+	ufnsui()
+	{
+		fn mk.tw("当前页面使用了 Flash\n哎呀，你还没有下载 Flash 插件\n请在更多工具-配置文件-下载 Flash 插件")
+	}
+	endcode
+}
+t()
+{
+	stop(5000)
+	call(null,"mjava","awzx.endClientSocket")
+	hs("http://127.0.0.1:7720/",a)
+}
+t()
+{
+	fdir("$插件/flash/m",nr)
+	call(null,"mjava","awzx.startClientSocket",nr,"UTF-8","7720")
+}
+t()
+{
+	stop(500)
+	ufnsui()
+	{
+		s(sss.flash_id+0,idd)
+		fn mk.tw("此页面使用了 Flash\n自动为您加载 Flash 插件")
+		fr("$插件/flash/a.js",js)
+		us(idd,"url",js)
+		syso(idd)
+		syso(js)
+	}
+}
+end fn
+
+fn RSS(sss.FEED_id,url,code)
+t()
+{
+	f(sss.FEED_had=="t")
+	{
+		fn ftp.log(sss.FEED_id,"哎呀，还有订阅源正在获取")
+		endcode
+	}
+	sss FEED_had = "t"
+	sr(url,"feed://","http://",url)
+	sr(url,"rss://","http://",url)
+	slower(code,code)
+	hs(url,"",code,null,true,"User-Agent=Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36",a)
+	f(a==null||a=="null")
+	{
+		hs(url,a)
+		f(a==null||a=="null")
+		{
+			sr(url,"http://","https://",url)
+			hs(url,"",code,null,true,"User-Agent=Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36",a)
+			f(a==null||a=="null")
+			{
+				hs(url,a)
+			}
+		}
+	}
+	f(a==null||a=="null")
+	{
+		fn ftp.log(sss.FEED_id,"哎呀，订阅失败啦")
+		endcode
+	}
+	sss FEED_had = "f"
+	f(a?"&lt;RSS"||a?"&lt;rss")
+	{
+		call(sss.rss_n,"mjava","awzx.rss",a)
+		ufnsui()
+		{
+			for(mm;sss.rss_n)
+			{
+				call(type,"mjava","awzx.rss_get",mm,"type")
+				f(type=="channel")
+				{
+					call(ctitle,"mjava","awzx.rss_get",mm,"title")
+					call(cdescription,"mjava","awzx.rss_get",mm,"description")
+					slg(cdescription,cd)
+					f(cd&gt;250 || cdescription=="" || cdescription=="null" || cdescription==null)
+					{
+						call(cdescription,"mjava","awzx.rss_get",mm,"pubDate")
+					}
+					s(sss.FEED_id+0,id)
+					ss("javascript:document.getElementById('desc').innerHTML = '"+cdescription+"';document.getElementById('titt').innerHTML = '"+ctitle+"';void 0;",js)
+					has(id,js)
+				}
+				else f(type=="image")
+				{
+					call(url,"mjava","awzx.rss_get",mm,"url")
+					s(sss.FEED_id+0,id)
+					ss("javascript:document.getElementsByClassName('image')[0].src = '"+url+"';void 0;",js)
+					has(id,js)
+				}
+				else f(type=="item")
+				{
+					s(sss.FEED_id+0,id)
+					call(title,"mjava","awzx.rss_get",mm,"title")
+					call(pubDate,"mjava","awzx.rss_get",mm,"pubDate")
+					f(pubDate?*"获取失败!\n")
+					{
+						s pubDate = title
+					}
+					call(link,"mjava","awzx.rss_get",mm,"link")
+					call(description,"mjava","awzx.rss_get",mm,"content:encoded")
+					f(description?*"获取失败!\n")
+					{
+						call(description,"mjava","awzx.rss_get",mm,"description")
+					}
+					f(description?*"获取失败!\n")
+					{
+						s description = ""
+					}
+					ss("javascript:addList('"+title+"','"+pubDate+"','"+link+"','"+description+"')",js)
+					has(id,js)
+				}
+			}
+		}
+	}
+	else f(a?"&lt;feed"||a?"&lt;FEED")
+	{
+		call(sss.rss_n,"mjava","awzx.atom",a)
+		ufnsui()
+		{
+			for(mm;sss.rss_n)
+			{
+				call(type,"mjava","awzx.rss_get",mm,"type")
+				f(type=="channel")
+				{
+					call(ctitle,"mjava","awzx.rss_get",mm,"title")
+					call(cdescription,"mjava","awzx.rss_get",mm,"subtitle")
+					f(cd&gt;250 || cdescription=="" || cdescription=="null" || cdescription==null)
+					{
+						call(cdescription,"mjava","awzx.rss_get",mm,"updated")
+					}
+					s(sss.FEED_id+0,id)
+					ss("javascript:document.getElementById('desc').innerHTML = '"+cdescription+"';document.getElementById('titt').innerHTML = '"+ctitle+"';void 0;",js)
+					has(id,js)
+					call(icon,"mjava","awzx.rss_get",mm,"icon")
+					call(logo,"mjava","awzx.rss_get",mm,"logo")
+					f(icon?*"获取失败!\n")
+					{
+					}
+					else
+					{
+						s(sss.FEED_id+0,id)
+						ss("javascript:document.getElementsByClassName('image')[0].src = '"+icon+"';void 0;",js)
+						has(id,js)
+					}
+					f(logo?*"获取失败!\n")
+					{
+					}
+					else
+					{
+						s(sss.FEED_id+0,id)
+						ss("javascript:document.getElementsByClassName('image')[0].src = '"+logo+"';void 0;",js)
+						has(id,js)
+					}
+				}
+				else f(type=="entry")
+				{
+					s(sss.FEED_id+0,id)
+					call(title,"mjava","awzx.rss_get",mm,"title")
+					call(content,"mjava","awzx.rss_get",mm,"content")
+					call(updated,"mjava","awzx.rss_get",mm,"updated")
+					f(updated?*"获取失败!\n")
+					{
+						s updated = title
+					}
+					call(link,"mjava","awzx.rss_get",mm,"link")
+					f(content?*"获取失败!\n")
+					{
+						s content = ""
+					}
+					ss("javascript:addList('"+title+"','"+updated+"','"+link+"','"+content+"')",js)
+					has(id,js)
+				}
+			}
+		}
+	}
+	else f(a?"https://jsonfeed.org/")
+	{
+		json(a,sss.rss_n)
+		ufnsui()
+		{
+			s jo = sss.rss_n
+			json(jo,"get","version",version)
+			f(version?*"https://jsonfeed.org/")
+			{
+				json(jo,"get","title",title)
+				json(jo,"get","icon",icon)
+				json(jo,"get","favicon",favicon)
+				json(jo,"get","description",description)
+				f(description==""||description=="null"||description==null)
+				{
+					json(jo,"get","home_page_url",description)
+					f(description==""||description=="null"||description==null)
+					{
+						json(jo,"get","feed_url",description)
+						f(description==""||description=="null"||description==null)
+						{
+							s description=title
+						}
+					}
+				}
+				
+				s(sss.FEED_id+0,id)
+				ss("javascript:document.getElementById('desc').innerHTML = '"+description+"';document.getElementById('titt').innerHTML = '"+title+"';void 0;",js)
+				has(id,js)
+				f(icon!="null"&&icon!="")
+				{
+					s(sss.FEED_id+0,id)
+					ss("javascript:document.getElementsByClassName('image')[0].src = '"+icon+"';void 0;",js)
+					has(id,js)
+				}
+				else f(favicon!="null"&&favicon!="")
+				{
+					s(sss.FEED_id+0,id)
+					ss("javascript:document.getElementsByClassName('image')[0].src = '"+favicon+"';void 0;",js)
+					has(id,js)
+				}
+				json(jo, "list", "items", list)
+				json(list, "size", size)
+				s num=0
+				w(size &gt; num)
+				{
+					json(list, "data", num, item)
+					s+(1, num)
+					json(item, "get", "url", link)
+					f(link==""||link=="null"||link==null)
+					{
+						json(item, "get", "id", link)
+					}
+					json(item, "get", "content_html", content_html)
+					f(content_html==""||content_html=="null"||content_html==null)
+					{
+						json(item, "get", "content_text", content_html)
+					}
+					json(item, "get", "title", title)
+					f(title==""||title=="null"||title==null)
+					{
+						sr(content_html,"&lt;[^&gt;]+&gt;","",true,title)
+						slg(title,cd)
+						f(cd&gt;18)
+						{
+							ssg(title,0,15,title)
+							ss(title+"...",title)
+						}
+					}
+					json(item, "get", "date_published", updated)
+					f(updated==""||updated=="null"||updated==null)
+					{
+						json(item, "get", "summary", updated)
+					}
+					s(sss.FEED_id+0,id)
+					ss("javascript:addList('"+title+"','"+updated+"','"+link+"','"+content_html+"')",js)
+					has(id,js)
+				}
+			}
+			else
+			{
+				fn ftp.log(sss.FEED_id,"哎呀，这不是订阅源吧")
+			}
+		}
+	}
+	else
+	{
+		fn ftp.log(sss.FEED_id,"哎呀，这不是订阅源吧")
+	}
+}
+end fn
+
+fn mqtt(mqttid,n)
+s(mqttid+0,sss.MQTT_id)
+f(n?"&lt;font color='#b40000'&gt;连接被动断开")
+{
+	ufnsui()
+	{
+		s(sss.MQTT_id+0,mqttid)
+		has(mqttid,"document.getElementById('stop').value='继续输出';document.getElementById('con').style.display='';document.getElementById('di').style.display='none';print('连接被动断开');void 0;")
+	}
+}
+f(n?"&lt;font color='#000000'&gt;连接成功")
+{
+	ufnsui()
+	{
+		s(sss.MQTT_id+0,mqttid)
+		has(mqttid,"document.getElementById('con').style.display='none';document.getElementById('di').style.display='';void 0;")
+	}
+}
+f(n==null||n=="null")
+{
+	endcode
+}
+f(n?"&lt;font color='#0f00b4'&gt;发布成功"&&sss.fa=="f")
+{
+	endcode
+}
+fr("$mqtt.log",a)
+ss("&lt;br&gt;"+n+"&lt;/font&gt;"+a,a)
+fw("$mqtt.log",a)
+fn awzx.update(sss.MQTT_id)
+end fn
+
+fn mqtt_share()
+s log = sss.MQTT_log
+sit(a, "action", "android.intent.action.SEND")
+sit(a, "type", "text/plain")
+sit(a, "extra", "android.intent.extra.SUBJECT", "分享日志")
+sit(a, "extra", "android.intent.extra.TEXT",log)
+uit(a,"result",1)
+end fn
+
+fn mqtt_clear()
+fd("$mqtt.log",a)
+end fn
+
+fn update(mqttid)
+s(mqttid+0,sss.MQTT_id)
+f(sss.MQTT_ztt=="t")
+{
+	endcode
+}
+ufnsui()
+{
+	fr("$mqtt.log",a)
+	sss MQTT_content = a
+	ss("log();",js)
+	s(sss.MQTT_id+0,mqttid)
+	
+	has(mqttid,js)
+}
+end fn
+
+fn mqtt_connect(mqttid,url,id,name,pw)
+fn awzx.mqtt_clear()
+s(mqttid+0,sss.MQTT_id)
+f(sss.MQTT_Type=="w"||sss.MQTT_Type=="t")
+{
+	fn mk.tw("哎呀，请先断开连接")
+	endcode
+}
+
+f(url?*"tcp://"||url?*"ssl://")
+{
+	call(n,"mjava","ftp.connect_mqtt",url,id,name,pw)
+	fn awzx.mqtt(sss.MQTT_id,n)
+}
+else f(url?*"ws://"||url?*"wss://")
+{
+	ss("connect('"+url+"','"+id+"','"+name+"','"+pw+"')",js)
+	ufnsui()
+	{
+		syso(js)
+		s(sss.MQTT_id+0,mqttid)
+		has(mqttid,js)
+	}
+}
+else
+{
+	fn mk.tw("哎呀，MQTT哪里支持这个")
+}
+end fn
+
+fn mqtt_disconnect(mqttid)
+s(mqttid+0,sss.MQTT_id)
+f(sss.MQTT_Type=="w")
+{
+	call(n,"mjava","ftp.disconnect_mqtt")
+	fn awzx.mqtt(sss.MQTT_id,n)
+}
+else f(sss.MQTT_Type=="t")
+{
+	ufnsui()
+	{
+		s(sss.MQTT_id+0,mqttid)
+		has(mqttid,"disconnect()")
+	}
+}
+end fn
+
+fn mqtt_put(mqttid,sub,text,qos,ret)
+f(qos=="")
+{
+	s qos="0"
+}
+s(mqttid+0,sss.MQTT_id)
+f(sss.MQTT_Type=="w")
+{
+	call(n,"mjava","ftp.put_mqtt",sub,text,qos,ret)
+	fn awzx.mqtt(sss.MQTT_id,n)
+}
+else f(sss.MQTT_Type=="t")
+{
+	sr(text,"\\","\\\\",text)
+	sr(text,"'","\\'",text)
+	sr(text,"\"","\\\"",text)
+	ss("publish('"+sub+"','"+text+"','"+qos+"','"+ret+"')",js)
+	ufnsui()
+	{
+		s(sss.MQTT_id+0,mqttid)
+		has(mqttid,js)
+	}
+}
+else
+{
+	fn mk.tw("哎呀，请先连接")
+}
+end fn
+
+fn mqtt_get(mqttid,sub)
+s(mqttid+0,sss.MQTT_id)
+f(sss.MQTT_Type=="w")
+{
+	call(n,"mjava","ftp.get_mqtt",sub)
+	fn awzx.mqtt(sss.MQTT_id,n)
+}
+else f(sss.MQTT_Type=="t")
+{
+	sr(sub,"\n","\\n",sub)
+	ss("get('"+sub+"')",js)
+	ufnsui()
+	{
+		s(sss.MQTT_id+0,mqttid)
+		has(mqttid,js)
+	}
+}
+else
+{
+	fn mk.tw("哎呀，请先连接")
+}
+end fn
+
+fn mqtt_get(mqttid,sub,qos)
+f(qos=="")
+{
+	s qos="0"
+}
+s(mqttid+0,sss.MQTT_id)
+f(sss.MQTT_Type=="w")
+{
+	call(n,"mjava","ftp.get_mqtt",sub,qos)
+	fn awzx.mqtt(sss.MQTT_id,n)
+}
+else f(sss.MQTT_Type=="t")
+{
+	ss("subscribe('"+sub+"','"+qos+"')",js)
+	ufnsui()
+	{
+		s(sss.MQTT_id+0,mqttid)
+		has(mqttid,js)
+	}
+}
+else
+{
+	fn mk.tw("哎呀，请先连接")
+}
+end fn
+
+fn mqtt_out(mqttid,sub)
+s(mqttid+0,sss.MQTT_id)
+f(sss.MQTT_Type=="w")
+{
+	call(n,"mjava","ftp.out_mqtt",sub)
+	fn awzx.mqtt(sss.MQTT_id,n)
+}
+else f(sss.MQTT_Type=="t")
+{
+	ss("unsubscribe('"+sub+"')",js)
+	ufnsui()
+	{
+		s(sss.MQTT_id+0,mqttid)
+		has(mqttid,js)
+	}
+}
+else
+{
+	fn mk.tw("哎呀，请先连接")
+}
+end fn
+
+
+fn sendEmail(id,url,port,name,password,from,to,title,nr)
+ss smtpId=id
+t()
+{
+	call(back,"mjava","ftp.smtpSend",url,port,name,password,from,to,title,nr)
+	fn ftp.log(ss.smtpId,back)
+}
+end fn
+
+fn nntp_getN(id,a,b,c,d,code)
+f(sss.nntpGetT=="t")
+{
+	ufnsui()
+	{
+		fn mk.tw("哎呀，有新闻组还在加载...")
+	}
+	endcode
+}
+else
+{
+	ufnsui()
+	{
+		s(ss.nntpId+0,id)
+		has(id,"delList();")
+	}
+}
+ss nntpId=id
+t()
+{
+	call(n,"mjava","ftp.getArticles",a,b,c,d,code)
+	f(n?*"awzx_error!")
+	{
+		sr(n,"awzx_error!","",n)
+		fn ftp.log(ss.nntpId,n)
+	}
+	else
+	{
+		fn ftp.print(ss.nntpId,n)
+	}
+}
+end fn
+
+fn nntp_getI(id,a,b,str,code)
+ss nntpId=id
+f(sss.nntpGetT=="t")
+{
+	ufnsui()
+	{
+		fn mk.tw("哎呀，有新闻组还在加载...")
+	}
+	endcode
+}
+else
+{
+	ufnsui()
+	{
+		s(ss.nntpId+0,id)
+		has(id,"delList();")
+	}
+}
+sss nntpGetT="t"
+t()
+{
+	call(n,"mjava","ftp.getArticlesI",a,b,str,code)
+	f(n==null||n=="null"||str=="")
+	{
+		s n="哎呀，什么都没获取到"
+	}
+	fn ftp.log(ss.nntpId,n)
+	sss nntpGetT="f"
+}
+end fn
+
+fn nntp_getT(id,a,b,code)
+ss nntpId=id
+f(sss.nntpGetT=="t")
+{
+	ufnsui()
+	{
+		fn mk.tw("哎呀，有新闻组还在加载...")
+	}
+	endcode
+}
+else
+{
+	ufnsui()
+	{
+		s(ss.nntpId+0,id)
+		has(id,"delList();")
+	}
+}
+sss nntpGetT="t"
+t()
+{
+	call(n,"mjava","ftp.getNewsgroups",a,b,code)
+	f(n==null||n=="null")
+	{
+		s m="哎呀，什么都没获取到"
+		fn ftp.log(ss.nntpId,m)
+		sss nntpGetT="f"
+		endcode
+	}
+	else
+	{
+		gslistl(n,m)
+		ss("获取到新闻组数目: "+m,m)
+		f(m=="获取到新闻组数目: 1")
+		{
+			gslist(n,0,lis)
+			f(lis?*"哎呀，获取错误！")
+			{
+				s m="哎呀，什么都没获取到"
+				fn ftp.log(ss.nntpId,m)
+				sss nntpGetT="f"
+				endcode
+			}
+		}
+	}
+	fn ftp.log(ss.nntpId,m)
+	ufnsui()
+	{
+		s(ss.nntpId+0,idnntp)
+		for(nn;n)
+		{
+			sj(nn,null," ",title)
+			sj(nn," ",null,info)
+			ss("addList('"+title+"','"+info+"');",js)
+			has(idnntp,js)
+		}
+	}
+	sss nntpGetT="f"
+}
+end fn
+
+fn engine(a)
+fw()
+end fn
+
+fn getValue(a,b)
+end fn
+
+fn setValue(a,b)
+end fn
+
+fn getTime(url,id)
+sss str=url
+sss ntpid=id
+t()
+{
+	sj(sss.str,null,"://",host)
+	sj(sss.str,"://",null,serve)
+	f(serve*?"/")
+	{
+		slg(serve,cd)
+		s(cd-1,cd)
+		ssg(serve,0,cd,serve)
+	}
+	f(serve?":")
+	{
+		sj(serve,":",null,port)
+		sj(serve,null,":",serve)
+	}
+	else f(host=="ntp")
+	{
+		s port="123"
+	}
+	else f(host=="time")
+	{
+		s port="37"
+	}
+	else f(host=="qotd")
+	{
+		s port="17"
+	}
+	else f(host=="daytime")
+	{
+		s port="13"
+	}
+	
+	f(host=="ntp")
+	{
+		call(nr,"mjava","awzx.getNTPTimestamp",serve,port)
+	}
+	else f(host=="time")
+	{
+		call(nr,"mjava","awzx.getTIME",serve,port)
+	}
+	else f(host=="qotd")
+	{
+		call(nr,"mjava","awzx.getQOTD",serve,port)
+	}
+	else f(host=="daytime")
+	{
+		call(nr,"mjava","awzx.getDaytime",serve,port)
+	}
+	ss("javascript:document.getElementById('time').innerHTML='"+nr+"';void 0;",nr)
+	sss nr=nr
+	ufnsui()
+	{
+		s(sss.ntpid+0,id)
+		has(id,sss.nr)
+		sss ntpid=null
+		sss nr=null
+		sss str=null
+	}
+}
+end fn
+
+fn vibrate(n)
+sr(n,","," ",n)
+syso(n)
+f(n=="0")
+{
+	uzd(sss.zdq, "sp")
+}
+else f(n?" ")
+{
+	ss("0 "+n,n)
+	uzd(sss.zdq, n,false)
+}
+else
+{
+	uzd(sss.zdq, n)
+}
+end fn
+
+fn ViePicView()
+ug(102,"text",id)
+ss("$缓存/id/"+id+"_82",a82)
+fd(a82,a82)
+end fn
+
+fn scan_back(result)
+has(265,"closeQR()")
+us(265,"url","about:blank")
+sss result=result
+ss("有结果："+result,re)
+fw("$缓存/scan.txt",re)
+fn mk.tw(result)
+t()
+{
+	stop(500)
+	end()
+}
+end fn
+
+fn scan_try()
+ufnsui()
+{
+	usx(sss.scan,"shot","$缓存/scan.jpg",90,false)
+	uqr("$缓存/scan.jpg",re)
+	f(re==12617777)
+	{
+	}
+	else f(re==sss.result)
+	{
+	}
+	else
+	{
+		fn awzx.scan_back(re)
+	}
+}
+end fn
+
+fn translate2()
+ug(373,"visibility",ig)
+f(ig==0)
+{
+	ufnsui()
+	{
+		fn mk.tw("开始第二轮补充翻译")
+		fr("$fun/translate1.txt",js)
+		has(ss.web_id,js)
+	}
+}
+end fn
+
+fn translate3()
+ug(373,"visibility",ig)
+f(ig==0)
+{
+	ufnsui()
+	{
+		fn mk.tw("开始第三轮提示翻译")
+		fr("$fun/translate2.txt",js)
+		has(ss.web_id,js)
+	}
+}
+end fn
+
+fn translateRSS(text,id)
+ss("inputtext="+text+"&type="+ss.form,post)
+hs("http://m.youdao.com/translate",post,"utf-8",ok)
+sj(ok,"译文","&lt;/ul&gt;",o)
+sj(o,"&lt;li&gt;","&lt;/li&gt;",a)
+sr(a,"'","\\'",a)
+sr(a,"\n","\\n",a)
+ufnsui()
+{
+	s(sss.web_rss_id+0,rss_id)
+	ss("awzx_tr_back('"+text+"','"+a+"','"+id+"')",js)
+	has(rss_id,js)
+}
+end fn
+
+fn translate(text,id)
+ug(373,"visibility",ig)
+f(ig==0)
+{
+	syso(text)
+	ss("inputtext="+text+"&type="+ss.form,post)
+	hs("http://m.youdao.com/translate",post,"utf-8",ok)
+	sj(ok,"译文","&lt;/ul&gt;",o)
+	sj(o,"&lt;li&gt;","&lt;/li&gt;",a)
+	sr(a,"'","\\'",a)
+	sr(a,"\n","\\n",a)
+	syso(a)
+	ufnsui()
+	{
+		ss("awzx_tr_back('"+text+"','"+a+"','"+id+"')",js)
+		has(ss.web_id,js)
+		
+		s(id+1,my)
+		ss("翻译进度："+my+"/"+ss.me,m)
+		f(m==null)
+		{
+		}
+		else
+		{
+			us(378,"text",m)
+		}
+	}
+}
+end fn
+
+fn translate_jd(my,me)
+ss me=me
+end fn
+
+fn translate_end()
+ufnsui()
+{
+	fn mk.tw("翻译完毕")
+	us(388,"visibility","gone")
+	us(379,"visibility","visible")
+	ss web_id="null"
+}
+end fn
+
+fn outerHtml()
+ufnsui()
+{
+	fw("$缓存/outer源码",sss.dmpap2)
+	fr("$插件/outerHtml框架.txt",a)
+	fr("$缓存/outer源码",hc)
+	sr(hc,"&lt;style class=\"vie-the-style\"&gt;&lt;/style&gt;","",hc)
+	sr(hc,"&lt;","&#60;",hc)
+	sr(hc,"&gt;","&#62;",hc)
+	ug(102,"text",id)
+	ug(id,"url",url)
+	f(url?*"file://"||url?*"view-source:file://")
+	{
+		call(url,"mjava","webViewUtil.urrl",url)
+	}
+	sr(a,"网址",url,a)
+	sr(a,"替换",hc,a)
+	fw("$缓存/outerHtml.html",a)
+	s a=null
+	s hc=null
+	fdir("$缓存/outerHtml.html",a)
+	ss("file://"+a+"?url="+url,a)
+	fn dmpap.创建(a)
+	fn mk.gbdi()
+	sss dmpap2=null
+}
+end fn
+
+fn toast_set(type,nr,time)
+java(window,activity,"android.app.Activity.getWindow")
+java(dx,window,"android.view.Window.getDecorView")
+java(dx,dx,"android.view.ViewGroup.getChildAt","int",0)
+swh("w",kuan)
+s(kuan*0.75,kuan)
+s(kuan-102,k)
+ss(kuan+"dp",kk)
+nvw(xdbj,dx,"相对布局","width=-1\nheight=-1",xdbj)
+nvw(xxbj,xdbj,"线性布局","width=-1\nheight=-1\norientation=vertical",xxbj)
+nvw(llq,xdbj,"浏览器","width=-1\nheight=0\noverScrollMode=never\nscrollbars=none\nbackgroundcolor=#00000000\nut_centerhorizontal=true",ss.toastView)
+us(ss.toastView,"width",kk)
+us(ss.toastView,"layout_margintop", "50dp")
+fuzs("$插件/cocoMessage.dex","$插件/cm/",true,a)
+fr("$插件/cm/coco-message.js",jsnr)
+sr(jsnr,"宽",k,jsnr)
+fw("$插件/cm/coco-message.js",jsnr)
+us(ss.toastView,"url","$插件/cm/toast.html")
+hsas(ss.toastView,true)
+java(ws,ss.toastView,"android.webkit.WebView.getSettings")
+java(null,ws,"android.webkit.WebSettings.setBuiltInZoomControls","boolean",true)
+java(null,ws,"android.webkit.WebSettings.setDisplayZoomControls","boolean",false)
+java(count,dx,"android.view.ViewGroup.getChildCount")
+s(count-1,count)
+for(1;count)
+{
+	java(views,dx,"android.view.ViewGroup.getChildAt","int",0)
+	urvw(views)
+	nvw(views,xxbj)
+}
+t()
+{
+	stop(200)
+	ufnsui()
+	{
+		fn awzx.toasts(type,nr,time)
+	}
+}
+end fn
+
+fn toasts(type,nr,time)
+sr(nr,"'","\'",nr)
+f(ss.toastView?"e")
+{
+	f(type=="destroyAll")
+	{
+		s js="cocoMessage.destroyAll();"
+	}
+	else f(type=="loading")
+	{
+		ss("var closeMsg = cocoMessage.loading(true);setTimeout(function () {closeMsg();}, "+time+");",js)
+	}
+	else f(type=="error")
+	{
+		ss("cocoMessage.error('"+nr+"', "+time+");",js)
+	}
+	else f(type=="log")
+	{
+		ss("cocoMessage.info("+time+",'"+nr+"');",js)
+	}
+	has(ss.toastView,js)
+}
+else
+{
+	fn awzx.toast_set(type,nr,time)
+}
+end fn
+
+fn setH(toastH)
+ufnsui()
+{
+	us(ss.toastView,"height",toastH)
+}
+end fn
+
+fn bh_back(z,a)
+ufnsui()
+{
+	f(z=="bh")
+	{
+		s title="汉字笔画"
+		sj(a,"呆毛飘啊飘",null,a)
+		sr(a,"呆毛飘啊飘","\n",a)
+		sr(a,"undefined","这个没有笔画",a)
+	}
+	else
+	{
+		s title="汉字拼音"
+	}
+	fn mk.dksz(title,"","","")
+	us(szz.3,"text","")
+	us(szz.20,"visibility","gone")
+	us(szz.41,"visibility","visible")
+	us(szz.41,"text",a)
+}
+end fn
+
+fn plyr_suo(a)
+ufnsui()
+{
+	gvs(77563,控件)
+	javanew(at,"android.transition.AutoTransition")
+	javanew(tm,"android.transition.TransitionManager")
+	java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","android.view.ViewGroup",控件,"android.transition.Transition",at)
+	us(77562,"visibility",a)
+}
+end fn
+
+fn plyr_zdbf(url)
+ufnsui()
+{
+	ug(116,"text",nh)
+	f(nh=="viek")
+	{
+		us(13,"text",url)
+		f(url?*"file://"&&url?".m3u")
+		{
+			sj(url,"file://",null,wj)
+			fr(wj,wj)
+			f(wj?"#EXTM3U")
+			{
+				t()
+				{
+					java(cd,wj,"java.lang.String.getBytes")
+					sgszl(cd,cd)
+					sr("HTTP/1.1 200 OK\nContent-Type: */*\nContent-Length: 长度\nConnection: close\nServer: AWZX HTTP Server 1.0.0\n\n","长度",cd,qqt)
+					call(null,"mjava","dy.ophttp",wj,qqt,7720)
+				}
+				s url="http://127.0.0.1:7720/index.m3u8"
+				t()
+				{
+					stop(500)
+					ss("javascript:play_v('"+url+"');var bfq=document.getElementById('video');if(video.paused){document.getElementsByClassName('plyr__control--overlaid')[0].click();}",js)
+					ufnsui()
+					{
+						us(77520,"url",js)
+					}
+				}
+			}
+		}
+		else
+		{
+			ss("javascript:play_v('"+url+"');var bfq=document.getElementById('video');if(video.paused){document.getElementsByClassName('plyr__control--overlaid')[0].click();}",js)
+			us(77520,"url",js)
+		}
+	}
+	else f(nh=="system")
+	{
+		us(13,"text",url)
+		sr(url,"file://","",url)
+		bfvs(77520,url)
+		bfvss(77520,"st")
+	}
+}
+end fn
+
+fn plyr_del()
+f(ss.fullview?"and")
+{
+	gvs(77520,v)
+	has(v,"javascript:document.querySelectorAll('video').forEach(function(el){el.pause();el.removeAttribute('src');el.load();el = null});")
+	us(77520,"src","about:blank")
+	urvw(v)
+	s v=null
+	gvs(77521,v)
+	urvw(v)
+	s v=null
+	gvs(77522,v)
+	urvw(v)
+	s v=null
+	gvs(77523,v)
+	urvw(v)
+	s v=null
+	ss fullview=null
+	ss plyrfull=null
+}
+end fn
+
+fn plyr_full()
+ufnsui()
+{
+	java(window,activity,"android.app.Activity.getWindow")
+	java(d,window,"android.view.Window.getDecorView")
+	java(null,d,"android.view.View.setSystemUiVisibility","int",4102)
+	
+	java(window,activity,"android.app.Activity.getWindow")
+	java(attribute,window,"android.view.Window.getAttributes")
+	javass(null,attribute,"android.view.WindowManager$LayoutParams","layoutInDisplayCutoutMode",3)
+	java(null,window,"android.view.Window.setAttributes","android.view.WindowManager$LayoutParams",attribute)
+	java(get,window,"android.view.Window.getDecorView")
+	java(null,get,"android.view.View.setSystemUiVisibility","int",-1)
+	java(null,window,"android.view.Window.setSoftInputMode","int",16)
+	has(77520,"var cbkn = document.getElementById('ckb').innerHTML;if(cbkn&gt;1){iapp.fn('awzx.plyr_fulls(\"横\")');}else{iapp.fn('awzx.plyr_fulls(\"竖\")');}")
+}
+end fn
+
+fn plyr_fulls(a)
+ufnsui()
+{
+	f(ss.plyrfull=="t")
+	{
+		syso("退出全屏")
+		ss plyrfull="f"
+		gvs(77520,v)
+		urvw(v)
+		nvw(v,77523)
+		us(77522,"visibility","gone")
+		java(window,activity,"android.app.Activity.getWindow")
+		java(d,window,"android.view.Window.getDecorView")
+		java(null,d,"android.view.View.setSystemUiVisibility","int",4098)
+		us(ss.ztl,"visibility","visible")
+		ushsp(false)
+	}
+	else
+	{
+		endkeyboard()
+		syso("进入全屏")
+		ss plyrfull="t"
+		gvs(77520,v)
+		urvw(v)
+		nvw(v,77522)
+		us(77522,"visibility","visible")
+		us(ss.ztl,"visibility","gone")
+		f(a=="横")
+		{
+			ushsp(true)
+		}
+	}
+}
+end fn
+
+fn ok()
+ufnsui()
+{
+	us(77521,"visibility","gone")
+	us(77520,"visibility","visible")
+}
+end fn
+
+fn wrong()
+ufnsui()
+{
+	fn mk.tw("哎呀，密码错误")
+}
+t()
+{
+	uzd(zd, 30)
+	stop(200)
+	uzd(zd, 30)
+}
+end fn
+
+fn right()
+ufnsui()
+{
+	fn mk.tw("密码正确")
+	ug(ls.117,"visibility",a)
+	f(a==0)
+	{
+		us(ls.117,"visibility","gone")
+	}
+	ug(xy.15,"visibility",a)
+	f(a==0)
+	{
+		us(xy.15,"visibility","gone")
+	}
+	ug(5,"text",a)
+	f(a=="密码管理"||a?"名单")
+	{
+		us(126,"visibility","gone")
+	}
+}
+end fn
+
+fn delp()
+ufnsui()
+{
+	fn mk.tw("已经删除！")
+	fd("$sz/图案密码",password)
+	us(182,"visibility","gone")
+	us(188,"visibility","visible")
+}
+end fn
+
+fn reset()
+ufnsui()
+{
+	fn mk.tw("请重新设置密码")
+	fr("$插件/密码.dex",a)
+	fw("$pass.html",a)
+	fdir("$pass.html",aa)
+	s yj="b"
+	fr("$sz/夜间",st_yj)
+	f(st_yj=="true")
+	{
+		s yj="w"
+	}
+	ss("file://"+aa+"?type=sz&ys="+yj,aa)
+	us(182,"url",aa)
+	hsas(182,true)
+}
+end fn
+
+fn setp(password)
+slg(password,cd)
+f(cd&lt;=3)
+{
+	ufnsui()
+	{
+		fn mk.tw("哎呀，这太短了吧")
+	}
+}
+else
+{
+	ufnsui()
+	{
+		fn mk.tw("请再次输入确认密码")
+		fr("$插件/密码.dex",a)
+		sr(a,"我是内容",password,a)
+		fw("$pass.html",a)
+		fdir("$pass.html",aa)
+		s yj="b"
+		fr("$sz/夜间",st_yj)
+		f(st_yj=="true")
+		{
+			s yj="w"
+		}
+		ss("file://"+aa+"?type=set&ys="+yj,aa)
+		us(182,"url",aa)
+		hsas(182,true)
+	}
+}
+end fn
+
+fn setting(password)
+fw("$sz/图案密码",password)
+ufnsui()
+{
+	fn mk.tw("设置成功！")
+	fr("$sz/图案密码",password)
+	fr("$插件/密码.dex",a)
+	sr(a,"我是内容",password,a)
+	fw("$pass.html",a)
+	fdir("$pass.html",aa)
+	s yj="b"
+	fr("$sz/夜间",st_yj)
+	f(st_yj=="true")
+	{
+		s yj="w"
+	}
+	ss("file://"+aa+"?type=js&ys="+yj,aa)
+	us(182,"url",aa)
+	hsas(182,true)
+}
+end fn
+
+fn setWrong()
+ufnsui()
+{
+	fn mk.tw("哎呀，和之前的密码不一样")
+}
+end fn
+
+fn inx(n)
+ufnsui()
+{
+	fn mk.dksz("页面信息:","","","")
+	us(szz.3,"text","")
+	us(szz.20,"visibility","gone")
+	us(szz.41,"visibility","visible")
+	sr(n,"#Vie换行#","\n",n)
+	sj(n,"\n网址[url]：","\n",yurl)
+	s url=yurl
+	ug(102,"text",id)
+	ss("$缓存/id/"+id+"_46",a46)
+	fr(a46,ak)
+	f(ak?*"viek://encrypt/"&&url?*"http")
+	{
+		f(url?".m3u8")
+		{
+		}
+		else
+		{
+			sj(url,"://",null,zz)
+			sj(zz,"/",null,zz)
+			ss(ak+zz,url)
+		}
+	}
+	ss("$缓存/id/"+id+"_44",a44)
+	fr(a44,a44)
+	f(a44=="proxy")
+	{
+		f(url?"__cpo=")
+		{
+			sj(url,"__cpo=",null,cpo)
+			f(cpo?"&")
+			{
+				sj(cpo,null,"&",cpo)
+			}
+			ss("viek://proxy/cpo="+cpo,url)
+		}
+	}
+	f(url?*"file://"||url?*"view-source:file://")
+	{
+		call(url,"mjava","webViewUtil.urrl",url)
+	}
+	sr(n,yurl,url,n)
+	us(szz.41,"text",n)
+}
+end fn
+
+fn roll(a)
+ufnsui()
+{
+	us(303,"layout_margintop",a)
+	us(302,"visibility","visible")
+}
+end fn
+
+fn rollg()
+fr("$缓存/拖动条",d)
+f(d=="在拖")
+{
+	fw("$缓存/拖动条","关闭")
+	endcode
+}
+ug(302,"visibility",sfk)
+f(sfk=="0")
+{
+	ufnsui()
+	{
+		fd("$roll",aj)
+		zdp(50,d50)
+		fr("$sz/拖动条位置",wz)
+		f(wz=="左")
+		{
+			s(0-d50,d50)
+		}
+		dht(dh,0,d50,0,0)
+		dh(dh,"duration",600)
+		us(302,"dh",dh)
+		dhon(dh)
+		{
+			us(302,"visibility","gone")
+		}
+	}
+}
+end fn
+
+fn diymenu(a)
+sj(a,"\n","\n\n左方滑动查看更多功能",a)
+sr(a,"\n\n","\n",aa)
+f(aa=="null"||aa==null)
+{
+	ufnsui()
+	{
+		fn mk.tw("纳尼，出现了错误")
+	}
+	endcode
+}
+fw("$diy/menu",aa)
+fw("$sz/自定义主菜单","true")
+f(aa==k)
+{
+	fd("$sz/自定义主菜单",a)
+}
+ufnsui()
+{
+	gvs(cos.28,控件)
+	javanew(at,"android.transition.AutoTransition")
+	javanew(tm,"android.transition.TransitionManager")
+	java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","android.view.ViewGroup",控件,"android.transition.Transition",at)
+	us(cos.1,"visibility","gone")
+	us(cos.41,"visibility","gone")
+	fn mk.tw("重启软件后生效")
+	us(tool.3,"text","ka")
+	fr("$sz/新屏幕高",h)
+	us(9,"height",h)
+	endkeyboard()
+	us(cos.122,"visibility","gone")
+	us(cos.48,"visibility","visible")
+	us(cos.49,"visibility","visible")
+}
+end fn
+
+fn proxy(url,id)
+ss id=id
+ss url=url
+ufnsui()
+{
+	s id=ss.id
+	s url=ss.url
+	fe("$缓存/proxy2",po)
+	f(po=="true")
+	{
+		sr("javascript:var nn = document.getElementsByClassName('proxyLink')[0];nn.setAttribute('data-href','网址');nn.innerHTML='VieK';nn.click();void 0;","网址",url,js)
+		us(262,"url",js)
+		sr("javascript:var nn = document.getElementsByClassName('proxyLink')[0];nn.setAttribute('data-href','网址');nn.innerHTML='VieK';nn.click();void 0;","网址",url,js)
+		us(262,"url",js)
+		has(id,"document.getElementById('a').innerHTML='有窗口正在加载代理中...';void 0;")
+		fn mk.tw("有窗口正在加载代理中...")
+		us(263,"text","有窗口正在加载代理中...")
+		sr("javascript:var nn = document.getElementsByClassName('proxyLink')[0];nn.setAttribute('data-href','网址');nn.innerHTML='VieK';nn.click();void 0;","网址",url,js)
+		us(262,"url",js)
+		endcode
+	}
+	fw("$缓存/proxy",url)
+	fw("$缓存/proxy2",id)
+	fn mk.tw("正在连接代理~")
+	has(id,"document.getElementById('a').innerHTML='正在连接代理~';void 0;")
+	us(262,"url","https://www.a.cpfrx.info/")
+	us(263,"text","正在连接代理~")
+	fn mk.gbce()
+	us(194,"visibility","visible")
+	us(260,"visibility","visible")
+}
+end fn
+
+fn console(idk,bss,ass)
+ss("$缓存/id/"+idk+"_41",a41)
+fr(a41,text)
+time("%tL",time)
+time(3,tt)
+f(bss=="error")
+{
+	ss("&lt;font color=#ff4000&gt;["+tt+":"+time+"] "+ass+"&lt;/font&gt;&lt;br&gt;"+text,tet)
+}
+else f(bss=="info")
+{
+	ss("&lt;font color=#00ffdd&gt;["+tt+":"+time+"] "+ass+"&lt;/font&gt;&lt;br&gt;"+text,tet)
+}
+else f(bss=="debug")
+{
+	ss("&lt;font color=#00c8ff&gt;["+tt+":"+time+"] "+ass+"&lt;/font&gt;&lt;br&gt;"+text,tet)
+}
+else f(bss=="log")
+{
+	ss("["+tt+":"+time+"] "+ass+"&lt;br&gt;"+text,tet)
+}
+else f(bss=="warn")
+{
+	ss("&lt;font color=#ffe200&gt;["+tt+":"+time+"] "+ass+"&lt;/font&gt;&lt;br&gt;"+text,tet)
+}
+fw(a41,tet)
+end fn
+
+fn addqz(url,n,sig)
+fn mk.tw("解析中...")
+f(url?*"file://")
+{
+	s sig="loc"
+	sj(url,"file://",null,url)
+}
+t()
+{
+	f(n==null||n=="null"||n=="wu")
+	{
+		s n=""
+		s ad="@#%&$1234567890ABCDEFGHIJKLNMOPQRSTUVWXYZ"
+		for(1;14)
+		{
+			sran(0,40,b)
+			s(b+1,bb)
+			ssg(ad,b,bb,kd)
+			ss(kd+n,n)
+		}
+	}
+	f(sig=="web")
+	{
+		hd(url,"$轻栈/cache.vtm",true,o)
+		ss("$轻栈/"+n+"/",nvtm)
+		fuzs("$轻栈/cache.vtm",nvtm,true,lon)
+	}
+	else f(sig=="loc")
+	{
+		ss("$轻栈/"+n+"/",nvtm)
+		fuzs(url,nvtm,true,lon)
+	}
+	f(lon==true)
+	{
+		ufnsui()
+		{
+			ss("$轻栈/"+n+"/地址",n0)
+			fw(n0,url)
+			fn mk.tw("安装成功！")
+			fr("$轻栈/list",list)
+			ss(list+n+";",list)
+			fw("$轻栈/list",list)
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			fn mk.tw("安装轻栈失败！")
+		}
+	}
+}
+end fn
+
+fn ld()
+ufnsui()
+{
+	tts(ss.ld,"sp",b)
+	tts(ss.ld,"zh",sss.langdu,1,1)
+	us(194,"visibility","visible")
+	us(199,"visibility","visible")
+}
+end fn
+
+fn xiut(ulk)
+ss urk=ulk
+ufnsui()
+{
+	fn mk.dksz("视频嗅探","更多","播放器打开","新窗口打开")
+	us(szz.41,"visibility","visible")
+	syso(ss.urk)
+	us(szz.41,"text",ss.urk)
+	syso(ss.urk)
+}
+end fn
+
+fn gmxhr(anonymous,nocache,cookie,timeout,method,url,data,headers,headerskey)
+f(anonymous=="true"||anonymous==true)
+{
+	s cookie=""
+}
+f(cookie!="undefined"&&cookie!=null&&cookie!="null")
+{
+	sj(headers,"{",null,headers)
+	ss("{\"Cookie\":\""+cookie+"\"\,"+headers,headers)
+	ss("Cookie\,"+headerskey,headerskey)
+}
+json(headers,headers)
+f(headerskey?",")
+{
+	s z=""
+	sl(headerskey,"\,",key)
+	for(k;key)
+	{
+		json(headers,"get",k,n)
+		syso(k)
+		ss(z+"#viek分割#"+n,z)
+	}
+	sj(z,"#viek分割#",null,headers)
+	sgszl(key,key)
+}
+else f(headerskey=="")
+{
+	s key=""
+	s headers=""
+	slg(key,key)
+}
+else
+{
+	json(headers,"get",headerskey,headers)
+	s key="a"
+	slg(key,key)
+}
+supper(method,method)
+f(method=="GET")
+{
+	t()
+	{
+		call(null,"mjava","gm.get",timeout,nocache,url,headers,headerskey,key)
+	}
+}
+else f(method=="POST")
+{
+	t()
+	{
+		call(null,"mjava","gm.post",timeout,nocache,url,data,headers,headerskey,key)
+	}
+}
+else f(method=="HEAD")
+{
+	t()
+	{
+		call(null,"mjava","gm.head",timeout,nocache,url,headers,headerskey,key)
+	}
+}
+else
+{
+	ss("数据：method 错误！"+method,cw)
+	fn mk.tw(cw)
+}
+t()
+{
+	stop(timeout)
+	sss ontimeout_js="ontimeout"
+}
+end fn
+
+fn copymenu(n)
+ufnsui()
+{
+	f(n=="k")
+	{
+		us(ca.45,"visibility","visible")
+	}
+	else
+	{
+		us(ca.45,"visibility","gone")
+		us(ca.86,"visibility","gone")
+	}
+	ss ca="n"
+}
+end fn
+
+fn read(id,n)
+ss("$缓存/id/"+id+"_51",a51)
+fw(a51,n)
+f(n=="false")
+{
+	ufnsui()
+	{
+		fn diy.colorn("阅读模式","#000000")
+	}
+}
+end fn
+
+fn getresource(sign,mode,name)
+ss("$脚本/"+sign+"/2",sign)
+fr(sign,a)
+sj(a,"@resource",null,a)
+sl(a,"//\s@resource",true,a)
+for(b;a)
+{
+	f(b?"\n")
+	{
+		sj(b,null,"\n",b)
+	}
+	ss(name+" ",name)
+	sj(b,name,null,b)
+	strim(b,b)
+	syso(b)
+	f(b?*"file://")
+	{
+		sr(b,"file://","",nk)
+		f(mode=="URL")
+		{
+			ufnsui()
+			{
+				fdir(nk,nnk)
+				otob("file",null,nnk,a)
+				java(n,null,"android.util.Base64.encode","byte[]",a,"int",0)
+				btoo(n,nnk)
+				slof(nk,".",n)
+				s(n+1,n)
+				slg(nk,cd)
+				ssg(nk,n,cd,m)
+				call(mime,"mlua","mk.mime",m)
+				f(mime==null||mime=="null")
+				{
+					s mime="application/octet-stream"
+				}
+				fr(nnk,cm)
+				ss("data:"+mime+";base64,"+cm,sss.source_js)
+			}
+		}
+		else
+		{
+			fr(nk,sss.source_js)
+		}
+		endcode
+	}
+	sj(b,"://",null,nk)
+	sr(nk,"/","",nk)
+	ss("$缓存/resource/"+nk,nk)
+	t()
+	{
+		syso(b)
+		hd(b,nk,true,c)
+		syso(c)
+		f(c=="-1")
+		{
+			sss source_js="加载失败！"
+		}
+		else
+		{
+			f(mode=="URL")
+			{
+				ufnsui()
+				{
+					fdir(nk,nnk)
+					otob("file",null,nnk,a)
+					java(n,null,"android.util.Base64.encode","byte[]",a,"int",0)
+					btoo(n,nnk)
+					slof(nk,".",n)
+					s(n+1,n)
+					slg(nk,cd)
+					ssg(nk,n,cd,m)
+					call(mime,"mlua","mk.mime",m)
+					f(mime==null||mime=="null")
+					{
+						s mime="application/octet-stream"
+					}
+					fr(nnk,cm)
+					ss("data:"+mime+";base64,"+cm,sss.source_js)
+					// fd(nk,ll)
+				}
+			}
+			else
+			{
+				fr(nk,sss.source_js)
+				// fd(nk,ll)
+			}
+		}
+	}
+}
+end fn
+
+fn notification()
+end fn
+
+fn download(url,name)
+slof(name,".",n)
+s(n+1,n)
+slg(name,cd)
+ssg(name,n,cd,m)
+syso(m)
+call(mime,"mlua","mk.mime",m)
+f(mime==null||mime=="null")
+{
+	s mime="application/octet-stream"
+}
+fr("$sz/不下载",a)
+f(a=="t")
+{
+	fn mk.tw("已经拦截下载")
+}
+else
+{
+	f(url?*"blob:")
+	{
+		ss("下载类型：数据流文件(blob)"+"\n文件类型："+mime+"\n",ts)
+	}
+	else f(url?*"data:")
+	{
+		ss("下载类型：数据流文件(data)"+"\n文件类型："+mime+"\n",ts)
+	}
+	else
+	{
+		ss("下载类型：脚本拉起文件(GM)"+"\n文件类型："+mime+"\n",ts)
+	}
+	ufnsui()
+	{
+		f(st_mE?"audio/"||url?".mp4"||url?".m3u8")
+		{
+			us(xz.36,"visibility","visible")
+		}
+		us(xz.13,"text",url)
+		us(xz.2,"visibility","visible")
+		us(xz.16,"visibility","visible")
+		us(xz.6,"text",ts)
+		us(xz.5,"text",name)
+		gvs(xz.5,v)
+		fn dy.拉起(v,"k")
+	}
+}
+end fn
+
+fn getmeta(a)
+ss("$脚本/"+a+"/2",a)
+fr(a,a)
+sss meta_js=a
+end fn
+
+fn rmenu(id,a)
+ss("$脚本/"+id+"/menu/"+a,n)
+fr("$脚本菜单",an)
+ss("\n"+id,id)
+f(an?id)
+{
+}
+else
+{
+	ss(an+id,an)
+	fw("$脚本菜单",an)
+}
+ss("_"+id+a,b)
+fw(n,b)
+end fn
+
+fn umenu(id,a)
+ss("$脚本/"+id+"/menu/"+a,n)
+fr("$脚本菜单",an)
+ss("\n"+id,id)
+sr(an,id,"",an)
+fw("$脚本菜单",an)
+fd(n,n)
+end fn
+
+fn xr(a,b)
+f(a?*"data:")
+{
+	fn mk.tw("正在解析数据流！")
+	sj(a,"base64\,",null,a)
+	sss blob_data3=null
+	java(字节组,null,"android.util.Base64.decode","String",a,"int",0)
+	btoo(字节组,b)
+	fdir(b,namea)
+	slg(namea,cd)
+	slof(namea,"/",d)
+	s+(1,d)
+	ssg(namea,d,cd,nam)
+	fs(namea,all)
+	f(all&lt;=1024)
+	{
+		ss(all+" B",all)
+	}
+	else f(all&lt;=1048576)
+	{
+		s2(all/1024,all)
+		ss(all+" KB",all)
+	}
+	else f(all&lt;=1073741824)
+	{
+		s2(all/1048576,all)
+		ss(all+" MB",all)
+	}
+	else
+	{
+		s2(all/1073741824,all)
+		ss(all+" GB",all)
+	}
+	time(2,tim)
+	sr(tim,":","-",tim)
+	ss(tim+"  ·  "+all,nr)
+	ss("$下载记录/"+nr+"#"+nam,vr)
+	ss("#Vie链接#nxll#Vie路径#"+namea,kr)
+	fw(vr,kr)
+	fdir(namea,namea)
+	fn mk.tw("下载完毕！\n保存在："+namea)
+}
+else f(a*?"blob")
+{
+	fn mk.tw("已经获取下载链接！")
+}
+end fn
+
+fn set2(url,n,sig)
+fn mk.tw("解析中...")
+t()
+{
+	slg(n,cdn)
+	f(cdn!=14)
+	{
+		s n=""
+		s ad="@#%&$1234567890ABCDEFGHIJKLNMOPQRSTUVWXYZ"
+		for(1;14)
+		{
+			sran(0,40,b)
+			s(b+1,bb)
+			ssg(ad,b,bb,kd)
+			ss(kd+n,n)
+		}
+	}
+	syso(n)
+	f(sig=="web")
+	{
+		hs(url,o)
+		s nr=o
+	}
+	else f(sig=="loc")
+	{
+		fr(url,o)
+		s nr=o
+	}
+	s nk="安装脚本..."
+	f(o==""||o=="null"||o==null)
+	{
+		ufnsui()
+		{
+			fn mk.tw("解析失败！")
+		}
+		endcode
+	}
+	else f(o?"// ==/UserScript=="&&o?"// ==UserScript==")
+	{
+		sj(o,"// ==UserScript==","// ==/UserScript==",mk)
+		f(mk?"// @icon64URL "||mk?"// @iconURL "||mk?"// @icon64 ")
+		{
+			sr(mk,"@icon64URL ","@icon ",mk)
+			sr(mk,"@icon64 ","@icon ",mk)
+			sr(mk,"@iconURL ","@icon ",mk)
+			ss("// ==UserScript=="+mk+"// ==/UserScript==\n",mkk)
+			sj(o,"// ==/UserScript==",null,o)
+			ss(mkk+o,nr)
+			ss(nk+"\n@icon错误，已经自动修改",nk)
+		}
+		f(mk?"// @match "||mk?"// @include ")
+		{
+		}
+		else
+		{
+			ss(nk+"\n无执行网页，已经自动添加！",nk)
+			ss("// ==UserScript=="+mk+"// @match *\n// ==/UserScript==\n",mkk)
+			sj(o,"// ==/UserScript==",null,o)
+			ss(mkk+o,nr)
+		}
+		f(mk?"// @run-at ")
+		{
+		}
+		else
+		{
+			ss(nk+"\n无执行时机，已经自动添加！",nk)
+			ss("// ==UserScript=="+mk+"// @run-at document-end\n// ==/UserScript==\n",mkk)
+			sj(o,"// ==/UserScript==",null,o)
+			ss(mkk+o,nr)
+		}
+	}
+	else
+	{
+		f(url*?".user.js")
+		{
+			ufnsui()
+			{
+				fn mk.tw("解析失败！")
+			}
+			endcode
+		}
+		else
+		{
+			ss(nk+"\n此脚本没有Metadata模块，已经自动添加\n请注意修改内容",nk)
+			ss("// ==UserScript==\n// @name    New Userscript\n// @namespace    https://palhube666.wodemo.com\n// @version    0.1\n// @description    Give it a try!\n// @author    You\n// @run-at    document-end\n// @match    https://*/*\n// @license    MIT\n// @grant    none\n// ==/UserScript==\n\n"+a,nr)
+		}
+	}
+	ufnsui()
+	{
+		fn mk.tw(nk)
+		f(nr?"// @name:zh-CN ")
+		{
+			sj(nr,"// @name:zh-CN ","\n",name)
+		}
+		else f(nr?"// @name:zh- ")
+		{
+			sj(nr,"// @name:zh-","\n",name)
+			sj(name," ",null,name)
+		}
+		else f(nr?"// @name ")
+		{
+			sj(nr,"// @name ","\n",name)
+		}
+		else
+		{
+			sj(nr,"// @name:","\n",name)
+			sj(name," ",null,name)
+		}
+		strim(name,name)
+		s namee=name
+		f(sig=="web")
+		{
+			ss("网页请求安装脚本："+name,name)
+		}
+		else f(sig=="loc")
+		{
+			ss("正在导入脚本："+name,name)
+		}
+		
+		cls("java.lang.String",c)
+		java(cs,null,"java.lang.reflect.Array.newInstance","java.lang.Class",c,"int",2)
+		sssz(cs,0,"取消安装")
+		sssz(cs,1,"确认安装")
+		cls("kawaii.vie.mk$jk",c2)
+		javacb(back,c2)
+		{
+			f(st_mD?"onListClick")
+			{
+				sgsz(st_aS,1,a)
+				f(a==1)
+				{
+					sj(nr,null,"// ==/UserScript==",mk)
+					ss("$脚本/"+n+"/0",n0)
+					ss("$脚本/"+n+"/1",n1)
+					ss("$脚本/"+n+"/2",n2)
+					ss("$脚本/"+n+"/3",n3)
+					ss("$脚本/"+n+"/4",n4)
+					syso(n4)
+					ss("$脚本/"+n+"/name",nb)
+					fw(nb,namee)
+					fw(n1,nr)
+					ss(mk+"// ==/UserScript==",mk)
+					fw(n2,mk)
+					fw(n4,url)
+					//脚本处理
+					
+					fw("$脚本/hc",nr)
+					fn mk.js2zjs(n,n0)
+					
+					se(mk,"((?&lt;=// @exclude-match).*(?:\n))",0,d)
+					se(d, "find", e)
+					s foll="@exclude-match:"
+					w(e==true)
+					{
+						se(d, "group", 0, e)
+						strim(e,e)
+						sr(e,".","[.]",e)
+						sr(e,"*","(.*)",e)
+						ss(foll+"\n"+e,foll)
+						se(d, "find", e)
+					}
+					ss(foll+"\n@match:",foll)
+					se(mk,"((?&lt;=// @match).*(?:\n))",0,d)
+					se(d, "find", e)
+					w(e==true)
+					{
+						se(d, "group", 0, e)
+						strim(e,e)
+						sr(e,".","[.]",e)
+						sr(e,"*","(.*)",e)
+						ss(foll+"\n"+e,foll)
+						se(d, "find", e)
+					}
+					ss(foll+"\n@exclude:",foll)
+					se(mk,"((?&lt;=// @exclude ).*(?:\n))",0,d)
+					se(d, "find", e)
+					w(e==true)
+					{
+						se(d, "group", 0, e)
+						strim(e,e)
+						f(e?*"/")
+						{
+							slg(e,cd)
+							s(cd-1,cd)
+							ssg(e,1,cd,e)
+						}
+						else
+						{
+							sr(e,".","[.]",e)
+							ss("^"+e,e)
+							sr(e,"*","(.*)",e)
+						}
+						ss(foll+"\n"+e,foll)
+						se(d, "find", e)
+					}
+					ss(foll+"\n@include:",foll)
+					se(mk,"((?&lt;=// @include).*(?:\n))",0,d)
+					se(d, "find", e)
+					w(e==true)
+					{
+						se(d, "group", 0, e)
+						strim(e,e)
+						f(e?*"/")
+						{
+							slg(e,cd)
+							s(cd-1,cd)
+							ssg(e,1,cd,e)
+						}
+						else
+						{
+							sr(e,".","[.]",e)
+							ss("^"+e,e)
+							sr(e,"*","(.*)",e)
+						}
+						ss(foll+"\n"+e,foll)
+						se(d, "find", e)
+					}
+					fw(n3,foll)
+					fn mk.tw("安装成功\n脚本默认关闭，请记得手动打开")
+				}
+			}
+		}
+		fn dy.sA(name,cs,c2,back,true)
+	}
+}
+end fn
+
+fn sett(n)
+syso(n)
+t()
+{
+	for(1;60)
+	{
+		stop(500)
+		f(sss.script_js=="null"||sss.script_js==null||sss.script_js=="")
+		{
+		}
+		else
+		{
+			s o=sss.script_js
+			fn awzx.set(o,n)
+			sss script_js="null"
+			break
+		}
+	}
+}
+end fn
+
+fn set(o,n)
+ufnsui()
+{
+	us(ls.22,"visibility","gone")
+	us(ls.23,"visibility","gone")
+	us(ls.45,"text","编辑")
+	us(ls.104,"visibility","gone")
+	us(ls.106,"visibility","gone")
+	us(ls.47,"visibility","visible")
+	us(ls.48,"visibility","gone")
+	us(ls.52,"visibility","gone")
+	us(ls.53,"visibility","gone")
+	us(ls.55,"checked","false")
+	us(ls.33,"visibility","visible")
+	us(di.94,"visibility","gone")
+	us(di.12,"visibility","gone")
+	us(ls.29,"visibility","gone")
+	us(ls.51,"visibility","gone")
+	endkeyboard()
+	us(9,"height","-1")
+	fn mk.tw("新建脚本")
+}
+f(n==null||n=="null"||n=="wu")
+{
+	s a="@#%&$1234567890ABCDEFGHIJKLNMOPQRSTUVWXYZ"
+	for(1;14)
+	{
+		sran(0,40,b)
+		s(b+1,bb)
+		ssg(a,b,bb,k)
+		ss(k+n,n)
+	}
+}
+ufnsui()
+{
+	sss bjknrw_js=o
+	hsas(ls.96,true)
+	us(ls.96,"url","@html/text.html")
+	fr("$sz/夜间",st_yj)
+	f(st_yj=="true")
+	{
+		fr("@js/night",ajs)
+		has(ls.96,ajs)
+	}
+	t()
+	{
+		stop(500)
+		ufnsui()
+		{
+			us(ls.96,"url","javascript:var vn=iapp.g('sss.bjknrw_js');document.getElementById('test').value=vn;void 0;keyUp();")
+			fr("$sz/夜间",st_yj)
+			f(st_yj=="true")
+			{
+				fr("@js/night",ajs)
+				has(ls.96,ajs)
+			}
+			gvs(ls.96,wv)
+			java(ws,wv,"android.webkit.WebView.getSettings")
+			java(null,ws,"android.webkit.WebSettings.setBuiltInZoomControls","boolean",true)
+			java(null,ws,"android.webkit.WebSettings.setDisplayZoomControls","boolean",false)
+		}
+	}
+	
+	us(ls.56,"text",n)
+	us(di.10,"currentitem",0)
+	us(di.1,"visibility","visible")
+	us(di.4,"visibility","visible")
+	us(ls.45,"text","脚本")
+}
+end fn
+
+fn file(ss.st_mya,ss.st_myb)
+ufnsui()
+{
+	s st_mya=ss.st_mya
+	s st_myb=ss.st_myb
+	ss st_mya=null
+	ss st_myb=null
+	fe(st_mya,n)
+	f(n==false)
+	{
+		sss file_js="erroe:path can't find"
+	}
+	else f(st_myb=="do")
+	{
+		s title_alert = "文件操作："
+		cls("java.lang.String",c)
+		java(cs,null,"java.lang.reflect.Array.newInstance","java.lang.Class",c,"int",3)
+		sssz(cs,0,"读取文本")
+		sssz(cs,1,"尝试打开")
+		sssz(cs,2,"删除文件")
+		cls("kawaii.vie.mk$jk",c2)
+		javacb(back,c2)
+		{
+			sgsz(st_aS,1,na)
+			f(st_mD?"onListClick")
+			{
+				f(na==0)
+				{
+					fn awzx.file(st_mya,"read")
+				}
+				else f(na==1)
+				{
+					fo(st_mya)
+				}
+				else
+				{
+					cls("kawaii.vie.mk$jk",c2)
+					javacb(back,c2)
+					{
+						f(st_mD?"onButton3Click")
+						{
+							fd(st_mya,b)
+							fn mk.tw("已经删除，请刷新查看")
+						}
+					}
+					fn dy.sA("提示！","当前页面正在试图删除文件！是否同意？","","","我确定",c2,back,true)
+				}
+			}
+		}
+		fn dy.sA(title_alert,cs,c2,back,true)
+	}
+	else f(st_myb=="read")
+	{
+		fr(st_mya,sss.file_js)
+	}
+	else f(st_myb=="folder"||st_myb=="file"||st_myb=="all")
+	{
+		f(st_myb=="folder")
+		{
+			sqlite(dataa, "file.db")
+			sql(dataa, "info", "del", b)
+			s table = "_id integer primary key,filename text"
+			sql(dataa, "info", "add", table, b)
+			fl(st_mya,true,b)
+			for(c;b)
+			{
+				s table = "filename"
+				ss("'"+c+"'",data)
+				sql(dataa, "info", "add", table, data, b)
+			}
+			s sqlx = "select filename from info order by filename"
+			sql(dataa, sqlx, data)
+			sqlsele(data, "next", e)
+			w(e == true)
+			{
+				sqlsele(data,0,n)
+				ss(k+"/"+n,k)
+				sqlsele(data, "next", e)
+			}
+		}
+		else f(st_myb=="file")
+		{
+			sqlite(dataa, "file.db")
+			sql(dataa, "info", "del", b)
+			s table = "_id integer primary key,filename text"
+			sql(dataa, "info", "add", table, b)
+			fl(st_mya,false,b)
+			for(c;b)
+			{
+				s table = "filename"
+				ss("'"+c+"'",data)
+				sql(dataa, "info", "add", table, data, b)
+			}
+			s sqlx = "select filename from info order by filename"
+			sql(dataa, sqlx, data)
+			sqlsele(data, "next", e)
+			w(e == true)
+			{
+				sqlsele(data,0,n)
+				ss(k+"/"+n,k)
+				sqlsele(data, "next", e)
+			}
+		}
+		else f(st_myb=="all")
+		{
+			fl(st_mya,c)
+			for(n;c)
+			{
+				ss(k+"/"+n,k)
+			}
+		}
+		sj(k,"/",null,k)
+		sss file_js=k
+	}
+	else
+	{
+		sss file_js="erroe:no such method"
+	}
+}
+end fn
+
+fn clean()
+sss file_js="null"
+end fn
+
+fn toast(a)
+ufnsui()
+{
+	fn mk.tw(a)
+}
+end fn
+
+fn uninstall(ss.st_id)
+ufnsui()
+{
+	s st_id=ss.st_id
+	ss st_id=null
+	ss("$脚本/"+st_id+"/name",wj)
+	ss("$脚本/"+st_id+"/",ss.wjk)
+	fr(wj,wjj)
+	f(wjj=="null"||wjj==null)
+	{
+		fn mk.tw("脚本未安装！")
+	}
+	else
+	{
+		strim(wjj,name)
+		syso(st_id)
+		ss("是否删除名称为"+name+"\n随机标识为"+st_id+"\n的脚本？",idd)
+		
+		cls("kawaii.vie.mk$jk",c2)
+		javacb(back,c2)
+		{
+			f(st_mD?"onButton3Click")
+			{
+				fdir(ss.wjk,path)
+				ss wjk=null
+				java(runtime,null,"java.lang.Runtime.getRuntime")
+				java(null,runtime,"java.lang.Runtime.exec","String","rm -rf "+path)
+				fn mk.tw("已经删除")
+			}
+			else f(st_mD?"onButton2Click")
+			{
+				fn mk.tw("已经取消")
+			}
+		}
+		fn dy.sA("注意：",idd,"","取消","确定",c2,back,true)
+	}
+}
+
+end fn
+
+fn getweb(a)
+t()
+{
+	hs(a,sss.web_js)
+}
+end fn
+
+fn fww(ss.st_mya,ss.st_myb)
+ufnsui()
+{
+	s st_mya=ss.st_mya
+	s st_myb=ss.st_myb
+	ss st_mya=null
+	ss st_myb=null
+	fi(st_mya,n)
+	f(n)
+	{
+		fn mk.tw("该路径为文件夹")
+	}
+	else
+	{
+		cls("kawaii.vie.mk$jk",c2)
+		javacb(back,c2)
+		{
+			f(st_mD?"onButton3Click")
+			{
+				fw(st_mya,st_myb)
+				fn mk.tw("已经写入")
+			}
+			else f(st_mD?"onButton2Click")
+			{
+				fn mk.tw("已经取消")
+			}
+		}
+		fn dy.sA("提示！","当前页面正在试图写入文件！这可能会篡改您的文件或删除文件！是否同意？","","取消","我确定",c2,back,true)
+	}
+}
+end fn
+
+fn enS(a,b)
+call(sss.enS_js, "mjava", "mk.encryptString",a,b)
+end fn
+
+fn deS(a,b)
+call(sss.deS_js, "mjava", "mk.decryptString",a,b)
+end fn

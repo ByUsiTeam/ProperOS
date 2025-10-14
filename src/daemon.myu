@@ -71,8 +71,32 @@ else
 
 end fn
 
-fn core()
+fn start(key)
 
-
+f(key != null && key != "")
+{
+	fl("$System/daemon/",false,list)
+    for(value;list)
+    {
+    	ss("$System/daemon/"+value,value)
+        syso("扫描到文件："+value)
+        fn juos.脚本(value)
+    }
+    fl("$System/daemon/",true,list)
+    for(value;list)
+    {
+    	fl("$System/daemon/"+value,false,list2)
+        for(z;list2)
+        {
+        	ss("$System/daemon/"+value+"/"+z,file)
+            syso("扫描到文件："+file)
+            fn juos.脚本(file)
+        }
+    }
+}
+else
+{
+	fn tw.tw2("key值空，抱歉抱歉无法启动守护进程")
+}
 
 end fn

@@ -1,0 +1,1138 @@
+/*
+* 该模块基于开源 Vie 浏览器
+* https://gitee.com/awzx3214/VieBrowser
+*/
+import android.app.admin.SystemUpdateInfo;
+import java.io.*;
+import java.util.*;
+import java.net.*;
+import java.text.SimpleDateFormat;
+import android.os.Build;
+import android.os.Environment;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.ContentUris;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
+import android.database.Cursor;
+import android.app.DownloadManager;
+import android.app.ActivityManager;
+import android.app.WallpaperInfo;
+import android.app.WallpaperManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import androidx.viewpager.widget.ViewPager;
+import android.net.Uri;
+import android.view.KeyEvent;
+import java.lang.reflect.Field;
+import org.xmlpull.v1.*;
+import kawaii.vie.m;
+import android.view.WindowManager;
+import android.os.PowerManager;
+import android.provider.Settings;
+import android.content.pm.PackageManager;
+import java.util.zip.*;
+
+public static void copyDir(String srcDir, String destDir) {
+	File src = new File(srcDir);
+	File dest = new File(destDir);
+	
+	if (!src.exists() || !src.isDirectory()) {
+		return;
+	}
+	
+	if (!dest.exists()) {
+		dest.mkdirs();
+	}
+	copyRecursive(src, dest, src);
+}
+
+private static void copyRecursive(File currentSrc, File currentDest, File baseDir) {
+	if (currentSrc.isDirectory()) {
+		if (!currentDest.exists()) {
+			currentDest.mkdirs();
+		}
+		File[] children = currentSrc.listFiles();
+		if (children != null) {
+			for (File child : children) {
+				copyRecursive(child,
+				new File(currentDest, child.getName()),
+				baseDir);
+			}
+		}
+	} else {
+		doCopyFile(currentSrc, currentDest);
+	}
+}
+
+private static void doCopyFile(File srcFile, File destFile) {
+	FileInputStream in = null;
+	FileOutputStream out = null;
+	try {
+		in = new FileInputStream(srcFile);
+		out = new FileOutputStream(destFile);
+		
+		byte[] buffer = new byte[8192];
+		int len;
+		while ((len = in.read(buffer)) != -1) {
+			out.write(buffer, 0, len);
+		}
+	} catch (IOException e) {
+		e.printStackTrace();
+	} finally {
+		if (in != null) {
+			try { in.close(); } catch (IOException ignore) {}
+		}
+		if (out != null) {
+			try { out.close(); } catch (IOException ignore) {}
+		}
+	}
+}
+
+public static void packToApk(String srcDirPath, String dstApkPath) throws IOException {
+	File srcDir = new File(srcDirPath);
+	if (!srcDir.isDirectory()) {
+		throw new IllegalArgumentException("srcDirPath 必须是一个文件夹");
+	}
+	
+	FileOutputStream fos = new FileOutputStream(dstApkPath);
+	BufferedOutputStream bos = new BufferedOutputStream(fos);
+	ZipOutputStream zos = new ZipOutputStream(bos);
+	
+	packDir(srcDir, srcDir, zos);
+	
+	zos.close();
+	bos.close();
+	fos.close();
+}
+
+private static void packDir(File rootDir, File currentDir, ZipOutputStream zos) throws IOException {
+	File[] files = currentDir.listFiles();
+	if (files == null) return;
+	for (File file : files) {
+		if (file.isDirectory()) {
+			packDir(rootDir, file, zos);
+		} else {
+			String relativePath = file.getPath()
+			.substring(rootDir.getPath().length() + 1)
+			.replace(File.separatorChar, '/');
+			
+			ZipEntry entry = new ZipEntry(relativePath);
+			
+			entry.setMethod(ZipEntry.STORED);
+			entry.setSize(file.length());
+			entry.setCompressedSize(file.length());
+			
+			CRC32 crc = new CRC32();
+			FileInputStream in = new FileInputStream(file);
+			byte[] buffer = new byte[8192];
+			int len;
+			while ((len = in.read(buffer)) != -1) {
+				crc.update(buffer, 0, len);
+			}
+			in.close();
+			entry.setCrc(crc.getValue());
+			
+			zos.putNextEntry(entry);
+			FileInputStream fis = new FileInputStream(file);
+			byte[] buf = new byte[8192];
+			int len1;
+			while ((len1 = fis.read(buf)) != -1) {
+				zos.write(buf, 0, len1);
+			}
+			fis.close();
+			zos.closeEntry();
+		}
+	}
+}
+
+public String openAppLolu(String url, String packageName, String pn, String cj) {
+	PackageManager pm = activity.getPackageManager();
+	try {
+		pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+		intent.setClassName(packageName, pn);
+		//	intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		activity.startActivity(intent);
+	} catch (PackageManager.NameNotFoundException e) {
+		return "未安装插件，请点击更多工具-配置文件下载-下载"+cj;
+	} catch (Exception e) {
+		return "未知错误: "+e;
+	}
+	return "";
+}
+
+public static void openHouT() {
+	if (Build.VERSION.SDK_INT >= 23) {
+		PowerManager powerManager = (PowerManager) activity.getSystemService(Context.POWER_SERVICE);
+		if(!powerManager.isIgnoringBatteryOptimizations("kawaii.vie")){
+			Intent intent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+			intent.setData(Uri.parse("package:kawaii.vie"));
+			activity.startActivity(intent);
+		}
+	}
+}
+
+public static void startClientSocket(String filePath, String encoding, String portstr) {
+	startClientSocket("no", filePath, encoding, portstr);
+}
+
+public static void startClientSocket(String mime, String filePath, String encoding, String portstr) {
+	int port = Integer.parseInt(portstr);
+	if(!mime.equals("no"))
+	{
+		i.call("myu", "awzx.toast", new Object[]{ "服务开始，端口: " + port + "\n初始文件路径:" + filePath });
+	}
+	syso("服务开始，端口: " + port + "\n初始文件路径:" + filePath);
+	ServerSocket serverSocket = null;
+	try {
+		serverSocket = new ServerSocket(port);
+		syso("服务开始成功");
+		while (true) {
+			String me = sss("endClientString");
+			if(me!=null&&me=="back")
+			{
+				i.sss("endClientString",null);
+				syso("接收到关闭信息");
+				if (serverSocket != null) {
+					try {
+						serverSocket.close(); // 关闭服务器Socket
+					} catch (IOException e) {
+						syso("关闭发生错误: " + e);
+					}
+				}
+				return; // 终止方法
+			}
+			Socket clientSocket = null;
+			try {
+				clientSocket = serverSocket.accept();
+				handleRequest(mime, port, clientSocket, filePath, encoding);
+			} catch (IOException e) {
+				syso("读取文件发送: " + e);
+			} finally {
+				if (clientSocket != null) {
+					try {
+						clientSocket.close();
+					} catch (IOException e) {
+						syso("关闭时出错: " + e);
+					}
+				}
+			}
+		}
+	} catch (IOException e) {
+		syso("开始失败: " + e);
+	} finally {
+		if (serverSocket != null) {
+			try {
+				serverSocket.close();
+			} catch (IOException e) {
+				syso("发生错误: " + e);
+				if(!mime.equals("no"))
+				{
+					i.call("myu", "awzx.toast", new Object[]{ "发生错误: " + e });
+				}
+			}
+		}
+	}
+}
+
+public static void endClientSocket()
+{
+	syso("hhhhhh");
+	i.sss("endClientString","back");
+}
+
+private static void handleRequest(String mime, int port, Socket clientSocket, String basePath, String encoding) {
+	OutputStream output = null;
+	FileInputStream fileInput = null;
+	String baseDir = new File(basePath).getParent().toString();
+	try {
+		// Read request (simplified)
+		byte[] buffer = new byte[1024];
+		int bytesRead = clientSocket.getInputStream().read(buffer);
+		if (bytesRead <= 0) {
+			if(!mime.equals("no"))
+			{
+				i.call("myu", "awzx.toast", new Object[]{ "请求为空" });
+			}
+			syso("请求为空");
+			return;
+		}
+		String request = new String(buffer, 0, bytesRead, "US-ASCII");
+		String[] lines = request.split("\n");
+		if (lines.length == 0) {
+			if(!mime.equals("no"))
+			{
+				i.call("myu", "awzx.toast", new Object[]{ "请求不合格式" });
+			}
+			syso("请求不合格式");
+			return;
+		}
+		String[] requestParts = lines[0].split(" ");
+		if (requestParts.length < 2) {
+			if(!mime.equals("no"))
+			{
+				i.call("myu", "awzx.toast", new Object[]{ "请求行非法" });
+			}
+			syso("请求行非法");
+			return;
+		}
+		String path = requestParts[1];
+		syso("请求路径: " + path);
+		String filePath;
+		File file;
+		String trueurl="http://127.0.0.1:"+port+path;
+		if(path.equals("/viek/browser/dmpap/givemecss")) {
+			filePath = i.fdir("$html/n.css");
+		} else if (path.equals("/")) {
+			filePath = basePath;
+		} else if (path.startsWith("/")) {
+			filePath = baseDir + path;
+		} else {
+			filePath = baseDir + "/" + path;
+		}
+		syso(filePath);
+		file = new File(filePath);
+		if (!file.exists() || !file.isFile()) {
+			path = path.substring(0,path.indexOf('?') == -1 ? path.length() : path.indexOf('?'));
+			if(path.equals("/viek/browser/dmpap/givemecss")) {
+				filePath = i.fdir("$html/n.css");
+			} else if (path.equals("/")) {
+				filePath = basePath;
+			} else if (path.startsWith("/")) {
+				filePath = baseDir + path;
+			} else {
+				filePath = baseDir + "/" + path;
+			}
+			file = new File(filePath);
+			if (!file.exists() || !file.isFile()) {
+				if(!mime.equals("no"))
+				{
+					i.call("myu", "awzx.toast", new Object[]{ "文件不存在：" + filePath });
+				}
+				syso("没文件: " + filePath);
+				send404(clientSocket, encoding,filePath,port,trueurl);
+				return;
+			}
+		}
+		
+		syso("路径: "+filePath);
+		
+		
+		// Send file
+		output = clientSocket.getOutputStream();
+		fileInput = new FileInputStream(file);
+		
+		String mimeType;
+		if(!mime.equals("no"))
+		{
+			mimeType = getContentType(filePath);
+		}
+		else
+		{
+			mimeType = getContentType(mime, filePath);
+		}
+		
+		// Write headers
+		String headers = "HTTP/1.1 200 OK\r\n" +
+		"Content-Type: " + mimeType + "\r\n" +
+		"Content-Length: " + file.length() + "\r\n" +
+		"x-auto-login: realm=127.0.0.1&account=aaa&args=continue%3Dhttp://127.0.0.1:7720/a\r\n" +
+		"Access-Control-Allow-Origin: *\r\n" +
+		"Access-Control-Allow-Methods: GET, POST, OPTIONS\r\n" +
+		"Access-Control-Allow-Headers: Content-Type\r\n" +
+		"Connection: close\r\n\r\n";
+		
+		output.write(headers.getBytes(encoding));
+		
+		// Write file content
+		byte[] fileBuffer = new byte[4096];
+		int count;
+		while ((count = fileInput.read(fileBuffer)) > 0) {
+			output.write(fileBuffer, 0, count);
+		}
+		
+		syso("文件发送成功: " + filePath);
+		if(!mime.equals("no"))
+		{
+			i.call("myu", "awzx.toast", new Object[]{ "文件发送成功: " + filePath });
+		}
+	} catch (IOException e) {
+		syso("错误的请求: " + e +"  于  "+filePath);
+		if(!mime.equals("no"))
+		{
+			i.call("myu", "awzx.toast", new Object[]{ "错误的请求: " + e +"  于  "+filePath });
+		}
+	} finally {
+		try {
+			if (fileInput != null) fileInput.close();
+			if (output != null) output.close();
+		} catch (IOException e) {
+			syso("关闭文件流错误s: " + e);
+		}
+	}
+}
+
+private static void send404(Socket clientSocket, String encoding, String url, int port, String trueurl) {
+	try {
+		String me = i.fr("$html/error.html").replace("n.css","http://127.0.0.1:"+port+"/viek/browser/dmpap/givemecss");
+		me = me.substring(0,me.indexOf("<script>")) + "<script>document.getElementById('i0').innerHTML='请求的文件不存在<br>"+url+"';document.getElementById('i2').remove();document.getElementById('a').innerText='404';document.getElementById('b').innerText='net::ERR_FILE_NOT_FOUND';document.getElementById('c').innerText='"+trueurl+"'</script></body></html>";
+		OutputStream output = clientSocket.getOutputStream();
+		String response = "HTTP/1.1 404 Not Found\r\n" +
+		"Content-Type: text/html\r\n" +
+		"Connection: close\r\n\r\n" +
+		me;
+		output.write(response.getBytes(encoding));
+		syso("发送404声明");
+	} catch (IOException e) {
+		syso("404声明发送失败: " + e);
+	}
+}
+
+public static String getContentType(String mimeTable, String filePath) {
+	for (String pair : mimeTable.split(";")) {
+		String[] kv = pair.trim().split(" ", 2);
+		if (kv.length == 2 && filePath.endsWith(kv[0])) {
+			return kv[1];
+		}
+	}
+	return "application/octet-stream";
+}
+
+private static String getContentType(String filePath) {
+	if (filePath.endsWith(".html") || filePath.endsWith(".htm")) {
+		return "text/html";
+	} else if (filePath.endsWith(".css")) {
+		return "text/css";
+	} else if (filePath.endsWith(".wasm")) {
+		return "application/wasm";
+	} else if (filePath.endsWith(".js")||filePath.endsWith(".ts")) {
+		return "application/javascript";
+	} else if (filePath.endsWith(".wml")) {
+		return "text/vnd.wap.wml";
+	} else if (filePath.endsWith(".jpg") || filePath.endsWith(".jpeg")) {
+		return "image/jpeg";
+	} else if (filePath.endsWith(".png")) {
+		return "image/png";
+	} else if (filePath.endsWith(".apk")) {
+		return "application/vnd.android.package-archive";
+	} else if (filePath.endsWith(".gif")) {
+		return "image/gif";
+	} else if (filePath.endsWith(".mp3")) {
+		return "audio/mpeg";
+	} else if (filePath.endsWith(".mp4")) {
+		return "video/mp4";
+	} else if (filePath.endsWith(".txt")) {
+		return "text/plain";
+	} else {
+		return "application/octet-stream";
+	}
+}
+
+public static setActivity(mm)
+{
+	m.set(mm);
+}
+
+public static void setRJP(m) {
+	m.getWindow().setSoftInputMode(
+	WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+}
+
+public static String rss_get(Map map, String key) {
+	try {
+		return map.get(key).replace("'","\\'");
+	} catch(e) {
+		return "获取失败!\n"+e;
+	}
+}
+
+public List atom(String xmlString) {
+	List itemList = new ArrayList();
+	if(xmlString == null || !xmlString.contains("<feed")) {
+		return itemList;
+	}
+	try {
+		Map currentItem = new HashMap();
+		String headStr = i.sj(xmlString,"<","<entry>");
+		currentItem.put("type", "channel");
+		
+		String tt = i.sj(headStr,"<title>","</title>").trim();
+		if(tt.startsWith("<![CDATA[")) {
+			tt = tt.substring(9, tt.length()-3).trim();
+		}
+		currentItem.put("title", tt);
+		
+		if(headStr.contains("<icon>")) {
+			currentItem.put("icon", i.sj(headStr,"<icon>","</icon>").trim());
+		}
+		
+		if(headStr.contains("<logo>")) {
+			currentItem.put("logo", i.sj(headStr,"<logo>","</logo>").trim());
+		}
+		
+		String dd = i.sj(headStr,"<subtitle>","</subtitle>").trim();
+		if(dd.startsWith("<![CDATA[")) {
+			dd = dd.substring(9, dd.length()-3).trim();
+		}
+		currentItem.put("subtitle", dd);
+		
+		if(headStr.contains("<link>")) {
+			String link = i.sj(headStr,"<link","/>").trim();
+			link = i.sj(link,"href=\"","\"");
+			currentItem.put("link",link);
+		}
+		
+		if(headStr.contains("<updated>")) {
+			currentItem.put("updated", i.sj(headStr,"<updated>","</updated>").trim());
+		}
+		itemList.add(currentItem);
+		
+		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+		XmlPullParser parser = factory.newPullParser();
+		parser.setInput(new StringReader(xmlString));
+		currentItem = null;
+		String currentTag = null;
+		String linkUrl = "";
+		boolean isInsideItem = false;
+		boolean isContent = false;
+		int eventType = parser.getEventType();
+		while (eventType != XmlPullParser.END_DOCUMENT) {
+			switch (eventType) {
+				case XmlPullParser.START_TAG:
+				String tagName = parser.getName();
+				if ("entry".equalsIgnoreCase(tagName)) {
+					currentItem = new HashMap();
+					currentItem.put("type", "entry");
+					isInsideItem = true;
+				} else if (isInsideItem) {
+					currentTag = tagName;
+					if(currentTag.equals("link")) {
+						int attrCount = parser.getAttributeCount();
+						for (int i = 0; i < attrCount; i++) {
+							if ("href".equals(parser.getAttributeName(i))) {
+								linkUrl = parser.getAttributeValue(i)+"";
+								break;
+							}
+						}
+					}
+				}
+				break;
+				
+				case XmlPullParser.TEXT:
+				if (isInsideItem && currentTag != null && currentItem != null) {
+					String text = parser.getText().trim();
+					if(text.startsWith("<![CDATA[")) {
+						text = text.substring(9, text.length()-3).trim();
+					}
+					if (currentTag.equals("link") && linkUrl.contains("://")) {
+						currentItem.put(currentTag, linkUrl);
+					} else if (!text.isEmpty()) {
+						currentItem.put(currentTag, text);
+					}
+				}
+				break;
+				
+				case XmlPullParser.END_TAG:
+				if ("entry".equalsIgnoreCase(parser.getName()) && isInsideItem) {
+					
+					if(rss_get(currentItem,"content").startsWith("获取失败!\n")) {
+						String titlen = rss_get(currentItem,"title");
+						String content = i.sj(xmlString,titlen,"</content>");
+						content = i.sj(content,"<content",null);
+						content = i.sj(content,">",null);
+						currentItem.put("content", content);
+					}
+					
+					itemList.add(currentItem);
+					currentItem = null;
+					isInsideItem = false;
+				}
+				break;
+			}
+			eventType = parser.next();
+		}
+	} catch(e) {
+		syso(e);
+	}
+	return itemList;
+}
+
+public List rss(String xmlString) {
+	List itemList = new ArrayList();
+	if(xmlString == null || !xmlString.contains("<rss")) {
+		return itemList;
+	}
+	try {
+		Map currentItem = new HashMap();
+		currentItem.put("type", "channel");
+		String tt = i.sj(xmlString,"<title>","</title>").trim();
+		if(tt.startsWith("<![CDATA[")) {
+			tt = tt.substring(9, tt.length()-3).trim();
+		}
+		currentItem.put("title", tt);
+		String dd = i.sj(xmlString,"<description>","</description>").trim();
+		if(dd.startsWith("<![CDATA[")) {
+			dd = dd.substring(9, dd.length()-3).trim();
+		}
+		currentItem.put("description", dd);
+		currentItem.put("link", i.sj(xmlString,"<link>","</link>").trim());
+		if(xmlString.contains("<language>")) {
+			currentItem.put("language", i.sj(xmlString,"<language>","</language>").trim());
+		}
+		if(xmlString.contains("<pubDate>")) {
+			currentItem.put("pubDate", i.sj(xmlString,"<pubDate>","</pubDate>").trim());
+		}
+		if(xmlString.contains("<copyright>")) {
+			currentItem.put("copyright", i.sj(xmlString,"<copyright>","</copyright>").trim());
+		}
+		itemList.add(currentItem);
+		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+		XmlPullParser parser = factory.newPullParser();
+		parser.setInput(new StringReader(xmlString));
+		currentItem = null;
+		String currentTag = null;
+		boolean isInsideItem = false;
+		int eventType = parser.getEventType();
+		while (eventType != XmlPullParser.END_DOCUMENT) {
+			switch (eventType) {
+				case XmlPullParser.START_TAG:
+				String tagName = parser.getName();
+				if ("item".equalsIgnoreCase(tagName)) {
+					currentItem = new HashMap();
+					currentItem.put("type", "item");
+					isInsideItem = true;
+				} else if ("image".equalsIgnoreCase(tagName)) {
+					currentItem = new HashMap();
+					currentItem.put("type", "image");
+					isInsideItem = true;
+				} else if ("textinput".equalsIgnoreCase(tagName)) {
+					currentItem = new HashMap();
+					currentItem.put("type", "textinput");
+					isInsideItem = true;
+				} else if (isInsideItem) {
+					currentTag = tagName;
+				}
+				break;
+				
+				case XmlPullParser.TEXT:
+				if (isInsideItem && currentTag != null && currentItem != null) {
+					String text = parser.getText().trim();
+					if(text.startsWith("<![CDATA[")) {
+						text = text.substring(9, text.length()-3).trim();
+					}
+					if (!text.isEmpty()) {
+						currentItem.put(currentTag, text);
+					}
+					currentTag = null;
+				}
+				break;
+				
+				case XmlPullParser.END_TAG:
+				if ("item".equalsIgnoreCase(parser.getName()) && isInsideItem) {
+					itemList.add(currentItem);
+					currentItem = null;
+					isInsideItem = false;
+				} else if ("image".equalsIgnoreCase(parser.getName()) && isInsideItem) {
+					itemList.add(currentItem);
+					currentItem = null;
+					isInsideItem = false;
+				} else if ("textinput".equalsIgnoreCase(parser.getName()) && isInsideItem) {
+					itemList.add(currentItem);
+					currentItem = null;
+					isInsideItem = false;
+				}
+				break;
+			}
+			eventType = parser.next();
+		}
+	} catch(e) {
+		syso(e);
+	}
+	return itemList;
+}
+
+public static String outMap() {
+	Set map = sss("keyCode");
+	StringBuilder sb = new StringBuilder();
+	boolean first = true;
+	for (Integer element : map) {
+		if (first) {
+			sb.append(element);
+			first = false;
+		} else {
+			sb.append(", ").append(element);
+		}
+	}
+	return sb.toString();
+}
+
+public static String getKeyCode(String keyNames) {
+	StringBuilder result = new StringBuilder();
+	String[] keys = keyNames.split(" \\+ ");
+	for (int i = 0; i < keys.length; i++) {
+		try {
+			Field field = KeyEvent.class.getField("KEYCODE_" + keys[i]);
+			int keyCode = field.getInt(null);
+			if (i > 0) {
+				result.append(",");
+			}
+			result.append(keyCode);
+		} catch (e) {
+			if (i > 0) {
+				result.append(",");
+			}
+			result.append(-1);
+		}
+	}
+	return result.toString();
+}
+
+public static void getMap() {
+	Set map = new HashSet();
+	i.sss("keyCode",map);
+}
+
+public static void delMap() {
+	Set map = sss("keyCode");
+	map.clear();
+}
+
+public static void addMap(int number) {
+	Set map = sss("keyCode");
+	map.add(number);
+}
+
+public static void delMap(int number) {
+	try {
+		Set map = sss("keyCode");
+		map.remove(number);
+	} catch(e) {}
+}
+
+public static String isMap(String input, String yuan) {
+	Set map = sss("keyCode");
+	String[] numbers = getKeyCode(input).split(",");
+	Set check = new HashSet();
+	for (String num : numbers) {
+		try {
+			check.add(Integer.parseInt(num.trim()));
+		} catch (e) {
+			return "";
+		}
+	}
+	if(map.equals(check)) {
+		return "快捷键 " + yuan + " 被激活";
+	} else {
+		return "";
+	}
+}
+
+public static String isHad(String input) {
+	String yuan = input;
+	input = input.replace("↑","DPAD_UP").replace("↓","DPAD_DOWN").replace("←","DPAD_LEFT").replace("→","DPAD_RIGHT");
+	input = input.toUpperCase();
+	if (input.contains("SHIFT") &&!input.contains("SHIFT_")) {
+		input = input.replace("SHIFT","SHIFT_LEFT");
+	}
+	if (input.contains("CTRL") &&!input.contains("CTRL_")) {
+		input = input.replace("CTRL","CTRL_LEFT");
+	}
+	if (input.contains("ALT") &&!input.contains("SALT_")) {
+		input = input.replace("ALT","ALT_LEFT");
+	}
+	return isMap(input,yuan);
+}
+
+public static List getDNS(String dnsServer, String portStr, String url) {
+	List ipList = new ArrayList();
+	try {
+		Socket socket = new Socket();
+		InetSocketAddress address = new InetSocketAddress(dnsServer, Integer.parseInt(portStr));
+		socket.connect(address, 6000);
+		InetAddress[] addresses = InetAddress.getAllByName(url);
+		for (InetAddress addr : addresses) {
+			ipList.add(addr.getHostAddress());
+		}
+		socket.close();
+	} catch (e) {
+		ipList.add("获取失败！\n"+e);
+	}
+	return ipList;
+}
+
+public static String queryWhois(String whoisServer, String portStr, String query) {
+	StringBuilder response = new StringBuilder();
+	try {
+		int port = Integer.parseInt(portStr);
+		Socket socket = new Socket(whoisServer, port);
+		socket.setSoTimeout(6000);
+		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+		BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		out.println(query);
+		String line;
+		while ((line = in.readLine()) != null) {
+			response.append(line).append("\n");
+		}
+		return response.toString();
+	} catch (e) {
+		return "获取失败！\n"+e;
+	}
+}
+
+public static String getQOTD(String ntpurl,String port) {
+	try {
+		DatagramSocket socket = new DatagramSocket();
+		socket.setSoTimeout(6000);
+		byte[] data = new byte[1024];
+		InetAddress uri = InetAddress.getByName(ntpurl);
+		DatagramPacket packet = new DatagramPacket(data,1024,uri,Integer.parseInt(port));
+		socket.send(packet);
+		packet = new DatagramPacket(data,1024);
+		socket.receive(packet);
+		socket.close();
+		String response = new String(packet.getData(), 0, packet.getLength(), "UTF-8");
+		return "<p style=\\'color:#00d000\\'>GOT THE QUOTE</p><br><br>" + response;
+	} catch (e) {
+		return "<p style=\\'color:#ff0000\\'>GOT THE ERROR</p><br><br>"+e;
+	}
+}
+
+public static String getTIME(String timeServer, String portStr) {
+	try {
+		int port = Integer.parseInt(portStr);
+		Socket socket = new Socket(timeServer, port);
+		socket.setSoTimeout(6000);
+		InputStream inputStream = socket.getInputStream();
+		byte[] buffer = new byte[4];
+		int bytesRead = inputStream.read(buffer);
+		if (bytesRead == 4) {
+			long timeSeconds = (((long) buffer[0] & 0xFF) << 24) | (((long) buffer[1] & 0xFF) << 16) |
+			(((long) buffer[2] & 0xFF)<< 8) | (((long) buffer[3]) & 0xFF);
+			long currentTimeMillis = (timeSeconds-2208988800L)*1000;
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			Date date = new Date(currentTimeMillis);
+			String formattedDate = formatter.format(date);
+			return "<p style=\\'color:#00d000\\'>GOT THE TIME</p><br><br>"+ formattedDate +"<br>" + currentTimeMillis;
+		} else {
+			return "<p style=\\'color:#ff0000\\'>GOT THE ERROR</p><br><br>数据返回错误，请刷新";
+		}
+	} catch (e) {
+		return "<p style=\\'color:#ff0000\\'>GOT THE ERROR</p><br><br>"+e;
+	}
+}
+
+public static String getDaytime(String serverAddress, String portStr) {
+	try {
+		int port = Integer.parseInt(portStr);
+		Socket socket = new Socket(serverAddress, port);
+		socket.setSoTimeout(6000);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		return "<p style=\\'color:#00d000\\'>GOT THE TIME</p><br><br>" + reader.readLine();
+	} catch (e) {
+		return "<p style=\\'color:#ff0000\\'>GOT THE ERROR</p><br><br>"+e;
+	}
+}
+
+public static String getNTPTimestamp(String ntpurl,String port) {
+	try {
+		DatagramSocket socket = new DatagramSocket();
+		socket.setSoTimeout(6000);
+		byte[] data = new byte[48];
+		data[0] = (byte) 0x1B;
+		InetAddress uri = InetAddress.getByName(ntpurl);
+		DatagramPacket packet = new DatagramPacket(data,48,uri,Integer.parseInt(port));
+		socket.send(packet);
+		packet = new DatagramPacket(data,48);
+		socket.receive(packet);
+		socket.close();
+		long stamp = (((long)data[40] & 0xFF) << 24 | ((long)data[41] & 0xFF) << 16 | ((long)data[42] & 0xFF) << 8 | ((long)data[43] & 0xFF)) - 2208988800L;
+		long ms = ((data[44] & 0xFF) << 24) | ((data[45] & 0xFF) << 16) | ((data[46] & 0xFF) <<  8) | ((data[47] & 0xFF));
+		stamp = stamp*1000+Math.round(ms * 1000D / 4294967296L);
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+		return "<p style=\\'color:#00d000\\'>GOT THE TIME</p><br><br>"+formatter.format(new Date(stamp)) +"<br>" + stamp;
+	} catch(e) {
+		return "<p style=\\'color:#ff0000\\'>GOT THE ERROR</p><br><br>"+e;
+	}
+}
+
+public static void show() {
+	setTaskExcludedFromRecents(activity, false);
+}
+
+public static void hide() {
+	setTaskExcludedFromRecents(activity, true);
+}
+
+public static void setTaskExcludedFromRecents(Context context, boolean exclude) {
+	ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+	if (am != null) {
+		List tasks;
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			tasks = am.getAppTasks();
+			if (tasks != null &&!tasks.isEmpty()) {
+				tasks.get(0).setExcludeFromRecents(exclude);
+			}
+		}
+	}
+}
+
+public static void debug(v,b) {
+	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+		v.setWebContentsDebuggingEnabled(b);
+	}
+}
+
+public static void v(ViewPager viewPager, int position) {
+	viewPager.setCurrentItem(-1, false);
+	viewPager.setCurrentItem(position, false);
+}
+public static List getWebviewImpl(String targetVersion) {
+	List appList = new ArrayList();
+	PackageManager packageManager = activity.getPackageManager();
+	List allApps = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
+	for (ApplicationInfo appInfo : allApps) {
+		try {
+			String versionName = packageManager.getPackageInfo(appInfo.packageName, 0).versionName;
+			if (targetVersion.equals(versionName)) {
+				appList.add(appInfo.packageName);
+			}
+		} catch (PackageManager.NameNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	return appList;
+}
+
+public static Bitmap drawableToBitmap(Drawable drawable) {
+	int width = drawable.getIntrinsicWidth();
+	int height = drawable.getIntrinsicHeight();
+	if (width <= 0) {
+		width = 1;
+	}
+	if (height <= 0) {
+		height = 1;
+	}
+	Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+	Canvas canvas = new Canvas(bitmap);
+	drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+	drawable.draw(canvas);
+	return bitmap;
+}
+public static boolean setWallpaper(Context context, Drawable drawable) {
+	Bitmap bitmap = drawableToBitmap(drawable);
+	if (bitmap == null) {
+		return false;
+	}
+	WallpaperManager wallpaperManager = WallpaperManager.getInstance(context);
+	try {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+			wallpaperManager.setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM);
+		} else {
+			wallpaperManager.setBitmap(bitmap);
+		}
+		return true;
+	} catch (IOException e) {
+		return false;
+	}
+}
+public static boolean isMyWallpaperServiceActive() {
+	WallpaperManager wallpaperManager = WallpaperManager
+	.getInstance(activity);
+	WallpaperInfo wallpaperInfo = wallpaperManager.getWallpaperInfo();
+	if (wallpaperInfo != null) {
+		String currentLiveWallpaperPackageName = wallpaperInfo.getPackageName();
+		if(currentLiveWallpaperPackageName.equals("kawaii.vie")) {
+			return true;
+		}
+	}
+	return false;
+}
+public static void useDer(Context context, String fileName, String downloadUrl) {
+	DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+	Uri url = Uri.parse(downloadUrl);
+	DownloadManager.Request request = new DownloadManager.Request(url);
+	request.setTitle(fileName);
+	request.setDescription("正在下载");
+	request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE | DownloadManager.Request.NETWORK_WIFI);
+	request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
+	request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+	if (downloadManager!= null) {
+		downloadManager.enqueue(request);
+	}
+}
+
+public static void openDer(Context context) {
+	Intent intent = new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS);
+	context.startActivity(intent);
+}
+
+public static getsize(String luj) {
+	try {
+		File wj=new File(luj);
+		long size=gotsize(wj);
+		return size;
+	} catch(e) {
+		syso("路径: "+luj+"\n错误: "+e);
+		return 0;
+	}
+}
+
+public static long gotsize(File wj){
+	long size=0;
+	for(File file:wj.listFiles()){
+		if(file.isFile()){
+			size+=file.length();
+		}
+		else{
+			size+=gotsize(file);
+		}
+	}
+	return size;
+}
+
+
+public static String getRealPath(Context context, Uri uri)
+{
+	String imagePath = null;
+	if(DocumentsContract.isDocumentUri(context, uri))
+	{
+		String docId = DocumentsContract.getDocumentId(uri);
+		if ("com.android.providers.media.documents".equals(uri.getAuthority()))
+		{
+			String id = docId.split(":")[1];
+			String selection = MediaStore.Images.Media._ID + "=" + id;
+			imagePath = getImagePath(context, MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection);
+		}
+		else if ("com.android.providers.downloads.documents".equals(uri.getAuthority()))
+		{
+			Uri contentUri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), Long.valueOf(docId));
+			imagePath = getImagePath(context, contentUri, null);
+		}
+		else if ("com.android.externalstorage.documents".equals(uri.getAuthority()))
+		{
+			String[] split = docId.split(":");
+			String type = split[0];
+			if ("primary".equalsIgnoreCase(type))
+			{
+				imagePath = Environment.getExternalStorageDirectory() + "/" + split[1];
+			}
+		}
+	}
+	else if("content".equalsIgnoreCase(uri.getScheme()))
+	{
+		imagePath = getImagePath(context, uri, null);
+	}
+	else if("file".equalsIgnoreCase(uri.getScheme()))
+	{
+		imagePath = uri.getPath();
+	}
+	return imagePath;
+}
+public String getImagePath(Context context, Uri uri, String selection)
+{
+	String path = null;
+	Cursor cursor = context.getContentResolver().query(uri, null, selection, null, null);
+	if (cursor != null)
+	{
+		syso(cursor.moveToFirst());
+		if (cursor.moveToFirst())
+		{
+			path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+		}
+		cursor.close();
+	}
+	return path;
+}
+
+public static void setua(WebView webview,String UUA)
+{
+	String ua=webview.getSettings().getUserAgentString();
+	webview.getSettings().setUserAgentString(UUA);
+}
+
+public static otob(String luj) {
+	File file = new File(luj);
+	byte[] bytesArray = new byte[(int) file.length()];
+	FileInputStream fis = new FileInputStream(file);
+	fis.read(bytesArray);
+	fis.close();
+	return bytesArray;
+}
+
+public static btoo(InputStream inputStream,String luj) {
+	File file = new File(luj);
+	if (file.exists()){
+		file.createNewFile();
+	}
+	OutputStream os = new FileOutputStream(file);
+	int read = 0;
+	byte[] bytes = new byte[1024 * 1024];
+	//先读后写
+	while ((read = inputStream.read(bytes)) > 0){
+		byte[] wBytes = new byte[read];
+		System.arraycopy(bytes, 0, wBytes, 0, read);
+		os.write(wBytes);
+	}
+	os.flush();
+	os.close();
+	inputStream.close();
+}
+
+public static get(byte[] bytes) {
+	return bytes.length;
+}
+
+public static b(byte[] bytes,int a,int b,int part,int no) {
+	if(part==no)
+	{
+		int ag=bytes.length/part;
+		int aa=ag*(no-1);
+		int ny=bytes.length-aa;
+		ByteArrayInputStream n = new ByteArrayInputStream(bytes,aa,ny);
+		return n;
+	}
+	else
+	{
+		int ag=bytes.length/part;
+		int aa=ag*(no-1);
+		ByteArrayInputStream n = new ByteArrayInputStream(bytes,aa,ag);
+		return n;
+	}
+}
+
+public static merge(String m,int part,String namc) {
+	int x = 1;
+	nam = m+namc+"_合成/"+namc;
+	name = m+namc+"_分割/vie("+x+").part";
+	File file = new File(name);
+	if (file.exists()){
+		file.createNewFile();
+	}
+	
+	InputStream z = new FileInputStream(file);
+	
+	List mk = Collections.singletonList(z);
+	List mkk = new ArrayList(mk);
+	
+	for(x=2;x<=part;x = x+1) {
+		name = m+namc+"_分割/vie("+x+").part";
+		File file = new File(name);
+		if (file.exists()){
+			file.createNewFile();
+		}
+		InputStream in = new FileInputStream(file);
+		mkk.add(in);
+	}
+	InputStream inputStream = new SequenceInputStream(Collections.enumeration(mkk));
+	btoo(inputStream,nam);
+	syso(inputStream);
+	inputStream.close();
+}

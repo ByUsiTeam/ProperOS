@@ -16,5 +16,9 @@
       "email": "admin@work.cdifit.cn"
     }
   },
+  "daemon": {
+    "qiyue": false,
+    "file": ""
+  },
   "guide": "index.html"
 }
