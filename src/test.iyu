@@ -12,6 +12,7 @@ fn mk.tw("测试")</eventItme></event>
 layout_weight=1
 background=#275bd9
 height=-1</ppt>
-<event></event>
+<event><eventItme type="clicki">time(4,time)
+fn daemon.start(time)</eventItme></event>
 </View>
 <UIEventset></UIEventset>
