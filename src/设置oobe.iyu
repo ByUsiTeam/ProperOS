@@ -70,25 +70,45 @@ t()
 			f(sss.yztz != "true")
 			{
 				ufnsui()
+<<<<<<< HEAD
 				{
+=======
+				{
+					us(3,"src","@loading/loading_1.png")
+>>>>>>> debug
 					us(4,"text","ProperOS正在配置更新")
 					syso("0")
 				}
 				stop(500)
 				ufnsui()
+<<<<<<< HEAD
 				{
+=======
+				{
+					us(3,"src","@loading/loading_2.png")
+>>>>>>> debug
 					us(4,"text","ProperOS正在配置更新.")
 					syso("1")
 				}
 				stop(500)
 				ufnsui()
+<<<<<<< HEAD
 				{
+=======
+				{
+					us(3,"src","@loading/loading_1.png")
+>>>>>>> debug
 					us(4,"text","ProperOS正在配置更新..")
 					syso("2")
 				}
 				stop(500)
 				ufnsui()
+<<<<<<< HEAD
 				{
+=======
+				{
+					us(3,"src","@loading/loading_2.png")
+>>>>>>> debug
 					us(4,"text","ProperOS正在配置更新...")
 					syso("3")
 				}

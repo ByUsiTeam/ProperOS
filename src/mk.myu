@@ -554,7 +554,11 @@ else
 	nvw(p,c,"线性布局","gravity=center\nbackgroundcolor=#a0000000\nwidth=-2\nheight=-2\norientation=horizontal",d)
 	sr(wb,"\n","&lt;br/&gt;",wb)
 	nvw(kn,d,"卡片","app_cardcornerradius=6dp\nlayout_margin=5dp\nwidth=20dp\nheight=20dp\napp_CardBackgroundColor=#ffffff\napp_CardElevation=0",b)
+<<<<<<< HEAD
 	nvw(ky,b,"图像","src=@ts2.png\nwidth=20dp\nheight=20dp",tp)
+=======
+	nvw(ky,b,"图像","src=$ProperOS/icon/PromptIcon.png\nwidth=20dp\nheight=20dp",tp)
+>>>>>>> debug
 	ss("width=-2\nheight=-2\nlayout_margin=5dp\nlayout_marginLeft=0\ntext=(html)"+wb+"\ngravity=center\nshadowColor=#000000\ntextColor=#ffffff\nshadowRadius=20",wb)
 	nvw(k,d,"文本",wb,wb)
 	fr("$sz/全局字体",sz_qjzt)

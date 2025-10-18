@@ -187,8 +187,15 @@ javax(null,null,class,"set","android.app.Activity",activity,"String",path)
 s id =9
 swh("w",w)
 swh("hh",h)
+<<<<<<< HEAD
 sn(w / "0.5",w)
 sn(h * "1",h)
+=======
+sn(w * "3",w)
+sn(h * "3",h)
+s2(w / "1.5",w)
+s2(h / "2",h)
+>>>>>>> debug
 syso("w："+w)
 syso("h："+h)
 us(id,"width",w)
