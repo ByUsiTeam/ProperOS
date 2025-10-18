@@ -119,7 +119,7 @@ gravity=left|center</ppt>
 <View id="17" did="16" type="RoundImageView">
 <ppt>width=45dp
 height=45dp
-src=17301567
+src=$JuOS/ICON/ic_settings_application_and_service.png
 layout_marginLeft=12dp</ppt>
 <event></event>
 </View>
@@ -133,7 +133,7 @@ gravity=right|center</ppt>
 <View id="19" did="18" type="TextView">
 <ppt>width=-2
 height=-2
-text=功能说明
+text=多任务
 typeface=@src/ttf/acbt80.ttf
 textColor=#ff000000
 textSize=15sp
@@ -145,7 +145,7 @@ layout_marginRight=15dp</ppt>
 height=-1
 text=
 background=through</ppt>
-<event></event>
+<event><eventItme type="clicki">fn PromptLibrary.pop("暂时还未完成开发","$ProperOS/icon/PromptIcon.png",3500)</eventItme></event>
 </View>
 <View id="20" did="13" type="CardView">
 <ppt>width=-1
