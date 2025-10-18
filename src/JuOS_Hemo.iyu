@@ -139,8 +139,12 @@ t()
 fd("$System/homeList",yzfd)
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
+<<<<<<< HEAD
+fn Lottie.setImageLottie(10,data,-1,true)
+=======
 fn Lottie.setImageLottie(10,data,-1,true)
 //us(10,"visibility","gone")
+>>>>>>> debug
 fr("$System/Config/fillet.sys",fillet)
 t()
 {
