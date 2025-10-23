@@ -19,6 +19,7 @@ height=-2</ppt>
 <UIEventset><eventItme type="loading">sss 输出框架 =null
 sss 输出框架id =null
 fn byusi.ztl()
+uycl("#ff000000",true)
 fn n.ui(1)
 fn lib.wp(1)</eventItme><eventItme type="loadingComplete">s id =3
 fn juos.初始化(id)

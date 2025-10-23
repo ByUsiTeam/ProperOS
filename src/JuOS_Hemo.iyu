@@ -112,83 +112,79 @@ fn PromptLibrary.interface(1)
 t()
 {
 	hs("https://gitee.com/properos/mirror/raw/master/properos-tos.json",jsuu)
-    json(jsuu,data)
-    json(data,"get","text",txj)
-    f(txj != null)
-    {
-    	fw("$temp/tos.txt",txj)
-    	ufnsui()
-    	{
-    		fn PromptLibrary.pop(txj,"@JuOS/logo/properos.png",3500)
-    	}
-    }
-    else
-    {
-    	fe("$temp/tos.txt",tos)
-        f(tos == true)
-        {
-        	ufnsui()
-        	{
-        		fr("$temp/tos.txt",toss)
-        		fn PromptLibrary.pop(toss,"@JuOS/logo/properos.png",3500)
-        	}
-        }
-    }
+	json(jsuu,data)
+	json(data,"get","text",txj)
+	f(txj != null)
+	{
+		fw("$temp/tos.txt",txj)
+		ufnsui()
+		{
+			fn PromptLibrary.pop(txj,"@JuOS/logo/properos.png",3500)
+		}
+	}
+	else
+	{
+		fe("$temp/tos.txt",tos)
+		f(tos == true)
+		{
+			ufnsui()
+			{
+				fr("$temp/tos.txt",toss)
+				fn PromptLibrary.pop(toss,"@JuOS/logo/properos.png",3500)
+			}
+		}
+	}
 }
 //-_-_-_-_-_-_-_-_-_-_-
 fd("$System/homeList",yzfd)
 fn Lottie.loaddex()
 fr("@JuOS/Lottie/loading.json",data)
-<<<<<<< HEAD
-fn Lottie.setImageLottie(10,data,-1,true)
-=======
 fn Lottie.setImageLottie(10,data,-1,true)
 //us(10,"visibility","gone")
->>>>>>> debug
 fr("$System/Config/fillet.sys",fillet)
 t()
 {
 	s a = "$JuOS/hemo/桌面"
 	fl(a, false, home_list)
 	aslist(list_cz)
-    s plink =false
+	s plink =false
 	for(sc; home_list)
 	{
 		s img = "@fail.xml"
 		s name = sc
-        f(sc *? ".plink")
-        {
-        	s plink =true
-        	ss("$JuOS/hemo/桌面/"+sc, ml)
-            fr(ml,ml)
-            json(ml,data)
-        	json(data,"get","name",name)
-            json(data,"get","package",package)
-            json(data,"get","icon",icon)
-            json(data,"get","system",system)
-            json(data,"get","sign",sd)
-            json(sd,"get","uuid",uuid)
-            f(system != true)
-            {
-            	json(icon,"get","systemIcon",systemIcon)
-                f(systemIcon == false)
-                {
-                	ss("$App/"+package+"/",app_files_dir)
-                    json(icon,"get","icon",icon_file)
-                    ss(app_files_dir+icon_file,icd)
-                    sbp(icd,img)
-                }
-                else f(systemIcon == true)
-                {
-                	json(icon,"get","icon",icon_file)
-                    sbp(icon_file,img)
-                }
-            }
-            else
-            {
-            	sbp(icon,img)
-            }
-        }
+		f(sc *? ".plink")
+		{
+			s plink =true
+			ss("$JuOS/hemo/桌面/"+sc, ml)
+			fr(ml,ml)
+			json(ml,data)
+			json(data,"get","name",name)
+			json(data,"get","package",package)
+			json(data,"get","icon",icon)
+			json(data,"get","system",system)
+			json(data,"get","sign",sd)
+			json(sd,"get","uuid",uuid)
+			f(system != true)
+			{
+				json(icon,"get","systemIcon",systemIcon)
+				f(systemIcon == false)
+				{
+					ss("$App/"+package+"/",app_files_dir)
+					json(icon,"get","icon",icon_file)
+					ss(app_files_dir+icon_file,icd)
+					sbp(icd,img)
+				}
+				else f(systemIcon == true)
+				{
+					json(icon,"get","icon",icon_file)
+					sbp(icon_file,img)
+				}
+			}
+			else
+			{
+				sbp(icon,img)
+			}
+		}
 		else f(sc *? ".app")
 		{
 			ss("$JuOS/hemo/桌面/"+sc, ml)
@@ -197,19 +193,19 @@ t()
 			f(img ?* "$sys/")
 			{
 				sr(img, "$sys/", "@", img)
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(img ?* "%@")
 			{
 				sr(img, "%@", "$", img)
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else
 			{
 				sj(app_link_sc, "AppLj=", "=AppLj", appml)
 				sr(appml, "%g", "$App/", aml)
 				ss(aml + img, img)
-                sbp(img,img)
+				sbp(img,img)
 			}
 			sj(sc, null, ".app", name)
 		}
@@ -221,53 +217,53 @@ t()
 				fdir(a,a)
 				call(a,"mjava","awzx2.get",a,"1")
 				s img =a
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(sc *? ".m4a")
 			{
 				s img = "@JuOS/src/Manager/6e.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(sc *? ".mp3")
 			{
 				s img = "@JuOS/src/Manager/6e.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(sc *? ".flac")
 			{
 				s img = "@JuOS/src/Manager/6e.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(sc *? ".pdf")
 			{
 				s img = "@JuOS/src/Manager/wE.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(sc *? ".jush")
 			{
 				s img = "@ic_play_pause_regular.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 		}
-        fr("$System/homeList",tui)
-        sr(tui,"null","",tui)
-        ss(tui+"Img="+img+"=Img;;Name="+name+"=Name\n",utt)
-        fw("$System/homeList",utt)
-        f(plink == true)
-        {
-        	s plink =false
-        	ula(list_cz, 10=img, 14=name, 19=uuid)
-        }
-        else
-        {
-        	ula(list_cz, 10=img, 14=name)
-        }
+		fr("$System/homeList",tui)
+		sr(tui,"null","",tui)
+		ss(tui+"Img="+img+"=Img;;Name="+name+"=Name\n",utt)
+		fw("$System/homeList",utt)
+		f(plink == true)
+		{
+			s plink =false
+			ula(list_cz, 10=img, 14=name, 19=uuid)
+		}
+		else
+		{
+			ula(list_cz, 10=img, 14=name)
+		}
 	}
-    ufnsui()
-    {
-    	uls(5, list_cz, "list.iyu", -1, -2)
-        sss home =list_cz
-    }
+	ufnsui()
+	{
+		uls(5, list_cz, "list.iyu", -1, -2)
+		sss home =list_cz
+	}
 	ufnsui()
 	{
 		fr("$System/Config/fillet.sys",fillet)

@@ -116,10 +116,10 @@ us(start_menu.4,"dh",dhlist)
 t()
 {
 	stop(950)
-    ufnsui()
-    {
-    	us(start_menu.1,"visibility","gone")
-    }
+	ufnsui()
+	{
+		us(start_menu.1,"visibility","gone")
+	}
 }
 //数据输出日志
 syso(sss.home)
@@ -143,40 +143,40 @@ t()
 	{
 		s img = "@fail.xml"
 		s name = sc
-        s plink =false
-        f(sc *? ".plink")
-        {
-        	s plink =true
-        	ss("$JuOS/hemo/桌面/"+sc, ml)
-            fr(ml,ml)
-            json(ml,data)
-        	json(data,"get","name",name)
-            json(data,"get","package",package)
-            json(data,"get","icon",icon)
-            json(data,"get","system",system)
-            json(data,"get","sign",sd)
-            json(sd,"get","uuid",uuid)
-            f(system != true)
-            {
-            	json(icon,"get","systemIcon",systemIcon)
-                f(systemIcon == false)
-                {
-                	ss("$App/"+package+"/",app_files_dir)
-                    json(icon,"get","icon",icon_file)
-                    ss(app_files_dir+icon_file,icd)
-                    sbp(icd,img)
-                }
-                else f(systemIcon == true)
-                {
-                	json(icon,"get","icon",icon_file)
-                    sbp(icon_file,img)
-                }
-            }
-            else
-            {
-            	sbp(icon,img)
-            }
-        }
+		s plink =false
+		f(sc *? ".plink")
+		{
+			s plink =true
+			ss("$JuOS/hemo/桌面/"+sc, ml)
+			fr(ml,ml)
+			json(ml,data)
+			json(data,"get","name",name)
+			json(data,"get","package",package)
+			json(data,"get","icon",icon)
+			json(data,"get","system",system)
+			json(data,"get","sign",sd)
+			json(sd,"get","uuid",uuid)
+			f(system != true)
+			{
+				json(icon,"get","systemIcon",systemIcon)
+				f(systemIcon == false)
+				{
+					ss("$App/"+package+"/",app_files_dir)
+					json(icon,"get","icon",icon_file)
+					ss(app_files_dir+icon_file,icd)
+					sbp(icd,img)
+				}
+				else f(systemIcon == true)
+				{
+					json(icon,"get","icon",icon_file)
+					sbp(icon_file,img)
+				}
+			}
+			else
+			{
+				sbp(icon,img)
+			}
+		}
 		else f(sc *? ".app")
 		{
 			ss("$JuOS/hemo/桌面/"+sc, ml)
@@ -185,19 +185,19 @@ t()
 			f(img ?* "$sys/")
 			{
 				sr(img, "$sys/", "@", img)
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(img ?* "%@")
 			{
 				sr(img, "%@", "$", img)
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else
 			{
 				sj(app_link_sc, "AppLj=", "=AppLj", appml)
 				sr(appml, "%g", "$App/", aml)
 				ss(aml + img, img)
-                sbp(img,img)
+				sbp(img,img)
 			}
 			sj(sc, null, ".app", name)
 		}
@@ -208,49 +208,49 @@ t()
 				ss("$JuOS/hemo/桌面/"+sc,a)
 				fdir(a,a)
 				call(a,"mjava","awzx2.get",a,"1")
-                s img =a
-                sbp(img,img)
+				s img =a
+				sbp(img,img)
 			}
 			else f(sc *? ".m4a")
 			{
 				s img = "@JuOS/src/Manager/6e.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(sc *? ".mp3")
 			{
 				s img = "@JuOS/src/Manager/6e.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(sc *? ".flac")
 			{
 				s img = "@JuOS/src/Manager/6e.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(sc *? ".pdf")
 			{
 				s img = "@JuOS/src/Manager/wE.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 			else f(sc *? ".jush")
 			{
 				s img = "@ic_play_pause_regular.png"
-                sbp(img,img)
+				sbp(img,img)
 			}
 		}
-        f(plink == true)
-        {
-        	ula(list_cz, 10=img, 14=name, 19=uuid)
-        }
-        else
-        {
-        	ula(list_cz, 10=img, 14=name)
-        }
+		f(plink == true)
+		{
+			ula(list_cz, 10=img, 14=name, 19=uuid)
+		}
+		else
+		{
+			ula(list_cz, 10=img, 14=name)
+		}
 	}
 	ufnsui()
 	{
 		us(6, "visibility", "gone")
 		uls(5, list_cz, "list.iyu", -1, -2)
-        sss home =list_cz
+		sss home =list_cz
 		us(4,"refreshing","false")
 	}
 }

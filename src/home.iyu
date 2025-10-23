@@ -188,73 +188,73 @@ fn Lottie.setImageLottie(10,data,-1,true)
 /.
 t()
 {
-  s a = "$JuOS/hemo/桌面"
-  fl(a, false, home_list)
-  aslist(list_cz)
-  for(sc; home_list)
-  {
+	s a = "$JuOS/hemo/桌面"
+	fl(a, false, home_list)
+	aslist(list_cz)
+	for(sc; home_list)
+	{
 	s img = "@fail.xml"
 	s name = sc
 	f(sc *? ".app")
 	{
-	  ss("$JuOS/hemo/桌面/"+sc, ml)
-	  fr(ml, app_link_sc)
-	  sj(app_link_sc, "AppTb=", "=AppTb", img)
-	  f(img ?* "$sys/")
-	  {
+		ss("$JuOS/hemo/桌面/"+sc, ml)
+		fr(ml, app_link_sc)
+		sj(app_link_sc, "AppTb=", "=AppTb", img)
+		f(img ?* "$sys/")
+		{
 		sr(img, "$sys/", "@", img)
-	  }
-	  else f(img ?* "%@")
-	  {
+		}
+		else f(img ?* "%@")
+		{
 		sr(img, "%@", "$", img)
-	  }
-	  else
-	  {
+		}
+		else
+		{
 		sj(app_link_sc, "AppLj=", "=AppLj", appml)
 		sr(appml, "%g", "$App/", aml)
 		ss(aml + img, img)
-	  }
-	  sj(sc,null,".app",name)
+		}
+		sj(sc,null,".app",name)
 	}
 	else
 	{
-	  f(sc *? ".mp4")
-	  {
+		f(sc *? ".mp4")
+		{
 		ss("$JuOS/hemo/桌面/"+sc,a)
 		fdir(a,a)
 		call(a,"mjava","awzx2.get",a,"1")
 		s img =a
-	  }
-	  else f(sc *? ".m4a")
-	  {
+		}
+		else f(sc *? ".m4a")
+		{
 		s img = "@JuOS/src/Manager/6e.png"
-	  }
-	  else f(sc *? ".mp3")
-	  {
+		}
+		else f(sc *? ".mp3")
+		{
 		s img = "@JuOS/src/Manager/6e.png"
-	  }
-	  else f(sc *? ".flac")
-	  {
+		}
+		else f(sc *? ".flac")
+		{
 		s img = "@JuOS/src/Manager/6e.png"
-	  }
-	  else f(sc *? ".pdf")
-	  {
+		}
+		else f(sc *? ".pdf")
+		{
 		s img = "@JuOS/src/Manager/wE.png"
-	  }
-	  else f(sc *? ".jush")
-	  {
+		}
+		else f(sc *? ".jush")
+		{
 		s img = "@ic_play_pause_regular.png"
-	  }
+		}
 	}
 	ula(list_cz, 4=img, 5=name)
 	ula(list_cz,4)
-  }
-  ufnsui()
-  {
+	}
+	ufnsui()
+	{
 	uls(4, list_cz, "hlist.iyu", -1, -2)
 	us(6,"Refreshing","false")
 	us(9,"visibility","gone")
-  }
+	}
 }
 ./
 utw("$JuOS/ICON/foreground.png","","抱歉，该界面已不在支持使用","确定切换桌面",true,v)

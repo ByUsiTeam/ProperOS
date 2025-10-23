@@ -301,6 +301,22 @@ else f(yz_url_dt == "false")
 	fn tw.tw("无法返回了")
 }</eventItme></event>
 </View>
+<View id="37" did="28" type="CardView">
+<ppt>width=45dp
+height=45dp
+app_CardcornerRadius=35dp
+layout_marginLeft=10dp
+layout_marginRight=10dp</ppt>
+<event></event>
+</View>
+<View id="38" did="37" type="ImageButton">
+<ppt>width=-1
+height=-1
+src=17301599
+background=through</ppt>
+<event><eventItme type="clicki">ug(3,"url",url)
+us(3,"url",url)</eventItme></event>
+</View>
 <View id="31" did="28" type="CardView">
 <ppt>width=100dp
 height=45dp

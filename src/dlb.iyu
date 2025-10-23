@@ -64,14 +64,14 @@ ut_alignParentRight=true</ppt>
 <event><eventItme type="clicki">us(16,"visibility","visible")
 t()
 {
-  ufnsui()
-  {
-    gvs(15,控件)
-    javanew(at,"android.transition.AutoTransition")
-    javanew(tm,"android.transition.TransitionManager")
-    java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","android.view.ViewGroup",控件,"android.transition.Transition",at)
-    us(17,"height","-2")
-  }
+	ufnsui()
+	{
+		gvs(15,控件)
+		javanew(at,"android.transition.AutoTransition")
+		javanew(tm,"android.transition.TransitionManager")
+		java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","android.view.ViewGroup",控件,"android.transition.Transition",at)
+		us(17,"height","-2")
+	}
 }</eventItme></event>
 </View>
 <View id="38" did="1" type="TextView">
@@ -143,10 +143,10 @@ height=-2
 text=键盘解锁</ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC)
 {
-  us(181,"visibility","gone")
-  us(225,"visibility","gone")
-  us(176,"visibility","visible")
-  fw("$sz/密码类型","键盘")
+	us(181,"visibility","gone")
+	us(225,"visibility","gone")
+	us(176,"visibility","visible")
+	fw("$sz/密码类型","键盘")
 }</eventItme></event>
 </View>
 <View id="179" did="177" type="RadioButton">
@@ -155,38 +155,38 @@ height=-2
 text=图案解锁</ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC)
 {
-  fe("$插件/密码.dex",hc)
-  f(hc==false)
-  {
-    fn mk.tw("哎呀，你还没有下载图案密码\n请在更多工具-配置文件-下载插件全量包")
-    us(179,"checked","false")
-    us(178,"checked","true")
-  }
-  else
-  {
-    fr("$sz/图案密码",password)
-    f(password==null||password=="")
-    {
-    }
-    else
-    {
-      us(188,"visibility","gone")
-      us(182,"visibility","visible")
-      s yj="b"
-      fr("$sz/夜间",st_yj)
-      f(st_yj=="true")
-      {
-        s yj="w"
-      }
-      ss("file://"+aa+"?type=js&ys="+yj,aa)
-      us(182,"url",aa)
-      hsas(182,true)
-    }
-    us(176,"visibility","gone")
-    us(225,"visibility","gone")
-    us(181,"visibility","visible")
-    fw("$sz/密码类型","图案")
-  }
+	fe("$插件/密码.dex",hc)
+	f(hc==false)
+	{
+		fn mk.tw("哎呀，你还没有下载图案密码\n请在更多工具-配置文件-下载插件全量包")
+		us(179,"checked","false")
+		us(178,"checked","true")
+	}
+	else
+	{
+		fr("$sz/图案密码",password)
+		f(password==null||password=="")
+		{
+		}
+		else
+		{
+			us(188,"visibility","gone")
+			us(182,"visibility","visible")
+			s yj="b"
+			fr("$sz/夜间",st_yj)
+			f(st_yj=="true")
+			{
+				s yj="w"
+			}
+			ss("file://"+aa+"?type=js&ys="+yj,aa)
+			us(182,"url",aa)
+			hsas(182,true)
+		}
+		us(176,"visibility","gone")
+		us(225,"visibility","gone")
+		us(181,"visibility","visible")
+		fw("$sz/密码类型","图案")
+	}
 }</eventItme></event>
 </View>
 <View id="223" did="177" type="RadioButton">
@@ -195,19 +195,19 @@ height=-2
 text=指纹解锁</ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC)
 {
-  fe("$插件/指纹.dex",hc)
-  f(hc==false)
-  {
-    fn mk.tw("哎呀，你还没有下载指纹插件\n请在更多工具-配置文件-下载插件全量包")
-    
-    us(178,"checked","true")
-  }
-  else
-  {
-    us(176,"visibility","gone")
-    us(181,"visibility","gone")
-    us(225,"visibility","visible")
-  }
+	fe("$插件/指纹.dex",hc)
+	f(hc==false)
+	{
+		fn mk.tw("哎呀，你还没有下载指纹插件\n请在更多工具-配置文件-下载插件全量包")
+		
+		us(178,"checked","true")
+	}
+	else
+	{
+		us(176,"visibility","gone")
+		us(181,"visibility","gone")
+		us(225,"visibility","visible")
+	}
 }</eventItme></event>
 </View>
 <View id="176" did="33" type="LinearLayout">
@@ -347,25 +347,25 @@ layout_weight=1</ppt>
 <event><eventItme type="clicki">fr("$sz/图案密码",password)
 f(password==null||password=="")
 {
-  fn mk.tw("请输入")
-  us(188,"visibility","gone")
-  us(182,"visibility","visible")
-  fr("$插件/密码.dex",a)
-  fw("$pass.html",a)
-  fdir("$pass.html",aa)
-  s yj="b"
-  fr("$sz/夜间",st_yj)
-  f(st_yj=="true")
-  {
-    s yj="w"
-  }
-  ss("file://"+aa+"?type=sz&ys="+yj,aa)
-  us(182,"url",aa)
-  hsas(182,true)
+	fn mk.tw("请输入")
+	us(188,"visibility","gone")
+	us(182,"visibility","visible")
+	fr("$插件/密码.dex",a)
+	fw("$pass.html",a)
+	fdir("$pass.html",aa)
+	s yj="b"
+	fr("$sz/夜间",st_yj)
+	f(st_yj=="true")
+	{
+		s yj="w"
+	}
+	ss("file://"+aa+"?type=sz&ys="+yj,aa)
+	us(182,"url",aa)
+	hsas(182,true)
 }
 else
 {
-  fn mk.tw("你已经设置密码")
+	fn mk.tw("你已经设置密码")
 }</eventItme></event>
 </View>
 <View id="186" did="183" type="Button">
@@ -381,24 +381,24 @@ layout_weight=1</ppt>
 <event><eventItme type="clicki">fr("$sz/图案密码",password)
 f(password==null||password=="")
 {
-  fn mk.tw("纳尼，还没有设置密码")
+	fn mk.tw("纳尼，还没有设置密码")
 }
 else
 {
-  fn mk.tw("请输入原来的密码")
-  fr("$插件/密码.dex",a)
-  sr(a,"我是内容",password,a)
-  fw("$pass.html",a)
-  fdir("$pass.html",aa)
-  s yj="b"
-  fr("$sz/夜间",st_yj)
-  f(st_yj=="true")
-  {
-    s yj="w"
-  }
-  ss("file://"+aa+"?type=xg&ys="+yj,aa) 
-  us(182,"url",aa)
-  hsas(182,true)
+	fn mk.tw("请输入原来的密码")
+	fr("$插件/密码.dex",a)
+	sr(a,"我是内容",password,a)
+	fw("$pass.html",a)
+	fdir("$pass.html",aa)
+	s yj="b"
+	fr("$sz/夜间",st_yj)
+	f(st_yj=="true")
+	{
+		s yj="w"
+	}
+	ss("file://"+aa+"?type=xg&ys="+yj,aa) 
+	us(182,"url",aa)
+	hsas(182,true)
 }</eventItme></event>
 </View>
 <View id="185" did="183" type="Button">
@@ -414,24 +414,24 @@ layout_weight=1</ppt>
 <event><eventItme type="clicki">fr("$sz/图案密码",password)
 f(password==null||password=="")
 {
-  fn mk.tw("纳尼，还没有设置密码")
+	fn mk.tw("纳尼，还没有设置密码")
 }
 else
 {
-  fn mk.tw("请输入原来的密码")
-  fr("$插件/密码.dex",a)
-  sr(a,"我是内容",password,a)
-  fw("$pass.html",a)
-  fdir("$pass.html",aa)
-  s yj="b"
-  fr("$sz/夜间",st_yj)
-  f(st_yj=="true")
-  {
-    s yj="w"
-  }
-  ss("file://"+aa+"?type=del&ys="+yj,aa) 
-  us(182,"url",aa)
-  hsas(182,true)
+	fn mk.tw("请输入原来的密码")
+	fr("$插件/密码.dex",a)
+	sr(a,"我是内容",password,a)
+	fw("$pass.html",a)
+	fdir("$pass.html",aa)
+	s yj="b"
+	fr("$sz/夜间",st_yj)
+	f(st_yj=="true")
+	{
+		s yj="w"
+	}
+	ss("file://"+aa+"?type=del&ys="+yj,aa) 
+	us(182,"url",aa)
+	hsas(182,true)
 }</eventItme></event>
 </View>
 <View id="225" did="33" type="LinearLayout">
@@ -535,11 +535,11 @@ checked=true</ppt>
 <event><eventItme type="clicki">fr("$sz/锁定密码作用",a)
 f(a?"管理:true")
 {
-  sr(a,"管理:true","管理:false",a)
+	sr(a,"管理:true","管理:false",a)
 }
 else
 {
-  sr(a,"管理:false","管理:true",a)
+	sr(a,"管理:false","管理:true",a)
 }
 fw("$sz/锁定密码作用",a)</eventItme></event>
 </View>
@@ -551,11 +551,11 @@ checked=true</ppt>
 <event><eventItme type="clicki">fr("$sz/锁定密码作用",a)
 f(a?"名单:true")
 {
-  sr(a,"名单:true","名单:false",a)
+	sr(a,"名单:true","名单:false",a)
 }
 else
 {
-  sr(a,"名单:false","名单:true",a)
+	sr(a,"名单:false","名单:true",a)
 }
 fw("$sz/锁定密码作用",a)</eventItme></event>
 </View>
@@ -567,11 +567,11 @@ checked=true</ppt>
 <event><eventItme type="clicki">fr("$sz/锁定密码作用",a)
 f(a?"启动:true")
 {
-  sr(a,"启动:true","启动:false",a)
+	sr(a,"启动:true","启动:false",a)
 }
 else
 {
-  sr(a,"启动:false","启动:true",a)
+	sr(a,"启动:false","启动:true",a)
 }
 fw("$sz/锁定密码作用",a)</eventItme></event>
 </View>
@@ -583,11 +583,11 @@ checked=true</ppt>
 <event><eventItme type="clicki">fr("$sz/锁定密码作用",a)
 f(a?"重进:true")
 {
-  sr(a,"重进:true","重进:false",a)
+	sr(a,"重进:true","重进:false",a)
 }
 else
 {
-  sr(a,"重进:false","重进:true",a)
+	sr(a,"重进:false","重进:true",a)
 }
 fw("$sz/锁定密码作用",a)</eventItme></event>
 </View>
@@ -599,11 +599,11 @@ checked=true</ppt>
 <event><eventItme type="clicki">fr("$sz/锁定密码作用",a)
 f(a?"卡片:true")
 {
-  sr(a,"卡片:true","卡片:false",a)
+	sr(a,"卡片:true","卡片:false",a)
 }
 else
 {
-  sr(a,"卡片:false","卡片:true",a)
+	sr(a,"卡片:false","卡片:true",a)
 }
 fw("$sz/锁定密码作用",a)</eventItme></event>
 </View>
@@ -626,11 +626,11 @@ paddingLeft=10dp
 </ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC)
 {
-  fw("$sz/关闭密码填充","true")
+	fw("$sz/关闭密码填充","true")
 }
 else
 {
-  fw("$sz/关闭密码填充","false")
+	fw("$sz/关闭密码填充","false")
 }</eventItme></event>
 </View>
 <View id="21" did="4" type="RecyclerView">
@@ -642,18 +642,18 @@ fadingEdgeLength=80</ppt>
 <event><eventItme type="clickitem">ug(5,"text",a)
 f(a=="密码管理")
 {
-  ulag(st_vW, st_pN,5, url)
-  ulag(st_vW, st_pN,6, zh)
-  ss(url+"#账号#"+zh+"#密码#",an)
-  fr("$浏览器密码.password",a)
-  sj(a,an,"\n",mm)
-  syso(mm)
-  syso(an)
-  us(27,"text",zh)
-  us(28,"text",mm)
-  us(29,"text",url)
-  us(22,"visibility","visible")
-  us(23,"visibility","visible")
+	ulag(st_vW, st_pN,5, url)
+	ulag(st_vW, st_pN,6, zh)
+	ss(url+"#账号#"+zh+"#密码#",an)
+	fr("$浏览器密码.password",a)
+	sj(a,an,"\n",mm)
+	syso(mm)
+	syso(an)
+	us(27,"text",zh)
+	us(28,"text",mm)
+	us(29,"text",url)
+	us(22,"visibility","visible")
+	us(23,"visibility","visible")
 }</eventItme></event>
 </View>
 <View id="45" did="197" type="ScrollView">
@@ -684,11 +684,11 @@ ss("$设定/"+a,aa)
 fr(aa,e)
 f(st_iC)
 {
-  sr(e,"run:false","run:true",e)
+	sr(e,"run:false","run:true",e)
 }
 else
 {
-  sr(e,"run:true","run:false",e)
+	sr(e,"run:true","run:false",e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -718,7 +718,7 @@ f(e?"window")
 }
 else
 {
-  ss(e+"window:auto\n",e)
+	ss(e+"window:auto\n",e)
 }
 ss(zhu+":true",kq)
 ss(zhu+":false",gb)
@@ -726,31 +726,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -771,31 +771,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -816,31 +816,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -861,31 +861,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -971,31 +971,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -1016,31 +1016,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -1061,31 +1061,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -1106,31 +1106,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -1160,7 +1160,7 @@ f(e?"localStorage")
 }
 else
 {
-  ss(e+"localStorage:auto\n",e)
+	ss(e+"localStorage:auto\n",e)
 }
 ss(zhu+":true",kq)
 ss(zhu+":false",gb)
@@ -1168,31 +1168,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme><eventItme type="clicki">fn mk.tw("localStorage一般用于记录搜索历史等内容")</eventItme></event>
 </View>
@@ -1212,7 +1212,7 @@ f(e?"password")
 }
 else
 {
-  ss(e+"password:auto\n",e)
+	ss(e+"password:auto\n",e)
 }
 ss(zhu+":true",kq)
 ss(zhu+":false",gb)
@@ -1220,31 +1220,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -1265,31 +1265,31 @@ ss(zhu+":auto",mr)
 ug(st_vW,"text",text)
 f(text?"(默认)")
 {
-  us(st_vW,"textcolor","#ff0000")
-  sr(text,"(默认)","(关闭)",text)
-  sr(text,"(启用)","(关闭)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,gb,e)
-  sr(e,mr,gb,e)
-  us(st_vW,"checked","false")
+	us(st_vW,"textcolor","#ff0000")
+	sr(text,"(默认)","(关闭)",text)
+	sr(text,"(启用)","(关闭)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,gb,e)
+	sr(e,mr,gb,e)
+	us(st_vW,"checked","false")
 }
 else f(st_iC)
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(启用)",text)
-  sr(text,"(默认)","(启用)",text)
-  us(st_vW,"text",text)
-  sr(e,gb,kq,e)
-  sr(e,mr,kq,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(启用)",text)
+	sr(text,"(默认)","(启用)",text)
+	us(st_vW,"text",text)
+	sr(e,gb,kq,e)
+	sr(e,mr,kq,e)
 }
 else
 {
-  us(st_vW,"textcolor","#000000")
-  sr(text,"(关闭)","(默认)",text)
-  sr(text,"(启用)","(默认)",text)
-  us(st_vW,"text",text)
-  sr(e,kq,mr,e)
-  sr(e,gb,mr,e)
+	us(st_vW,"textcolor","#000000")
+	sr(text,"(关闭)","(默认)",text)
+	sr(text,"(启用)","(默认)",text)
+	us(st_vW,"text",text)
+	sr(e,kq,mr,e)
+	sr(e,gb,mr,e)
 }
 fw(aa,e)</eventItme></event>
 </View>
@@ -1352,17 +1352,17 @@ text=添加</ppt>
 syso(url)
 f(url?*"http://"||url?*"https://")
 {
-  fw("$缓存/dlb","网站设定")
-  fw("$缓存/dlburl",url)
-  gvs(10,a)
-  call(null,"mjava","mk.setg",a,"dlb")
-  us(10,"src","$i/lo.png")
-  gvs(10,a)
-  call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
+	fw("$缓存/dlb","网站设定")
+	fw("$缓存/dlburl",url)
+	gvs(10,a)
+	call(null,"mjava","mk.setg",a,"dlb")
+	us(10,"src","$i/lo.png")
+	gvs(10,a)
+	call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
 }
 else
 {
-  fn mk.tw("哎呀，这个网站不对劲")
+	fn mk.tw("哎呀，这个网站不对劲")
 }</eventItme></event>
 </View>
 <View id="57" did="66" type="ListView">
@@ -1456,59 +1456,59 @@ java(null,手势画布控件,"android.gesture.GestureOverlayView.setFadeOffset",
 java(null,手势画布控件,"android.gesture.GestureOverlayView.setGestureColor","int",-256)
 java(null,手势画布控件,"android.gesture.GestureOverlayView.setGestureStrokeWidth","float",15)
 java(null,手势画布控件,"android.gesture.GestureOverlayView.addOnGestureListener",".android.gesture.GestureOverlayView$OnGestureListener",null){
-  f(st_mD?"onGestureEnded"){
-    java(手势对象,手势画布控件,"android.gesture.GestureOverlayView.getGesture")
-    java(手势长度,手势对象,"android.gesture.Gesture.getLength")
-    f(手势长度 &gt; 100){
-      java(null,确认按钮,"android.view.View.setEnabled","boolean",true)
-    }
-    else
-    {
-      fn mk.tw("哎呀，这个手势太短了")
-    }
-  }
+	f(st_mD?"onGestureEnded"){
+		java(手势对象,手势画布控件,"android.gesture.GestureOverlayView.getGesture")
+		java(手势长度,手势对象,"android.gesture.Gesture.getLength")
+		f(手势长度 &gt; 100){
+			java(null,确认按钮,"android.view.View.setEnabled","boolean",true)
+		}
+		else
+		{
+			fn mk.tw("哎呀，这个手势太短了")
+		}
+	}
 }
 ss 手势画布控件 = 手势画布控件
 ssj(75,"clicki"){
-  
-  fr("@n/t",a)
-  sl(a,"\n",ssa)
-  sgszl(ssa,cd)
-  s(cd-1,cd)
-  s title_alert = "手势对应功能："
+	
+	fr("@n/t",a)
+	sl(a,"\n",ssa)
+	sgszl(ssa,cd)
+	s(cd-1,cd)
+	s title_alert = "手势对应功能："
 cls("java.lang.String",c)
-  java(cs,null,"java.lang.reflect.Array.newInstance","java.lang.Class",c,"int",cd)
-  s acd=0
-  for(ssb;ssa)
-  {
-    f(b!="")
-    {
-      sj(ssb,null,"/",ssb)
-      sssz(cs,acd,ssb)
-      s(acd+1,acd)
-    }
-  }
+	java(cs,null,"java.lang.reflect.Array.newInstance","java.lang.Class",c,"int",cd)
+	s acd=0
+	for(ssb;ssa)
+	{
+		f(b!="")
+		{
+			sj(ssb,null,"/",ssb)
+			sssz(cs,acd,ssb)
+			s(acd+1,acd)
+		}
+	}
 cls("kawaii.vie.mk$jk",c2)
 javacb(back,c2)
 {
 f(st_mD?"onListClick")
 {
 sgsz(st_aS,1,a)
-    sgsz(ssa,a,手势名称)
-    sj(手势名称,null,"/",手势名称)
-    fdir("$手势",储存文件路径)
-    java(手势对象,ss.手势画布控件,"android.gesture.GestureOverlayView.getGesture")
-    java(手势储存文件,null,"android.gesture.GestureLibraries.fromFile","String",储存文件路径)
-    syso(储存文件路径)
-    java(null,手势储存文件,"android.gesture.GestureLibrary.load")
-    java(null,手势储存文件,"android.gesture.GestureLibrary.addGesture","String",手势名称,"android.gesture.Gesture",手势对象)
-    java(null,手势储存文件,"android.gesture.GestureLibrary.save")
-    java(null,activity,"android.app.Activity.setResult","int",-1)
-    us(74,"visibility","gone")
-    urvw(ss.手势画布控件)
-    fn dy.sscz()
-  }
-  }
+		sgsz(ssa,a,手势名称)
+		sj(手势名称,null,"/",手势名称)
+		fdir("$手势",储存文件路径)
+		java(手势对象,ss.手势画布控件,"android.gesture.GestureOverlayView.getGesture")
+		java(手势储存文件,null,"android.gesture.GestureLibraries.fromFile","String",储存文件路径)
+		syso(储存文件路径)
+		java(null,手势储存文件,"android.gesture.GestureLibrary.load")
+		java(null,手势储存文件,"android.gesture.GestureLibrary.addGesture","String",手势名称,"android.gesture.Gesture",手势对象)
+		java(null,手势储存文件,"android.gesture.GestureLibrary.save")
+		java(null,activity,"android.app.Activity.setResult","int",-1)
+		us(74,"visibility","gone")
+		urvw(ss.手势画布控件)
+		fn dy.sscz()
+	}
+	}
 fn dy.sA(title_alert,cs,c2,back,true)
 }</eventItme></event>
 </View>
@@ -1547,7 +1547,7 @@ text=返回
 layout_margin=5dp
 textSize=12sp</ppt>
 <event><eventItme type="clicki">us(74,"visibility","gone")
-  urvw(ss.手势画布控件)</eventItme></event>
+	urvw(ss.手势画布控件)</eventItme></event>
 </View>
 <View id="84" did="197" type="ScrollView">
 <ppt>width=-1
@@ -1644,68 +1644,68 @@ text=备份选中数据</ppt>
 ug(104,"checked",a)
 f(a==true)
 {
-  fc("$历史","$备份/历史",true,a)
-  s sf="t"
+	fc("$历史","$备份/历史",true,a)
+	s sf="t"
 }
 ug(105,"checked",a)
 f(a==true)
 {
-  fc("$书签","$备份/书签",true,a)
-  s sf="t"
+	fc("$书签","$备份/书签",true,a)
+	s sf="t"
 }
 ug(106,"checked",a)
 f(a==true)
 {
-  fl("$diy",false,n)
-  for(m;n)
-  {
-    ss("$diy/"+m,m1)
-    ss("$备份/diy/"+m,m2)
-    fc(m1,m2,true,a)
-  }
-  fl("$sz",false,n)
-  for(m;n)
-  {
-    ss("$sz/"+m,m1)
-    ss("$备份/sz/"+m,m2)
-    fc(m1,m2,true,a)
-  }
-  fd("$备份/sz/新屏幕高",a)
-  s sf="t"
+	fl("$diy",false,n)
+	for(m;n)
+	{
+		ss("$diy/"+m,m1)
+		ss("$备份/diy/"+m,m2)
+		fc(m1,m2,true,a)
+	}
+	fl("$sz",false,n)
+	for(m;n)
+	{
+		ss("$sz/"+m,m1)
+		ss("$备份/sz/"+m,m2)
+		fc(m1,m2,true,a)
+	}
+	fd("$备份/sz/新屏幕高",a)
+	s sf="t"
 }
 f(sf=="f")
 {
-  fn mk.tw("哎呀，没有选择备份项目")
-  endcode
+	fn mk.tw("哎呀，没有选择备份项目")
+	endcode
 }
 ug(108,"checked",ck)
 f(ck=="true")
 {
-  fr("$sz/下载目录",dir)
-  f(dir==""||dir==null)
-  {
-    s dir = "%Download/"
-  }
-  time(0,n)
-  ss(dir+"Vie备份("+n+").zip",wj)
-  fj("$备份",wj,a)
-  fdir(wj,a)
-  ss("已经备份到"+a,a)
-  fn mk.tw(a)
-  fn fn.qShare(wj,"分享刚刚的备份")
-  fdir("$备份",path)
-  java(runtime,null,"java.lang.Runtime.getRuntime")
-  java(null,runtime,"java.lang.Runtime.exec","String","rm -rf "+path)
+	fr("$sz/下载目录",dir)
+	f(dir==""||dir==null)
+	{
+		s dir = "%Download/"
+	}
+	time(0,n)
+	ss(dir+"Vie备份("+n+").zip",wj)
+	fj("$备份",wj,a)
+	fdir(wj,a)
+	ss("已经备份到"+a,a)
+	fn mk.tw(a)
+	fn fn.qShare(wj,"分享刚刚的备份")
+	fdir("$备份",path)
+	java(runtime,null,"java.lang.Runtime.getRuntime")
+	java(null,runtime,"java.lang.Runtime.exec","String","rm -rf "+path)
 }
 else
 {
-  time(0,n)
-  ss("$云端备份/Vie备份("+n+").zip",wj)
-  fj("$备份",wj,a)
-  fw("$缓存/panf",wj)
-  us(10,"src","$i/yp.png")
-  gvs(10,a)
-  call(null,"mjava","mk.uigo",a,"yp","yp.iyu","kawaii.vie")
+	time(0,n)
+	ss("$云端备份/Vie备份("+n+").zip",wj)
+	fj("$备份",wj,a)
+	fw("$缓存/panf",wj)
+	us(10,"src","$i/yp.png")
+	gvs(10,a)
+	call(null,"mjava","mk.uigo",a,"yp","yp.iyu","kawaii.vie")
 }</eventItme></event>
 </View>
 <View id="101" did="85" type="TextView">
@@ -1729,16 +1729,16 @@ s sum = 0
 syso(count)
 for(1;count)
 {
-  java(views,view,"android.view.ViewGroup.getChildAt","int",sum)
-  f(st_iC)
-  {
-    us(views,"checked","true")
-  }
-  else
-  {
-    us(views,"checked","false")
-  }
-  s+(1,sum)
+	java(views,view,"android.view.ViewGroup.getChildAt","int",sum)
+	f(st_iC)
+	{
+		us(views,"checked","true")
+	}
+	else
+	{
+		us(views,"checked","false")
+	}
+	s+(1,sum)
 }</eventItme></event>
 </View>
 <View id="96" did="85" type="LinearLayout">
@@ -1852,7 +1852,7 @@ padding=10dp</ppt>
 <View id="115" did="113" type="TextView">
 <ppt>width=-2
 height=-2
-text=        网络权限：Vie 在浏览网页，下载文件，使用云端服务等操作时需要此权限
+text=				网络权限：Vie 在浏览网页，下载文件，使用云端服务等操作时需要此权限
 textSize=15sp
 textColor=#000000</ppt>
 <event></event>
@@ -1873,7 +1873,7 @@ rps(p)</eventItme></event>
 <View id="114" did="113" type="TextView">
 <ppt>width=-2
 height=-2
-text=        读写权限：Vie 在下载文件，保存图片，本地备份文件等操作时需要此权限
+text=				读写权限：Vie 在下载文件，保存图片，本地备份文件等操作时需要此权限
 textSize=15sp
 textColor=#000000</ppt>
 <event></event>
@@ -1897,13 +1897,13 @@ f(r1=="true"||r2=="true")
 else
 {
 	us(st_vW,"textcolor","#00ffdd")
-    us(st_vW,"text","已授权")
+		us(st_vW,"text","已授权")
 }</eventItme></event>
 </View>
 <View id="116" did="113" type="TextView">
 <ppt>width=-2
 height=-2
-text=        安装应用程序权限：Vie 在更新，安装下载的文件等操作时需要此权限
+text=				安装应用程序权限：Vie 在更新，安装下载的文件等操作时需要此权限
 textSize=15sp
 textColor=#000000</ppt>
 <event></event>
@@ -1921,7 +1921,7 @@ layout_marginRight=20dp</ppt>
 f(back=="true"||back==true)
 {
 	us(st_vW,"textcolor","#00ffdd")
-    us(st_vW,"text","已授权")
+		us(st_vW,"text","已授权")
 }
 else
 {
@@ -1931,7 +1931,7 @@ else
 <View id="117" did="113" type="TextView">
 <ppt>width=-2
 height=-2
-text=        悬浮窗权限：Vie 在“悬浮浏览”等操作时需要此权限
+text=				悬浮窗权限：Vie 在“悬浮浏览”等操作时需要此权限
 textSize=15sp
 textColor=#000000</ppt>
 <event></event>
@@ -1949,7 +1949,7 @@ layout_marginRight=20dp</ppt>
 f(back=="true"||back==true)
 {
 	us(st_vW,"textcolor","#00ffdd")
-    us(st_vW,"text","已授权")
+		us(st_vW,"text","已授权")
 }
 else
 {
@@ -1959,7 +1959,7 @@ else
 <View id="123" did="113" type="TextView">
 <ppt>width=-2
 height=-2
-text=        完全读写权限：Vie 在下载文件，保存图片，本地备份文件等操作时需要此权限，当您的设备处于安卓11以上时需要授予
+text=				完全读写权限：Vie 在下载文件，保存图片，本地备份文件等操作时需要此权限，当您的设备处于安卓11以上时需要授予
 textSize=15sp
 textColor=#000000</ppt>
 <event></event>
@@ -1977,7 +1977,7 @@ layout_marginRight=20dp</ppt>
 f(back=="true"||back==true)
 {
 	us(st_vW,"textcolor","#00ffdd")
-    us(st_vW,"text","已授权")
+		us(st_vW,"text","已授权")
 }
 else
 {
@@ -1987,7 +1987,7 @@ else
 <View id="365" did="113" type="TextView">
 <ppt>width=-2
 height=-2
-text=        摄像头权限：Vie 在扫描二维码，给予网页录屏功能时需要此权限
+text=				摄像头权限：Vie 在扫描二维码，给予网页录屏功能时需要此权限
 textSize=15sp
 textColor=#000000</ppt>
 <event></event>
@@ -2011,7 +2011,7 @@ f(r1=="true"||r2=="true")
 else
 {
 	us(st_vW,"textcolor","#00ffdd")
-    us(st_vW,"text","已授权")
+		us(st_vW,"text","已授权")
 }
 
 //366</eventItme></event>
@@ -2019,7 +2019,7 @@ else
 <View id="367" did="113" type="TextView">
 <ppt>width=-2
 height=-2
-text=        录音权限：Vie 在给予网页录音功能时需要此权限
+text=				录音权限：Vie 在给予网页录音功能时需要此权限
 textSize=15sp
 textColor=#000000</ppt>
 <event></event>
@@ -2041,7 +2041,7 @@ f(r1=="true")
 else
 {
 	us(st_vW,"textcolor","#00ffdd")
-    us(st_vW,"text","已授权")
+		us(st_vW,"text","已授权")
 }
 
 //368</eventItme></event>
@@ -2049,7 +2049,7 @@ else
 <View id="369" did="113" type="TextView">
 <ppt>width=-2
 height=-2
-text=        定位权限：Vie 在给予网页定位功能时需要此权限
+text=				定位权限：Vie 在给予网页定位功能时需要此权限
 textSize=15sp
 textColor=#000000</ppt>
 <event></event>
@@ -2073,7 +2073,7 @@ f(r1=="true"||r2=="true")
 else
 {
 	us(st_vW,"textcolor","#00ffdd")
-    us(st_vW,"text","已授权")
+		us(st_vW,"text","已授权")
 }
 
 //370</eventItme></event>
@@ -2081,7 +2081,7 @@ else
 <View id="371" did="113" type="TextView">
 <ppt>width=-2
 height=-2
-text=        剪贴板权限：Vie 在使用时不会主动读取/写入您的剪贴板，部分网页可能会写入剪贴板
+text=				剪贴板权限：Vie 在使用时不会主动读取/写入您的剪贴板，部分网页可能会写入剪贴板
 textSize=15sp
 textColor=#000000</ppt>
 <event></event>
@@ -2140,20 +2140,20 @@ textSize=12sp</ppt>
 ug(238,"text",n)
 f(n?"://")
 {
-  sj(n,"://",null,n)
+	sj(n,"://",null,n)
 }
 f(n?"/")
 {
-  sj(n,null,"/",n)
+	sj(n,null,"/",n)
 }
 ss("\n"+n+"\n",n)
 f(a?n)
 {
-  fn mk.tw("访问通过！")
+	fn mk.tw("访问通过！")
 }
 else
 {
-  fn mk.tw("该网址不在白名单内！无法访问")
+	fn mk.tw("该网址不在白名单内！无法访问")
 }</eventItme></event>
 </View>
 <View id="244" did="237" type="Button">
@@ -2168,24 +2168,24 @@ ug(238,"text",n)
 s nn=n
 f(n?"://")
 {
-  sj(n,"://",null,n)
+	sj(n,"://",null,n)
 }
 f(n?"/")
 {
-  sj(n,null,"/",n)
+	sj(n,null,"/",n)
 }
 f(n==""||n==null)
 {
-  fn mk.tw("输入错误！请输入域名！")
-  endcode
+	fn mk.tw("输入错误！请输入域名！")
+	endcode
 }
 f(n?".")
 {
 }
 else
 {
-  fn mk.tw("输入错误！请输入域名！")
-  endcode
+	fn mk.tw("输入错误！请输入域名！")
+	endcode
 }
 
 
@@ -2201,42 +2201,42 @@ javacb(back,c2)
 f(st_mD?"onListClick")
 {
 sgsz(st_aS,1,aa)
-  ulag(st_vW,st_pN,5,bt)
-  f(aa==0)
-  {
-    s n=nn
-    fn mk.tw("限定只匹配完整网址")
-  }
-  f(aa==1)
-  {
-  }
-  else f(aa==2)
-  {
-    slof(n, ".", c)
-    slg(n,cd)
-    ssg(n,c,cd,a2)
-    ssg(n,0,c,nn)
-    f(nn?".")
-    {
-      s n=nn
-      slof(n, ".", c)
-      slg(n,cd)
-      ssg(n,c,cd,a1)
-      ss(a1+a2,n)
-      sj(n,".",null,n)
-    }
-  }
-  ss("\n"+n+"\n",n)
-  f(a?n)
-  {
-  }
-  else
-  {
-    ss(a+n,a)
-    fw("$sz/白名单",a)
-  }
-  fn mk.tw("已添加")
-  fn fn.whileMD()
+	ulag(st_vW,st_pN,5,bt)
+	f(aa==0)
+	{
+		s n=nn
+		fn mk.tw("限定只匹配完整网址")
+	}
+	f(aa==1)
+	{
+	}
+	else f(aa==2)
+	{
+		slof(n, ".", c)
+		slg(n,cd)
+		ssg(n,c,cd,a2)
+		ssg(n,0,c,nn)
+		f(nn?".")
+		{
+			s n=nn
+			slof(n, ".", c)
+			slg(n,cd)
+			ssg(n,c,cd,a1)
+			ss(a1+a2,n)
+			sj(n,".",null,n)
+		}
+	}
+	ss("\n"+n+"\n",n)
+	f(a?n)
+	{
+	}
+	else
+	{
+		ss(a+n,a)
+		fw("$sz/白名单",a)
+	}
+	fn mk.tw("已添加")
+	fn fn.whileMD()
 }
 }
 fn dy.sA(title_alert,cs,c2,back,true)</eventItme></event>
@@ -2248,17 +2248,17 @@ text=启用网址白名单功能
 layout_margin=5dp</ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC)
 {
-  fw("$sz/是否白名单","true")
+	fw("$sz/是否白名单","true")
 }
 else
 {
-  fw("$sz/是否白名单","false")
+	fw("$sz/是否白名单","false")
 }</eventItme></event>
 </View>
 <View id="242" did="235" type="TextView">
 <ppt>width=-2
 height=-2
-text=        功能介绍：网址白名单，开启后只能浏览名单内的网址，其余网址的浏览请求一律拦截，但是允许其他网址的资源的请求与本地网页的浏览请求。\n        “添加”按钮用于添加新的名单，“测试”按钮可以测试编辑框里的网址是否可以访问。
+text=				功能介绍：网址白名单，开启后只能浏览名单内的网址，其余网址的浏览请求一律拦截，但是允许其他网址的资源的请求与本地网页的浏览请求。\n				“添加”按钮用于添加新的名单，“测试”按钮可以测试编辑框里的网址是否可以访问。
 textColor=#ff0000</ppt>
 <event></event>
 </View>
@@ -2279,16 +2279,16 @@ javacb(back,c2)
 f(st_mD?"onListClick")
 {
 sgsz(st_aS,1,a)
-  ulag(st_vW,st_pN,5,bt)
-  f(a==0)
-  {
-    ss("\n"+bt+"\n",n)
-    fr("$sz/白名单",a)
-    sr(a,n,"",a)
-    fw("$sz/白名单",a)
-    fn mk.tw("已删除")
-    fn fn.whileMD()
-  }
+	ulag(st_vW,st_pN,5,bt)
+	f(a==0)
+	{
+		ss("\n"+bt+"\n",n)
+		fr("$sz/白名单",a)
+		sr(a,n,"",a)
+		fw("$sz/白名单",a)
+		fn mk.tw("已删除")
+		fn fn.whileMD()
+	}
 }
 }
 fn dy.sA(title_alert,cs,c2,back,true)</eventItme></event>
@@ -2336,20 +2336,20 @@ textSize=12sp</ppt>
 ug(248,"text",n)
 f(n?"://")
 {
-  sj(n,"://",null,n)
+	sj(n,"://",null,n)
 }
 f(n?"/")
 {
-  sj(n,null,"/",n)
+	sj(n,null,"/",n)
 }
 ss("\n"+n+"\n",n)
 f(a?n)
 {
-  fn mk.tw("该网址在黑名单内！无法访问")
+	fn mk.tw("该网址在黑名单内！无法访问")
 }
 else
 {
-  fn mk.tw("访问通过！")
+	fn mk.tw("访问通过！")
 }</eventItme></event>
 </View>
 <View id="250" did="247" type="Button">
@@ -2364,24 +2364,24 @@ ug(248,"text",n)
 s nn=n
 f(n?"://")
 {
-  sj(n,"://",null,n)
+	sj(n,"://",null,n)
 }
 f(n?"/")
 {
-  sj(n,null,"/",n)
+	sj(n,null,"/",n)
 }
 f(n==""||n==null)
 {
-  fn mk.tw("输入错误！请输入域名！")
-  endcode
+	fn mk.tw("输入错误！请输入域名！")
+	endcode
 }
 f(n?".")
 {
 }
 else
 {
-  fn mk.tw("输入错误！请输入域名！")
-  endcode
+	fn mk.tw("输入错误！请输入域名！")
+	endcode
 }
 
 s title_alert = "操作："
@@ -2396,42 +2396,42 @@ javacb(back,c2)
 f(st_mD?"onListClick")
 {
 sgsz(st_aS,1,aa)
-  ulag(st_vW,st_pN,5,bt)
-  f(aa==0)
-  {
-    s n=nn
-    fn mk.tw("限定只匹配完整网址")
-  }
-  f(aa==1)
-  {
-  }
-  else f(aa==2)
-  {
-    slof(n, ".", c)
-    slg(n,cd)
-    ssg(n,c,cd,a2)
-    ssg(n,0,c,nn)
-    f(nn?".")
-    {
-      s n=nn
-      slof(n, ".", c)
-      slg(n,cd)
-      ssg(n,c,cd,a1)
-      ss(a1+a2,n)
-      sj(n,".",null,n)
-    }
-  }
-  ss("\n"+n+"\n",n)
-  f(a?n)
-  {
-  }
-  else
-  {
-    ss(a+n,a)
-    fw("$sz/黑名单",a)
-  }
-  fn mk.tw("已添加")
-  fn fn.blackMD()
+	ulag(st_vW,st_pN,5,bt)
+	f(aa==0)
+	{
+		s n=nn
+		fn mk.tw("限定只匹配完整网址")
+	}
+	f(aa==1)
+	{
+	}
+	else f(aa==2)
+	{
+		slof(n, ".", c)
+		slg(n,cd)
+		ssg(n,c,cd,a2)
+		ssg(n,0,c,nn)
+		f(nn?".")
+		{
+			s n=nn
+			slof(n, ".", c)
+			slg(n,cd)
+			ssg(n,c,cd,a1)
+			ss(a1+a2,n)
+			sj(n,".",null,n)
+		}
+	}
+	ss("\n"+n+"\n",n)
+	f(a?n)
+	{
+	}
+	else
+	{
+		ss(a+n,a)
+		fw("$sz/黑名单",a)
+	}
+	fn mk.tw("已添加")
+	fn fn.blackMD()
 }
 }
 fn dy.sA(title_alert,cs,c2,back,true)</eventItme></event>
@@ -2443,17 +2443,17 @@ text=启用网址黑名单功能
 layout_margin=5dp</ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC)
 {
-  fw("$sz/是否黑名单","true")
+	fw("$sz/是否黑名单","true")
 }
 else
 {
-  fw("$sz/是否黑名单","false")
+	fw("$sz/是否黑名单","false")
 }</eventItme></event>
 </View>
 <View id="252" did="245" type="TextView">
 <ppt>width=-2
 height=-2
-text=        功能介绍：网址黑名单，开启后无法浏览名单内的网址，可以访问其他网址，同时会允许名单里包含的资源的请求与本地网页的浏览请求\n        “添加”按钮用于添加新的名单，“测试”按钮可以测试编辑框里的网址是否可以访问。
+text=				功能介绍：网址黑名单，开启后无法浏览名单内的网址，可以访问其他网址，同时会允许名单里包含的资源的请求与本地网页的浏览请求\n				“添加”按钮用于添加新的名单，“测试”按钮可以测试编辑框里的网址是否可以访问。
 textColor=#ff0000</ppt>
 <event></event>
 </View>
@@ -2474,16 +2474,16 @@ javacb(back,c2)
 f(st_mD?"onListClick")
 {
 sgsz(st_aS,1,a)
-  ulag(st_vW,st_pN,5,bt)
-  f(a==0)
-  {
-    ss("\n"+bt+"\n",n)
-    fr("$sz/黑名单",a)
-    sr(a,n,"",a)
-    fw("$sz/黑名单",a)
-    fn mk.tw("已删除")
-    fn fn.whileMD()
-  }
+	ulag(st_vW,st_pN,5,bt)
+	f(a==0)
+	{
+		ss("\n"+bt+"\n",n)
+		fr("$sz/黑名单",a)
+		sr(a,n,"",a)
+		fw("$sz/黑名单",a)
+		fn mk.tw("已删除")
+		fn fn.whileMD()
+	}
 }
 }
 fn dy.sA(title_alert,cs,c2,back,true)</eventItme></event>
@@ -2500,9 +2500,9 @@ dh(dh2, "duration", 600)
 dh(dh2, "start")
 t()
 {
-  uzd(zd, 30)
-  stop(200)
-  uzd(zd, 30)
+	uzd(zd, 30)
+	stop(200)
+	uzd(zd, 30)
 }</eventItme></event>
 </View>
 <View id="130" did="126" type="TextView">
@@ -2547,16 +2547,16 @@ layout_margin=5dp</ppt>
 ug(128,"text",ma)
 f(a==ma)
 {
-  us(126,"visibility","gone")
-  us(128,"text","")
+	us(126,"visibility","gone")
+	us(128,"text","")
 }
 else
 {
-  fn mk.tw("密码错误")
-  us(128,"text","")
-  uzd(zd, 30)
-  stop(200)
-  uzd(zd, 30)
+	fn mk.tw("密码错误")
+	us(128,"text","")
+	uzd(zd, 30)
+	stop(200)
+	uzd(zd, 30)
 }</eventItme></event>
 </View>
 <View id="190" did="126" type="WebView">
@@ -2608,8 +2608,8 @@ layout_margin=10dp</ppt>
 <event><eventItme type="clicki">fr("$sz/指纹显示",zt)
 f(zt=="true")
 {
-  fn mk.tw("已启动指纹服务，请验证")
-  endcode
+	fn mk.tw("已启动指纹服务，请验证")
+	endcode
 }
 fw("$sz/指纹显示","true")
 
@@ -2625,26 +2625,26 @@ javanew(o, c1)
 cls(jar, "viek.handprint.jiekou$cc", c2)
 javacb(hd, c2)
 {
-  sgsz(st_aS,0,fh)
-  f(fh=="验证成功")
-  {
-    fw("$sz/指纹显示","false")
-    us(126,"visibility","gone")
-  }
-  else f(fh?"错误")
-  {
-    gvs(232,v)
-    call(null,"mlua","mk.zs",v,"#cc1c21")
-    uzd(zd, 30)
-    stop(200)
-    uzd(zd, 30)
-  }
-  else
-  {
-    gvs(232,v)
-    call(null,"mlua","mk.zs",v,"#eec200")
-  }
-  fn mk.tw(fh)
+	sgsz(st_aS,0,fh)
+	f(fh=="验证成功")
+	{
+		fw("$sz/指纹显示","false")
+		us(126,"visibility","gone")
+	}
+	else f(fh?"错误")
+	{
+		gvs(232,v)
+		call(null,"mlua","mk.zs",v,"#cc1c21")
+		uzd(zd, 30)
+		stop(200)
+		uzd(zd, 30)
+	}
+	else
+	{
+		gvs(232,v)
+		call(null,"mlua","mk.zs",v,"#eec200")
+	}
+	fn mk.tw(fh)
 }
 javax(a, o, c1, "setccc", c2, hd)
 javax(a, o, c1, "zw", "Context",activity)</eventItme></event>
@@ -2704,11 +2704,11 @@ gravity=center_vertical
 paddingLeft=10dp</ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC)
 {
-  fw("$sz/聚合搜索引擎","true")
+	fw("$sz/聚合搜索引擎","true")
 }
 else
 {
-  fw("$sz/聚合搜索引擎","false")
+	fw("$sz/聚合搜索引擎","false")
 }</eventItme></event>
 </View>
 <View id="142" did="197" type="RelativeLayout">
@@ -2771,29 +2771,29 @@ javacb(back,c2)
 f(st_mD?"onListClick")
 {
 sgsz(st_aS,1,a)
-  ulag(st_vW,st_pN,6,bt)
-  ss("$闪念/"+bt,bm)
-  f(a==0)
-  {
-    fr(bm,nr)
-    sj(nr,null,"#",sjj)
-    ss("于"+bt+"创建\n于"+sjj+"编辑",bj)
-    us(172,"text",bj)
-    sj(nr,"#",null,nr)
-    us(161,"text",nr)
-    us(158,"visibility","visible")
-    us(164,"visibility","gone")
-    us(173,"visibility","visible")
-    us(172,"visibility","visible")
-    gvs(161,v)
-    fn dy.拉起(v,"f")
-  }
-  else f(a==1)
-  {
-    fd(bm,b)
-    fn mk.tw("删除成功")
-    fn fn.snb()
-  }
+	ulag(st_vW,st_pN,6,bt)
+	ss("$闪念/"+bt,bm)
+	f(a==0)
+	{
+		fr(bm,nr)
+		sj(nr,null,"#",sjj)
+		ss("于"+bt+"创建\n于"+sjj+"编辑",bj)
+		us(172,"text",bj)
+		sj(nr,"#",null,nr)
+		us(161,"text",nr)
+		us(158,"visibility","visible")
+		us(164,"visibility","gone")
+		us(173,"visibility","visible")
+		us(172,"visibility","visible")
+		gvs(161,v)
+		fn dy.拉起(v,"f")
+	}
+	else f(a==1)
+	{
+		fd(bm,b)
+		fn mk.tw("删除成功")
+		fn fn.snb()
+	}
 }
 }
 fn dy.sA(title_alert,cs,c2,back,true)</eventItme></event>
@@ -2835,34 +2835,34 @@ javacb(back,c2)
 f(st_mD?"onListClick")
 {
 sgsz(st_aS,1,a)
-  ulag(st_vW,st_pN,6,btt)
-  ulag(st_vW,st_pN,5,bt)
-  ss("$离线/"+btt+"#"+bt,bm)
-  f(a==0)
-  {
-    fr(bm,b)
-    fr("$sz/夜间",ms)
-    f(ms=="true")
-    {
-      s dcolor="#000000"
-    }
-    else
-    {
-      s dcolor="#ffffff"
-    }
-    sr(b,"?","%3f",b)
-    sr(b,"#","%23",b)
-    ss("file://"+b,n)
-    fn mk.hw(n,"#00af92",dcolor)
-  }
-  else f(a==1)
-  {
-    fr(bm,b)
-    fd(b,b)
-    fd(bm,b)
-    fn mk.tw("删除成功")
-    fn fn.lxym()
-  }
+	ulag(st_vW,st_pN,6,btt)
+	ulag(st_vW,st_pN,5,bt)
+	ss("$离线/"+btt+"#"+bt,bm)
+	f(a==0)
+	{
+		fr(bm,b)
+		fr("$sz/夜间",ms)
+		f(ms=="true")
+		{
+			s dcolor="#000000"
+		}
+		else
+		{
+			s dcolor="#ffffff"
+		}
+		sr(b,"?","%3f",b)
+		sr(b,"#","%23",b)
+		ss("file://"+b,n)
+		fn mk.hw(n,"#00af92",dcolor)
+	}
+	else f(a==1)
+	{
+		fr(bm,b)
+		fd(b,b)
+		fd(bm,b)
+		fn mk.tw("删除成功")
+		fn fn.lxym()
+	}
 }
 }
 fn dy.sA(title_alert,cs,c2,back,true)</eventItme></event>
@@ -2971,7 +2971,7 @@ layout_margin=5dp</ppt>
 <View id="206" did="196" type="TextView">
 <ppt>width=-1
 height=-1
-text=        您的手机，需要和投屏的接收设备处在同一个WIFI连接中！否则将无法投屏\n        使用DLNA时，您需要安装“Vie Dlna”插件，您可以在 更多工具-配置文件下载 或者 Vie的官网 找到它，下载安装后回到本页面，输入链接后点击“DLNA投屏”即可\n        使用HTML投屏时，Vie会开启一个Http服务器，您需要在被投屏设备的浏览器里输入ip即可\n        使用VIEK投屏时，您的被投屏设备需要为安卓系统，并且安装“Vie接收服务”插件，此时您可以进行投屏/传输文件等操作
+text=				您的手机，需要和投屏的接收设备处在同一个WIFI连接中！否则将无法投屏\n				使用DLNA时，您需要安装“Vie Dlna”插件，您可以在 更多工具-配置文件下载 或者 Vie的官网 找到它，下载安装后回到本页面，输入链接后点击“DLNA投屏”即可\n				使用HTML投屏时，Vie会开启一个Http服务器，您需要在被投屏设备的浏览器里输入ip即可\n				使用VIEK投屏时，您的被投屏设备需要为安卓系统，并且安装“Vie接收服务”插件，此时您可以进行投屏/传输文件等操作
 layout_margin=5dp
 lineSpacingMultiplier=1.2</ppt>
 <event></event>
@@ -3024,13 +3024,13 @@ padding=12dp</ppt>
 <event><eventItme type="clicki">ug(260,"text",a)
 f(a=="轻触照亮")
 {
-  us(260,"text","轻触关闭")
-  usx(sss.scan, "usg", true)
+	us(260,"text","轻触关闭")
+	usx(sss.scan, "usg", true)
 }
 else
 {
-  us(260,"text","轻触照亮")
-  usx(sss.scan, "usg", false)
+	us(260,"text","轻触照亮")
+	usx(sss.scan, "usg", false)
 }</eventItme></event>
 </View>
 <View id="260" did="257" type="TextView">
@@ -3094,17 +3094,17 @@ paddingRight=20dp
 text=启用快捷键按钮</ppt>
 <event><eventItme type="oncheckedchanged">f(st_iC)
 {
-  fw("$sz/快捷键","true")
+	fw("$sz/快捷键","true")
 }
 else
 {
-  fd("$sz/快捷键",m)
+	fd("$sz/快捷键",m)
 }</eventItme></event>
 </View>
 <View id="330" did="271" type="TextView">
 <ppt>width=-2
 height=-2
-text=        为防止误触，部分情况下，需要先点击“快捷键”按钮，才能启动快捷键
+text=				为防止误触，部分情况下，需要先点击“快捷键”按钮，才能启动快捷键
 textColor=#ff0000</ppt>
 <event></event>
 </View>
@@ -3575,48 +3575,48 @@ f(n?"SHIFT"||n?"ALT"||n?"TAB"||n?"CTRL"||n?"SPACE")
 }
 else
 {
-  fn mk.tw("哎呀，请包含SHIFT/ALT/TAB/CTRL/SPACE其中一个")
-  endcode
+	fn mk.tw("哎呀，请包含SHIFT/ALT/TAB/CTRL/SPACE其中一个")
+	endcode
 }
 f(n?"\+")
 {
 }
 else
 {
-  fn mk.tw("哎呀，至少选择两个")
-  endcode
+	fn mk.tw("哎呀，至少选择两个")
+	endcode
 }
 
 fl("$快捷键/",false,list)
 f(list!=null&&list!="null")
 {
-  for(mlist;list)
-  {
-    ss(" "+n+" ",ces)
-    sr(ces," \+ "," ",ces)
-    sr(mlist," \+ "," ",mlist)
-    sl(mlist," ",mlist)
-    sgszl(mlist,cd)
-    s ncd=0
-    for(mmlist;mlist)
-    {
-      s(ncd+1,ncd)
-      ss(" "+mmlist+" ",mmlist)
-      sr(ces,mmlist," ",ces)
-      
-      sr(ces," ","",cas)
-      f(cas==""&&ncd&lt;cd)
-      {
-        s ces="awzx"
-      }
-    }
-    sr(ces," ","",ces)
-    f(ces=="")
-    {
-      fn mk.tw("哎呀，会发生快捷键冲突的")
-      endcode
-    }
-  }
+	for(mlist;list)
+	{
+		ss(" "+n+" ",ces)
+		sr(ces," \+ "," ",ces)
+		sr(mlist," \+ "," ",mlist)
+		sl(mlist," ",mlist)
+		sgszl(mlist,cd)
+		s ncd=0
+		for(mmlist;mlist)
+		{
+			s(ncd+1,ncd)
+			ss(" "+mmlist+" ",mmlist)
+			sr(ces,mmlist," ",ces)
+			
+			sr(ces," ","",cas)
+			f(cas==""&&ncd&lt;cd)
+			{
+				s ces="awzx"
+			}
+		}
+		sr(ces," ","",ces)
+		f(ces=="")
+		{
+			fn mk.tw("哎呀，会发生快捷键冲突的")
+			endcode
+		}
+	}
 }
 
 ss("$快捷键/"+n,快捷键)
@@ -3631,12 +3631,12 @@ java(cs,null,"java.lang.reflect.Array.newInstance","java.lang.Class",c,"int",cd)
 s acd=0
 for(ssb;ssa)
 {
-  f(b!="")
-  {
-    sj(ssb,null,"/",ssb)
-    sssz(cs,acd,ssb)
-    s(acd+1,acd)
-  }
+	f(b!="")
+	{
+		sj(ssb,null,"/",ssb)
+		sssz(cs,acd,ssb)
+		s(acd+1,acd)
+	}
 }
 cls("kawaii.vie.mk$jk",c2)
 javacb(back,c2)
@@ -3644,11 +3644,11 @@ javacb(back,c2)
 f(st_mD?"onListClick")
 {
 sgsz(st_aS,1,a)
-  sgsz(ssa,a,快捷键名称)
-  sj(快捷键名称,null,"/",快捷键名称)
-  fw(快捷键,快捷键名称)
-  fn mk.tw("请在主页面点击“快捷按键”图标后，按下快捷键执行功能")
-  fn fn.jpkjj()
+	sgsz(ssa,a,快捷键名称)
+	sj(快捷键名称,null,"/",快捷键名称)
+	fw(快捷键,快捷键名称)
+	fn mk.tw("请在主页面点击“快捷按键”图标后，按下快捷键执行功能")
+	fn fn.jpkjj()
 }
 }
 fn dy.sA(title_alert,cs,c2,back,true)</eventItme></event>
@@ -3670,14 +3670,14 @@ javacb(back,c2)
 f(st_mD?"onListClick")
 {
 sgsz(st_aS,1,a)
-  ulag(st_vW,st_pN,5,bt)
-  ss("$快捷键/"+bt,bm)
-  f(a==0)
-  {
-    fd(bm,b)
-    fn mk.tw("删除成功")
-    fn fn.jpkjj()
-  }
+	ulag(st_vW,st_pN,5,bt)
+	ss("$快捷键/"+bt,bm)
+	f(a==0)
+	{
+		fd(bm,b)
+		fn mk.tw("删除成功")
+		fn fn.jpkjj()
+	}
 }
 }
 fn dy.sA(title_alert,cs,c2,back,true)</eventItme></event>
@@ -3707,7 +3707,7 @@ orientation=vertical
 <View id="364" did="358" type="TextView">
 <ppt>width=-1
 height=-2
-text=        忽视SSL证书错误，可能导致账号密码、支付信息等敏感内容被窃，还可能访问的是钓鱼站点，面临诈骗和信息泄露风险。\n        SSL证书是网站“身份证”，能验证身份并加密数据。证书异常可能是网站有安全隐患，重视警告可规避风险，保护个人信息和财产安全。\n        忽视这些错误，就如同拆掉门锁再出门，给了不法分子可乘之机，不可靠的第三方，可能会做出偷看密码、篡改浏览内容、获取支付信息等行为。\n        您每次进入本页面时，都会将所有选项设置为“询问”，如果您设置完毕，请滑动到底部点击确认。
+text=				忽视SSL证书错误，可能导致账号密码、支付信息等敏感内容被窃，还可能访问的是钓鱼站点，面临诈骗和信息泄露风险。\n				SSL证书是网站“身份证”，能验证身份并加密数据。证书异常可能是网站有安全隐患，重视警告可规避风险，保护个人信息和财产安全。\n				忽视这些错误，就如同拆掉门锁再出门，给了不法分子可乘之机，不可靠的第三方，可能会做出偷看密码、篡改浏览内容、获取支付信息等行为。\n				您每次进入本页面时，都会将所有选项设置为“询问”，如果您设置完毕，请滑动到底部点击确认。
 textColor=#ff0000
 layout_margin=15dp
 layout_marginBottom=0</ppt>
@@ -3774,7 +3774,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n拒绝"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="362" did="359" type="RadioButton">
@@ -3797,7 +3797,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n允许"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="374" did="358" type="RadioGroup">
@@ -3854,7 +3854,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n拒绝"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="378" did="374" type="RadioButton">
@@ -3877,7 +3877,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n允许"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="379" did="358" type="RadioGroup">
@@ -3934,7 +3934,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n拒绝"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="383" did="379" type="RadioButton">
@@ -3957,7 +3957,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n允许"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="384" did="358" type="RadioGroup">
@@ -4014,7 +4014,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n拒绝"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="388" did="384" type="RadioButton">
@@ -4037,7 +4037,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n允许"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="389" did="358" type="RadioGroup">
@@ -4094,7 +4094,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n拒绝"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="393" did="389" type="RadioButton">
@@ -4117,7 +4117,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n允许"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="394" did="358" type="RadioGroup">
@@ -4174,7 +4174,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n拒绝"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="398" did="394" type="RadioButton">
@@ -4197,7 +4197,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n允许"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="399" did="358" type="RadioGroup">
@@ -4254,7 +4254,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n拒绝"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="403" did="399" type="RadioButton">
@@ -4277,7 +4277,7 @@ f(a?ssl)
 else
 {
 	ss(a+"\n允许"+ssl,a)
-    us(373,"text",a)
+		us(373,"text",a)
 }</eventItme></event>
 </View>
 <View id="404" did="358" type="Button">
@@ -4304,11 +4304,11 @@ java(null,tm,"android.transition.TransitionManager.beginDelayedTransition","andr
 us(17,"height","0dp")
 t()
 {
-  stop(500)
-  ufnsui()
-  {
-    us(16,"visibility","gone")
-  }
+	stop(500)
+	ufnsui()
+	{
+		us(16,"visibility","gone")
+	}
 }</eventItme></event>
 </View>
 <View id="17" did="16" type="CardView">
@@ -4337,12 +4337,12 @@ text=闪念板</ppt>
 <event><eventItme type="clicki">ug(5,"text",a)
 f(a!="闪念板")
 {
-  gvs(10,a)
-  call(null,"mjava","mk.setg",a,"dlb")
-  us(10,"src","$i/kp.png")
-  gvs(10,a)
-  call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
-  fw("$缓存/dlb","闪念板")
+	gvs(10,a)
+	call(null,"mjava","mk.setg",a,"dlb")
+	us(10,"src","$i/kp.png")
+	gvs(10,a)
+	call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
+	fw("$缓存/dlb","闪念板")
 }</eventItme></event>
 </View>
 <View id="31" did="8" type="Button">
@@ -4355,12 +4355,12 @@ text=密码管理</ppt>
 <event><eventItme type="clicki">ug(5,"text",a)
 f(a!="密码管理")
 {
-  gvs(10,a)
-  call(null,"mjava","mk.setg",a,"dlb")
-  us(10,"src","$i/b1.png")
-  gvs(10,a)
-  call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
-  fw("$缓存/dlb","密码管理")
+	gvs(10,a)
+	call(null,"mjava","mk.setg",a,"dlb")
+	us(10,"src","$i/b1.png")
+	gvs(10,a)
+	call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
+	fw("$缓存/dlb","密码管理")
 }</eventItme></event>
 </View>
 <View id="19" did="8" type="Button">
@@ -4373,12 +4373,12 @@ text=用户标识</ppt>
 <event><eventItme type="clicki">ug(5,"text",a)
 f(a!="用户标识")
 {
-  gvs(10,a)
-  call(null,"mjava","mk.setg",a,"dlb")
-  us(10,"src","$i/ct.png")
-  gvs(10,a)
-  call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
-  fw("$缓存/dlb","用户标识")
+	gvs(10,a)
+	call(null,"mjava","mk.setg",a,"dlb")
+	us(10,"src","$i/ct.png")
+	gvs(10,a)
+	call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
+	fw("$缓存/dlb","用户标识")
 }</eventItme></event>
 </View>
 <View id="191" did="8" type="Button">
@@ -4391,12 +4391,12 @@ text=搜索引擎</ppt>
 <event><eventItme type="clicki">ug(5,"text",a)
 f(a!="搜索引擎")
 {
-  gvs(10,a)
-  call(null,"mjava","mk.setg",a,"dlb")
-  us(10,"src","$i/cd.png")
-  gvs(10,a)
-  call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
-  fw("$缓存/dlb","搜索引擎")
+	gvs(10,a)
+	call(null,"mjava","mk.setg",a,"dlb")
+	us(10,"src","$i/cd.png")
+	gvs(10,a)
+	call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
+	fw("$缓存/dlb","搜索引擎")
 }</eventItme></event>
 </View>
 <View id="192" did="8" type="Button">
@@ -4409,12 +4409,12 @@ text=手势操作</ppt>
 <event><eventItme type="clicki">ug(5,"text",a)
 f(a!="手势操作")
 {
-  gvs(10,a)
-  call(null,"mjava","mk.setg",a,"dlb")
-  us(10,"src","$i/ss.png")
-  gvs(10,a)
-  call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
-  fw("$缓存/dlb","手势操作")
+	gvs(10,a)
+	call(null,"mjava","mk.setg",a,"dlb")
+	us(10,"src","$i/ss.png")
+	gvs(10,a)
+	call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
+	fw("$缓存/dlb","手势操作")
 }</eventItme></event>
 </View>
 <View id="20" did="8" type="Button">
@@ -4427,12 +4427,12 @@ text=全部网站设定</ppt>
 <event><eventItme type="clicki">ug(5,"text",a)
 f(a!="全部网站设定")
 {
-  gvs(10,a)
-  call(null,"mjava","mk.setg",a,"dlb")
-  us(10,"src","$i/lo.png")
-  gvs(10,a)
-  call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
-  fw("$缓存/dlb","全部网站设定")
+	gvs(10,a)
+	call(null,"mjava","mk.setg",a,"dlb")
+	us(10,"src","$i/lo.png")
+	gvs(10,a)
+	call(null,"mjava","mk.uigo",a,"dlb","dlb.iyu","kawaii.vie")
+	fw("$缓存/dlb","全部网站设定")
 }</eventItme></event>
 </View>
 <View id="194" did="8" type="Button">
@@ -4582,22 +4582,22 @@ fn mk.tw("删除成功")
 fr("$浏览器密码.password",a)
 f(a?"#账号#")
 {
-  sl(a,"\n",a)
-  for(b;a)
-  {
-    f(b?"#账号#")
-    {
-      sj(b,null,"#账号#",url)
-      sj(b,"#账号#","#密码#",zh)
-      sj(b,"#密码#",null,mm)
-      ula(c,5=url,6=zh,8="")
-    }
-  }
-  uls(21,c,"d.iyu",-1,-2)
+	sl(a,"\n",a)
+	for(b;a)
+	{
+		f(b?"#账号#")
+		{
+			sj(b,null,"#账号#",url)
+			sj(b,"#账号#","#密码#",zh)
+			sj(b,"#密码#",null,mm)
+			ula(c,5=url,6=zh,8="")
+		}
+	}
+	uls(21,c,"d.iyu",-1,-2)
 }
 else
 {
-  us(21,"visibility","gone")
+	us(21,"visibility","gone")
 }
 us(22,"visibility","gone")
 us(23,"visibility","gone")</eventItme></event>
@@ -4722,36 +4722,36 @@ visibility=gone</ppt>
 ug(147,"text",url)
 f(name?"/")
 {
-  fn mk.tw("哎呀，名称不能包含/")
+	fn mk.tw("哎呀，名称不能包含/")
 }
 else f(url!=""&&name!="")
 {
-  ug(212,"text",zqname)
-  syso(zqname)
-  fr("$cust/用户标识排序",ssyq)
-  ss("/"+name+"/",m)
-  ss("/"+zqname+"/",n)
-  sr(ssyq,n,m,ssyq)
-  fw("$cust/用户标识排序",ssyq)
-  ss("$cust/用户标识/"+zqname,zqname)
-  fd(zqname,d)
-  ss("$cust/用户标识/"+name,name)
-  fw(name,url)
-  fn mk.tw("修改成功")
-  us(144,"visibility","gone")
-  us(146,"text","")
-  us(147,"text","")
-  us(st_vW,"visible","gone")
-  us(151,"visibility","visible")
-  fn fn.ua()
-  endkeyboard()
-  us(212,"text","")
-  us(22,"visibility","gone")
-  us(169,"visibility","gone")
+	ug(212,"text",zqname)
+	syso(zqname)
+	fr("$cust/用户标识排序",ssyq)
+	ss("/"+name+"/",m)
+	ss("/"+zqname+"/",n)
+	sr(ssyq,n,m,ssyq)
+	fw("$cust/用户标识排序",ssyq)
+	ss("$cust/用户标识/"+zqname,zqname)
+	fd(zqname,d)
+	ss("$cust/用户标识/"+name,name)
+	fw(name,url)
+	fn mk.tw("修改成功")
+	us(144,"visibility","gone")
+	us(146,"text","")
+	us(147,"text","")
+	us(st_vW,"visible","gone")
+	us(151,"visibility","visible")
+	fn fn.ua()
+	endkeyboard()
+	us(212,"text","")
+	us(22,"visibility","gone")
+	us(169,"visibility","gone")
 }
 else
 {
-  fn mk.tw("哎呀，填写不全")
+	fn mk.tw("哎呀，填写不全")
 }</eventItme></event>
 </View>
 <View id="341" did="149" type="LinearLayout">
@@ -4821,35 +4821,35 @@ s m=name
 ug(147,"text",url)
 f(name?"/")
 {
-  fn mk.tw("哎呀，名称不能包含/")
+	fn mk.tw("哎呀，名称不能包含/")
 }
 else f(url!=""&&name!="")
 {
-  ss("$cust/用户标识/"+name,name)
-  fe(name,e)
-  f(e)
-  {
-    fn mk.tw("哎呀，已经有相同名称的了")
-  }
-  else
-  {
-    fw(name,url)
-    fr("$cust/用户标识排序",ssyq)
-    ss(ssyq+m+"/",ssyq)
-    fw("$cust/用户标识排序",ssyq)
-    fn mk.tw("添加成功")
-    us(144,"visibility","gone")
-    us(146,"text","")
-    us(147,"text","")
-    fn fn.ua()
-    endkeyboard()
-    us(212,"text","")
-    us(22,"visibility","gone")
-  }
+	ss("$cust/用户标识/"+name,name)
+	fe(name,e)
+	f(e)
+	{
+		fn mk.tw("哎呀，已经有相同名称的了")
+	}
+	else
+	{
+		fw(name,url)
+		fr("$cust/用户标识排序",ssyq)
+		ss(ssyq+m+"/",ssyq)
+		fw("$cust/用户标识排序",ssyq)
+		fn mk.tw("添加成功")
+		us(144,"visibility","gone")
+		us(146,"text","")
+		us(147,"text","")
+		fn fn.ua()
+		endkeyboard()
+		us(212,"text","")
+		us(22,"visibility","gone")
+	}
 }
 else
 {
-  fn mk.tw("哎呀，填写不全")
+	fn mk.tw("哎呀，填写不全")
 }</eventItme></event>
 </View>
 <View id="212" did="145" type="TextView">
@@ -4955,24 +4955,24 @@ visibility=gone</ppt>
 ug(161,"text",nr)
 f(url!="")
 {
-  ug(172,"text",name)
-  sj(name,"于","创建",name)
-  ss("$闪念/"+name,name)
-  ss(a+"#"+nr,nr)
-  fw(name,nr)
-  fn mk.tw("编辑成功")
-  us(158,"visibility","gone")
-  us(161,"text","")
-  us(164,"visibility","visible")
-  us(173,"visibility","gone")
-  fn fn.snb()
-  us(172,"visibility","gone")
-  endkeyboard()
-  us(22,"visibility","gone")
+	ug(172,"text",name)
+	sj(name,"于","创建",name)
+	ss("$闪念/"+name,name)
+	ss(a+"#"+nr,nr)
+	fw(name,nr)
+	fn mk.tw("编辑成功")
+	us(158,"visibility","gone")
+	us(161,"text","")
+	us(164,"visibility","visible")
+	us(173,"visibility","gone")
+	fn fn.snb()
+	us(172,"visibility","gone")
+	endkeyboard()
+	us(22,"visibility","gone")
 }
 else
 {
-  fn mk.tw("哎呀，填写不全")
+	fn mk.tw("哎呀，填写不全")
 }</eventItme></event>
 </View>
 <View id="350" did="162" type="LinearLayout">
@@ -5039,20 +5039,20 @@ BackgroundRipple=#d1fdf8</ppt>
 ug(161,"text",nr)
 f(url!="")
 {
-  ss("$闪念/"+a,name)
-  ss(a+"#"+nr,nr)
-  fw(name,nr)
-  fn mk.tw("添加成功")
-  us(158,"visibility","gone")
-  us(161,"text","")
-  us(172,"visibility","gone")
-  endkeyboard()
-  fn fn.snb()
-  us(22,"visibility","gone")
+	ss("$闪念/"+a,name)
+	ss(a+"#"+nr,nr)
+	fw(name,nr)
+	fn mk.tw("添加成功")
+	us(158,"visibility","gone")
+	us(161,"text","")
+	us(172,"visibility","gone")
+	endkeyboard()
+	fn fn.snb()
+	us(22,"visibility","gone")
 }
 else
 {
-  fn mk.tw("哎呀，填写不全")
+	fn mk.tw("哎呀，填写不全")
 }</eventItme></event>
 </View>
 <View id="135" did="22" type="CardView">
@@ -5106,7 +5106,7 @@ layout_marginRight=5dp</ppt>
 <View id="132" did="136" type="TextView">
 <ppt>width=-2
 height=-2
-text=        Hi~请使用%s作为搜索关键词，无法使用%s的搜索引擎后续支持~\n\n        如“https://example.com/abc”里abc是每次搜索的关键词，那么吧abc换成%s即可
+text=				Hi~请使用%s作为搜索关键词，无法使用%s的搜索引擎后续支持~\n\n				如“https://example.com/abc”里abc是每次搜索的关键词，那么吧abc换成%s即可
 textColor=#000000
 layout_marginLeft=5dp
 layout_marginRight=5dp</ppt>
@@ -5147,35 +5147,35 @@ visibility=gone</ppt>
 ug(138,"text",url)
 f(name?"/")
 {
-  fn mk.tw("哎呀，名称不能包含/")
+	fn mk.tw("哎呀，名称不能包含/")
 }
 else f(url?"http"&&url?"://"&&url?"%s"&&name!="")
 {
-  ug(213,"text",zqname)
-  fr("$cust/搜索引擎排序",ssyq)
-  ss("/"+name+"/",m)
-  ss("/"+zqname+"/",n)
-  sr(ssyq,n,m,ssyq)
-  fw("$cust/搜索引擎排序",ssyq)
-  ss("$cust/搜索引擎/"+zqname,zqname)
-  fd(zqname,d)
-  ss("$cust/搜索引擎/"+name,name)
-  us(141,"visibility","visible")
-  us(st_vW,"visibility","gone")
-  fw(name,url)
-  fn mk.tw("编辑成功")
-  us(135,"visibility","gone")
-  us(137,"text","")
-  us(138,"text","")
-  fn fn.ssyq()
-  endkeyboard()
-  us(213,"text","")
-  us(22,"visibility","gone")
-  us(168,"visibility","gone")
+	ug(213,"text",zqname)
+	fr("$cust/搜索引擎排序",ssyq)
+	ss("/"+name+"/",m)
+	ss("/"+zqname+"/",n)
+	sr(ssyq,n,m,ssyq)
+	fw("$cust/搜索引擎排序",ssyq)
+	ss("$cust/搜索引擎/"+zqname,zqname)
+	fd(zqname,d)
+	ss("$cust/搜索引擎/"+name,name)
+	us(141,"visibility","visible")
+	us(st_vW,"visibility","gone")
+	fw(name,url)
+	fn mk.tw("编辑成功")
+	us(135,"visibility","gone")
+	us(137,"text","")
+	us(138,"text","")
+	fn fn.ssyq()
+	endkeyboard()
+	us(213,"text","")
+	us(22,"visibility","gone")
+	us(168,"visibility","gone")
 }
 else
 {
-  fn mk.tw("哎呀，填写不全，链接要包含%s和协议头")
+	fn mk.tw("哎呀，填写不全，链接要包含%s和协议头")
 }</eventItme></event>
 </View>
 <View id="355" did="140" type="LinearLayout">
@@ -5244,35 +5244,35 @@ s m=name
 ug(138,"text",url)
 f(name?"/")
 {
-  fn mk.tw("哎呀，名称不能包含/")
+	fn mk.tw("哎呀，名称不能包含/")
 }
 else f(url?"http"&&url?"://"&&url?"%s"&&name!="")
 {
-  ss("$cust/搜索引擎/"+name,name)
-  fe(name,e)
-  f(e)
-  {
-    fn mk.tw("哎呀，已经有相同名称的了")
-  }
-  else
-  {
-    fw(name,url)
-    fr("$cust/搜索引擎排序",ssyq)
-    ss(ssyq+m+"/",ssyq)
-    fw("$cust/搜索引擎排序",ssyq)
-    fn mk.tw("添加成功")
-    us(135,"visibility","gone")
-    us(137,"text","")
-    us(138,"text","")
-    fn fn.ssyq()
-    endkeyboard()
-    us(213,"text","")
-    us(22,"visibility","gone")
-  }
+	ss("$cust/搜索引擎/"+name,name)
+	fe(name,e)
+	f(e)
+	{
+		fn mk.tw("哎呀，已经有相同名称的了")
+	}
+	else
+	{
+		fw(name,url)
+		fr("$cust/搜索引擎排序",ssyq)
+		ss(ssyq+m+"/",ssyq)
+		fw("$cust/搜索引擎排序",ssyq)
+		fn mk.tw("添加成功")
+		us(135,"visibility","gone")
+		us(137,"text","")
+		us(138,"text","")
+		fn fn.ssyq()
+		endkeyboard()
+		us(213,"text","")
+		us(22,"visibility","gone")
+	}
 }
 else
 {
-  fn mk.tw("哎呀，填写不全，链接要包含%s和协议头")
+	fn mk.tw("哎呀，填写不全，链接要包含%s和协议头")
 }</eventItme></event>
 </View>
 <View id="213" did="136" type="TextView">
@@ -5343,7 +5343,7 @@ else f(a=="忽视证书错误")
 {
 	us(10,"src","$i/lo.png")
 	us(356,"visibility","visible")
-    fd("$sz/nossl",nossl)
+		fd("$sz/nossl",nossl)
 }
 else f(a=="白名单"||a=="黑名单")
 {
@@ -5910,93 +5910,93 @@ us(38,"height",nn)</eventItme><eventItme type="downkey">f(st_kC==4)
 	{
 		gvs(16,v)
 		fn mk.click(v)
-        endcode
+				endcode
 	}
 	call(null,"mjava","mk.end")
 }</eventItme><eventItme type="destroy">fd("$缓存/dlburl",a)
 ug(5,"text",aa)
 f(a=="扫描二维码")
 {
-  has(265,"closeQR()")
-  has(265,"closeQR()")
-  us(265,"url","about:blank")
-  usx(sss.scan, "re")
+	has(265,"closeQR()")
+	has(265,"closeQR()")
+	us(265,"url","about:blank")
+	usx(sss.scan, "re")
 }</eventItme><eventItme type="restart">ug(5,"text",a)
 us(10,"src","$i/lo.png")
 f(a=="全部网站设定")
 {
-  fl("$设定/",false,m)
-  us(66,"visibility","visible")
-  sgszl(m,bb)
-  f(m=="null"||m==null||bb==0)
-  {
-    us(38,"visibility","visible")
-    us(57,"visibility","gone")
-  }
-  else
-  {
-    us(57,"visibility","visible")
-    for(mm;m)
-    {
-      ss("$设定/"+mm,aa)
-      fr(aa,k)
-      f(k?"run:true")
-      {
-        s a6="开启"
-      }
-      else
-      {
-        s a6="未开启"
-      }
-      ula(c,5=mm,6=a6,8="")
-    }
-    uls(57,c,"d.iyu",-1,-2)
-  }
+	fl("$设定/",false,m)
+	us(66,"visibility","visible")
+	sgszl(m,bb)
+	f(m=="null"||m==null||bb==0)
+	{
+		us(38,"visibility","visible")
+		us(57,"visibility","gone")
+	}
+	else
+	{
+		us(57,"visibility","visible")
+		for(mm;m)
+		{
+			ss("$设定/"+mm,aa)
+			fr(aa,k)
+			f(k?"run:true")
+			{
+				s a6="开启"
+			}
+			else
+			{
+				s a6="未开启"
+			}
+			ula(c,5=mm,6=a6,8="")
+		}
+		uls(57,c,"d.iyu",-1,-2)
+	}
 }
 else f(a=="离线页面")
 {
-  us(10,"src","$i/lx.png")
+	us(10,"src","$i/lx.png")
 }
 else f(a=="投屏服务")
 {
-  us(10,"src","$i/tp.png")
+	us(10,"src","$i/tp.png")
 }
 else f(a=="闪念板")
 {
-  us(10,"src","$i/kp.png")
+	us(10,"src","$i/kp.png")
 }
 f(a=="密码管理")
 {
-  us(10,"src","$i/b1.png")
+	us(10,"src","$i/b1.png")
 }
 else f(a=="用户标识")
 {
-  us(10,"src","$i/ct.png")
+	us(10,"src","$i/ct.png")
 }
 else f(a=="搜索引擎")
 {
-  us(10,"src","$i/cd.png")
+	us(10,"src","$i/cd.png")
 }
 else f(a=="手势操作")
 {
-  us(10,"src","$i/ss.png")
+	us(10,"src","$i/ss.png")
 }</eventItme><eventItme type="onactivityresult">syso(st_sC)
 javags(回调, activity, "android.app.Activity", "RESULT_OK")
 java(uri, st_iT, "android.content.Intent.getData")
 call(path, "mlua", "mk.Path", uri)
 t()
 {
-  stop(1000)
-  ufnsui()
-  {
-    f(ss.ma==null)
-    {
-      fn mk.tw("哎呀，没有扫到二维码呢")
-    }
-    else
-    {
-      fn awzx.scan_back(ss.ma)
-    }
-  }
+	stop(1000)
+	ufnsui()
+	{
+		f(ss.ma==null)
+		{
+			fn mk.tw("哎呀，没有扫到二维码呢")
+		}
+		else
+		{
+			fn awzx.scan_back(ss.ma)
+		}
+	}
 }
 uqr(path,ss.ma)</eventItme><eventItme type="pause">fd("$缓存/dlburl",a)</eventItme></UIEventset>

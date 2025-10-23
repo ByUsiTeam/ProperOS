@@ -26,8 +26,8 @@ fw("$System/dev/BootTimestamp",sjc)</eventItme><eventItme type="loadingComplete"
 t()
 {
 	fr("$System/StartupScreen/config.json",jjjs)
-    json(jjjs,geu)
-    json(geu,"get","stop",hts)
+	json(jjjs,geu)
+	json(geu,"get","stop",hts)
 	stop(hts)
 	ufnsui()
 	{

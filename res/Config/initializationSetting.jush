@@ -1,0 +1,102 @@
+t()
+{
+	fn juos.输出("+================+")
+	fn juos.输出("版权归以下人所有")
+	fn juos.输出("北 QQ号：177828525")
+	fn juos.输出("北啊呢 哔哩哔哩UID：1698104041")
+	fn juos.输出("北啊呢 Gitee主页：https://gitee.com/shibeiane")
+	fn juos.输出("ByUsi 所属人 Gitee - 北啊呢")
+	fn juos.输出("+================+")
+	fn juos.输出("欢迎，现在正在帮你配置ProperOS的新内容中....")
+	fn juos.输出("从服务器获取新ROM包版本号中....")
+	hs("https://gitee.com/properos/mirror/raw/master/rom_version.json",data)
+	syso(data)
+	json(data,data)
+	json(data,"get","version",version)
+	json(data,"get","updateUrl",url)
+	sr(url,"{version}",version,url)
+	f(version != null && url != null)
+	{
+		fd("$System/Cache/rom.zip",y)
+		hdda(url,"$System/Cache/","rom.zip","ProperOS更新",null,true,"PUpdate",v)
+		s jsq =100
+		s hd_jsq =0
+		w(hd_jsq != true)
+		{
+			hddg(v,"equivalent",yxz)
+			hddg(v,"contentlength",qxz)
+			hddg(v,"downloadpercentage",jsq)
+			sn(yxz / "1024",yxz)
+			sn(qxz / "1024",qxz)
+			s2(yxz / "1024",yxz)
+			s2(qxz / "1024",qxz)
+			ss(yxz+"MB / "+qxz+"MB 进度 "+jsq+"%",content)
+			fn juos.输出(content)
+			f(jsq == 100)
+			{
+				fn juos.输出("获取成功，正在进行解压")
+				fuzs("$System/Cache/rom.zip","$",true,yzjy)
+				syso("解压实际状态"+yzjy)
+				fn juos.输出("解压成功，正在进行配置验证并进行更新")
+				fd("$JuOS/hemo/桌面/应用商店.app",yz)
+				fd("$JuOS/hemo/桌面/JuOS音乐.app",yz)
+				fd("$JuOS/hemo/桌面/飓云盘.app",yz)
+				fd("$JuOS/hemo/桌面/通知信息流.app",yz)
+				fd("$JuOS/hemo/HASH获取工具.jush",yz)
+				fd("$JuOS/hemo/桌面/宿主机应用.app",yz)
+				fe("$System/Config/app_start_qdq.sys",yz_app_start_qdq)
+				f(yz_app_start_qdq == "false")
+				{
+					fw("$System/Config/app_start_qdq.sys","true")
+				}
+				fw("$System/Config/app_start_qdq.sys","true")
+				fe("$System/Config/fillet.sys",fillet)
+				f(fillet != true)
+				{
+					fw("$System/Config/fillet.sys","25dp")
+				}
+				fe("$System/Config/UserLoginLock.sys",UserLoginLock)
+				f(UserLoginLock == false)
+				{
+					fw("$System/Config/UserLoginLock.sys","true")
+				}
+				fc("@JuOS/src/player/index.html","$System/bfq/index.html",yz_bfq)
+				fc("@JuOS/src/player/mui-player.min.js","$System/bfq/mui-player.min.js",yz_bfq)
+				fc("@JuOS/src/player/mui-player.min.css","$System/bfq/mui-player.min.css",yz_bfq)
+				fc("@JuOS/html/MusicPlayer/index.html","$System/yybfq/index-2.html",yz_yybfq)
+				fc("@JuOS/html/TextPreviewer/TextPreviewer.html","$System/wbylq/index.html",yz_wbylq)
+				fe("$System/Config/Update.sys",u)
+				f(u == "false")
+				{
+					fw("$System/Config/Update.sys","false")
+				}
+				else
+				{
+					syso("false")
+				}
+				fw("$System/dev/null","null")
+				fw("$System/dev/false","false")
+				fw("$System/dev/true","true")
+				fr("@version.txt",v)
+				fw("$JuOS/v/v.cfg",v)
+				fn juos.输出("必要配置已完成")
+				ufnsui()
+				{
+					fn core.uigo("mian.iyu")
+					end()
+				}
+				s hd_jsq =true
+			}
+			stop(500)
+		}
+	}
+	else
+	{
+		ufnsui()
+		{
+			s msg ="请求到的数据出现错误了，无法完成更新"
+			fn juos.输出(msg)
+			fn tw.tw2(msg,1)
+		}
+	}
+}
