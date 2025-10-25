@@ -65,7 +65,7 @@ visibility=gone</ppt>
 else f(ss.rom == true)
 {
 	us(3,"text","安装新ROM中...")
-    fuzs(ss.dapk,"$",yzfuza)
+	fuzs(ss.dapk,"$",yzfuza)
 	f(yzfuza == true)
 	{
 		fn tw.tw("更新成功")
@@ -73,11 +73,11 @@ else f(ss.rom == true)
 		{
 			fn lib.breakdown()
 		}
-        else
-        {
-        	endutw()
-            end()
-        }
+		else
+		{
+			endutw()
+			end()
+		}
 	}
 	else f(yzfuza == false)
 	{
@@ -90,19 +90,19 @@ uycl("#e84f78ff",true)
 fn lib.wp_src(8)</eventItme><eventItme type="loadingComplete">f(sss.romupdate != null)
 {
 	sss durl =sss.url
-    ss rom =true
-    ss(time_stamp+".zip",name)
+	ss rom =true
+	ss(time_stamp+".zip",name)
 }
 else
 {
 	ss(time_stamp+".apk",name)
-    ss rom =false
+	ss rom =false
 }
 t()
 {
 	fn lib.下载器2()
-    time(4,time_stamp)
-    s dir = "$System/Temp/Update/"
+	time(4,time_stamp)
+	s dir = "$System/Temp/Update/"
 	//下载任务的标题
 	s title = "ProperOS Update"
 	//下载任务的图标
@@ -113,33 +113,33 @@ t()
 	s data = "ppos"
 	//变量v为赋值变量，为下载对象
 	hdda(sss.durl,dir,name,title,icon,notsohw,data,v)
-    s ujsq =0
-    w(ujsq == 0)
-    {
-    	hddg(v,"downloadpercentage",bjdt)
-        ufnsui()
-        {
-        	us(4,"progress",bjdt)
-        }
-        hddg(v,"contentlength",z_dx)
-        hddg(v,"equivalent",y_dx)
-        s2(z_dx / "1024",z_dx)
-        s2(y_dx / "1024",y_dx)
-        ss(y_dx+"KB / "+z_dx+"KB 下载进度："+bjdt+"%",prompting_message)
-        ufnsui()
-        {
-        	us(5,"text",prompting_message)
-        }
-        f(bjdt == 100)
-        {
-        	ss dapk =dir+name
-            ufnsui()
-            {
-            	us(6,"visibility","visible")
-                call(null,"mjava","set.setBackground",activity,6,40,40,40,40,"#2196f3")
-            }
-        	s ujsq =1
-        }
-        stop(250)
-    }
+	s ujsq =0
+	w(ujsq == 0)
+	{
+		hddg(v,"downloadpercentage",bjdt)
+		ufnsui()
+		{
+			us(4,"progress",bjdt)
+		}
+		hddg(v,"contentlength",z_dx)
+		hddg(v,"equivalent",y_dx)
+		s2(z_dx / "1024",z_dx)
+		s2(y_dx / "1024",y_dx)
+		ss(y_dx+"KB / "+z_dx+"KB 下载进度："+bjdt+"%",prompting_message)
+		ufnsui()
+		{
+			us(5,"text",prompting_message)
+		}
+		f(bjdt == 100)
+		{
+			ss dapk =dir+name
+			ufnsui()
+			{
+				us(6,"visibility","visible")
+				call(null,"mjava","set.setBackground",activity,6,40,40,40,40,"#2196f3")
+			}
+			s ujsq =1
+		}
+		stop(250)
+	}
 }</eventItme></UIEventset>
