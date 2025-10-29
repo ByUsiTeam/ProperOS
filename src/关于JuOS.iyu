@@ -478,6 +478,53 @@ background=through</ppt>
 sss url ="https://gitee.com/properos"
 fn core.uigo("system_start.iyu")</eventItme></event>
 </View>
+<View id="67" did="3" type="CardView">
+<ppt>width=-1
+height=55dp
+layout_marginLeft=8dp
+layout_marginTop=8dp
+layout_marginRight=8dp
+app_CardcornerRadius=5dp</ppt>
+<event></event>
+</View>
+<View id="68" did="67" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="69" did="68" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=horizontal
+gravity=left|center</ppt>
+<event></event>
+</View>
+<View id="70" did="69" type="RoundImageView">
+<ppt>width=45dp
+height=45dp
+src=@JuOS/logo/properos.png
+layout_marginLeft=5dp</ppt>
+<event></event>
+</View>
+<View id="71" did="69" type="TextView">
+<ppt>width=-2
+height=-2
+text=了解 ProperOS 更新计划
+textColor=#ff000000
+typeface=@JuOS/src/ttf/acbt80.ttf
+layout_marginLeft=8dp
+textSize=16sp</ppt>
+<event></event>
+</View>
+<View id="72" did="68" type="Button">
+<ppt>width=-1
+height=-1
+text=
+background=through</ppt>
+<event><eventItme type="clicki">fn byusi.qt(67)
+sss url ="https://gitee.com/properos/properos/blob/dev/%E6%9B%B4%E6%96%B0%E8%AE%A1%E5%88%92.MD"
+fn core.uigo("system_start.iyu")</eventItme></event>
+</View>
 <View id="38" did="3" type="CardView">
 <ppt>width=-1
 height=55dp
